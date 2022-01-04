@@ -4,11 +4,9 @@ packages:
   adaptable_screen:
     dependency: "direct main"
     description:
-      path: "."
-      ref: HEAD
-      resolved-ref: c77b33d741a7b3fb9569353bff927850946deb69
-      url: "https://github.com/Sthaynny/adaptable_screen"
-    source: git
+      name: adaptable_screen
+      url: "https://pub.dartlang.org"
+    source: hosted
     version: "0.0.1"
   async:
     dependency: transitive
