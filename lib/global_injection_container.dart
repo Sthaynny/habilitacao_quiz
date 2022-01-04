@@ -1,9 +1,9 @@
 import 'package:quiz_car/core/i_injection_conetiner.dart';
 
 abstract class GlobalInjectionContainer {
-  static List<IInjectionContiner> get injectionsContainer => [];
+  static List<IInjectionContainer> get injectionsContainer => [];
   static void setInjection() {
-    for (IInjectionContiner item in injectionsContainer) {
+    for (IInjectionContainer item in injectionsContainer) {
       item();
     }
   }

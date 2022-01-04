@@ -1,3 +1,3 @@
-abstract class IInjectionContiner {
+abstract class IInjectionContainer {
   void call();
 }

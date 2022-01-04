@@ -24,6 +24,10 @@ environment:
 dependencies:
   shared_preferences: ^2.0.11
   get: ^4.6.1
+  google_fonts: ^2.2.0
+  adaptable_screen:
+    git:
+      url: https://github.com/Sthaynny/adaptable_screen
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
