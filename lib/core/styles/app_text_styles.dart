@@ -11,7 +11,7 @@ class AppTextStyles {
     double? letterSpacing,
   }) {
     return GoogleFonts.notoSans(
-      color: color ?? AppColors.white,
+      color: color ?? AppColors.branco,
       fontSize: fontSize ?? 12.ssp,
       fontWeight: FontWeight.w400,
       letterSpacing: letterSpacing,
@@ -24,7 +24,7 @@ class AppTextStyles {
     double? letterSpacing,
   }) {
     return GoogleFonts.notoSans(
-      color: color ?? AppColors.white,
+      color: color ?? AppColors.branco,
       fontSize: fontSize ?? 12.ssp,
       fontWeight: FontWeight.w600,
       letterSpacing: letterSpacing,
@@ -37,7 +37,7 @@ class AppTextStyles {
     double? letterSpacing,
   }) {
     return GoogleFonts.notoSans(
-      color: color ?? AppColors.white,
+      color: color ?? AppColors.branco,
       fontSize: fontSize ?? 12.ssp,
       fontWeight: FontWeight.w900,
       letterSpacing: letterSpacing,
