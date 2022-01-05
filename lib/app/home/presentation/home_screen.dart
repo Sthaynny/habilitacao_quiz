@@ -1,6 +1,6 @@
-import 'package:adaptable_screen/adaptable_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:quiz_car/app/home/presentation/components/car_quiz_widget.dart';
 import 'package:quiz_car/app/home/presentation/controller/home_controller.dart';
 import 'package:quiz_car/core/styles/app_styles.dart';
 
@@ -26,23 +26,8 @@ class _HomeScreen extends State<HomeScreen> {
         ),
         child: SingleChildScrollView(
           child: Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Image.asset(
-                    AppImages.logo,
-                    width: 70.w,
-                  ),
-                  Padding(
-                    padding: EdgeInsets.all(8.0.w),
-                    child: Text(
-                      "Car Quiz",
-                      style: AppTextStyles.notoSansExtraBold(fontSize: 30.ssp),
-                    ),
-                  ),
-                ],
-              )
+            children: const [
+              CarQuizWidget(),
             ],
           ),
         ),
