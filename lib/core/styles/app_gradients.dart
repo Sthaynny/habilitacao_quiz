@@ -1,11 +1,12 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:quiz_car/core/styles/app_colors.dart';
 
-class AppGradients {
+abstract class AppGradients {
   static const linear = LinearGradient(colors: [
-    Color(0xFF57B6E5),
-    Color.fromRGBO(130, 87, 229, 0.695),
+    Colors.white,
+    AppColors.green,
   ], stops: [
     0.0,
     0.695
