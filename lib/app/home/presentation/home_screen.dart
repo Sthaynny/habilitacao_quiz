@@ -2,6 +2,7 @@ import 'package:adaptable_screen/adaptable_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:quiz_car/app/home/presentation/components/car_quiz_widget.dart';
+import 'package:quiz_car/app/home/presentation/components/quiz_button_widget.dart';
 import 'package:quiz_car/app/home/presentation/controller/home_controller.dart';
 import 'package:quiz_car/core/styles/app_styles.dart';
 
@@ -25,45 +26,45 @@ class _HomeScreen extends State<HomeScreen> {
         decoration: const BoxDecoration(
           gradient: AppGradients.linear,
         ),
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              Padding(
-                padding: EdgeInsets.symmetric(vertical: 10.h),
-                child: const CarQuizWidget(),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: 10.h),
+              child: const CarQuizWidget(),
+            ),
+            SizedBox(
+              height: 500.h,
+              child: GridView.count(
+                mainAxisSpacing: 16.h,
+                crossAxisSpacing: 16.w,
+                padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 20.h),
+                crossAxisCount: 2,
+                children: [
+                  QuizButtonWidget(
+                    onPressend: () {},
+                    iconAsset: AppImages.legislacao,
+                    titulo: "Legislação",
+                  ),
+                  QuizButtonWidget(
+                    onPressend: () {},
+                    iconAsset: AppImages.mecanica,
+                    titulo: "Mecânica Básica",
+                  ),
+                  QuizButtonWidget(
+                    onPressend: () {},
+                    iconAsset: AppImages.primeirosSocorros,
+                    titulo: "Primeiros Socorros",
+                  ),
+                  QuizButtonWidget(
+                    onPressend: () {},
+                    iconAsset: AppImages.aleatoria,
+                    titulo: "Aleatórias",
+                  ),
+                ],
               ),
-              ElevatedButton(
-                style: ButtonStyle(
-                  foregroundColor: MaterialStateProperty.all(
-                    AppColors.azul.withAlpha(180),
-                  ),
-                  elevation: MaterialStateProperty.all(3),
-                  fixedSize: MaterialStateProperty.all(
-                    Size(150.w, 200.h),
-                  ),
-                  shape: MaterialStateProperty.all(
-                    ContinuousRectangleBorder(
-                      borderRadius: BorderRadius.circular(18.r),
-                    ),
-                  ),
-                ),
-                onPressed: () {},
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Image.asset(
-                      AppImages.legislacao,
-                      width: 50.w,
-                    ),
-                    Text(
-                      "Legislação",
-                      style: AppTextStyles.notoSansBold(fontSize: 14.ssp),
-                    ),
-                  ],
-                ),
-              )
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
