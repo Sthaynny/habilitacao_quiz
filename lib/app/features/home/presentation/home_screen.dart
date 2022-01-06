@@ -1,9 +1,9 @@
 import 'package:adaptable_screen/adaptable_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:quiz_car/app/home/presentation/components/car_quiz_widget.dart';
-import 'package:quiz_car/app/home/presentation/components/quiz_button_widget.dart';
-import 'package:quiz_car/app/home/presentation/controller/home_controller.dart';
+import 'package:quiz_car/app/features/home/presentation/components/car_quiz_widget.dart';
+import 'package:quiz_car/app/features/home/presentation/components/quiz_button_widget.dart';
+import 'package:quiz_car/app/features/home/presentation/controller/home_controller.dart';
 import 'package:quiz_car/core/styles/app_styles.dart';
 
 class HomeScreen extends StatefulWidget {
