@@ -18,7 +18,7 @@ class QuizButtonWidget extends StatelessWidget {
     return ElevatedButton(
       style: ButtonStyle(
         backgroundColor: MaterialStateProperty.all(
-          AppColors.azul.withAlpha(180),
+          AppColors.azul.withAlpha(200),
         ),
         elevation: MaterialStateProperty.all(1),
         fixedSize: MaterialStateProperty.all(
