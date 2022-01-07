@@ -48,7 +48,7 @@ class _HomeScreen extends State<HomeScreen> {
                   ),
                   QuizButtonWidget(
                     onPressend: () {},
-                    iconAsset: AppImages.direcaoDefenciva,
+                    iconAsset: AppImages.direcaoDefensiva,
                     titulo: "Direção defensiva",
                   ),
                   QuizButtonWidget(
