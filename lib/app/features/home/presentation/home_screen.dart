@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:quiz_car/app/features/home/presentation/components/car_quiz_widget.dart';
 import 'package:quiz_car/app/features/home/presentation/components/quiz_button_widget.dart';
 import 'package:quiz_car/app/features/home/presentation/controller/home_controller.dart';
+import 'package:quiz_car/app/features/shared/utils/quiz_enum.dart';
 import 'package:quiz_car/core/components/aligned_grid.dart';
 import 'package:quiz_car/core/mixins/em_breve.dart';
 import 'package:quiz_car/core/styles/app_styles.dart';
@@ -45,7 +46,7 @@ class _HomeScreen extends State<HomeScreen> with EmBreve {
                 ),
                 QuizButtonWidget(
                   onPressend: () {
-                    bottomSheetEmBreve(context);
+                    controller.irParaPagina(QuizEnum.direcaoDefensiva);
                   },
                   iconAsset: AppImages.direcaoDefensiva,
                   titulo: "Direção Defensiva",
