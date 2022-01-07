@@ -48,7 +48,7 @@ class _HomeScreen extends State<HomeScreen> with EmBreve {
                     bottomSheetEmBreve(context);
                   },
                   iconAsset: AppImages.direcaoDefensiva,
-                  titulo: "Direção defensiva",
+                  titulo: "Direção Defensiva",
                 ),
                 QuizButtonWidget(
                   onPressend: () {
