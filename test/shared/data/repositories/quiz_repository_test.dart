@@ -6,7 +6,7 @@ import 'package:quiz_car/app/features/shared/domain/entities/quiz_entity.dart';
 import 'package:quiz_car/app/features/shared/domain/repositories/iquiz_repository.dart';
 import 'package:quiz_car/core/exceptions/erro.dart';
 
-void main(List<String> args) {
+void main() {
   final QuizDatasource datasource = QuizDatasource();
   IQuizRepository repository = QuizRepository(datasource);
 

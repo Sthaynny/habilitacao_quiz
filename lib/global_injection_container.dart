@@ -4,8 +4,8 @@ import 'package:quiz_car/core/i_injection_conetiner.dart';
 
 abstract class GlobalInjectionContainer {
   static List<IInjectionContainer> get injectionsContainer => [
-        HomeInjectionContainer(),
         SharedInjectionContainer(),
+        HomeInjectionContainer(),
       ];
 
   static void setInjection() {

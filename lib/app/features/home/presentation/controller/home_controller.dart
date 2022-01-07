@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:quiz_car/app/features/questoes/presentation/questoes_screen.dart';
+import 'package:quiz_car/app/features/questionario/presentation/questionario_screen.dart';
 import 'package:quiz_car/app/features/shared/utils/quiz_enum.dart';
 
 enum HomeState {
@@ -9,6 +9,9 @@ enum HomeState {
 }
 
 class HomeController {
+  
+
+
   void irParaPagina(QuizEnum quiz) {
     switch (quiz) {
       case QuizEnum.direcaoDefensiva:
