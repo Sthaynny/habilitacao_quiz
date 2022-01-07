@@ -10,7 +10,6 @@ class QuizRepository implements IQuizRepository {
   QuizRepository(this._datasource);
   @override
   Future<Either<ExceptionErro, QuizEntity>> getQuiz(String nome) {
-    // TODO: implement getQuiz
-    throw UnimplementedError();
+    
   }
 }
