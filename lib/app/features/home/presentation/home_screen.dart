@@ -1,4 +1,3 @@
-import 'package:adaptable_screen/adaptable_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:quiz_car/app/features/home/presentation/components/car_quiz_widget.dart';
@@ -31,59 +30,90 @@ class _HomeScreen extends State<HomeScreen> with EmBreve {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Container(
-              height: 70.h,
-              margin: EdgeInsets.fromLTRB(0, 40.h, 0, 10.h),
-              child: const CarQuizWidget(),
-            ),
-            SizedBox(
-              height: size.height - 130.h,
-              child: GridView.count(
-                mainAxisSpacing: 16.h,
-                crossAxisSpacing: 16.w,
-                padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 20.h),
-                crossAxisCount: 2,
-                children: [
-                  QuizButtonWidget(
-                    onPressend: () {
-                      bottomSheetEmBreve(context);
-                    },
-                    iconAsset: AppImages.legislacao,
-                    titulo: "Legislação",
-                  ),
-                  QuizButtonWidget(
-                    onPressend: () {
-                      bottomSheetEmBreve(context);
-                    },
-                    iconAsset: AppImages.direcaoDefensiva,
-                    titulo: "Direção defensiva",
-                  ),
-                  QuizButtonWidget(
-                    onPressend: () {
-                      bottomSheetEmBreve(context);
-                    },
-                    iconAsset: AppImages.mecanica,
-                    titulo: "Mecânica Básica",
-                  ),
-                  QuizButtonWidget(
-                    onPressend: () {
-                      bottomSheetEmBreve(context);
-                    },
-                    iconAsset: AppImages.primeirosSocorros,
-                    titulo: "Primeiros Socorros",
-                  ),
-                  QuizButtonWidget(
-                    onPressend: () {
-                      bottomSheetEmBreve(context);
-                    },
-                    iconAsset: AppImages.aleatoria,
-                    titulo: "Aleatórias",
-                  ),
-                ],
-              ),
+            const CarQuizWidget(),
+            AlignedGrid(
+              spacing: 15,
+              runSpacing: 15,
+              children: [
+                QuizButtonWidget(
+                  onPressend: () {
+                    bottomSheetEmBreve(context);
+                  },
+                  iconAsset: AppImages.legislacao,
+                  titulo: "Legislação",
+                ),
+                QuizButtonWidget(
+                  onPressend: () {
+                    bottomSheetEmBreve(context);
+                  },
+                  iconAsset: AppImages.direcaoDefensiva,
+                  titulo: "Direção defensiva",
+                ),
+                QuizButtonWidget(
+                  onPressend: () {
+                    bottomSheetEmBreve(context);
+                  },
+                  iconAsset: AppImages.mecanica,
+                  titulo: "Mecânica Básica",
+                ),
+                QuizButtonWidget(
+                  onPressend: () {
+                    bottomSheetEmBreve(context);
+                  },
+                  iconAsset: AppImages.primeirosSocorros,
+                  titulo: "Primeiros Socorros",
+                ),
+                QuizButtonWidget(
+                  onPressend: () {
+                    bottomSheetEmBreve(context);
+                  },
+                  iconAsset: AppImages.aleatoria,
+                  titulo: "Aleatórias",
+                ),
+              ],
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class AlignedGrid extends StatefulWidget {
+  final List<Widget> children;
+  final double spacing;
+  final double runSpacing;
+
+  const AlignedGrid({
+    Key? key,
+    required this.children,
+    this.spacing = 4,
+    this.runSpacing = 4,
+  }) : super(key: key);
+
+  @override
+  State<AlignedGrid> createState() => _AlignedGridState();
+}
+
+class _AlignedGridState extends State<AlignedGrid> {
+  late final int listSize;
+
+  @override
+  void didChangeDependencies() {
+    listSize = widget.children.length;
+    super.didChangeDependencies();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      child: Wrap(
+        runSpacing: widget.runSpacing,
+        spacing: widget.spacing,
+        alignment: WrapAlignment.center,
+        children: List.generate(listSize, (index) {
+          return widget.children[index];
+        }),
       ),
     );
   }

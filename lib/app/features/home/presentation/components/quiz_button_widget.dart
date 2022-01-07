@@ -22,7 +22,7 @@ class QuizButtonWidget extends StatelessWidget {
         ),
         elevation: MaterialStateProperty.all(1),
         fixedSize: MaterialStateProperty.all(
-          Size(150.w, 200.h),
+          Size(150.w, 180.h),
         ),
         shape: MaterialStateProperty.all(
           ContinuousRectangleBorder(
