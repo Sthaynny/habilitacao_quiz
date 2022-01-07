@@ -1,3 +1,3 @@
-abstract class StringsKeys {
+abstract class Keys {
   static const direcaoDefensiva = 'direcao_defensiva';
 }
