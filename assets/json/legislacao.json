@@ -1,0 +1,72 @@
+{
+    "titulo": "basico - Linguagem C",
+    "questoes": [{
+            "titulo": "A função main() deve existir em alguma parte de um programa em C e marca o ponto de início da execução.",
+            "respostas": [{
+                    "titulo": "Verdadeiro",
+                    "correta": true
+                },
+                {
+                    "titulo": "Falso"
+                }
+            ]
+        },
+        {
+            "titulo": "O comando float ra, ar; define as variáveis ra e ar como ponto flutuante.",
+            "respostas": [{
+                    "titulo": "Verdadeiro",
+                    "correta": true
+                },
+                {
+                    "titulo": "Falso"
+                }
+            ]
+        },
+        {
+            "titulo": "O trecho a seguir está sintaticamente correto em C. \nmain(){\n//corpo do programa\n}",
+            "respostas": [{
+                    "titulo": "Errado"
+                },
+                {
+                    "titulo": "Correto",
+                    "correta": true
+                }
+            ]
+        },
+        {
+            "titulo": "Quando nenhum tipo de retorno não é exigido em um método, deve-se especificá-lo como sendo do tipo de retorno como:",
+            "respostas": [{
+                    "titulo": "int"
+                },
+                {
+                    "titulo": "public"
+                },
+                {
+                    "titulo": "void",
+                    "correta": true
+                },
+                {
+                    "titulo": "null"
+                }
+            ]
+        }, {
+            "titulo": "Em um algoritmo, uma constante é um espaço físico na memória, e é identificada por um nome que não sofre alteração durante a execução do programa.",
+            "respostas": [{
+                "titulo": "Correto",
+                "correta": true
+            }, {
+                "titulo": "Errado"
+            }]
+        }, {
+            "titulo": "Para a determinação da parte decimal de um número real, pode-se utilizar a função \"(int) x\", como no exemplo a seguir, onde \"(int) x\" retorna a parte inteira de x. \n...\nx = 3.1415926;\nprint(\"%d\", (int) x);\n...\n",
+            "respostas": [{
+                    "titulo": "Errado"
+                },
+                {
+                    "titulo": "Correto",
+                    "correta": true
+                }
+            ]
+        }
+    ]
+}
