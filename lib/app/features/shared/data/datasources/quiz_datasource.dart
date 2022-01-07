@@ -8,9 +8,5 @@ class QuizDatasource {
     } catch (e) {
       return '';
     }
-
-    // final quizzes =
-    //     list.map((e) => QuizModel.fromMap(e as Map<String, dynamic>)).toList();
-    // return quizzes;
   }
 }
