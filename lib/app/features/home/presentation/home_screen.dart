@@ -7,6 +7,7 @@ import 'package:quiz_car/app/features/shared/utils/quiz_enum.dart';
 import 'package:quiz_car/core/components/aligned_grid.dart';
 import 'package:quiz_car/core/mixins/em_breve.dart';
 import 'package:quiz_car/core/styles/app_styles.dart';
+import 'package:quiz_car/core/utils/strings.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -42,35 +43,35 @@ class _HomeScreen extends State<HomeScreen> with EmBreve {
                     bottomSheetEmBreve(context);
                   },
                   iconAsset: AppImages.legislacao,
-                  titulo: "Legislação",
+                  titulo: Strings.legislacao,
                 ),
                 QuizButtonWidget(
                   onPressend: () {
                     controller.irParaPagina(QuizEnum.direcaoDefensiva);
                   },
                   iconAsset: AppImages.direcaoDefensiva,
-                  titulo: "Direção Defensiva",
+                  titulo: Strings.direcaoDefesiva,
                 ),
                 QuizButtonWidget(
                   onPressend: () {
                     bottomSheetEmBreve(context);
                   },
                   iconAsset: AppImages.mecanica,
-                  titulo: "Mecânica Básica",
+                  titulo: Strings.mecanicaBasica,
                 ),
                 QuizButtonWidget(
                   onPressend: () {
                     bottomSheetEmBreve(context);
                   },
                   iconAsset: AppImages.primeirosSocorros,
-                  titulo: "Primeiros Socorros",
+                  titulo: Strings.primeirosSocorros,
                 ),
                 QuizButtonWidget(
                   onPressend: () {
                     bottomSheetEmBreve(context);
                   },
                   iconAsset: AppImages.aleatoria,
-                  titulo: "Aleatórias",
+                  titulo: Strings.aleatorias,
                 ),
               ],
             ),
