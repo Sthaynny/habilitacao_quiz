@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:quiz_car/app/features/comum/domain/entities/resposta_entity.dart';
+import 'package:quiz_car/app/features/shared/domain/entities/resposta_entity.dart';
 
 class RespostaModel extends RespostaEntity {
   RespostaModel({

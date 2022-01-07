@@ -1,4 +1,4 @@
-import 'package:quiz_car/app/features/comum/domain/entities/pergunta_entity.dart';
+import 'package:quiz_car/app/features/shared/domain/entities/pergunta_entity.dart';
 
 class QuizEntity {
   final String titulo;

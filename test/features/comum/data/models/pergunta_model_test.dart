@@ -1,8 +1,8 @@
 import 'dart:convert';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:quiz_car/app/features/comum/data/models/pergunta_model.dart';
-import 'package:quiz_car/app/features/comum/domain/entities/pergunta_entity.dart';
+import 'package:quiz_car/app/features/shared/data/models/pergunta_model.dart';
+import 'package:quiz_car/app/features/shared/domain/entities/pergunta_entity.dart';
 
 void main() {
   final tInstancePerguntaModel = PerguntaModel.fromMap(<String, dynamic>{
