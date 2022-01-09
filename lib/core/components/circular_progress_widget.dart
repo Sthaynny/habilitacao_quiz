@@ -6,7 +6,7 @@ import 'package:quiz_car/core/styles/app_styles.dart';
 class CircularProgressWidget extends StatefulWidget {
   const CircularProgressWidget({
     Key? key,
-    this.primaryColor = AppColors.green,
+    this.primaryColor = AppColors.verde,
     this.secondaryColor = AppColors.azul,
     this.lapDuration = 1000,
     this.strokeWidth = 6.5,
