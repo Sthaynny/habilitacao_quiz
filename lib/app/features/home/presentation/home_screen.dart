@@ -28,7 +28,7 @@ class _HomeScreen extends State<HomeScreen> with PopUpMixin {
         init: controller,
         builder: (controller) {
           if (controller.homeState.value == HomeState.erro) {
-            popUpErro(context);
+            popUpErro();
           }
           return LoadingBlurScreen(
             enabled: controller.homeState.value == HomeState.carregando,
@@ -49,7 +49,7 @@ class _HomeScreen extends State<HomeScreen> with PopUpMixin {
                     children: [
                       QuizButtonWidget(
                         onPressend: () {
-                          bottomSheetEmBreve(context);
+                          popUpEmBreve();
                         },
                         iconAsset: AppImages.legislacao,
                         titulo: Strings.legislacao,
@@ -63,21 +63,21 @@ class _HomeScreen extends State<HomeScreen> with PopUpMixin {
                       ),
                       QuizButtonWidget(
                         onPressend: () {
-                          bottomSheetEmBreve(context);
+                          popUpEmBreve();
                         },
                         iconAsset: AppImages.mecanica,
                         titulo: Strings.mecanicaBasica,
                       ),
                       QuizButtonWidget(
                         onPressend: () {
-                          bottomSheetEmBreve(context);
+                          popUpEmBreve();
                         },
                         iconAsset: AppImages.primeirosSocorros,
                         titulo: Strings.primeirosSocorros,
                       ),
                       QuizButtonWidget(
                         onPressend: () {
-                          bottomSheetEmBreve(context);
+                          popUpEmBreve();
                         },
                         iconAsset: AppImages.aleatoria,
                         titulo: Strings.aleatorias,

@@ -6,6 +6,7 @@ import 'package:quiz_car/app/features/questionario/presentation/components/quiz/
 import 'package:quiz_car/app/features/questionario/presentation/controller/questionario_controller.dart';
 import 'package:quiz_car/app/features/shared/domain/entities/quiz_entity.dart';
 import 'package:quiz_car/app/features/shared/presentation/widgets/primary_button_widget.dart';
+import 'package:quiz_car/core/mixins/pop_up_mixin.dart';
 import 'package:quiz_car/core/utils/strings.dart';
 
 class QuestionarioScreen extends StatefulWidget {
@@ -16,7 +17,8 @@ class QuestionarioScreen extends StatefulWidget {
   _QuestionarioScreenState createState() => _QuestionarioScreenState();
 }
 
-class _QuestionarioScreenState extends State<QuestionarioScreen> {
+class _QuestionarioScreenState extends State<QuestionarioScreen>
+    with PopUpMixin {
   late final QuestionarioController controller;
   QuizEntity get quiz => widget.quizEntity;
 
@@ -32,42 +34,48 @@ class _QuestionarioScreenState extends State<QuestionarioScreen> {
     return GetBuilder<QuestionarioController>(
       init: controller,
       builder: (controller) {
-        return Scaffold(
-          appBar: AppBarQuestionarioWidget(
-            onClosed: () {
-              Get.back();
-            },
-            paginaAtual: controller.indexPerguntaUsuario,
-            tamanhoQuiz: controller.tamanhoQuiz,
-          ),
-          body: QuizWidget(
-            onSelected: (value) {
-              controller.setRespostaSelecionada = value;
-            },
-            pergunta: controller.perguntaAtual,
-            respostaSelected: controller.respotaSelecionada,
-          ),
-          bottomNavigationBar: SafeArea(
-            child: Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: 20.w,
-                vertical: 20.h,
-              ),
-              child: Row(
-                children: [
-                  if (controller.indexPergunta != 0) ...getButaoVoltar,
-                  Flexible(
-                      child: PrimaryButtonWidget.azul(
-                    label: controller.ultimaPergunta
-                        ? Strings.finalizar
-                        : Strings.avancar,
-                    onTap: controller.respostaSelecionada != null
-                        ? () {
-                            controller.proximoPergunta;
-                          }
-                        : null,
-                  )),
-                ],
+        return WillPopScope(
+          onWillPop: () async {
+            controller.fecharQuestionario();
+            return false;
+          },
+          child: Scaffold(
+            appBar: AppBarQuestionarioWidget(
+              onClosed: () {
+                controller.fecharQuestionario();
+              },
+              paginaAtual: controller.indexPerguntaUsuario,
+              tamanhoQuiz: controller.tamanhoQuiz,
+            ),
+            body: QuizWidget(
+              onSelected: (value) {
+                controller.setRespostaSelecionada = value;
+              },
+              pergunta: controller.perguntaAtual,
+              respostaSelected: controller.respotaSelecionada,
+            ),
+            bottomNavigationBar: SafeArea(
+              child: Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: 20.w,
+                  vertical: 20.h,
+                ),
+                child: Row(
+                  children: [
+                    if (controller.indexPergunta != 0) ...getButaoVoltar,
+                    Flexible(
+                        child: PrimaryButtonWidget.azul(
+                      label: controller.ultimaPergunta
+                          ? Strings.finalizar
+                          : Strings.avancar,
+                      onTap: controller.respostaSelecionada != null
+                          ? () {
+                              controller.proximoPergunta;
+                            }
+                          : null,
+                    )),
+                  ],
+                ),
               ),
             ),
           ),

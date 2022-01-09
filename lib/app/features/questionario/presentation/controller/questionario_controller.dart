@@ -2,8 +2,9 @@ import 'package:get/get.dart';
 import 'package:quiz_car/app/features/resultado/resultado_screen.dart';
 import 'package:quiz_car/app/features/shared/domain/entities/quiz_entity.dart';
 import 'package:quiz_car/app/features/shared/domain/entities/resposta_entity.dart';
+import 'package:quiz_car/core/mixins/pop_up_mixin.dart';
 
-class QuestionarioController extends GetxController {
+class QuestionarioController extends GetxController with PopUpMixin {
   QuestionarioController() {
     _indexPergunta = Rx<int>(0);
   }
@@ -45,16 +46,7 @@ class QuestionarioController extends GetxController {
         }
       }
       final double percentual = (totalPerguntasCorretas / tamanhoQuiz) * 100;
-      Get.off(
-        ResultadoScreen(
-          titulo: quiz.titulo,
-          totalPerguntas: tamanhoQuiz,
-          result: percentual >= 70.0,
-          totalRespostasCorretas: totalPerguntasCorretas,
-          percentual: percentual,
-        ),
-        transition: Transition.fade,
-      );
+      irParaResultado(percentual, totalPerguntasCorretas);
     } else {
       _indexPergunta.value++;
     }
@@ -64,5 +56,27 @@ class QuestionarioController extends GetxController {
   void get voltarPergunta {
     _indexPergunta.value--;
     update();
+  }
+
+  ///Navegação
+
+  Future<void> fecharQuestionario() async {
+    final result = await popUpConfirmacao();
+    if (result != null && result) {
+      Get.back();
+    }
+  }
+
+  void irParaResultado(double percentual, int totalPerguntasCorretas) {
+    Get.off(
+      ResultadoScreen(
+        titulo: quiz.titulo,
+        totalPerguntas: tamanhoQuiz,
+        result: percentual >= 70.0,
+        totalRespostasCorretas: totalPerguntasCorretas,
+        percentual: percentual,
+      ),
+      transition: Transition.fade,
+    );
   }
 }

@@ -10,4 +10,8 @@ abstract class Strings {
   static const voltar = 'Voltar';
   static const avancar = 'Avançar';
   static const finalizar = 'Finalizar';
+
+  static const fechar = 'fechar';
+
+  static var emBreve = 'Em breve!';
 }
