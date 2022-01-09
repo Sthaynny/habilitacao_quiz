@@ -2,10 +2,10 @@ import 'package:adaptable_screen/adaptable_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:quiz_car/app/features/questionario/presentation/components/app_bar_questionario.dart';
-import 'package:quiz_car/app/features/shared/presentation/widgets/primary_button_widget.dart';
 import 'package:quiz_car/app/features/questionario/presentation/components/quiz/quiz.dart';
 import 'package:quiz_car/app/features/questionario/presentation/controller/questionario_controller.dart';
 import 'package:quiz_car/app/features/shared/domain/entities/quiz_entity.dart';
+import 'package:quiz_car/app/features/shared/presentation/widgets/primary_button_widget.dart';
 import 'package:quiz_car/core/utils/strings.dart';
 
 class QuestionarioScreen extends StatefulWidget {
@@ -58,7 +58,9 @@ class _QuestionarioScreenState extends State<QuestionarioScreen> {
                   if (controller.indexPergunta != 0) ...getButaoVoltar,
                   Flexible(
                       child: PrimaryButtonWidget.azul(
-                    label: Strings.avancar,
+                    label: controller.ultimaPergunta
+                        ? Strings.finalizar
+                        : Strings.avancar,
                     onTap: controller.respostaSelecionada != null
                         ? () {
                             controller.proximoPergunta;

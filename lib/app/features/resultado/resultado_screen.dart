@@ -18,7 +18,7 @@ class ResultadoScreen extends StatelessWidget {
   final int totalPerguntas;
   final int totalRespostasCorretas;
   final bool result;
-  final int percentual;
+  final double percentual;
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +31,7 @@ class ResultadoScreen extends StatelessWidget {
           children: [
             Image.asset(
               result ? AppImages.sucesso : AppImages.atencao,
-              height: 249.h,
+              height: 180.h,
             ),
             Column(
               children: [
@@ -43,17 +43,17 @@ class ResultadoScreen extends StatelessWidget {
                         : 'Oh, que chato!\nVamos melhorar na proxima!',
                     style: AppTextStyles.notoSansBold(
                       color: AppColors.preto,
-                      fontSize: 40,
+                      fontSize: 30.ssp,
                     ),
                     textAlign: TextAlign.center,
                   ),
                 ),
-                const SizedBox(
-                  height: 16,
+                SizedBox(
+                  height: 16.h,
                 ),
                 Text.rich(
                   TextSpan(
-                    text: 'Você concluiu\n',
+                    text: 'Você finalizou\n',
                     style: AppTextStyles.notoSansRegular(
                       color: AppColors.preto,
                       fontSize: 13.ssp,
@@ -67,7 +67,7 @@ class ResultadoScreen extends StatelessWidget {
                           )),
                       TextSpan(
                           text:
-                              'com $totalRespostasCorretas de $totalPerguntas acertos',
+                              'com $totalRespostasCorretas de $totalPerguntas acertos, ou seja, ${percentual.toPrecision(2)}%!',
                           style: AppTextStyles.notoSansRegular(
                             color: AppColors.preto,
                             fontSize: 13.ssp,
@@ -86,7 +86,7 @@ class ResultadoScreen extends StatelessWidget {
                     label: 'Compartilhar',
                     onTap: () {
                       Share.share(
-                        '''Dev Quiz - Flutter: Resultado do quiz: $titulo\n obitive $percentual de aproveitamento.''',
+                        '''Quiz Car: Resultado do quiz: $titulo\n obitive ${percentual.toPrecision(2)} de aproveitamento.''',
                       );
                     },
                   ),
