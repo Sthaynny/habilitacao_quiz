@@ -6,6 +6,7 @@ import 'package:quiz_car/app/features/questionario/presentation/components/prima
 import 'package:quiz_car/app/features/questionario/presentation/components/quiz/quiz.dart';
 import 'package:quiz_car/app/features/questionario/presentation/controller/questionario_controller.dart';
 import 'package:quiz_car/app/features/shared/domain/entities/quiz_entity.dart';
+import 'package:quiz_car/core/utils/strings.dart';
 
 class QuestionarioScreen extends StatefulWidget {
   const QuestionarioScreen({Key? key, required this.quizEntity})
@@ -34,12 +35,12 @@ class _QuestionarioScreenState extends State<QuestionarioScreen> {
         return Scaffold(
           appBar: AppBarQuestionarioWidget(
             onClosed: () {},
-            paginaAtual: controller.indexPergunta,
-            tamanhoQuiz: controller.quiz.value.perguntas.length,
+            paginaAtual: controller.indexPerguntaUsuario,
+            tamanhoQuiz: controller.tamanhoQuiz,
           ),
           body: QuizWidget(
             onSelected: (value) {
-              controller.perguntaSelecionada = value;
+              controller.setRespostaSelecionada = value;
             },
             pergunta: controller.perguntaAtual,
             respostaSelected: controller.respotaSelecionada,
@@ -52,15 +53,12 @@ class _QuestionarioScreenState extends State<QuestionarioScreen> {
               ),
               child: Row(
                 children: [
-                  Flexible(
-                      child: PrimaryButtonWidget.branco(
-                    label: 'voltar',
-                    onTap: () {},
-                  )),
+                  if (controller.indexPergunta != 0) ...getButaoVoltar,
                   Flexible(
                       child: PrimaryButtonWidget.azul(
-                    label: 'avançar',
-                    onTap: () {},
+                    label: Strings.avancar,
+                    onTap:
+                        controller.respostaSelecionada != null ? () {} : null,
                   )),
                 ],
               ),
@@ -70,4 +68,16 @@ class _QuestionarioScreenState extends State<QuestionarioScreen> {
       },
     );
   }
+
+  List<Widget> get getButaoVoltar => [
+        Flexible(
+          child: PrimaryButtonWidget.branco(
+            label: Strings.voltar,
+            onTap: () {},
+          ),
+        ),
+        SizedBox(
+          width: 8.w,
+        ),
+      ];
 }

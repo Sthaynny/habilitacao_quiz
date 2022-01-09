@@ -1,5 +1,5 @@
 import 'package:adaptable_screen/adaptable_screen.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:quiz_car/core/styles/app_colors.dart';
 
@@ -27,7 +27,7 @@ class PrimaryButtonWidget extends StatelessWidget {
     this.onTap,
     Key? key,
   })  : backgoundColor = AppColors.azul,
-        fontColor = AppColors.branco,
+        fontColor = onTap != null ? AppColors.branco : AppColors.cinza,
         borderColor = AppColors.border,
         super(key: key);
 
@@ -51,21 +51,23 @@ class PrimaryButtonWidget extends StatelessWidget {
     return SizedBox(
       height: 48.h,
       width: double.maxFinite,
-      child: TextButton(
-        style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all(
-            backgoundColor,
-          ),
-          shape: MaterialStateProperty.all(
-            RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10.r),
-            ),
-          ),
-          side: MaterialStateProperty.all(
-            BorderSide(color: borderColor),
-          ),
-          overlayColor: MaterialStateProperty.all(AppColors.cinzaSuperClaro),
-        ),
+      child: CupertinoButton(
+        borderRadius: BorderRadius.circular(10.r),
+        color: backgoundColor,
+        // style: ButtonStyle(
+        //   backgroundColor: MaterialStateProperty.all(
+        //     backgoundColor,
+        //   ),
+        //   shape: MaterialStateProperty.all(
+        //     RoundedRectangleBorder(
+        //       borderRadius: BorderRadius.circular(10.r),
+        //     ),
+        //   ),
+        //   side: MaterialStateProperty.all(
+        //     BorderSide(color: borderColor),
+        //   ),
+        //   overlayColor: MaterialStateProperty.all(AppColors.cinzaSuperClaro),
+        // ),
         onPressed: onTap,
         child: Text(
           label,

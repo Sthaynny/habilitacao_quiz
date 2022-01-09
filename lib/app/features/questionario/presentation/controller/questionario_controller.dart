@@ -4,25 +4,32 @@ import 'package:quiz_car/app/features/shared/domain/entities/resposta_entity.dar
 
 class QuestionarioController extends GetxController {
   QuestionarioController() {
-    _indexPergunta = Rx<int>(1);
+    _indexPergunta = Rx<int>(0);
   }
   void init({required QuizEntity quizEntity}) {
-    quiz = Rx(quizEntity);
+    _quiz = Rx(quizEntity);
   }
 
-  late Rx<QuizEntity> quiz;
+  late Rx<QuizEntity> _quiz;
   late Rx<int> _indexPergunta;
 
+  QuizEntity get quiz => _quiz.value;
+  int get tamanhoQuiz => quiz.perguntas.length;
+
   int get indexPergunta => _indexPergunta.value;
+  int get indexPerguntaUsuario => _indexPergunta.value + 1;
   set setindexPergunta(int value) => _indexPergunta.value = value;
 
-  set perguntaSelecionada(RespostaEntity resposta) {
-    quiz.value.perguntas[indexPergunta].respostaSelecionada = resposta;
+  RespostaEntity? get respostaSelecionada =>
+      quiz.perguntas[indexPergunta].respostaSelecionada;
+
+  set setRespostaSelecionada(RespostaEntity resposta) {
+    quiz.perguntas[indexPergunta].respostaSelecionada = resposta;
     update();
   }
 
-  get perguntaAtual => quiz.value.perguntas[indexPergunta];
+  get perguntaAtual => quiz.perguntas[indexPergunta];
 
   RespostaEntity? get respotaSelecionada =>
-      quiz.value.perguntas[indexPergunta].respostaSelecionada;
+      quiz.perguntas[indexPergunta].respostaSelecionada;
 }

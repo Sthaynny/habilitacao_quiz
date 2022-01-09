@@ -8,4 +8,8 @@ abstract class Strings {
 
   static const String erroPadrao =
       "Ops... Tivemos um problema, tente novamente!";
+
+  static const voltar = 'Voltar';
+
+  static const avancar = 'Avançar';
 }
