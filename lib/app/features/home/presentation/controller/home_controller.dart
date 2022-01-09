@@ -28,7 +28,11 @@ class HomeController extends GetxController {
         await getQuiz(quiz);
         if (_quizEntity.value != null) {
           Get.to(
-            QuestionarioScreen(quizEntity: _quizEntity.value!),
+            QuestionarioScreen(
+              quizEntity: _quizEntity.value!.copyWith(
+                perguntas: _quizEntity.value!.perguntas.sublist(0, 30),
+              ),
+            ),
             transition: Transition.fade,
           );
         }
