@@ -2,22 +2,22 @@ import 'dart:typed_data';
 
 import 'package:adaptable_screen/adaptable_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:quiz_car/app/features/questionario/presentation/components/awnser/resposta_widget.dart';
+import 'package:quiz_car/app/features/questionario/presentation/components/resposta/resposta_widget.dart';
 import 'package:quiz_car/app/features/shared/domain/entities/pergunta_entity.dart';
+import 'package:quiz_car/app/features/shared/domain/entities/resposta_entity.dart';
 import 'package:quiz_car/core/styles/app_styles.dart';
-import 'package:quiz_car/core/utils/keys.dart';
 
 class QuizWidget extends StatelessWidget {
-  const QuizWidget(
-      {Key? key,
-      required this.pergunta,
-      required this.onSelected,
-      this.indexSelected,
-      this.imageQuestion})
-      : super(key: key);
+  const QuizWidget({
+    Key? key,
+    required this.pergunta,
+    required this.onSelected,
+    this.respostaSelected,
+    this.imageQuestion,
+  }) : super(key: key);
   final PerguntaEntity pergunta;
-  final ValueChanged<Map<String, dynamic>> onSelected;
-  final int? indexSelected;
+  final ValueChanged<RespostaEntity> onSelected;
+  final RespostaEntity? respostaSelected;
   final Uint8List? imageQuestion;
 
   @override
@@ -53,19 +53,15 @@ class QuizWidget extends StatelessWidget {
           SizedBox(
             height: 15.h,
           ),
-          for (var index = 0; index < pergunta.respostas.length; index++)
-            RespostaWidget(
-              onTap: (value) {
-                onSelected(
-                  {
-                    Keys.index: index,
-                  },
-                );
-              },
-              disabled: indexSelected != null,
-              respota: pergunta.respostas[index],
-              isSelected: indexSelected == index,
-            ),
+          ...pergunta.respostas
+              .map(
+                (elemento) => RespostaWidget(
+                  onTap: onSelected,
+                  resposta: elemento,
+                  isSelected: respostaSelected == elemento,
+                ),
+              )
+              .toList(),
         ],
       ),
     );
