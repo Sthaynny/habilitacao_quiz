@@ -7,6 +7,7 @@ class QuestionarioInjectionContainer implements IInjectionContainer {
   void call() {
     Get.lazyPut<QuestionarioController>(
       () => QuestionarioController(),
+      fenix: true,
     );
   }
 }

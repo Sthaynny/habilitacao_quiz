@@ -34,7 +34,9 @@ class _QuestionarioScreenState extends State<QuestionarioScreen> {
       builder: (controller) {
         return Scaffold(
           appBar: AppBarQuestionarioWidget(
-            onClosed: () {},
+            onClosed: () {
+              Get.back();
+            },
             paginaAtual: controller.indexPerguntaUsuario,
             tamanhoQuiz: controller.tamanhoQuiz,
           ),

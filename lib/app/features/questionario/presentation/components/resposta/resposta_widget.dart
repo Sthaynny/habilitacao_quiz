@@ -67,7 +67,7 @@ class RespostaWidget extends StatelessWidget {
             ),
             Expanded(
               child: Text(
-                resposta.titulo.primeiraLetraMaiuscula,
+                resposta.titulo,
                 style: AppTextStyles.notoSansRegular(
                   color: AppColors.cinza,
                   fontSize: 13.ssp,
