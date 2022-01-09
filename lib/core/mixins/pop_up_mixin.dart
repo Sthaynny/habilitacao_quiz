@@ -8,10 +8,6 @@ import 'package:quiz_car/core/utils/strings.dart';
 mixin PopUpMixin {
   Future<bool?> popUpConfirmacao() async {
     return await Get.defaultDialog<bool>(
-      onWillPop: () async {
-        Get.back(result: false);
-        return false;
-      },
       contentPadding: EdgeInsets.all(10.h),
       title: Strings.atencao,
       textCancel: Strings.nao,
