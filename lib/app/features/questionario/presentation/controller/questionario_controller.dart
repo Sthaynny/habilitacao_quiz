@@ -18,7 +18,6 @@ class QuestionarioController extends GetxController {
 
   int get indexPergunta => _indexPergunta.value;
   int get indexPerguntaUsuario => _indexPergunta.value + 1;
-  set setindexPergunta(int value) => _indexPergunta.value = value;
 
   RespostaEntity? get respostaSelecionada =>
       quiz.perguntas[indexPergunta].respostaSelecionada;
@@ -32,4 +31,14 @@ class QuestionarioController extends GetxController {
 
   RespostaEntity? get respotaSelecionada =>
       quiz.perguntas[indexPergunta].respostaSelecionada;
+
+  void get proximoPergunta {
+    _indexPergunta.value++;
+    update();
+  }
+
+  void get voltarPergunta {
+    _indexPergunta.value--;
+    update();
+  }
 }

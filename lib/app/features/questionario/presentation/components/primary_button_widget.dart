@@ -46,28 +46,22 @@ class PrimaryButtonWidget extends StatelessWidget {
   final Color borderColor;
   final VoidCallback? onTap;
 
+  BorderRadius get borderRadius => BorderRadius.circular(10.r);
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
       height: 48.h,
+      decoration: BoxDecoration(
+        border: Border.all(
+          color: borderColor,
+        ),
+        borderRadius: borderRadius,
+      ),
       width: double.maxFinite,
       child: CupertinoButton(
-        borderRadius: BorderRadius.circular(10.r),
+        padding: EdgeInsets.zero,
         color: backgoundColor,
-        // style: ButtonStyle(
-        //   backgroundColor: MaterialStateProperty.all(
-        //     backgoundColor,
-        //   ),
-        //   shape: MaterialStateProperty.all(
-        //     RoundedRectangleBorder(
-        //       borderRadius: BorderRadius.circular(10.r),
-        //     ),
-        //   ),
-        //   side: MaterialStateProperty.all(
-        //     BorderSide(color: borderColor),
-        //   ),
-        //   overlayColor: MaterialStateProperty.all(AppColors.cinzaSuperClaro),
-        // ),
+        borderRadius: borderRadius,
         onPressed: onTap,
         child: Text(
           label,

@@ -57,8 +57,11 @@ class _QuestionarioScreenState extends State<QuestionarioScreen> {
                   Flexible(
                       child: PrimaryButtonWidget.azul(
                     label: Strings.avancar,
-                    onTap:
-                        controller.respostaSelecionada != null ? () {} : null,
+                    onTap: controller.respostaSelecionada != null
+                        ? () {
+                            controller.proximoPergunta;
+                          }
+                        : null,
                   )),
                 ],
               ),
@@ -73,7 +76,9 @@ class _QuestionarioScreenState extends State<QuestionarioScreen> {
         Flexible(
           child: PrimaryButtonWidget.branco(
             label: Strings.voltar,
-            onTap: () {},
+            onTap: () {
+              controller.voltarPergunta;
+            },
           ),
         ),
         SizedBox(
