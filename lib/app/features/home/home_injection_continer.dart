@@ -7,6 +7,10 @@ class HomeInjectionContainer implements IInjectionContainer {
   @override
   void call() {
     Get.lazyPut(() => DirecaoDefesivaQuizUsercase(Get.find()));
-    Get.lazyPut<HomeController>(() => HomeController());
+    Get.lazyPut<HomeController>(
+      () => HomeController(
+        direcaoDefesivaQuizUsercase: Get.find(),
+      ),
+    );
   }
 }
