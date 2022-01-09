@@ -10,8 +10,11 @@ abstract class Strings {
   static const voltar = 'Voltar';
   static const avancar = 'Avançar';
   static const finalizar = 'Finalizar';
-
   static const fechar = 'fechar';
-
-  static var emBreve = 'Em breve!';
+  static const emBreve = 'Em breve!';
+  static const atencao = "ATENÇÃO";
+  static const nao = 'Não';
+  static const sim = "Sim";
+  static const menssagemAoSairQuestionario =
+      "Você vai perder o progresso feito no seu simulado. Quer mesmo sair desse questionário?";
 }

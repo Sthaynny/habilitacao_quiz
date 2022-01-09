@@ -13,15 +13,14 @@ mixin PopUpMixin {
         return false;
       },
       contentPadding: EdgeInsets.all(10.h),
-      title: "ATENÇÃO",
-      textCancel: 'Não',
-      textConfirm: "Sim",
+      title: Strings.atencao,
+      textCancel: Strings.nao,
+      textConfirm: Strings.sim,
       onConfirm: () => Get.back(result: true),
       confirmTextColor: AppColors.branco,
       cancelTextColor: AppColors.preto,
       buttonColor: AppColors.preto,
-      middleText:
-          "Você vai perder o progresso feito no seu simulado. Quer mesmo sair desse questionário?",
+      middleText: Strings.menssagemAoSairQuestionario,
     );
   }
 
