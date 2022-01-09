@@ -64,6 +64,7 @@ class PrimaryButtonWidget extends StatelessWidget {
           side: MaterialStateProperty.all(
             BorderSide(color: borderColor),
           ),
+          overlayColor: MaterialStateProperty.all(AppColors.cinzaSuperClaro),
         ),
         onPressed: onTap,
         child: Text(
