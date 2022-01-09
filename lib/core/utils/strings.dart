@@ -5,4 +5,7 @@ abstract class Strings {
   static const String primeirosSocorros = "Primeiros Socorros";
   static const String aleatorias = "Aleatórias";
   static const String carQuiz = "Car Quiz";
+
+  static const String erroPadrao =
+      "Ops... Tivemos um problema, tente novamente!";
 }

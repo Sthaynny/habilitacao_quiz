@@ -14,20 +14,21 @@ enum HomeState {
 class HomeController extends GetxController {
   HomeController(
       {required DirecaoDefesivaQuizUsercase direcaoDefesivaQuizUsercase}) {
-    homeState = HomeState.init;
+    homeState = Rx<HomeState>(HomeState.init);
     _direcaoDefesivaQuizUsercase = direcaoDefesivaQuizUsercase;
+    _quizEntity = Rx<QuizEntity?>(null);
   }
-  late HomeState homeState;
+  late Rx<HomeState> homeState;
   late final DirecaoDefesivaQuizUsercase _direcaoDefesivaQuizUsercase;
-  QuizEntity? _quizEntity;
+  late Rx<QuizEntity?> _quizEntity;
 
   Future<void> irParaPagina(QuizEnum quiz) async {
     switch (quiz) {
       case QuizEnum.direcaoDefensiva:
         await getQuiz(quiz);
-        if (_quizEntity != null) {
+        if (_quizEntity.value != null) {
           Get.to(
-            QuestionarioScreen(quizEntity: _quizEntity!),
+            QuestionarioScreen(quizEntity: _quizEntity.value!),
             transition: Transition.fade,
           );
         }
@@ -37,17 +38,17 @@ class HomeController extends GetxController {
   }
 
   Future<void> getQuiz(QuizEnum quiz) async {
-    homeState = HomeState.carregando;
+    homeState.value = HomeState.carregando;
     switch (quiz) {
       case QuizEnum.direcaoDefensiva:
         final result = await _direcaoDefesivaQuizUsercase();
         result.fold(
           (_) {
-            homeState = HomeState.erro;
+            homeState.value = HomeState.erro;
           },
           (quiz) {
-            homeState = HomeState.carregado;
-            _quizEntity = quiz;
+            homeState.value = HomeState.carregado;
+            _quizEntity.value = quiz;
           },
         );
         break;

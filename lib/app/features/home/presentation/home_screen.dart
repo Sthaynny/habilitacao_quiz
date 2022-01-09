@@ -6,7 +6,7 @@ import 'package:quiz_car/app/features/home/presentation/controller/home_controll
 import 'package:quiz_car/app/features/shared/presentation/pages/loading_blur_screen.dart';
 import 'package:quiz_car/app/features/shared/utils/quiz_enum.dart';
 import 'package:quiz_car/core/components/aligned_grid.dart';
-import 'package:quiz_car/core/mixins/em_breve.dart';
+import 'package:quiz_car/core/mixins/pop_up_mixin.dart';
 import 'package:quiz_car/core/styles/app_styles.dart';
 import 'package:quiz_car/core/utils/strings.dart';
 
@@ -17,17 +17,21 @@ class HomeScreen extends StatefulWidget {
   createState() => _HomeScreen();
 }
 
-class _HomeScreen extends State<HomeScreen> with EmBreve {
+class _HomeScreen extends State<HomeScreen> with PopUpMixin {
   final HomeController controller = Get.find();
 
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
-      body: GetBuilder<HomeController>(
+      body: GetX<HomeController>(
         init: controller,
         builder: (controller) {
+          if (controller.homeState.value == HomeState.erro) {
+            popUpErro(context);
+          }
           return LoadingBlurScreen(
+            enabled: controller.homeState.value == HomeState.carregando,
             child: Container(
               alignment: Alignment.center,
               height: size.height,

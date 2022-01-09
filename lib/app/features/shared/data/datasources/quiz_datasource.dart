@@ -1,10 +1,11 @@
-import 'dart:io';
+import 'package:flutter/services.dart';
 
 class QuizDatasource {
   Future<String> getQuiz(String nome) async {
-    final String path = 'assets/arquivos/${nome.trim()}.json';
+    final String path = 'assets/json/${nome.trim()}.json';
     try {
-      return await File(path).readAsString();
+      final response = await rootBundle.loadString(path);
+      return response;
     } catch (e) {
       return '';
     }
