@@ -301,102 +301,43 @@
             ]
         },
         {
-            "titulo": "",
+            "titulo": "É noite, o seu veículo começa a apresentar problemas, na direção. Você?",
             "respostas": [{
-                    "titulo": ""
+                    "titulo": "freia bruscamente e aciona as luzes de emergência (pisca-alerta)."
                 },
                 {
-                    "titulo": "",
+                    "titulo": "dirige até encontrar um posto de atendimento, mesmo que esteja bem longe."
+                },
+                {
+                    "titulo": "para e coloca o triângulo de segurança bem próximo ao seu veículo."
+                },
+                {
+                    "titulo": "sinaliza, pára em local seguro, aciona o pisca-alerta e coloca o triângulo de segurança a uma distância adequada.",
                     "correta": true
                 },
                 {
-                    "titulo": ""
-                },
-                {
-                    "titulo": ""
-                },
-                {
-                    "titulo": ""
+                    "titulo": "não liga para o problema e continua dirigindo normalmente."
                 }
             ]
         },
+        
         {
-            "titulo": "",
+            "titulo": "O veículo que você dirige tem sinal verde para atravessar o cruzamento, o condutor de outro veículo desobedece a sinalização e colide com o seu veículo. Neste acidente sem vítimas, você?",
             "respostas": [{
-                    "titulo": ""
+                    "titulo": "sai do local rapidamente."
                 },
                 {
-                    "titulo": "",
+                    "titulo": "retira os veículos para local seguro, anota as placas dos veículos envolvidos e arrola testemunhas.",
                     "correta": true
                 },
                 {
-                    "titulo": ""
+                    "titulo": "deixa os veículos no local até a chegada da polícia para registrar a ocorrência."
                 },
                 {
-                    "titulo": ""
+                    "titulo": "discute com o condutor do outro veículo."
                 },
                 {
-                    "titulo": ""
-                }
-            ]
-        },
-        {
-            "titulo": "",
-            "respostas": [{
-                    "titulo": ""
-                },
-                {
-                    "titulo": "",
-                    "correta": true
-                },
-                {
-                    "titulo": ""
-                },
-                {
-                    "titulo": ""
-                },
-                {
-                    "titulo": ""
-                }
-            ]
-        },
-        {
-            "titulo": "",
-            "respostas": [{
-                    "titulo": ""
-                },
-                {
-                    "titulo": "",
-                    "correta": true
-                },
-                {
-                    "titulo": ""
-                },
-                {
-                    "titulo": ""
-                },
-                {
-                    "titulo": ""
-                }
-            ]
-        },
-        {
-            "titulo": "",
-            "respostas": [{
-                    "titulo": ""
-                },
-                {
-                    "titulo": "",
-                    "correta": true
-                },
-                {
-                    "titulo": ""
-                },
-                {
-                    "titulo": ""
-                },
-                {
-                    "titulo": ""
+                    "titulo": "fica assustado e nunca mais dirige."
                 }
             ]
         },

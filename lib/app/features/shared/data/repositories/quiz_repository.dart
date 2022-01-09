@@ -13,7 +13,9 @@ class QuizRepository implements IQuizRepository {
   Future<Either<ExceptionErro, QuizEntity>> getQuiz(String nome) async {
     final result = await _datasource.getQuiz(nome);
     if (result.isNotEmpty) {
-      return right(QuizModel.fromJson(result));
+      final quiz = QuizModel.fromJson(result);
+      quiz.perguntas.shuffle();
+      return right(quiz);
     }
     return left(ExceptionErro());
   }
