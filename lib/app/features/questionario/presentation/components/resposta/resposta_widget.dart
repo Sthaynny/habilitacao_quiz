@@ -16,11 +16,11 @@ class RespostaWidget extends StatelessWidget {
 
   Color get _selectedColorRight => AppColors.verdeEscuro;
 
-  Color get _selectedBorderRight => AppColors.verdeClaro;
+  Color get _selectedBorderRight => AppColors.cinza;
 
-  Color get _selectedColorCardRight => AppColors.verdeClaro;
+  Color get _selectedColorCardRight => AppColors.cinzaSuperClaro;
 
-  Color get _selectedBorderCardRight => AppColors.verde;
+  Color get _selectedBorderCardRight => AppColors.cinza;
 
   IconData get _selectedIconRight => Icons.close;
 
