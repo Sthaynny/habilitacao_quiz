@@ -31,11 +31,11 @@ class RespostaWidget extends StatelessWidget {
         onTap(resposta);
       },
       child: Container(
-        margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
-        padding: const EdgeInsets.all(16),
+        margin: EdgeInsets.symmetric(horizontal: 16.h, vertical: 4.w),
+        padding: EdgeInsets.all(16.w),
         decoration: BoxDecoration(
           color: isSelected ? _selectedColorCardRight : AppColors.branco,
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(10.r),
           border: Border.fromBorderSide(
             BorderSide(
               color: isSelected ? _selectedBorderCardRight : AppColors.border,
@@ -50,7 +50,7 @@ class RespostaWidget extends StatelessWidget {
               margin: EdgeInsets.only(right: 8.w),
               decoration: BoxDecoration(
                 color: isSelected ? _selectedColorRight : AppColors.branco,
-                borderRadius: BorderRadius.circular(12),
+                borderRadius: BorderRadius.circular(12.r),
                 border: Border.fromBorderSide(
                   BorderSide(
                     color: isSelected ? _selectedBorderRight : AppColors.border,
@@ -61,7 +61,7 @@ class RespostaWidget extends StatelessWidget {
                   ? Icon(
                       _selectedIconRight,
                       color: AppColors.branco,
-                      size: 16,
+                      size: 16.w,
                     )
                   : null,
             ),

@@ -6,11 +6,15 @@ import 'package:quiz_car/core/i_injection_conetiner.dart';
 class HomeInjectionContainer implements IInjectionContainer {
   @override
   void call() {
-    Get.lazyPut(() => DirecaoDefesivaQuizUsercase(Get.find()));
+    Get.lazyPut(
+      () => DirecaoDefesivaQuizUsercase(Get.find()),
+      fenix: true,
+    );
     Get.lazyPut<HomeController>(
       () => HomeController(
         direcaoDefesivaQuizUsercase: Get.find(),
       ),
+      fenix: true,
     );
   }
 }

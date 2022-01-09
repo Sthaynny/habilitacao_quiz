@@ -2,7 +2,7 @@ import 'package:adaptable_screen/adaptable_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:quiz_car/app/features/questionario/presentation/components/app_bar_questionario.dart';
-import 'package:quiz_car/app/features/questionario/presentation/components/primary_button_widget.dart';
+import 'package:quiz_car/app/features/shared/presentation/widgets/primary_button_widget.dart';
 import 'package:quiz_car/app/features/questionario/presentation/components/quiz/quiz.dart';
 import 'package:quiz_car/app/features/questionario/presentation/controller/questionario_controller.dart';
 import 'package:quiz_car/app/features/shared/domain/entities/quiz_entity.dart';
