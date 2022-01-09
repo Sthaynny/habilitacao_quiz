@@ -6,7 +6,7 @@ import 'package:quiz_car/core/styles/app_colors.dart';
 abstract class AppGradients {
   static const linear = LinearGradient(colors: [
     AppColors.azulClaro,
-    AppColors.green,
+    AppColors.verde,
   ], stops: [
     0.0,
     0.695

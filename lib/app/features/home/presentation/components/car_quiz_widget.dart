@@ -1,6 +1,7 @@
 import 'package:adaptable_screen/adaptable_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:quiz_car/core/styles/app_styles.dart';
+import 'package:quiz_car/core/utils/strings.dart';
 
 class CarQuizWidget extends StatelessWidget {
   const CarQuizWidget({Key? key}) : super(key: key);
@@ -19,7 +20,7 @@ class CarQuizWidget extends StatelessWidget {
           Padding(
             padding: EdgeInsets.all(8.0.w),
             child: Text(
-              "Car Quiz",
+              Strings.carQuiz,
               style: AppTextStyles.notoSansExtraBold(fontSize: 30.ssp),
             ),
           ),

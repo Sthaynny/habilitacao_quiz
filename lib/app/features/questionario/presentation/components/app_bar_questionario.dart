@@ -1,0 +1,37 @@
+import 'package:flutter/material.dart';
+import 'package:quiz_car/app/features/questionario/presentation/components/indicador_questoes_widget.dart';
+import 'package:quiz_car/core/styles/app_styles.dart';
+
+class AppBarQuestionarioWidget extends PreferredSize {
+  AppBarQuestionarioWidget({
+    required this.tamanhoQuiz,
+    required this.paginaAtual,
+    this.onClosed,
+    Key? key,
+  }) : super(
+          key: key,
+          preferredSize: const Size.fromHeight(86),
+          child: SafeArea(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                IconButton(
+                  icon: const Icon(
+                    Icons.close,
+                    color: AppColors.vermelhoEscuro,
+                  ),
+                  onPressed: onClosed,
+                ),
+                IndicadorQuestoesWidget(
+                  currentPage: paginaAtual,
+                  length: tamanhoQuiz,
+                )
+              ],
+            ),
+          ),
+        );
+
+  final int tamanhoQuiz;
+  final int paginaAtual;
+  final VoidCallback? onClosed;
+}
