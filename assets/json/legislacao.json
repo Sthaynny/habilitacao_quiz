@@ -387,6 +387,690 @@
                 }
             ],
             "imagem": "R0lGODdhMwBOAHcAACH+GlNvZnR3YXJlOiBNaWNyb3NvZnQgT2ZmaWNlACwAAAAAMwBOAIUAAAAREREAADMAAMwAAP8zMzMiIiIzM8wzM/9ERERVVVVmZjNmZmZ3d3dmZsxmZv+ZmWaZmZmIiIiZmcyZmf+qqqq7u7vMzJnMzMzd3d3MzP///8zu7u7///8BAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMF/2AnUmRpnmiqrprYUUMsz3Rt33j8dFru/0CZBjYgxIxHGbI4Wy6ZSaVURrI9p9BoNvt0xqrY5u0aFt+qy1VqomKvS4fnkOaq2+/4vP0hBSP1gIF5BzQUPTOCiYl8UH4xipB6hDNgMpGXdg5GSGhHHJigCDRziKCYDlGOA6aYopRElqyRjFREf4IbFhEJBQC+BgsMERmChJsDhqN6GRABvs/Q0AUMF3q0X7aPeBi90d7fAtV3k0Kw2nYYzt/r3hB3jJwwSAR3HN3s+M8Wdsa1dHYM8gn0VWBPoWyr6nAYyHCfi0nxlLnA8I1BhYv3CLpQEK1BHU2vothp8E2CiwTRGP+4IAnNQB1XTDQcirXyW4ST0RTUbPnxoMg6EUrihBaggFF1z3S6EJXGXEIXGYSKQMmwQs+QUO5k9HVzKsMAn5ammvDkTtBoJr0O9FjnGjKEeDhC69qBar4E47KQEoKHpa+0dQWyNYj1Fh4ODXoZSMAYabQACRoQw9PPSKVzehQYwIDBAjQFnElOtuYzayAFBUVASxshQLFCGMrWyWCgtu1ftaPdts3bqgt42H7W0bCBOIfjGTgkX368uHPi0Dfw0+u0hSxFblVdhwQxeKntgkD6Mw0+EEzLZL+X14OqMOb1eJgKmRnDOnw87ccbvn/HVUT1/LVV2n4BPpTFZWQEoSD/DqpAMU8UDzoI4YQSGrHXghgCoUqEHFL4YIcSYpXhiFYE1yGIKE6YIhX0/ZDgFji8+JaHFDIRYY1XfOgdiWb0COOAIRqxgxYJktEFkQNcaAMFInghxZFH1tCUhwfYV6IPUZJx2QxV1lHjk1pg6d2DCNg3AgVuuGGCmmiq4RQysdFwQIF1RFiJZXR66dMSeerZiFNl9tlBDXstYWaAEm5JBT+EHOBoo48O8Cikjko6KUws1jiBnsccEySNZijaiAs8jgEkjHMO6iSNK6by5oQzrTriE3eG6WISKd44npQV2srjMTLZ6GuMoLa6I69cDFtqsFMYeWWurKb6qq26llrfD3BDkJAtG9m26ea3J9gXAgA7"
+        },
+        {
+            "titulo": "Diante da placa (R-2), você entende que deve?",
+            "respostas": [
+                {
+                    "titulo": "circular no sentido indicado, neste caso, indo para o lado direito."
+                },
+                {
+                    "titulo": "reduzir a velocidade ou, se necessário, parar seu veículo, dando preferência aos veículos que circulam pela via preferencial.",
+                    "correta": true
+                },
+                {
+                    "titulo": "parar seu veículo e olhar bem o trânsito antes de entrar ou cruzar a via."
+                },
+                {
+                    "titulo": "manter a velocidade igual ou abaixo da velocidade indicada na placa."
+                },
+                {
+                    "titulo": "identificar que há veículo quebrado adiante."
+                }
+            ],
+            "imagem": "R0lGODdhNwAxAHcAACH+GlNvZnR3YXJlOiBNaWNyb3NvZnQgT2ZmaWNlACwAAAAANwAxAIT/AAD/MzP/Zmb/mZn/zMz///8BAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMD/0iy3P4wyjgIuDjrzbvvRSF8ZGlqQlicbLupxeDO5wAXAa13wV1YG4JwSCwaj8WchuDDbWzNqLS56TWBmql2OlpKu5nUdqzCYsRRM4bMVma2Mo2VPVUDoFoOky51r8d2c3w3cRl4W34Xh4MhiYJbgYwwhRh7bGAYi3R2aGx2AJZ8lBehl0+MnJJOXnyJAKoiVXx2mq1BdI6wIZFkdqWSrrVNubq7HGOjoMUqmBedURvPxXpTycuEsmmn1zCuvyHNj9zJ4j/b3N3nzHLoPp83vu0+zXfpYfJUtzEv+PPRIf/6+fBmTaAPcvoM3nDFTyE8Et8cMnTmUFuHiBWTAZBWsRvMsY5SRgkD2QhDOZIqCo1E6YQjS48YX8bglgAAOw=="
+        },
+        {
+            "titulo": "Diante da placa (R-4a), você entende que é proibido?",
+            "respostas": [
+                {
+                    "titulo": "realizar conversão à direita."
+                },
+                {
+                    "titulo": "seguir em frente ou entrar na rua ou área restringida."
+                },
+                {
+                    "titulo": "realizar conversão à esquerda.",
+                    "correta": true
+                },
+                {
+                    "titulo": "dar meia volta ou retornar."
+                },
+                {
+                    "titulo": "entrar no estacionamento."
+                }
+            ],
+            "imagem": "R0lGODdhNQA1AHcAACH+GlNvZnR3YXJlOiBNaWNyb3NvZnQgT2ZmaWNlACwAAAAANQA1AIQAAAAREREzAAAzMzMiIiJERERVVVVmAABmZmZ3d3eZZmaZmZmIiIiqqqq7u7vMAADMmZnMzMzd3d3/AAD/MzP/Zmb/mZn/zMzu7u7///8BAgMBAgMBAgMBAgMBAgMBAgMF/2AmjmRpZpdlVVSlXmcsz+ZKTXiu4y7tz5bbbkikWH5IVIXIZFZgSZmlSWUeoyZhlcKt4ijY0bLZslygohSLGh4PW8mpNeneXbHyIXpWz4HDJH04PhdMe4AZghSHJYI5jGF5ORVSVTAXC4gZkjh3JV4TEAAImolDJ31dQwKkpVo8JYU7Iq85CqW0O3t9d7U4kFF9lCOnIwsPRMBJxZt2IwgAAMhDEAvW19cRPpxXtSMD0dHTOwLh5uEMM7I5VztgEefiROXx4QUz7s06Fg318qv+oiWQ0UdfDhHQ/I3TQc+fgxicDP4SwSCAwnkBW5lY16nOHxERLNZbmKPhuQExOP9OWKHjowgJ4E5C8DXhQL0AMl6t8XPCwLmBGWgqiEcgp44KHmMwMKeRpslRRicljQEvmsagGMNdJaFShS4ZEcBtdao1pZ2INAZsxQoQANAaurj50JYF41oRBTPkQ+T0LtsvuXS4InLrxI5hcjXRZMQrDTO+yUp4G1HLU5gIJCfi3et4liZ4mSdAGWK5lkssVUNfqDXs02FEVaWBgsRpJaDYsqlYJuFr99xzoQHP8NUaCe5RNE/HKBIFQ4MGC55HoFm8EhHfPhxNqK6O5nY63rnTWE3myCEYQaiI/6Hdnaoq68GDAoUdy4X285XjSj+/pTJcKXjnjhm4xGEGUi24QCADIiEAADs="
+        },
+        {
+            "titulo": "Diante da placa (R-4b), você entende que é proibido?",
+            "respostas": [
+                {
+                    "titulo": "dar meia volta ou retornar."
+                },
+                {
+                    "titulo": "entrar no estacionamento."
+                },
+                {
+                    "titulo": "realizar conversão à esquerda."
+                },
+                {
+                    "titulo": "seguir em frente ou entrar na rua ou área restringida."
+                },
+                {
+                    "titulo": "realizar conversão à direita.",
+                    "correta": true
+                }
+            ],
+            "imagem": "R0lGODdhPAA8AHcAACH+GlNvZnR3YXJlOiBNaWNyb3NvZnQgT2ZmaWNlACwAAAAAPAA8AIUAAAAREREzMzMiIiIzZmZERERVVVVmAABmZmZ3d3eZAACZMzOZZmaZmZmIiIiZzMyqqqq7u7vMAADMMzPMmZnMzMzd3d3/AAD/MzP/Zmb/mZn/zMzu7u7///8BAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMF/2AnjmRpkluarVm6nXAsz92WYVeu7znW0sCgBscrGi8YTXBZ2hyfTyUTaINajb9pTHPtGqXaEvGK8d28l0x4xLVmNKnTRpOxYtb1ZzZYfb6YbVh/Wn1GgzR5RRiHaxtjO3dUT2swjzqRM4mKlCeaOmoygUegUxUwnjlgJk5XpEsIAxadRltemEEJAAENJ5ZpcoqiO640uQAADieGJr4vwpdLxscCHCabKEWkzznEMdLHA6YkqIfNJNtIQN/HyNg8t9km6BkVFA/1FQ8U+RQRBOwAASSoJsITpmeMRKBTELChQ3bURLDa8cfSrRILH2oEGCCCiCJS4sVYcETCxpMCO/9YrFEk4YgIAA4cYYjyITWDLCHJKHBMphGTNQMiqDZRR84dMgKw81mEZlAAHiW2xAnDQkCmPICiDCeGRyFuMWBeLdkAglmeDQX04kGHR7eXDrEOG7EOAINTbj2pKiE2oIN5IhBwFDdrmKe3IvqyG6DwyB1pAgivNfwubEMDbEYJBlCARstnlgNizvwTAC/PXoumg6H4GAKMRyYAQaj6gssOrQGMPueYBujae+EKPQFYBlVUrC/DQHexhEhyJ3K/Xj4KRu0/td/m3k28twnkI8zxbTi9FpYm1xq7NbHdt/eCIJ23HC96dvWj0NAXoQ+w/Ix5jsT3XXq4KScEGojV9kt5YgYe2MVtHWwDinRToLNDcCWg8kt7FUKBWFeKbFBWWWZJtoSFSzgG4RIBfsGiHivK8NV6TLQoSI0a6oAhEL5AsoccZ0CxYxA5QoIECzf0mE2M9qHh5JBhFOlkfpwQp6STSVT535V2QKklCkN48QaTX8qhApItxFFlCAA7"
+        },
+        {
+            "titulo": "Diante da placa (R-5), você entende que é proibido?",
+            "respostas": [
+                {
+                    "titulo": "realizar conversão à esquerda."
+                },
+                {
+                    "titulo": "passar sobre o canteiro central."
+                },
+                {
+                    "titulo": "realizar conversão à direita."
+                },
+                {
+                    "titulo": "seguir em frente ou entrar na rua ou área restringida."
+                },
+                {
+                    "titulo": "dar meia volta ou retornar.",
+                    "correta": true
+                }
+            ],
+            "imagem": "R0lGODdhNQA1AHcAACH+GlNvZnR3YXJlOiBNaWNyb3NvZnQgT2ZmaWNlACwAAAAANQA1AIUAAAAREREAMzMzAAAzMzMiIiJERERVVVVmAABmMzNmZmZ3d3eZZmaZmZmIiIiZzMyqqqq7u7vMAADMZmbMmZnMzMzd3d3M////AAD/MzP/Zmb/mZn/zMzu7u7///8BAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMF/6AnjmRpety2aZmmcmcsz+aaYXiu4y7tz5vbbkjMbH5IlIbIZGpgSdmmSWUeoyZhNcOt4jLY0bLZ2nCgohSLGh4PW8mpNeneXbHyIXpWz4FLHRAHBAAABAcNMX04PhxMex4MhZOUAxEnixmQJYs5aISUoYUKJ3k5GlJVMAqirYYdNUN3JV4Ykq6tBphDuzpdQwOUBQoQFhAKAaEQJ1o8JY47Is05wQAGsCQVoJPYJdN7fXfTOAMLMR3bAAm9pyS8JOMYmyMXod3u0SKmGLPSRPMiKFC6FEvHlWknIEj4J0PAJFImoOW4suNPiQUAFuqJwWpUjIoe9vUTkaCQxh3zKv9MCqAo2r4YDk0yLBFhZYyX++YVoBQPUs1CLE9IxLHCV4xqAFj2JPETQIEYQ/nVsVginb+NIpoGZaZjjR+YNq+izBqW66mpRynBY6hVRjMNaE/sBOrtX9OnQu3klEupQt0hE8o+05vPxNxCBNcCo1sKpUi+kxIr3hFsK6d8IA0PjBFvAN4sRj0gFGEhgOlQppOZm6wDwceu+uyM6OjqM2tPJsKleSfisCjJt3FAGi2W6AgIrta5nemhD9WoGEgcEBXgAo2lHmT9/SqiQzJKiWhUOKmDwzRUJoag94B8knIaNck3mbeP3wgDk6z7+ClfO2f/HRTiABJN9cfdcjug5wBZAUloFQ9VMhRBWhIcQABBAw/Esx4Qc7ThBIXxYLAhDV6ph4V5ZBwBCQxBUDEiHbVwEWKCYXAyYy0G1RhRJzh+oaMUN5IB0I8jpBDkF2YQGcULLMDlQpI6hgAAOw=="
+        },
+        {
+            "titulo": "Diante da placa (R-6b), você entende que?",
+            "respostas": [
+                {
+                    "titulo": "pedestres devem circular pelo lado direito da via."
+                },
+                {
+                    "titulo": "é proibida a circulação de pedestres na via ou área sinalizada."
+                },
+                {
+                    "titulo": "pedestres devem circular pelo lado esquerdo da via."
+                },
+                {
+                    "titulo": "é proibido estacionar."
+                },
+                {
+                    "titulo": "é permitido estacionar seu veículo no trecho regulamentado.",
+                    "correta": true
+                }
+            ],
+            "imagem": "R0lGODdhNQA1AHcAACH+GlNvZnR3YXJlOiBNaWNyb3NvZnQgT2ZmaWNlACwAAAAANQA1AIQAAAAREREzMzMzZmZERERVVVVmMzNmZmZ3d3eZmZmIiIiZzMyqqqq7u7vMmZnMzMzd3d3/AAD/MzP/Zmb/mZn/zMzu7u7///8BAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMF/+AljmRpXhVFTdKkVmcsz+YqRXiu4y7tz5TbbkiUUH5I1ITIZE5gSRmlSWUeoyZhVcKt4iTYUUU7bFEqUFGKRQ1XmK3k1Cqnh+fDNI38DZeWQz9EE34mgDoSeoZDV4UleDmEMYc5jSMWEJmaDxCcnpmcECSQOJYkQ5IlBACsra6vrX+Bi4gxBrC4rgFZO6lqsycDucMAJ3x6lBGmJLfEsLu0kac7M8KtBQzZ2QkOC9wJCw4xwKTLzK4JjuUifDTWrAqObzpXO2AzzfCOF/YX69Wu4jlK5o8ajXwA0qmjRkqRiXcABBxAgGBiRYoTD4iKMa8SpXv4nMFqIKNjqY8+IO6KBMBgBhk2OUDKQLiSpIyXKN2tdNXypo4JOUO2OvCggdGjSBtYKLlDxQ6HJSAKLGRSGSkfCBUWavhPhtR9BPnVEspKqx8y99oBbDXVTy8RXU8gbIsl2ZWqEdaywqatr98Hxgyyazpzp6sD0fqIAfbQ8FATjErwkXnOMQDEJPj4GoEqmOXLJJJFgEpKmQlMmlKrVr0UbuQYfEzvG1VmT+fZF0RTHld7X+y8P0qX8iMaB1SOvyNsngHTnrkZY5oYQVECRhDpA71E4JK813EkzbVTeY6lQnHxinGPuI4+5vfZKbojOqM++BmgLVzQLxQCADs="
+        },
+        {
+            "titulo": "Diante da placa (R-7), você entende que é?",
+            "respostas": [
+                {
+                    "titulo": "proibida a entrada ou a passagem de veículos de carga na área ou via sinalizada."
+                },
+                {
+                    "titulo": "proibida a circulação de pedestres na via ou área sinalizada."
+                },
+                {
+                    "titulo": "proibido estacionar em fila dupla."
+                },
+                {
+                    "titulo": "proibido mudar de faixa de rolamento."
+                },
+                {
+                    "titulo": "proibida a manobra de ultrapassagem no trecho regulamentado.",
+                    "correta": true
+                }
+            ],
+            "imagem": "R0lGODdhNQA1AHcAACH+GlNvZnR3YXJlOiBNaWNyb3NvZnQgT2ZmaWNlACwAAAAANQA1AIUAAAAREREAMzMzMzNERERVVVVmAABmMzNmZmZ3d3dmmZmZAACZMzOZZmaZmZmIiIiqqqq7u7vMzMzd3d3/AAD/MzP/Zmb/mZn/zMzu7u7///8BAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMF/6AmjmRpath1WZWlYmcsz+ZaUXiu4y7tz5fbbkisXH5IlIXIZFpgSdmlSWUeoyZhtcKt4irYEUY7bF0wUFGKRQ1jmK3k1Cqnh+fDNI38DZeWQz9Men4agDoVhH9NindDFjKHg4UkeDlXJl4UjViSOCeeiUScUXyQJG87aqOUI3x6npipO6RInqcigaisrboalhSYYryFwFd8MbM6tTTKwbmIMs44zDM7YMYkDg/cDwkNxCQRDQoN3OQNJJ6/qiMRDxMSE/ES05smCPLx+w8OI8Dslo1AkCzcAwkxBgzTsSKaCAkFIkicOJEBEUwDKGpE4A/FjoY5wIgoAKCkyZMADv8QgSQBpUuFIsiwCTkigEuUAoDxIHATJUINMiWJbNnzpAN7C4qafBBThwWhIiAoXRpwh4GpBTwyBAZD6lQACkTopJC0aFZnKtp5nZpOhCccV3tm5ZptrdKw/4iUdZl1nYZrIkpCyCCBwAB5hEv+HPGW7IAHGSZkEAzUITINETqecKC50koSEhJAy3EqG6XGwtx+XNWO0lhcTXWQ4JM6TGNcoXa1dv357+rZgFsZumjqxCPhVak00lnbdpXmsRkiH9tnBh8KsAs1FkmjiPDG1ZJLdx6u2XUeSWZeC4/q/JcjhGAEaZJIuxcuXbxkt+1e02/hGDTmX3XI/dMfFfUVaEIQCgeGdIaCPqiwAgtPvUBJCAA7"
+        },
+        {
+            "titulo": "Diante da placa (R-9), você entende que é?",
+            "respostas": [
+                {
+                    "titulo": "proibido realizar operação de ultrapassagem no trecho regulamentado."
+                },
+                {
+                    "titulo": "proibido mudar de faixa de rolamento."
+                },
+                {
+                    "titulo": "proibida a circulação de toda a espécie de maquinaria agrícola na área ou via sinalizada."
+                },
+                {
+                    "titulo": "proibida a entrega de cargas na área sinalizada."
+                },
+                {
+                    "titulo": "proibida a entrada ou passagem de veículos de carga na área ou via sinalizada.",
+                    "correta": true
+                }
+            ],
+            "imagem": "R0lGODdhNQA1AHcAACH+GlNvZnR3YXJlOiBNaWNyb3NvZnQgT2ZmaWNlACwAAAAANQA1AIUAAAAREREAMzMzAAAzMzMiIiIzZmZERERVVVVmAABmMzNmZmZmmZmZAACZMzOZZmaZmZmIiIiZzMyqqqrMAADMzMzd3d3/AAD/MzP/Zmb/mZn/zMzu7u7///8BAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMF/2AnjmRpdpumZVimbmcsz+aKXXiu4y7tz5rbbkjEaH5IVIbIZGZgSZmmSWUeoyZhFcOt4jDY0UY7bGk2UFGKRQ1vmK3k1Cqnh+fDNI38DZeWQz9MfiaAOhh6hXCEJXg5GTKGRYwkjjhXJl4XlCOSOCeeRmWcInyQJG87Ip6fpHx6npiWF2CcnqcigSSsm5y6HZaYI7O1jMGlqiYcrIiMqTlXO8UjEwAEzCQREBHaFT7SwDvCHRwABQLXZVAA7OwQHQ8MD9qKOuH2JRALIgvp4Bvt3HUIWGCEBRGW7uVIJG8EAX+HygV8R5DfATXiJE0jN4DAgo8CrDkoE9DagoABPv8GQIBRx4pDJSSUDNhgCIWZOAEoGEGGTY6NEHKyS2BTaEADPHVk0FgiglEANYc81Zn0EVMSBKZG1XHTKFIU4iylqTYVAAWbA4QGaAkt4YgKBAKgJFCgAN27RLqyu2v3okIcKcSVqNCOwAw+OAAcOAgqGbgSEw4g4LDH5mGYHfhQQryRxI5TxxhxbuySbQ5OiHuR0FwVGupRnR6bbrWZyIgh4/h0DsN5zOcTQ3CJLpPnxKxxflKXjoEYOe8mu1cHdzXpG+zhv2jMuuSH14VEM3wTEa4djvPwymkdSQQjCHRG3g9xSa8UfBSfmqgYIaUkf5Mn/A1DH3T28ZfCgF+cEaAKDyqswMJSLzASAgA7"
+        },
+        {
+            "titulo": "Diante da placa (R-11), você entende que é?",
+            "respostas": [
+                {
+                    "titulo": "proibida a entrada ou a passagem de qualquer tipo de veículo automotor na área ou via sinalizada."
+                },
+                {
+                    "titulo": "proibido realizar a operação de ultrapassagem no trecho regulamentado."
+                },
+                {
+                    "titulo": "proibida a circulação de pedestres com animais."
+                },
+                {
+                    "titulo": "proibida a entrada ou passagem de veículos de carga na área ou via sinalizada."
+                },
+                {
+                    "titulo": "proibida a circulação de toda classe de veículos de tração animal na área ou via sinalizada.",
+                    "correta": true
+                }
+            ],
+            "imagem": "R0lGODdhNQA1AHcAACH+GlNvZnR3YXJlOiBNaWNyb3NvZnQgT2ZmaWNlACwAAAAANQA1AIUAAAAREREAMzMzAAAzMzMiIiJERERVVVVmMzNmZmZ3d3dmmZmZZmaZmZmIiIiZzMyqqqq7u7vMAADMmZnMzMzd3d3/AAD/MzP/Zmb/mZn/zMzu7u7///8BAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMF/yAnjmRpclqWYRemamcsz+Z6WXiu4y7tz5nbbki8ZH5IFIbIZGJgSVmmSWUeoyZh9cKt4i7YkUY7bGU0UFGKRQ1rmK3k1Cqnh+fDNI38DZeWQz9Men4cgDoXhH9NindDGDKHg4UkeDlXJl4WjViSOCeeXXmUI3yQJG87Inw4nFF8ep6YrJukhjunIoEktK5IuxyWFpilRL4+wld8DQcNFbzGlKmXuogRAAABDdCjJAoTIwTbHBsEFCQ7YMnX2ADjq9HhBCMACSIVAA4knsGq7O3vCEiIx6HAPA7X7HGg4K6SKmEaHLRrR2ABAmwDR0HAViBAu3P49InZsQIRBwUACP94nDgx446LLNs5uPYOBUlJYMiJWBkTgEsdA3pONPCsWA42OXKGE4qRSFCmAAxw44GzRAOoPp1ChTDVAoaqJCrwFPozx1OWBUpMw6FiB6ED2MayLIvjLEW1JIWZkDiPAoUIDAjM1TpRQQmIyUrAjWDiqYEIYwhjEzmCH4d0JQgcOPEAW1ez7Yoa7cOBT+ZzJwYoHA00ZSYdpxKP2BxDwIYsRBCYkKUGGAXDMWjj7sbawucrDYCbqJA2Rq/KmEeq8oHaebwhxEpHJ9XL1IlHtrR7aSRsWHhaOrJ/Nm8LvQWl1nGdLyKoTHsiuYDY6eQkSWT8dfQXxX9FHEEIDEFQkV8tFJ7AIUoVC4aBlCZVqOeHBg1SmFR4h7lHRSIcnpCCh0mdESIyZ3zVggsmFhICADs="
+        },
+        {
+            "titulo": "Diante da placa (R-19), você?",
+            "respostas": [
+                {
+                    "titulo": "reduz a velocidade e, se necessário, pára seu veículo, dando preferência aos veículos que circulam na via preferencial."
+                },
+                {
+                    "titulo": "mantém velocidade igual ou abaixo da velocidade indicada na placa.",
+                    "correta": true
+                },
+                {
+                    "titulo": "pára seu veículo e olha bem o trânsito antes de entrar ou cruzar a via."
+                },
+                {
+                    "titulo": "circula somente no sentido indicado, neste caso, para o lado direito."
+                },
+                {
+                    "titulo": "circula acima da velocidade indicada na placa."
+                }
+            ],
+            "imagem": "R0lGODdhNQA1AHcAACH+GlNvZnR3YXJlOiBNaWNyb3NvZnQgT2ZmaWNlACwAAAAANQA1AIUAAAAREREAMzMzAAAzMzMiIiIzZmZERERVVVVmMzNmZmZ3d3dmmZmZZmaZmZmIiIiqqqq7u7vMmZnMzMzd3d3M////AAD/MzP/Zmb/mZn/zMzu7u7///8BAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMF/yAnjmRpclqWYRemamcsz+Z6WXiu4y7tz5nbbki8ZH5IFIbIZGJgSVmmSWUeoyZh9cKt4i7YkUY7bGU0UFGKRQ1rmK3k1Cqnh+fDNI38DZeWQz9EGH4mgDoXeoZDVyIVGhQbPpAleDmEMYc5jRAEAJ8ABA4nEwigAwqSIpY4jSVDmBwOoLQACiURtZ8CaZo4J75gIhO0BwQBoA8kA7qfBiR8sWqBIwegoxwTBZ8BIw+gChUU1p8T0Dt6vq7bAAckC6AjngDPI8gACyS+0tTyn+7eQKkC1YBEgk8FXu0YwcqVLFARhoGTWI4Eg08DKu24wucEuXYH7hWgIGJWxREmAf+YE7NRxA5hJTYo0EWABARQJFGCqqAwB5iGJ1LWulUSp01QK0f44sDqxM1PCihMmPkpH4enAHIW/aSoKStFHOYlHEEVwNasJFImnaZjBSITFK6RiPsJQjaIJL4BEGDiTVtNMEfQBYBNxGBsyUiQy5hFBxufcCfq/BSRAzuAIu4xOEEGA+AT8wgPY9dNhF5bGyiYOlmi82cTWAEU+AhAmYgN93RhJuF309egzQAgKAEhNyheJ3q3ahojwgF2oezCRXAvQKoYX4HKSE1BawzuNJZyeFmCQoDCSApEUDA2BhlhHefWjkJMplkZOzBpNzw/AoIIGyBAwQP/bbCAAistUJP7KTJF9UdLKPTDQVwP5DLcBv9sEwAC20hyQD4zHUBdAKqIEJ+JEE6ITwHDcYChO8TkM8sEuEVkCknwaBUMb/0MBhCG+RAzyk0RxEXSTKah5VKKKL6lYgHw2AXkXXbNqKAIpiSZUzQnwKKiMgQUsMGUQl6l0ociIMnBNyT5YgFYTDFCjDJzTpnLKLNEEIAEWN7HJisWOHTORlqNOaFgiPJ0W4kUABoYZ14Wok8ZglAqKQd84ABnDXZg4aamSYzhRBKPvbSpDKLCcYQiMATRRCKFfFpGF15I40epXlQhqB8ayJprH5fWkGmusAYbQwrDlnGGsUi8wIJnLixbSAgAOw=="
+        },
+        {
+            "titulo": "Diante da placa (R-1), você entende que deve?",
+            "respostas": [
+                {
+                    "titulo": "somente circular com seu veículo no sentido indicado."
+                },
+                {
+                    "titulo": "reduzir a velocidade e dar preferência aos veículos que circulam pela via preferencial."
+                },
+                {
+                    "titulo": "parar seu veículo e olhar bem o trânsito antes de entrar ou cruzar a via.",
+                    "correta": true
+                },
+                {
+                    "titulo": "reduzir a velocidade ou, se necessário, parar seu veículo."
+                },
+                {
+                    "titulo": "estacionar o veículo."
+                }
+            ],
+            "imagem": "R0lGODdhNAA0AHcAACH+GlNvZnR3YXJlOiBNaWNyb3NvZnQgT2ZmaWNlACwAAAAANAA0AISZAADMAAD/AAD/MzP/Zmb/mZn/zMz///8BAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMD/3i6zCQwykkFaTjr88YgXwiOYvltKPZULDtYaby29ORdsTbXPPTiOUdvGLkFFzti73csKJ8WQSFnELygxIchVb1iia+pxpn89rQZg8eMfYgXTi/76dkqquU5WHro6tlaUX+AAgBOg2ZOAYeIWE6GjV+KjJFKj5SVQ5MTBp2elAWdE6GenTOkpWoSlxN3nXcRdjtbpQortKlymxIKRVtMU1URU3K9Ar80rLwHqxx8A1MSyBHG0yy71Myxzn0wjFME4QO0ELQFoeejhcLZ6ApxB4fd5Rjsdg3qi5x3fYdbBeGmgYPWx8uWGsqyURiQwd+BK8G2yaGADYIxCRcKePBgjIXYNocTORXCdHHbqIfHUPqo1ifXKgH6VrGLNdOKgQcEVEXI6QRVKV0jMz2pKJRHwqJGYWJC2uIo06ZRQj6VwASE1KlGbK2ZSvWEkKtCmajY+jRrBqtlvW4AwVRsijyIzMoIC+OIs0hyj8D9ktfuXjp17Tb4O6SvYFsQSCgusRjn4bWAgiQAADs="
+        },
+        {
+            "titulo": "Diante da placa (R-3), você entende que é proibido?",
+            "respostas": [
+                {
+                    "titulo": "mudar de faixa de trânsito."
+                },
+                {
+                    "titulo": "realizar conversão à esquerda."
+                },
+                {
+                    "titulo": "realizar conversão à direita."
+                },
+                {
+                    "titulo": "dar meia volta ou retornar."
+                },
+                {
+                    "titulo": "seguir em frente ou entrar na rua ou área restringida.",
+                    "correta": true
+                }
+            ],
+            "imagem": "R0lGODdhNQA1AHcAACH+GlNvZnR3YXJlOiBNaWNyb3NvZnQgT2ZmaWNlACwAAAAANQA1AIUAAAAREREAMzMzAAAzMzMiIiJERERVVVVmMzNmZmZmmZmZZmaZmZmIiIiZzMyqqqq7u7vMAADMmZnMzMz/AAD/MzP/Zmb/mZn/zMzu7u7///8BAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMF/6AmjmRpath1WZWlYmcsz+ZaUXiu4y7tz5fbbkisXH5IlIXIZFpgSdmlSWUeoyZhtcKt4irY0bLZumCgohSLGh4PW8mpNeneXU0ZIBM9q+fAMgQ+fjg+GHsyDAANg298JoQ5jyMFAAA/cjoWUlWTipYQmEN3JV4UjwSWAII/hCd+XUNoE6qWE0haPCWHOyK5kiIGtQAHSb98fne/OBi0wwCTMX6bI0MlyxQIzwAKSdYimTikvkQDzwNxduQ6Mdjmw4w/vDlXO4An7sOsP/Ya4RTjrpUb9gCJH3+9aLgLQKBhAiT/EOqIJnDIgjDzxNW5p5AIRRkZAW405hFLrjV/ovBg+4hP08goEUricqmD4w8CMWXJs/OPpQlzOXf4RMEzYRIBloJOpNHzX8AZ7wAoBSbjoIZ+SSpZSrBSRi5Av6JoJaah64kd1JxmVfWwrEwSydJ8+zG2rVudJMKO+PX0RNRie9/CIhGSAhKkWysKFTFK8Zcff7N4/EWtFFofiAHYzWsq2j+ANKJu5kyl710dpjVkBtySiU3Jl2PUnYHt9dk3slWxbh2b6ZwSEB5IcHDrlZMkGLBRqOzjcw7m8pRTMIJilz/py8OIiGSPC/bn2uF+NyUu/C7u5KebjxEkfc2h4VOMn25mfRQVK1hYcFE/fAgAOw=="
+        },
+        {
+            "titulo": "Diante da placa (R-6a), você entende que é proibido?",
+            "respostas": [
+                {
+                    "titulo": "seguir em frente ou entrar na rua ou área restringida."
+                },
+                {
+                    "titulo": "dar meia volta ou retornar."
+                },
+                {
+                    "titulo": "estacionar no trecho abrangido pela restrição.",
+                    "correta": true
+                },
+                {
+                    "titulo": "parar, ainda que para operação de embarque e desembarque por curto espaço de tempo."
+                },
+                {
+                    "titulo": "estacionar em toda a extensão da via em determinados horários do dia."
+                }
+            ],
+            "imagem": "R0lGODdhNQA1AHcAACH+GlNvZnR3YXJlOiBNaWNyb3NvZnQgT2ZmaWNlACwAAAAANQA1AIUAAAAREREzAAAzZmZVVVVmMzNmZmZ3d3eZZmaZmZmIiIiZzMyqqqq7u7vMAADMZmbMmZnMzMzd3d3/AAD/MzP/Zmb/mZn/zMzu7u7///8BAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMF/2AmjmRpZpdlVVSlXmcsz+ZKTXiu4y7tz5bbbkikWH5IVIXIZFZgSZmlSWUeoyZhlcKt4ijY0bLZslygohSLGh4PW8mpNeneXbHyIXpWz4HDJH04PhdMe4AZghSHJYI5jGF5ORVSVTAXERKampmdEpmfmiSSOHclXhMXAwCsra6vrY1DJ31dQwWwua4BWTuUJIU7Ilo6ArrHJ8SpgXYjyjjGx6+8Jn2/IrMkzxPGBAzf3wkQC+IJCxAx2RmkpsNEAgmI680ZyjHbD/LBOVc7f8lEICHxN09HuxLbBProUzCHj4SASDXEoVBEAQdEEBw4YGBjRwMSZOwrVeefjFUYh/9Ee9VApJ2SPnABSLljZSsGM4it8eNjFSuaxVjm1FEBJg2ZP9+5wilDp9EZPlkZwBehQQMMLg2SqpgBKYB4EGmMnKBCGI2oABS400NjK7ujrtSu3VGRYQaCUF3FcxawqY4/9mZ4lcuX7QlfIt6e1NvLMDODadSd8EogQTgGloE+Qmh2bqnF0pI6rgVMcgmv0jRTxEavMM8TaEOrTqXsGokhtkeglo0KEimyJjBsGk58+IVtkO8NORgG+QSTABHL8/yaRpHp9YjkjvH7cyQnSY6DR9KdBxbxTIygKAEjCJXtSBy9sVUFfpSdqKowD3NBfv4JT2BXgnv/+cGVPgRuYYYLgOSZUVQLLiyISAgAOw=="
+        },
+        {
+            "titulo": "Para o licenciamento de um veículo, em outro Estado, deve-se?",
+            "respostas": [
+                {
+                    "titulo": "obrigatoriamente alterar os caracteres das suas placas."
+                },
+                {
+                    "titulo": "pedir autorização ao Conselho Nacional de Trânsito."
+                },
+                {
+                    "titulo": "dar ciência ao Departamento de Trânsito do Estado de origem.",
+                    "correta": true
+                },
+                {
+                    "titulo": "pedir autorização ao Conselho de Trânsito do Estado de origem."
+                },
+                {
+                    "titulo": "pedir autorização às Prefeituras Municipais de origem e atual."
+                }
+            ]
+        },
+        {
+            "titulo": "A prestação dos exames para obtenção da Carteira Nacional de Habilitação só poderá ser requerida pelo candidato que seja alfabetizado e tenha completado?",
+            "respostas": [
+                {
+                    "titulo": "dezessete anos."
+                },
+                {
+                    "titulo": "dezesseis anos, com autorização dos pais."
+                },
+                {
+                    "titulo": "dezesseis anos."
+                },
+                {
+                    "titulo": "vinte e um anos."
+                },
+                {
+                    "titulo": "dezoito anos.",
+                    "correta": true
+                }
+            ]
+        },
+        {
+            "titulo": "As subdivisões da pista de rolamento, com ou sem separações de marcas e cuja largura permite a circulação de um veículo com segurança, são chamadas?",
+            "respostas": [
+                {
+                    "titulo": "vias públicas."
+                },
+                {
+                    "titulo": "faixas de segurança."
+                },
+                {
+                    "titulo": "áreas urbanas."
+                },
+                {
+                    "titulo": "passagens de nível."
+                },
+                {
+                    "titulo": "faixas de trânsito.",
+                    "correta": true
+                }
+            ]
+        },
+        {
+            "titulo": "Ao Departamento de Trânsito (DETRAN), órgão executivo, cabe, entre outras, a atribuição de?",
+            "respostas": [
+                {
+                    "titulo": "sugerir modificações sobre a Legislação de Trânsito."
+                },
+                {
+                    "titulo": "expedir a Carteira Nacional de Habilitação.",
+                    "correta": true
+                },
+                {
+                    "titulo": "estabelecer os modelos das placas de veículo."
+                },
+                {
+                    "titulo": "regulamentar o serviço de aluguel de veículos."
+                },
+                {
+                    "titulo": "construir as vias públicas."
+                }
+            ]
+        },
+        {
+            "titulo": "Ao Departamento de Trânsito (DETRAN), órgão executivo, cabe, entre outras, a atribuição de?",
+            "respostas": [
+                {
+                    "titulo": "vistoriar, registrar e emplacar veículos.",
+                    "correta": true
+                },
+                {
+                    "titulo": "organizar estatísticas de trânsito em todo o país."
+                },
+                {
+                    "titulo": "opinar sobre assuntos relacionados com o trânsito internacional."
+                },
+                {
+                    "titulo": "alterar as normas de sinalização."
+                },
+                {
+                    "titulo": "construir novas vias."
+                }
+            ]
+        },
+        {
+            "titulo": "Expedir a Carteira Nacional de Habilitação é atribuição?",
+            "respostas": [
+                {
+                    "titulo": "do Departamento Nacional de Trânsito."
+                },
+                {
+                    "titulo": "do Departamento Estadual de Trânsito.",
+                    "correta": true
+                },
+                {
+                    "titulo": "do Conselho Estadual de Trânsito."
+                },
+                {
+                    "titulo": "do Conselho Nacional de Trânsito."
+                },
+                {
+                    "titulo": "da Prefeitura Municipal."
+                }
+            ]
+        },
+        {
+            "titulo": "É dever de todo condutor de veículo?",
+            "respostas": [
+                {
+                    "titulo": "nas vias urbanas, deslocar com antecedência o veículo para a faixa mais à direita da via quando for entrar para a esquerda."
+                },
+                {
+                    "titulo": "circular com o veículo somente pela faixa da direita."
+                },
+                {
+                    "titulo": "portar e exibir, quando solicitado pela autoridade de trânsito, os documentos exigidos por lei ou regulamento.",
+                    "correta": true
+                },
+                {
+                    "titulo": "ultrapassar outro veículo em movimento somente pela direita."
+                },
+                {
+                    "titulo": "estacionar na calçada, quando não houver vaga no meio-fio."
+                }
+            ]
+        },
+        {
+            "titulo": "O órgão máximo normativo do Sistema Nacional de Trânsito é?",
+            "respostas": [
+                {
+                    "titulo": "o Departamento Nacional de Trânsito - Denatran."
+                },
+                {
+                    "titulo": "o Conselho Nacional de Trânsito - Contran.",
+                    "correta": true
+                },
+                {
+                    "titulo": "o Ministério da Justiça."
+                },
+                {
+                    "titulo": "o Departamento Estadual de Trânsito - Detran."
+                },
+                {
+                    "titulo": "a Circunscrição Regional de Trânsito - Ciretran."
+                }
+            ]
+        },
+        {
+            "titulo": "Os Departamentos de Estradas e Rodagens são órgãos?",
+            "respostas": [
+                {
+                    "titulo": "normativos do Sistema Nacional de Trânsito."
+                },
+                {
+                    "titulo": "executivos do Sistema Nacional de Trânsito.",
+                    "correta": true
+                },
+                {
+                    "titulo": "com jurisdição em todo o território nacional."
+                },
+                {
+                    "titulo": "normativos do Conselho Nacional de Trânsito."
+                },
+                {
+                    "titulo": "com jurisdição em todas as vias do estado."
+                }
+            ]
+        },
+        {
+            "titulo": "A cópia fotostática ou a fotocópia da Carteira Nacional de Habilitação?",
+            "respostas": [
+                {
+                    "titulo": "são válidas e substituem o documento original quando autenticadas em cartório."
+                },
+                {
+                    "titulo": "são inválidas para substituir o documento original e comprovar o direito de seu portador de dirigir.",
+                    "correta": true
+                },
+                {
+                    "titulo": "são válidas quando apresentadas junto com o documento de identidade do portador e os documentos do veículo."
+                },
+                {
+                    "titulo": "são válidas quando apresentadas junto com o documento de identidade do portador."
+                },
+                {
+                    "titulo": "podem ser plastificados, substituindo o documento original."
+                }
+            ]
+        },
+        {
+            "titulo": "A realização de qualquer ato público que interfira no trânsito depende de?",
+            "respostas": [
+                {
+                    "titulo": "licença especial do Prefeito."
+                },
+                {
+                    "titulo": "autorização do Governador."
+                },
+                {
+                    "titulo": "prévia autorização da Autoridade de Trânsito.",
+                    "correta": true
+                },
+                {
+                    "titulo": "autorização de todos os moradores locais."
+                },
+                {
+                    "titulo": "pesquisa de opinião pública."
+                }
+            ]
+        },
+        {
+            "titulo": "É proibido o uso da buzina no perímetro urbano no horário compreendido entre?",
+            "respostas": [
+                {
+                    "titulo": "22 (vinte e duas) horas e 06 (seis) horas",
+                    "correta": true
+                },
+                {
+                    "titulo": "20 horas e 7 (sete) horas."
+                },
+                {
+                    "titulo": "18 (dezoito) horas e 06 (seis) horas"
+                },
+                {
+                    "titulo": "18 (dezoito) horas e 22 (vinte e duas) horas."
+                },
+                {
+                    "titulo": "8(oito) horas e 18 (dezoito) horas."
+                }
+            ]
+        },
+        {
+            "titulo": "Retirar o veículo do local do acidente, no qual haja vítima, sem autorização da autoridade de trânsito?",
+            "respostas": [
+                {
+                    "titulo": "só é permitido para prestar socorro à vítima do acidente.",
+                    "correta": true
+                },
+                {
+                    "titulo": "só é permitido se estiver atrapalhando o trânsito."
+                },
+                {
+                    "titulo": "é permitido ficando à critério dos condutores envolvidos no acidente."
+                },
+                {
+                    "titulo": "é proibido em qualquer circunstância."
+                },
+                {
+                    "titulo": "é permitido, após arrolar, pelo menos, três testemunhas."
+                }
+            ]
+        },
+        {
+            "titulo": "O condutor se torna inabilitado para conduzir qualquer espécie de veículo automotor quando?",
+            "respostas": [
+                {
+                    "titulo": "seu veículo for apreendido."
+                },
+                {
+                    "titulo": "o exame psicotécnico estiver com prazo de validade vencido."
+                },
+                {
+                    "titulo": "sua Carteira Nacional de Habilitação for roubada."
+                },
+                {
+                    "titulo": "sua Carteira Nacional de Habilitação for perdida."
+                },
+                {
+                    "titulo": "sua Carteira Nacional de Habilitação for cassada.",
+                    "correta": true
+                }
+            ]
+        },
+        {
+            "titulo": "De acordo com a Legislação de Trânsito, os veículos, quanto à espécie, são?",
+            "respostas": [
+                {
+                    "titulo": "oficial, de passageiros, de aluguel e de corrida."
+                },
+                {
+                    "titulo": "oficial, particular, de passageiros e de aluguel."
+                },
+                {
+                    "titulo": "de passageiros, de carga, de missões diplomáticas e de aluguel."
+                },
+                {
+                    "titulo": "de passageiros, de carga, misto, de competição, de tração, especial e coleção.",
+                    "correta": true
+                },
+                {
+                    "titulo": "automotor, elétrico, tração animal, propulsão humana e reboque."
+                }
+            ]
+        },
+        {
+            "titulo": "O condutor de veículo automotor envolvido em acidente de trânsito, sendo considerado culpado, além da punição que lhe for aplicável ou aplicada, deverá ser submetido a exames de aptidão física e mental, noções de primeiros socorros e ainda a?",
+            "respostas": [
+                {
+                    "titulo": "exame de direção veicular."
+                },
+                {
+                    "titulo": "exame de legislação de trânsito (prova escrita)."
+                },
+                {
+                    "titulo": "exame de reflexos."
+                },
+                {
+                    "titulo": "reciclagem sobre legislação de trânsito."
+                },
+                {
+                    "titulo": "escrito sobre legislação de trânsito e exame de direção veicular.",
+                    "correta": true
+                }
+            ]
+        },
+        {
+            "titulo": "A imobilização do veículo durante o tempo apenas necessário para o embarque/desembarque de pessoas caracteriza-se como?",
+            "respostas": [
+                {
+                    "titulo": "ponto de parada."
+                },
+                {
+                    "titulo": "parada e estacionamento."
+                },
+                {
+                    "titulo": "estacionamento."
+                },
+                {
+                    "titulo": "parada de veículo.",
+                    "correta": true
+                },
+                {
+                    "titulo": "estacionamento rápido."
+                }
+            ]
+        },
+        {
+            "titulo": "De acordo com a Legislação de Trânsito, os veículos são classificados quanto a sua tração?",
+            "respostas": [
+                {
+                    "titulo": "animal, propulsão humana, automóvel e motocicleta."
+                },
+                {
+                    "titulo": "animal, propulsão humana, charrete e carroça."
+                },
+                {
+                    "titulo": "animal, propulsão humana, automotor, elétrico e reboque ou semi-reboque.",
+                    "correta": true
+                },
+                {
+                    "titulo": "animal, propulsão humana, ônibus e caminhão."
+                },
+                {
+                    "titulo": "propulsão humana, ônibus, motocicleta e bicicleta"
+                }
+            ]
+        },
+        {
+            "titulo": "De acordo com a Legislação de Trânsito, os veículos, quanto a sua categoria, são classificados em?",
+            "respostas": [
+                {
+                    "titulo": "oficial, representação diplomática, aluguel e de polícia."
+                },
+                {
+                    "titulo": "oficial, aluguel, particular e carga."
+                },
+                {
+                    "titulo": "oficial, aluguel, carga e corrida."
+                },
+                {
+                    "titulo": "público e particular."
+                },
+                {
+                    "titulo": "oficial, missão diplomática, particular, aluguel e aprendizagem.",
+                    "correta": true
+                }
+            ]
+        },
+        {
+            "titulo": "É proibido a todo condutor de veículo?",
+            "respostas": [
+                {
+                    "titulo": "prestar socorro às vítimas de acidentes."
+                },
+                {
+                    "titulo": "nas estradas, parar o veículo no acostamento e aguardar a oportunidade para cruzar a pista."
+                },
+                {
+                    "titulo": "aproximar o veículo da guia de calçada (meio-fio), nas vias urbanas, para desembarque de passageiros."
+                },
+                {
+                    "titulo": "dirigir o veículo sem acionar o limpador de pára-brisa durante a chuva.",
+                    "correta": true
+                },
+                {
+                    "titulo": "fazer conversão à esquerda em local onde não houver sinalização específica."
+                }
+            ]
         }
     ]
 }
