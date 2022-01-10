@@ -8,7 +8,12 @@ class PerguntaModel extends PerguntaEntity {
   PerguntaModel({
     required String titulo,
     required List<RespostaEntity> respostas,
-  }) : super(titulo: titulo, respostas: respostas);
+    String? imagemB64,
+  }) : super(
+          titulo: titulo,
+          respostas: respostas,
+          imagemB64: imagemB64,
+        );
 
   Map<String, dynamic> toMap() {
     return {
@@ -16,6 +21,7 @@ class PerguntaModel extends PerguntaEntity {
       'respostas': respostas
           .map((resposta) => (resposta as RespostaModel).toMap())
           .toList(),
+      'imagem': imagemB64,
     };
   }
 
@@ -24,6 +30,7 @@ class PerguntaModel extends PerguntaEntity {
       titulo: map['titulo'] ?? '',
       respostas: List<RespostaEntity>.from(
           map['respostas']?.map((x) => RespostaModel.fromMap(x))),
+      imagemB64: map['imagem'],
     );
   }
 
