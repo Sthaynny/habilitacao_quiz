@@ -1,3 +1,5 @@
+import 'dart:typed_data';
+
 import 'package:quiz_car/app/features/shared/domain/entities/resposta_entity.dart';
 
 class PerguntaEntity {
@@ -11,11 +13,11 @@ class PerguntaEntity {
   final String titulo;
   final List<RespostaEntity> respostas;
   RespostaEntity? respostaSelecionada;
-  String? imagemB64;
+  Uint8List? imagemB64;
 
   PerguntaEntity copyWith({
     String? titulo,
-    String? imagemB64,
+    Uint8List? imagemB64,
     List<RespostaEntity>? respostas,
     RespostaEntity? respostaSelecionada,
   }) {

@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:typed_data';
 
 import 'package:quiz_car/app/features/shared/data/models/resposta_model.dart';
 import 'package:quiz_car/app/features/shared/domain/entities/pergunta_entity.dart';
@@ -8,7 +9,7 @@ class PerguntaModel extends PerguntaEntity {
   PerguntaModel({
     required String titulo,
     required List<RespostaEntity> respostas,
-    String? imagemB64,
+    Uint8List? imagemB64,
   }) : super(
           titulo: titulo,
           respostas: respostas,
@@ -16,13 +17,18 @@ class PerguntaModel extends PerguntaEntity {
         );
 
   Map<String, dynamic> toMap() {
-    return {
+    final map = <String, dynamic>{
       'titulo': titulo,
       'respostas': respostas
           .map((resposta) => (resposta as RespostaModel).toMap())
           .toList(),
-      'imagem': imagemB64,
     };
+    if (imagemB64 != null) {
+      map.addAll({
+        'imagem': base64UrlEncode(imagemB64!),
+      });
+    }
+    return map;
   }
 
   factory PerguntaModel.fromMap(Map<String, dynamic> map) {
@@ -30,7 +36,7 @@ class PerguntaModel extends PerguntaEntity {
       titulo: map['titulo'] ?? '',
       respostas: List<RespostaEntity>.from(
           map['respostas']?.map((x) => RespostaModel.fromMap(x))),
-      imagemB64: map['imagem'],
+      imagemB64: map.containsKey('imagem') ? base64Decode(map['imagem']) : null,
     );
   }
 

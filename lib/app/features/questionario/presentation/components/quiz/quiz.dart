@@ -1,5 +1,3 @@
-import 'dart:typed_data';
-
 import 'package:adaptable_screen/adaptable_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:quiz_car/app/features/questionario/presentation/components/resposta/resposta_widget.dart';
@@ -13,16 +11,17 @@ class QuizWidget extends StatelessWidget {
     required this.pergunta,
     required this.onSelected,
     this.respostaSelected,
-    this.imageQuestion,
+    this.scrollController,
   }) : super(key: key);
   final PerguntaEntity pergunta;
   final ValueChanged<RespostaEntity> onSelected;
   final RespostaEntity? respostaSelected;
-  final Uint8List? imageQuestion;
+  final ScrollController? scrollController;
 
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
+      controller: scrollController,
       child: Column(
         children: [
           const SizedBox(
@@ -38,17 +37,12 @@ class QuizWidget extends StatelessWidget {
               ),
             ),
           ),
-          if (imageQuestion != null)
+          if (pergunta.imagemB64 != null)
             Container(
               margin: EdgeInsets.symmetric(
                 vertical: 5.h,
               ),
-              height: 300.h,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: MemoryImage(imageQuestion!),
-                ),
-              ),
+              child: Image.memory(pergunta.imagemB64!),
             ),
           SizedBox(
             height: 15.h,

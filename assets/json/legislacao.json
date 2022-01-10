@@ -1,0 +1,392 @@
+{
+    "titulo": "Legislação",
+    "perguntas": [
+        {
+            "titulo": "Três silvos breves emitidos pelo agente da autoridade de trânsito significa que o condutor deve?",
+            "respostas": [
+                {
+                    "titulo": "acender as lanternas do seu veículo.",
+                    "correta": true
+                },
+                {
+                    "titulo": "diminuir a marcha do seu veículo."
+                },
+                {
+                    "titulo": "seguir em frente com atenção."
+                },
+                {
+                    "titulo": "parar o veículo."
+                },
+                {
+                    "titulo": "fazer o retorno."
+                }
+            ]
+        },
+        {
+            "titulo": "Os sinais sonoros executados por buzinas deverão ser de um toque breve e somente serão usados para?",
+            "respostas": [
+                {
+                    "titulo": "apressar os pedestres ou chamar pessoas."
+                },
+                {
+                    "titulo": "apressar o pedestre."
+                },
+                {
+                    "titulo": "chamar pessoas."
+                },
+                {
+                    "titulo": "apressar os outros veículos que se encontram na via."
+                },
+                {
+                    "titulo": "advertência.",
+                    "correta": true
+                }
+            ]
+        },
+        {
+            "titulo": "O sinal sonoro usado pelo policial de trânsito para informar ao condutor que o trânsito está impedido em todas as direções caracteriza-se por?",
+            "respostas": [
+                {
+                    "titulo": "dois silvos breves e um longo."
+                },
+                {
+                    "titulo": "dois silvos longos."
+                },
+                {
+                    "titulo": "dois silvos breves."
+                },
+                {
+                    "titulo": "um silvo longo."
+                },
+                {
+                    "titulo": "um silvo longo e um breve.",
+                    "correta": true
+                }
+            ]
+        },
+        {
+            "titulo": "Quando o policial de trânsito movimenta o braço direito para cima e para baixo, está determinando que o condutor do veículo?",
+            "respostas": [
+                {
+                    "titulo": " diminua a marcha.",
+                    "correta": true
+                },
+                {
+                    "titulo": "mantenha-se à direita."
+                },
+                {
+                    "titulo": "pare o veículo."
+                },
+                {
+                    "titulo": "mantenha-se à esquerda."
+                },
+                {
+                    "titulo": "passe depressa."
+                }
+            ]
+        },
+        {
+            "titulo": "O condutor de veículo com o braço estendido para fora horizontalmente, a mão fazendo movimentos para cima e para baixo, indica para os outros condutores?",
+            "respostas": [
+                {
+                    "titulo": "que o trânsito permite ultrapassagem."
+                },
+                {
+                    "titulo": "que há perigo, pare."
+                },
+                {
+                    "titulo": "que vai entrar à esquerda."
+                },
+                {
+                    "titulo": "para diminuir a marcha ou parar.",
+                    "correta": true
+                },
+                {
+                    "titulo": "que vai efetuar uma manobra de retorno."
+                }
+            ]
+        },
+        {
+            "titulo": "De acordo com os sinais sonoros abaixo, marque a resposta que corresponde ao sinal “diminua a marcha”?",
+            "respostas": [
+                {
+                    "titulo": "três silvos breves."
+                },
+                {
+                    "titulo": "dois silvos longos."
+                },
+                {
+                    "titulo": "dois silvos breves."
+                },
+                {
+                    "titulo": "um silvo breve."
+                },
+                {
+                    "titulo": "um silvo longo.",
+                    "correta": true
+                }
+            ]
+        },
+        {
+            "titulo": "O sinal sonoro que corresponde ao sinal “PARE” caracteriza-ze por?",
+            "respostas": [
+                {
+                    "titulo": "dois silvos breves.",
+                    "correta": true
+                },
+                {
+                    "titulo": "um silvo breve."
+                },
+                {
+                    "titulo": "três silvos breves."
+                },
+                {
+                    "titulo": "um silvo longo."
+                },
+                {
+                    "titulo": "dois silvos longos."
+                }
+            ]
+        },
+        {
+            "titulo": "Quando um agente da autoridade de trânsito emitir três silvos longos, os condutores entendem que devem?",
+            "respostas": [
+                {
+                    "titulo": "seguir em frente."
+                },
+                {
+                    "titulo": "ficar a postos.",
+                    "correta": true
+                },
+                {
+                    "titulo": "diminuir a marcha."
+                },
+                {
+                    "titulo": "acender a lanterna."
+                },
+                {
+                    "titulo": "parar."
+                }
+            ]
+        },
+        {
+            "titulo": "De acordo com os sinais sonoros citados abaixo, assinale na folha de respostas a alternativa que corresponde ao sinal “ATENÇÃO! SIGA”?",
+            "respostas": [
+                {
+                    "titulo": "um silvo breve.",
+                    "correta": true
+                },
+                {
+                    "titulo": "dois silvos breves."
+                },
+                {
+                    "titulo": "três silvos breves."
+                },
+                {
+                    "titulo": "um silvo longo."
+                },
+                {
+                    "titulo": "dois silvos longos."
+                }
+            ]
+        },
+        {
+            "titulo": "Diante da placa (I-11), você entende que?",
+            "respostas": [
+                {
+                    "titulo": "existe um local com estabelecimento onde você pode dormir."
+                },
+                {
+                    "titulo": "existe um posto de socorro médico junto ou próximo à via."
+                },
+                {
+                    "titulo": "na área sinalizada poderá estacionar seu veículo.",
+                    "correta": true
+                },
+                {
+                    "titulo": "encontrará um posto para abastecer seu veículo à distância indicada na placa."
+                },
+                {
+                    "titulo": "existe uma escola próxima à via."
+                }
+            ],
+            "imagem": "R0lGODdhOQBXAHcAACH+GlNvZnR3YXJlOiBNaWNyb3NvZnQgT2ZmaWNlACwAAAAAOQBXAIQAAAAREREAAMwAAP8zMzMiIiIzM8wzM/9ERERmZmZ3d3dmZsxmZv+ZmZmIiIiZmcyZmf+qqqq7u7vMzJnMzMzd3d3MzP/u7u7///8BAgMBAgMBAgMBAgMBAgMBAgMBAgMF/yCGWSRUnpaZomrLvmvciiJkCHiu73zv/z2L6AYsGo88w0gwYDqfTSguSp1apdiqk4TseoFcnnZ8JWfLaAG3yRbcDu7BOz43yAVwe/2e57tzUWoWOws0hoeIiYqLdjthTgyLkpOUDIA4azmRixMJnp+goaKeDYmWjoM6EJIJAK6vsLGyrgSJC1KPTYWLrbO+s7WIpzqPOJuKvb/Krgi2T5ipUceJCsvWwYfDW6k5q7zWy82It4GCl7uK1bEBAQDs7u3v8gHi2ZfmgdOIya+U/reoCElSB8tfJSdRwrDxhmydwUkAiXHDgY6arIeSGARqotAYK4cYFQEMRKJcxX0XQ/+a4pFLAMNE/FypdFalmAB9hwi+KkCgp8+fPwtQUKQN2pWTh2KCgyVB5DNzOnAa0rkUVgSi9zq6/FhVVlNnqEwO7Crr6sqa3JpIpaG069dxLCfe5Er2lVlhWrQ+oNvvgt+/gAMvipjD5loRVAHMFIYrmsdvsRYfIgxN7KLEkg0NS5h2K+RXATLTICdxx2EMSkWL2Gz0CVJDMUOrpgxV09jIqi2hffYSJSzZomm3fE0jMYUKyJMrX478At4rhvnWdeUAbsAnpxPXVcB4tyrp06tPjnsOfF3xmrMOymeeLPrRT6MvajA91vvV5K3sVelcRH8M//1H0xOZPKYaRkXVZuD/gQaRtk15DD6UoE29RSjJAnmtNwVxFiICx3U6HGCAASKSOGKJI6Zo4okporgiiyzeo2A5P7RB4xU4PlMOjQXeo4UPbeywoxFt2HTjJRuJkeONVdyoVRpKfvFUlK3lqMOPSKbxY5A0coYjlldaKaWMhcmlJJhComHGU7utCaQVRxaRZH5vQpnmGVjUqdWWVHYBQURuKkhkmmag1UiNRhW65JhCYOAglgPYBMSQZHCJCQ0fguEYnmR60WgNnEoKAQQPjFrqqKieiuqqrLKKCAQ9eEnFfh0qYsGh5chXq61EXCfNrpOcQoVNHAILQaZlQlEhsCLcmiOxzCJi5oNPiMiAkgELHLAAidtuqy22I3Yb7rjfHiAgBrCKKemkhCLkLjGG0BZkgYr6eERCzeLqw7p1IhpmYSP0KqOXeHZp55RbXGBnrtPGKmeY5cAaJ3mVfnkwkw6/W2TDUg7Zr6ZQ1hvkwAt3KqiY9yIxJ5z4LFqwlYH26UYNAk886JuWhmnASyjE4LMKPZMg9NA+W/CA0C7EQEMIADs="
+        },
+        {
+            "titulo": "Diante da placa (I-13), você entende que é uma área com?",
+            "respostas": [
+                {
+                    "titulo": "posto de socorro médico, junto ou próximo à via."
+                },
+                {
+                    "titulo": "loja de ferramentas."
+                },
+                {
+                    "titulo": "sanitários."
+                },
+                {
+                    "titulo": "aeroporto nas proximidades."
+                },
+                {
+                    "titulo": "oficina mecânica.",
+                    "correta": true
+                }
+            ],
+            "imagem": "R0lGODdhMwBNAHcAACH+GlNvZnR3YXJlOiBNaWNyb3NvZnQgT2ZmaWNlACwAAAAAMwBNAIUAAAAREREAADMAAMwAAP8zMwAzMzMiIiIzM2YzM8wzM/9ERERVVVVmZjNmZmZ3d3dmZsxmZv+ZmWaZmZmIiIiZmcyZmf+qqqq7u7vMzMzd3d3MzP/u7u7///8BAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMF/2AnWmRpnmiqrpvYWUMsz3Rt33gcdVvu/0DZBjYgxIzHGTIpWxaV0OaMZFs6r1Gm9ikdULs1LJi7Fcuoy5ZrzW6zKxj3OkH+yuR4tyYAoOQjNF9IeYQuBgCIfnJ0RkYbPTOFhROIiAgcboBTRI2SeA4MGYeVABptdJs0ap5rlKSvii4QjTGCMaxtrpUFCJUHGWsKgUR3uGyvCx0OvmsQTLYDxmscrwANyogBmCLCM0M00i4U1QAIHQyIwCLOXNDhHbrV1w4G2x3dZ5BC0ht8pAEHKpljowkJmiPSNBQgZUAdh1HqXKA6Q+yWsVGIDOSS0KZgLU4WWaGrFCAioYkxvv95YxUPQAVWs5K484QR0QRc+D6Ck4Th1QNj7AyCjCZJAKkD0nJ60RcyjwSf0oLqREJg0lEHpowpVbkPTwZSyd559DI0jwaj2exJQ0l2p5yacd51GDvTTc9KP+V2YGun6Zo9lcLqjfmk7poM/gAI1ru14oBVLgJmy6q3g9S2VNv0qhS38r1ATIm6uEAqr2fLz8qKI8XgtAulfUV3SByA8mm6quGRMnmaLdeUIqghuuB6DW4maygwuFlc4jC3zd0QNnKwSHQ8sENfl3PZ8PbXqhxD/o663dAICdCrT89+vfv28N+jd9I2iP37QplQ1WIFTH/+Y9Tnw39kEGhgFNXtR8b/fUE48Qh+/kWo3xY6caEgLRIWGCANtMQ2IINdKEhREheOUaKFDHoYRhZAbCDMifmhuOCKMiq4zg1pOEYjhva5MBR9CVLIIYkTPrGGju2EloACS0KgAJPoQZlAk0yyR+WSCbDRg4j1DUIeD2xR59iXLozVpV/k+TYmmS8o6N127DzXBAQRRFCBnXjeeacFEFiQZwR8+qnnDmtskIAY0IDoQ6ETARnakLRweaCPFMa4H304ZrHECEPKWUWAZtTAlRhiyqjpgqTKwNaMKSHJaqc5YIipeUXWuuKJO3oKKxRc4tDrMx2YGqKvtnZKXwuGRjFrsZAKWVihKFSwgrQrlEAtCAnXkjBERCEAADs="
+        },
+        {
+            "titulo": "Diante da placa (I-14), você entende que encontrará?",
+            "respostas": [
+                {
+                    "titulo": "um local permitido para estacionamento de trailer."
+                },
+                {
+                    "titulo": "uma oficina mecânica."
+                },
+                {
+                    "titulo": "um posto de socorro médico, junto ou próximo à via."
+                },
+                {
+                    "titulo": "um posto para abastecer seu veículo à distância indicada na placa.",
+                    "correta": true
+                },
+                {
+                    "titulo": "uma edificação pública à distância indicada na placa."
+                }
+            ],
+            "imagem": "R0lGODdhOgBXAHcAACH+GlNvZnR3YXJlOiBNaWNyb3NvZnQgT2ZmaWNlACwAAAAAOgBXAIUAAAAREREAADMAAMwAAP8zMwAzMzMiIiIzM2YzM8wzM/9ERERVVVVmZjNmZmZ3d3dmZplmZsxmZv+ZmZmIiIiZmcyZmf+qqqq7u7vMzJnMzMzd3d3MzP/u7u7///8BAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMF/6AnWhxHmuWppizqrm8LW+I43Hiu73zv+zTPb0gs+hIlwk05YDqX0Gb0Ka1Sr9CSccsdaq3TMHiMJYu/OUJikFAPFGw3vL2ey+N1/FvPzKGbETWCg4SFhoceEWBafRKIj5CIEjtoSoGICwEAmpybnp0LkYk4TH8DjogGAKusra4AoZFwOl9MqIcLr7qsBqKKT6a3hRm7xQYakZO0HKQDl4QTxdKsE4/KVYw4woIM09O9G4drfQOmz4Pd3tKqD4bXOLVN2zXprAEPExgZFRkY+hDSOhT6hY1ZjnPcXAVApGmXg0LvbsQ7ZajeqgOI1gkctMZKkoMVFSI6II0CoQjkyv8ZlDJPBAJXGA813BVgY41rpVbeQFijgbqfAEwKiqgySksPFoG+CkABQMwa4/zopFgoqVJY0R4CKDDonZJsN45aVcpAAwCtvQQpqlIUCk8RY4GWPesBgIBBKJfpOPryaqu5aAfNKtjsrQefflktMKuV61BKzBqFTLwKcN20NQhKCTaZcgPGde8+1uvWUF/KCEADwCwiKrzI2gwh9qza8c00bWNXpbzKgWrWo8hVctY58WK6drtC3lvc71wDGLZylJLTaPOrDTjMfDhaKvNCpxM/1KCKwclFHJ4Ynp0YgbXlOcTypovItcSVlq4rbfC+GWfw85mHiGb3WVcIe849Mtj/a98REtdPAh5CUHWlCbLBhfM5deEGNnXHoGSCZKhLLNMBMxVCIr4SoYcFUrfNBDDGKOMEF8xo440YDMRWbjuJ4qMoXrVly49E1rfjRzgYViSRRA131JI/TthiklBWKUKTBjGhgAUVWMCll152CaaYYYL55ZhmkilmBTgx2MWbb34F2xg6kGMnbs3kaYZ3PyjRx514RiHoEBSWUURKhO7JZ595+rnDE4b2YKIZgD46aKJ0LippnZdyCgUVjArZ6Y54gkpqo5nyiBuipnpaaqhypiqGpykhGqitqsraTAIL6qkooIVuqkAJbeAgAmy1GmGrKXRu1BEbx/KQrKLoUbcD/wmCPBHtpbgaYYq2092QQLSWWACHGhaEJcEkSkhgQbHWEgZEBEF4MIsS23IQ7bgeSKAvVP96wMGz8EX677P8MoOKQfwKFDAhc07qQykiWDHCJSspcOwa/HrQEVQ9gNXqv4N1XAMUCRtb8Vci3BsFs3oeXAUhz2os8BInS1RxyFl+SosIfZh8LBMp35BzOa1hAbPPMkux8b+/8Juu0Ssj7THPqP7sMdH75pwyvjtb7TJh3eosBBTkBpGuzStta7UP3/osNg5Fd5zAuB20DbTZUUlcNq/PKqHAWmEloMzgUCiQAOGKE+XmqzsCu6mlrgYLJ+SYDypcepBDKgaro7KV7Dhwl/uauatTdp61qa2eXl3ruqKOqq0pKSDQ1JziGmnsmSqRQL0Cn+CCBiUUb/zxyCcv/PLFq1BDCAA7"
+        },
+        {
+            "titulo": "Diante da placa (I-15), você entende que existe?",
+            "respostas": [
+                {
+                    "titulo": "uma área sinalizada para estacionar seu veículo."
+                },
+                {
+                    "titulo": "uma área com oficina mecânica."
+                },
+                {
+                    "titulo": "um posto de socorro médico, junto ou próximo à via.",
+                    "correta": true
+                },
+                {
+                    "titulo": "uma área com sanitários."
+                },
+                {
+                    "titulo": "um cemitério próximo à via."
+                }
+            ],
+            "imagem": "R0lGODdhMwBNAHcAACH+GlNvZnR3YXJlOiBNaWNyb3NvZnQgT2ZmaWNlACwAAAAAMwBNAIUAAMwAAP8AM8wAM/8zAMwzAP8zM8wzM/9mZsxmZv+ZmcyZmf+ZzP/Mmf/MzMzMzP//AAD/MzP/Zmb/Zpn/mWb/mZn/zJn/zMz///8BAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMF/yCGPUtpnmiqruwjYgsgz3Rt33guL6Pu/8AZCRCYFWVHJC1JXDqNz11MSW1Cr1VrlnksAblRrRhM81qTzHGYvJ0tHjd2cF6epqvH/Hmv7yuLQ093dIQAZoN7iWhUi4luU4JziGI2XTF6NX6OjJmcZXA4k3GjOpacbJhpmJ53gaFYpJ05eodZlZubqTdmsquvhVZeeQbEB8XHxskGysvNys/NaW81PC/W19jZ2i8GVLWG2+Hi2Qk1rjvj6eMH3pBF1erx2AjUlzMK8vnWBrSQ6OkXIAgcKFBduU9Q4ImrQJCgum5JeP0bx7BhwXQHm3xTGC6gRQgP61FTV9GiQXP2Jv+K82gyHbtg7sClK9lQHT2ENPDN/AgyHT8lG9WxrIlRZBmSPEPCTIj048k6WnRiuEC1qtULNAle3cqt3RJ4WXmK5VlBRMYdoNy8kDC2rdiyGLotDfYirFu3cM8COAdAKoW7gAfCfWmKrogJgQPDvflopAi7iT9SEEFYihZ4bCPjFcEYrWMMFiKIHk06As/SqOH+1GhHZTjITxsfBZjUp1fDFGuP0ytR5rihDm3P7dK05W5zaWVIXahbXGVDrX2vbB6uM/TPzJ269JpneUfq26z35rgNts9+3oQ2NB0htufZ+vLJLawxvj7eKfvaz/dcYgDy+4UjlxD+AECAAAcmiOCrAAkyKAAA/HQjQAEIChBANxFCeCGEV3zTRBGqwNKIFotIkxwiKALzRG9h4KKLIrBc9yEelNgSBBkslnILjC5C9eKIMwJzR46y2PijJ1AAwkAkahRJiDTRfdGJJi/asEADvfBooyS3ieJkI1Ru2dsqvshxI1BRttgkK0haueSObap4xREPYBnklkGCyCYuM4hQ4B2+yLmHQiYwoEAKh6rQwAmLsnACA4068EIIADs="
+        },
+        {
+            "titulo": "Diante da placa (I-16), você entende que existe uma?",
+            "respostas": [
+                {
+                    "titulo": "área com oficina mecânica."
+                },
+                {
+                    "titulo": "área com sanitários.",
+                    "correta": true
+                },
+                {
+                    "titulo": "área sinalizada para estacionar seu veículo."
+                },
+                {
+                    "titulo": "área permitida para camping."
+                },
+                {
+                    "titulo": "nascente d'água."
+                }
+            ],
+            "imagem": "R0lGODdhMwBNAHcAACH+GlNvZnR3YXJlOiBNaWNyb3NvZnQgT2ZmaWNlACwAAAAAMwBNAIUAAAAREREAADMAAMwAAP8zMwAzMzMiIiIzM2YzM8wzM/9ERERVVVVmZjNmZmZ3d3dmZplmZsxmZv+ZmZmIiIiZmcyZmf+qqqq7u7vMzJnMzMzd3d3MzP/u7u7///8BAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMF/6DncVZpnmiqriwnetYgz3Rt33guJ6Lu/0AZgTQjFI9IIc2YHDCV0EGp9lxam9XsdWapMKtR51aMHZOnNNdrzW673y9FDS2G2+/vyDz2fDsWgAiAEHh2ckZGHBw1bwEAj5AAhXB6NGhMbx0aGI8OGRuTb3KWMWlwF48XoXASUJcyaxgODwwPDpEOEx2rbAl7jC8UkcOQGLwvEV9SpZgvt8TDBsciozNENGsaDA4M3dAB0x6VTFNfdhoOuR6O4NPVMhaLpoUbDtLTek+vA6sTB+HVjNCBFaqDKny/yIQChUcDQzajmFybEQqAMTsdHLlpRQpKqAdq4HCS1MaXvlLWQv9puOfn0S42HLnwEbLqQgE7Cx5dXGOSizyK4dwISNUmpkBmBIOyKfDoQckaE5OeMrBtggYNcAw8WlDUFVJ+dw5AE9Ag3aYJz1z2SpjSDipocCEZeCki2ZmvkzRQ4KY1biSucdhKbbNhwgVuDvYycOT3UQC6lWSSIWCHQePG/wIjGhAV7JsHjC9Dy1w3YTM4mjY41DDhwQPRLD28k/JTRkiRrB8YOCD2MmkPHMnhtYMhtOhIv311xGZH2HFiv4PDG16524Xr1/v6TQ4V5eA7rC03DqAOmbJyNCflHBZg8aMDCx5gbTN7IOdJWgPEv/rC4Z1x03k0iSZ08VJfbZ4pVYj/dMsIqGAhylnjXYIP2sHgPgpEkOGGGnbI4YcehsihBAmQGGGAQaQYxHkzTYaEMi7GCOMTYDSIQ40q3kgFijC+CMWMP4bRBGcIDpnjDT3eFaSPMi6Z5I6S2YDjkUzWiB4ZTmYJpA+b2UelDhwcsmSUygC5mRg0xshBByfi4OWRU0ohwkxl8pglk1Dq88KEUCGYQAIK/BnooIFqCKihG/5pYqC3caAcjFdSViEcYd5g36R3GGUnhZiWVMWlnb4RE5nfhdpBZF1OKEEEElgQgQUSVBDrrLLK6iqstr46a6MRmfalDxbs2WYaRfZYZ5pRGFHBnHkG+CSWSCahJ0pTvgntSZg/eFnnPlpcGyOWNcZpI5TRSmmkuVjuc4WxQh5x5pRHWSFuud6i+2mRdz6JLLZIuNDivOjSi6ece5ZQAQsrHJxwCgeTYIIaIQAAOw=="
+        },
+        {
+            "titulo": "Diante da placa (I-17), você entende que existe?",
+            "respostas": [
+                {
+                    "titulo": "um restaurante à distância indicada na placa.",
+                    "correta": true
+                },
+                {
+                    "titulo": "um aeroporto nas proximidades."
+                },
+                {
+                    "titulo": "um posto de socorro médico, junto ou próximo à via."
+                },
+                {
+                    "titulo": "uma passagem protegida, elevada ou subterrânea, para a travessia da via por pedestres."
+                },
+                {
+                    "titulo": "uma loja de conveniência próxima à via."
+                }
+            ],
+            "imagem": "R0lGODdhMwBNAHcAACH+GlNvZnR3YXJlOiBNaWNyb3NvZnQgT2ZmaWNlACwAAAAAMwBNAIUAAAAREREAADMAAMwAAP8zMwAzMzMiIiIzM2YzM8wzM/9ERERVVVVmZjNmZmZ3d3dmZplmZsxmZv+ZmWaZmZmIiIiZmcyZmf+qqqq7u7vMzJnMzMzd3d3MzP///8zu7u7///8BAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMG/0CQsHMpGo/IpHKp7AiFl4F0Sq1ar9is9CLUer9gaQIUJUjN5yk6raauB+94e1C0vufsPNzNx9OjfnpyfoN6U3V7A05PjI2Oj5BPCmwdHVWLkZmajQlViGiboY0PFI6TaAQWgFOYFgYGCwYQHKKMDgAWH5yeZWe6IBUAwsMADr+htxggDQiMk4mVl0LE1AaYmbcUHAsAGxm/nVSfUkIZ1NUemskfBgEZDwAZQs9oiKwg5ufEApnwGOzd4FH44ABEuEOAQE3TR6zUIw4ASnHbIBBEAAAf6EmJRmXRLYbCGEAK9mCiwA8H4hnkRakcSGEGIDEYRjGiRZUgNP6pwuglAP+RjygIC1Bxprx5LFFh2vCyAiSIwxhsc8eo0xoi0p5gAKns0cxhAS4elcQykSN4+g484gbAQEoAC449CVfPUkdHFd7CNQBT7scFQj7IrfrGnplMtIQ0GOYE4M9QdDf22ijqK4AJb5tBLryKsii+xA6kC/VszwW7CkWhJHZN08EtnRXVyjfMIWlKq8y0jkSbWEHIZaeIoh1gQYFhvzWVht1SU2+nTJFvsmq6M4HBjnon1678kqWr/Xw3ih4S+9zg5CJ9FPbgEXkAB8znZGNY9lpiMUf6Nv96511HlrWlCVrCxGVKIoqgll4joNG0yXrwJXaeONZdw4FeAASwgSgQxuf/DH2T2QeCBxh2UwsIbA0lYX/2LAgCBNQ4dSIIDT6G1FUJeQZCgEDN+MFFIU1YHU9PaDCMjDMKsY0wYy1Hh117XIMBKUk6soGEK63RoohV1lKabjkO0GWSLFY45olOnobgbmdGEpl/YcT5xR1YsYFKGncmkueedlZhxpZyBuongmryqWefd5qRKKJXACroo3PUeegefBo6qaGcQXrFHWH8qeClfYbax6KTwiknp3kGihWpldqRBaYgQqroqAiCoSaopaL6aqizmiqFBBdEUEQEEsB2AV0REBFBqXFKikZrUTQyiQSMQEkrroA6QSyxdIDQQQJcWALCBwlQa1CqtaYL+6dC0oTjxBiAUNvZu4sA+8QcdayhABlDFOvtId6SscW/UUKBCRcCd2TtAGMELEQEXQxsQcIQW+uEXbpEATEIbYwDhwXFyhauafxaAMfI9ywr5krUfoeQFQdB/MG7lHEBSMXQJCxEsRuXVc+/BNjsRBRjfCCmXQ/fFbK2A7RMibUENFyJEAlsvEgUFy/Sq83pFes0hVaYm3QqT9jVcNJ3LXsdy11omSMaCVSNYAIK9CcBdXlwioWjd8iht96U0looIYNea3ggvgrSqSGGvCFpun3zuqni+LocSK9eAJ63G4sQPrmluLo68RNMHEHEBRsUQYQqpyehSukbLBIEADs="
+        },
+        {
+            "titulo": "Diante da placa (I-19), você entende que é uma área?",
+            "respostas": [
+                {
+                    "titulo": "com aeroporto nas proximidades."
+                },
+                {
+                    "titulo": "com sanitários."
+                },
+                {
+                    "titulo": "permitida para camping.",
+                    "correta": true
+                },
+                {
+                    "titulo": "com oficina mecânica."
+                },
+                {
+                    "titulo": "de proteção para indígenas."
+                }
+            ],
+            "imagem": "R0lGODdhMwBOAHcAACH+GlNvZnR3YXJlOiBNaWNyb3NvZnQgT2ZmaWNlACwAAAAAMwBOAIUAAAAREREAADMAAMwAAP8zMwAzMzMiIiIzM8wzM/9ERERVVVVmZjNmZmZ3d3dmZplmZsxmZv+ZmWaZmZmIiIiZmcyZmf+qqqrMzJnMzMzd3d3MzP///8zu7u7///8BAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMF/6DnbVZpnmiqruwmetYgz3Rt33guW6Lu/8DZZiMjFGfGo3KQZCKfy2azdGvSrNAaNvqkJrdOG3j8o9JUFbQ6lUYhwoMhEvGq2+/4vD1RM8sieoGCeRBKXjJ0g4qDCFZ+AwmLknoRXTFOiZOaL29nl3+bIhSalWFyM5mTEwAak3yeYZGaGQAADZOFU58DqYsNtQAZkq8zZkaAkxjAAAaShWGPvYMGy8GLjbAzsou01c2KpU4WRJiTAdW1E4qdxbvIihLotQXghpdG0nnd8gDqgsQ7dm0TdIBfrQODcgmJkSTfHQoGgd0KBHDAo3d69kUM0CHQsyTjjjisoyDisol5sP+1ozEQzyqTwDhSskRjpIcM52BK1MMu4BGMd6jJE1BAXgBheCrpqqkHIj9hOasxSNnnHq88HYrKWyDilzykdkqBJCej5YsHBpF2iLqM652KjyDg0VjNQZ2X6MC+UCiDxBGzHoR+7dDRQwV+Bwq/gLtLGl6dBi/YUWjkECQ7HCDrVOyBMQ25dSo0GE26tOnTp/U+K0b2cqhNr0BatfmaEJxHgGtTrPpZNy57f31LUukTlfBF4YzISZL7uJ2eFneBdh5I6Upt1AVBN3Y1u57YxecgSIBgfHny5tOjX3++vXro0ZcEkT8/zFgxSr4csaK/f/4bloFRX31W+FXFfggmqJ//ff/RxCAQAs7nyC5XNCjgghjKJ1uDPvjXoRZ9tAZFhjlkiAUY3AWxoA4bdHIiNBSSaAQZGYoQow2WqUjfDS9YV2Ffu5i4Ixz+1dEaFilGAEECEESAQJMIKMlkBFM+SSWUSkY5nQhE8Bded949Jx93zWUHUGWt0UadZ04AFaYIFSwRzZvPbfHIAErm2eSeevbJ559msaOfXzMOCISR4PH2Y6EPyqjECyLCYVGkOv7gQpA/cufoiox2GoegWXxpqIQ4bOjog0Ry+OKYFEIYKog/SlrcqRGu+CqIylH6oawJjkifjf95yqutQ9qQgAtclkCCBRmMUwEJ0D47zrTRQqvsCLXTZrsssiEAADs="
+        },
+        {
+            "titulo": "Diante da placa (I-20), você entende que?",
+            "respostas": [
+                {
+                    "titulo": "existe um posto de socorro médico, junto ou próximo à via."
+                },
+                {
+                    "titulo": "pode estacionar seu veículo."
+                },
+                {
+                    "titulo": "encontrará um restaurante à distância indicada na placa."
+                },
+                {
+                    "titulo": "existe um aeroporto nas proximidades.",
+                    "correta": true
+                },
+                {
+                    "titulo": "existe uma área para prática de aeromodelismo."
+                }
+            ],
+            "imagem": "R0lGODdhNABOAHcAACH+GlNvZnR3YXJlOiBNaWNyb3NvZnQgT2ZmaWNlACwAAAAANABOAIUAAAAREREAADMAAMwAAP8zMwAzMzMiIiIzM8wzM/9ERERVVVVmZjNmZmZ3d3dmZplmZsxmZv+ZmWaZmZmIiIiZmcyZmf+qqqq7u7vMzJnMzMzd3d3MzP///8zu7u7///8BAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMF/+AnWmRpnmiqrpY4DnAsz3Rt33H74Xzvyx/OgAAjDmPGYxHJXDqVUCPplpRVm7Prs8qxNLVQaw0Mlk3NqkpKjWKf3Gci0SJUclz4vP4j2ftdNGcxf4QTABuEenVJXU53iXoKABSQeYFeQJV4HQAAC5oiQkZzizCPoIadHqA7M4KmrB8GnQCrmqWmmEexHwK0E6AeV68Dp5WctA2sTXSOrBW0AAagdWgzsamd06BKRI1LxpCz0baQ1TlejKyS5NxQzZmg47TliRzDmEbhfhgU87QGNNTz46HJtxj7XGigwCBAtIedCihooIFQmDgw9GiYwMAXxI8PAxhwoKEDnnNzdP/B+jDBgEOQMGMGaEBh1SVnH2Lq3AngwY4q8AaJOMCzKMQG1aSkK/LIw4UMFaBKjRpVw0taCzRQncrV5oyDKzWxo3er2wBBRAYm+lfLnRlRCFktiLatUlIYxLBFU7CMS76wlTDQpXZTRsI/HqIBcyfn7N1YHq5SuoXva6x5ahEX1heLQqcAmf8wU0kg9J8L2ljBRbi6GOTUy5zkjbUBdllXuryxwkC0kzJNwmSrdK0pG0DTJ2l8MwJKA8i6iUZbOawn1YEJFxrQsnuxNfU8HhZgwKPBgQNNhYXy4lXK21/i61kFt2Y4Pq9AKAcgQJBgP//9/f0nYIAEAmjggAhIFwX/Fj80GEYxw+EwihMTmmXhFSldSKGDPzSG1zk+VCjihhZuRmKFNpRBhYIOTljFiC4yiJFZI3IYYjEgtshEjCWieNZSRyTB44sSVvCgGD+myAMZTiAgQoIkovMEkj6WaIWTIiQwBmtZTLklDSjiEYGVSSqBQAQQJABBBGqyuWYCaLYpJwRprrlmBHlEqJRl9lVigY9TjIJcn3gUZBCI3xF6UmVKKFqJB1AmQUyiinKgpYkDoKmpnZt2yumnmlaQh5EkcpCjjTzgAYGKM9aIoqtFYPnBmCeWyaGKM2AJJQ6B1moljEskcJeVYKHa4YplxgirhmEI6eWHxt4o4RIYERnkNRLLWlslLF9Kq+S3zH3w3hdbdPlrlDm40IUGJXRBhwUVdCGvBezOW++78ZLAARvuuiGvCCEAADs="
+        },
+        {
+            "titulo": "Diante da placa (I-22), você entende que existe?",
+            "respostas": [
+                {
+                    "titulo": "um aeroporto nas proximidades."
+                },
+                {
+                    "titulo": "um local permitido para estacionamento de trailer.",
+                    "correta": true
+                },
+                {
+                    "titulo": "uma área com oficina mecânica."
+                },
+                {
+                    "titulo": "uma área permitida para camping."
+                },
+                {
+                    "titulo": "um posto de fiscalização."
+                }
+            ],
+            "imagem": "R0lGODdhMwBOAHcAACH+GlNvZnR3YXJlOiBNaWNyb3NvZnQgT2ZmaWNlACwAAAAAMwBOAIUAAAAREREAADMAAMwAAP8zMzMiIiIzM8wzM/9ERERVVVVmZjNmZmZ3d3dmZsxmZv+ZmWaZmZmIiIiZmcyZmf+qqqq7u7vMzJnMzMzd3d3MzP///8zu7u7///8BAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMF/2AnUmRpnmiqrprYUUMsz3Rt33j8dFru/0CZBjYgxIxHGbI4Wy6ZSaVURrI9p9BoNvt0xqrY5u0aFt+qy1VqomKvS4fnkOaq2+/4vP0hBSP1gIF5BzQUPTOCiYl8UH4xipB6hDNgMpGXdg5GSGhHHJigCDRziKCYDlGOA6aYopRElqyRjFREf4IbFhEJBQC+BgsMERmChJsDhqN6GRABvs/Q0AUMF3q0X7aPeBi90d7fAtV3k0Kw2nYYzt/r3hB3jJwwSAR3HN3s+M8Wdsa1dHYM8gn0VWBPoWyr6nAYyHCfi0nxlLnA8I1BhYv3CLpQEK1BHU2vothp8E2CiwTRGP+4IAnNQB1XTDQcirXyW4ST0RTUbPnxoMg6EUrihBaggFF1z3S6EJXGXEIXGYSKQMmwQs+QUO5k9HVzKsMAn5ammvDkTtBoJr0O9FjnGjKEeDhC69qBar4E47KQEoKHpa+0dQWyNYj1Fh4ODXoZSMAYabQACRoQw9PPSKVzehQYwIDBAjQFnElOtuYzayAFBUVASxshQLFCGMrWyWCgtu1ftaPdts3bqgt42H7W0bCBOIfjGTgkX368uHPi0Dfw0+u0hSxFblVdhwQxeKntgkD6Mw0+EEzLZL+X14OqMOb1eJgKmRnDOnw87ccbvn/HVUT1/LVV2n4BPpTFZWQEoSD/DqpAMU8UDzoI4YQSGrHXghgCoUqEHFL4YIcSYpXhiFYE1yGIKE6YIhX0/ZDgFji8+JaHFDIRYY1XfOgdiWb0COOAIRqxgxYJktEFkQNcaAMFInghxZFH1tCUhwfYV6IPUZJx2QxV1lHjk1pg6d2DCNg3AgVuuGGCmmiq4RQysdFwQIF1RFiJZXR66dMSeerZiFNl9tlBDXstYWaAEm5JBT+EHOBoo48O8Cikjko6KUws1jiBnsccEySNZijaiAs8jgEkjHMO6iSNK6by5oQzrTriE3eG6WISKd44npQV2srjMTLZ6GuMoLa6I69cDFtqsFMYeWWurKb6qq26llrfD3BDkJAtG9m26ea3J9gXAgA7"
+        }
+    ]
+}

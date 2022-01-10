@@ -21,6 +21,7 @@ class _QuestionarioScreenState extends State<QuestionarioScreen>
     with PopUpMixin {
   late final QuestionarioController controller;
   QuizEntity get quiz => widget.quizEntity;
+  final scrollController = ScrollController();
 
   @override
   void didChangeDependencies() {
@@ -48,6 +49,7 @@ class _QuestionarioScreenState extends State<QuestionarioScreen>
               tamanhoQuiz: controller.tamanhoQuiz,
             ),
             body: QuizWidget(
+              scrollController: scrollController,
               onSelected: (value) {
                 controller.setRespostaSelecionada = value;
               },
@@ -71,6 +73,7 @@ class _QuestionarioScreenState extends State<QuestionarioScreen>
                       onTap: controller.respostaSelecionada != null
                           ? () {
                               controller.proximoPergunta;
+                              scrollController.jumpTo(0.0);
                             }
                           : null,
                     )),
