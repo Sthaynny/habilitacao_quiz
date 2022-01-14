@@ -1,8 +1,10 @@
 {
     "titulo": "Primeiros Socorros",
-    "perguntas": [{
+    "perguntas": [
+        {
             "titulo": "No que se refere à classificação das queimaduras de acordo com a profundidade e extensão da lesão, assinale a alternativa CORRETA.",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "segundo grau pele totalmente destruída, esbranquiçada e carbonizada, ausência de dor."
                 },
                 {
@@ -22,7 +24,8 @@
         },
         {
             "titulo": "A hemorragia é o derramamento de sangue do seu leito normal (artérias/veias), para dentro ou fora do corpo humano e tem como sinais e sintomas:",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "sudorese, cianose nas extremidades, midríase, hipotensão e taquicardia.",
                     "correta": true
                 },
@@ -42,7 +45,8 @@
         },
         {
             "titulo": "Em caso de vítimas apresentando suspeita de fratura do úmero devemos:",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "Verificar sinais vitais e fazer a rotação do membro inferior para certifica-se da fratura."
                 },
                 {
@@ -62,7 +66,8 @@
         },
         {
             "titulo": "Em casos de vítima de afogamento, devemos prestar os seguintes cuidados:",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "Dobrar o pescoço da vítima para facilitar a saída de água dos pulmões."
                 },
                 {
@@ -82,7 +87,8 @@
         },
         {
             "titulo": "Assinale a alternativa CORRETA: para remoção de vítimas com suspeita de lesão na coluna e politraumatizadas para os serviços de emergência devemos utilizar para o transporte:",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "Transporte tipo cadeirinha"
                 },
                 {
@@ -102,7 +108,8 @@
         },
         {
             "titulo": "(ENEM) A definição de queimaduras é bem ampla, porém, basicamente, é a lesão causada pela ação direta ou indireta produzida pela transferência de calor para o corpo. A sua manifestação varia desde bolhas (flictenas) até formas mais graves, capazes de desencadear respostas sistêmicas proporcionais à gravidade da lesão e sua respectiva extensão. Muitas vezes, os primeiros socorros prestados à vítimas, ao invés de ajudar, acabam agravando ainda mais a situação do paciente. Ao se deparar com um indivíduo que sofreu queimaduras com formação de flictena, o procedimento de primeiros socorros que deve ser realizado antes de encaminhar o paciente ao hospital é",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "colocar gelo sobre a flictena para amenizar o ardor"
                 },
                 {
@@ -122,7 +129,8 @@
         },
         {
             "titulo": "Até a vítima receber atendimento, para tentar conter a hemorragia nasal, um dos procedimentos que deve ser adotado é:",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "Colocar um pano ou toalha fria com gelo sobre o nariz",
                     "correta": true
                 },
@@ -142,7 +150,8 @@
         },
         {
             "titulo": "Antes de movimentar ou transportar a vítima, qual entre os procedimentos abaixo não é indicado?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "Conter uma hemorragia"
                 },
                 {
@@ -162,7 +171,8 @@
         },
         {
             "titulo": "Em um acidente, ocorrendo sangramento intenso, o cuidado indicado é:",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "Deixar o sangramento parar sozinho."
                 },
                 {
@@ -182,7 +192,8 @@
         },
         {
             "titulo": "Em caso de Obstrução Total de Vias Aéreas em um aluno consciente, o professor deve:",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "realizar a manobra de Heimlich",
                     "correta": true
                 },
@@ -202,7 +213,8 @@
         },
         {
             "titulo": "'As entorses ocorrem quando há estiramento, ruptura, ou ambos, dos ligamentos. São causados por golpe direto ou torção'(FLEGEL, 2002, p: 37)\nAssim o primeiro socorro a ser prestado deve ser:",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "colocar gelo diretamente sobre a área afetada"
                 },
                 {
@@ -218,11 +230,12 @@
                 {
                     "titulo": "Deitar e elevar as pernas"
                 }
-
             ]
-        }, {
+        },
+        {
             "titulo": "Em caso de acidente de trânsito com vítima(s), podemos dizer que primeiros socorros são:",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "as providências tomadas no local, iniciais e temporárias, até a chegada de socorro",
                     "correta": true
                 },
@@ -239,11 +252,14 @@
                     "titulo": "Colocar o individuo no carro e levar para a emegencia."
                 }
             ]
-        }, {
+        },
+        {
             "titulo": "O melhor local no corpo para se verificar a oulsação é:",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "No pé"
-                }, {
+                },
+                {
                     "titulo": "No braço",
                     "correta": true
                 },
@@ -257,11 +273,14 @@
                     "titulo": "Na testa"
                 }
             ]
-        }, {
+        },
+        {
             "titulo": "Num caso de acidente de transito deverá receber os primeiros socorros, em primeiro lugar, a vitima que estiver:",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "Gritando com muita dor"
-                }, {
+                },
+                {
                     "titulo": "Sangrando muito"
                 },
                 {
@@ -275,11 +294,14 @@
                     "titulo": "A ques estiver de levantada"
                 }
             ]
-        }, {
+        },
+        {
             "titulo": "Em caso de hemorragia nasal, o procedimento correto é:",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "Correr para o hospital com a vitima"
-                }, {
+                },
+                {
                     "titulo": "Comprimir as narinas e baixar a cabeça da vitima."
                 },
                 {
@@ -293,21 +315,337 @@
                     "titulo": "Dar tapas na nuca da vitima até que escorra todo o sangue"
                 }
             ]
-        },{
-            "titulo": "",
-            "respostas": [{
-                    "titulo": ""
-                }, {
-                    "titulo": ""
+        },
+        {
+            "titulo": "Na parada respiratória NÃO devemos:",
+            "respostas": [
+                {
+                    "titulo": "Afrouxar as roupas da vitima"
                 },
                 {
-                    "titulo": ""
+                    "titulo": "Iniciar uma massagem respiratoria imediatamente"
                 },
                 {
-                    "titulo": ""
+                    "titulo": "Retirar objetos da boca da vitima"
                 },
                 {
-                    "titulo": ""
+                    "titulo": "Esperar o médico para prestar os primeiros socorros",
+                    "correta": true
+                }
+            ]
+        },
+        {
+            "titulo": "Quando ocorre um acidente com vitima, wusl s primeira providencia a ser tomada?",
+            "respostas": [
+                {
+                    "titulo": "Verificar a situação do veiculo do acidente"
+                },
+                {
+                    "titulo": "Socorrer a vitama",
+                    "correta": true
+                },
+                {
+                    "titulo": "Chamar o corpo de bombeiro pelo telefone 193"
+                },
+                {
+                    "titulo": "Acalmar os passageiros mais nervosos"
+                },
+                {
+                    "titulo": "Gritar por ajuda, até que alguém apareça."
+                }
+            ]
+        },
+        {
+            "titulo": "Parada respiratória é a perda momentânea ou não da capacidade de:",
+            "respostas": [
+                {
+                    "titulo": "Respirar",
+                    "correta": true
+                },
+                {
+                    "titulo": "Inspirar"
+                },
+                {
+                    "titulo": "Expirar"
+                },
+                {
+                    "titulo": "Inalar"
+                },
+                {
+                    "titulo": "Falar"
+                }
+            ]
+        },
+        {
+            "titulo": "Em caso de fratura de braço e pernas, deve-se sempre tentar colocar o osso no lugar de imediato aós o acidente?",
+            "respostas": [
+                {
+                    "titulo": "Certo"
+                },
+                {
+                    "titulo": "Somente em casos graves"
+                },
+                {
+                    "titulo": "Não se deve tomar importância"
+                },
+                {
+                    "titulo": "Errado",
+                    "correta": true
+                },
+                {
+                    "titulo": "Todas as incorretas"
+                }
+            ]
+        },
+        {
+            "titulo": "Em caso de acidente, a quem devemos socorrer em primeiro lugar?",
+            "respostas": [
+                {
+                    "titulo": "As pessoas que estão sentindo muita dor"
+                },
+                {
+                    "titulo": "Pessoas inconcientes e que estão sangrando gravemente",
+                    "correta": true
+                },
+                {
+                    "titulo": "As crianças e idosos"
+                },
+                {
+                    "titulo": "Pessoas consideradas mais nervosas"
+                },
+                {
+                    "titulo": "As pessoas que estão gritando mais"
+                }
+            ]
+        },
+        {
+            "titulo": "O que não deve ser feito em acidentes de transito:",
+            "respostas": [
+                {
+                    "titulo": "Iluminar o local com lanterna ou luz do veiculo"
+                },
+                {
+                    "titulo": "Sinalizar com distancia de 30 metros, usando um triangulo"
+                },
+                {
+                    "titulo": "Tocar o ferimento com os dedos ou objeto não esterelizados",
+                    "correta": true
+                },
+                {
+                    "titulo": "Lavar as mãos com agua e sabão antes de atender a vitima"
+                },
+                {
+                    "titulo": "Ligar para emergência"
+                }
+            ]
+        },
+        {
+            "titulo": "Que procedimento deve ser adotado durante uma crise covulcional?",
+            "respostas": [
+                {
+                    "titulo": "Manter a vitima deitada, protegendo-a para não se machucar, até a convulsão cessar",
+                    "correta": true
+                },
+                {
+                    "titulo": "Não socorrer a vitima"
+                },
+                {
+                    "titulo": "Não mexer da forma alguma na vitima"
+                },
+                {
+                    "titulo": "Garantir que niguém se aproxime da vitima"
+                },
+                {
+                    "titulo": "Jogar água fria na vitima"
+                }
+            ]
+        },
+        {
+            "titulo": "Inconciência, parada respiratória, hemorragia pelo nariz ao sintomas de fraturas:",
+            "respostas": [
+                {
+                    "titulo": "Braço"
+                },
+                {
+                    "titulo": "Costela"
+                },
+                {
+                    "titulo": "Coluna"
+                },
+                {
+                    "titulo": "Clavicula"
+                },
+                {
+                    "titulo": "Crânio",
+                    "correta": true
+                }
+            ]
+        },
+        {
+            "titulo": "Como saber se o acidentado esta respirando?",
+            "respostas": [
+                {
+                    "titulo": "Observar as extremidades(dedos das mãos e dos pés)"
+                },
+                {
+                    "titulo": "Observar a pupila da vitima"
+                },
+                {
+                    "titulo": "Observar os movimentos do peito, procurandosentir o sari da boca e do nariz",
+                    "correta": true
+                },
+                {
+                    "titulo": "Observar a temperatua da vitima"
+                },
+                {
+                    "titulo": "Todas incorretas"
+                }
+            ]
+        },
+        {
+            "titulo": "Parada cardiaca é...",
+            "respostas": [
+                {
+                    "titulo": "A perda da função circulatória"
+                },
+                {
+                    "titulo": "Perda da visão"
+                },
+                {
+                    "titulo": "Parada dos baimentos da pulsação"
+                },
+                {
+                    "titulo": "Parada dos batimentos cardiacos",
+                    "correta": true
+                },
+                {
+                    "titulo": "Perda da função respiratória"
+                }
+            ]
+        },
+        {
+            "titulo": "Em um adulto, qual a região mais indicada para verificar o pulso?",
+            "respostas": [
+                {
+                    "titulo": "Região do coração"
+                },
+                {
+                    "titulo": "Região do peito"
+                },
+                {
+                    "titulo": "Região da perna"
+                },
+                {
+                    "titulo": "Região do pescoço, através da arteria carótida.",
+                    "correta": true
+                },
+                {
+                    "titulo": "Todas incorretas"
+                }
+            ]
+        },
+        {
+            "titulo": "Qual alternativa abaixo não se refere a tipos de fruturas",
+            "respostas": [
+                {
+                    "titulo": "Fechadas"
+                },
+                {
+                    "titulo": "Abertas"
+                },
+                {
+                    "titulo": "Expostas"
+                },
+                {
+                    "titulo": "Todas as alternativas refere a fratura"
+                },
+                {
+                    "titulo": "Transversais",
+                    "correta": true
+                }
+            ]
+        },
+        {
+            "titulo": "O ART. 304, previsto no código de transito brasileiro, prever que e crime:",
+            "respostas": [
+                {
+                    "titulo": "Para no acostamento"
+                },
+                {
+                    "titulo": "Usar triangulo em caso de acidentes"
+                },
+                {
+                    "titulo": "Omissão de socorro",
+                    "correta": true
+                },
+                {
+                    "titulo": "Não oferecer crona"
+                },
+                {
+                    "titulo": "Utrapassar limite de velocidade na vias arteriais"
+                }
+            ]
+        },
+        {
+            "titulo": "O que fazer, no local, com o acidentado que sofreu queimaduas?",
+            "respostas": [
+                {
+                    "titulo": "Passar pasta denta na ferida"
+                },
+                {
+                    "titulo": "Passar desinfetante na ferida"
+                },
+                {
+                    "titulo": "Cobrir a ferida com gase"
+                },
+                {
+                    "titulo": "Colocar areia para aliviar a dor"
+                },
+                {
+                    "titulo": "Lavar com água limpa, apenas.",
+                    "correta": true
+                }
+            ]
+        },
+        {
+            "titulo": "Em caso de queimaduras, devemos:",
+            "respostas": [
+                {
+                    "titulo": "passar pasta de dente"
+                },
+                {
+                    "titulo": "Jogar areia"
+                },
+                {
+                    "titulo": "Jogar água, independente de onde seja"
+                },
+                {
+                    "titulo": "Passar a mão sobre o local"
+                },
+                {
+                    "titulo": "Não furar as bolhas e nem passar pomadas",
+                    "correta": true
+                }
+            ]
+        },
+        {
+            "titulo": "Em uma rodovia, cuja a velocidade máxima permitida é de 80 KM/h, ocorreu um colisão entre carros. O acidente aconteceu às 11:00 e a pista estava seca. Para essa situação, recomenda-se que a distância do acidente para o inicio da sinalização deve ser de?",
+            "respostas": [
+                {
+                    "titulo": "40 metros"
+                },
+                {
+                    "titulo": "20 metros"
+                },
+                {
+                    "titulo": "80 passos curtos de uma criança"
+                },
+                {
+                    "titulo": "60 metros"
+                },
+                {
+                    "titulo": "80 passos longos de um adulto",
+                    "correta": true
                 }
             ]
         }
