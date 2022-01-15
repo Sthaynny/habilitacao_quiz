@@ -6,8 +6,7 @@
 
 <p align="center">
    <a href="https://www.linkedin.com/in/igor-sthaynny/">
-
-      <img alt="Igor Sthaynny" src="https://img.shields.io/badge/-Sthaynny-5965e0?style=flat&logo=Linkedin&logoColor=white" />
+      <img alt="Igor Sthaynny" src="https://img.shields.io/badge/-Sthaynny-5965e0?style=flat&logo=Linkedin&logoColor=white"/>
    </a>
   <img alt="Languages" src="https://img.shields.io/github/languages/count/Sthaynny/apod?color=%235963C5" />
   <img alt="lastcommit" src="https://img.shields.io/github/last-commit/Sthaynny/apod?color=%235761C3" />
@@ -40,8 +39,8 @@
 
 # :camera: Screenshots
 <div align="center">
-  <img src="https://user-images.githubusercontent.com/46109133/142040693-32a6136c-ff7d-4e10-b436-f832e54de12d.png" width="250px">
-  <img src="https://user-images.githubusercontent.com/46109133/142040767-d7e53722-2132-4a47-adf0-44642fdfb1f2.png" width="250px">
+  
+  
 </div>
   
 
