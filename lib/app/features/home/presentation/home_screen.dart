@@ -79,6 +79,13 @@ class _HomeScreen extends State<HomeScreen> with PopUpMixin {
                         onPressend: () {
                           popUpEmBreve();
                         },
+                        iconAsset: AppImages.meioAmbiente,
+                        titulo: Strings.meioAmbiente,
+                      ),
+                      QuizButtonWidget(
+                        onPressend: () {
+                          popUpEmBreve();
+                        },
                         iconAsset: AppImages.aleatoria,
                         titulo: Strings.aleatorias,
                       ),
