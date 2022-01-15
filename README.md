@@ -31,11 +31,11 @@
 
 - [📌 Contents](#-contents)
 - [:camera: Screenshots](#camera-screenshots)
-- [:rocket: Technologies](#rocket-technologies)
-- [:computer: How to run](#computer-how-to-run)
+- [:rocket: Tecnologias](#rocket-tecnologias)
+- [:computer: Como rodar](#computer-como-rodar)
 - [:bug: Issues](#bug-issues)
-- [:sparkles: Contributing](#sparkles-contributing)
-- [:page_facing_up: License](#page_facing_up-license)
+- [:sparkles: Contribuição](#sparkles-contribuição)
+- [:page_facing_up: Licença](#page_facing_up-licença)
 
 # :camera: Screenshots
 <div align="center">
@@ -87,7 +87,7 @@ chmod +x .git/hooks/pre-commit
 ```
 
 
-# :page_facing_up: License
+# :page_facing_up: Licença
 
 Este projeto está sob a [MIT License](./LICENSE) |
 Made with 💖 by [Igor Sthaynny](https://www.linkedin.com/in/igor-sthaynny/).
