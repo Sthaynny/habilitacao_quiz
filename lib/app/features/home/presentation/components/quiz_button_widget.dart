@@ -20,7 +20,7 @@ class QuizButtonWidget extends StatelessWidget {
         backgroundColor: MaterialStateProperty.all(
           AppColors.azul.withAlpha(200),
         ),
-        elevation: MaterialStateProperty.all(1),
+        elevation: MaterialStateProperty.all(2),
         fixedSize: MaterialStateProperty.all(
           Size(150.w, 180.h),
         ),
@@ -34,9 +34,13 @@ class QuizButtonWidget extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          Image.asset(
-            iconAsset,
-            width: 50.w,
+          Material(
+            color: Colors.transparent,
+            elevation: 30,
+            child: Image.asset(
+              iconAsset,
+              width: 50.w,
+            ),
           ),
           Text(
             titulo,
