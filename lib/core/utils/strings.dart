@@ -17,4 +17,5 @@ abstract class Strings {
   static const sim = "Sim";
   static const menssagemAoSairQuestionario =
       "Você vai perder o progresso feito no seu simulado. Quer mesmo sair desse questionário?";
+  static const simulado = "Simulado";
 }
