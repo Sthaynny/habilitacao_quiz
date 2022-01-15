@@ -70,7 +70,7 @@ class _HomeScreen extends State<HomeScreen> with PopUpMixin {
                       ),
                       QuizButtonWidget(
                         onPressend: () {
-                          popUpEmBreve();
+                          controller.irParaPagina(QuizEnum.primeirosSocorros);
                         },
                         iconAsset: AppImages.primeirosSocorros,
                         titulo: Strings.primeirosSocorros,
