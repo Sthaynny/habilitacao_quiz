@@ -4,8 +4,7 @@ enum QuizEnum {
   legislacao,
   direcaoDefensiva,
   aleatorias,
+  meioAmbiente,
 }
 
-extension QuizEnumExt on QuizEnum{
-  
-}
+extension QuizEnumExt on QuizEnum {}

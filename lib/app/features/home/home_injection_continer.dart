@@ -33,6 +33,8 @@ class HomeInjectionContainer implements IInjectionContainer {
       () => HomeController(
         direcaoDefesivaQuizUsercase: Get.find(),
         legislacaoQuizUsercase: Get.find(),
+        meioAmbienteQuizUsercase: Get.find(),
+        primeirosSocorrosQuizUsercase: Get.find(),
       ),
       fenix: true,
     );
