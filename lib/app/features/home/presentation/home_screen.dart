@@ -63,7 +63,7 @@ class _HomeScreen extends State<HomeScreen> with PopUpMixin {
                       ),
                       QuizButtonWidget(
                         onPressend: () {
-                          popUpEmBreve();
+                          controller.irParaPagina(QuizEnum.mecanicaBasica);
                         },
                         iconAsset: AppImages.mecanica,
                         titulo: Strings.mecanicaBasica,
@@ -86,8 +86,8 @@ class _HomeScreen extends State<HomeScreen> with PopUpMixin {
                         onPressend: () {
                           popUpEmBreve();
                         },
-                        iconAsset: AppImages.aleatoria,
-                        titulo: Strings.aleatorias,
+                        iconAsset: AppImages.simulado,
+                        titulo: Strings.simulado,
                       ),
                     ],
                   ),

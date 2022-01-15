@@ -2,6 +2,7 @@ import 'package:dartz/dartz.dart';
 import 'package:get/get.dart';
 import 'package:quiz_car/app/features/home/domain/usecases/direcao_defensiva_quiz_usercase.dart';
 import 'package:quiz_car/app/features/home/domain/usecases/legislacao_quiz_usercase.dart';
+import 'package:quiz_car/app/features/home/domain/usecases/mecanica_basica_quiz_usercase.dart';
 import 'package:quiz_car/app/features/home/domain/usecases/meio_ambiente_quiz_usercase.dart';
 import 'package:quiz_car/app/features/home/domain/usecases/primeiros_socorros_quiz_usercase.dart';
 import 'package:quiz_car/app/features/questionario/presentation/questionario_screen.dart';
@@ -17,17 +18,18 @@ enum HomeState {
 }
 
 class HomeController extends GetxController {
-  HomeController({
-    required DirecaoDefesivaQuizUsercase direcaoDefesivaQuizUsercase,
-    required LegislacaoQuizUsercase legislacaoQuizUsercase,
-    required MeioAmbienteQuizUsercase meioAmbienteQuizUsercase,
-    required PrimeirosSocorrosQuizUsercase primeirosSocorrosQuizUsercase,
-  }) {
+  HomeController(
+      {required DirecaoDefesivaQuizUsercase direcaoDefesivaQuizUsercase,
+      required LegislacaoQuizUsercase legislacaoQuizUsercase,
+      required MeioAmbienteQuizUsercase meioAmbienteQuizUsercase,
+      required PrimeirosSocorrosQuizUsercase primeirosSocorrosQuizUsercase,
+      required MecanicaBasicaQuizUsercase mecanicaBasicaQuizUsercase}) {
     homeState = Rx<HomeState>(HomeState.init);
     _direcaoDefesivaQuizUsercase = direcaoDefesivaQuizUsercase;
     _legislacaoQuizUsercase = legislacaoQuizUsercase;
     _primeirosSocorrosQuizUsercase = primeirosSocorrosQuizUsercase;
     _meioAmbienteQuizUsercase = meioAmbienteQuizUsercase;
+    _mecanicaBasicaQuizUsercase = mecanicaBasicaQuizUsercase;
     _quizEntity = Rx<QuizEntity?>(null);
   }
   late Rx<HomeState> homeState;
@@ -35,6 +37,7 @@ class HomeController extends GetxController {
   late final LegislacaoQuizUsercase _legislacaoQuizUsercase;
   late final MeioAmbienteQuizUsercase _meioAmbienteQuizUsercase;
   late final PrimeirosSocorrosQuizUsercase _primeirosSocorrosQuizUsercase;
+  late final MecanicaBasicaQuizUsercase _mecanicaBasicaQuizUsercase;
   late Rx<QuizEntity?> _quizEntity;
 
   Future<void> irParaPagina(QuizEnum quiz) async {
@@ -68,6 +71,10 @@ class HomeController extends GetxController {
         break;
       case QuizEnum.primeirosSocorros:
         final result = await _primeirosSocorrosQuizUsercase();
+        _emitirEstado(result);
+        break;
+      case QuizEnum.mecanicaBasica:
+        final result = await _mecanicaBasicaQuizUsercase();
         _emitirEstado(result);
         break;
       default:

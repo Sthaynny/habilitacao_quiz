@@ -9,5 +9,5 @@ abstract class AppImages {
   static String get direcaoDefensiva => _getImage("direcao");
   static String get sucesso => _getImage("sucesso");
   static String get atencao => _getImage("atencao");
-  static String get logo => _getImage("carro");
+  static String get logo => _getImage("logo");
 }
