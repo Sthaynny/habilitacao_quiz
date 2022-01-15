@@ -3,8 +3,8 @@ enum QuizEnum {
   primeirosSocorros,
   legislacao,
   direcaoDefensiva,
-  aleatorias,
   meioAmbiente,
+  similado,
 }
 
 extension QuizEnumExt on QuizEnum {}

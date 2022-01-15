@@ -84,7 +84,7 @@ class _HomeScreen extends State<HomeScreen> with PopUpMixin {
                       ),
                       QuizButtonWidget(
                         onPressend: () {
-                          popUpEmBreve();
+                          controller.irParaPagina(QuizEnum.similado);
                         },
                         iconAsset: AppImages.simulado,
                         titulo: Strings.simulado,
