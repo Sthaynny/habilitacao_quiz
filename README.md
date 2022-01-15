@@ -8,10 +8,10 @@
    <a href="https://www.linkedin.com/in/igor-sthaynny/">
       <img alt="Igor Sthaynny" src="https://img.shields.io/badge/-Sthaynny-5965e0?style=flat&logo=Linkedin&logoColor=white"/>
    </a>
-  <img alt="Languages" src="https://img.shields.io/github/languages/count/Sthaynny/apod?color=%235963C5" />
-  <img alt="lastcommit" src="https://img.shields.io/github/last-commit/Sthaynny/apod?color=%235761C3" />
-  <img alt="License" src="https://img.shields.io/github/license/Sthaynny/apod?color=%235E69D7" />
-  <img alt="Issues" src="https://img.shields.io/github/issues/Sthaynny/apod?color=%235965E0">
+  <img alt="Languages" src="https://img.shields.io/github/languages/count/Sthaynny/quiz_car?color=%235963C5" />
+  <img alt="lastcommit" src="https://img.shields.io/github/last-commit/Sthaynny/quiz_car?color=%235761C3" />
+  <img alt="License" src="https://img.shields.io/github/license/Sthaynny/quiz_car?color=%235E69D7" />
+  <img alt="Issues" src="https://img.shields.io/github/issues/Sthaynny/quiz_car?color=%235965E0">
   <a href="mailto:igorsthaynny@gmail.com">
    <img alt="E-mail" src="https://img.shields.io/badge/-igorsthaynny%40gmail.com-%23525DCB" />
   </a>
@@ -54,7 +54,7 @@ Esse:
 
 ```bash
 # Clone Repositorio
-$ git clone https://github.com/Sthaynny/apod.git
+$ git clone https://github.com/Sthaynny/quiz_car.git
 
 # Instale as dependências
 $ flutter pub get
@@ -65,7 +65,7 @@ $ flutter run
 
 # :bug: Issues
 
-Cria um issue <a href="https://github.com/Sthaynny/apod/issues">nova issue</a>, será uma honra poder ajudá-lo a resolver e melhorar ainda mais nosso aplicativo.
+Cria um issue <a href="https://github.com/Sthaynny/quiz_car/issues">nova issue</a>, será uma honra poder ajudá-lo a resolver e melhorar ainda mais nosso aplicativo.
 
 # :sparkles: Contribuição
 
