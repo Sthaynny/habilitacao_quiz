@@ -4,10 +4,10 @@ import 'package:quiz_car/app/features/shared/domain/repositories/iquiz_repositor
 import 'package:quiz_car/core/exceptions/erro.dart';
 import 'package:quiz_car/core/utils/keys.dart';
 
-class DirecaoDefesivaQuizUsercase {
-  DirecaoDefesivaQuizUsercase(this.repository);
+class MecanicaBasicaQuizUsercase {
+  MecanicaBasicaQuizUsercase(this.repository);
   final IQuizRepository repository;
   Future<Either<ExceptionErro, QuizEntity>> call() {
-    return repository.getQuiz(Keys.direcaoDefensiva);
+    return repository.getQuiz(Keys.mecanicaBasica);
   }
 }
