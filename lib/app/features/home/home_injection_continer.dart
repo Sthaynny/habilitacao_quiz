@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:quiz_car/app/features/home/domain/usecases/direcao_defensiva_quiz_usercase.dart';
 import 'package:quiz_car/app/features/home/domain/usecases/legislacao_quiz_usercase.dart';
+import 'package:quiz_car/app/features/home/domain/usecases/mecanica_basica_quiz_usercase.dart';
 import 'package:quiz_car/app/features/home/domain/usecases/meio_ambiente_quiz_usercase.dart';
 import 'package:quiz_car/app/features/home/domain/usecases/primeiros_socorros_quiz_usercase.dart';
 import 'package:quiz_car/app/features/home/presentation/controller/home_controller.dart';
@@ -26,6 +27,11 @@ class HomeInjectionContainer implements IInjectionContainer {
 
     Get.lazyPut(
       () => PrimeirosSocorrosQuizUsercase(Get.find()),
+      fenix: true,
+    );
+
+    Get.lazyPut(
+      () => MecanicaBasicaQuizUsercase(Get.find()),
       fenix: true,
     );
 
