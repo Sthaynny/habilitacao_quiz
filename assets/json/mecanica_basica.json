@@ -1,0 +1,569 @@
+{
+    "titulo": "Mecânica Básica",
+    "perguntas": [
+        {
+            "titulo": "A embreagem, composta basicamente de um disco e um platô, tem como função principal: ",
+            "respostas": [
+                {
+                    "titulo": "não acavalar as marchas;"
+                },
+                {
+                    "titulo": "Permitir ligar o veículo mais facilmente;"
+                },
+                {
+                    "titulo": "Ligar e desligar a força motriz do motor da parte restante da transmissão.",
+                    "correta": true
+                },
+                {
+                    "titulo": "Facilitar o funcionamento do motor."
+                }
+            ]
+        },
+        {
+            "titulo": "A finalidade da suspensão e dos amortecedores é manter a estabilidade do veículo. Quando há desgaste desses itens do veículo: ",
+            "respostas": [
+                {
+                    "titulo": "Haverá redução do nível do óleo do sistema de transmissão, provocando travamento do cambio "
+                },
+                {
+                    "titulo": "Poderão provocar o travamento da direção, principalmente em frenagens e curvas;",
+                    "correta": true
+                },
+                {
+                    "titulo": "Poderão causar a perda de controle do veículo, principalmente em frenagens e curvas;"
+                },
+                {
+                    "titulo": "Poderá ocorrer esvaziamento da agua do radiador, fundido o motor."
+                }
+            ]
+        },
+        {
+            "titulo": "O condutor, após passar sobre uma via alagada, deve testar a:",
+            "respostas": [
+                {
+                    "titulo": "Embreagem e a eficiência dos freios, acionando os pedais com a máxima pressão;"
+                },
+                {
+                    "titulo": "Eficiência dos freios, acionando lentamente o freio de mão;"
+                },
+                {
+                    "titulo": "Eficiência dos freios, acionando o pedal com simples toques;",
+                    "correta": true
+                },
+                {
+                    "titulo": "Eficiência dos freios, acionando o pedal com a máxima Pressão."
+                }
+            ]
+        },
+        {
+            "titulo": "A estabilidade do veículo também está relacionada com os pneus. O condutor deve conferir periódica e regularmente:\nI- a calibragem pneus;\nII- o desgaste dos pneus;\n II- a existência de possíveis deformações na carcaça.\nÉ correto o que consta em: ",
+            "respostas": [
+                {
+                    "titulo": "I, II e III",
+                    "correta": true
+                },
+                {
+                    "titulo": "II"
+                },
+                {
+                    "titulo": "I"
+                },
+                {
+                    "titulo": "III"
+                }
+            ]
+        },
+        {
+            "titulo": "Ao fazer a verificação do sistema de luzes do veículo, o proprietário notou que, quando acionava a luz indicadora de direção (pisca-pisca) para a esquerda, a luz indicadora de função no painel funcionava compassadamente. Quando acionava para a direita, a luz disparava em velocidade maior. A causa mais provável deste problema é que:",
+            "respostas": [
+                {
+                    "titulo": "O comutador de ignição está danificado;"
+                },
+                {
+                    "titulo": "O fusível do sistema está queimado;"
+                },
+                {
+                    "titulo": "A bateria do veículo está com meia carga;"
+                },
+                {
+                    "titulo": "Há uma lâmpada deste sistema queimada.",
+                    "correta": true
+                }
+            ]
+        },
+        {
+            "titulo": "O condutor defensivo deve conhecer o fato de que, em geral, nos veículos sem o sistema ABS de freios, a força de frenagem:",
+            "respostas": [
+                {
+                    "titulo": "Nas rodas dianteiras é menor que na traseira;"
+                },
+                {
+                    "titulo": "E uniforme entre as rodas;"
+                },
+                {
+                    "titulo": "E aplicada somente nas rodas dianteiras;"
+                },
+                {
+                    "titulo": "Nas rodas traseiras é menor que na dianteira.",
+                    "correta": true
+                }
+            ]
+        },
+        {
+            "titulo": "Considere a ilustração abaixo: \nQuando o nível de água deste tipo bateria de um veículo automotor estiver abaixo do normal, o Motorista deverá:",
+            "respostas": [
+                {
+                    "titulo": "Substituir a bateria por uma nova;"
+                },
+                {
+                    "titulo": "Completar com água destilada;",
+                    "correta": true
+                },
+                {
+                    "titulo": "Completar com água e aditivo;"
+                },
+                {
+                    "titulo": "Aumentar a amperagem do regulador."
+                }
+            ]
+        },
+        {
+            "titulo": "Para remover a bateria de um veículo deve-se:",
+            "respostas": [
+                {
+                    "titulo": "Simplesmente abra o capo e retirar"
+                },
+                {
+                    "titulo": "Soltar primeiro o cabo do negativo e depois o do positivo",
+                    "correta": true
+                },
+                {
+                    "titulo": "Soltar primeiro o cabo do positivo e depois o do negativo"
+                },
+                {
+                    "titulo": "Não sei como proceder para retirar "
+                }
+            ]
+        },
+        {
+            "titulo": "Num estouro ou esvaziamento súbito de um pneu, o condutor deve:",
+            "respostas": [
+                {
+                    "titulo": "Deixar o carro perder velocidade por si só, segurando firmemente o volante e, depois, frear suavemente.",
+                    "correta": true
+                },
+                {
+                    "titulo": "Colocar a marcha em ponto morto."
+                },
+                {
+                    "titulo": "Virar o volante para o lado inverso do pneu furado e puxar o freio de mão."
+                },
+                {
+                    "titulo": "Virar o volante para um lado e para o outro sucessivamente."
+                }
+            ]
+        },
+        {
+            "titulo": "A função da bateria é",
+            "respostas": [
+                {
+                    "titulo": "Gerar movimento às rodas;"
+                },
+                {
+                    "titulo": "Aumentar a potência do motor;"
+                },
+                {
+                    "titulo": "Armazenar e fornecer corrente elétrica;",
+                    "correta": true
+                },
+                {
+                    "titulo": "Regular a potência do motor. "
+                }
+            ]
+        },
+        {
+            "titulo": "A calibragem correta contribui para o prolongamento da vida útil dos pneus. Um pneu com pressão excessiva terá desgaste.",
+            "respostas": [
+                {
+                    "titulo": "Na lateral interna do pneu em relação à roda"
+                },
+                {
+                    "titulo": "Nas bordas da banda de rodagem do pneu"
+                },
+                {
+                    "titulo": "Em ambos os lados do talão de fixação do pneu"
+                },
+                {
+                    "titulo": "Ao centro da banda de rodagem do pneu.",
+                    "correta": true
+                }
+            ]
+        },
+        {
+            "titulo": "A bomba de agua é um dos componentes do sistema que controla a temperatura do motor. A sua função básica é:",
+            "respostas": [
+                {
+                    "titulo": "Aspirar agua arrefecida pela bateria e fazê-la circular pelas galerias do bloco do motor, para depois voltar ao radiador;",
+                    "correta": true
+                },
+                {
+                    "titulo": "Aspirar a agua das câmaras de resfriamento do bloco do motor, fazendo-a circular pelo radiador para esfriar."
+                },
+                {
+                    "titulo": "Aspirar a agua do reservatório de expansão e leva-la ao radiador;"
+                },
+                {
+                    "titulo": "Levar a agua do reservatório de expansão até as câmaras de resfriamento do motor."
+                }
+            ]
+        },
+        {
+            "titulo": "Todo condutor deve possuir conhecimentos básicos de mecânica a fim de manter o veículo sempre em bom estado e trafegar com segurança, conforme os preceitos da Direção Defensiva. Sendo assim, analise as afirmativas abaixo: \nI. Folgas no sistema de direção provocam o desbalanceamento das rodas. \nII. A finalidade dos amortecedores é de garantir a eficiência no sistema de direção. \nIII. As principais razões de perda de eficiência do sistema de freios são vazamento e nível de fluido baixo, bem como discos, pastilhas e lonas gastos. \nÉ correto o que consta APENAS em:",
+            "respostas": [
+                {
+                    "titulo": "III",
+                    "correta": true
+                },
+                {
+                    "titulo": "II"
+                },
+                {
+                    "titulo": "I, II e III"
+                },
+                {
+                    "titulo": "I"
+                }
+            ]
+        },
+        {
+            "titulo": "No veículo, periodicamente, deve-se:",
+            "respostas": [
+                {
+                    "titulo": "Verificar a agua do sistema de freios;"
+                },
+                {
+                    "titulo": "Lavar os tapetes para evitar ferrugem;"
+                },
+                {
+                    "titulo": "Trocar o óleo do radiador;"
+                },
+                {
+                    "titulo": "Lavar os pneus, evitando derrapagens;"
+                },
+                {
+                    "titulo": "Verificar o nível do óleo do motor.",
+                    "correta": true
+                }
+            ]
+        },
+        {
+            "titulo": "A finalidade da embreagem é:",
+            "respostas": [
+                {
+                    "titulo": "Não deixar o motor morrer;"
+                },
+                {
+                    "titulo": "Transmitir progressivamente a potência do motor para a caixa de câmbio e rodas;",
+                    "correta": true
+                },
+                {
+                    "titulo": "Transmitir o movimento do pedal para o engate e desengate do cambio;"
+                },
+                {
+                    "titulo": "Evitar trancos no câmbio;"
+                },
+                {
+                    "titulo": "Permitir a redução de velocidade do veículo."
+                }
+            ]
+        },
+        {
+            "titulo": "É função dos amortecedores:",
+            "respostas": [
+                {
+                    "titulo": "Evitar o atrito dos pneus com o solo;"
+                },
+                {
+                    "titulo": "Auxiliar a mudança de direção nas curvas;"
+                },
+                {
+                    "titulo": "Reduzir os movimentos bruscos da mola;",
+                    "correta": true
+                },
+                {
+                    "titulo": "Aumentar a vida dos pneus;"
+                },
+                {
+                    "titulo": "Reduzir a velocidade."
+                }
+            ]
+        },
+        {
+            "titulo": "Durante uma viagem, ao descobrir que a lâmpada do pisca pisca está queimada, três motoristas reagem de forma diferente: \nMotorista 1: resolve trocar na volta e segue em frente \nMotorista 2: deixa para trocar na próxima revisão geral\nMotorista 3: procura um auto elétrico para consertar.\nO motorista que agiu corretamente foi:",
+            "respostas": [
+                {
+                    "titulo": "O motorista 1;"
+                },
+                {
+                    "titulo": "O motorista 2;"
+                },
+                {
+                    "titulo": "O motorista 3;",
+                    "correta": true
+                },
+                {
+                    "titulo": "Nenhum deles;"
+                },
+                {
+                    "titulo": "A motorista 1 e 2."
+                }
+            ]
+        },
+        {
+            "titulo": "A circulação da agua no motor e no radiador é forçada: ",
+            "respostas": [
+                {
+                    "titulo": "Pelo carburador;"
+                },
+                {
+                    "titulo": "Pela bomba d’agua;",
+                    "correta": true
+                },
+                {
+                    "titulo": "Pela bomba de óleo;"
+                },
+                {
+                    "titulo": "Pela roda d’agua;"
+                },
+                {
+                    "titulo": "Pela correia dentada."
+                }
+            ]
+        },
+        {
+            "titulo": "O sistema que absorve os impactos das rodas com o solo é o de:",
+            "respostas": [
+                {
+                    "titulo": "Direção;"
+                },
+                {
+                    "titulo": "Suspensão;",
+                    "correta": true
+                },
+                {
+                    "titulo": "Transmissão;"
+                },
+                {
+                    "titulo": "Freios;"
+                },
+                {
+                    "titulo": "Estrutural."
+                }
+            ]
+        },
+        {
+            "titulo": "Conforme a posição dos fios das lonas, o pneu pode ser: ",
+            "respostas": [
+                {
+                    "titulo": "De tala larga;"
+                },
+                {
+                    "titulo": "Radial ou diagonal;",
+                    "correta": true
+                },
+                {
+                    "titulo": "Com câmara ou sem câmara;"
+                },
+                {
+                    "titulo": "Liso ou para chuva;"
+                },
+                {
+                    "titulo": "De perfil alto ou baixo."
+                }
+            ]
+        },
+        {
+            "titulo": "Ao estacionar o carro numa via urbana pavimentada e plana, o condutor deverá atender, necessariamente:",
+            "respostas": [
+                {
+                    "titulo": "Aos critérios de puxar o freio de estacionamento e deixar o pisca-alerta acionado;"
+                },
+                {
+                    "titulo": "Aos critérios de puxar o freio de estacionamento, engatar uma marcha e deixar a direção esterçada;"
+                },
+                {
+                    "titulo": "Ao critério de puxar o freio de estacionamento, apenas;",
+                    "correta": true
+                },
+                {
+                    "titulo": "Aos critérios de puxar o freio de estacionamento e engatar uma marcha, para maior segurança;"
+                },
+                {
+                    "titulo": "Todas as alternativas estão corretas."
+                }
+            ]
+        },
+        {
+            "titulo": "A finalidade da embreagem é:",
+            "respostas": [
+                {
+                    "titulo": "Possibilitar dificuldades no início do movimento do veículo"
+                },
+                {
+                    "titulo": "Possibilitar o desgaste precoce;"
+                },
+                {
+                    "titulo": "Possibilitar um fácil engate e mudança de marchas;",
+                    "correta": true
+                },
+                {
+                    "titulo": "Possibilitar uma dificuldade de engate e mudança de marchas."
+                }
+            ]
+        },
+        {
+            "titulo": "São ciclos do motor: ",
+            "respostas": [
+                {
+                    "titulo": "Admissão, volante, explosão e exaustão;"
+                },
+                {
+                    "titulo": "Admissão, compressão, explosão e válvulas;"
+                },
+                {
+                    "titulo": "Admissão, compressão, anéis e exaustão;"
+                },
+                {
+                    "titulo": "Admissão, compressão, explosão e exaustão.",
+                    "correta": true
+                }
+            ]
+        },
+        {
+            "titulo": "O objetivo do sistema de direção hidráulica é:",
+            "respostas": [
+                {
+                    "titulo": "Aumentar o esforço do motorista;"
+                },
+                {
+                    "titulo": "Reduzir o esforço do motorista;",
+                    "correta": true
+                },
+                {
+                    "titulo": "Reduzir o esforço do passageiro;"
+                },
+                {
+                    "titulo": "Reduzir o esforço do pedestre."
+                }
+            ]
+        },
+        {
+            "titulo": "O nível de óleo lubrificante do motor deve ser verificado com o motor",
+            "respostas": [
+                {
+                    "titulo": "Quente, mais ou menos dez minutos após ter sido desligado",
+                    "correta": true
+                },
+                {
+                    "titulo": "Quente, logo após ter sido desligado"
+                },
+                {
+                    "titulo": "Com o motor quente, pois a uma regularidade"
+                },
+                {
+                    "titulo": "Com o motor frio em aclive)"
+                }
+            ]
+        },
+        {
+            "titulo": "A energia elétrica que o carro utiliza é fornecida ao carro pela: ",
+            "respostas": [
+                {
+                    "titulo": "Carga reservada no acumulador e gerador primário;"
+                },
+                {
+                    "titulo": "Bateria, cabos elétricos e bobina;"
+                },
+                {
+                    "titulo": "Bateria e pelo dínamo/alternador;",
+                    "correta": true
+                },
+                {
+                    "titulo": "Carga gerada no motor do alternador."
+                }
+            ]
+        },
+        {
+            "titulo": "A energia mecânica produzida pelos motores dos veículos chega nas rodas através do sistema de:",
+            "respostas": [
+                {
+                    "titulo": "Rodagem;"
+                },
+                {
+                    "titulo": "Ventilação;"
+                },
+                {
+                    "titulo": "Transmissão;",
+                    "correta": true
+                },
+                {
+                    "titulo": "Carburação."
+                }
+            ]
+        },
+        {
+            "titulo": "A transformação da corrente em alta tensão e da produção de centelha, é função respectivamente da:",
+            "respostas": [
+                {
+                    "titulo": "Da bateria e do alternador"
+                },
+                {
+                    "titulo": "Do Motor"
+                },
+                {
+                    "titulo": "Bobina e das velas",
+                    "correta": true
+                },
+                {
+                    "titulo": "Da transmissão"
+                }
+            ]
+        },
+        {
+            "titulo": "O carburador, nos veículos mais modernos, é substituído por:",
+            "respostas": [
+                {
+                    "titulo": "Pressurizador de alimentação"
+                },
+                {
+                    "titulo": "Carburador eletrônico"
+                },
+                {
+                    "titulo": "Injeção Eletrônica",
+                    "correta": true
+                },
+                {
+                    "titulo": "Controlado de combustível"
+                }
+            ]
+        },
+        {
+            "titulo": "Em certo veículo, há dificuldade de engate em todas as marchas, mas apenas com o câmbio frio, Uma das prováveis causas dessa dificuldade poder ser:",
+            "respostas": [
+                {
+                    "titulo": "Alavanca de câmbio torta"
+                },
+                {
+                    "titulo": "Alavanca de câmbio travada"
+                },
+                {
+                    "titulo": "Óleo lubrificante fora de especificação",
+                    "correta": true
+                },
+                {
+                    "titulo": "Caixa de cambio sem óleo"
+                }
+            ]
+        }
+    ]
+}

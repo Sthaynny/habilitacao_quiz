@@ -145,6 +145,9 @@ fabric.properties
 #           - AS PER https://guides.cocoapods.org/using/using-cocoapods.html NEVER IGONRE THE LOCK FILE
 Pods/
 
+### Flutter ###
+*generated_plugin_registrant.dart
+
 ### Dart ###
 # See https://www.dartlang.org/tools/private-files.html
 
@@ -157,6 +160,7 @@ Pods/
 # Directory created by dartdoc
 # If you don't generate documentation locally you can remove this line.
 doc/api/
+*.gitkeep
 
 ### Intellij ###
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and Webstorm
@@ -410,8 +414,3 @@ android/fastlane/report.xml
 fastlane/report.xml
 
 .flutter-plugins-dependencies
-
-# B+ Symbols
-ios_dart_symbols.json
-android_dart_symbols.json
-test/qr_pix.jpg

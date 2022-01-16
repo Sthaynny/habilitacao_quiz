@@ -1,0 +1,635 @@
+{
+    "titulo": "Meio ambiente",
+    "perguntas": [
+        {
+            "titulo": "Os gases emitidos pelos veículos são perigosos para a saúde do homem porque podem:",
+            "respostas": [
+                {
+                    "titulo": "provocar a destruição das córneas (olhos) por seu efeito corrosivo."
+                },
+                {
+                    "titulo": "agravar problemas respiratórios como asma e bronquite.",
+                    "correta": true
+                },
+                {
+                    "titulo": "causar distúrbios gastrointestinais graves. "
+                },
+                {
+                    "titulo": "provocar aumento da temperatura do corpo. "
+                },
+                {
+                    "titulo": "agravar moléstias da pele por conterem substâncias corrosivas."
+                }
+            ]
+        },
+        {
+            "titulo": "Os principais problemas causados entre o trânsito e o Meio Ambiente:",
+            "respostas": [
+                {
+                    "titulo": "Poluição visual, atmosférica e sonora, e do ar (gases poluentes).",
+                    "correta": true
+                },
+                {
+                    "titulo": "Diminuição dos perigos de incêndios em matas."
+                },
+                {
+                    "titulo": "Diminuição de erosão - resultante do mau planejamento e construção das estradas."
+                },
+                {
+                    "titulo": "Diminuição das mortes de animais silvestres provocados pelo excesso de velocidade descaso pela sinalização."
+                },
+                {
+                    "titulo": "todas alternativas estão corretas."
+                }
+            ]
+        },
+        {
+            "titulo": "Em relação à emissão de fumaça preta produzida por veículos movidos a óleo diesel é incorreto afirmar que:",
+            "respostas": [
+                {
+                    "titulo": "Causa irritação nos olhos, levando à perda progressiva da visão.",
+                    "correta": true
+                },
+                {
+                    "titulo": "Provoca lesões nas pernas das pessoas."
+                },
+                {
+                    "titulo": "Causa doenças respiratórias por ter alto teor de monóxido de carbono."
+                },
+                {
+                    "titulo": " Contêm gotículas de óleo que se depositam sobre a pele causando micose."
+                },
+                {
+                    "titulo": "As opções A e D estão corretas."
+                }
+            ]
+        },
+        {
+            "titulo": "Os ruídos emitidos pelo funcionamento do motor de um veículo são controlados pelo:",
+            "respostas": [
+                {
+                    "titulo": "carburador. "
+                },
+                {
+                    "titulo": "radiador."
+                },
+                {
+                    "titulo": "catalisador."
+                },
+                {
+                    "titulo": "acelerador."
+                },
+                {
+                    "titulo": "silencioso. (silenciador)",
+                    "correta": true
+                }
+            ]
+        },
+        {
+            "titulo": "O órgão responsável pela regulamentação dos padrões de qualidade do ar é:",
+            "respostas": [
+                {
+                    "titulo": "Conselho de Trânsito do Distrito Federal - CONTRANDIFE "
+                },
+                {
+                    "titulo": "Departamento Estadual de Trânsito - DETRAN"
+                },
+                {
+                    "titulo": "o Conselho Nacional do Meio Ambiente – CONAMA. ",
+                    "correta": true
+                },
+                {
+                    "titulo": "IBAMA"
+                },
+                {
+                    "titulo": "SMAM"
+                }
+            ]
+        },
+        {
+            "titulo": "O excesso da intensidade de ruído pode ocasionar múltiplos problemas ao indivíduo. Dentre os problemas, podemos citar:",
+            "respostas": [
+                {
+                    "titulo": " Somente dores de cabeça e insônia."
+                },
+                {
+                    "titulo": " Apenas deficiência auditiva e dores de cabeça."
+                },
+                {
+                    "titulo": " Dores de cabeça, insônia, mau humor e deficiência auditiva.",
+                    "correta": true
+                },
+                {
+                    "titulo": " Redução da visão e dores de cabeça."
+                },
+                {
+                    "titulo": " as alternativas A e D estão corretas."
+                }
+            ]
+        },
+        {
+            "titulo": "É um gás letal, se em grande concentração, expelido pelos veículos:",
+            "respostas": [
+                {
+                    "titulo": "Aldeídos ."
+                },
+                {
+                    "titulo": "Hidrocarbonetos."
+                },
+                {
+                    "titulo": "Dióxido de Carbono."
+                },
+                {
+                    "titulo": "Monóxido de Carbono.",
+                    "correta": true
+                },
+                {
+                    "titulo": "Apenas a opção A."
+                }
+            ]
+        },
+        {
+            "titulo": "Qual a regra básica da harmonia dentro de qualquer grupo social: ",
+            "respostas": [
+                {
+                    "titulo": "A individualidade deverá estar acima da coletividade."
+                },
+                {
+                    "titulo": "Os desejos e anseios particulares deverão sobrepor os desejos e anseios da coletividade."
+                },
+                {
+                    "titulo": "As regras de etiqueta sociais deverão ser sempre utilizadas."
+                },
+                {
+                    "titulo": "Conhecer claramente as regras do grupo e respeitá-las, bem como conhecer e exercer seus direitos.",
+                    "correta": true
+                },
+                {
+                    "titulo": "Nenhuma das anteriores."
+                }
+            ]
+        },
+        {
+            "titulo": "Qual a função do Estado para a sociedade e para os diversos grupos sociais:",
+            "respostas": [
+                {
+                    "titulo": "Função reguladora e amparadora.",
+                    "correta": true
+                },
+                {
+                    "titulo": "Recolhimento de impostos e aferição de lucro."
+                },
+                {
+                    "titulo": "Repressora e regulamentadora."
+                },
+                {
+                    "titulo": "Não intervir na sociedade, cada uma faz o que bem entende."
+                },
+                {
+                    "titulo": "Todas as opções estão corretas."
+                }
+            ]
+        },
+        {
+            "titulo": "As diferenças individuais de cultura raça, crença e classe social devem influenciar no convício no trânsito:",
+            "respostas": [
+                {
+                    "titulo": "Sim."
+                },
+                {
+                    "titulo": "Sim, mas somente nos casos em que ocorrer um conflito."
+                },
+                {
+                    "titulo": "Não, pois as Leis e Regras valem para todos, indiferentemente de qualquer fator.",
+                    "correta": true
+                },
+                {
+                    "titulo": "Não, ofensas aos menos favorecidos da cadeia."
+                },
+                {
+                    "titulo": "Não, porém com ressalva dos casos em que o condutor é uma autoridade policial ou política."
+                }
+            ]
+        },
+        {
+            "titulo": "Qual é a base do relacionamento interpessoal:",
+            "respostas": [
+                {
+                    "titulo": "Respeito às limitações das pessoas."
+                },
+                {
+                    "titulo": "Reconhecimento do direito dos outros."
+                },
+                {
+                    "titulo": "Tolerância no caso de alguma falha ou erro cometido pelos que nos rodeiam."
+                },
+                {
+                    "titulo": "Tentar se soltar a amarra do passado que é o preconceito."
+                },
+                {
+                    "titulo": "Todas as opções estão corretas.",
+                    "correta": true
+                }
+            ]
+        },
+        {
+            "titulo": "São ações do condutor cidadão:",
+            "respostas": [
+                {
+                    "titulo": "Conhecer e respeitar as Normas de Trânsito e o direito dos outros, bem como preservar o meio ambiente."
+                },
+                {
+                    "titulo": "Ser amigável, cordial, tolerante e cooperativo com os demais usuários da via, relevando erros e defeitos dos demais."
+                },
+                {
+                    "titulo": "As opções a) e b) estão corretas",
+                    "correta": true
+                },
+                {
+                    "titulo": "Não possuir autocrítica, pois o condutor bem formado está sempre com a razão."
+                },
+                {
+                    "titulo": "Aquele que aumenta o tom de voz sempre tem razão."
+                }
+            ]
+        },
+        {
+            "titulo": "Nas grandes cidades, as principais fontes de poluição do ar são:",
+            "respostas": [
+                {
+                    "titulo": "As queimadas."
+                },
+                {
+                    "titulo": "A queimada de carvão."
+                },
+                {
+                    "titulo": "Os automóveis e as indústrias.",
+                    "correta": true
+                },
+                {
+                    "titulo": "Os incineradores."
+                },
+                {
+                    "titulo": "Usinas Termoelétricas."
+                }
+            ]
+        },
+        {
+            "titulo": "A má conservação e a regulagem inadequada dos veículos:",
+            "respostas": [
+                {
+                    "titulo": "Contribuem para a poluição da água, apenas."
+                },
+                {
+                    "titulo": " Contribuem para a poluição do solo, apenas."
+                },
+                {
+                    "titulo": "Não agridem o meio ambiente."
+                },
+                {
+                    "titulo": "Acarretam, única e exclusivamente, o desgaste do veículo."
+                },
+                {
+                    "titulo": "Contribuem, principalmente, para a poluição do ar, água, solo e a poluição sonora.",
+                    "correta": true
+                }
+            ]
+        },
+        {
+            "titulo": "O uso de dispositivo de controle de emissão de gases (catalisador) conectado ao sistema de descarga dos veículos tem como objetivo:",
+            "respostas": [
+                {
+                    "titulo": "Diminuir o ruído do motor."
+                },
+                {
+                    "titulo": "Economizar combustível em até 98%."
+                },
+                {
+                    "titulo": "Aumentar a potência do motor."
+                },
+                {
+                    "titulo": "Diminuir a emissão de gases em até 98%.",
+                    "correta": true
+                },
+                {
+                    "titulo": "Controlar a saída de ar quente."
+                }
+            ]
+        },
+        {
+            "titulo": "Os veículos que apresentam maior potencial de poluição do ar são aqueles:",
+            "respostas": [
+                {
+                    "titulo": "Que utilizam como combustíveis a gasolina e o diesel.",
+                    "correta": true
+                },
+                {
+                    "titulo": "Que utilizam o sistema elétrico."
+                },
+                {
+                    "titulo": "Movidos a propulsão humana."
+                },
+                {
+                    "titulo": "Movidos a tração animal."
+                },
+                {
+                    "titulo": "Que utilizam gás natural ou GNV (Gás Natural Veicular)."
+                }
+            ]
+        },
+        {
+            "titulo": "Nos centros urbanos são observadas maiores concentrações de poluentes do ar nos meses mais frios do ano. Este fato ocorre:",
+            "respostas": [
+                {
+                    "titulo": "Pelo excesso de veículos em circulação."
+                },
+                {
+                    "titulo": "Pela dificuldade de dispersão dos poluentes nesta estação do ano.",
+                    "correta": true
+                },
+                {
+                    "titulo": "Pela maior emissão de poluentes."
+                },
+                {
+                    "titulo": "Pela desregulagem dos motores causada pelo frio. "
+                },
+                {
+                    "titulo": "Pela maior utilização do ar quente dos veículos. "
+                }
+            ]
+        },
+        {
+            "titulo": "A remoção do silencioso de um veículo: ",
+            "respostas": [
+                {
+                    "titulo": "Caracteriza uma infração grave.",
+                    "correta": true
+                },
+                {
+                    "titulo": "Caracteriza uma infração gravíssima. "
+                },
+                {
+                    "titulo": "Caracteriza uma infração leve."
+                },
+                {
+                    "titulo": "Caracteriza uma infração moderada."
+                },
+                {
+                    "titulo": "Não é Caracteriza como infração."
+                }
+            ]
+        },
+        {
+            "titulo": "O Programa de Controle da Poluição do Ar por Veículos Automotores (PROCONVE) é responsável pela especificação dos combustíveis comerciais em uso no Brasil. Sabendo-se que a gasolina é um combustível de alto potencial poluidor, assim como o diesel, este programa determinou a adição de álcool à gasolina para:",
+            "respostas": [
+                {
+                    "titulo": "Aumentar o rendimento do combustível."
+                },
+                {
+                    "titulo": "Economizar derivados de petróleo."
+                },
+                {
+                    "titulo": "Dar vazão à produção de álcool."
+                },
+                {
+                    "titulo": "Diminuir a emissão de poluentes.",
+                    "correta": true
+                },
+                {
+                    "titulo": "Melhorar a vida útil dos motores."
+                }
+            ]
+        },
+        {
+            "titulo": "Para reduzir a emissão de poluentes do ar, causada pelos veículo, é INCORRETO afirmar que se deve:",
+            "respostas": [
+                {
+                    "titulo": "Fazer uso de dispositivo de controle de emissão de gases (catalisador)."
+                },
+                {
+                    "titulo": "Incentivar o uso do gás natural."
+                },
+                {
+                    "titulo": "regular periodicamente o motor do veículo."
+                },
+                {
+                    "titulo": "Restringir a circulação de veículos nas grandes cidades (rodízio)."
+                },
+                {
+                    "titulo": "Incentivar o transporte individual por veículos automotores.",
+                    "correta": true
+                }
+            ]
+        },
+        {
+            "titulo": "No interior de túneis muito longos, é aconselhável instalar exaustores porque nesse ambiente acumulam-se:",
+            "respostas": [
+                {
+                    "titulo": "Partículas de fumaça, somente. "
+                },
+                {
+                    "titulo": "Gases e vapor d’água."
+                },
+                {
+                    "titulo": "Gases tóxicos, somente."
+                },
+                {
+                    "titulo": "Gases e partículas de fumaça.",
+                    "correta": true
+                },
+                {
+                    "titulo": "Partículas de vapor d’água, somente."
+                }
+            ]
+        },
+        {
+            "titulo": "Dos fenômenos abaixo, o principal causador da corrosão em um veículo é:",
+            "respostas": [
+                {
+                    "titulo": "A neve."
+                },
+                {
+                    "titulo": "A geada."
+                },
+                {
+                    "titulo": "O efeito estufa."
+                },
+                {
+                    "titulo": "A chuva ácida.",
+                    "correta": true
+                },
+                {
+                    "titulo": "A inversão térmica."
+                }
+            ]
+        },
+        {
+            "titulo": "Dirigir um veículo ameaçando os pedestres que estejam atravessando a via ou usá-lo para arremessar água ou detritos sobre os pedestres são infrações:",
+            "respostas": [
+                {
+                    "titulo": "Leves, dependendo da classificação da via."
+                },
+                {
+                    "titulo": "E são consideradas também crimes de trânsito."
+                },
+                {
+                    "titulo": "E infração média e representam uma falta de respeito e cidadania."
+                },
+                {
+                    "titulo": "Graves, dependendo da classificação da via."
+                },
+                {
+                    "titulo": "Passíveis de recolhimento da Carteira Nacional de Habilitação.",
+                    "correta": true
+                }
+            ]
+        },
+        {
+            "titulo": "O estacionamento sobre o passeio é:",
+            "respostas": [
+                {
+                    "titulo": "Permitido nas proximidades de bares e restaurantes no período noturno."
+                },
+                {
+                    "titulo": "Permitido apenas para embarque e desembarque de passageiros."
+                },
+                {
+                    "titulo": "Permitido na frente das escolas."
+                },
+                {
+                    "titulo": "Uma infração de trânsito grave e um desrespeito aos direitos dos pedestres.",
+                    "correta": true
+                },
+                {
+                    "titulo": "Sempre permitido, desde que se reserve espaço suficiente para a passagem de pedestres."
+                }
+            ]
+        },
+        {
+            "titulo": "Um condutor de veículo costuma jogar “coisas” na via pública sem se importar com eventuais danos causados ao meios ambiente. Qual dos itens abaixo demora mais tempo para se decompor: ",
+            "respostas": [
+                {
+                    "titulo": "Papel"
+                },
+                {
+                    "titulo": "Papelão."
+                },
+                {
+                    "titulo": "Fumo de cigarro. "
+                },
+                {
+                    "titulo": "Madeira. "
+                },
+                {
+                    "titulo": "Plástico.",
+                    "correta": true
+                }
+            ]
+        },
+        {
+            "titulo": "Um veículo é composto por metais, vidro, plástico, borracha, espumas, tecidos, entre outros. Destes, qual demora mais tempo para se decompor: ",
+            "respostas": [
+                {
+                    "titulo": "Vidro.",
+                    "correta": true
+                },
+                {
+                    "titulo": "Plástico. "
+                },
+                {
+                    "titulo": "Borracha. "
+                },
+                {
+                    "titulo": "Tecido. "
+                },
+                {
+                    "titulo": "Madeira."
+                }
+            ]
+        },
+        {
+            "titulo": "O aquecimento global tem como principal desencadeador um gás que os carros liberam em abundancia no meio ambiente, e que dele precisamos para viver na Terra:",
+            "respostas": [
+                {
+                    "titulo": "Monóxido de Carbono."
+                },
+                {
+                    "titulo": "Gás Carbônico (dióxido de Carbono). "
+                },
+                {
+                    "titulo": "Oxigênio",
+                    "correta": true
+                },
+                {
+                    "titulo": "H2O"
+                },
+                {
+                    "titulo": "Nenhum dos anteriores."
+                }
+            ]
+        },
+        {
+            "titulo": "Quais são os três tipos de poluição existentes no trânsito:",
+            "respostas": [
+                {
+                    "titulo": "Visual, motora e do ar."
+                },
+                {
+                    "titulo": "Apenas do Meio Ambiente."
+                },
+                {
+                    "titulo": "Ambiental, Sonora e Visual.",
+                    "correta": true
+                },
+                {
+                    "titulo": "Camada de ozônio e sonora."
+                },
+                {
+                    "titulo": "Todas as alternativas estão corretas."
+                }
+            ]
+        },
+        {
+            "titulo": "O que é CHORUME:",
+            "respostas": [
+                {
+                    "titulo": "Lixo limpo e renovável."
+                },
+                {
+                    "titulo": "Lixão."
+                },
+                {
+                    "titulo": "Centro de Reciclagem."
+                },
+                {
+                    "titulo": "Líquido para produção de energia."
+                },
+                {
+                    "titulo": "Líquido escuro gerado pela degradação dos resíduos em aterros sanitários.",
+                    "correta": true
+                }
+            ]
+        },
+        {
+            "titulo": "Quando uma pessoa “corta” a frente da outra sem usar as luzes indicadoras de direção, esta pessoa é:",
+            "respostas": [
+                {
+                    "titulo": "É muito bem educada e seus pais têm orgulho."
+                },
+                {
+                    "titulo": "É confiante de que os outros pararam então eles estão certo."
+                },
+                {
+                    "titulo": "Ela está certa todos o fazem."
+                },
+                {
+                    "titulo": "É muito mau educada, e deveria repensar suas atitudes no trânsito.",
+                    "correta": true
+                },
+                {
+                    "titulo": "Nenhuma da alternativas anteriores."
+                }
+            ]
+        }
+    ]
+}
