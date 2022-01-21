@@ -86,7 +86,7 @@ class ResultadoScreen extends StatelessWidget {
                     label: 'Compartilhar',
                     onTap: () {
                       Share.share(
-                        '''Quiz Car: Resultado do quiz: $titulo\n obitive ${percentual.toPrecision(2)} de aproveitamento.''',
+                        '''Habilitação Quiz : Resultado do quiz: $titulo\n obitive ${percentual.toPrecision(2)} de aproveitamento.''',
                       );
                     },
                   ),

@@ -20,7 +20,7 @@ class CarQuizWidget extends StatelessWidget {
           Padding(
             padding: EdgeInsets.all(8.0.w),
             child: Text(
-              Strings.carQuiz,
+              Strings.logoApp,
               style: AppTextStyles.notoSansExtraBold(fontSize: 30.ssp),
             ),
           ),
