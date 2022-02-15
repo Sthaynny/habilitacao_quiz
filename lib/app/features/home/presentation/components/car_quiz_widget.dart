@@ -9,7 +9,7 @@ class CarQuizWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 15.w),
+      padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 10.w),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
