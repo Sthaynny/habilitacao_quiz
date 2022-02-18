@@ -1,9 +1,9 @@
 import 'package:dartz/dartz.dart';
-import 'package:quiz_car/app/features/shared/data/datasources/quiz_datasource.dart';
-import 'package:quiz_car/app/features/shared/data/models/questoes_model.dart';
-import 'package:quiz_car/app/features/shared/domain/entities/quiz_entity.dart';
-import 'package:quiz_car/app/features/shared/domain/repositories/iquiz_repository.dart';
-import 'package:quiz_car/app/features/shared/utils/simulado.dart';
+import 'package:quiz_car/app/shared/data/datasources/quiz_datasource.dart';
+import 'package:quiz_car/app/shared/data/models/questoes_model.dart';
+import 'package:quiz_car/app/shared/domain/entities/quiz_entity.dart';
+import 'package:quiz_car/app/shared/domain/repositories/iquiz_repository.dart';
+import 'package:quiz_car/app/shared/utils/simulado.dart';
 import 'package:quiz_car/core/exceptions/erro.dart';
 import 'package:quiz_car/core/utils/keys.dart';
 

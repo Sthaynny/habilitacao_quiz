@@ -1,9 +1,9 @@
 import 'dart:convert';
 import 'dart:typed_data';
 
-import 'package:quiz_car/app/features/shared/data/models/resposta_model.dart';
-import 'package:quiz_car/app/features/shared/domain/entities/pergunta_entity.dart';
-import 'package:quiz_car/app/features/shared/domain/entities/resposta_entity.dart';
+import 'package:quiz_car/app/shared/data/models/resposta_model.dart';
+import 'package:quiz_car/app/shared/domain/entities/pergunta_entity.dart';
+import 'package:quiz_car/app/shared/domain/entities/resposta_entity.dart';
 
 class PerguntaModel extends PerguntaEntity {
   PerguntaModel({

@@ -2,9 +2,9 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:quiz_car/app/features/home/domain/usecases/meio_ambiente_quiz_usercase.dart';
-import 'package:quiz_car/app/features/shared/data/models/questoes_model.dart';
-import 'package:quiz_car/app/features/shared/data/repositories/quiz_repository.dart';
-import 'package:quiz_car/app/features/shared/domain/entities/quiz_entity.dart';
+import 'package:quiz_car/app/shared/data/models/questoes_model.dart';
+import 'package:quiz_car/app/shared/data/repositories/quiz_repository.dart';
+import 'package:quiz_car/app/shared/domain/entities/quiz_entity.dart';
 import 'package:quiz_car/core/exceptions/erro.dart';
 
 import '../../../../utils/utils.dart';

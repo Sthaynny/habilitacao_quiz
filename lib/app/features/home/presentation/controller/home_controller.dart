@@ -7,8 +7,8 @@ import 'package:quiz_car/app/features/home/domain/usecases/meio_ambiente_quiz_us
 import 'package:quiz_car/app/features/home/domain/usecases/primeiros_socorros_quiz_usercase.dart';
 import 'package:quiz_car/app/features/home/domain/usecases/simulado_quiz_usercase.dart';
 import 'package:quiz_car/app/features/questionario/presentation/questionario_screen.dart';
-import 'package:quiz_car/app/features/shared/domain/entities/quiz_entity.dart';
-import 'package:quiz_car/app/features/shared/utils/quiz_enum.dart';
+import 'package:quiz_car/app/shared/domain/entities/quiz_entity.dart';
+import 'package:quiz_car/app/shared/utils/quiz_enum.dart';
 import 'package:quiz_car/core/exceptions/erro.dart';
 
 enum HomeState {

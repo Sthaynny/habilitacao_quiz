@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quiz_car/app/features/shared/presentation/widgets/linear_progress_indicator.dart';
+import 'package:quiz_car/app/shared/presentation/widgets/linear_progress_indicator.dart';
 import 'package:quiz_car/core/styles/app_styles.dart';
 
 class IndicadorQuestoesWidget extends StatelessWidget {

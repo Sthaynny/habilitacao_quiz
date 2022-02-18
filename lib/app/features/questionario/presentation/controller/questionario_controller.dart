@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 import 'package:quiz_car/app/features/resultado/resultado_screen.dart';
-import 'package:quiz_car/app/features/shared/domain/entities/quiz_entity.dart';
-import 'package:quiz_car/app/features/shared/domain/entities/resposta_entity.dart';
+import 'package:quiz_car/app/shared/domain/entities/quiz_entity.dart';
+import 'package:quiz_car/app/shared/domain/entities/resposta_entity.dart';
 import 'package:quiz_car/core/mixins/pop_up_mixin.dart';
 
 class QuestionarioController extends GetxController with PopUpMixin {

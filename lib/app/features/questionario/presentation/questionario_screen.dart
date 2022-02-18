@@ -4,8 +4,8 @@ import 'package:get/get.dart';
 import 'package:quiz_car/app/features/questionario/presentation/components/app_bar_questionario.dart';
 import 'package:quiz_car/app/features/questionario/presentation/components/quiz/quiz.dart';
 import 'package:quiz_car/app/features/questionario/presentation/controller/questionario_controller.dart';
-import 'package:quiz_car/app/features/shared/domain/entities/quiz_entity.dart';
-import 'package:quiz_car/app/features/shared/presentation/widgets/primary_button_widget.dart';
+import 'package:quiz_car/app/shared/domain/entities/quiz_entity.dart';
+import 'package:quiz_car/app/shared/presentation/widgets/primary_button_widget.dart';
 import 'package:quiz_car/core/mixins/pop_up_mixin.dart';
 import 'package:quiz_car/core/utils/strings.dart';
 

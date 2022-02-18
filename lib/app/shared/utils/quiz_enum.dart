@@ -7,4 +7,3 @@ enum QuizEnum {
   similado,
 }
 
-extension QuizEnumExt on QuizEnum {}

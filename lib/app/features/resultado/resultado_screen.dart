@@ -1,7 +1,7 @@
 import 'package:adaptable_screen/adaptable_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:quiz_car/app/features/shared/presentation/widgets/primary_button_widget.dart';
+import 'package:quiz_car/app/shared/presentation/widgets/primary_button_widget.dart';
 import 'package:quiz_car/core/styles/app_styles.dart';
 import 'package:share/share.dart';
 

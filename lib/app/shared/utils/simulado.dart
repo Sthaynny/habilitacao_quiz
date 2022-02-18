@@ -1,6 +1,6 @@
-import 'package:quiz_car/app/features/shared/data/models/questoes_model.dart';
-import 'package:quiz_car/app/features/shared/domain/entities/pergunta_entity.dart';
-import 'package:quiz_car/app/features/shared/domain/entities/quiz_entity.dart';
+import 'package:quiz_car/app/shared/data/models/questoes_model.dart';
+import 'package:quiz_car/app/shared/domain/entities/pergunta_entity.dart';
+import 'package:quiz_car/app/shared/domain/entities/quiz_entity.dart';
 import 'package:quiz_car/core/utils/strings.dart';
 
 class Simulado {

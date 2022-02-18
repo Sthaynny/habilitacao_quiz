@@ -1,8 +1,8 @@
 import 'dart:convert';
 
-import 'package:quiz_car/app/features/shared/data/models/pergunta_model.dart';
-import 'package:quiz_car/app/features/shared/domain/entities/pergunta_entity.dart';
-import 'package:quiz_car/app/features/shared/domain/entities/quiz_entity.dart';
+import 'package:quiz_car/app/shared/data/models/pergunta_model.dart';
+import 'package:quiz_car/app/shared/domain/entities/pergunta_entity.dart';
+import 'package:quiz_car/app/shared/domain/entities/quiz_entity.dart';
 
 class QuizModel extends QuizEntity {
   QuizModel({
@@ -16,7 +16,9 @@ class QuizModel extends QuizEntity {
   Map<String, dynamic> toMap() {
     return {
       'titulo': titulo,
-      'perguntas': perguntas.map((pergunta) => (pergunta as PerguntaModel).toMap()).toList(),
+      'perguntas': perguntas
+          .map((pergunta) => (pergunta as PerguntaModel).toMap())
+          .toList(),
     };
   }
 
