@@ -4,6 +4,5 @@ abstract class Keys {
   static const meioAmbiente = 'meio_ambiente';
   static const primeirosSocorros = 'primeiros_socorros';
   static const mecanicaBasica = 'mecanica_basica';
-
   static const index = 'index';
 }

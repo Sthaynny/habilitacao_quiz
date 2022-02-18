@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:quiz_car/app/shared/presentation/widgets/primary_button_widget.dart';
 import 'package:quiz_car/core/styles/app_styles.dart';
+import 'package:quiz_car/core/utils/strings.dart';
 import 'package:share/share.dart';
 
 class ResultadoScreen extends StatelessWidget {
@@ -19,6 +20,8 @@ class ResultadoScreen extends StatelessWidget {
   final int totalRespostasCorretas;
   final bool result;
   final double percentual;
+
+  String get getPercentual => percentual.toPrecision(2).toString();
 
   @override
   Widget build(BuildContext context) {
@@ -38,9 +41,7 @@ class ResultadoScreen extends StatelessWidget {
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: 40.w),
                   child: Text(
-                    result
-                        ? 'Parabéns!'
-                        : 'Oh, que chato!\nVamos melhorar na proxima!',
+                    result ? Strings.parabens : Strings.menssgemTriste,
                     style: AppTextStyles.notoSansBold(
                       color: AppColors.preto,
                       fontSize: 30.ssp,
@@ -53,7 +54,7 @@ class ResultadoScreen extends StatelessWidget {
                 ),
                 Text.rich(
                   TextSpan(
-                    text: 'Você finalizou\n',
+                    text: Strings.voceFinalizou,
                     style: AppTextStyles.notoSansRegular(
                       color: AppColors.preto,
                       fontSize: 13.ssp,
@@ -66,12 +67,16 @@ class ResultadoScreen extends StatelessWidget {
                             fontSize: 13.ssp,
                           )),
                       TextSpan(
-                          text:
-                              'com $totalRespostasCorretas de $totalPerguntas acertos, ou seja, ${percentual.toPrecision(2)}%!',
-                          style: AppTextStyles.notoSansRegular(
-                            color: AppColors.preto,
-                            fontSize: 13.ssp,
-                          )),
+                        text: Strings.resultadoQuestionario(
+                          respostasCorretas: totalRespostasCorretas.toString(),
+                          totalPerguntas: totalPerguntas.toString(),
+                          percentual: getPercentual,
+                        ),
+                        style: AppTextStyles.notoSansRegular(
+                          color: AppColors.preto,
+                          fontSize: 13.ssp,
+                        ),
+                      ),
                     ],
                   ),
                   textAlign: TextAlign.center,
@@ -83,10 +88,13 @@ class ResultadoScreen extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 68),
                   child: PrimaryButtonWidget.azul(
-                    label: 'Compartilhar',
+                    label: Strings.compartilhar,
                     onTap: () {
                       Share.share(
-                        '''Habilitação Quiz : Resultado do quiz: $titulo\n obitive ${percentual.toPrecision(2)} de aproveitamento.''',
+                        Strings.campartilharMensagem(
+                          titulo: titulo,
+                          percentual: getPercentual,
+                        ),
                       );
                     },
                   ),
@@ -95,7 +103,7 @@ class ResultadoScreen extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 68),
                   child: PrimaryButtonWidget.branco(
-                    label: 'Voltar ao início',
+                    label: Strings.voltarInicio,
                     onTap: () {
                       Get.back();
                     },
