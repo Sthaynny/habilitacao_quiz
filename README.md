@@ -54,9 +54,10 @@
 # :rocket: Tecnologias
 Esse:
 
-- `clean architecture`: é uma arquitetura de software proposta por Robert Cecil Martin (ou Uncle Bob, como é mais conhecido) que tem por objetivo padronizar e organizar o código desenvolvido, favorecer a sua reusabilidade, assim como independência de tecnologia.
-- `Getx`: é uma biblioteca poderosa e extraleve para Flutter. Ela combina um gerenciador de estado de alta performance, injeção de dependência inteligente e gerenciamento de rotas de uma forma rápida e prática.
-- `Lottie`: é uma biblioteca móvel para Android e iOS que analisa animações do Adobe After Effects exportadas como json com Bodymovin e as renderiza nativamente em dispositivos móveis!
+- `clean architecture`: arquitetura de software proposta por Robert Cecil Martin (ou Uncle Bob, como é mais conhecido) que tem por objetivo padronizar e organizar o código desenvolvido, favorecer a sua reusabilidade, assim como independência de tecnologia.
+- `Getx`: biblioteca poderosa e extraleve para Flutter. Ela combina um gerenciador de estado de alta performance, injeção de dependência inteligente e gerenciamento de rotas de uma forma rápida e prática.
+- `Lottie`: biblioteca móvel para Android e iOS que analisa animações do Adobe After Effects exportadas como json com Bodymovin e as renderiza nativamente em dispositivos móveis!
+- `Flutter`: kit de desenvolvimento de interface de usuário, de código aberto, criado pela empresa Google em 2015, baseado na linguagem de programação Dart, que possibilita a criação de aplicativos compilados nativamente, para os sistemas operacionais Android, iOS, Windows, Mac, Linux e, Fuchsia e Web.
 
 # :computer: Como rodar
 

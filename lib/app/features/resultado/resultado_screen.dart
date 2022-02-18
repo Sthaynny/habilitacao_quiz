@@ -1,6 +1,7 @@
 import 'package:adaptable_screen/adaptable_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:quiz_car/app/features/resultado/resultado_args.dart';
 import 'package:quiz_car/app/shared/presentation/widgets/primary_button_widget.dart';
 import 'package:quiz_car/core/styles/app_styles.dart';
 import 'package:quiz_car/core/utils/strings.dart';
@@ -9,19 +10,11 @@ import 'package:share/share.dart';
 class ResultadoScreen extends StatelessWidget {
   const ResultadoScreen({
     Key? key,
-    required this.titulo,
-    required this.totalPerguntas,
-    required this.result,
-    required this.totalRespostasCorretas,
-    required this.percentual,
+    required this.args,
   }) : super(key: key);
-  final String titulo;
-  final int totalPerguntas;
-  final int totalRespostasCorretas;
-  final bool result;
-  final double percentual;
+  final ResultadoArgs args;
 
-  String get getPercentual => percentual.toPrecision(2).toString();
+  String get getPercentual => args.percentual.toPrecision(2).toString();
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +26,7 @@ class ResultadoScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Image.asset(
-              result ? AppImages.sucesso : AppImages.atencao,
+              args.result ? AppImages.sucesso : AppImages.atencao,
               height: 180.h,
             ),
             Column(
@@ -41,7 +34,7 @@ class ResultadoScreen extends StatelessWidget {
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: 40.w),
                   child: Text(
-                    result ? Strings.parabens : Strings.menssgemTriste,
+                  args.  result ? Strings.parabens : Strings.menssgemTriste,
                     style: AppTextStyles.notoSansBold(
                       color: AppColors.preto,
                       fontSize: 30.ssp,
@@ -61,15 +54,15 @@ class ResultadoScreen extends StatelessWidget {
                     ),
                     children: [
                       TextSpan(
-                          text: '$titulo\n',
+                          text: '${args.titulo}\n',
                           style: AppTextStyles.notoSansBold(
                             color: AppColors.preto,
                             fontSize: 13.ssp,
                           )),
                       TextSpan(
                         text: Strings.resultadoQuestionario(
-                          respostasCorretas: totalRespostasCorretas.toString(),
-                          totalPerguntas: totalPerguntas.toString(),
+                          respostasCorretas: args.totalRespostasCorretas.toString(),
+                          totalPerguntas: args.totalPerguntas.toString(),
                           percentual: getPercentual,
                         ),
                         style: AppTextStyles.notoSansRegular(
@@ -92,7 +85,7 @@ class ResultadoScreen extends StatelessWidget {
                     onTap: () {
                       Share.share(
                         Strings.campartilharMensagem(
-                          titulo: titulo,
+                          titulo: args.titulo,
                           percentual: getPercentual,
                         ),
                       );

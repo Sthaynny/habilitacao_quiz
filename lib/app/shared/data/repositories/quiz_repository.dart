@@ -17,7 +17,11 @@ class QuizRepository implements IQuizRepository {
     if (result.isNotEmpty) {
       final quiz = QuizModel.fromJson(result);
       quiz.perguntas.shuffle();
-      return right(quiz);
+      return right(
+        quiz.copyWith(
+          perguntas: quiz.perguntas.sublist(0, 30),
+        ),
+      );
     }
     return left(ExceptionErro());
   }

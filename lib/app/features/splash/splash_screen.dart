@@ -2,7 +2,7 @@ import 'package:adaptable_screen/adaptable_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 import 'package:lottie/lottie.dart';
-import 'package:quiz_car/app/features/home/presentation/home_screen.dart';
+import 'package:quiz_car/app/features/routes/routes.dart';
 import 'package:quiz_car/app/shared/presentation/widgets/car_quiz_logo_widget.dart';
 import 'package:quiz_car/core/styles/app_styles.dart';
 
@@ -29,11 +29,7 @@ class _SplashScreenState extends State<SplashScreen>
           });
         }
         if (status == AnimationStatus.dismissed) {
-          Get.offAll(
-            const HomeScreen(),
-            transition: Transition.fadeIn,
-            duration: const Duration(seconds: 2),
-          );
+          Get.offNamed(Routes.home);
         }
       });
     controller.forward();

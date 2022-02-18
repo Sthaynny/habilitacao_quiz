@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
-import 'package:quiz_car/app/features/resultado/resultado_screen.dart';
+import 'package:quiz_car/app/features/resultado/resultado_args.dart';
+import 'package:quiz_car/app/features/routes/routes.dart';
 import 'package:quiz_car/app/shared/domain/entities/quiz_entity.dart';
 import 'package:quiz_car/app/shared/domain/entities/resposta_entity.dart';
 import 'package:quiz_car/core/mixins/pop_up_mixin.dart';
@@ -68,15 +69,16 @@ class QuestionarioController extends GetxController with PopUpMixin {
   }
 
   void irParaResultado(double percentual, int totalPerguntasCorretas) {
-    Get.off(
-      ResultadoScreen(
+    Get.offNamed(
+      Routes.resultado,
+      arguments: ResultadoArgs(
         titulo: quiz.titulo,
         totalPerguntas: tamanhoQuiz,
         result: percentual >= 70.0,
         totalRespostasCorretas: totalPerguntasCorretas,
         percentual: percentual,
       ),
-      transition: Transition.fade,
     );
+    
   }
 }

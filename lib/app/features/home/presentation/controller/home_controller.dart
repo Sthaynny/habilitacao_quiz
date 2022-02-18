@@ -6,7 +6,7 @@ import 'package:quiz_car/app/features/home/domain/usecases/mecanica_basica_quiz_
 import 'package:quiz_car/app/features/home/domain/usecases/meio_ambiente_quiz_usercase.dart';
 import 'package:quiz_car/app/features/home/domain/usecases/primeiros_socorros_quiz_usercase.dart';
 import 'package:quiz_car/app/features/home/domain/usecases/simulado_quiz_usercase.dart';
-import 'package:quiz_car/app/features/questionario/presentation/questionario_screen.dart';
+import 'package:quiz_car/app/features/routes/routes.dart';
 import 'package:quiz_car/app/shared/domain/entities/quiz_entity.dart';
 import 'package:quiz_car/app/shared/utils/quiz_enum.dart';
 import 'package:quiz_car/core/exceptions/erro.dart';
@@ -48,12 +48,9 @@ class HomeController extends GetxController {
   Future<void> irParaPagina(QuizEnum quiz) async {
     await _getQuiz(quiz);
     if (_quizEntity.value != null) {
-      Get.to(
-        QuestionarioScreen(
-          quizEntity: _quizEntity.value!.copyWith(
-            perguntas: _quizEntity.value!.perguntas.sublist(0, 30),
-          ),
-        ),
+      Get.toNamed(
+        Routes.questionario,
+        arguments: _quizEntity.value,
       );
     }
   }
