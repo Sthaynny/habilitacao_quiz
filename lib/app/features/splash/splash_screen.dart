@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:quiz_car/core/styles/app_gradients.dart';
+import 'package:lottie/lottie.dart';
+import 'package:quiz_car/core/styles/app_styles.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -19,8 +20,8 @@ class _SplashScreenState extends State<SplashScreen> {
       decoration: const BoxDecoration(
         gradient: AppGradients.linear,
       ),
-      child: const Center(
-        child: Text('data'),
+      child: Center(
+        child: Lottie.asset(AppAnimation.carSplash),
       ),
     );
   }
