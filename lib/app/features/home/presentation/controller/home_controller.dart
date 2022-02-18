@@ -54,7 +54,6 @@ class HomeController extends GetxController {
             perguntas: _quizEntity.value!.perguntas.sublist(0, 30),
           ),
         ),
-        transition: Transition.fade,
       );
     }
   }

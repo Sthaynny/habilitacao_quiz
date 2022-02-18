@@ -1,5 +1,6 @@
 import 'package:adaptable_screen/adaptable_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:quiz_car/app/shared/presentation/widgets/car_quiz_logo_widget.dart';
 import 'package:quiz_car/core/styles/app_styles.dart';
 import 'package:quiz_car/core/utils/strings.dart';
 
@@ -13,15 +14,12 @@ class CarQuizWidget extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image.asset(
-            AppImages.logo,
-            width: 70.w,
-          ),
+          const CarQuizLogoWidget(),
           Padding(
             padding: EdgeInsets.all(8.0.w),
             child: Text(
               Strings.logoApp,
-              style: AppTextStyles.notoSansExtraBold(fontSize: 30.ssp),
+              style: AppTextStyles.notoSansExtraBold(fontSize: 20.ssp),
             ),
           ),
         ],

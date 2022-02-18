@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:quiz_car/app/features/home/presentation/components/car_quiz_widget.dart';
+import 'package:quiz_car/app/shared/presentation/widgets/car_quiz_widget.dart';
 import 'package:quiz_car/app/features/home/presentation/components/quiz_button_widget.dart';
 import 'package:quiz_car/app/features/home/presentation/controller/home_controller.dart';
 import 'package:quiz_car/app/shared/presentation/pages/loading_blur_screen.dart';
