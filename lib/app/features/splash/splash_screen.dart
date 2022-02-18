@@ -51,8 +51,6 @@ class _SplashScreenState extends State<SplashScreen>
         gradient: AppGradients.linear,
       ),
       child: Stack(
-        // crossAxisAlignment: CrossAxisAlignment.center,
-        // mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Align(
             alignment: Alignment.topCenter,
