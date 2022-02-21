@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:quiz_car/app/shared/presentation/widgets/car_quiz_widget.dart';
 import 'package:quiz_car/app/features/home/presentation/components/quiz_button_widget.dart';
 import 'package:quiz_car/app/features/home/presentation/controller/home_controller.dart';
 import 'package:quiz_car/app/shared/presentation/pages/loading_blur_screen.dart';
+import 'package:quiz_car/app/shared/presentation/widgets/car_quiz_widget.dart';
 import 'package:quiz_car/app/shared/utils/quiz_enum.dart';
 import 'package:quiz_car/core/components/aligned_grid.dart';
 import 'package:quiz_car/core/mixins/pop_up_mixin.dart';
@@ -23,15 +23,15 @@ class _HomeScreen extends State<HomeScreen> with PopUpMixin {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
+
     return Scaffold(
-      body: GetX<HomeController>(
-        init: controller,
-        builder: (controller) {
-          if (controller.homeState.value == HomeState.erro) {
+      body: Obx(
+        () {
+          if (controller.isError) {
             popUpErro();
           }
           return LoadingBlurScreen(
-            enabled: controller.homeState.value == HomeState.carregando,
+            enabled: controller.isLoading,
             child: Container(
               alignment: Alignment.center,
               height: size.height,

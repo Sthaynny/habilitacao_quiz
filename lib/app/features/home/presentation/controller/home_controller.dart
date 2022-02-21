@@ -27,23 +27,22 @@ class HomeController extends GetxController {
     required MecanicaBasicaQuizUsercase mecanicaBasicaQuizUsercase,
     required SimuladoQuizUsercase simuladoQuizUsercase,
   }) {
-    homeState = Rx<HomeState>(HomeState.init);
     _direcaoDefesivaQuizUsercase = direcaoDefesivaQuizUsercase;
     _legislacaoQuizUsercase = legislacaoQuizUsercase;
     _primeirosSocorrosQuizUsercase = primeirosSocorrosQuizUsercase;
     _meioAmbienteQuizUsercase = meioAmbienteQuizUsercase;
     _mecanicaBasicaQuizUsercase = mecanicaBasicaQuizUsercase;
     _simuladoQuizUsercase = simuladoQuizUsercase;
-    _quizEntity = Rx<QuizEntity?>(null);
   }
-  late Rx<HomeState> homeState;
   late final DirecaoDefesivaQuizUsercase _direcaoDefesivaQuizUsercase;
   late final LegislacaoQuizUsercase _legislacaoQuizUsercase;
   late final MeioAmbienteQuizUsercase _meioAmbienteQuizUsercase;
   late final PrimeirosSocorrosQuizUsercase _primeirosSocorrosQuizUsercase;
   late final MecanicaBasicaQuizUsercase _mecanicaBasicaQuizUsercase;
   late final SimuladoQuizUsercase _simuladoQuizUsercase;
-  late Rx<QuizEntity?> _quizEntity;
+
+  final Rx<RxStatus> _status = RxStatus.empty().obs;
+  final Rx<QuizEntity?> _quizEntity = QuizEntity.empty().obs;
 
   Future<void> irParaPagina(QuizEnum quiz) async {
     await _getQuiz(quiz);
@@ -55,8 +54,9 @@ class HomeController extends GetxController {
     }
   }
 
+
   Future<void> _getQuiz(QuizEnum quiz) async {
-    homeState.value = HomeState.carregando;
+    _status.value = RxStatus.loading();
     switch (quiz) {
       case QuizEnum.direcaoDefensiva:
         final result = await _direcaoDefesivaQuizUsercase();
@@ -90,12 +90,18 @@ class HomeController extends GetxController {
   void _emitirEstado(Either<ExceptionErro, QuizEntity> result) {
     result.fold(
       (_) {
-        homeState.value = HomeState.erro;
+        _status.value = RxStatus.error();
       },
       (quiz) {
-        homeState.value = HomeState.carregado;
         _quizEntity.value = quiz;
+
+        _status.value = RxStatus.success();
       },
     );
   }
+}
+extension HomeContrrollerGets on HomeController{
+
+  bool get isLoading => _status.value.isLoading;
+  bool get isError => _status.value.isError;
 }

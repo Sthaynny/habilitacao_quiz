@@ -9,6 +9,10 @@ class QuizEntity {
     required this.perguntas,
   });
 
+  factory QuizEntity.empty() {
+    return QuizEntity(titulo: '', perguntas: []);
+  }
+
   QuizEntity copyWith({
     String? titulo,
     List<PerguntaEntity>? perguntas,
