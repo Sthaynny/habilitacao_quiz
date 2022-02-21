@@ -11,13 +11,6 @@ import 'package:quiz_car/app/shared/domain/entities/quiz_entity.dart';
 import 'package:quiz_car/app/shared/utils/quiz_enum.dart';
 import 'package:quiz_car/core/exceptions/erro.dart';
 
-enum HomeState {
-  init,
-  carregando,
-  erro,
-  carregado,
-}
-
 class HomeController extends GetxController {
   HomeController({
     required DirecaoDefesivaQuizUsercase direcaoDefesivaQuizUsercase,
@@ -53,7 +46,6 @@ class HomeController extends GetxController {
       );
     }
   }
-
 
   Future<void> _getQuiz(QuizEnum quiz) async {
     _status.value = RxStatus.loading();
@@ -100,8 +92,8 @@ class HomeController extends GetxController {
     );
   }
 }
-extension HomeContrrollerGets on HomeController{
 
+extension HomeContrrollerGets on HomeController {
   bool get isLoading => _status.value.isLoading;
   bool get isError => _status.value.isError;
 }

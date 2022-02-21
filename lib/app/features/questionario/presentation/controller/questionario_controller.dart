@@ -6,19 +6,15 @@ import 'package:quiz_car/app/shared/domain/entities/resposta_entity.dart';
 import 'package:quiz_car/core/mixins/pop_up_mixin.dart';
 
 class QuestionarioController extends GetxController with PopUpMixin {
-  QuestionarioController() {
-    _indexPergunta = Rx<int>(0);
-  }
   void init({required QuizEntity quizEntity}) {
-    _quiz = Rx(quizEntity);
+    _quiz.value = quizEntity;
   }
 
-  late Rx<QuizEntity> _quiz;
-  late Rx<int> _indexPergunta;
+  final Rx<QuizEntity> _quiz = QuizEntity.empty().obs;
+  final Rx<int> _indexPergunta = 0.obs;
 
   QuizEntity get quiz => _quiz.value;
   int get tamanhoQuiz => quiz.perguntas.length;
-
   int get indexPergunta => _indexPergunta.value;
   int get indexPerguntaUsuario => _indexPergunta.value + 1;
   bool get ultimaPergunta =>
@@ -79,6 +75,5 @@ class QuestionarioController extends GetxController with PopUpMixin {
         percentual: percentual,
       ),
     );
-    
   }
 }
