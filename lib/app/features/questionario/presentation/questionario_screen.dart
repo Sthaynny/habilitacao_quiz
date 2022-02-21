@@ -32,58 +32,55 @@ class _QuestionarioScreenState extends State<QuestionarioScreen>
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<QuestionarioController>(
-      init: controller,
-      builder: (controller) {
-        return WillPopScope(
-          onWillPop: () async {
-            controller.fecharQuestionario();
-            return false;
-          },
-          child: Scaffold(
-            appBar: AppBarQuestionarioWidget(
-              onClosed: () {
-                controller.fecharQuestionario();
-              },
-              paginaAtual: controller.indexPerguntaUsuario,
-              tamanhoQuiz: controller.tamanhoQuiz,
-            ),
-            body: QuizWidget(
-              scrollController: scrollController,
-              onSelected: (value) {
-                controller.setRespostaSelecionada = value;
-              },
-              pergunta: controller.perguntaAtual,
-              respostaSelected: controller.respotaSelecionada,
-            ),
-            bottomNavigationBar: SafeArea(
-              child: Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: 20.w,
-                  vertical: 20.h,
-                ),
-                child: Row(
-                  children: [
-                    if (controller.indexPergunta != 0) ...getButaoVoltar,
-                    Flexible(
-                        child: PrimaryButtonWidget.azul(
-                      label: controller.ultimaPergunta
-                          ? Strings.finalizar
-                          : Strings.avancar,
-                      onTap: controller.respostaSelecionada != null
-                          ? () {
-                              controller.proximoPergunta;
-                              scrollController.jumpTo(0.0);
-                            }
-                          : null,
-                    )),
-                  ],
-                ),
+    return Obx(
+      () => WillPopScope(
+        onWillPop: () async {
+          controller.fecharQuestionario();
+          return false;
+        },
+        child: Scaffold(
+          appBar: AppBarQuestionarioWidget(
+            onClosed: () {
+              controller.fecharQuestionario();
+            },
+            paginaAtual: controller.indexPerguntaUsuario,
+            tamanhoQuiz: controller.tamanhoQuiz,
+          ),
+          body: QuizWidget(
+            scrollController: scrollController,
+            onSelected: (value) {
+              controller.setRespostaSelecionada = value;
+            },
+            pergunta: controller.perguntaAtual,
+            respostaSelected: controller.respotaSelecionada,
+          ),
+          bottomNavigationBar: SafeArea(
+            child: Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: 20.w,
+                vertical: 20.h,
+              ),
+              child: Row(
+                children: [
+                  if (controller.indexPergunta != 0) ...getButaoVoltar,
+                  Flexible(
+                      child: PrimaryButtonWidget.azul(
+                    label: controller.ultimaPergunta
+                        ? Strings.finalizar
+                        : Strings.avancar,
+                    onTap: controller.respostaSelecionada != null
+                        ? () {
+                            controller.proximoPergunta;
+                            scrollController.jumpTo(0.0);
+                          }
+                        : null,
+                  )),
+                ],
               ),
             ),
           ),
-        );
-      },
+        ),
+      ),
     );
   }
 

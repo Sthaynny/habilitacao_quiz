@@ -2,7 +2,7 @@ import 'package:quiz_car/app/shared/domain/entities/pergunta_entity.dart';
 
 class QuizEntity {
   final String titulo;
-  final List<PerguntaEntity> perguntas;
+  List<PerguntaEntity> perguntas;
 
   QuizEntity({
     required this.titulo,

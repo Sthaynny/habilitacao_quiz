@@ -7,7 +7,7 @@ import 'package:quiz_car/core/mixins/pop_up_mixin.dart';
 
 class QuestionarioController extends GetxController with PopUpMixin {
   void init({required QuizEntity quizEntity}) {
-    _quiz.value = quizEntity;
+    _quiz(quizEntity);
   }
 
   final Rx<QuizEntity> _quiz = QuizEntity.empty().obs;
@@ -25,14 +25,12 @@ class QuestionarioController extends GetxController with PopUpMixin {
       final double percentual = (totalPerguntasCorretas / tamanhoQuiz) * 100;
       irParaResultado(percentual, totalPerguntasCorretas);
     } else {
-      _indexPergunta.value++;
+      _indexPergunta(indexPergunta + 1);
     }
-    update();
   }
 
   void get voltarPergunta {
-    _indexPergunta.value--;
-    update();
+    _indexPergunta(indexPergunta - 1);
   }
 
   Future<void> fecharQuestionario() async {
@@ -71,7 +69,12 @@ extension MetodosAuxilixaresController on QuestionarioController {
       quiz.perguntas[indexPergunta].respostaSelecionada;
 
   set setRespostaSelecionada(RespostaEntity resposta) {
-    quiz.perguntas[indexPergunta].respostaSelecionada = resposta;
-    update();
+    final listaPerguntas = quiz.perguntas;
+    listaPerguntas[indexPergunta].respostaSelecionada = resposta;
+    _quiz.update(
+      (value) {
+        value?.perguntas = listaPerguntas;
+      },
+    );
   }
 }
