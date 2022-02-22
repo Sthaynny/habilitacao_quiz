@@ -10,9 +10,6 @@ import 'package:habilitacao_quiz/app/features/home/domain/usecases/simulado_quiz
 import 'package:habilitacao_quiz/app/features/home/presentation/components/quiz_button_widget.dart';
 import 'package:habilitacao_quiz/app/features/home/presentation/controller/home_controller.dart';
 import 'package:habilitacao_quiz/app/features/home/presentation/home_screen.dart';
-import 'package:habilitacao_quiz/app/features/questionario/presentation/controller/questionario_controller.dart';
-import 'package:habilitacao_quiz/app/features/questionario/presentation/questionario_screen.dart';
-import 'package:habilitacao_quiz/app/features/routes/routes.dart';
 import 'package:habilitacao_quiz/app/shared/presentation/widgets/car_quiz_widget.dart';
 import 'package:mocktail/mocktail.dart';
 
@@ -59,25 +56,7 @@ void main() {
     );
   });
   Widget makeTestable(Widget widget) => GetMaterialApp(
-        initialRoute: Routes.home,
-        getPages: [
-          GetPage(
-            name: Routes.questionario,
-            page: () => QuestionarioScreen(
-              controller: QuestionarioController(),
-              quizEntity: Get.arguments,
-            ),
-          ),
-          GetPage(
-            name: Routes.home,
-            page: () => HomeScreen(
-              controller: homeController,
-            ),
-            transition: Transition.fadeIn,
-            transitionDuration: const Duration(seconds: 2),
-            showCupertinoParallax: false,
-          ),
-        ],
+        home: widget,
       );
   testWidgets(
     'Home Screen inicializar tela',
