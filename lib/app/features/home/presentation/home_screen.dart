@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:habilitacao_quiz/app/features/home/presentation/components/quiz_button_widget.dart';
 import 'package:habilitacao_quiz/app/features/home/presentation/controller/home_controller.dart';
+import 'package:habilitacao_quiz/app/shared/utils/keys_home.dart';
 import 'package:habilitacao_quiz/app/shared/presentation/pages/loading_blur_screen.dart';
 import 'package:habilitacao_quiz/app/shared/presentation/widgets/car_quiz_widget.dart';
 import 'package:habilitacao_quiz/app/shared/utils/quiz_enum.dart';
@@ -11,14 +12,18 @@ import 'package:habilitacao_quiz/core/styles/app_styles.dart';
 import 'package:habilitacao_quiz/core/utils/strings.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({
+    Key? key,
+    required this.controller,
+  }) : super(key: key);
+  final HomeController controller;
 
   @override
   createState() => _HomeScreen();
 }
 
 class _HomeScreen extends State<HomeScreen> with PopUpMixin {
-  final HomeController controller = Get.find();
+  HomeController get controller => widget.controller;
 
   @override
   Widget build(BuildContext context) {
@@ -48,6 +53,7 @@ class _HomeScreen extends State<HomeScreen> with PopUpMixin {
                     runSpacing: 15,
                     children: [
                       QuizButtonWidget(
+                        key: KeysEnum.direcaoDefenciva.converteKey,
                         onPressend: () {
                           controller.irParaPagina(QuizEnum.legislacao);
                         },

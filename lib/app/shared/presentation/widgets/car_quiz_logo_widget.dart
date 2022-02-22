@@ -9,7 +9,7 @@ class CarQuizLogoWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Image.asset(
       AppImages.logo,
-      width: size ?? 70.w,
+      height: size ?? 70.w,
     );
   }
 }

@@ -94,6 +94,7 @@ class HomeController extends GetxController {
 }
 
 extension HomeContrrollerGets on HomeController {
+  bool get isSuccess => _status.value.isSuccess;
   bool get isLoading => _status.value.isLoading;
   bool get isError => _status.value.isError;
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/route_manager.dart';
+import 'package:get/get.dart';
 import 'package:habilitacao_quiz/app/features/home/presentation/home_screen.dart';
 import 'package:habilitacao_quiz/app/features/questionario/presentation/questionario_screen.dart';
 import 'package:habilitacao_quiz/app/features/resultado/resultado_screen.dart';
@@ -37,7 +37,9 @@ class MyApp extends StatelessWidget {
         ),
         GetPage(
           name: Routes.home,
-          page: () => const HomeScreen(),
+          page: () => HomeScreen(
+            controller: Get.find(),
+          ),
           transition: Transition.fadeIn,
           transitionDuration: const Duration(seconds: 2),
           showCupertinoParallax: false,
