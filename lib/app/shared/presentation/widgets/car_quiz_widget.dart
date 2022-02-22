@@ -1,8 +1,8 @@
 import 'package:adaptable_screen/adaptable_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:quiz_car/app/shared/presentation/widgets/car_quiz_logo_widget.dart';
-import 'package:quiz_car/core/styles/app_styles.dart';
-import 'package:quiz_car/core/utils/strings.dart';
+import 'package:habilitacao_quiz/app/shared/presentation/widgets/car_quiz_logo_widget.dart';
+import 'package:habilitacao_quiz/core/styles/app_styles.dart';
+import 'package:habilitacao_quiz/core/utils/strings.dart';
 
 class CarQuizWidget extends StatelessWidget {
   const CarQuizWidget({Key? key}) : super(key: key);

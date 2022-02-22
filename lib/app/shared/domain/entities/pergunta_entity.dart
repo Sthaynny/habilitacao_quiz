@@ -1,6 +1,6 @@
 import 'dart:typed_data';
 
-import 'package:quiz_car/app/shared/domain/entities/resposta_entity.dart';
+import 'package:habilitacao_quiz/app/shared/domain/entities/resposta_entity.dart';
 
 class PerguntaEntity {
   PerguntaEntity({

@@ -1,10 +1,10 @@
 import 'package:adaptable_screen/adaptable_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:quiz_car/app/features/resultado/resultado_args.dart';
-import 'package:quiz_car/app/shared/presentation/widgets/primary_button_widget.dart';
-import 'package:quiz_car/core/styles/app_styles.dart';
-import 'package:quiz_car/core/utils/strings.dart';
+import 'package:habilitacao_quiz/app/features/resultado/resultado_args.dart';
+import 'package:habilitacao_quiz/app/shared/presentation/widgets/primary_button_widget.dart';
+import 'package:habilitacao_quiz/core/styles/app_styles.dart';
+import 'package:habilitacao_quiz/core/utils/strings.dart';
 import 'package:share/share.dart';
 
 class ResultadoScreen extends StatelessWidget {
@@ -34,7 +34,7 @@ class ResultadoScreen extends StatelessWidget {
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: 40.w),
                   child: Text(
-                  args.  result ? Strings.parabens : Strings.menssgemTriste,
+                    args.result ? Strings.parabens : Strings.menssgemTriste,
                     style: AppTextStyles.notoSansBold(
                       color: AppColors.preto,
                       fontSize: 30.ssp,
@@ -61,7 +61,8 @@ class ResultadoScreen extends StatelessWidget {
                           )),
                       TextSpan(
                         text: Strings.resultadoQuestionario(
-                          respostasCorretas: args.totalRespostasCorretas.toString(),
+                          respostasCorretas:
+                              args.totalRespostasCorretas.toString(),
                           totalPerguntas: args.totalPerguntas.toString(),
                           percentual: getPercentual,
                         ),

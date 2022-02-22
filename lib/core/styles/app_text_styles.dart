@@ -1,8 +1,7 @@
 import 'package:adaptable_screen/adaptable_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:quiz_car/core/styles/app_colors.dart';
-
+import 'package:habilitacao_quiz/core/styles/app_colors.dart';
 
 class AppTextStyles {
   static TextStyle notoSansRegular({

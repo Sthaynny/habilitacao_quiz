@@ -1,13 +1,13 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:habilitacao_quiz/app/shared/data/datasources/quiz_datasource.dart';
+import 'package:habilitacao_quiz/app/shared/data/models/questoes_model.dart';
+import 'package:habilitacao_quiz/app/shared/data/repositories/quiz_repository.dart';
+import 'package:habilitacao_quiz/app/shared/domain/entities/quiz_entity.dart';
+import 'package:habilitacao_quiz/app/shared/domain/repositories/iquiz_repository.dart';
+import 'package:habilitacao_quiz/core/exceptions/erro.dart';
+import 'package:habilitacao_quiz/core/utils/keys.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:quiz_car/app/shared/data/datasources/quiz_datasource.dart';
-import 'package:quiz_car/app/shared/data/models/questoes_model.dart';
-import 'package:quiz_car/app/shared/data/repositories/quiz_repository.dart';
-import 'package:quiz_car/app/shared/domain/entities/quiz_entity.dart';
-import 'package:quiz_car/app/shared/domain/repositories/iquiz_repository.dart';
-import 'package:quiz_car/core/exceptions/erro.dart';
-import 'package:quiz_car/core/utils/keys.dart';
 
 import '../../../utils/utils.dart';
 

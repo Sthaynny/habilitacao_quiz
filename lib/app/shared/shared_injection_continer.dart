@@ -1,8 +1,8 @@
 import 'package:get/get.dart';
-import 'package:quiz_car/app/shared/data/datasources/quiz_datasource.dart';
-import 'package:quiz_car/app/shared/data/repositories/quiz_repository.dart';
-import 'package:quiz_car/app/shared/domain/repositories/iquiz_repository.dart';
-import 'package:quiz_car/core/i_injection_conetiner.dart';
+import 'package:habilitacao_quiz/app/shared/data/datasources/quiz_datasource.dart';
+import 'package:habilitacao_quiz/app/shared/data/repositories/quiz_repository.dart';
+import 'package:habilitacao_quiz/app/shared/domain/repositories/iquiz_repository.dart';
+import 'package:habilitacao_quiz/core/i_injection_conetiner.dart';
 
 class SharedInjectionContainer implements IInjectionContainer {
   @override

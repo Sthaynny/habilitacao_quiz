@@ -1,9 +1,9 @@
 import 'package:adaptable_screen/adaptable_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
-import 'package:quiz_car/core/styles/app_colors.dart';
-import 'package:quiz_car/core/styles/app_text_styles.dart';
-import 'package:quiz_car/core/utils/strings.dart';
+import 'package:habilitacao_quiz/core/styles/app_colors.dart';
+import 'package:habilitacao_quiz/core/styles/app_text_styles.dart';
+import 'package:habilitacao_quiz/core/utils/strings.dart';
 
 mixin PopUpMixin {
   Future<bool?> popUpConfirmacao() async {

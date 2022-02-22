@@ -1,6 +1,6 @@
 # Bem-vindo guia de Contribuição <!-- omitir em toc -->
 
-Obrigado por investir o seu tempo a contribuir para o nosso projecto! Qualquer contribuição que der será reflectida no [app](https://github.com/Sthaynny/quiz_car) :sparkles:. 
+Obrigado por investir o seu tempo a contribuir para o nosso projecto! Qualquer contribuição que der será reflectida no [app](https://github.com/Sthaynny/habilitacao_quiz) :sparkles:. 
 
 ## Novo guia de contribuição
 
@@ -13,13 +13,13 @@ Para obter uma visão geral do projecto, leia o [README](README.md). Aqui estão
 
 ## Começando
 
-Verifique para ver quais [tipos de contribuições](https://github.com/Sthaynny/quiz_car/blob/main/.github/types-of-contributions.md) aceitamos antes de fazer alterações. Algumas delas nem sequer requerem a escrita de uma única linha de código :sparkles:.
+Verifique para ver quais [tipos de contribuições](https://github.com/Sthaynny/habilitacao_quiz/blob/main/.github/types-of-contributions.md) aceitamos antes de fazer alterações. Algumas delas nem sequer requerem a escrita de uma única linha de código :sparkles:.
 
 ### Questões
 
 #### Criar um novo número
 
-Se detectar um problema com os documentos, [procure se já existe um problema](https://github.com/Sthaynny/quiz_car/issues?q=is%3Aopen). Se um problema relacionado não existir, pode abrir um novo número usando um formulário [issue form](https://github.com/Sthaynny/quiz_car/issues/issues/new/choose) relevante. 
+Se detectar um problema com os documentos, [procure se já existe um problema](https://github.com/Sthaynny/habilitacao_quiz/issues?q=is%3Aopen). Se um problema relacionado não existir, pode abrir um novo número usando um formulário [issue form](https://github.com/Sthaynny/habilitacao_quiz/issues/issues/new/choose) relevante. 
 
 #### Resolver um problema
 

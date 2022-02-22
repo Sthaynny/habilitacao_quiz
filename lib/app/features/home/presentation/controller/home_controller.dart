@@ -1,15 +1,15 @@
 import 'package:dartz/dartz.dart';
 import 'package:get/get.dart';
-import 'package:quiz_car/app/features/home/domain/usecases/direcao_defensiva_quiz_usercase.dart';
-import 'package:quiz_car/app/features/home/domain/usecases/legislacao_quiz_usercase.dart';
-import 'package:quiz_car/app/features/home/domain/usecases/mecanica_basica_quiz_usercase.dart';
-import 'package:quiz_car/app/features/home/domain/usecases/meio_ambiente_quiz_usercase.dart';
-import 'package:quiz_car/app/features/home/domain/usecases/primeiros_socorros_quiz_usercase.dart';
-import 'package:quiz_car/app/features/home/domain/usecases/simulado_quiz_usercase.dart';
-import 'package:quiz_car/app/features/routes/routes.dart';
-import 'package:quiz_car/app/shared/domain/entities/quiz_entity.dart';
-import 'package:quiz_car/app/shared/utils/quiz_enum.dart';
-import 'package:quiz_car/core/exceptions/erro.dart';
+import 'package:habilitacao_quiz/app/features/home/domain/usecases/direcao_defensiva_quiz_usercase.dart';
+import 'package:habilitacao_quiz/app/features/home/domain/usecases/legislacao_quiz_usercase.dart';
+import 'package:habilitacao_quiz/app/features/home/domain/usecases/mecanica_basica_quiz_usercase.dart';
+import 'package:habilitacao_quiz/app/features/home/domain/usecases/meio_ambiente_quiz_usercase.dart';
+import 'package:habilitacao_quiz/app/features/home/domain/usecases/primeiros_socorros_quiz_usercase.dart';
+import 'package:habilitacao_quiz/app/features/home/domain/usecases/simulado_quiz_usercase.dart';
+import 'package:habilitacao_quiz/app/features/routes/routes.dart';
+import 'package:habilitacao_quiz/app/shared/domain/entities/quiz_entity.dart';
+import 'package:habilitacao_quiz/app/shared/utils/quiz_enum.dart';
+import 'package:habilitacao_quiz/core/exceptions/erro.dart';
 
 class HomeController extends GetxController {
   HomeController({

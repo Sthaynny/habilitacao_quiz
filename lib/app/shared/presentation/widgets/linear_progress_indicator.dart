@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quiz_car/core/styles/app_styles.dart';
+import 'package:habilitacao_quiz/core/styles/app_styles.dart';
 
 class LinearProgressIndicatorWidget extends StatelessWidget {
   const LinearProgressIndicatorWidget({Key? key, required this.value})

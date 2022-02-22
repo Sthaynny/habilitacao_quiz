@@ -1,4 +1,4 @@
-package br.com.sthaynny.quiz_car
+package br.com.sthaynny.habilitacao_quiz
 
 import io.flutter.embedding.android.FlutterActivity
 

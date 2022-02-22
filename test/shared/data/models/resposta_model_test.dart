@@ -1,8 +1,8 @@
 import 'dart:convert';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:quiz_car/app/shared/data/models/resposta_model.dart';
-import 'package:quiz_car/app/shared/domain/entities/resposta_entity.dart';
+import 'package:habilitacao_quiz/app/shared/data/models/resposta_model.dart';
+import 'package:habilitacao_quiz/app/shared/domain/entities/resposta_entity.dart';
 
 void main() {
   final tInstanceRespostaModel = RespostaModel(titulo: "test");

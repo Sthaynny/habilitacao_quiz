@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
-import 'package:quiz_car/app/features/home/presentation/home_screen.dart';
-import 'package:quiz_car/app/features/questionario/presentation/questionario_screen.dart';
-import 'package:quiz_car/app/features/resultado/resultado_screen.dart';
-import 'package:quiz_car/app/features/routes/routes.dart';
-import 'package:quiz_car/app/features/splash/splash_screen.dart';
+import 'package:habilitacao_quiz/app/features/home/presentation/home_screen.dart';
+import 'package:habilitacao_quiz/app/features/questionario/presentation/questionario_screen.dart';
+import 'package:habilitacao_quiz/app/features/resultado/resultado_screen.dart';
+import 'package:habilitacao_quiz/app/features/routes/routes.dart';
+import 'package:habilitacao_quiz/app/features/splash/splash_screen.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);

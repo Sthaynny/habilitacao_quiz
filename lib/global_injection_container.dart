@@ -1,7 +1,7 @@
-import 'package:quiz_car/app/features/home/home_injection_continer.dart';
-import 'package:quiz_car/app/features/questionario/questionario_injection_continer.dart';
-import 'package:quiz_car/app/shared/shared_injection_continer.dart';
-import 'package:quiz_car/core/i_injection_conetiner.dart';
+import 'package:habilitacao_quiz/app/features/home/home_injection_continer.dart';
+import 'package:habilitacao_quiz/app/features/questionario/questionario_injection_continer.dart';
+import 'package:habilitacao_quiz/app/shared/shared_injection_continer.dart';
+import 'package:habilitacao_quiz/core/i_injection_conetiner.dart';
 
 abstract class GlobalInjectionContainer {
   static List<IInjectionContainer> get injectionsContainer => [

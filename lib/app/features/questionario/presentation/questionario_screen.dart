@@ -1,13 +1,13 @@
 import 'package:adaptable_screen/adaptable_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:quiz_car/app/features/questionario/presentation/components/app_bar_questionario.dart';
-import 'package:quiz_car/app/features/questionario/presentation/components/quiz/quiz.dart';
-import 'package:quiz_car/app/features/questionario/presentation/controller/questionario_controller.dart';
-import 'package:quiz_car/app/shared/domain/entities/quiz_entity.dart';
-import 'package:quiz_car/app/shared/presentation/widgets/primary_button_widget.dart';
-import 'package:quiz_car/core/mixins/pop_up_mixin.dart';
-import 'package:quiz_car/core/utils/strings.dart';
+import 'package:habilitacao_quiz/app/features/questionario/presentation/components/app_bar_questionario.dart';
+import 'package:habilitacao_quiz/app/features/questionario/presentation/components/quiz/quiz.dart';
+import 'package:habilitacao_quiz/app/features/questionario/presentation/controller/questionario_controller.dart';
+import 'package:habilitacao_quiz/app/shared/domain/entities/quiz_entity.dart';
+import 'package:habilitacao_quiz/app/shared/presentation/widgets/primary_button_widget.dart';
+import 'package:habilitacao_quiz/core/mixins/pop_up_mixin.dart';
+import 'package:habilitacao_quiz/core/utils/strings.dart';
 
 class QuestionarioScreen extends StatefulWidget {
   const QuestionarioScreen({Key? key, required this.quizEntity})

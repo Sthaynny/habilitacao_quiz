@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:quiz_car/app/shared/data/datasources/quiz_datasource.dart';
+import 'package:habilitacao_quiz/app/shared/data/datasources/quiz_datasource.dart';
 
 void main() {
   QuizDatasource datasource = QuizDatasource();

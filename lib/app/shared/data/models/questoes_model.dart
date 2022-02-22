@@ -1,8 +1,8 @@
 import 'dart:convert';
 
-import 'package:quiz_car/app/shared/data/models/pergunta_model.dart';
-import 'package:quiz_car/app/shared/domain/entities/pergunta_entity.dart';
-import 'package:quiz_car/app/shared/domain/entities/quiz_entity.dart';
+import 'package:habilitacao_quiz/app/shared/data/models/pergunta_model.dart';
+import 'package:habilitacao_quiz/app/shared/domain/entities/pergunta_entity.dart';
+import 'package:habilitacao_quiz/app/shared/domain/entities/quiz_entity.dart';
 
 class QuizModel extends QuizEntity {
   QuizModel({
