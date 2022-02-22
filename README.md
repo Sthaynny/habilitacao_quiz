@@ -58,6 +58,7 @@ Esse:
 - `Getx`: biblioteca poderosa e extraleve para Flutter. Ela combina um gerenciador de estado de alta performance, injeção de dependência inteligente e gerenciamento de rotas de uma forma rápida e prática.
 - `Lottie`: biblioteca móvel para Android e iOS que analisa animações do Adobe After Effects exportadas como json com Bodymovin e as renderiza nativamente em dispositivos móveis!
 - `Flutter`: kit de desenvolvimento de interface de usuário, de código aberto, criado pela empresa Google em 2015, baseado na linguagem de programação Dart, que possibilita a criação de aplicativos compilados nativamente, para os sistemas operacionais Android, iOS, Windows, Mac, Linux e, Fuchsia e Web.
+- `Testes Unitários`: toda a aplicação de teste nas assinaturas de entrada e saída de um sistema. Consiste em validar dados válidos e inválidos via I/O sendo aplicado por desenvolvedores ou analistas de teste.
 
 # :computer: Como rodar
 
