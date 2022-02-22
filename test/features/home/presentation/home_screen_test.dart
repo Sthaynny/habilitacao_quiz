@@ -115,7 +115,7 @@ void main() {
             .pumpWidget(makeTestable(HomeScreen(controller: homeController)));
 
         final Finder butaodirecaoDefensiva =
-            find.byKey(KeysEnum.direcaoDefenciva.converteKey);
+            find.byKey(KeysEnum.direcaoDefensiva.converteKey);
 
         expect(butaodirecaoDefensiva, findsOneWidget);
 
@@ -144,7 +144,7 @@ void main() {
             .pumpWidget(makeTestable(HomeScreen(controller: homeController)));
 
         final Finder butaodirecaoDefensiva =
-            find.byKey(KeysEnum.direcaoDefenciva.converteKey);
+            find.byKey(KeysEnum.direcaoDefensiva.converteKey);
 
         expect(butaodirecaoDefensiva, findsOneWidget);
 

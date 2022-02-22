@@ -53,7 +53,7 @@ class _HomeScreen extends State<HomeScreen> with PopUpMixin {
                     runSpacing: 15,
                     children: [
                       QuizButtonWidget(
-                        key: KeysEnum.legislacao.converteKey,
+                        key: QuizEnum.legislacao.converteKey,
                         onPressend: () {
                           controller.irParaPagina(QuizEnum.legislacao);
                         },
@@ -61,7 +61,7 @@ class _HomeScreen extends State<HomeScreen> with PopUpMixin {
                         titulo: Strings.legislacao,
                       ),
                       QuizButtonWidget(
-                        key: KeysEnum.direcaoDefenciva.converteKey,
+                        key: QuizEnum.direcaoDefensiva.converteKey,
                         onPressend: () {
                           controller.irParaPagina(QuizEnum.direcaoDefensiva);
                         },
@@ -69,6 +69,7 @@ class _HomeScreen extends State<HomeScreen> with PopUpMixin {
                         titulo: Strings.direcaoDefesiva,
                       ),
                       QuizButtonWidget(
+                        key: QuizEnum.mecanicaBasica.converteKey,
                         onPressend: () {
                           controller.irParaPagina(QuizEnum.mecanicaBasica);
                         },
@@ -76,6 +77,7 @@ class _HomeScreen extends State<HomeScreen> with PopUpMixin {
                         titulo: Strings.mecanicaBasica,
                       ),
                       QuizButtonWidget(
+                        key: QuizEnum.primeirosSocorros.converteKey,
                         onPressend: () {
                           controller.irParaPagina(QuizEnum.primeirosSocorros);
                         },
@@ -83,6 +85,7 @@ class _HomeScreen extends State<HomeScreen> with PopUpMixin {
                         titulo: Strings.primeirosSocorros,
                       ),
                       QuizButtonWidget(
+                        key: QuizEnum.meioAmbiente.converteKey,
                         onPressend: () {
                           controller.irParaPagina(QuizEnum.meioAmbiente);
                         },
@@ -90,6 +93,7 @@ class _HomeScreen extends State<HomeScreen> with PopUpMixin {
                         titulo: Strings.meioAmbiente,
                       ),
                       QuizButtonWidget(
+                        key: QuizEnum.similado.converteKey,
                         onPressend: () {
                           controller.irParaPagina(QuizEnum.similado);
                         },

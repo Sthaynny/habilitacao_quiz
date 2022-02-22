@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 enum QuizEnum {
   mecanicaBasica,
   primeirosSocorros,
@@ -7,3 +9,6 @@ enum QuizEnum {
   similado,
 }
 
+extension KeysExt on QuizEnum {
+  Key get converteKey => Key(name);
+}
