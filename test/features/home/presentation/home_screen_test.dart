@@ -1,4 +1,3 @@
-import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:get/get.dart';
@@ -11,17 +10,11 @@ import 'package:habilitacao_quiz/app/features/home/domain/usecases/simulado_quiz
 import 'package:habilitacao_quiz/app/features/home/presentation/components/quiz_button_widget.dart';
 import 'package:habilitacao_quiz/app/features/home/presentation/controller/home_controller.dart';
 import 'package:habilitacao_quiz/app/features/home/presentation/home_screen.dart';
-import 'package:habilitacao_quiz/app/features/questionario/presentation/components/quiz/quiz.dart';
 import 'package:habilitacao_quiz/app/features/questionario/presentation/controller/questionario_controller.dart';
 import 'package:habilitacao_quiz/app/features/questionario/presentation/questionario_screen.dart';
 import 'package:habilitacao_quiz/app/features/routes/routes.dart';
-import 'package:habilitacao_quiz/app/shared/data/models/questoes_model.dart';
 import 'package:habilitacao_quiz/app/shared/presentation/widgets/car_quiz_widget.dart';
-import 'package:habilitacao_quiz/app/shared/utils/keys_home.dart';
-import 'package:habilitacao_quiz/core/exceptions/erro.dart';
 import 'package:mocktail/mocktail.dart';
-
-import '../../../utils/utils.dart';
 
 class _MockDirecaoDefesivaQuizUsercase extends Mock
     implements DirecaoDefesivaQuizUsercase {}
@@ -48,7 +41,6 @@ void main() {
   late _MockPrimeirosSocorrosQuizUsercase primeirosSocorrosQuizUsercase;
   late _MockMecanicaBasicaQuizUsercase mecanicaBasicaQuizUsercase;
   late _MockSimuladoQuizUsercase simuladoQuizUsercase;
-  final quizEntity = QuizModel.fromMap(tMapQuizModel);
 
   setUp(() {
     direcaoDefesivaQuizUsercase = _MockDirecaoDefesivaQuizUsercase();
@@ -98,123 +90,7 @@ void main() {
       final Finder quizCarFinder = find.byType(CarQuizWidget);
       expect(quizCarFinder, findsOneWidget);
       final Finder quizButtonFinder = find.byType(QuizButtonWidget);
-      expect(quizButtonFinder, findsNWidgets(6));
+      expect(quizButtonFinder, findsWidgets);
     },
   );
-
-  group('Direcao defensisa', () {
-    testWidgets(
-      'Home Screen - click Direcao defensisa',
-      (WidgetTester tester) async {
-        when(
-          () => direcaoDefesivaQuizUsercase(),
-        ).thenAnswer(
-          (invocation) async => Right(quizEntity),
-        );
-        await tester
-            .pumpWidget(makeTestable(HomeScreen(controller: homeController)));
-
-        final Finder butaodirecaoDefensiva =
-            find.byKey(KeysEnum.direcaoDefensiva.converteKey);
-
-        expect(butaodirecaoDefensiva, findsOneWidget);
-
-        await tester.tap(butaodirecaoDefensiva);
-        await tester.pumpAndSettle();
-
-        final Finder scaffoldFinder = find.byType(Scaffold);
-        expect(scaffoldFinder, findsOneWidget);
-        final Finder quizWidgetFind = find.byType(QuizWidget);
-        expect(quizWidgetFind, findsOneWidget);
-        final QuizWidget quizWidget = tester.widget(quizWidgetFind);
-        expect(quizWidget.pergunta.titulo.isNotEmpty, true);
-        expect(quizWidget.pergunta.respostas.isNotEmpty, true);
-      },
-    );
-
-    testWidgets(
-      'Home Screen - click Direcao defensisa erro',
-      (WidgetTester tester) async {
-        when(
-          () => direcaoDefesivaQuizUsercase(),
-        ).thenAnswer(
-          (invocation) async => Left(ExceptionErro()),
-        );
-        await tester
-            .pumpWidget(makeTestable(HomeScreen(controller: homeController)));
-
-        final Finder butaodirecaoDefensiva =
-            find.byKey(KeysEnum.direcaoDefensiva.converteKey);
-
-        expect(butaodirecaoDefensiva, findsOneWidget);
-
-        await tester.tap(butaodirecaoDefensiva);
-        expect(homeController.isError, true);
-
-        await tester.pump();
-        await tester.pump(const Duration(seconds: 5));
-
-        final Finder result = find.byType(AlertDialog);
-        expect(result, findsOneWidget);
-      },
-    );
-  });
-
-  group('Legislacao', () {
-    testWidgets(
-      'click Legislacao',
-      (WidgetTester tester) async {
-        when(
-          () => legislacaoQuizUsercase(),
-        ).thenAnswer(
-          (invocation) async => Right(quizEntity),
-        );
-        await tester
-            .pumpWidget(makeTestable(HomeScreen(controller: homeController)));
-
-        final Finder butaoInteracao =
-            find.byKey(KeysEnum.legislacao.converteKey);
-
-        expect(butaoInteracao, findsOneWidget);
-
-        await tester.tap(butaoInteracao);
-        await tester.pumpAndSettle();
-
-        final Finder scaffoldFinder = find.byType(Scaffold);
-        expect(scaffoldFinder, findsOneWidget);
-        final Finder quizWidgetFind = find.byType(QuizWidget);
-        expect(quizWidgetFind, findsOneWidget);
-        final QuizWidget quizWidget = tester.widget(quizWidgetFind);
-        expect(quizWidget.pergunta.titulo.isNotEmpty, true);
-        expect(quizWidget.pergunta.respostas.isNotEmpty, true);
-      },
-    );
-
-    testWidgets(
-      'click Legislacao erro',
-      (WidgetTester tester) async {
-        when(
-          () => legislacaoQuizUsercase(),
-        ).thenAnswer(
-          (invocation) async => Left(ExceptionErro()),
-        );
-        await tester
-            .pumpWidget(makeTestable(HomeScreen(controller: homeController)));
-
-        final Finder butaoInteracao =
-            find.byKey(KeysEnum.legislacao.converteKey);
-
-        expect(butaoInteracao, findsOneWidget);
-
-        await tester.tap(butaoInteracao);
-        expect(homeController.isError, true);
-
-        await tester.pump();
-        await tester.pump(const Duration(seconds: 5));
-
-        final Finder result = find.byType(AlertDialog);
-        expect(result, findsOneWidget);
-      },
-    );
-  });
 }

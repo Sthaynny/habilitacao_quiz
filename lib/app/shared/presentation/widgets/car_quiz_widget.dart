@@ -13,11 +13,12 @@ class CarQuizWidget extends StatelessWidget {
       padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 10.w),
       child: ConstrainedBox(
         constraints: BoxConstraints(
-          maxWidth: MediaQuery.of(context).size.width,
-          maxHeight: 80.h,
+          maxWidth: 350.w,
+          maxHeight: 100.h,
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisSize: MainAxisSize.min,
           children: [
             const CarQuizLogoWidget(),
             Padding(

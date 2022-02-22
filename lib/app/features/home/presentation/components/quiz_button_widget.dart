@@ -22,7 +22,7 @@ class QuizButtonWidget extends StatelessWidget {
         ),
         elevation: MaterialStateProperty.all(2),
         fixedSize: MaterialStateProperty.all(
-          Size(150.w, 180.h),
+          Size(150.w, 300.h),
         ),
         shape: MaterialStateProperty.all(
           ContinuousRectangleBorder(
@@ -31,23 +31,29 @@ class QuizButtonWidget extends StatelessWidget {
         ),
       ),
       onPressed: onPressend,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          Material(
-            color: Colors.transparent,
-            elevation: 30,
-            child: Image.asset(
-              iconAsset,
-              width: 50.w,
+      child: ConstrainedBox(
+        constraints: BoxConstraints(
+          maxWidth: 150.w,
+          maxHeight: 250.h,
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Material(
+              color: Colors.transparent,
+              elevation: 30,
+              child: Image.asset(
+                iconAsset,
+                width: 45.w,
+              ),
             ),
-          ),
-          Text(
-            titulo,
-            style: AppTextStyles.notoSansBold(fontSize: 14.ssp),
-            textAlign: TextAlign.center,
-          ),
-        ],
+            Text(
+              titulo,
+              style: AppTextStyles.notoSansBold(fontSize: 14.ssp),
+              textAlign: TextAlign.center,
+            ),
+          ],
+        ),
       ),
     );
   }

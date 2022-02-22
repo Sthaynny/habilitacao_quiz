@@ -6,9 +6,9 @@ enum QuizEnum {
   legislacao,
   direcaoDefensiva,
   meioAmbiente,
-  similado,
+  simulado,
 }
 
 extension KeysExt on QuizEnum {
-  Key get converteKey => Key(name);
+  ValueKey get converteKey => ValueKey(name);
 }

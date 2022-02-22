@@ -71,7 +71,7 @@ class HomeController extends GetxController {
         final result = await _mecanicaBasicaQuizUsercase();
         _emitirEstado(result);
         break;
-      case QuizEnum.similado:
+      case QuizEnum.simulado:
         final result = await _simuladoQuizUsercase();
         _emitirEstado(result);
         break;

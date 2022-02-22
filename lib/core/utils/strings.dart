@@ -4,7 +4,7 @@ abstract class Strings {
   static const mecanicaBasica = "Mecânica Básica";
   static const primeirosSocorros = "Primeiros Socorros";
   static const aleatorias = "Aleatórias";
-  static const logoApp = "Habilitação Quiz";
+  static const logoApp = "Habilitação\nQuiz";
   static const erroPadrao = "Ops... Tivemos um problema, tente novamente!";
   static const voltar = 'Voltar';
   static const avancar = 'Avançar';
