@@ -82,6 +82,7 @@ Cria um issue <a href="https://github.com/Sthaynny/quiz_car/issues">nova issue</
 - Crie uma nova branch a partir da develop: `git checkout -b my-feature` ou `git flow feature start my-feature`;
 - Commit em sua banch: `git commit -m 'feat: my new feature'`;
 - Push em sua branch: `git push origin my-feature`.
+- Para mais informações acesse o [Guia de contribuição](https://github.com/Sthaynny/quiz_car/blob/main/.github/contributing.md)
   
 Para ajudar a manter o padrão escolhido, também criamos um arquivo que é chamado antes de cada commit. Este arquivo irá formatar e identificar (se houver) erros no estilo de código do seu código. Para habilitar isso você deve primeiro copiá-lo para a pasta hooks do git. Se você estiver desenvolvendo no macOS, vá até a raiz do projeto e execute o comando abaixo:
 
