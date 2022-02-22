@@ -10,7 +10,7 @@ void main() {
         home: widget,
       );
   testWidgets(
-    'Questionario Screen inicializar tela',
+    'Resultado Screen inicializar tela',
     (WidgetTester tester) async {
       await tester.pumpWidget(makeTestable(const ResultadoScreen(
         args: ResultadoArgs(
