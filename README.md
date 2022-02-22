@@ -39,6 +39,7 @@
 
 # :camera: Screenshots
 <div align="center">
+   <img src="https://user-images.githubusercontent.com/46109133/155135523-d00feec4-dd29-4815-830c-b890179c5fc8.png" width="230"/>
    <img src="https://user-images.githubusercontent.com/46109133/154710459-f4edee9c-5c34-4d11-9312-0c868f654059.png" width="230"/>
    <img src="https://user-images.githubusercontent.com/46109133/154710679-15530155-63d0-47ed-a14e-d5e2cb965d84.png" width="230"/>
    <img src="https://user-images.githubusercontent.com/46109133/154710728-ce511ad0-f8c9-40bb-b852-d3f1a226b65f.png" width="230"/>
