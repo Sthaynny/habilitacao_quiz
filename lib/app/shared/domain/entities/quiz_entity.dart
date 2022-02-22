@@ -13,6 +13,8 @@ class QuizEntity {
     return QuizEntity(titulo: '', perguntas: []);
   }
 
+  bool get isEmpty => titulo.isEmpty && perguntas.isEmpty;
+
   QuizEntity copyWith({
     String? titulo,
     List<PerguntaEntity>? perguntas,

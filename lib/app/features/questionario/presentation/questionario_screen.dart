@@ -10,8 +10,13 @@ import 'package:habilitacao_quiz/core/mixins/pop_up_mixin.dart';
 import 'package:habilitacao_quiz/core/utils/strings.dart';
 
 class QuestionarioScreen extends StatefulWidget {
-  const QuestionarioScreen({Key? key, required this.quizEntity})
-      : super(key: key);
+  const QuestionarioScreen({
+    Key? key,
+    required this.quizEntity,
+    required this.controller,
+  }) : super(key: key);
+
+  final QuestionarioController controller;
   final QuizEntity quizEntity;
   @override
   _QuestionarioScreenState createState() => _QuestionarioScreenState();
@@ -19,13 +24,12 @@ class QuestionarioScreen extends StatefulWidget {
 
 class _QuestionarioScreenState extends State<QuestionarioScreen>
     with PopUpMixin {
-  late final QuestionarioController controller;
+  QuestionarioController get controller => widget.controller;
   QuizEntity get quiz => widget.quizEntity;
   final scrollController = ScrollController();
 
   @override
   void didChangeDependencies() {
-    controller = Get.find();
     controller.init(quizEntity: quiz);
     super.didChangeDependencies();
   }

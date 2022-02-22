@@ -39,7 +39,8 @@ class HomeController extends GetxController {
 
   Future<void> irParaPagina(QuizEnum quiz) async {
     await _getQuiz(quiz);
-    if (_quizEntity.value != null) {
+    final quizEntity = _quizEntity.value;
+    if (quizEntity != null && !quizEntity.isEmpty) {
       Get.toNamed(
         Routes.questionario,
         arguments: _quizEntity.value,
@@ -76,6 +77,8 @@ class HomeController extends GetxController {
         break;
       default:
         _quizEntity.value = null;
+        _status.value = RxStatus.error();
+        break;
     }
   }
 

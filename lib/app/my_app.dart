@@ -32,6 +32,7 @@ class MyApp extends StatelessWidget {
         GetPage(
           name: Routes.questionario,
           page: () => QuestionarioScreen(
+            controller: Get.find(),
             quizEntity: Get.arguments,
           ),
         ),

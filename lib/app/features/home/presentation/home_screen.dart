@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:habilitacao_quiz/app/features/home/presentation/components/quiz_button_widget.dart';
 import 'package:habilitacao_quiz/app/features/home/presentation/controller/home_controller.dart';
-import 'package:habilitacao_quiz/app/shared/utils/keys_home.dart';
 import 'package:habilitacao_quiz/app/shared/presentation/pages/loading_blur_screen.dart';
 import 'package:habilitacao_quiz/app/shared/presentation/widgets/car_quiz_widget.dart';
+import 'package:habilitacao_quiz/app/shared/utils/keys_home.dart';
 import 'package:habilitacao_quiz/app/shared/utils/quiz_enum.dart';
 import 'package:habilitacao_quiz/core/components/aligned_grid.dart';
 import 'package:habilitacao_quiz/core/mixins/pop_up_mixin.dart';
@@ -53,7 +53,6 @@ class _HomeScreen extends State<HomeScreen> with PopUpMixin {
                     runSpacing: 15,
                     children: [
                       QuizButtonWidget(
-                        key: KeysEnum.direcaoDefenciva.converteKey,
                         onPressend: () {
                           controller.irParaPagina(QuizEnum.legislacao);
                         },
@@ -61,6 +60,7 @@ class _HomeScreen extends State<HomeScreen> with PopUpMixin {
                         titulo: Strings.legislacao,
                       ),
                       QuizButtonWidget(
+                        key: KeysEnum.direcaoDefenciva.converteKey,
                         onPressend: () {
                           controller.irParaPagina(QuizEnum.direcaoDefensiva);
                         },
