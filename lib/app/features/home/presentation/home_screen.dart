@@ -53,6 +53,7 @@ class _HomeScreen extends State<HomeScreen> with PopUpMixin {
                     runSpacing: 15,
                     children: [
                       QuizButtonWidget(
+                        key: KeysEnum.legislacao.converteKey,
                         onPressend: () {
                           controller.irParaPagina(QuizEnum.legislacao);
                         },

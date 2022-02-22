@@ -152,7 +152,7 @@ void main() {
         expect(homeController.isError, true);
 
         await tester.pump();
-        await tester.pump(const Duration(seconds: 20));
+        await tester.pump(const Duration(seconds: 5));
 
         final Finder result = find.byType(AlertDialog);
         expect(result, findsOneWidget);
@@ -160,5 +160,61 @@ void main() {
     );
   });
 
+  group('Legislacao', () {
+    testWidgets(
+      'click Legislacao',
+      (WidgetTester tester) async {
+        when(
+          () => legislacaoQuizUsercase(),
+        ).thenAnswer(
+          (invocation) async => Right(quizEntity),
+        );
+        await tester
+            .pumpWidget(makeTestable(HomeScreen(controller: homeController)));
 
+        final Finder butaoInteracao =
+            find.byKey(KeysEnum.legislacao.converteKey);
+
+        expect(butaoInteracao, findsOneWidget);
+
+        await tester.tap(butaoInteracao);
+        await tester.pumpAndSettle();
+
+        final Finder scaffoldFinder = find.byType(Scaffold);
+        expect(scaffoldFinder, findsOneWidget);
+        final Finder quizWidgetFind = find.byType(QuizWidget);
+        expect(quizWidgetFind, findsOneWidget);
+        final QuizWidget quizWidget = tester.widget(quizWidgetFind);
+        expect(quizWidget.pergunta.titulo.isNotEmpty, true);
+        expect(quizWidget.pergunta.respostas.isNotEmpty, true);
+      },
+    );
+
+    testWidgets(
+      'click Legislacao erro',
+      (WidgetTester tester) async {
+        when(
+          () => legislacaoQuizUsercase(),
+        ).thenAnswer(
+          (invocation) async => Left(ExceptionErro()),
+        );
+        await tester
+            .pumpWidget(makeTestable(HomeScreen(controller: homeController)));
+
+        final Finder butaoInteracao =
+            find.byKey(KeysEnum.legislacao.converteKey);
+
+        expect(butaoInteracao, findsOneWidget);
+
+        await tester.tap(butaoInteracao);
+        expect(homeController.isError, true);
+
+        await tester.pump();
+        await tester.pump(const Duration(seconds: 5));
+
+        final Finder result = find.byType(AlertDialog);
+        expect(result, findsOneWidget);
+      },
+    );
+  });
 }
