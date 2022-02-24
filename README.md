@@ -62,8 +62,7 @@ Esse:
 
 # :computer: Como rodar
 
-```bash
-# Clone Repositorio
+# Clone o Repositório
 $ git clone https://github.com/Sthaynny/habilitacao_quiz.git
 
 # Instale as dependências
