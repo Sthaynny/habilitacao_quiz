@@ -1,6 +1,6 @@
-# Bem-vindo guia de Contribuição <!-- omitir em toc -->
+# Bem-vindo ao Guia de Contribuição <!-- omitir em toc -->
 
-Obrigado por investir o seu tempo a contribuir para o nosso projecto! Qualquer contribuição que der será reflectida no [app](https://github.com/Sthaynny/habilitacao_quiz) :sparkles:. 
+Obrigado por investir o seu tempo a contribuir com nosso projeto! Qualquer contribuição que der será refletida no [app](https://github.com/Sthaynny/habilitacao_quiz) :sparkles:. 
 
 ## Novo guia de contribuição
 
