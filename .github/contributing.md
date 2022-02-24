@@ -23,13 +23,13 @@ Se detectar um problema com os documentos, [procure se já existe um problema](h
 
 #### Resolver um problema
 
-Digitalize através das nossas [questões existentes](https://github.com/github/docs/issues) para encontrar uma que lhe interesse. Pode restringir a pesquisa utilizando "rótulos" como filtros. Ver [Rótulos](https://github.com/github/docs/blob/main/contributing/how-to-use-labels.md) para mais informações. Como regra geral, não atribuímos questões a ninguém. Se encontrar um problema para trabalhar, é bem-vindo a abrir um RP com uma correcção.
+Digitalize através das nossas [questões existentes](https://github.com/github/docs/issues) para encontrar uma que lhe interesse. Pode restringir a pesquisa utilizando "rótulos" como filtros. Ver [Rótulos](https://github.com/github/docs/blob/main/contributing/how-to-use-labels.md) para mais informações. Como regra geral, não atribuímos questões a ninguém. Se encontrar um problema para trabalhar, é bem-vindo a abrir um RP com uma correção.
 
 ### Fazer alterações
 
 #### Fazer alterações na IU
 
-Clique **Faça uma contribuição** no fundo de qualquer página de documentos para fazer pequenas alterações tais como um texto, correcção de frases, ou um link quebrado. Isto leva-o ao ficheiro `.md` onde pode fazer as suas alterações e [criar um pedido de PR](#pull-request) para uma revisão. 
+Clique **Faça uma contribuição** no fundo de qualquer página de documentos para fazer pequenas alterações tais como um texto, correção de frases, ou um link quebrado. Isto leva-o ao ficheiro `.md` onde pode fazer as suas alterações e [criar um pedido de PR](#pull-request) para uma revisão. 
 
  <img src="https://user-images.githubusercontent.com/46109133/155049100-b764afe1-d268-44dc-90b3-40a0367d925d.png" width="300" height="150" /> 
 
@@ -50,12 +50,12 @@ Clique **Faça uma contribuição** no fundo de qualquer página de documentos p
 
 4. Crie um ramo de trabalho e comece com as suas alterações!
 
-### Comprometa a sua actualização
+### Avalie a sua atualização
 
 Assim que as suas alterações estiverem prontas, não se esqueça de auto-revisão para acelerar o processo de revisão :zap:.
 
 ### Pedido de Puxar
 
 Quando terminar as alterações, crie um pedido de Pull Request, também conhecido como PR.
-- Preencha o modelo "Ready for review" para que possamos rever as suas relações públicas. Este modelo ajuda os revisores a compreender as suas alterações, bem como a finalidade do seu pedido de extracção. 
+- Preencha o modelo "Ready for review" para que possamos rever as suas relações públicas. Este modelo ajuda os revisores a compreender as suas alterações, bem como a finalidade do seu pedido de extração. 
 - Não se esqueça de ligar PR para emitir;
