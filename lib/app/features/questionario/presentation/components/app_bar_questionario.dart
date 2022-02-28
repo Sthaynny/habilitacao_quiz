@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:quiz_car/app/features/questionario/presentation/components/indicador_questoes_widget.dart';
-import 'package:quiz_car/core/styles/app_styles.dart';
+import 'package:habilitacao_quiz/app/features/questionario/presentation/components/indicador_questoes_widget.dart';
+import 'package:habilitacao_quiz/core/styles/app_styles.dart';
 
 class AppBarQuestionarioWidget extends PreferredSize {
   AppBarQuestionarioWidget({

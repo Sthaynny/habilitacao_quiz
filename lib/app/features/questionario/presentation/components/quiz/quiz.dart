@@ -1,9 +1,9 @@
 import 'package:adaptable_screen/adaptable_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:quiz_car/app/features/questionario/presentation/components/resposta/resposta_widget.dart';
-import 'package:quiz_car/app/features/shared/domain/entities/pergunta_entity.dart';
-import 'package:quiz_car/app/features/shared/domain/entities/resposta_entity.dart';
-import 'package:quiz_car/core/styles/app_styles.dart';
+import 'package:habilitacao_quiz/app/features/questionario/presentation/components/resposta/resposta_widget.dart';
+import 'package:habilitacao_quiz/app/shared/domain/entities/pergunta_entity.dart';
+import 'package:habilitacao_quiz/app/shared/domain/entities/resposta_entity.dart';
+import 'package:habilitacao_quiz/core/styles/app_styles.dart';
 
 class QuizWidget extends StatelessWidget {
   const QuizWidget({

@@ -1,22 +1,15 @@
 import 'package:dartz/dartz.dart';
 import 'package:get/get.dart';
-import 'package:quiz_car/app/features/home/domain/usecases/direcao_defensiva_quiz_usercase.dart';
-import 'package:quiz_car/app/features/home/domain/usecases/legislacao_quiz_usercase.dart';
-import 'package:quiz_car/app/features/home/domain/usecases/mecanica_basica_quiz_usercase.dart';
-import 'package:quiz_car/app/features/home/domain/usecases/meio_ambiente_quiz_usercase.dart';
-import 'package:quiz_car/app/features/home/domain/usecases/primeiros_socorros_quiz_usercase.dart';
-import 'package:quiz_car/app/features/home/domain/usecases/simulado_quiz_usercase.dart';
-import 'package:quiz_car/app/features/questionario/presentation/questionario_screen.dart';
-import 'package:quiz_car/app/features/shared/domain/entities/quiz_entity.dart';
-import 'package:quiz_car/app/features/shared/utils/quiz_enum.dart';
-import 'package:quiz_car/core/exceptions/erro.dart';
-
-enum HomeState {
-  init,
-  carregando,
-  erro,
-  carregado,
-}
+import 'package:habilitacao_quiz/app/features/home/domain/usecases/direcao_defensiva_quiz_usercase.dart';
+import 'package:habilitacao_quiz/app/features/home/domain/usecases/legislacao_quiz_usercase.dart';
+import 'package:habilitacao_quiz/app/features/home/domain/usecases/mecanica_basica_quiz_usercase.dart';
+import 'package:habilitacao_quiz/app/features/home/domain/usecases/meio_ambiente_quiz_usercase.dart';
+import 'package:habilitacao_quiz/app/features/home/domain/usecases/primeiros_socorros_quiz_usercase.dart';
+import 'package:habilitacao_quiz/app/features/home/domain/usecases/simulado_quiz_usercase.dart';
+import 'package:habilitacao_quiz/app/features/routes/routes.dart';
+import 'package:habilitacao_quiz/app/shared/domain/entities/quiz_entity.dart';
+import 'package:habilitacao_quiz/app/shared/utils/quiz_enum.dart';
+import 'package:habilitacao_quiz/core/exceptions/erro.dart';
 
 class HomeController extends GetxController {
   HomeController({
@@ -27,40 +20,36 @@ class HomeController extends GetxController {
     required MecanicaBasicaQuizUsercase mecanicaBasicaQuizUsercase,
     required SimuladoQuizUsercase simuladoQuizUsercase,
   }) {
-    homeState = Rx<HomeState>(HomeState.init);
     _direcaoDefesivaQuizUsercase = direcaoDefesivaQuizUsercase;
     _legislacaoQuizUsercase = legislacaoQuizUsercase;
     _primeirosSocorrosQuizUsercase = primeirosSocorrosQuizUsercase;
     _meioAmbienteQuizUsercase = meioAmbienteQuizUsercase;
     _mecanicaBasicaQuizUsercase = mecanicaBasicaQuizUsercase;
     _simuladoQuizUsercase = simuladoQuizUsercase;
-    _quizEntity = Rx<QuizEntity?>(null);
   }
-  late Rx<HomeState> homeState;
   late final DirecaoDefesivaQuizUsercase _direcaoDefesivaQuizUsercase;
   late final LegislacaoQuizUsercase _legislacaoQuizUsercase;
   late final MeioAmbienteQuizUsercase _meioAmbienteQuizUsercase;
   late final PrimeirosSocorrosQuizUsercase _primeirosSocorrosQuizUsercase;
   late final MecanicaBasicaQuizUsercase _mecanicaBasicaQuizUsercase;
   late final SimuladoQuizUsercase _simuladoQuizUsercase;
-  late Rx<QuizEntity?> _quizEntity;
+
+  final Rx<RxStatus> _status = RxStatus.empty().obs;
+  final Rx<QuizEntity?> _quizEntity = QuizEntity.empty().obs;
 
   Future<void> irParaPagina(QuizEnum quiz) async {
     await _getQuiz(quiz);
-    if (_quizEntity.value != null) {
-      Get.to(
-        QuestionarioScreen(
-          quizEntity: _quizEntity.value!.copyWith(
-            perguntas: _quizEntity.value!.perguntas.sublist(0, 30),
-          ),
-        ),
-        transition: Transition.fade,
+    final quizEntity = _quizEntity.value;
+    if (quizEntity != null && !quizEntity.isEmpty) {
+      Get.toNamed(
+        Routes.questionario,
+        arguments: _quizEntity.value,
       );
     }
   }
 
   Future<void> _getQuiz(QuizEnum quiz) async {
-    homeState.value = HomeState.carregando;
+    _status.value = RxStatus.loading();
     switch (quiz) {
       case QuizEnum.direcaoDefensiva:
         final result = await _direcaoDefesivaQuizUsercase();
@@ -82,24 +71,33 @@ class HomeController extends GetxController {
         final result = await _mecanicaBasicaQuizUsercase();
         _emitirEstado(result);
         break;
-      case QuizEnum.similado:
+      case QuizEnum.simulado:
         final result = await _simuladoQuizUsercase();
         _emitirEstado(result);
         break;
       default:
         _quizEntity.value = null;
+        _status.value = RxStatus.error();
+        break;
     }
   }
 
   void _emitirEstado(Either<ExceptionErro, QuizEntity> result) {
     result.fold(
       (_) {
-        homeState.value = HomeState.erro;
+        _status.value = RxStatus.error();
       },
       (quiz) {
-        homeState.value = HomeState.carregado;
         _quizEntity.value = quiz;
+
+        _status.value = RxStatus.success();
       },
     );
   }
+}
+
+extension HomeContrrollerGets on HomeController {
+  bool get isSuccess => _status.value.isSuccess;
+  bool get isLoading => _status.value.isLoading;
+  bool get isError => _status.value.isError;
 }

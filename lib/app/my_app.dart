@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:get/get_navigation/src/root/get_material_app.dart';
-import 'package:quiz_car/app/features/home/presentation/home_screen.dart';
+import 'package:get/get.dart';
+import 'package:habilitacao_quiz/app/features/home/presentation/home_screen.dart';
+import 'package:habilitacao_quiz/app/features/questionario/presentation/questionario_screen.dart';
+import 'package:habilitacao_quiz/app/features/resultado/resultado_screen.dart';
+import 'package:habilitacao_quiz/app/features/routes/routes.dart';
+import 'package:habilitacao_quiz/app/features/splash/splash_screen.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -12,7 +16,36 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const HomeScreen(),
+      initialRoute: Routes.init,
+      getPages: [
+        GetPage(
+          name: Routes.init,
+          page: () => const SplashScreen(),
+        ),
+        GetPage(
+          name: Routes.resultado,
+          page: () => ResultadoScreen(
+            args: Get.arguments,
+          ),
+          transition: Transition.fade,
+        ),
+        GetPage(
+          name: Routes.questionario,
+          page: () => QuestionarioScreen(
+            controller: Get.find(),
+            quizEntity: Get.arguments,
+          ),
+        ),
+        GetPage(
+          name: Routes.home,
+          page: () => HomeScreen(
+            controller: Get.find(),
+          ),
+          transition: Transition.fadeIn,
+          transitionDuration: const Duration(seconds: 2),
+          showCupertinoParallax: false,
+        ),
+      ],
     );
   }
 }

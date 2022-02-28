@@ -21,7 +21,7 @@ Não podemos aceitar contribuições para a [documentação de referência REST 
 #### :question: Apoio
 Somos uma pequena equipa que trabalha arduamente para acompanhar as exigências de documentação de um produto em constante mudança. Infelizmente, não podemos simplesmente ajudar com questões de apoio neste repositório. Se tiver algum problema com GitHub, não relacionado com a nossa documentação, por favor [contacte directamente o Suporte GitHub](https://support.github.com/contact). Quaisquer questões, discussões, ou pedidos de ajuda abertos aqui que solicitem apoio, receberão informações sobre como contactar o Suporte GitHub, depois fechados e bloqueados.
 
-Se estiver a ter problemas com a sua conta GitHub, contacte [Apoio](https://github.com/Sthaynny/quiz_car/new/main/.github/contribution.md).
+Se estiver a ter problemas com a sua conta GitHub, contacte [Apoio](https://github.com/Sthaynny/habilitacao_quiz/new/main/.github/contribution.md).
 
 
 Se encontrar uma gralha na secção de políticas do sítio, pode abrir um pedido para a arranjar. Para qualquer outra coisa, ver [o guia CONTRIBUTING no site-policy repo](https://github.com/github/site-policy/blob/main/CONTRIBUTING.md).
