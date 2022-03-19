@@ -68,16 +68,16 @@
             "titulo": "Os ruídos emitidos pelo funcionamento do motor de um veículo são controlados pelo:",
             "respostas": [
                 {
-                    "titulo": "carburador. "
+                    "titulo": "carburador"
                 },
                 {
-                    "titulo": "radiador."
+                    "titulo": "radiador"
                 },
                 {
-                    "titulo": "catalisador."
+                    "titulo": "catalisador"
                 },
                 {
-                    "titulo": "acelerador."
+                    "titulo": "acelerador"
                 },
                 {
                     "titulo": "silencioso. (silenciador)",
@@ -191,7 +191,7 @@
             ]
         },
         {
-            "titulo": "As diferenças individuais de cultura raça, crença e classe social devem influenciar no convício no trânsito:",
+            "titulo": "As diferenças individuais de cultura raça, crença e classe social devem influenciar no convívio no trânsito:",
             "respostas": [
                 {
                     "titulo": "Sim."
@@ -260,7 +260,7 @@
                     "titulo": "As queimadas."
                 },
                 {
-                    "titulo": "A queimada de carvão."
+                    "titulo": "A queima de carvão."
                 },
                 {
                     "titulo": "Os automóveis e as indústrias.",
@@ -473,7 +473,7 @@
                     "titulo": "E são consideradas também crimes de trânsito."
                 },
                 {
-                    "titulo": "E infração média e representam uma falta de respeito e cidadania."
+                    "titulo": "É infração média e representam uma falta de respeito e cidadania."
                 },
                 {
                     "titulo": "Graves, dependendo da classificação da via."
@@ -506,7 +506,7 @@
             ]
         },
         {
-            "titulo": "Um condutor de veículo costuma jogar “coisas” na via pública sem se importar com eventuais danos causados ao meios ambiente. Qual dos itens abaixo demora mais tempo para se decompor: ",
+            "titulo": "Um condutor de veículo costuma jogar “coisas” na via pública sem se importar com eventuais danos causados ao meio ambiente. Qual dos itens abaixo demora mais tempo para se decompor: ",
             "respostas": [
                 {
                     "titulo": "Papel"
@@ -548,7 +548,7 @@
             ]
         },
         {
-            "titulo": "O aquecimento global tem como principal desencadeador um gás que os carros liberam em abundancia no meio ambiente, e que dele precisamos para viver na Terra:",
+            "titulo": "O aquecimento global tem como principal desencadeador um gás que os carros liberam em abundância no meio ambiente, e que dele precisamos para viver na Terra:",
             "respostas": [
                 {
                     "titulo": "Monóxido de Carbono."

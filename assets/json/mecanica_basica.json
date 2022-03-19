@@ -5,7 +5,7 @@
             "titulo": "A embreagem, composta basicamente de um disco e um platô, tem como função principal: ",
             "respostas": [
                 {
-                    "titulo": "não acavalar as marchas;"
+                    "titulo": "não encavalar as marchas;"
                 },
                 {
                     "titulo": "Permitir ligar o veículo mais facilmente;"
@@ -23,7 +23,7 @@
             "titulo": "A finalidade da suspensão e dos amortecedores é manter a estabilidade do veículo. Quando há desgaste desses itens do veículo: ",
             "respostas": [
                 {
-                    "titulo": "Haverá redução do nível do óleo do sistema de transmissão, provocando travamento do cambio "
+                    "titulo": "Haverá redução do nível do óleo do sistema de transmissão, provocando travamento do câmbio "
                 },
                 {
                     "titulo": "Poderão provocar o travamento da direção, principalmente em frenagens e curvas;",
@@ -44,7 +44,7 @@
                     "titulo": "Embreagem e a eficiência dos freios, acionando os pedais com a máxima pressão;"
                 },
                 {
-                    "titulo": "Eficiência dos freios, acionando lentamente o freio de mão;"
+                    "titulo": "Eficiência dos freios, adicionando lentamente o freio de mão;"
                 },
                 {
                     "titulo": "Eficiência dos freios, acionando o pedal com simples toques;",
@@ -74,7 +74,7 @@
             ]
         },
         {
-            "titulo": "Ao fazer a verificação do sistema de luzes do veículo, o proprietário notou que, quando acionava a luz indicadora de direção (pisca-pisca) para a esquerda, a luz indicadora de função no painel funcionava compassadamente. Quando acionava para a direita, a luz disparava em velocidade maior. A causa mais provável deste problema é que:",
+            "titulo": "Ao fazer a verificação do sistema de luzes do veículo, o proprietário notou que, quando aciona a luz indicadora de direção (pisca-pisca) para a esquerda, a luz indicadora de função no painel funcionava compassadamente. Quando aciona para a direita, a luz dispara em velocidade maior. A causa mais provável deste problema é que:",
             "respostas": [
                 {
                     "titulo": "O comutador de ignição está danificado;"
@@ -131,7 +131,7 @@
             "titulo": "Para remover a bateria de um veículo deve-se:",
             "respostas": [
                 {
-                    "titulo": "Simplesmente abra o capo e retirar"
+                    "titulo": "Simplesmente abra o capô e retirar"
                 },
                 {
                     "titulo": "Soltar primeiro o cabo do negativo e depois o do positivo",
@@ -200,25 +200,25 @@
             ]
         },
         {
-            "titulo": "A bomba de agua é um dos componentes do sistema que controla a temperatura do motor. A sua função básica é:",
+            "titulo": "A bomba de água é um dos componentes do sistema que controla a temperatura do motor. A sua função básica é:",
             "respostas": [
                 {
-                    "titulo": "Aspirar agua arrefecida pela bateria e fazê-la circular pelas galerias do bloco do motor, para depois voltar ao radiador;",
+                    "titulo": "Aspirar água arrefecida pela bateria e fazê-la circular pelas galerias do bloco do motor, para depois voltar ao radiador;",
                     "correta": true
                 },
                 {
-                    "titulo": "Aspirar a agua das câmaras de resfriamento do bloco do motor, fazendo-a circular pelo radiador para esfriar."
+                    "titulo": "Aspirar a água das câmaras de resfriamento do bloco do motor, fazendo-a circular pelo radiador para esfriar."
                 },
                 {
-                    "titulo": "Aspirar a agua do reservatório de expansão e leva-la ao radiador;"
+                    "titulo": "Aspirar a água do reservatório de expansão e levá-la ao radiador;"
                 },
                 {
-                    "titulo": "Levar a agua do reservatório de expansão até as câmaras de resfriamento do motor."
+                    "titulo": "Levar a água do reservatório de expansão até as câmaras de resfriamento do motor."
                 }
             ]
         },
         {
-            "titulo": "Todo condutor deve possuir conhecimentos básicos de mecânica a fim de manter o veículo sempre em bom estado e trafegar com segurança, conforme os preceitos da Direção Defensiva. Sendo assim, analise as afirmativas abaixo: \nI. Folgas no sistema de direção provocam o desbalanceamento das rodas. \nII. A finalidade dos amortecedores é de garantir a eficiência no sistema de direção. \nIII. As principais razões de perda de eficiência do sistema de freios são vazamento e nível de fluido baixo, bem como discos, pastilhas e lonas gastos. \nÉ correto o que consta APENAS em:",
+            "titulo": "Todo condutor deve possuir conhecimentos básicos de mecânica a fim de manter o veículo sempre em bom estado e trafegar com segurança, conforme os preceitos da Direção Defensiva. Sendo assim, analise as afirmativas abaixo: \nI. Folgas no sistema de direção provocam o desbalanceamento das rodas. \nII. A finalidade dos amortecedores é garantir a eficiência no sistema de direção. \nIII. As principais razões de perda de eficiência do sistema de freios são vazamento e nível de fluido baixo, bem como discos, pastilhas e lonas gastos. \nÉ correto o que consta APENAS em:",
             "respostas": [
                 {
                     "titulo": "III",
@@ -239,7 +239,7 @@
             "titulo": "No veículo, periodicamente, deve-se:",
             "respostas": [
                 {
-                    "titulo": "Verificar a agua do sistema de freios;"
+                    "titulo": "Verificar a água do sistema de freios;"
                 },
                 {
                     "titulo": "Lavar os tapetes para evitar ferrugem;"
@@ -267,7 +267,7 @@
                     "correta": true
                 },
                 {
-                    "titulo": "Transmitir o movimento do pedal para o engate e desengate do cambio;"
+                    "titulo": "Transmitir o movimento do pedal para o engate e desengate do câmbio;"
                 },
                 {
                     "titulo": "Evitar trancos no câmbio;"
@@ -320,7 +320,7 @@
             ]
         },
         {
-            "titulo": "A circulação da agua no motor e no radiador é forçada: ",
+            "titulo": "A circulação da água no motor e no radiador é forçada: ",
             "respostas": [
                 {
                     "titulo": "Pelo carburador;"
@@ -333,7 +333,7 @@
                     "titulo": "Pela bomba de óleo;"
                 },
                 {
-                    "titulo": "Pela roda d’agua;"
+                    "titulo": "Pela roda d'água;"
                 },
                 {
                     "titulo": "Pela correia dentada."

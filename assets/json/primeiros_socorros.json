@@ -5,20 +5,20 @@
             "titulo": "No que se refere à classificação das queimaduras de acordo com a profundidade e extensão da lesão, assinale a alternativa CORRETA.",
             "respostas": [
                 {
-                    "titulo": "segundo grau pele totalmente destruída, esbranquiçada e carbonizada, ausência de dor."
+                    "titulo": "segundo grau, pele totalmente destruída, esbranquiçada e carbonizada, ausência de dor."
                 },
                 {
-                    "titulo": "terceiro grau pele com eritema, parcialmente destruída, flictemas e dor moderada."
+                    "titulo": "terceiro grau pele com eritema, parcialmente destruída, flictenas e dor moderada."
                 },
                 {
-                    "titulo": "quarto grau, pele com eritema leve, carbonizada, flictemas,edema e dor intensa."
+                    "titulo": "quarto grau, pele com eritema leve, carbonizada, flictenas,edema e dor intensa."
                 },
                 {
                     "titulo": "primeiro grau, pele com eritema, edema e dor.",
                     "correta": true
                 },
                 {
-                    "titulo": "quinto grau, pele carbonizada com flictemas e dor intensa "
+                    "titulo": "quinto grau, pele carbonizada com flictenas e dor intensa "
                 }
             ]
         },
@@ -47,7 +47,7 @@
             "titulo": "Em caso de vítimas apresentando suspeita de fratura do úmero devemos:",
             "respostas": [
                 {
-                    "titulo": "Verificar sinais vitais e fazer a rotação do membro inferior para certifica-se da fratura."
+                    "titulo": "Verificar sinais vitais e fazer a rotação do membro inferior para certificar-se da fratura."
                 },
                 {
                     "titulo": "Imobilizar o membro utilizando talas e ataduras para impedir o movimento.",
@@ -113,10 +113,10 @@
                     "titulo": "colocar gelo sobre a flictena para amenizar o ardor"
                 },
                 {
-                    "titulo": "utilizar manteira para evitar o rompimento da flictena"
+                    "titulo": "utilizar manteiga para evitar o rompimento da flictena"
                 },
                 {
-                    "titulo": "passar creme dental parar diminuir a ardência da flictena"
+                    "titulo": "passar creme dental para diminuir a ardência da flictena"
                 },
                 {
                     "titulo": "perfura a flictena para que a água acumulada seja liberada."
@@ -249,12 +249,12 @@
                     "titulo": "procedimentos de competência exclusiva de médicos no local do acidente"
                 },
                 {
-                    "titulo": "Colocar o individuo no carro e levar para a emegencia."
+                    "titulo": "Colocar o indivíduo no carro e levar para a emergência."
                 }
             ]
         },
         {
-            "titulo": "O melhor local no corpo para se verificar a oulsação é:",
+            "titulo": "O melhor local no corpo para se verificar a pulsação é:",
             "respostas": [
                 {
                     "titulo": "No pé"
@@ -267,7 +267,7 @@
                     "titulo": "No punho"
                 },
                 {
-                    "titulo": "Em algum lucar da veia saliente"
+                    "titulo": "Em algum lugar da veia saliente"
                 },
                 {
                     "titulo": "Na testa"
@@ -275,7 +275,7 @@
             ]
         },
         {
-            "titulo": "Num caso de acidente de transito deverá receber os primeiros socorros, em primeiro lugar, a vitima que estiver:",
+            "titulo": "Num caso de acidente de trânsito deverá receber os primeiros socorros, em primeiro lugar, a vítima que estiver:",
             "respostas": [
                 {
                     "titulo": "Gritando com muita dor"
@@ -291,7 +291,7 @@
                     "titulo": "Com muitas fraturas"
                 },
                 {
-                    "titulo": "A ques estiver de levantada"
+                    "titulo": "A quem estiver de levantada"
                 }
             ]
         },
@@ -299,20 +299,20 @@
             "titulo": "Em caso de hemorragia nasal, o procedimento correto é:",
             "respostas": [
                 {
-                    "titulo": "Correr para o hospital com a vitima"
+                    "titulo": "Correr para o hospital com a vítima"
                 },
                 {
                     "titulo": "Comprimir as narinas e baixar a cabeça da vitima."
                 },
                 {
-                    "titulo": "Assoar o nariz da vitima"
+                    "titulo": "Assoar o nariz da vítima"
                 },
                 {
-                    "titulo": "Comprrimir as narinas e colocar a cabeça voltada para frente",
+                    "titulo": "Comprimir as narinas e colocar a cabeça voltada para frente",
                     "correta": true
                 },
                 {
-                    "titulo": "Dar tapas na nuca da vitima até que escorra todo o sangue"
+                    "titulo": "Dar tapas na nuca da vítima até que escorra todo o sangue"
                 }
             ]
         },
@@ -320,13 +320,13 @@
             "titulo": "Na parada respiratória NÃO devemos:",
             "respostas": [
                 {
-                    "titulo": "Afrouxar as roupas da vitima"
+                    "titulo": "Afrouxar as roupas da vítima"
                 },
                 {
-                    "titulo": "Iniciar uma massagem respiratoria imediatamente"
+                    "titulo": "Iniciar uma massagem respiratória imediatamente"
                 },
                 {
-                    "titulo": "Retirar objetos da boca da vitima"
+                    "titulo": "Retirar objetos da boca da vítima"
                 },
                 {
                     "titulo": "Esperar o médico para prestar os primeiros socorros",
@@ -335,13 +335,13 @@
             ]
         },
         {
-            "titulo": "Quando ocorre um acidente com vitima, wusl s primeira providencia a ser tomada?",
+            "titulo": "Quando ocorre um acidente com vítima, qual a primeira providência a ser tomada?",
             "respostas": [
                 {
                     "titulo": "Verificar a situação do veiculo do acidente"
                 },
                 {
-                    "titulo": "Socorrer a vitama",
+                    "titulo": "Socorrer a vítima",
                     "correta": true
                 },
                 {
@@ -377,7 +377,7 @@
             ]
         },
         {
-            "titulo": "Em caso de fratura de braço e pernas, deve-se sempre tentar colocar o osso no lugar de imediato aós o acidente?",
+            "titulo": "Em caso de fratura de braço e pernas, deve-se sempre tentar colocar o osso no lugar de imediato após o acidente?",
             "respostas": [
                 {
                     "titulo": "Certo"
@@ -404,7 +404,7 @@
                     "titulo": "As pessoas que estão sentindo muita dor"
                 },
                 {
-                    "titulo": "Pessoas inconcientes e que estão sangrando gravemente",
+                    "titulo": "Pessoas inconscientes e que estão sangrando gravemente",
                     "correta": true
                 },
                 {
@@ -419,20 +419,20 @@
             ]
         },
         {
-            "titulo": "O que não deve ser feito em acidentes de transito:",
+            "titulo": "O que não deve ser feito em acidentes de trânsito:",
             "respostas": [
                 {
-                    "titulo": "Iluminar o local com lanterna ou luz do veiculo"
+                    "titulo": "Iluminar o local com lanterna ou luz do veículo"
                 },
                 {
-                    "titulo": "Sinalizar com distancia de 30 metros, usando um triangulo"
+                    "titulo": "Sinalizar com distância de 30 metros, usando um triangulo"
                 },
                 {
-                    "titulo": "Tocar o ferimento com os dedos ou objeto não esterelizados",
+                    "titulo": "Tocar o ferimento com os dedos ou objeto não esterilizados",
                     "correta": true
                 },
                 {
-                    "titulo": "Lavar as mãos com agua e sabão antes de atender a vitima"
+                    "titulo": "Lavar as mãos com água e sabão antes de atender a vítima"
                 },
                 {
                     "titulo": "Ligar para emergência"
@@ -440,10 +440,10 @@
             ]
         },
         {
-            "titulo": "Que procedimento deve ser adotado durante uma crise covulcional?",
+            "titulo": "Que procedimento deve ser adotado durante uma crise convencional?",
             "respostas": [
                 {
-                    "titulo": "Manter a vitima deitada, protegendo-a para não se machucar, até a convulsão cessar",
+                    "titulo": "Manter a vítima deitada, protegendo-a para não se machucar, até a convulsão cessar",
                     "correta": true
                 },
                 {
@@ -453,15 +453,15 @@
                     "titulo": "Não mexer da forma alguma na vitima"
                 },
                 {
-                    "titulo": "Garantir que niguém se aproxime da vitima"
+                    "titulo": "Garantir que ninguém se aproxime da vítima"
                 },
                 {
-                    "titulo": "Jogar água fria na vitima"
+                    "titulo": "Jogar água fria na vítima"
                 }
             ]
         },
         {
-            "titulo": "Inconciência, parada respiratória, hemorragia pelo nariz ao sintomas de fraturas:",
+            "titulo": "Inconsciência, parada respiratória, hemorragia pelo nariz são sintomas de fraturas:",
             "respostas": [
                 {
                     "titulo": "Braço"
@@ -473,7 +473,7 @@
                     "titulo": "Coluna"
                 },
                 {
-                    "titulo": "Clavicula"
+                    "titulo": "Clavícula"
                 },
                 {
                     "titulo": "Crânio",
@@ -482,20 +482,20 @@
             ]
         },
         {
-            "titulo": "Como saber se o acidentado esta respirando?",
+            "titulo": "Como saber se o acidentado está respirando?",
             "respostas": [
                 {
                     "titulo": "Observar as extremidades(dedos das mãos e dos pés)"
                 },
                 {
-                    "titulo": "Observar a pupila da vitima"
+                    "titulo": "Observar a pupila da vítima"
                 },
                 {
-                    "titulo": "Observar os movimentos do peito, procurandosentir o sari da boca e do nariz",
+                    "titulo": "Observar os movimentos do peito, procurando sentir o ar sair da boca e do nariz",
                     "correta": true
                 },
                 {
-                    "titulo": "Observar a temperatua da vitima"
+                    "titulo": "Observar a temperatura da vítima"
                 },
                 {
                     "titulo": "Todas incorretas"
@@ -503,7 +503,7 @@
             ]
         },
         {
-            "titulo": "Parada cardiaca é...",
+            "titulo": "Parada cardíaca é...",
             "respostas": [
                 {
                     "titulo": "A perda da função circulatória"
@@ -512,10 +512,10 @@
                     "titulo": "Perda da visão"
                 },
                 {
-                    "titulo": "Parada dos baimentos da pulsação"
+                    "titulo": "Parada dos batimentos da pulsação"
                 },
                 {
-                    "titulo": "Parada dos batimentos cardiacos",
+                    "titulo": "Parada dos batimentos cardíacos",
                     "correta": true
                 },
                 {
@@ -536,7 +536,7 @@
                     "titulo": "Região da perna"
                 },
                 {
-                    "titulo": "Região do pescoço, através da arteria carótida.",
+                    "titulo": "Região do pescoço, através da artéria carótida.",
                     "correta": true
                 },
                 {
@@ -545,7 +545,7 @@
             ]
         },
         {
-            "titulo": "Qual alternativa abaixo não se refere a tipos de fruturas",
+            "titulo": "Qual alternativa abaixo não se refere a tipos de fraturas",
             "respostas": [
                 {
                     "titulo": "Fechadas"
@@ -566,37 +566,37 @@
             ]
         },
         {
-            "titulo": "O ART. 304, previsto no código de transito brasileiro, prever que e crime:",
+            "titulo": "O ART. 304, previsto no código de trânsito brasileiro, prever que e crime:",
             "respostas": [
                 {
                     "titulo": "Para no acostamento"
                 },
                 {
-                    "titulo": "Usar triangulo em caso de acidentes"
+                    "titulo": "Usar triângulo em caso de acidentes"
                 },
                 {
                     "titulo": "Omissão de socorro",
                     "correta": true
                 },
                 {
-                    "titulo": "Não oferecer crona"
+                    "titulo": "Não oferecer carona"
                 },
                 {
-                    "titulo": "Utrapassar limite de velocidade na vias arteriais"
+                    "titulo": "Ultrapassar limite de velocidade na vias arteriais"
                 }
             ]
         },
         {
-            "titulo": "O que fazer, no local, com o acidentado que sofreu queimaduas?",
+            "titulo": "O que fazer, no local, com o acidentado que sofreu queimaduras?",
             "respostas": [
                 {
-                    "titulo": "Passar pasta denta na ferida"
+                    "titulo": "Passar pasta dental na ferida"
                 },
                 {
                     "titulo": "Passar desinfetante na ferida"
                 },
                 {
-                    "titulo": "Cobrir a ferida com gase"
+                    "titulo": "Cobrir a ferida com gaze"
                 },
                 {
                     "titulo": "Colocar areia para aliviar a dor"
@@ -629,7 +629,7 @@
             ]
         },
         {
-            "titulo": "Em uma rodovia, cuja a velocidade máxima permitida é de 80 KM/h, ocorreu um colisão entre carros. O acidente aconteceu às 11:00 e a pista estava seca. Para essa situação, recomenda-se que a distância do acidente para o inicio da sinalização deve ser de?",
+            "titulo": "Em uma rodovia, cuja a velocidade máxima permitida é de 80 KM/h, ocorreu uma colisão entre carros. O acidente aconteceu às 11:00 e a pista estava seca. Para essa situação, recomenda-se que a distância do acidente para o início da sinalização deve ser de?",
             "respostas": [
                 {
                     "titulo": "40 metros"

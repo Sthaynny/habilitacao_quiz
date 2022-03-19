@@ -1,8 +1,10 @@
 {
     "titulo": "Direção Defensiva",
-    "perguntas": [{
+    "perguntas": [
+        {
             "titulo": "O condutor no trânsito deve?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "Observar e respeitar as normas de circulação estabelecidas pelo Código Nacional de Trânsito",
                     "correta": true
                 },
@@ -21,8 +23,9 @@
             ]
         },
         {
-            "titulo": "O condutor de veículo que se preocupa em avisar o outro que está rodando com o pneu murcho ou com a porta semifechada está?",
-            "respostas": [{
+            "titulo": "O condutor de veículo que se preocupa em avisar o outro que está rodando com o pneu murcho ou com a porta semi fechada está?",
+            "respostas": [
+                {
                     "titulo": "Cumprindo a legislação do trânsito."
                 },
                 {
@@ -42,7 +45,8 @@
         },
         {
             "titulo": "O condutor, no trânsito, deve ter percepção e respeito às expectativas das pessoas, adotando uma postura adequada, sendo?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "cuidadoso e ousado."
                 },
                 {
@@ -62,11 +66,12 @@
         },
         {
             "titulo": "O condutor de veículo, transitando por vias onde haja escolas ou grande movimentação de pedestres?",
-            "respostas": [{
-                    "titulo": "conserva o veículo sempre na faixa esquerda da via."
+            "respostas": [
+                {
+                    "titulo": "conservar o veículo sempre na faixa esquerda da via."
                 },
                 {
-                    "titulo": "transita em velocidade compatível com a segurança.",
+                    "titulo": "transitar em velocidade compatível com a segurança.",
                     "correta": true
                 },
                 {
@@ -82,7 +87,8 @@
         },
         {
             "titulo": "Quem tem prioridade no trânsito, o pedestre ou o condutor?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "O condutor, pois ele está no comando do veículo."
                 },
                 {
@@ -102,7 +108,8 @@
         },
         {
             "titulo": "O condutor de um automóvel que encontrar um motociclista deve?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "ultrapassar a moto com rapidez, pois ela pode lhe arranhar o veículo."
                 },
                 {
@@ -122,7 +129,8 @@
         },
         {
             "titulo": "Parar em um cruzamento porque vem vindo apenas uma moto, significa que você, condutor de veículo, como cidadão, dá valor?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "Aos percursos bem planejados e sinalizados."
                 },
                 {
@@ -142,7 +150,8 @@
         },
         {
             "titulo": "A utilização correta do guia da cidade proporciona deslocamentos seguros, economia de tempo e de combustível. Logo, você deve?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "guardar o guia em sua casa."
                 },
                 {
@@ -162,7 +171,8 @@
         },
         {
             "titulo": "Mapas rodoviários facilitam a circulação em regiões desconhecidas. Você deve?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "estudar o mapa rodoviário apenas quando vier a se perder no trajeto."
                 },
                 {
@@ -173,7 +183,7 @@
                     "titulo": "sair perguntando aos outros condutores, pois o mapa é pouco explicativo."
                 },
                 {
-                    "titulo": "ignorar os mapas, pois eles com freqüência não são fiéis ao trajeto."
+                    "titulo": "ignorar os mapas, pois eles com frequência não são fiéis ao trajeto."
                 },
                 {
                     "titulo": "possuir um arquivo com todos os mapas do País."
@@ -182,27 +192,29 @@
         },
         {
             "titulo": "O condutor que assume um comportamento seguro é aquele que?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "usa luz alta dos faróis nas vias com iluminação pública."
                 },
                 {
-                    "titulo": "guarda distância de seguimento entre o veículo que dirige e o que está à sua frente.",
+                    "titulo": "guardar distância de seguimento entre o veículo que dirige e o que está à sua frente.",
                     "correta": true
                 },
                 {
-                    "titulo": "transita em marcha-a-ré para fazer qualquer tipo de manobra."
+                    "titulo": "transitar em marcha-a-ré para fazer qualquer tipo de manobra."
                 },
                 {
                     "titulo": "usa a buzina, à noite, para apressar o pedestre."
                 },
                 {
-                    "titulo": "utiliza rádio com fones de ouvido (walk-man), para evitar o stress do congestionamento."
+                    "titulo": "utiliza rádio com fones de ouvido (walkman), para evitar o stress do congestionamento."
                 }
             ]
         },
         {
             "titulo": "Você está em uma via preferencial de duas pistas com grande movimento e quer entrar em uma rua transversal à esquerda.  Há um movimento muito grande nos dois sentidos e uma fila de carros começa a se formar atrás do seu veículo.  Você deve?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "desistir da manobra,  pois nunca é permitida a conversão à esquerda em avenidas."
                 },
                 {
@@ -222,7 +234,8 @@
         },
         {
             "titulo": "O trânsito sobre passeio e calçadas é permitido para?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "fugir de congestionamento."
                 },
                 {
@@ -242,7 +255,8 @@
         },
         {
             "titulo": "Você está em uma via de bastante movimento e surge uma rotatória à frente com um veículo lento fazendo seu contorno. Você deve?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "buzinar para avisar que você está entrando com prioridade."
                 },
                 {
@@ -262,11 +276,12 @@
         },
         {
             "titulo": "Você passou por engano da saída da rodovia, e só haverá outra saída à 5 km adiante. Você deve, então?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "parar no acostamento e com cuidado dar marcha a ré até a saída."
                 },
                 {
-                    "titulo": "andar os 5km até a próxima saída.",
+                    "titulo": "andar os 5 km até a próxima saída.",
                     "correta": true
                 },
                 {
@@ -282,7 +297,8 @@
         },
         {
             "titulo": "Quando é permitido o tráfego pelo acostamento em uma estrada?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "Quando a pista estiver congestionada."
                 },
                 {
@@ -302,7 +318,8 @@
         },
         {
             "titulo": "É noite, o seu veículo começa a apresentar problemas, na direção. Você?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "freia bruscamente e aciona as luzes de emergência (pisca-alerta)."
                 },
                 {
@@ -320,14 +337,14 @@
                 }
             ]
         },
-        
         {
-            "titulo": "O veículo que você dirige tem sinal verde para atravessar o cruzamento, o condutor de outro veículo desobedece a sinalização e colide com o seu veículo. Neste acidente sem vítimas, você?",
-            "respostas": [{
+            "titulo": "O veículo que você dirige tem sinal verde para atravessar o cruzamento, o condutor de outro veículo desobedeceu a sinalização e colidiu com o seu veículo. Neste acidente sem vítimas, você?",
+            "respostas": [
+                {
                     "titulo": "sai do local rapidamente."
                 },
                 {
-                    "titulo": "retira os veículos para local seguro, anota as placas dos veículos envolvidos e arrola testemunhas.",
+                    "titulo": "retira os veículos para local seguro, anota as placas dos veículos envolvidos e arrolar testemunhas.",
                     "correta": true
                 },
                 {
@@ -343,7 +360,8 @@
         },
         {
             "titulo": "Na Inspeção de Segurança Veicular a ser exigida no próximo ano, para o licenciamento, serão verificados, entre outros aspectos?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "o nível do óleo do motor."
                 },
                 {
@@ -363,7 +381,8 @@
         },
         {
             "titulo": "Qual dos equipamentos indicados é obrigatório?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "O espelho retrovisor externo do lado direito."
                 },
                 {
@@ -383,8 +402,9 @@
         },
         {
             "titulo": "O principal objetivo da Inspeção de Segurança Veicular é?",
-            "respostas": [{
-                    "titulo": "avaliar o desempenho do veículo na via para uma circulaão segura."
+            "respostas": [
+                {
+                    "titulo": "avaliar o desempenho do veículo na via para uma circulação segura."
                 },
                 {
                     "titulo": "avaliar as reais condições de segurança do veículo.",
@@ -403,8 +423,9 @@
         },
         {
             "titulo": "Para garantir as condições de segurança dos veículos em circulação, será obrigatório, por ocasião do licenciamento anual?",
-            "respostas": [{
-                    "titulo": "freqüentar um curso de Legislação de Trânsito."
+            "respostas": [
+                {
+                    "titulo": "freqentar um curso de Legislação de Trânsito."
                 },
                 {
                     "titulo": "possuir alguns dos equipamentos obrigatórios."
@@ -423,8 +444,9 @@
         },
         {
             "titulo": "A principal finalidade da Inspeção de Segurança Veicular é garantir que os veículos?",
-            "respostas": [{
-                    "titulo": "estejam em condições de seguraça para circular.",
+            "respostas": [
+                {
+                    "titulo": "estejam em condições de segurança para circular.",
                     "correta": true
                 },
                 {
@@ -443,7 +465,8 @@
         },
         {
             "titulo": "A obrigatoriedade da Inspeção de Segurança Veicular tem por objetivo?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "verificar os documentos do condutor."
                 },
                 {
@@ -463,7 +486,8 @@
         },
         {
             "titulo": "Na Inspeção de Segurança Veicular, que será compulsória para o licenciamento, um dos equipamentos obrigatórios a ser inspecionado é?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "o farol de neblina."
                 },
                 {
@@ -483,7 +507,8 @@
         },
         {
             "titulo": "Na Inspeção de Segurança Veicular, que será compulsória para o licenciamento, um dos equipamentos obrigatórios a ser inspecionado é?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "o rádio toca-fitas."
                 },
                 {
@@ -503,7 +528,8 @@
         },
         {
             "titulo": "Na Inspeção de Segurança Veicular, que será compulsória para o licenciamento, um dos equipamentos obrigatórios a ser inspecionado é?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "o conjunto de calotas."
                 },
                 {
@@ -523,7 +549,8 @@
         },
         {
             "titulo": "a Inspeção de Segurança Veicular, que será compulsória para o licenciamento, um dos equipamentos obrigatórios a ser inspecionado é?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "o farol de milha."
                 },
                 {
@@ -543,7 +570,8 @@
         },
         {
             "titulo": "Um veículo vem em sentido contrário ao seu no período noturno com os faróis altos ligados, provocando ofuscamento. Nessa situação você?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "tapa os olhos com uma das mãos e se orienta pelas faixas do solo."
                 },
                 {
@@ -563,7 +591,8 @@
         },
         {
             "titulo": "Você, atento, está numa via de mão dupla no período noturno e vê um veículo com as luzes apagadas à sua frente. Nessa situação você?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "ignora o condutor da frente e ultrapassa pela esquerda."
                 },
                 {
@@ -583,7 +612,8 @@
         },
         {
             "titulo": "Você está num cruzamento ermo e sem visibilidade, em bairro residencial, durante o dia. Nessa situação você?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "buzina e segue em frente."
                 },
                 {
@@ -603,7 +633,8 @@
         },
         {
             "titulo": "Você está atrasado, saindo da garagem de um prédio, numa manhã. Nessa situação você?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "pisca os faróis, buzina e atravessa a calçada rapidamente."
                 },
                 {
@@ -613,7 +644,7 @@
                     "titulo": "buzina sem parar e dá farol alto."
                 },
                 {
-                    "titulo": "pára e buzina para apressar o pedestre."
+                    "titulo": "para e buzinar para apressar o pedestre."
                 },
                 {
                     "titulo": "pára antes da calçada e segue após certificar-se de que não há pedestres. ",
@@ -623,7 +654,8 @@
         },
         {
             "titulo": "Você está atrasado, saindo da garagem de um prédio, à noite. Você?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "dá farol alto e buzina para chamar a atenção dos pedestres."
                 },
                 {
@@ -643,17 +675,18 @@
         },
         {
             "titulo": "Está chovendo forte em uma via de trânsito rápido e você está na faixa central. Seu limpador de pára-brisa quebra, justamente agora que você precisa fazer uma entrega urgente e dipõe de pouco tempo. O comportamento seguro é?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "pôr a cabeça para fora e seguir em frente, porque o tempo é curto."
                 },
                 {
                     "titulo": "desligar o carro e parar, apesar do pouco tempo."
                 },
                 {
-                    "titulo": "manter-se tranqüilo para ligar o pisca-alerta e continuar, pois é uma questão de urgência."
+                    "titulo": "manter-se tranquilo para ligar o pisca-alerta e continuar, pois é uma questão de urgência."
                 },
                 {
-                    "titulo": "manter a tranqüilidade para sinalizar, reduzir a velocidade e parar em lugar seguro.",
+                    "titulo": "manter a tranquilidade para sinalizar, reduzir a velocidade e parar em lugar seguro.",
                     "correta": true
                 },
                 {
@@ -663,7 +696,8 @@
         },
         {
             "titulo": "Chove forte e o limpador de pára-brisa de seu veículo não está sendo suficiente para manter a visibilidade. Nessa situação você?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "continua o trajeto sem se preocupar com este detalhe."
                 },
                 {
@@ -683,7 +717,8 @@
         },
         {
             "titulo": "O passageiro ao lado tenta irritá-lo com uma discussão. Nessa situação você?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "continua a discussão, dirigindo com cuidado."
                 },
                 {
@@ -701,6 +736,5 @@
                 }
             ]
         }
-
     ]
 }
