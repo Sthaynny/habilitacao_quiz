@@ -1,6 +1,6 @@
 name: habilitacao_quiz
 description: Um projeto para ajudar as pessoas que querem tirar sua CNH.
-version: 1.0.0+1
+version: 1.0.2+1
 
 environment:
   sdk: ">=2.15.0 <3.0.0"
@@ -69,3 +69,5 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
+
