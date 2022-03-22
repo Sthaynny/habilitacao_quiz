@@ -1,7 +1,6 @@
 <p align="center">
    <img src="https://user-images.githubusercontent.com/46109133/149638236-08219c77-c837-4883-b428-8bd5c864e850.png" alt="dt money" width="200"/>
 </p>
-
 <h1 align="center">Habilitação Quiz</h1>
 
 <p align="center">
@@ -33,11 +32,13 @@
 - [:camera: Screenshots](#camera-screenshots)
 - [:rocket: Tecnologias](#rocket-tecnologias)
 - [:computer: Como rodar](#computer-como-rodar)
-- [:bug: Issues](#bug-issues)
-- [:sparkles: Contribuição](#sparkles-contribuição)
+- [Clone o Repositório](#clone-o-repositório)
+- [Instale as dependências](#instale-as-dependências)
+- [Rode a aplicação](#rode-a-aplicação)
 - [:page_facing_up: Licença](#page_facing_up-licença)
 
 # :camera: Screenshots
+
 <div align="center">
    <img src="https://user-images.githubusercontent.com/46109133/155135523-d00feec4-dd29-4815-830c-b890179c5fc8.png" width="230"/>
    <img src="https://user-images.githubusercontent.com/46109133/154710459-f4edee9c-5c34-4d11-9312-0c868f654059.png" width="230"/>
@@ -49,9 +50,8 @@
 
 </div>
   
-
-
 # :rocket: Tecnologias
+
 Esse:
 
 - `clean architecture`: arquitetura de software proposta por Robert Cecil Martin (ou Uncle Bob, como é mais conhecido) que tem por objetivo padronizar e organizar o código desenvolvido, favorecer a sua reusabilidade, assim como independência de tecnologia.
@@ -63,13 +63,17 @@ Esse:
 # :computer: Como rodar
 
 # Clone o Repositório
-$ git clone https://github.com/Sthaynny/habilitacao_quiz.git
+
+$ git clone <https://github.com/Sthaynny/habilitacao_quiz.git>
 
 # Instale as dependências
+
 $ flutter pub get
 
 # Rode a aplicação
+
 $ flutter run
+
 ```
 
 # :bug: Issues
@@ -87,13 +91,17 @@ Cria um issue <a href="https://github.com/Sthaynny/habilitacao_quiz/issues">nova
 Para ajudar a manter o padrão escolhido, também criamos um arquivo que é chamado antes de cada commit. Este arquivo irá formatar e identificar (se houver) erros no estilo de código do seu código. Para habilitar isso você deve primeiro copiá-lo para a pasta hooks do git. Se você estiver desenvolvendo no macOS, vá até a raiz do projeto e execute o comando abaixo:
 
 ```
+
 cp pre-commit .git/hooks/pre-commit
+
 ```
 
 Após esta etapa, é necessário dar permissão para que o arquivo seja executado. Basta seguir o seguinte comando:
 
 ```
+
 chmod +x .git/hooks/pre-commit
+
 ```
 
 
