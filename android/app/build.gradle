@@ -44,8 +44,8 @@ android {
         applicationId "br.com.sthaynny.habilitacao_quiz"
         minSdkVersion flutter.minSdkVersion
         targetSdkVersion flutter.targetSdkVersion
-        versionCode 4
-        versionName '1.0.3'
+        versionCode 9
+        versionName '1.0.6'
     }
 
    signingConfigs {

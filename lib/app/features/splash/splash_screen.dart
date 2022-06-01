@@ -65,6 +65,7 @@ class _SplashScreenState extends State<SplashScreen>
               opacity: controller,
               child: Lottie.asset(
                 AppAnimation.carSplash,
+                width: double.maxFinite,
               ),
             ),
           ),
