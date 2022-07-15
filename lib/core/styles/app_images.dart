@@ -10,4 +10,5 @@ abstract class AppImages {
   static String get sucesso => _getImage("sucesso");
   static String get atencao => _getImage("atencao");
   static String get logo => _getImage("logo");
+  static String get splash => _getImage("splash");
 }

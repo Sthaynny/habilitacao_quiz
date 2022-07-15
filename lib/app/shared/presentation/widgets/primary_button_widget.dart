@@ -1,4 +1,3 @@
-import 'package:adaptable_screen/adaptable_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:habilitacao_quiz/core/styles/app_colors.dart';
@@ -46,11 +45,11 @@ class PrimaryButtonWidget extends StatelessWidget {
   final Color borderColor;
   final VoidCallback? onTap;
 
-  BorderRadius get borderRadius => BorderRadius.circular(10.r);
+  BorderRadius get borderRadius => BorderRadius.circular(10);
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 48.h,
+      height: 48,
       decoration: BoxDecoration(
         border: Border.all(
           color: borderColor,
@@ -67,7 +66,7 @@ class PrimaryButtonWidget extends StatelessWidget {
           label,
           style: GoogleFonts.notoSans(
             fontWeight: FontWeight.w600,
-            fontSize: 15.ssp,
+            fontSize: 15,
             color: fontColor,
           ),
         ),

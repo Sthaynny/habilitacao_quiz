@@ -1,4 +1,3 @@
-import 'package:adaptable_screen/adaptable_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:habilitacao_quiz/core/styles/app_colors.dart';
@@ -11,7 +10,7 @@ class AppTextStyles {
   }) {
     return GoogleFonts.notoSans(
       color: color ?? AppColors.branco,
-      fontSize: fontSize ?? 12.ssp,
+      fontSize: fontSize ?? 12,
       fontWeight: FontWeight.w400,
       letterSpacing: letterSpacing,
     );
@@ -24,7 +23,7 @@ class AppTextStyles {
   }) {
     return GoogleFonts.notoSans(
       color: color ?? AppColors.branco,
-      fontSize: fontSize ?? 12.ssp,
+      fontSize: fontSize ?? 12,
       fontWeight: FontWeight.w600,
       letterSpacing: letterSpacing,
     );
@@ -37,7 +36,7 @@ class AppTextStyles {
   }) {
     return GoogleFonts.notoSans(
       color: color ?? AppColors.branco,
-      fontSize: fontSize ?? 12.ssp,
+      fontSize: fontSize ?? 12,
       fontWeight: FontWeight.w900,
       letterSpacing: letterSpacing,
     );

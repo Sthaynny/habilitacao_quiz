@@ -1,4 +1,3 @@
-import 'package:adaptable_screen/adaptable_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:habilitacao_quiz/app/features/home/presentation/components/quiz_button_widget.dart';
@@ -47,15 +46,15 @@ class _HomeScreen extends State<HomeScreen> with PopUpMixin {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   SizedBox(
-                    height: 50.h,
+                    height: 50,
                   ),
                   const CarQuizWidget(),
                   Expanded(
                       child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 15.w),
+                    padding: EdgeInsets.symmetric(horizontal: 15),
                     child: GridView.count(
-                      crossAxisSpacing: 15.w,
-                      mainAxisSpacing: 15.h,
+                      crossAxisSpacing: 15,
+                      mainAxisSpacing: 15,
                       crossAxisCount: 2,
                       children: [
                         QuizButtonWidget(

@@ -1,4 +1,3 @@
-import 'package:adaptable_screen/adaptable_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:habilitacao_quiz/core/styles/app_colors.dart';
@@ -8,7 +7,7 @@ import 'package:habilitacao_quiz/core/utils/strings.dart';
 mixin PopUpMixin {
   Future<bool?> popUpConfirmacao() async {
     return await Get.defaultDialog<bool>(
-      contentPadding: EdgeInsets.all(10.h),
+      contentPadding: EdgeInsets.all(10),
       title: Strings.atencao,
       textCancel: Strings.nao,
       textConfirm: Strings.sim,
@@ -23,7 +22,7 @@ mixin PopUpMixin {
   void popUpErro() {
     Future.delayed(const Duration(microseconds: 200)).then((value) {
       Get.defaultDialog(
-        contentPadding: EdgeInsets.all(10.h),
+        contentPadding: EdgeInsets.all(10),
         title: "",
         confirmTextColor: AppColors.branco,
         confirm: CupertinoButton(
@@ -34,7 +33,7 @@ mixin PopUpMixin {
           child: Text(
             Strings.fechar.toUpperCase(),
             style: AppTextStyles.notoSansBold(
-              fontSize: 14.ssp,
+              fontSize: 14,
               color: AppColors.preto,
             ),
             textAlign: TextAlign.center,
@@ -42,7 +41,7 @@ mixin PopUpMixin {
         ),
         middleText: Strings.erroPadrao,
         middleTextStyle: AppTextStyles.notoSansBold(
-          fontSize: 17.ssp,
+          fontSize: 17,
           color: AppColors.cinza,
         ),
       );
@@ -51,7 +50,7 @@ mixin PopUpMixin {
 
   void popUpEmBreve() {
     Get.defaultDialog(
-      contentPadding: EdgeInsets.all(10.h),
+      contentPadding: EdgeInsets.all(10),
       title: "",
       confirmTextColor: AppColors.branco,
       confirm: CupertinoButton(
@@ -62,7 +61,7 @@ mixin PopUpMixin {
         child: Text(
           Strings.fechar.toUpperCase(),
           style: AppTextStyles.notoSansBold(
-            fontSize: 14.ssp,
+            fontSize: 14,
             color: AppColors.preto,
           ),
           textAlign: TextAlign.center,
@@ -70,7 +69,7 @@ mixin PopUpMixin {
       ),
       middleText: Strings.emBreve,
       middleTextStyle: AppTextStyles.notoSansBold(
-        fontSize: 20.ssp,
+        fontSize: 20,
         color: AppColors.cinza,
       ),
     );

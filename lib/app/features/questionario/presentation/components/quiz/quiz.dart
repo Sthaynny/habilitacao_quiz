@@ -1,4 +1,3 @@
-import 'package:adaptable_screen/adaptable_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:habilitacao_quiz/app/features/questionario/presentation/components/resposta/resposta_widget.dart';
 import 'package:habilitacao_quiz/app/shared/domain/entities/pergunta_entity.dart';
@@ -28,24 +27,24 @@ class QuizWidget extends StatelessWidget {
             height: 64,
           ),
           Container(
-            margin: EdgeInsets.symmetric(horizontal: 16.w),
+            margin: EdgeInsets.symmetric(horizontal: 16),
             child: Text(
               pergunta.titulo,
               style: AppTextStyles.notoSansBold(
                 color: AppColors.preto,
-                fontSize: 18.ssp,
+                fontSize: 18,
               ),
             ),
           ),
           if (pergunta.imagemB64 != null)
             Container(
               margin: EdgeInsets.symmetric(
-                vertical: 5.h,
+                vertical: 5,
               ),
               child: Image.memory(pergunta.imagemB64!),
             ),
           SizedBox(
-            height: 15.h,
+            height: 15,
           ),
           ...pergunta.respostas
               .map(

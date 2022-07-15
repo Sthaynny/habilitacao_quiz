@@ -1,4 +1,3 @@
-import 'package:adaptable_screen/adaptable_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:habilitacao_quiz/app/features/questionario/presentation/components/app_bar_questionario.dart';
@@ -61,8 +60,8 @@ class _QuestionarioScreenState extends State<QuestionarioScreen>
           bottomNavigationBar: SafeArea(
             child: Padding(
               padding: EdgeInsets.symmetric(
-                horizontal: 20.w,
-                vertical: 20.h,
+                horizontal: 20,
+                vertical: 20,
               ),
               child: Row(
                 children: [
@@ -98,7 +97,7 @@ class _QuestionarioScreenState extends State<QuestionarioScreen>
           ),
         ),
         SizedBox(
-          width: 8.w,
+          width: 8,
         ),
       ];
 }

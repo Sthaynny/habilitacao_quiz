@@ -1,4 +1,3 @@
-import 'package:adaptable_screen/adaptable_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:habilitacao_quiz/core/styles/app_styles.dart';
 
@@ -22,19 +21,19 @@ class QuizButtonWidget extends StatelessWidget {
         ),
         elevation: MaterialStateProperty.all(2),
         fixedSize: MaterialStateProperty.all(
-          Size(150.w, 300.h),
+          const Size(150, 300),
         ),
         shape: MaterialStateProperty.all(
           ContinuousRectangleBorder(
-            borderRadius: BorderRadius.circular(18.r),
+            borderRadius: BorderRadius.circular(18),
           ),
         ),
       ),
       onPressed: onPressend,
       child: ConstrainedBox(
-        constraints: BoxConstraints(
-          maxWidth: 150.w,
-          maxHeight: 250.h,
+        constraints: const BoxConstraints(
+          maxWidth: 150,
+          maxHeight: 250,
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -44,12 +43,12 @@ class QuizButtonWidget extends StatelessWidget {
               elevation: 30,
               child: Image.asset(
                 iconAsset,
-                width: 45.w,
+                width: 45,
               ),
             ),
             Text(
               titulo,
-              style: AppTextStyles.notoSansBold(fontSize: 14.ssp),
+              style: AppTextStyles.notoSansBold(fontSize: 14),
               textAlign: TextAlign.center,
             ),
           ],

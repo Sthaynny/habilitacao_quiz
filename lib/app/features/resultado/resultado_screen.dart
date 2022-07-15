@@ -1,4 +1,3 @@
-import 'package:adaptable_screen/adaptable_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:habilitacao_quiz/app/features/resultado/resultado_args.dart';
@@ -20,44 +19,44 @@ class ResultadoScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        padding: EdgeInsets.only(top: 100.h),
+        padding: EdgeInsets.only(top: 100),
         width: double.maxFinite,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Image.asset(
               args.result ? AppImages.sucesso : AppImages.atencao,
-              height: 180.h,
+              height: 180,
             ),
             Column(
               children: [
                 Container(
-                  padding: EdgeInsets.symmetric(horizontal: 40.w),
+                  padding: EdgeInsets.symmetric(horizontal: 40),
                   child: Text(
                     args.result ? Strings.parabens : Strings.menssgemTriste,
                     style: AppTextStyles.notoSansBold(
                       color: AppColors.preto,
-                      fontSize: 30.ssp,
+                      fontSize: 30,
                     ),
                     textAlign: TextAlign.center,
                   ),
                 ),
                 SizedBox(
-                  height: 16.h,
+                  height: 16,
                 ),
                 Text.rich(
                   TextSpan(
                     text: Strings.voceFinalizou,
                     style: AppTextStyles.notoSansRegular(
                       color: AppColors.preto,
-                      fontSize: 13.ssp,
+                      fontSize: 13,
                     ),
                     children: [
                       TextSpan(
                           text: '${args.titulo}\n',
                           style: AppTextStyles.notoSansBold(
                             color: AppColors.preto,
-                            fontSize: 13.ssp,
+                            fontSize: 13,
                           )),
                       TextSpan(
                         text: Strings.resultadoQuestionario(
@@ -68,7 +67,7 @@ class ResultadoScreen extends StatelessWidget {
                         ),
                         style: AppTextStyles.notoSansRegular(
                           color: AppColors.preto,
-                          fontSize: 13.ssp,
+                          fontSize: 13,
                         ),
                       ),
                     ],

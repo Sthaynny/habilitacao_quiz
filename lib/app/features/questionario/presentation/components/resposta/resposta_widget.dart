@@ -1,4 +1,3 @@
-import 'package:adaptable_screen/adaptable_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:habilitacao_quiz/app/shared/domain/entities/resposta_entity.dart';
 import 'package:habilitacao_quiz/core/styles/app_styles.dart';
@@ -31,11 +30,11 @@ class RespostaWidget extends StatelessWidget {
         onTap(resposta);
       },
       child: Container(
-        margin: EdgeInsets.symmetric(horizontal: 16.h, vertical: 4.w),
-        padding: EdgeInsets.all(16.w),
+        margin: EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+        padding: EdgeInsets.all(16),
         decoration: BoxDecoration(
           color: isSelected ? _selectedColorCardRight : AppColors.branco,
-          borderRadius: BorderRadius.circular(10.r),
+          borderRadius: BorderRadius.circular(10),
           border: Border.fromBorderSide(
             BorderSide(
               color: isSelected ? _selectedBorderCardRight : AppColors.border,
@@ -47,10 +46,10 @@ class RespostaWidget extends StatelessWidget {
             Container(
               height: 24,
               width: 24,
-              margin: EdgeInsets.only(right: 8.w),
+              margin: EdgeInsets.only(right: 8),
               decoration: BoxDecoration(
                 color: isSelected ? _selectedColorRight : AppColors.branco,
-                borderRadius: BorderRadius.circular(12.r),
+                borderRadius: BorderRadius.circular(12),
                 border: Border.fromBorderSide(
                   BorderSide(
                     color: isSelected ? _selectedBorderRight : AppColors.border,
@@ -61,7 +60,7 @@ class RespostaWidget extends StatelessWidget {
                   ? Icon(
                       _selectedIconRight,
                       color: AppColors.branco,
-                      size: 16.w,
+                      size: 16,
                     )
                   : null,
             ),
@@ -70,7 +69,7 @@ class RespostaWidget extends StatelessWidget {
                 resposta.titulo.primeiraLetraMaiuscula,
                 style: AppTextStyles.notoSansRegular(
                   color: AppColors.cinza,
-                  fontSize: 13.ssp,
+                  fontSize: 13,
                 ),
               ),
             ),
