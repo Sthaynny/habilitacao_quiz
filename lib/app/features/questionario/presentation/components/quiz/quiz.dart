@@ -3,6 +3,7 @@ import 'package:habilitacao_quiz/app/features/questionario/presentation/componen
 import 'package:habilitacao_quiz/app/shared/domain/entities/pergunta_entity.dart';
 import 'package:habilitacao_quiz/app/shared/domain/entities/resposta_entity.dart';
 import 'package:habilitacao_quiz/core/styles/app_styles.dart';
+import 'package:habilitacao_quiz/core/styles/spacing_stack.dart';
 
 class QuizWidget extends StatelessWidget {
   const QuizWidget({
@@ -23,11 +24,12 @@ class QuizWidget extends StatelessWidget {
       controller: scrollController,
       child: Column(
         children: [
-          const SizedBox(
-            height: 64,
+          SizedBox(
+            height: AppSpacingStack.large.value,
           ),
           Container(
-            margin: EdgeInsets.symmetric(horizontal: 16),
+            margin: EdgeInsets.symmetric(
+                horizontal: AppSpacingStack.xxxSmall.value),
             child: Text(
               pergunta.titulo,
               style: AppTextStyles.notoSansBold(
@@ -39,12 +41,12 @@ class QuizWidget extends StatelessWidget {
           if (pergunta.imagemB64 != null)
             Container(
               margin: EdgeInsets.symmetric(
-                vertical: 5,
+                vertical: AppSpacingStack.nano.value,
               ),
               child: Image.memory(pergunta.imagemB64!),
             ),
           SizedBox(
-            height: 15,
+            height: AppSpacingStack.xxxSmall.value,
           ),
           ...pergunta.respostas
               .map(

@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:habilitacao_quiz/app/features/resultado/resultado_args.dart';
 import 'package:habilitacao_quiz/app/shared/presentation/widgets/primary_button_widget.dart';
 import 'package:habilitacao_quiz/core/styles/app_styles.dart';
+import 'package:habilitacao_quiz/core/styles/spacing_stack.dart';
 import 'package:habilitacao_quiz/core/utils/strings.dart';
 import 'package:share/share.dart';
 
@@ -19,7 +20,7 @@ class ResultadoScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        padding: EdgeInsets.only(top: 100),
+        padding: EdgeInsets.only(top: AppSpacingStack.xxxLarge.value),
         width: double.maxFinite,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -31,7 +32,8 @@ class ResultadoScreen extends StatelessWidget {
             Column(
               children: [
                 Container(
-                  padding: EdgeInsets.symmetric(horizontal: 40),
+                  padding: EdgeInsets.symmetric(
+                      horizontal: AppSpacingStack.small.value),
                   child: Text(
                     args.result ? Strings.parabens : Strings.menssgemTriste,
                     style: AppTextStyles.notoSansBold(
@@ -42,7 +44,7 @@ class ResultadoScreen extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: 16,
+                  height: AppSpacingStack.xxxSmall.value,
                 ),
                 Text.rich(
                   TextSpan(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:habilitacao_quiz/app/shared/presentation/widgets/linear_progress_indicator.dart';
 import 'package:habilitacao_quiz/core/styles/app_styles.dart';
+import 'package:habilitacao_quiz/core/styles/spacing_stack.dart';
 
 class IndicadorQuestoesWidget extends StatelessWidget {
   const IndicadorQuestoesWidget({
@@ -36,7 +37,7 @@ class IndicadorQuestoesWidget extends StatelessWidget {
               ),
             ],
           ),
-          const SizedBox(height: 16),
+          SizedBox(height: AppSpacingStack.xxxSmall.value),
           LinearProgressIndicatorWidget(
             value: currentPage / length,
           ),

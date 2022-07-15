@@ -2,12 +2,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:habilitacao_quiz/core/styles/app_colors.dart';
 import 'package:habilitacao_quiz/core/styles/app_text_styles.dart';
+import 'package:habilitacao_quiz/core/styles/spacing_stack.dart';
 import 'package:habilitacao_quiz/core/utils/strings.dart';
 
 mixin PopUpMixin {
   Future<bool?> popUpConfirmacao() async {
     return await Get.defaultDialog<bool>(
-      contentPadding: EdgeInsets.all(10),
+      contentPadding: EdgeInsets.all(AppSpacingStack.nano.value),
       title: Strings.atencao,
       textCancel: Strings.nao,
       textConfirm: Strings.sim,
@@ -22,7 +23,7 @@ mixin PopUpMixin {
   void popUpErro() {
     Future.delayed(const Duration(microseconds: 200)).then((value) {
       Get.defaultDialog(
-        contentPadding: EdgeInsets.all(10),
+        contentPadding: EdgeInsets.all(AppSpacingStack.nano.value),
         title: "",
         confirmTextColor: AppColors.branco,
         confirm: CupertinoButton(
@@ -50,7 +51,7 @@ mixin PopUpMixin {
 
   void popUpEmBreve() {
     Get.defaultDialog(
-      contentPadding: EdgeInsets.all(10),
+      contentPadding: EdgeInsets.all(AppSpacingStack.nano.value),
       title: "",
       confirmTextColor: AppColors.branco,
       confirm: CupertinoButton(

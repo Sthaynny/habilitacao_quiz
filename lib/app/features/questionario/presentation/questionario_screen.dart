@@ -6,6 +6,7 @@ import 'package:habilitacao_quiz/app/features/questionario/presentation/controll
 import 'package:habilitacao_quiz/app/shared/domain/entities/quiz_entity.dart';
 import 'package:habilitacao_quiz/app/shared/presentation/widgets/primary_button_widget.dart';
 import 'package:habilitacao_quiz/core/mixins/pop_up_mixin.dart';
+import 'package:habilitacao_quiz/core/styles/spacing_stack.dart';
 import 'package:habilitacao_quiz/core/utils/strings.dart';
 
 class QuestionarioScreen extends StatefulWidget {
@@ -60,8 +61,8 @@ class _QuestionarioScreenState extends State<QuestionarioScreen>
           bottomNavigationBar: SafeArea(
             child: Padding(
               padding: EdgeInsets.symmetric(
-                horizontal: 20,
-                vertical: 20,
+                horizontal: AppSpacingStack.xxxSmall.value,
+                vertical: AppSpacingStack.xxxSmall.value,
               ),
               child: Row(
                 children: [
@@ -97,7 +98,7 @@ class _QuestionarioScreenState extends State<QuestionarioScreen>
           ),
         ),
         SizedBox(
-          width: 8,
+          width: AppSpacingStack.nano.value,
         ),
       ];
 }

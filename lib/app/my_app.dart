@@ -40,6 +40,7 @@ class MyApp extends StatelessWidget {
           name: Routes.home,
           page: () => HomeScreen(
             controller: Get.find(),
+            quizzesController: Get.find(),
           ),
           transition: Transition.fadeIn,
           transitionDuration: const Duration(seconds: 2),

@@ -37,11 +37,11 @@ enum AppSpacingStack {
 
   ///$spacing-stack-large
   ///66px
-  large(66),
+  large(64),
 
   ///$spacing-stack-xlarge
-  ///64px
-  xLarge(64),
+  ///72px
+  xLarge(72),
 
   ///$spacing-stack-xxlarge
   ///80px

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:habilitacao_quiz/app/shared/domain/entities/resposta_entity.dart';
 import 'package:habilitacao_quiz/core/styles/app_styles.dart';
+import 'package:habilitacao_quiz/core/styles/spacing_stack.dart';
 
 class RespostaWidget extends StatelessWidget {
   const RespostaWidget({
@@ -30,8 +31,9 @@ class RespostaWidget extends StatelessWidget {
         onTap(resposta);
       },
       child: Container(
-        margin: EdgeInsets.symmetric(horizontal: 16, vertical: 4),
-        padding: EdgeInsets.all(16),
+        margin: EdgeInsets.symmetric(
+            horizontal: AppSpacingStack.xxxSmall.value, vertical: 4),
+        padding: EdgeInsets.all(AppSpacingStack.xxxSmall.value),
         decoration: BoxDecoration(
           color: isSelected ? _selectedColorCardRight : AppColors.branco,
           borderRadius: BorderRadius.circular(10),
@@ -46,7 +48,7 @@ class RespostaWidget extends StatelessWidget {
             Container(
               height: 24,
               width: 24,
-              margin: EdgeInsets.only(right: 8),
+              margin: EdgeInsets.only(right: AppSpacingStack.nano.value),
               decoration: BoxDecoration(
                 color: isSelected ? _selectedColorRight : AppColors.branco,
                 borderRadius: BorderRadius.circular(12),

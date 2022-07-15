@@ -23,6 +23,8 @@ abstract class Strings {
   static const voceFinalizou = 'Você finalizou\n';
   static const compartilhar = 'Compartilhar';
   static const voltarInicio = 'Voltar ao início';
+  static const historico = 'Histórico';
+  static const quizzes = 'Quizzes';
 
   static String resultadoQuestionario({
     required String respostasCorretas,
