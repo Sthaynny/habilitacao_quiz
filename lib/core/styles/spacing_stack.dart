@@ -6,7 +6,7 @@
 /// Padding(padding: EdgeInsets.onl(DSSpacingStack.quarck.apply),),
 ///```
 ///
-enum SpacingStack {
+enum AppSpacingStack {
   ///$spacing-stack-quarck
   ///4px
   quarck(4),
@@ -62,5 +62,5 @@ enum SpacingStack {
   ///Será o valor do esçamento em `double`
   final double value;
 
-  const SpacingStack(this.value);
+  const AppSpacingStack(this.value);
 }

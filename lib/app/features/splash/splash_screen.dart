@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:habilitacao_quiz/app/features/routes/routes.dart';
 import 'package:habilitacao_quiz/core/styles/app_styles.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -11,6 +13,11 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
+    Future.delayed(const Duration(seconds: 2)).then(
+      (value) => Get.toNamed(
+        Routes.home,
+      ),
+    );
     super.initState();
   }
 
@@ -22,9 +29,10 @@ class _SplashScreenState extends State<SplashScreen> {
           gradient: AppGradients.linear,
         ),
         child: Center(
-            child: Image.asset(
-          AppImages.splash,
-        )),
+          child: Image.asset(
+            AppImages.splash,
+          ),
+        ),
       ),
     );
   }

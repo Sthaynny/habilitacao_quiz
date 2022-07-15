@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:habilitacao_quiz/app/features/home/presentation/components/app_bar.dart';
 import 'package:habilitacao_quiz/app/features/home/presentation/components/quiz_button_widget.dart';
 import 'package:habilitacao_quiz/app/features/home/presentation/controller/home_controller.dart';
 import 'package:habilitacao_quiz/app/shared/presentation/pages/loading_blur_screen.dart';
-import 'package:habilitacao_quiz/app/shared/presentation/widgets/car_quiz_widget.dart';
 import 'package:habilitacao_quiz/app/shared/utils/quiz_enum.dart';
 import 'package:habilitacao_quiz/core/mixins/pop_up_mixin.dart';
 import 'package:habilitacao_quiz/core/styles/app_styles.dart';
+import 'package:habilitacao_quiz/core/styles/spacing_stack.dart';
 import 'package:habilitacao_quiz/core/utils/strings.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -28,6 +29,7 @@ class _HomeScreen extends State<HomeScreen> with PopUpMixin {
     final size = MediaQuery.of(context).size;
 
     return Scaffold(
+      appBar: AppBarWidget(),
       body: Obx(
         () {
           if (controller.isError) {
@@ -46,12 +48,11 @@ class _HomeScreen extends State<HomeScreen> with PopUpMixin {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   SizedBox(
-                    height: 50,
+                    height: AppSpacingStack.xxxSmall.value,
                   ),
-                  const CarQuizWidget(),
                   Expanded(
                       child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 15),
+                    padding: const EdgeInsets.symmetric(horizontal: 15),
                     child: GridView.count(
                       crossAxisSpacing: 15,
                       mainAxisSpacing: 15,
