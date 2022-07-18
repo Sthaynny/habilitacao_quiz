@@ -123,6 +123,11 @@ abstract class AppFontStyle {
         fontWeight: AppFontWeight.regular,
       );
 
+  static TextStyle get body16Medium => AppFontStyle.notoSans(
+        fontSize: AppFontSize.xSmall,
+        fontWeight: AppFontWeight.medium,
+      );
+
   static TextStyle get body14Regular => AppFontStyle.notoSans(
         fontSize: AppFontSize.xxSmall,
         fontWeight: AppFontWeight.regular,

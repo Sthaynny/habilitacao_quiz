@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:habilitacao_quiz/core/styles/app_colors.dart';
 import 'package:habilitacao_quiz/core/styles/app_gradients.dart';
 import 'package:habilitacao_quiz/core/styles/app_images.dart';
-import 'package:habilitacao_quiz/core/styles/app_text_styles.dart';
+import 'package:habilitacao_quiz/core/styles/app_font_styles.dart';
 import 'package:habilitacao_quiz/core/styles/spacing_stack.dart';
 
 class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {

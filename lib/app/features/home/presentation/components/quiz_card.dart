@@ -43,7 +43,7 @@ class QuizCardWidget extends StatelessWidget {
               margin: EdgeInsets.only(bottom: AppSpacingStack.nano.value),
               child: Text(
                 title,
-                style: AppFontStyle.body16Regular,
+                style: AppFontStyle.body16Medium,
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
               ),

@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:habilitacao_quiz/core/styles/app_colors.dart';
-import 'package:habilitacao_quiz/core/styles/app_text_styles.dart';
+import 'package:habilitacao_quiz/core/styles/app_font_styles.dart';
 import 'package:habilitacao_quiz/core/styles/spacing_stack.dart';
 import 'package:habilitacao_quiz/core/utils/strings.dart';
 
