@@ -26,8 +26,9 @@ abstract class AppColors {
   static const Color grey = Color(0xFF6E6680);
   static const Color lightGrey = Color(0xFFA6A1B2);
   static const Color border = Color(0xFFE1E1E6);
-  static const Color chartSecondary = Color(0xFFE1E6E3);
-  static const Color chartPrimary = darkGreen;
+  static const Color outline = Color(0xFFE1E1E6);
+  static const Color secondary = darkGreen;
+  static const Color primary = purple;
 
   //Greens
   static const Color lightGreen = Color(0xFFE1F5EC);

@@ -22,29 +22,17 @@ class QuizWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       controller: scrollController,
+      padding: EdgeInsets.all(AppSpacingStack.xSmall.value),
       child: Column(
         children: [
-          SizedBox(
-            height: AppSpacingStack.large.value,
-          ),
-          Container(
-            margin: EdgeInsets.symmetric(
-                horizontal: AppSpacingStack.xxxSmall.value),
-            child: Text(
-              pergunta.titulo,
-              style: AppTextStyles.notoSansBold(
-                color: AppColors.preto,
-                fontSize: 18,
-              ),
+          Text(
+            pergunta.titulo,
+            style: AppTextStyles.notoSansBold(
+              color: AppColors.preto,
+              fontSize: 18,
             ),
           ),
-          if (pergunta.imagemB64 != null)
-            Container(
-              margin: EdgeInsets.symmetric(
-                vertical: AppSpacingStack.nano.value,
-              ),
-              child: Image.memory(pergunta.imagemB64!),
-            ),
+          if (pergunta.imagemB64 != null) Image.memory(pergunta.imagemB64!),
           SizedBox(
             height: AppSpacingStack.xxxSmall.value,
           ),

@@ -15,7 +15,7 @@ class IndicadorQuestoesWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
+      padding: EdgeInsets.symmetric(horizontal: AppSpacingStack.xxxSmall.value),
       child: Column(
         children: [
           Row(
@@ -23,17 +23,11 @@ class IndicadorQuestoesWidget extends StatelessWidget {
             children: [
               Text(
                 'Questão $currentPage',
-                style: AppTextStyles.notoSansRegular(
-                  color: AppColors.cinza,
-                  fontSize: 13,
-                ),
+                style: AppFontStyle.body16Regular.setColor(AppColors.grey),
               ),
               Text(
                 'de $length',
-                style: AppTextStyles.notoSansRegular(
-                  color: AppColors.cinza,
-                  fontSize: 13,
-                ),
+                style: AppFontStyle.body16Regular.setColor(AppColors.grey),
               ),
             ],
           ),
