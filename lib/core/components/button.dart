@@ -22,8 +22,8 @@ Color? _colorTextSecundary(bool isAble) =>
 Color? _colorButtonOutline(bool isAble) =>
     isAble ? AppColors.outline : AppColors.lightGrey;
 
-class DSButton extends StatelessWidget {
-  const DSButton({
+class AppButton extends StatelessWidget {
+  const AppButton({
     required this.child,
     Key? key,
     this.onPressed,
@@ -51,7 +51,7 @@ class DSButton extends StatelessWidget {
     );
   }
 
-  factory DSButton.primary(
+  factory AppButton.primary(
     String title, {
     TextStyle? style,
     VoidCallback? onPressed,
@@ -59,7 +59,7 @@ class DSButton extends StatelessWidget {
     bool expanded = false,
     Color? cor,
   }) {
-    return DSButton(
+    return AppButton(
       onPressed: onPressed,
       margin: margin,
       child: Container(
@@ -82,7 +82,7 @@ class DSButton extends StatelessWidget {
     );
   }
 
-  factory DSButton.primaryOutline(
+  factory AppButton.primaryOutline(
     String title, {
     TextStyle? style,
     VoidCallback? onPressed,
@@ -90,7 +90,7 @@ class DSButton extends StatelessWidget {
     bool expanded = false,
     Color? color,
   }) {
-    return DSButton(
+    return AppButton(
       onPressed: onPressed,
       margin: margin,
       child: Container(
@@ -115,7 +115,7 @@ class DSButton extends StatelessWidget {
     );
   }
 
-  factory DSButton.secundary(
+  factory AppButton.secundary(
     String title, {
     TextStyle? style,
     VoidCallback? onPressed,
@@ -123,7 +123,7 @@ class DSButton extends StatelessWidget {
     bool expanded = false,
     Color? cor,
   }) {
-    return DSButton(
+    return AppButton(
       onPressed: onPressed,
       margin: margin,
       child: Container(
