@@ -91,7 +91,7 @@ class ResultadoScreen extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.symmetric(
                       horizontal: AppSpacingStack.large.value),
-                  child: AppButton.primaryOutline(
+                  child: AppButton.link(
                     Strings.voltarInicio,
                     onPressed: Get.back,
                   ),

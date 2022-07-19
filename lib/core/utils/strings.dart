@@ -35,7 +35,12 @@ abstract class Strings {
     required String totalPerguntas,
     required String percentual,
   }) =>
-      'com $respostasCorretas de $totalPerguntas acertos, ou seja, $percentual%!';
+      'com $respostasCorretas de $totalPerguntas acertos, ou seja, $percentual%.';
+
+  static String percentualHistorico({
+    required String percentual,
+  }) =>
+      'Você obteve $percentual% de acertos.';
 
   static String campartilharMensagem({
     required String titulo,

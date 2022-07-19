@@ -19,7 +19,6 @@ abstract class AppColors {
 
   /// Novas cores
 
-  static const Color purple = Color.fromRGBO(130, 87, 229, 0.695);
   static const Color white = Color(0xFFFFFFFF);
   static const Color blue = Color(0xFF57B6E5);
   static const Color black = Color(0xFF514766);
@@ -29,6 +28,11 @@ abstract class AppColors {
   static const Color outline = Color(0xFFE1E1E6);
   static const Color secondary = darkGreen;
   static const Color primary = purple;
+
+  //Purple
+
+  static const Color purple = Color(0xFF8257E5);
+  static const Color lightPurple = Color.fromRGBO(130, 87, 229, 0.695);
 
   //Greens
   static const Color lightGreen = Color(0xFFE1F5EC);

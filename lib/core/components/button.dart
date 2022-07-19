@@ -101,7 +101,7 @@ class AppButton extends StatelessWidget {
           title.capitalFirstLetter,
           textAlign: TextAlign.center,
           style: (style ?? AppFontStyle.body16Bold)
-              .copyWith(color: color ?? AppColors.grey),
+              .copyWith(color: color ?? AppColors.lightGrey),
         ),
       ),
       buttonStyle: BoxDecoration(
@@ -109,8 +109,36 @@ class AppButton extends StatelessWidget {
         borderRadius: BorderRadius.circular(border12Radius),
         border: Border.all(
           width: 1,
-          color: color ?? AppColors.grey,
+          color: color ?? AppColors.lightGrey,
         ),
+      ),
+    );
+  }
+  factory AppButton.link(
+    String title, {
+    TextStyle? style,
+    VoidCallback? onPressed,
+    EdgeInsetsGeometry? margin,
+    bool expanded = false,
+    Color? color,
+  }) {
+    return AppButton(
+      onPressed: onPressed,
+      margin: margin,
+      child: Container(
+        width: expanded ? double.maxFinite : null,
+        alignment: Alignment.center,
+        height: 48,
+        child: Text(
+          title.capitalFirstLetter,
+          textAlign: TextAlign.center,
+          style: (style ?? AppFontStyle.body16Bold)
+              .copyWith(color: color ?? AppColors.lightGrey),
+        ),
+      ),
+      buttonStyle: BoxDecoration(
+        color: _colorButtonOutline(onPressed != null),
+        borderRadius: BorderRadius.circular(border12Radius),
       ),
     );
   }

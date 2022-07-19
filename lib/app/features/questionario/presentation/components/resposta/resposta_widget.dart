@@ -20,12 +20,12 @@ class RespostaWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
+    return InkWell(
       onTap: () {
         onTap(resposta);
       },
       child: Container(
-        width: double.maxFinite,
+        width: MediaQuery.of(context).size.width,
         margin: EdgeInsets.symmetric(vertical: AppSpacingStack.quarck.value),
         padding: EdgeInsets.all(AppSpacingStack.xxxSmall.value),
         decoration: BoxDecoration(

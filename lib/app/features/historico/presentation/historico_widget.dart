@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/utils.dart';
 import 'package:habilitacao_quiz/app/features/historico/domain/entities/historico_entity.dart';
+import 'package:habilitacao_quiz/app/shared/presentation/widgets/linear_progress_indicator.dart';
+import 'package:habilitacao_quiz/core/styles/app_colors.dart';
 import 'package:habilitacao_quiz/core/styles/app_font_styles.dart';
 import 'package:habilitacao_quiz/core/styles/spacing_stack.dart';
 import 'package:habilitacao_quiz/core/utils/strings.dart';
@@ -41,7 +44,47 @@ class _HistoricoWidgetState extends State<HistoricoWidget> {
           child: Column(
             children: historico.resutados
                 .map(
-                  (element) => Container(),
+                  (element) => Container(
+                    padding: EdgeInsets.all(AppSpacingStack.xxxSmall.value),
+                    margin: EdgeInsets.symmetric(
+                        vertical: AppSpacingStack.nano.value),
+                    decoration: BoxDecoration(
+                      border: const Border.fromBorderSide(
+                        BorderSide(
+                          color: AppColors.border,
+                        ),
+                      ),
+                      borderRadius: BorderRadius.circular(10),
+                      color: AppColors.white,
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text.rich(
+                          TextSpan(
+                            text: '${element.titulo}\n',
+                            style: AppFontStyle.body16Medium,
+                            children: [
+                              TextSpan(
+                                text: Strings.percentualHistorico(
+                                  percentual: element.percentual
+                                      .toPrecision(2)
+                                      .toString(),
+                                ),
+                                style: AppFontStyle.caption12Regular,
+                              ),
+                            ],
+                          ),
+                        ),
+                        SizedBox(
+                          width: 70,
+                          child: LinearProgressIndicatorWidget(
+                            value: element.percentual * 100,
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
                 )
                 .toList(),
           ),
