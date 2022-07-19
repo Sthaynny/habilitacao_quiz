@@ -16,7 +16,10 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     Get.find<GetHistoricoUsecase>().call().then((value) {
-      Get.lazyPut<HistoricoEntity>(() => value);
+      Get.put<HistoricoEntity>(
+        value,
+        permanent: true,
+      );
       Get.toNamed(
         Routes.home,
       );

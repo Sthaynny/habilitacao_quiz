@@ -9,19 +9,20 @@ class HistoricoWidget extends StatefulWidget {
     Key? key,
     required this.historico,
   }) : super(key: key);
-  final List<HistoricoEntity> historico;
+  final HistoricoEntity historico;
 
   @override
   State<HistoricoWidget> createState() => _HistoricoWidgetState();
 }
 
 class _HistoricoWidgetState extends State<HistoricoWidget> {
-  List<HistoricoEntity> get historico => widget.historico;
+  HistoricoEntity get historico => widget.historico;
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: AppSpacingStack.xSmall.value),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             Strings.historico,
@@ -34,11 +35,11 @@ class _HistoricoWidgetState extends State<HistoricoWidget> {
   }
 
   List<Widget> get body {
-    if (historico.isNotEmpty) {
+    if (historico.resutados.isNotEmpty) {
       return [
         SingleChildScrollView(
           child: Column(
-            children: historico
+            children: historico.resutados
                 .map(
                   (element) => Container(),
                 )
@@ -50,8 +51,9 @@ class _HistoricoWidgetState extends State<HistoricoWidget> {
     return [
       const Spacer(),
       Text(
-        'Comece os estudos para que possa visualizar seu progresso.',
+        Strings.comeceEstudosVizualizarProgresso,
         style: AppFontStyle.body16Medium,
+        textAlign: TextAlign.center,
       ),
       const Spacer(),
     ];

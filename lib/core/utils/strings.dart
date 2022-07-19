@@ -27,6 +27,9 @@ abstract class Strings {
   static const historico = 'Histórico';
   static const quizzes = 'Quizzes';
 
+  static const comeceEstudosVizualizarProgresso =
+      'Comece os estudos para que possa visualizar seu progresso.';
+
   static String resultadoQuestionario({
     required String respostasCorretas,
     required String totalPerguntas,

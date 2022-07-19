@@ -6,4 +6,15 @@ class HistoricoEntity {
   final List<ResultadoEntity> resutados;
 
   HistoricoEntity({required this.resutados});
+
+  void add(ResultadoEntity resultadoEntity) {
+    if (resutados.length > 9) {
+      resutados.removeLast();
+    }
+    if (resutados.isEmpty) {
+      resutados.add(resultadoEntity);
+    } else {
+      resutados.setAll(0, [resultadoEntity]);
+    }
+  }
 }

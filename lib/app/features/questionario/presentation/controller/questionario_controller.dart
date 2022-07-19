@@ -1,4 +1,6 @@
 import 'package:get/get.dart';
+import 'package:habilitacao_quiz/app/features/historico/domain/entities/historico_entity.dart';
+import 'package:habilitacao_quiz/app/features/historico/domain/usecases/salvar_historico_usecase.dart';
 import 'package:habilitacao_quiz/app/features/resultado/domain/resultado_entity.dart';
 import 'package:habilitacao_quiz/app/features/routes/routes.dart';
 import 'package:habilitacao_quiz/app/shared/domain/entities/quiz_entity.dart';
@@ -23,7 +25,20 @@ class QuestionarioController extends GetxController with PopUpMixin {
         }
       }
       final double percentual = (totalPerguntasCorretas / tamanhoQuiz) * 100;
-      irParaResultado(percentual, totalPerguntasCorretas);
+
+      final result = ResultadoEntity(
+        titulo: quiz.titulo,
+        totalPerguntas: tamanhoQuiz,
+        result: percentual >= 70.0,
+        totalRespostasCorretas: totalPerguntasCorretas,
+        percentual: percentual,
+      );
+
+      Get.find<HistoricoEntity>().add(result);
+
+      Get.find<SalvarHistoricoUsecase>().call(Get.find<HistoricoEntity>());
+
+      irParaResultado(result);
     } else {
       _indexPergunta(indexPergunta + 1);
     }
@@ -40,16 +55,10 @@ class QuestionarioController extends GetxController with PopUpMixin {
     }
   }
 
-  void irParaResultado(double percentual, int totalPerguntasCorretas) {
+  void irParaResultado(ResultadoEntity resultadoEntity) {
     Get.offNamed(
       Routes.resultado,
-      arguments: ResultadoEntity(
-        titulo: quiz.titulo,
-        totalPerguntas: tamanhoQuiz,
-        result: percentual >= 70.0,
-        totalRespostasCorretas: totalPerguntasCorretas,
-        percentual: percentual,
-      ),
+      arguments: resultadoEntity,
     );
   }
 }

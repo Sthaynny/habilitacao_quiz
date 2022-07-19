@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:habilitacao_quiz/app/features/historico/presentation/historico_widget.dart';
 import 'package:habilitacao_quiz/app/features/home/presentation/components/app_bar.dart';
 import 'package:habilitacao_quiz/app/features/home/presentation/components/bottom_nav_bar.dart';
 import 'package:habilitacao_quiz/app/features/home/presentation/components/quizzes/controller/quizzes_controller.dart';
@@ -52,8 +53,8 @@ class _HomeScreen extends State<HomeScreen> with PopUpMixin {
               QuizzesWidget(
                 controller: quizzesController,
               ),
-              Container(
-                color: Colors.amber,
+              HistoricoWidget(
+                historico: Get.find(),
               )
             ],
           ),
