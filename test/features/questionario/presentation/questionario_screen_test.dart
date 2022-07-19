@@ -6,7 +6,7 @@ import 'package:habilitacao_quiz/app/features/questionario/presentation/componen
 import 'package:habilitacao_quiz/app/features/questionario/presentation/controller/questionario_controller.dart';
 import 'package:habilitacao_quiz/app/features/questionario/presentation/questionario_screen.dart';
 import 'package:habilitacao_quiz/app/shared/data/models/questoes_model.dart';
-import 'package:habilitacao_quiz/app/shared/presentation/widgets/primary_button_widget.dart';
+import 'package:habilitacao_quiz/core/components/button.dart';
 
 import '../../../utils/utils.dart';
 
@@ -29,7 +29,7 @@ void main() {
       final Finder quizFinder = find.byType(QuizWidget);
       expect(quizFinder, findsOneWidget);
 
-      final nextButtonFindder = find.byType(PrimaryButtonWidget);
+      final nextButtonFindder = find.byType(AppButton);
       expect(nextButtonFindder, findsWidgets);
     },
   );

@@ -1,5 +1,5 @@
-class ResultadoArgs {
-  const ResultadoArgs({
+class ResultadoEntity {
+  const ResultadoEntity({
     required this.titulo,
     required this.totalPerguntas,
     required this.result,

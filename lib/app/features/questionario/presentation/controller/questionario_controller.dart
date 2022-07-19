@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:habilitacao_quiz/app/features/resultado/resultado_args.dart';
+import 'package:habilitacao_quiz/app/features/resultado/domain/resultado_entity.dart';
 import 'package:habilitacao_quiz/app/features/routes/routes.dart';
 import 'package:habilitacao_quiz/app/shared/domain/entities/quiz_entity.dart';
 import 'package:habilitacao_quiz/app/shared/domain/entities/resposta_entity.dart';
@@ -43,7 +43,7 @@ class QuestionarioController extends GetxController with PopUpMixin {
   void irParaResultado(double percentual, int totalPerguntasCorretas) {
     Get.offNamed(
       Routes.resultado,
-      arguments: ResultadoArgs(
+      arguments: ResultadoEntity(
         titulo: quiz.titulo,
         totalPerguntas: tamanhoQuiz,
         result: percentual >= 70.0,

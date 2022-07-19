@@ -1,13 +1,7 @@
-class HistoricoEntity {
-  final String titulo;
-  final double percentual;
-  final int questoesCorretas;
-  final int totalQuestoes;
+import 'package:habilitacao_quiz/app/features/resultado/domain/resultado_entity.dart';
 
-  HistoricoEntity({
-    required this.titulo,
-    required this.percentual,
-    required this.questoesCorretas,
-    required this.totalQuestoes,
-  });
+class HistoricoEntity {
+  final List<ResultadoEntity> resutados;
+
+  HistoricoEntity({required this.resutados});
 }

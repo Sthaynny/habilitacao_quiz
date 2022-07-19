@@ -132,6 +132,10 @@ abstract class AppFontStyle {
         fontSize: AppFontSize.xxSmall,
         fontWeight: AppFontWeight.regular,
       );
+  static TextStyle get body14Bold => AppFontStyle.notoSans(
+        fontSize: AppFontSize.xxSmall,
+        fontWeight: AppFontWeight.bold,
+      );
 
   static TextStyle get button16Bold => AppFontStyle.notoSans(
         fontSize: AppFontSize.xSmall,

@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:habilitacao_quiz/app/features/historico/domain/historico_entity.dart';
 import 'package:habilitacao_quiz/app/shared/data/datasources/quiz_datasource.dart';
 import 'package:habilitacao_quiz/app/shared/data/repositories/quiz_repository.dart';
 import 'package:habilitacao_quiz/app/shared/domain/repositories/iquiz_repository.dart';
@@ -9,5 +10,6 @@ class SharedInjectionContainer implements IInjectionContainer {
   void call() {
     Get.lazyPut<QuizDatasource>(() => QuizDatasource());
     Get.lazyPut<IQuizRepository>(() => QuizRepository(Get.find()));
+    Get.lazyPut(() => HistoricoEntity(resutados: []));
   }
 }

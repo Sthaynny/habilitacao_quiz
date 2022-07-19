@@ -19,7 +19,8 @@ abstract class Strings {
   static const simulado = "Simulado";
   static const meioAmbiente = "Meio Ambiente";
   static const parabens = 'Parabéns!';
-  static const menssgemTriste = 'Oh, que chato!\nVamos melhorar na proxima!';
+  static const menssagemBaixoRendimento =
+      'A persistência é o melhor caminho do êxito!\nVamos tentar novamente?';
   static const voceFinalizou = 'Você finalizou\n';
   static const compartilhar = 'Compartilhar';
   static const voltarInicio = 'Voltar ao início';
