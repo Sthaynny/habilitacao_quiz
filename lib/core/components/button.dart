@@ -5,7 +5,7 @@ import 'package:habilitacao_quiz/core/styles/spacing_stack.dart';
 
 EdgeInsetsGeometry get _padding => EdgeInsets.symmetric(
     vertical: AppSpacingStack.nano.value,
-    horizontal: AppSpacingStack.xLarge.value);
+    horizontal: AppSpacingStack.nano.value);
 
 Color? _colorBorderPrimery(bool isAble) =>
     isAble ? AppColors.primary : AppColors.lightGrey;
@@ -20,7 +20,7 @@ Color? _colorTextSecundary(bool isAble) =>
     isAble ? AppColors.white : AppColors.grey;
 
 Color? _colorButtonOutline(bool isAble) =>
-    isAble ? AppColors.outline : AppColors.lightGrey;
+    isAble ? AppColors.white : AppColors.lightGrey;
 
 class AppButton extends StatelessWidget {
   const AppButton({
@@ -57,6 +57,7 @@ class AppButton extends StatelessWidget {
     VoidCallback? onPressed,
     EdgeInsetsGeometry? margin,
     bool expanded = false,
+    
     Color? cor,
   }) {
     return AppButton(

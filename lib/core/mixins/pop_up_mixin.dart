@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import 'package:habilitacao_quiz/core/components/button.dart';
 import 'package:habilitacao_quiz/core/styles/app_colors.dart';
 import 'package:habilitacao_quiz/core/styles/app_font_styles.dart';
 import 'package:habilitacao_quiz/core/styles/spacing_stack.dart';
@@ -10,13 +11,29 @@ mixin PopUpMixin {
     return await Get.defaultDialog<bool>(
       contentPadding: EdgeInsets.all(AppSpacingStack.nano.value),
       title: Strings.atencao,
-      textCancel: Strings.nao,
-      textConfirm: Strings.sim,
-      onConfirm: () => Get.back(result: true),
-      confirmTextColor: AppColors.branco,
-      cancelTextColor: AppColors.preto,
-      buttonColor: AppColors.preto,
+      titleStyle: AppFontStyle.headline20Bold,
+      // textCancel: Strings.nao,
+      // textConfirm: Strings.sim,
+      // onConfirm: () => Get.back(result: true),
+      // confirmTextColor: AppColors.branco,
+      // cancelTextColor: AppColors.preto,
+      // buttonColor: AppColors.primary,
       middleText: Strings.menssagemAoSairQuestionario,
+      middleTextStyle: AppFontStyle.body16Regular,
+      cancel: SizedBox(
+        width: 60,
+        child: AppButton.primaryOutline(
+          Strings.nao,
+          onPressed: Get.back,
+        ),
+      ),
+      confirm: SizedBox(
+        width: 60,
+        child: AppButton.primary(
+          Strings.sim,
+          onPressed: () => Get.back(result: true),
+        ),
+      ),
     );
   }
 
