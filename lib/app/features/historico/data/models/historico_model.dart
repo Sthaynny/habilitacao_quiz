@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:habilitacao_quiz/app/features/historico/domain/historico_entity.dart';
+import 'package:habilitacao_quiz/app/features/historico/domain/entities/historico_entity.dart';
 import 'package:habilitacao_quiz/app/features/resultado/data/models/resultado_model.dart';
 import 'package:habilitacao_quiz/app/features/resultado/domain/resultado_entity.dart';
 
