@@ -12,23 +12,23 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
-  shared_preferences: ^2.0.11
+  cupertino_icons: ^1.0.2
   dartz: ^0.10.1
-  get: ^4.6.1
-  google_fonts: ^2.3.1
-  share: ^2.0.4
   flutter:
     sdk: flutter
-  cupertino_icons: ^1.0.2
+  get: ^4.6.1
+  google_fonts: ^2.3.1
   lottie: ^1.2.2
+  share: ^2.0.4
+  shared_preferences: ^2.0.15
 
 dev_dependencies:
+  build_runner: null
+  flutter_lints: ^1.0.0
   flutter_test:
     sdk: flutter
-  flutter_lints: ^1.0.0
   mocktail: ^0.2.0
-  build_runner:
-  
+
 # The following section is specific to Flutter.
 flutter:
 
@@ -42,13 +42,10 @@ flutter:
     - assets/imagens/
     - assets/json/
     - assets/animation/
-
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
-
   # For details regarding adding assets from package dependencies, see
   # https://flutter.dev/assets-and-images/#from-packages
-
   # To add custom fonts to your application, add a fonts section here,
   # in this "flutter" section. Each entry in this list should have a
   # "family" key with the font family name, and a "fonts" key with a
@@ -68,5 +65,3 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
-
-

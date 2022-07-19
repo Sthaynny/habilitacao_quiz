@@ -63,8 +63,10 @@ class _HomeScreen extends State<HomeScreen> with PopUpMixin {
               items: [
                 BottomNavyBarItem(
                   icon: const Icon(Icons.home),
-                  title:   Text(Strings.quizzes,
-                    style: AppFontStyle.body14Regular,),
+                  title: Text(
+                    Strings.quizzes,
+                    style: AppFontStyle.body14Regular,
+                  ),
                   textAlign: TextAlign.center,
                   activeColor: AppColors.purple,
                 ),

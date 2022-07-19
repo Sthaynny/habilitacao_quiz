@@ -57,7 +57,6 @@ class AppButton extends StatelessWidget {
     VoidCallback? onPressed,
     EdgeInsetsGeometry? margin,
     bool expanded = false,
-    
     Color? cor,
   }) {
     return AppButton(
