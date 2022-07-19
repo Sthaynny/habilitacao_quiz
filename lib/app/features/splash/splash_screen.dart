@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:habilitacao_quiz/app/features/historico/domain/entities/historico_entity.dart';
+import 'package:habilitacao_quiz/app/features/historico/domain/usecases/get_historico_usecase.dart';
 import 'package:habilitacao_quiz/app/features/routes/routes.dart';
 import 'package:habilitacao_quiz/core/styles/app_styles.dart';
 
@@ -13,11 +15,12 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
-    Future.delayed(const Duration(seconds: 2)).then(
-      (value) => Get.toNamed(
+    Get.find<GetHistoricoUsecase>().call().then((value) {
+      Get.lazyPut<HistoricoEntity>(() => value);
+      Get.toNamed(
         Routes.home,
-      ),
-    );
+      );
+    });
     super.initState();
   }
 

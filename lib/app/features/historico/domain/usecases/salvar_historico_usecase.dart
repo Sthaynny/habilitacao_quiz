@@ -6,7 +6,7 @@ class SalvarHistoricoUsecase {
 
   SalvarHistoricoUsecase(this._repository);
 
-  Future<bool?> call(List<HistoricoEntity> list) {
-    return _repository.salvarHistorico(list);
+  Future<bool?> call(HistoricoEntity historico) {
+    return _repository.salvarHistorico(historico);
   }
 }

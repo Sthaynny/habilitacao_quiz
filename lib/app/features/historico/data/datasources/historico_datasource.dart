@@ -12,14 +12,11 @@ const _key = 'historico';
 
 class HistoricoDatasource {
   SharedPreferences? instance;
-  Future<bool?> saveHistorico(List<HistoricoEntity> list) async {
-    final List<String> listData =
-        list.map((e) => (e as HistoricoModel).toJson()).toList();
-
+  Future<bool?> saveHistorico(HistoricoEntity historico) async {
     instance = await SharedPreferences.getInstance();
-    final result = await instance!.setStringList(
+    final result = await instance!.setString(
       _key,
-      listData,
+      (historico as HistoricoModel).toJson(),
     );
     if (result) {
       return result;
@@ -27,10 +24,13 @@ class HistoricoDatasource {
     return null;
   }
 
-  Future<List<HistoricoEntity>> getHistorico() async {
+  Future<HistoricoEntity> getHistorico() async {
     instance = await SharedPreferences.getInstance();
-    final response = instance!.getStringList(_key) ?? <String>[];
-    final result = response.map((e) => HistoricoModel.fromJson(e)).toList();
-    return result;
+    final response = instance!.getString(_key);
+    if (response != null) {
+      return HistoricoModel.fromJson(response);
+    } else {
+      return HistoricoEntity(resutados: []);
+    }
   }
 }

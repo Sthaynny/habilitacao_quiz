@@ -7,12 +7,12 @@ class HistoricoRepository implements IHistoricoRepository {
 
   HistoricoRepository(this._datasource);
   @override
-  Future<List<HistoricoEntity>> getHistorico() async {
+  Future<HistoricoEntity> getHistorico() async {
     return await _datasource.getHistorico();
   }
 
   @override
-  Future<bool?> salvarHistorico(List<HistoricoEntity> list) {
-    return _datasource.saveHistorico(list);
+  Future<bool?> salvarHistorico(HistoricoEntity historico) {
+    return _datasource.saveHistorico(historico);
   }
 }

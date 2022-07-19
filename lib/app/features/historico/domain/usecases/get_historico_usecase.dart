@@ -6,7 +6,7 @@ class GetHistoricoUsecase {
 
   GetHistoricoUsecase(this._repository);
 
-  Future<List<HistoricoEntity>> call() {
+  Future<HistoricoEntity> call() {
     return _repository.getHistorico();
   }
 }
