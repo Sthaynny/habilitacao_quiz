@@ -10,15 +10,19 @@ class HistoricoModel extends HistoricoEntity {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'resutados': resutados
-          .map((element) => (element as ResultadoModel).toMap())
+          .map((element) => ResultadoModel.fromEntity(element).toMap())
           .toList(),
     };
+  }
+
+  factory HistoricoModel.fromEntity(HistoricoEntity entity) {
+    return HistoricoModel(resutados: entity.resutados);
   }
 
   factory HistoricoModel.fromMap(Map<String, dynamic> map) {
     return HistoricoModel(
       resutados: List<ResultadoEntity>.from(
-        (map['resutados'] as List<int>).map<ResultadoModel>(
+        (map['resutados'] as List).map<ResultadoModel>(
           (x) => ResultadoModel.fromMap(x as Map<String, dynamic>),
         ),
       ),

@@ -24,6 +24,7 @@ class QuizWidget extends StatelessWidget {
       controller: scrollController,
       padding: EdgeInsets.all(AppSpacingStack.xSmall.value),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             pergunta.titulo,

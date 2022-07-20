@@ -76,11 +76,24 @@ class _HistoricoWidgetState extends State<HistoricoWidget> {
                             ],
                           ),
                         ),
-                        SizedBox(
-                          width: 70,
-                          child: LinearProgressIndicatorWidget(
-                            value: element.percentual * 100,
-                          ),
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            SizedBox(
+                              width: 70,
+                              child: LinearProgressIndicatorWidget(
+                                value: element.percentual / 100,
+                              ),
+                            ),
+                            SizedBox(
+                              height: AppSpacingStack.nano.value,
+                            ),
+                            Text(
+                              '${element.totalRespostasCorretas} de ${element.totalPerguntas}',
+                              style: AppFontStyle.caption12Regular
+                                  .setColor(AppColors.lightGrey),
+                            )
+                          ],
                         )
                       ],
                     ),

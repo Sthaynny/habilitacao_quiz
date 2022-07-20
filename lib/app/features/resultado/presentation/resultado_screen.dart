@@ -38,7 +38,7 @@ class ResultadoScreen extends StatelessWidget {
                     args.result
                         ? Strings.parabens
                         : Strings.menssagemBaixoRendimento,
-                    style: AppFontStyle.headline24Bold,
+                    style: AppFontStyle.headline20Bold,
                     textAlign: TextAlign.center,
                   ),
                 ),

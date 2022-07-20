@@ -3,6 +3,7 @@ import 'package:habilitacao_quiz/app/shared/data/datasources/quiz_datasource.dar
 import 'package:habilitacao_quiz/app/shared/data/models/questoes_model.dart';
 import 'package:habilitacao_quiz/app/shared/domain/entities/quiz_entity.dart';
 import 'package:habilitacao_quiz/app/shared/domain/repositories/iquiz_repository.dart';
+import 'package:habilitacao_quiz/app/shared/utils/constants.dart';
 import 'package:habilitacao_quiz/app/shared/utils/simulado.dart';
 import 'package:habilitacao_quiz/core/exceptions/erro.dart';
 import 'package:habilitacao_quiz/core/utils/keys.dart';
@@ -19,7 +20,7 @@ class QuizRepository implements IQuizRepository {
       quiz.perguntas.shuffle();
       return right(
         quiz.copyWith(
-          perguntas: quiz.perguntas.sublist(0, 30),
+          perguntas: quiz.perguntas.sublist(zero, tamanhoQuiz),
         ),
       );
     }

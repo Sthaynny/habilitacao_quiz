@@ -14,12 +14,16 @@ class HistoricoDatasource {
   SharedPreferences? instance;
   Future<bool?> saveHistorico(HistoricoEntity historico) async {
     instance = await SharedPreferences.getInstance();
-    final result = await instance!.setString(
-      _key,
-      (historico as HistoricoModel).toJson(),
-    );
-    if (result) {
-      return result;
+    try {
+      final result = await instance!.setString(
+        _key,
+        HistoricoModel.fromEntity(historico).toJson(),
+      );
+      if (result) {
+        return result;
+      }
+    } catch (e) {
+      return null;
     }
     return null;
   }

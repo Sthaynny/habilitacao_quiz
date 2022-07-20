@@ -20,12 +20,12 @@ class RespostaWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
+    return GestureDetector(
       onTap: () {
         onTap(resposta);
       },
       child: Container(
-        width: MediaQuery.of(context).size.width,
+        width: double.maxFinite,
         margin: EdgeInsets.symmetric(vertical: AppSpacingStack.quarck.value),
         padding: EdgeInsets.all(AppSpacingStack.xxxSmall.value),
         decoration: BoxDecoration(
@@ -37,12 +37,10 @@ class RespostaWidget extends StatelessWidget {
             ),
           ),
         ),
-        child: Expanded(
-          child: Text(
-            resposta.titulo.primeiraLetraMaiuscula,
-            style: AppFontStyle.body16Medium
-                .setColor(isSelected ? AppColors.darkGreen : AppColors.black),
-          ),
+        child: Text(
+          resposta.titulo.primeiraLetraMaiuscula,
+          style: AppFontStyle.body16Medium
+              .setColor(isSelected ? AppColors.darkGreen : AppColors.black),
         ),
       ),
     );

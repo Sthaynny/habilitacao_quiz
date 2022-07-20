@@ -20,22 +20,22 @@ abstract class Strings {
   static const meioAmbiente = "Meio Ambiente";
   static const parabens = 'Parabéns!';
   static const menssagemBaixoRendimento =
-      'A persistência é o melhor caminho do êxito!\nVamos tentar novamente?';
-  static const voceFinalizou = 'Você finalizou\n';
+      'A persistência é o melhor caminho do sucesso!';
+  static const voceFinalizou = 'Você concluiu\n';
   static const compartilhar = 'Compartilhar';
   static const voltarInicio = 'Voltar ao início';
   static const historico = 'Histórico';
   static const quizzes = 'Quizzes';
 
   static const comeceEstudosVizualizarProgresso =
-      'Comece os estudos para que possa visualizar seu progresso.';
+      'Comece os estudos para visualizar seu progresso!';
 
   static String resultadoQuestionario({
     required String respostasCorretas,
     required String totalPerguntas,
     required String percentual,
   }) =>
-      'com $respostasCorretas de $totalPerguntas acertos, ou seja, $percentual%.';
+      'com $respostasCorretas de $totalPerguntas acertos, $percentual%.';
 
   static String percentualHistorico({
     required String percentual,

@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:habilitacao_quiz/core/styles/app_styles.dart';
 import 'package:habilitacao_quiz/core/styles/consts.dart';
 import 'package:habilitacao_quiz/core/styles/spacing_stack.dart';
@@ -133,11 +134,11 @@ class AppButton extends StatelessWidget {
           title.capitalFirstLetter,
           textAlign: TextAlign.center,
           style: (style ?? AppFontStyle.body16Bold)
-              .copyWith(color: color ?? AppColors.lightGrey),
+              .copyWith(color: color ?? AppColors.grey),
         ),
       ),
       buttonStyle: BoxDecoration(
-        color: _colorButtonOutline(onPressed != null),
+        color: Colors.transparent,
         borderRadius: BorderRadius.circular(border12Radius),
       ),
     );

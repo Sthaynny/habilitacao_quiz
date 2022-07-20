@@ -20,6 +20,13 @@ class ResultadoModel extends ResultadoEntity {
     };
   }
 
+  factory ResultadoModel.fromEntity(ResultadoEntity entity) => ResultadoModel(
+      titulo: entity.titulo,
+      totalPerguntas: entity.totalPerguntas,
+      result: entity.result,
+      totalRespostasCorretas: entity.totalRespostasCorretas,
+      percentual: entity.percentual);
+
   factory ResultadoModel.fromMap(Map<String, dynamic> map) {
     return ResultadoModel(
       titulo: map['titulo'] as String,
