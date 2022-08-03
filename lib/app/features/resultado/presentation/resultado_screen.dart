@@ -27,7 +27,7 @@ class ResultadoScreen extends StatelessWidget {
           children: [
             Image.asset(
               args.result ? AppImages.sucesso : AppImages.bad,
-              height: 150,
+              height: 300,
             ),
             Column(
               children: [
