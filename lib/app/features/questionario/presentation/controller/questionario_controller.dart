@@ -14,11 +14,11 @@ class QuestionarioController extends GetxController with PopUpMixin {
   }
 
   final Rx<QuizEntity> _quiz = QuizEntity.empty().obs;
-  final Rx<int> _indexPergunta = 0.obs;
+  final Rx<int> _indexPergunta = zero.obs;
 
   void get proximoPergunta {
     if (ultimaPergunta) {
-      int totalPerguntasCorretas = 0;
+      int totalPerguntasCorretas = zero;
       for (var pergunta in quiz.perguntas) {
         if (pergunta.respostaSelecionada != null &&
             pergunta.respostaSelecionada!.correta) {
