@@ -32,12 +32,16 @@ class QuizCardWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
+            const Spacer(),
             Padding(
               padding: EdgeInsets.only(bottom: AppSpacingStack.xxxSmall.value),
               child: Image.asset(
                 image,
                 width: 54,
               ),
+            ),
+            const Spacer(
+              flex: 2,
             ),
             Container(
               margin: EdgeInsets.only(bottom: AppSpacingStack.nano.value),
@@ -48,6 +52,7 @@ class QuizCardWidget extends StatelessWidget {
                 overflow: TextOverflow.ellipsis,
               ),
             ),
+            const Spacer(),
           ],
         ),
       ),
