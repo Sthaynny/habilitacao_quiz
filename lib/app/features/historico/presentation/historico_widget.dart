@@ -20,19 +20,84 @@ class HistoricoWidget extends StatefulWidget {
 
 class _HistoricoWidgetState extends State<HistoricoWidget> {
   HistoricoEntity get historico => widget.historico;
+
+  List<Widget> get listarHistorico {
+    final List<Widget> historicoFinal = [];
+    for (var element in historico.resutados) {
+      historicoFinal.add(
+        Container(
+          padding: EdgeInsets.all(AppSpacingStack.xxxSmall.value),
+          margin: EdgeInsets.symmetric(vertical: AppSpacingStack.nano.value),
+          decoration: BoxDecoration(
+            border: const Border.fromBorderSide(
+              BorderSide(
+                color: AppColors.border,
+              ),
+            ),
+            borderRadius: BorderRadius.circular(10),
+            color: AppColors.white,
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text.rich(
+                TextSpan(
+                  text: '${element.titulo}\n',
+                  style: AppFontStyle.body16Medium,
+                  children: [
+                    TextSpan(
+                      text: Strings.percentualHistorico(
+                        percentual:
+                            element.percentual.toPrecision(2).toString(),
+                      ),
+                      style: AppFontStyle.caption12Regular,
+                    ),
+                  ],
+                ),
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  SizedBox(
+                    width: 70,
+                    child: LinearProgressIndicatorWidget(
+                      value: element.percentual / 100,
+                    ),
+                  ),
+                  SizedBox(
+                    height: AppSpacingStack.nano.value,
+                  ),
+                  Text(
+                    '${element.totalRespostasCorretas} de ${element.totalPerguntas}',
+                    style: AppFontStyle.caption12Regular
+                        .setColor(AppColors.lightGrey),
+                  )
+                ],
+              )
+            ],
+          ),
+        ),
+      );
+    }
+    historicoFinal.reversed;
+    return historicoFinal;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: AppSpacingStack.xSmall.value),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            Strings.historico,
-            style: AppFontStyle.headline24Bold,
-          ),
-          ...body
-        ],
+      child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              Strings.historico,
+              style: AppFontStyle.headline24Bold,
+            ),
+            ...body
+          ],
+        ),
       ),
     );
   }
@@ -42,64 +107,7 @@ class _HistoricoWidgetState extends State<HistoricoWidget> {
       return [
         SingleChildScrollView(
           child: Column(
-            children: historico.resutados
-                .map(
-                  (element) => Container(
-                    padding: EdgeInsets.all(AppSpacingStack.xxxSmall.value),
-                    margin: EdgeInsets.symmetric(
-                        vertical: AppSpacingStack.nano.value),
-                    decoration: BoxDecoration(
-                      border: const Border.fromBorderSide(
-                        BorderSide(
-                          color: AppColors.border,
-                        ),
-                      ),
-                      borderRadius: BorderRadius.circular(10),
-                      color: AppColors.white,
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text.rich(
-                          TextSpan(
-                            text: '${element.titulo}\n',
-                            style: AppFontStyle.body16Medium,
-                            children: [
-                              TextSpan(
-                                text: Strings.percentualHistorico(
-                                  percentual: element.percentual
-                                      .toPrecision(2)
-                                      .toString(),
-                                ),
-                                style: AppFontStyle.caption12Regular,
-                              ),
-                            ],
-                          ),
-                        ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            SizedBox(
-                              width: 70,
-                              child: LinearProgressIndicatorWidget(
-                                value: element.percentual / 100,
-                              ),
-                            ),
-                            SizedBox(
-                              height: AppSpacingStack.nano.value,
-                            ),
-                            Text(
-                              '${element.totalRespostasCorretas} de ${element.totalPerguntas}',
-                              style: AppFontStyle.caption12Regular
-                                  .setColor(AppColors.lightGrey),
-                            )
-                          ],
-                        )
-                      ],
-                    ),
-                  ),
-                )
-                .toList(),
+            children: listarHistorico,
           ),
         )
       ];

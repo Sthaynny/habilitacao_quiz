@@ -9,12 +9,8 @@ class HistoricoEntity {
 
   void add(ResultadoEntity resultadoEntity) {
     if (resutados.length > 9) {
-      resutados.removeLast();
+      resutados.removeAt(0);
     }
-    if (resutados.isEmpty) {
-      resutados.add(resultadoEntity);
-    } else {
-      resutados.setAll(0, [resultadoEntity]);
-    }
+    resutados.add(resultadoEntity);
   }
 }

@@ -25,7 +25,7 @@ class QuestionarioController extends GetxController with PopUpMixin {
           totalPerguntasCorretas++;
         }
       }
-      final double percentual = (totalPerguntasCorretas / tamanhoQuiz) * 100;
+      final double percentual = (totalPerguntasCorretas / tamanhoQuiz) * cem;
 
       final result = ResultadoEntity(
         titulo: quiz.titulo,
