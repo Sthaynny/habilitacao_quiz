@@ -8,7 +8,7 @@ abstract class AppImages {
   static String get simulado => getImage("simulado");
   static String get direcaoDefensiva => getImage("direcao");
   static String get sucesso => getImage("sucesso");
-  static String get atencao => getImage("atencao");
+  static String get bad => getImage("bad");
   static String get logo => getImage("logo");
   static String get splash => getImage("splash");
 }

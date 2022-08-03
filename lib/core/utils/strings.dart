@@ -18,7 +18,7 @@ abstract class Strings {
       "Você vai perder o progresso feito no seu simulado. Quer mesmo sair desse questionário?";
   static const simulado = "Simulado";
   static const meioAmbiente = "Meio Ambiente";
-  static const parabens = 'Parabéns!';
+  static const parabens = 'Parabéns!\nVocê será o mestre do automobilismo!';
   static const menssagemBaixoRendimento =
       'A persistência é o melhor caminho do sucesso!';
   static const voceFinalizou = 'Você concluiu\n';

@@ -26,7 +26,7 @@ class ResultadoScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Image.asset(
-              args.result ? AppImages.sucesso : AppImages.atencao,
+              args.result ? AppImages.sucesso : AppImages.bad,
               height: 150,
             ),
             Column(
