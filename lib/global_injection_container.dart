@@ -1,3 +1,4 @@
+import 'package:habilitacao_quiz/app/features/historico/historico_injection_continer.dart';
 import 'package:habilitacao_quiz/app/features/home/home_injection_continer.dart';
 import 'package:habilitacao_quiz/app/features/questionario/questionario_injection_continer.dart';
 import 'package:habilitacao_quiz/app/shared/shared_injection_continer.dart';
@@ -8,6 +9,7 @@ abstract class GlobalInjectionContainer {
         SharedInjectionContainer(),
         HomeInjectionContainer(),
         QuestionarioInjectionContainer(),
+        HistoricoInjectionContainer(),
       ];
 
   static void setInjection() {

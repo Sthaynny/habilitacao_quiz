@@ -9,5 +9,8 @@ class SharedInjectionContainer implements IInjectionContainer {
   void call() {
     Get.lazyPut<QuizDatasource>(() => QuizDatasource());
     Get.lazyPut<IQuizRepository>(() => QuizRepository(Get.find()));
+    Get.lazyPut<QuizDatasource>(() => QuizDatasource());
+    Get.lazyPut<IQuizRepository>(() => QuizRepository(Get.find()));
+    Get.lazyPut<IQuizRepository>(() => QuizRepository(Get.find()));
   }
 }

@@ -10,7 +10,7 @@ class AppBarQuestionarioWidget extends PreferredSize {
     Key? key,
   }) : super(
           key: key,
-          preferredSize: const Size.fromHeight(86),
+          preferredSize: const Size.fromHeight(90),
           child: SafeArea(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.end,

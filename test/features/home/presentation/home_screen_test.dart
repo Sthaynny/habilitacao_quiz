@@ -8,6 +8,7 @@ import 'package:habilitacao_quiz/app/features/home/domain/usecases/meio_ambiente
 import 'package:habilitacao_quiz/app/features/home/domain/usecases/primeiros_socorros_quiz_usercase.dart';
 import 'package:habilitacao_quiz/app/features/home/domain/usecases/simulado_quiz_usercase.dart';
 import 'package:habilitacao_quiz/app/features/home/presentation/components/quiz_button_widget.dart';
+import 'package:habilitacao_quiz/app/features/home/presentation/components/quizzes/controller/quizzes_controller.dart';
 import 'package:habilitacao_quiz/app/features/home/presentation/controller/home_controller.dart';
 import 'package:habilitacao_quiz/app/features/home/presentation/home_screen.dart';
 import 'package:habilitacao_quiz/app/shared/presentation/widgets/car_quiz_widget.dart';
@@ -31,6 +32,7 @@ class _MockMecanicaBasicaQuizUsercase extends Mock
 class _MockSimuladoQuizUsercase extends Mock implements SimuladoQuizUsercase {}
 
 void main() {
+  late QuizzesController quizzesController;
   late HomeController homeController;
   late _MockDirecaoDefesivaQuizUsercase direcaoDefesivaQuizUsercase;
   late _MockLegislacaoQuizUsercase legislacaoQuizUsercase;
@@ -46,7 +48,7 @@ void main() {
     primeirosSocorrosQuizUsercase = _MockPrimeirosSocorrosQuizUsercase();
     mecanicaBasicaQuizUsercase = _MockMecanicaBasicaQuizUsercase();
     simuladoQuizUsercase = _MockSimuladoQuizUsercase();
-    homeController = HomeController(
+    quizzesController = QuizzesController(
       direcaoDefesivaQuizUsercase: direcaoDefesivaQuizUsercase,
       legislacaoQuizUsercase: legislacaoQuizUsercase,
       meioAmbienteQuizUsercase: meioAmbienteQuizUsercase,
@@ -54,6 +56,7 @@ void main() {
       mecanicaBasicaQuizUsercase: mecanicaBasicaQuizUsercase,
       simuladoQuizUsercase: simuladoQuizUsercase,
     );
+    homeController = HomeController();
   });
   Widget makeTestable(Widget widget) => GetMaterialApp(
         home: widget,
@@ -61,9 +64,14 @@ void main() {
   testWidgets(
     'Home Screen inicializar tela',
     (WidgetTester tester) async {
-      await tester.pumpWidget(makeTestable(HomeScreen(
-        controller: homeController,
-      )));
+      await tester.pumpWidget(
+        makeTestable(
+          HomeScreen(
+            quizzesController: quizzesController,
+            controller: homeController,
+          ),
+        ),
+      );
       final Finder scaffoldFinder = find.byType(Scaffold);
       expect(scaffoldFinder, findsOneWidget);
       final Finder quizCarFinder = find.byType(CarQuizWidget);

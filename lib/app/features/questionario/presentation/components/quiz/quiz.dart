@@ -1,9 +1,9 @@
-import 'package:adaptable_screen/adaptable_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:habilitacao_quiz/app/features/questionario/presentation/components/resposta/resposta_widget.dart';
 import 'package:habilitacao_quiz/app/shared/domain/entities/pergunta_entity.dart';
 import 'package:habilitacao_quiz/app/shared/domain/entities/resposta_entity.dart';
 import 'package:habilitacao_quiz/core/styles/app_styles.dart';
+import 'package:habilitacao_quiz/core/styles/spacing_stack.dart';
 
 class QuizWidget extends StatelessWidget {
   const QuizWidget({
@@ -22,30 +22,20 @@ class QuizWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       controller: scrollController,
+      padding: EdgeInsets.all(AppSpacingStack.xSmall.value),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const SizedBox(
-            height: 64,
-          ),
-          Container(
-            margin: EdgeInsets.symmetric(horizontal: 16.w),
-            child: Text(
-              pergunta.titulo,
-              style: AppTextStyles.notoSansBold(
-                color: AppColors.preto,
-                fontSize: 18.ssp,
-              ),
+          Text(
+            pergunta.titulo,
+            style: AppTextStyles.notoSansBold(
+              color: AppColors.preto,
+              fontSize: 18,
             ),
           ),
-          if (pergunta.imagemB64 != null)
-            Container(
-              margin: EdgeInsets.symmetric(
-                vertical: 5.h,
-              ),
-              child: Image.memory(pergunta.imagemB64!),
-            ),
+          if (pergunta.imagemB64 != null) Image.memory(pergunta.imagemB64!),
           SizedBox(
-            height: 15.h,
+            height: AppSpacingStack.xxxSmall.value,
           ),
           ...pergunta.respostas
               .map(

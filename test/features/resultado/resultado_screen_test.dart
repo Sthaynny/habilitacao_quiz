@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:get/get.dart';
-import 'package:habilitacao_quiz/app/features/resultado/resultado_args.dart';
-import 'package:habilitacao_quiz/app/features/resultado/resultado_screen.dart';
-import 'package:habilitacao_quiz/app/shared/presentation/widgets/primary_button_widget.dart';
+import 'package:habilitacao_quiz/app/features/resultado/domain/resultado_entity.dart';
+import 'package:habilitacao_quiz/app/features/resultado/presentation/resultado_screen.dart';
+import 'package:habilitacao_quiz/core/components/button.dart';
 
 void main() {
   Widget makeTestable(Widget widget) => GetMaterialApp(
@@ -12,15 +12,19 @@ void main() {
   testWidgets(
     'Resultado Screen inicializar tela',
     (WidgetTester tester) async {
-      await tester.pumpWidget(makeTestable(const ResultadoScreen(
-        args: ResultadoArgs(
-          titulo: 'Tituo',
-          totalPerguntas: 10,
-          percentual: 70.0,
-          result: true,
-          totalRespostasCorretas: 7,
+      await tester.pumpWidget(
+        makeTestable(
+          const ResultadoScreen(
+            args: ResultadoEntity(
+              titulo: 'Tituo',
+              totalPerguntas: 10,
+              percentual: 70.0,
+              result: true,
+              totalRespostasCorretas: 7,
+            ),
+          ),
         ),
-      )));
+      );
 
       final Finder scaffoldFinder = find.byType(Scaffold);
       expect(scaffoldFinder, findsOneWidget);
@@ -31,7 +35,7 @@ void main() {
       final Finder textSpanFinder = find.byType(Text);
       expect(textSpanFinder, findsWidgets);
 
-      final nextButtonFindder = find.byType(PrimaryButtonWidget);
+      final nextButtonFindder = find.byType(AppButton);
       expect(nextButtonFindder, findsNWidgets(2));
     },
   );

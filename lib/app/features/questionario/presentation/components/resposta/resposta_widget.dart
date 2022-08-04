@@ -1,7 +1,7 @@
-import 'package:adaptable_screen/adaptable_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:habilitacao_quiz/app/shared/domain/entities/resposta_entity.dart';
 import 'package:habilitacao_quiz/core/styles/app_styles.dart';
+import 'package:habilitacao_quiz/core/styles/spacing_stack.dart';
 
 class RespostaWidget extends StatelessWidget {
   const RespostaWidget({
@@ -14,15 +14,9 @@ class RespostaWidget extends StatelessWidget {
   final bool isSelected;
   final ValueChanged<RespostaEntity> onTap;
 
-  Color get _selectedColorRight => AppColors.verdeEscuro;
+  Color get _selectedColorCardRight => AppColors.lightGreen;
 
-  Color get _selectedBorderRight => AppColors.cinza;
-
-  Color get _selectedColorCardRight => AppColors.cinzaSuperClaro;
-
-  Color get _selectedBorderCardRight => AppColors.cinza;
-
-  IconData get _selectedIconRight => Icons.close;
+  Color get _selectedBorderCardRight => AppColors.green;
 
   @override
   Widget build(BuildContext context) {
@@ -31,50 +25,22 @@ class RespostaWidget extends StatelessWidget {
         onTap(resposta);
       },
       child: Container(
-        margin: EdgeInsets.symmetric(horizontal: 16.h, vertical: 4.w),
-        padding: EdgeInsets.all(16.w),
+        width: double.maxFinite,
+        margin: EdgeInsets.symmetric(vertical: AppSpacingStack.quarck.value),
+        padding: EdgeInsets.all(AppSpacingStack.xxxSmall.value),
         decoration: BoxDecoration(
-          color: isSelected ? _selectedColorCardRight : AppColors.branco,
-          borderRadius: BorderRadius.circular(10.r),
+          color: isSelected ? _selectedColorCardRight : AppColors.white,
+          borderRadius: BorderRadius.circular(10),
           border: Border.fromBorderSide(
             BorderSide(
               color: isSelected ? _selectedBorderCardRight : AppColors.border,
             ),
           ),
         ),
-        child: Row(
-          children: [
-            Container(
-              height: 24,
-              width: 24,
-              margin: EdgeInsets.only(right: 8.w),
-              decoration: BoxDecoration(
-                color: isSelected ? _selectedColorRight : AppColors.branco,
-                borderRadius: BorderRadius.circular(12.r),
-                border: Border.fromBorderSide(
-                  BorderSide(
-                    color: isSelected ? _selectedBorderRight : AppColors.border,
-                  ),
-                ),
-              ),
-              child: isSelected
-                  ? Icon(
-                      _selectedIconRight,
-                      color: AppColors.branco,
-                      size: 16.w,
-                    )
-                  : null,
-            ),
-            Expanded(
-              child: Text(
-                resposta.titulo.primeiraLetraMaiuscula,
-                style: AppTextStyles.notoSansRegular(
-                  color: AppColors.cinza,
-                  fontSize: 13.ssp,
-                ),
-              ),
-            ),
-          ],
+        child: Text(
+          resposta.titulo.primeiraLetraMaiuscula,
+          style: AppFontStyle.body16Medium
+              .setColor(isSelected ? AppColors.darkGreen : AppColors.black),
         ),
       ),
     );
