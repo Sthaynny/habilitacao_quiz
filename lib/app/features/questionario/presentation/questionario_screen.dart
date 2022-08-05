@@ -1,12 +1,12 @@
-import 'package:adaptable_screen/adaptable_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:habilitacao_quiz/app/features/questionario/presentation/components/app_bar_questionario.dart';
 import 'package:habilitacao_quiz/app/features/questionario/presentation/components/quiz/quiz.dart';
 import 'package:habilitacao_quiz/app/features/questionario/presentation/controller/questionario_controller.dart';
 import 'package:habilitacao_quiz/app/shared/domain/entities/quiz_entity.dart';
-import 'package:habilitacao_quiz/app/shared/presentation/widgets/primary_button_widget.dart';
+import 'package:habilitacao_quiz/core/components/button.dart';
 import 'package:habilitacao_quiz/core/mixins/pop_up_mixin.dart';
+import 'package:habilitacao_quiz/core/styles/spacing_stack.dart';
 import 'package:habilitacao_quiz/core/utils/strings.dart';
 
 class QuestionarioScreen extends StatefulWidget {
@@ -19,7 +19,7 @@ class QuestionarioScreen extends StatefulWidget {
   final QuestionarioController controller;
   final QuizEntity quizEntity;
   @override
-  _QuestionarioScreenState createState() => _QuestionarioScreenState();
+  State<QuestionarioScreen> createState() => _QuestionarioScreenState();
 }
 
 class _QuestionarioScreenState extends State<QuestionarioScreen>
@@ -61,18 +61,18 @@ class _QuestionarioScreenState extends State<QuestionarioScreen>
           bottomNavigationBar: SafeArea(
             child: Padding(
               padding: EdgeInsets.symmetric(
-                horizontal: 20.w,
-                vertical: 20.h,
+                horizontal: AppSpacingStack.xSmall.value,
+                vertical: AppSpacingStack.xxxSmall.value,
               ),
               child: Row(
                 children: [
                   if (controller.indexPergunta != 0) ...getButaoVoltar,
                   Flexible(
-                      child: PrimaryButtonWidget.azul(
-                    label: controller.ultimaPergunta
+                      child: AppButton.secundary(
+                    controller.ultimaPergunta
                         ? Strings.finalizar
                         : Strings.avancar,
-                    onTap: controller.respostaSelecionada != null
+                    onPressed: controller.respostaSelecionada != null
                         ? () {
                             controller.proximoPergunta;
                             scrollController.jumpTo(0.0);
@@ -90,15 +90,15 @@ class _QuestionarioScreenState extends State<QuestionarioScreen>
 
   List<Widget> get getButaoVoltar => [
         Flexible(
-          child: PrimaryButtonWidget.branco(
-            label: Strings.voltar,
-            onTap: () {
+          child: AppButton.primaryOutline(
+            Strings.voltar,
+            onPressed: () {
               controller.voltarPergunta;
             },
           ),
         ),
         SizedBox(
-          width: 8.w,
+          width: AppSpacingStack.nano.value,
         ),
       ];
 }

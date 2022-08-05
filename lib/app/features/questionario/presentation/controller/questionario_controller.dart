@@ -1,8 +1,11 @@
 import 'package:get/get.dart';
-import 'package:habilitacao_quiz/app/features/resultado/resultado_args.dart';
+import 'package:habilitacao_quiz/app/features/historico/domain/entities/historico_entity.dart';
+import 'package:habilitacao_quiz/app/features/historico/domain/usecases/salvar_historico_usecase.dart';
+import 'package:habilitacao_quiz/app/features/resultado/domain/resultado_entity.dart';
 import 'package:habilitacao_quiz/app/features/routes/routes.dart';
 import 'package:habilitacao_quiz/app/shared/domain/entities/quiz_entity.dart';
 import 'package:habilitacao_quiz/app/shared/domain/entities/resposta_entity.dart';
+import 'package:habilitacao_quiz/app/shared/utils/constants.dart';
 import 'package:habilitacao_quiz/core/mixins/pop_up_mixin.dart';
 
 class QuestionarioController extends GetxController with PopUpMixin {
@@ -11,19 +14,32 @@ class QuestionarioController extends GetxController with PopUpMixin {
   }
 
   final Rx<QuizEntity> _quiz = QuizEntity.empty().obs;
-  final Rx<int> _indexPergunta = 0.obs;
+  final Rx<int> _indexPergunta = zero.obs;
 
   void get proximoPergunta {
     if (ultimaPergunta) {
-      int totalPerguntasCorretas = 0;
+      int totalPerguntasCorretas = zero;
       for (var pergunta in quiz.perguntas) {
         if (pergunta.respostaSelecionada != null &&
             pergunta.respostaSelecionada!.correta) {
           totalPerguntasCorretas++;
         }
       }
-      final double percentual = (totalPerguntasCorretas / tamanhoQuiz) * 100;
-      irParaResultado(percentual, totalPerguntasCorretas);
+      final double percentual = (totalPerguntasCorretas / tamanhoQuiz) * cem;
+
+      final result = ResultadoEntity(
+        titulo: quiz.titulo,
+        totalPerguntas: tamanhoQuiz,
+        result: percentual >= mediaQuiz,
+        totalRespostasCorretas: totalPerguntasCorretas,
+        percentual: percentual,
+      );
+
+      Get.find<HistoricoEntity>().add(result);
+
+      Get.find<SalvarHistoricoUsecase>().call(Get.find<HistoricoEntity>());
+
+      irParaResultado(result);
     } else {
       _indexPergunta(indexPergunta + 1);
     }
@@ -40,16 +56,10 @@ class QuestionarioController extends GetxController with PopUpMixin {
     }
   }
 
-  void irParaResultado(double percentual, int totalPerguntasCorretas) {
+  void irParaResultado(ResultadoEntity resultadoEntity) {
     Get.offNamed(
       Routes.resultado,
-      arguments: ResultadoArgs(
-        titulo: quiz.titulo,
-        totalPerguntas: tamanhoQuiz,
-        result: percentual >= 70.0,
-        totalRespostasCorretas: totalPerguntasCorretas,
-        percentual: percentual,
-      ),
+      arguments: resultadoEntity,
     );
   }
 }

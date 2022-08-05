@@ -156,7 +156,7 @@ final tMapQuizModel = <String, dynamic>{
         },
         {
           "titulo":
-              "ignorar os mapas, pois eles com freqüência não são fiéis ao trajeto."
+              "ignorar os mapas, pois eles com frequência não são fiéis ao trajeto."
         },
         {"titulo": "possuir um arquivo com todos os mapas do País."}
       ]
@@ -371,7 +371,7 @@ final tMapQuizModel = <String, dynamic>{
       "titulo":
           "Para garantir as condições de segurança dos veículos em circulação, será obrigatório, por ocasião do licenciamento anual?",
       "respostas": [
-        {"titulo": "freqüentar um curso de Legislação de Trânsito."},
+        {"titulo": "frequentar um curso de Legislação de Trânsito."},
         {"titulo": "possuir alguns dos equipamentos obrigatórios."},
         {"titulo": "apresentar a CNH dos proprietários."},
         {"titulo": "possuir pneus novos."},
@@ -558,11 +558,11 @@ final tMapQuizModel = <String, dynamic>{
         {"titulo": "desligar o carro e parar, apesar do pouco tempo."},
         {
           "titulo":
-              "manter-se tranqüilo para ligar o pisca-alerta e continuar, pois é uma questão de urgência."
+              "manter-se tranquilo para ligar o pisca-alerta e continuar, pois é uma questão de urgência."
         },
         {
           "titulo":
-              "manter a tranqüilidade para sinalizar, reduzir a velocidade e parar em lugar seguro.",
+              "manter a tranquilidade para sinalizar, reduzir a velocidade e parar em lugar seguro.",
           "correta": true
         },
         {

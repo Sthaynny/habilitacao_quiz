@@ -18,18 +18,29 @@ abstract class Strings {
       "Você vai perder o progresso feito no seu simulado. Quer mesmo sair desse questionário?";
   static const simulado = "Simulado";
   static const meioAmbiente = "Meio Ambiente";
-  static const parabens = 'Parabéns!';
-  static const menssgemTriste = 'Oh, que chato!\nVamos melhorar na proxima!';
-  static const voceFinalizou = 'Você finalizou\n';
+  static const parabens = 'Parabéns!\nVocê será o mestre do automobilismo!';
+  static const menssagemBaixoRendimento =
+      'A persistência é o melhor caminho do sucesso!';
+  static const voceFinalizou = 'Você concluiu\n';
   static const compartilhar = 'Compartilhar';
   static const voltarInicio = 'Voltar ao início';
+  static const historico = 'Histórico';
+  static const quizzes = 'Quizzes';
+
+  static const comeceEstudosVizualizarProgresso =
+      'Comece os estudos para visualizar seu progresso!';
 
   static String resultadoQuestionario({
     required String respostasCorretas,
     required String totalPerguntas,
     required String percentual,
   }) =>
-      'com $respostasCorretas de $totalPerguntas acertos, ou seja, $percentual%!';
+      'com $respostasCorretas de $totalPerguntas acertos, $percentual%.';
+
+  static String percentualHistorico({
+    required String percentual,
+  }) =>
+      'Você obteve $percentual% de acertos.';
 
   static String campartilharMensagem({
     required String titulo,

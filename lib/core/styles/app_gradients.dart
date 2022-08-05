@@ -5,8 +5,8 @@ import 'package:habilitacao_quiz/core/styles/app_colors.dart';
 
 abstract class AppGradients {
   static const linear = LinearGradient(colors: [
-    AppColors.azulClaro,
-    AppColors.verde,
+    AppColors.blue,
+    AppColors.purple,
   ], stops: [
     0.0,
     0.695
