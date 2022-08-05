@@ -4,49 +4,8 @@ import 'package:habilitacao_quiz/core/styles/app_colors.dart';
 import 'package:habilitacao_quiz/core/styles/app_font_size.dart';
 import 'package:habilitacao_quiz/core/styles/font_weight.dart';
 
-class AppTextStyles {
-  static TextStyle notoSansRegular({
-    Color? color,
-    double? fontSize,
-    double? letterSpacing,
-  }) {
-    return GoogleFonts.notoSans(
-      color: color ?? AppColors.branco,
-      fontSize: fontSize ?? 12,
-      fontWeight: FontWeight.w400,
-      letterSpacing: letterSpacing,
-    );
-  }
-
-  static TextStyle notoSansBold({
-    Color? color,
-    double? fontSize,
-    double? letterSpacing,
-  }) {
-    return GoogleFonts.notoSans(
-      color: color ?? AppColors.branco,
-      fontSize: fontSize ?? 12,
-      fontWeight: FontWeight.w600,
-      letterSpacing: letterSpacing,
-    );
-  }
-
-  static TextStyle notoSansExtraBold({
-    Color? color,
-    double? fontSize,
-    double? letterSpacing,
-  }) {
-    return GoogleFonts.notoSans(
-      color: color ?? AppColors.black,
-      fontSize: fontSize ?? 12,
-      fontWeight: FontWeight.w900,
-      letterSpacing: letterSpacing,
-    );
-  }
-}
-
 abstract class AppFontStyle {
-  ///Retorna o estilo ROBOTO podendo o passar todas as configuraçoes do textstyle convencional
+  ///Retorna o estilo notoSans podendo o passar todas as configuraçoes do textstyle convencional
   static TextStyle notoSans({
     Color? color,
     Color? backgroundColor,

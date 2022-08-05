@@ -26,13 +26,8 @@ class QuizWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            pergunta.titulo,
-            style: AppTextStyles.notoSansBold(
-              color: AppColors.preto,
-              fontSize: 18,
-            ),
-          ),
+          Text(pergunta.titulo,
+              style: AppFontStyle.body16Medium.setColor(AppColors.black)),
           if (pergunta.imagemB64 != null) Image.memory(pergunta.imagemB64!),
           SizedBox(
             height: AppSpacingStack.xxxSmall.value,

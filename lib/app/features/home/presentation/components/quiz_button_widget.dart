@@ -48,7 +48,7 @@ class QuizButtonWidget extends StatelessWidget {
             ),
             Text(
               titulo,
-              style: AppTextStyles.notoSansBold(fontSize: 14),
+              style: AppFontStyle.body14Regular,
               textAlign: TextAlign.center,
             ),
           ],
