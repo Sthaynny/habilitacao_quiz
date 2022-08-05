@@ -19,7 +19,7 @@ class QuestionarioScreen extends StatefulWidget {
   final QuestionarioController controller;
   final QuizEntity quizEntity;
   @override
-  _QuestionarioScreenState createState() => _QuestionarioScreenState();
+  State<QuestionarioScreen> createState() => _QuestionarioScreenState();
 }
 
 class _QuestionarioScreenState extends State<QuestionarioScreen>

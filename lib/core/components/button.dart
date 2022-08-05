@@ -155,6 +155,10 @@ class AppButton extends StatelessWidget {
     return AppButton(
       onPressed: onPressed,
       margin: margin,
+      buttonStyle: BoxDecoration(
+        color: cor ?? _colorBorderSecundary(onPressed != null),
+        borderRadius: BorderRadius.circular(border12Radius),
+      ),
       child: Container(
         width: expanded ? double.maxFinite : null,
         alignment: Alignment.center,
@@ -167,10 +171,6 @@ class AppButton extends StatelessWidget {
             color: _colorTextSecundary(onPressed != null),
           ),
         ),
-      ),
-      buttonStyle: BoxDecoration(
-        color: cor ?? _colorBorderSecundary(onPressed != null),
-        borderRadius: BorderRadius.circular(border12Radius),
       ),
     );
   }

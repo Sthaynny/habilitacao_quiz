@@ -18,7 +18,7 @@ class CircularProgressWidget extends StatefulWidget {
   final double strokeWidth;
 
   @override
-  _CircularProgressState createState() => _CircularProgressState();
+  State<CircularProgressWidget> createState() => _CircularProgressState();
 }
 
 class _CircularProgressState extends State<CircularProgressWidget>
