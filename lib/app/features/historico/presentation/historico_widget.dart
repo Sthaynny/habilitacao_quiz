@@ -43,78 +43,77 @@ class _HistoricoWidgetState extends State<HistoricoWidget> {
   List<Widget> get body {
     if (historico.resutados.isNotEmpty) {
       return [
-        SingleChildScrollView(
-          child: Column(
-            children: historico.resutados
-                .map(
-                  (element) => Container(
-                    padding: EdgeInsets.all(AppSpacingStack.xxxSmall.value),
-                    margin: EdgeInsets.symmetric(
-                        vertical: AppSpacingStack.nano.value),
-                    decoration: BoxDecoration(
-                      border: const Border.fromBorderSide(
-                        BorderSide(
-                          color: AppColors.border,
+        Column(
+          children: historico.resutados
+              .map(
+                (element) => Container(
+                  padding: EdgeInsets.all(AppSpacingStack.xxxSmall.value),
+                  margin: EdgeInsets.symmetric(
+                      vertical: AppSpacingStack.nano.value),
+                  decoration: BoxDecoration(
+                    border: const Border.fromBorderSide(
+                      BorderSide(
+                        color: AppColors.border,
+                      ),
+                    ),
+                    borderRadius: BorderRadius.circular(10),
+                    color: AppColors.white,
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text.rich(
+                        TextSpan(
+                          text: '${element.titulo}\n',
+                          style: AppFontStyle.body16Medium,
+                          children: [
+                            TextSpan(
+                              text: Strings.percentualHistorico(
+                                percentual: element.percentual
+                                    .toPrecision(2)
+                                    .toString(),
+                              ),
+                              style: AppFontStyle.caption12Regular,
+                            ),
+                          ],
                         ),
                       ),
-                      borderRadius: BorderRadius.circular(10),
-                      color: AppColors.white,
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text.rich(
-                          TextSpan(
-                            text: '${element.titulo}\n',
-                            style: AppFontStyle.body16Medium,
-                            children: [
-                              TextSpan(
-                                text: Strings.percentualHistorico(
-                                  percentual: element.percentual
-                                      .toPrecision(2)
-                                      .toString(),
-                                ),
-                                style: AppFontStyle.caption12Regular,
-                              ),
-                            ],
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          SizedBox(
+                            width: 70,
+                            child: LinearProgressIndicatorWidget(
+                              value: element.percentual / 100,
+                            ),
                           ),
-                        ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            SizedBox(
-                              width: 70,
-                              child: LinearProgressIndicatorWidget(
-                                value: element.percentual / 100,
-                              ),
-                            ),
-                            SizedBox(
-                              height: AppSpacingStack.nano.value,
-                            ),
-                            Text(
-                              '${element.totalRespostasCorretas} de ${element.totalPerguntas}',
-                              style: AppFontStyle.caption12Regular
-                                  .setColor(AppColors.lightGrey),
-                            )
-                          ],
-                        )
-                      ],
-                    ),
+                          SizedBox(
+                            height: AppSpacingStack.nano.value,
+                          ),
+                          Text(
+                            '${element.totalRespostasCorretas} de ${element.totalPerguntas}',
+                            style: AppFontStyle.caption12Regular
+                                .setColor(AppColors.lightGrey),
+                          )
+                        ],
+                      )
+                    ],
                   ),
-                )
-                .toList(),
-          ),
+                ),
+              )
+              .toList(),
         )
       ];
     }
     return [
-      const Spacer(),
+      SizedBox(
+        height: MediaQuery.of(context).size.height * .25,
+      ),
       Text(
         Strings.comeceEstudosVizualizarProgresso,
         style: AppFontStyle.body16Medium,
         textAlign: TextAlign.center,
       ),
-      const Spacer(),
     ];
   }
 }

@@ -1,2 +1,2 @@
 Atividades realizadas na versão:
-  - Historico
+  - Atalização do tempo da splash;
