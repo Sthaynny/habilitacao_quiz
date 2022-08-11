@@ -40,6 +40,27 @@ mixin PopUpMixin {
   void popUpErro() {
     Future.delayed(const Duration(microseconds: 200)).then((value) {
       Get.defaultDialog(
+          contentPadding: EdgeInsets.all(AppSpacingStack.nano.value),
+          title: "",
+          confirmTextColor: AppColors.branco,
+          confirm: CupertinoButton(
+            padding: EdgeInsets.zero,
+            onPressed: () {
+              Get.back();
+            },
+            child: Text(
+              Strings.fechar.toUpperCase(),
+              style: AppFontStyle.body14Regular,
+              textAlign: TextAlign.center,
+            ),
+          ),
+          middleText: Strings.erroPadrao,
+          middleTextStyle: AppFontStyle.button16Bold);
+    });
+  }
+
+  void popUpEmBreve() {
+    Get.defaultDialog(
         contentPadding: EdgeInsets.all(AppSpacingStack.nano.value),
         title: "",
         confirmTextColor: AppColors.branco,
@@ -50,46 +71,11 @@ mixin PopUpMixin {
           },
           child: Text(
             Strings.fechar.toUpperCase(),
-            style: AppTextStyles.notoSansBold(
-              fontSize: 14,
-              color: AppColors.preto,
-            ),
+            style: AppFontStyle.body14Bold,
             textAlign: TextAlign.center,
           ),
         ),
-        middleText: Strings.erroPadrao,
-        middleTextStyle: AppTextStyles.notoSansBold(
-          fontSize: 17,
-          color: AppColors.cinza,
-        ),
-      );
-    });
-  }
-
-  void popUpEmBreve() {
-    Get.defaultDialog(
-      contentPadding: EdgeInsets.all(AppSpacingStack.nano.value),
-      title: "",
-      confirmTextColor: AppColors.branco,
-      confirm: CupertinoButton(
-        padding: EdgeInsets.zero,
-        onPressed: () {
-          Get.back();
-        },
-        child: Text(
-          Strings.fechar.toUpperCase(),
-          style: AppTextStyles.notoSansBold(
-            fontSize: 14,
-            color: AppColors.preto,
-          ),
-          textAlign: TextAlign.center,
-        ),
-      ),
-      middleText: Strings.emBreve,
-      middleTextStyle: AppTextStyles.notoSansBold(
-        fontSize: 20,
-        color: AppColors.cinza,
-      ),
-    );
+        middleText: Strings.emBreve,
+        middleTextStyle: AppFontStyle.headline20Bold);
   }
 }

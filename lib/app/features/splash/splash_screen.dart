@@ -15,12 +15,13 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
-    Get.find<GetHistoricoUsecase>().call().then((value) {
+    Get.find<GetHistoricoUsecase>().call().then((value) async {
+      await Future.delayed(const Duration(seconds: 2));
       Get.put<HistoricoEntity>(
         value,
         permanent: true,
       );
-      Get.toNamed(
+      Get.offAndToNamed(
         Routes.home,
       );
     });

@@ -26,10 +26,7 @@ class CarQuizWidget extends StatelessWidget {
             const CarQuizLogoWidget(),
             Padding(
               padding: EdgeInsets.all(AppSpacingStack.nano.value),
-              child: Text(
-                Strings.logoApp,
-                style: AppTextStyles.notoSansExtraBold(fontSize: 20),
-              ),
+              child: Text(Strings.logoApp, style: AppFontStyle.headline20Bold),
             ),
           ],
         ),

@@ -33,7 +33,7 @@
                     "titulo": "Poderão causar a perda de controle do veículo, principalmente em frenagens e curvas"
                 },
                 {
-                    "titulo": "Poderá ocorrer esvaziamento da agua do radiador, fundido o motor."
+                    "titulo": "Poderá ocorrer esvaziamento da água do radiador, fundido o motor."
                 }
             ]
         },
@@ -56,7 +56,7 @@
             ]
         },
         {
-            "titulo": "A estabilidade do veículo também está relacionada com os pneus. O condutor deve conferir periódica e regularmente:\nI- a calibragem pneus;\nII- o desgaste dos pneus;\n II- a existência de possíveis deformações na carcaça.\nÉ correto o que consta em: ",
+            "titulo": "A estabilidade do veículo também está relacionada com os pneus. O condutor deve conferir periódica e regularmente:\nI- a calibragem dos pneus;\nII- o desgaste dos pneus;\n II- a existência de possíveis deformações na carcaça.\nÉ correto o que consta em: ",
             "respostas": [
                 {
                     "titulo": "I, II e III",
@@ -74,7 +74,7 @@
             ]
         },
         {
-            "titulo": "Ao fazer a verificação do sistema de luzes do veículo, o proprietário notou que, quando aciona a luz indicadora de direção (pisca-pisca) para a esquerda, a luz indicadora de função no painel funcionava compassadamente. Quando aciona para a direita, a luz dispara em velocidade maior. A causa mais provável deste problema é que:",
+            "titulo": "Ao fazer a verificação do sistema de luzes do veículo, o proprietário notou que, quando aciona a luz indicadora de direção (pisca-pisca) para a esquerda, a luz indicadora de função no painel funcionava compassadamente. Quando aciona para a direita, a luz dispara em velocidade maior. A causa provável deste problema é que:",
             "respostas": [
                 {
                     "titulo": "O comutador de ignição está danificado"
@@ -86,7 +86,7 @@
                     "titulo": "A bateria do veículo está com meia carga"
                 },
                 {
-                    "titulo": "Há uma lâmpada deste sistema queimada.",
+                    "titulo": "Há uma lâmpada queimada no sistema.",
                     "correta": true
                 }
             ]
@@ -218,7 +218,7 @@
             ]
         },
         {
-            "titulo": "Todo condutor deve possuir conhecimentos básicos de mecânica a fim de manter o veículo sempre em bom estado e trafegar com segurança, conforme os preceitos da Direção Defensiva. Sendo assim, analise as afirmativas abaixo: \nI. Folgas no sistema de direção provocam o desbalanceamento das rodas. \nII. A finalidade dos amortecedores é garantir a eficiência no sistema de direção. \nIII. As principais razões de perda de eficiência do sistema de freios são vazamento e nível de fluido baixo, bem como discos, pastilhas e lonas gastos. \nÉ correto o que consta APENAS em:",
+            "titulo": "Todo condutor deve possuir conhecimentos básicos de mecânica de modo a manter o veículo sempre em bom estado e trafegar com segurança, conforme os preceitos da Direção Defensiva. Sendo assim, analise as afirmativas abaixo: \nI. Folgas no sistema de direção provocam o desbalanceamento das rodas. \nII. A finalidade dos amortecedores é garantir a eficiência no sistema de direção. \nIII. As principais razões de perda de eficiência do sistema de freios são vazamento e nível de fluido baixo, bem como discos, pastilhas e lonas gastos. \nÉ correto o que consta APENAS em:",
             "respostas": [
                 {
                     "titulo": "III",
@@ -299,7 +299,7 @@
             ]
         },
         {
-            "titulo": "Durante uma viagem, ao descobrir que a lâmpada do pisca pisca está queimada, três motoristas reagem de forma diferente: \nMotorista 1: resolve trocar na volta e segue em frente \nMotorista 2: deixa para trocar na próxima revisão geral\nMotorista 3: procura um auto elétrico para consertar.\nO motorista que agiu corretamente foi:",
+            "titulo": "Durante uma viagem, ao descobrir que a lâmpada do pisca-pisca está queimada, três motoristas reagem de forma diferente: \nMotorista 1: resolve trocar na volta e segue em frente \nMotorista 2: deixa para trocar na próxima revisão geral\nMotorista 3: procura um auto elétrico para consertar.\nO motorista que agiu corretamente foi:",
             "respostas": [
                 {
                     "titulo": "O motorista 1"
@@ -471,7 +471,7 @@
                     "titulo": "Com o motor quente, pois a uma regularidade"
                 },
                 {
-                    "titulo": "Com o motor frio em aclive"
+                    "titulo": "Com o motor frio íngreme"
                 }
             ]
         },
