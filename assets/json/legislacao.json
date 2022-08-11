@@ -1,8 +1,10 @@
 {
     "titulo": "Legislação",
-    "perguntas": [{
+    "perguntas": [
+        {
             "titulo": "Três silvos breves emitidos pelo agente da autoridade de trânsito significa que o condutor deve?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "acender as lanternas do seu veículo.",
                     "correta": true
                 },
@@ -22,7 +24,8 @@
         },
         {
             "titulo": "Os sinais sonoros executados por buzinas deverão ser de um toque breve e somente serão usados para?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "apressar os pedestres ou chamar pessoas."
                 },
                 {
@@ -42,7 +45,8 @@
         },
         {
             "titulo": "O sinal sonoro usado pelo policial de trânsito para informar ao condutor que o trânsito está impedido em todas as direções caracterizam-se por?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "dois silvos breves e um longo."
                 },
                 {
@@ -62,7 +66,8 @@
         },
         {
             "titulo": "Quando o policial de trânsito movimenta o braço direito para cima e para baixo, está determinando que o condutor do veículo?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": " diminua a marcha.",
                     "correta": true
                 },
@@ -80,35 +85,10 @@
                 }
             ]
         },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         {
             "titulo": "O condutor de veículo com o braço estendido para fora horizontalmente, a mão fazendo movimentos para cima e para baixo, indica para os outros condutores?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "que o trânsito permite ultrapassagem."
                 },
                 {
@@ -128,7 +108,8 @@
         },
         {
             "titulo": "De acordo com os sinais sonoros abaixo, marque a resposta que corresponde ao sinal “diminua a marcha”?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "três silvos breves."
                 },
                 {
@@ -148,7 +129,8 @@
         },
         {
             "titulo": "O sinal sonoro que corresponde ao sinal “PARE” caracteriza-se por?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "dois silvos breves.",
                     "correta": true
                 },
@@ -168,7 +150,8 @@
         },
         {
             "titulo": "Quando um agente da autoridade de trânsito emitir três silvos longos, os condutores entendem que devem?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "seguir em frente."
                 },
                 {
@@ -188,7 +171,8 @@
         },
         {
             "titulo": "De acordo com os sinais sonoros citados abaixo, assinale na folha de respostas a alternativa que corresponde ao sinal “ATENÇÃO! SIGA”?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "um silvo breve.",
                     "correta": true
                 },
@@ -206,24 +190,10 @@
                 }
             ]
         },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         {
             "titulo": "Diante da placa (I-11), você entende que?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "existe um local com estabelecimento onde você pode dormir."
                 },
                 {
@@ -244,7 +214,8 @@
         },
         {
             "titulo": "Diante da placa (I-13), você entende que é uma área com?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "posto de socorro médico, junto ou próximo à via."
                 },
                 {
@@ -265,7 +236,8 @@
         },
         {
             "titulo": "Diante da placa (I-14), você entende que encontrará?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "um local permitido para estacionamento de trailer."
                 },
                 {
@@ -286,7 +258,8 @@
         },
         {
             "titulo": "Diante da placa (I-15), você entende que existe?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "uma área sinalizada para estacionar seu veículo."
                 },
                 {
@@ -307,7 +280,8 @@
         },
         {
             "titulo": "Diante da placa (I-16), você entende que existe uma?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "área com oficina mecânica."
                 },
                 {
@@ -328,7 +302,8 @@
         },
         {
             "titulo": "Diante da placa (I-17), você entende que existe?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "um restaurante à distância indicada na placa.",
                     "correta": true
                 },
@@ -349,7 +324,8 @@
         },
         {
             "titulo": "Diante da placa (I-19), você entende que é uma área?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "com aeroporto nas proximidades."
                 },
                 {
@@ -370,7 +346,8 @@
         },
         {
             "titulo": "Diante da placa (I-20), você entende que?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "existe um posto de socorro médico, junto ou próximo à via."
                 },
                 {
@@ -391,7 +368,8 @@
         },
         {
             "titulo": "Diante da placa (I-22), você entende que existe?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "um aeroporto nas proximidades."
                 },
                 {
@@ -412,7 +390,8 @@
         },
         {
             "titulo": "Diante da placa (R-2), você entende que deve?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "circular no sentido indicado, neste caso, indo para o lado direito."
                 },
                 {
@@ -433,7 +412,8 @@
         },
         {
             "titulo": "Diante da placa (R-4a), você entende que é proibido?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "realizar conversão à direita."
                 },
                 {
@@ -454,7 +434,8 @@
         },
         {
             "titulo": "Diante da placa (R-4b), você entende que é proibido?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "dar meia volta ou retornar."
                 },
                 {
@@ -475,7 +456,8 @@
         },
         {
             "titulo": "Diante da placa (R-5), você entende que é proibido?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "realizar conversão à esquerda."
                 },
                 {
@@ -496,7 +478,8 @@
         },
         {
             "titulo": "Diante da placa (R-6b), você entende que?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "pedestres devem circular pelo lado direito da via."
                 },
                 {
@@ -517,7 +500,8 @@
         },
         {
             "titulo": "Diante da placa (R-7), você entende que é?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "proibida a entrada ou a passagem de veículos de carga na área ou via sinalizada."
                 },
                 {
@@ -538,7 +522,8 @@
         },
         {
             "titulo": "Diante da placa (R-9), você entende que é?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "proibido realizar operação de ultrapassagem no trecho regulamentado."
                 },
                 {
@@ -559,7 +544,8 @@
         },
         {
             "titulo": "Diante da placa (R-11), você entende que é?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "proibida a entrada ou a passagem de qualquer tipo de veículo automotor na área ou via sinalizada."
                 },
                 {
@@ -580,7 +566,8 @@
         },
         {
             "titulo": "Diante da placa (R-19), você?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "reduz a velocidade e, se necessário, pára seu veículo, dando preferência aos veículos que circulam na via preferencial."
                 },
                 {
@@ -601,7 +588,8 @@
         },
         {
             "titulo": "Diante da placa (R-1), você entende que deve?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "somente circular com seu veículo no sentido indicado."
                 },
                 {
@@ -622,7 +610,8 @@
         },
         {
             "titulo": "Diante da placa (R-3), você entende que é proibido?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "mudar de faixa de trânsito."
                 },
                 {
@@ -643,7 +632,8 @@
         },
         {
             "titulo": "Diante da placa (R-6a), você entende que é proibido?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "seguir em frente ou entrar na rua ou área restringida."
                 },
                 {
@@ -662,21 +652,10 @@
             ],
             "imagem": "R0lGODdhNQA1AHcAACH+GlNvZnR3YXJlOiBNaWNyb3NvZnQgT2ZmaWNlACwAAAAANQA1AIUAAAAREREzAAAzZmZVVVVmMzNmZmZ3d3eZZmaZmZmIiIiZzMyqqqq7u7vMAADMZmbMmZnMzMzd3d3/AAD/MzP/Zmb/mZn/zMzu7u7///8BAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMBAgMF/2AmjmRpZpdlVVSlXmcsz+ZKTXiu4y7tz5bbbkikWH5IVIXIZFZgSZmlSWUeoyZhlcKt4ijY0bLZslygohSLGh4PW8mpNeneXbHyIXpWz4HDJH04PhdMe4AZghSHJYI5jGF5ORVSVTAXERKampmdEpmfmiSSOHclXhMXAwCsra6vrY1DJ31dQwWwua4BWTuUJIU7Ilo6ArrHJ8SpgXYjyjjGx6+8Jn2/IrMkzxPGBAzf3wkQC+IJCxAx2RmkpsNEAgmI680ZyjHbD/LBOVc7f8lEICHxN09HuxLbBProUzCHj4SASDXEoVBEAQdEEBw4YGBjRwMSZOwrVeefjFUYh/9Ee9VApJ2SPnABSLljZSsGM4it8eNjFSuaxVjm1FEBJg2ZP9+5wilDp9EZPlkZwBehQQMMLg2SqpgBKYB4EGmMnKBCGI2oABS400NjK7ujrtSu3VGRYQaCUF3FcxawqY4/9mZ4lcuX7QlfIt6e1NvLMDODadSd8EogQTgGloE+Qmh2bqnF0pI6rgVMcgmv0jRTxEavMM8TaEOrTqXsGokhtkeglo0KEimyJjBsGk58+IVtkO8NORgG+QSTABHL8/yaRpHp9YjkjvH7cyQnSY6DR9KdBxbxTIygKAEjCJXtSBy9sVUFfpSdqKowD3NBfv4JT2BXgnv/+cGVPgRuYYYLgOSZUVQLLiyISAgAOw=="
         },
-
-
-
-
-
-
-
-
-
-
-
-
         {
             "titulo": "Para o licenciamento de um veículo, em outro Estado, deve-se?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "obrigatoriamente alterar os caracteres das suas placas."
                 },
                 {
@@ -696,7 +675,8 @@
         },
         {
             "titulo": "A prestação dos exames para obtenção da Carteira Nacional de Habilitação só poderá ser requerida pelo candidato que seja alfabetizado e tenha completado?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "dezessete anos."
                 },
                 {
@@ -716,7 +696,8 @@
         },
         {
             "titulo": "As subdivisões da pista de rolamento, com ou sem separações de marcas e cuja largura permite a circulação de um veículo com segurança, são chamadas?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "vias públicas."
                 },
                 {
@@ -736,7 +717,8 @@
         },
         {
             "titulo": "Ao Departamento de Trânsito (DETRAN), órgão executivo, cabe, entre outras, a atribuição de?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "sugerir modificações sobre a Legislação de Trânsito."
                 },
                 {
@@ -756,7 +738,8 @@
         },
         {
             "titulo": "Ao Departamento de Trânsito (DETRAN), órgão executivo, cabe, entre outras, a atribuição de?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "vistoriar, registrar e emplacar veículos.",
                     "correta": true
                 },
@@ -776,7 +759,8 @@
         },
         {
             "titulo": "Expedir a Carteira Nacional de Habilitação é atribuição?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "do Departamento Nacional de Trânsito."
                 },
                 {
@@ -796,7 +780,8 @@
         },
         {
             "titulo": "É dever de todo condutor de veículo?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "nas vias urbanas, deslocar com antecedência o veículo para a faixa mais à direita da via quando for entrar para a esquerda."
                 },
                 {
@@ -814,28 +799,10 @@
                 }
             ]
         },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         {
             "titulo": "O órgão máximo normativo do Sistema Nacional de Trânsito é?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "o Departamento Nacional de Trânsito - Denatran."
                 },
                 {
@@ -855,7 +822,8 @@
         },
         {
             "titulo": "Os Departamentos de Estradas e Rodagens são órgãos?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "normativos do Sistema Nacional de Trânsito."
                 },
                 {
@@ -875,7 +843,8 @@
         },
         {
             "titulo": "A cópia fotostática ou a fotocópia da Carteira Nacional de Habilitação?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "são válidas e substituem o documento original quando autenticadas em cartório."
                 },
                 {
@@ -895,7 +864,8 @@
         },
         {
             "titulo": "A realização de qualquer ato público que interfira no trânsito depende de?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "licença especial do Prefeito."
                 },
                 {
@@ -915,7 +885,8 @@
         },
         {
             "titulo": "É proibido o uso da buzina no perímetro urbano no horário compreendido entre?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "22 (vinte e duas) horas e 06 (seis) horas",
                     "correta": true
                 },
@@ -935,7 +906,8 @@
         },
         {
             "titulo": "Retirar o veículo do local do acidente, no qual haja vítima, sem autorização da autoridade de trânsito?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "só é permitido para prestar socorro à vítima do acidente.",
                     "correta": true
                 },
@@ -955,7 +927,8 @@
         },
         {
             "titulo": "O condutor se torna inabilitado para conduzir qualquer espécie de veículo automotor quando?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "seu veículo for apreendido."
                 },
                 {
@@ -975,7 +948,8 @@
         },
         {
             "titulo": "De acordo com a Legislação de Trânsito, os veículos, quanto à espécie, são?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "oficial, de passageiros, de aluguel e de corrida."
                 },
                 {
@@ -995,7 +969,8 @@
         },
         {
             "titulo": "O condutor de veículo automotor envolvido em acidente de trânsito, sendo considerado culpado, além da punição que lhe for aplicável ou aplicada, deverá ser submetido a exames de aptidão física e mental, noções de primeiros socorros e ainda a?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "exame de direção veicular."
                 },
                 {
@@ -1015,7 +990,8 @@
         },
         {
             "titulo": "A imobilização do veículo durante o tempo apenas necessário para o embarque/desembarque de pessoas caracteriza-se como?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "ponto de parada."
                 },
                 {
@@ -1035,7 +1011,8 @@
         },
         {
             "titulo": "De acordo com a Legislação de Trânsito, os veículos são classificados quanto a sua tração?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "animal, propulsão humana, automóvel e motocicleta."
                 },
                 {
@@ -1055,7 +1032,8 @@
         },
         {
             "titulo": "De acordo com a Legislação de Trânsito, os veículos, quanto a sua categoria, são classificados em?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "oficial, representação diplomática, aluguel e de polícia."
                 },
                 {
@@ -1075,7 +1053,8 @@
         },
         {
             "titulo": "É proibido a todo condutor de veículo?",
-            "respostas": [{
+            "respostas": [
+                {
                     "titulo": "prestar socorro às vítimas de acidentes."
                 },
                 {

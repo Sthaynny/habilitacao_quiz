@@ -60,7 +60,7 @@
                     "titulo": " Contêm gotículas de óleo que se depositam sobre a pele causando micose."
                 },
                 {
-                    "titulo": "As opções A e D estão corretas."
+                    "titulo": "Todas as alternativas estão corretas."
                 }
             ]
         },
@@ -131,7 +131,7 @@
             "titulo": "É um gás letal, se em grande concentração, expelido pelos veículos:",
             "respostas": [
                 {
-                    "titulo": "Aldeídos ."
+                    "titulo": "Aldeídos."
                 },
                 {
                     "titulo": "Hidrocarbonetos."
@@ -161,7 +161,7 @@
                     "titulo": "As regras de etiqueta sociais deverão ser sempre utilizadas."
                 },
                 {
-                    "titulo": "Conhecer claramente as regras do grupo e respeitá-las, bem como conhecer e exercer seus direitos.",
+                    "titulo": "Conhecer as regras do grupo e respeitá-las, bem como exercer seus direitos.",
                     "correta": true
                 },
                 {
@@ -200,7 +200,7 @@
                     "titulo": "Sim, mas somente nos casos em que ocorrer um conflito."
                 },
                 {
-                    "titulo": "Não, pois as Leis e Regras valem para todos, indiferentemente de qualquer fator.",
+                    "titulo": "Não,as Leis e Regras valem para todos, indiferentemente de qualquer fator.",
                     "correta": true
                 },
                 {
@@ -242,7 +242,7 @@
                     "titulo": "Ser amigável, cordial, tolerante e cooperativo com os demais usuários da via, relevando erros e defeitos dos demais."
                 },
                 {
-                    "titulo": "As opções a) e b) estão corretas",
+                    "titulo": "Conhecer e respeitar as Normas de Trânsito e o direito dos outros, bem como preservar o meio ambiente e Ser amigável, cordial, tolerante e cooperativo com os demais usuários da via, relevando erros e defeitos dos demais.",
                     "correta": true
                 },
                 {
@@ -351,7 +351,7 @@
                     "titulo": "Pela maior emissão de poluentes."
                 },
                 {
-                    "titulo": "Pela desregulagem dos motores causada pelo frio. "
+                    "titulo": "Pela desregulagem dos motores causados pelo frio. "
                 },
                 {
                     "titulo": "Pela maior utilização do ar quente dos veículos. "
@@ -401,7 +401,7 @@
             ]
         },
         {
-            "titulo": "Para reduzir a emissão de poluentes do ar, causada pelos veículo, é INCORRETO afirmar que se deve:",
+            "titulo": "Para reduzir a emissão de poluentes do ar, causada pelos veículos, é INCORRETO afirmar que se deve:",
             "respostas": [
                 {
                     "titulo": "Fazer uso de dispositivo de controle de emissão de gases (catalisador)."
@@ -488,7 +488,7 @@
             "titulo": "O estacionamento sobre o passeio é:",
             "respostas": [
                 {
-                    "titulo": "Permitido nas proximidades de bares e restaurantes no período noturno."
+                    "titulo": "Permitido próximo de bares e restaurantes no período noturno."
                 },
                 {
                     "titulo": "Permitido apenas para embarque e desembarque de passageiros."
@@ -614,20 +614,20 @@
             "titulo": "Quando uma pessoa “corta” a frente da outra sem usar as luzes indicadoras de direção, esta pessoa é:",
             "respostas": [
                 {
-                    "titulo": "É muito bem educada e seus pais têm orgulho."
+                    "titulo": "É muito bem-educada e seus pais têm orgulho."
                 },
                 {
-                    "titulo": "É confiante de que os outros pararam então eles estão certo."
+                    "titulo": "É confiante que os outros pararam então eles estão certos."
                 },
                 {
                     "titulo": "Ela está certa todos o fazem."
                 },
                 {
-                    "titulo": "É muito mau educada, e deveria repensar suas atitudes no trânsito.",
+                    "titulo": "É muito mal-educada, e deveria repensar suas atitudes no trânsito.",
                     "correta": true
                 },
                 {
-                    "titulo": "Nenhuma da alternativas anteriores."
+                    "titulo": "Nenhuma das alternativas anteriores."
                 }
             ]
         }
