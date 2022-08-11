@@ -1,36 +1,30 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:habilitacao_quiz/app/features/home/domain/usecases/meio_ambiente_quiz_usercase.dart';
-import 'package:habilitacao_quiz/app/shared/data/models/questoes_model.dart';
-import 'package:habilitacao_quiz/app/shared/data/repositories/quiz_repository.dart';
 import 'package:habilitacao_quiz/app/shared/domain/entities/quiz_entity.dart';
 import 'package:habilitacao_quiz/core/exceptions/erro.dart';
-import 'package:mocktail/mocktail.dart';
 
-import '../../../../utils/utils.dart';
-
-class _MockRepository extends Mock implements QuizRepository {}
+import 'utils.dart';
 
 void main() {
-  final _MockRepository repository = _MockRepository();
-  final MeioAmbienteQuizUsercase usercase =
-      MeioAmbienteQuizUsercase(repository);
-
+  late final MockSuccessQuizRepository repositorySucess;
+  late final MockErrorQuizRepository repositoryError;
+  late final MeioAmbienteQuizUsercase usercaseSucess;
+  late final MeioAmbienteQuizUsercase usercaseError;
+  setUpAll(() {
+    repositorySucess = MockSuccessQuizRepository();
+    repositoryError = MockErrorQuizRepository();
+    usercaseSucess = MeioAmbienteQuizUsercase(repositorySucess);
+    usercaseError = MeioAmbienteQuizUsercase(repositoryError);
+  });
   group('Teste MeioAmbienteQuizUsercase', () {
-    final tInstanceQuizModel = QuizModel.fromMap(tMapQuizModel);
     test('Deve dar sucesso', () async {
-      when(() => repository.getQuiz(any())).thenAnswer(
-        (_) async => right(tInstanceQuizModel),
-      );
-      final result = await usercase.call();
+      final result = await usercaseSucess.call();
       expect(result.isRight(), true);
       expect(result.fold(id, id), isA<QuizEntity>());
     });
     test('Deve dar erro', () async {
-      when(() => repository.getQuiz(any())).thenAnswer(
-        (realInvocation) async => left(ExceptionErro()),
-      );
-      final result = await usercase.call();
+      final result = await usercaseError.call();
       expect(result.isLeft(), true);
       expect(result.fold(id, id), isA<ExceptionErro>());
     });

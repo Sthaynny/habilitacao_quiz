@@ -13,6 +13,13 @@ class QuizModel extends QuizEntity {
           perguntas: perguntas,
         );
 
+  QuizEntity fromEntity() {
+    return QuizEntity(
+      titulo: titulo,
+      perguntas: perguntas,
+    );
+  }
+
   Map<String, dynamic> toMap() {
     return {
       'titulo': titulo,
