@@ -110,20 +110,23 @@
             ]
         },
         {
-            "titulo": "Considere a ilustração abaixo: \nQuando o nível de água deste tipo bateria de um veículo automotor estiver abaixo do normal, o Motorista deverá:",
+            "titulo": "O defeito mais comum no carburador caracteriza-se por",
             "respostas": [
                 {
-                    "titulo": "Substituir a bateria por uma nova"
+                    "titulo": "velas queimadas."
                 },
                 {
-                    "titulo": "Completar com água destilada",
+                    "titulo": "filtro de ar furado"
+                },
+                {
+                    "titulo": "entupimento.",
                     "correta": true
                 },
                 {
-                    "titulo": "Completar com água e aditivo"
+                    "titulo": "tanque de combustível furado."
                 },
                 {
-                    "titulo": "Aumentar a amperagem do regulador."
+                    "titulo": "rompimento do cabo do acelerador."
                 }
             ]
         },
