@@ -2,16 +2,16 @@
     "titulo": "Mecânica Básica",
     "perguntas": [
         {
-            "titulo": "A embreagem, composta basicamente de um disco e um platô, tem como função principal: ",
+            "titulo": "A embreagem tem como função principal: ",
             "respostas": [
                 {
-                    "titulo": "não encavalar as marchas"
+                    "titulo": "Não encavalar as marchas"
                 },
                 {
                     "titulo": "Permitir ligar o veículo mais facilmente"
                 },
                 {
-                    "titulo": "Ligar e desligar a força motriz do motor da parte restante da transmissão.",
+                    "titulo": "Ligar e desligar a força motriz do motor da parte restante da transmissão",
                     "correta": true
                 },
                 {
@@ -20,7 +20,7 @@
             ]
         },
         {
-            "titulo": "A finalidade da suspensão e dos amortecedores é manter a estabilidade do veículo. Quando há desgaste desses itens do veículo: ",
+            "titulo": "A  suspensão e amortecedores mantem a estabilidade do veículo. Quando há desgaste desses itens do veículo: ",
             "respostas": [
                 {
                     "titulo": "Haverá redução do nível do óleo do sistema de transmissão, provocando travamento do câmbio "
@@ -30,15 +30,15 @@
                     "correta": true
                 },
                 {
-                    "titulo": "Poderão causar a perda de controle do veículo, principalmente em frenagens e curvas"
+                    "titulo": "Poderão causar a perda de controle do veículo"
                 },
                 {
-                    "titulo": "Poderá ocorrer esvaziamento da água do radiador, fundido o motor."
+                    "titulo": "Poderá ocorrer esvaziamento da água do radiador"
                 }
             ]
         },
         {
-            "titulo": "O condutor, após passar sobre uma via alagada, deve testar a:",
+            "titulo": "O condutor, após passar sobre uma via alagada, deve fazer quais testes no veículos sendo conduzido?",
             "respostas": [
                 {
                     "titulo": "Embreagem e a eficiência dos freios, acionando os pedais com a máxima pressão"
@@ -56,7 +56,7 @@
             ]
         },
         {
-            "titulo": "A estabilidade do veículo também está relacionada com os pneus. O condutor deve conferir periódica e regularmente:\nI- a calibragem dos pneus;\nII- o desgaste dos pneus;\n II- a existência de possíveis deformações na carcaça.\nÉ correto o que consta em: ",
+            "titulo": "A estabilidade do veículo também está relacionada aos pneus. O condutor deve conferir de forma periódica e regularmente:\nI- a calibragem dos pneus;\nII- o desgaste dos pneus;\n III- a existência de possíveis deformações na carcaça.\nÉ correto o que consta em: ",
             "respostas": [
                 {
                     "titulo": "I, II e III",
@@ -86,7 +86,7 @@
                     "titulo": "A bateria do veículo está com meia carga"
                 },
                 {
-                    "titulo": "Há uma lâmpada queimada no sistema.",
+                    "titulo": "Há uma lâmpada queimada no sistema",
                     "correta": true
                 }
             ]
@@ -98,35 +98,32 @@
                     "titulo": "Nas rodas dianteiras é menor que na traseira"
                 },
                 {
-                    "titulo": "E uniforme entre as rodas"
+                    "titulo": "É uniforme entre as rodas"
                 },
                 {
-                    "titulo": "E aplicada somente nas rodas dianteiras"
+                    "titulo": "É aplicada somente nas rodas dianteiras"
                 },
                 {
-                    "titulo": "Nas rodas traseiras é menor que na dianteira.",
+                    "titulo": "Nas rodas traseiras é menor que na dianteira",
                     "correta": true
                 }
             ]
         },
         {
-            "titulo": "O defeito mais comum no carburador caracteriza-se por",
+            "titulo": "Considere a ilustração abaixo: \nQuando o nível de água deste tipo de bateria de um veículo automotor estiver abaixo do normal, o motorista deverá:",
             "respostas": [
                 {
-                    "titulo": "velas queimadas."
+                    "titulo": "Substituir a bateria por uma nova"
                 },
                 {
-                    "titulo": "filtro de ar furado"
-                },
-                {
-                    "titulo": "entupimento.",
+                    "titulo": "Completar com água destilada",
                     "correta": true
                 },
                 {
-                    "titulo": "tanque de combustível furado."
+                    "titulo": "Completar com água e aditivo"
                 },
                 {
-                    "titulo": "rompimento do cabo do acelerador."
+                    "titulo": "Aumentar a amperagem do regulador"
                 }
             ]
         },
@@ -134,7 +131,7 @@
             "titulo": "Para remover a bateria de um veículo deve-se:",
             "respostas": [
                 {
-                    "titulo": "Simplesmente abra o capô e retirar"
+                    "titulo": "Simplesmente abrir o capô e retirar"
                 },
                 {
                     "titulo": "Soltar primeiro o cabo do negativo e depois o do positivo",
@@ -167,7 +164,7 @@
             ]
         },
         {
-            "titulo": "A função da bateria é",
+            "titulo": "A função da bateria é:",
             "respostas": [
                 {
                     "titulo": "Gerar movimento às rodas"
@@ -180,12 +177,12 @@
                     "correta": true
                 },
                 {
-                    "titulo": "Regular a potência do motor. "
+                    "titulo": "Regular a potência do motor "
                 }
             ]
         },
         {
-            "titulo": "A calibragem correta contribui para o prolongamento da vida útil dos pneus. Um pneu com pressão excessiva terá desgaste.",
+            "titulo": "A calibragem correta contribui para o prolongamento da vida útil dos pneus. Um pneu com pressão excessiva terá desgaste:",
             "respostas": [
                 {
                     "titulo": "Na lateral interna do pneu em relação à roda"
@@ -197,7 +194,7 @@
                     "titulo": "Em ambos os lados do talão de fixação do pneu"
                 },
                 {
-                    "titulo": "Ao centro da banda de rodagem do pneu.",
+                    "titulo": "Ao centro da banda de rodagem do pneu",
                     "correta": true
                 }
             ]
@@ -210,13 +207,13 @@
                     "correta": true
                 },
                 {
-                    "titulo": "Aspirar a água das câmaras de resfriamento do bloco do motor, fazendo-a circular pelo radiador para esfriar."
+                    "titulo": "Aspirar a água das câmaras de resfriamento do bloco do motor, fazendo-a circular pelo radiador para esfriar"
                 },
                 {
                     "titulo": "Aspirar a água do reservatório de expansão e levá-la ao radiador"
                 },
                 {
-                    "titulo": "Levar a água do reservatório de expansão até as câmaras de resfriamento do motor."
+                    "titulo": "Levar a água do reservatório de expansão até as câmaras de resfriamento do motor"
                 }
             ]
         },
@@ -254,7 +251,7 @@
                     "titulo": "Lavar os pneus, evitando derrapagens"
                 },
                 {
-                    "titulo": "Verificar o nível do óleo do motor.",
+                    "titulo": "Verificar o nível do óleo do motor",
                     "correta": true
                 }
             ]
@@ -276,7 +273,7 @@
                     "titulo": "Evitar trancos no câmbio"
                 },
                 {
-                    "titulo": "Permitir a redução de velocidade do veículo."
+                    "titulo": "Permitir a redução de velocidade do veículo"
                 }
             ]
         },
@@ -297,12 +294,12 @@
                     "titulo": "Aumentar a vida dos pneus"
                 },
                 {
-                    "titulo": "Reduzir a velocidade."
+                    "titulo": "Reduzir a velocidade"
                 }
             ]
         },
         {
-            "titulo": "Durante uma viagem, ao descobrir que a lâmpada do pisca-pisca está queimada, três motoristas reagem de forma diferente: \nMotorista 1: resolve trocar na volta e segue em frente \nMotorista 2: deixa para trocar na próxima revisão geral\nMotorista 3: procura um auto elétrico para consertar.\nO motorista que agiu corretamente foi:",
+            "titulo": "Durante uma viagem, ao descobrir que a lâmpada do pisca-pisca está queimada, três motoristas reagem de formas diferentes: \nMotorista 1: resolve trocar na volta e segue em frente \nMotorista 2: deixa para trocar na próxima revisão geral\nMotorista 3: procura um auto elétrico para consertar.\nO motorista que agiu corretamente foi:",
             "respostas": [
                 {
                     "titulo": "O motorista 1"
@@ -318,7 +315,7 @@
                     "titulo": "Nenhum deles"
                 },
                 {
-                    "titulo": "A motorista 1 e 2."
+                    "titulo": "Os motoristas 1 e 2"
                 }
             ]
         },
@@ -329,7 +326,7 @@
                     "titulo": "Pelo carburador"
                 },
                 {
-                    "titulo": "Pela bomba d’agua",
+                    "titulo": "Pela bomba d’água",
                     "correta": true
                 },
                 {
@@ -339,7 +336,7 @@
                     "titulo": "Pela roda d'água"
                 },
                 {
-                    "titulo": "Pela correia dentada."
+                    "titulo": "Pela correia dentada"
                 }
             ]
         },
@@ -360,7 +357,7 @@
                     "titulo": "Freios"
                 },
                 {
-                    "titulo": "Estrutural."
+                    "titulo": "Estrutural"
                 }
             ]
         },
@@ -381,7 +378,7 @@
                     "titulo": "Liso ou para chuva"
                 },
                 {
-                    "titulo": "De perfil alto ou baixo."
+                    "titulo": "De perfil alto ou baixo"
                 }
             ]
         },
@@ -402,7 +399,7 @@
                     "titulo": "Aos critérios de puxar o freio de estacionamento e engatar uma marcha, para maior segurança"
                 },
                 {
-                    "titulo": "Todas as alternativas estão corretas."
+                    "titulo": "Todas as alternativas estão corretas"
                 }
             ]
         },
@@ -420,7 +417,7 @@
                     "correta": true
                 },
                 {
-                    "titulo": "Possibilitar uma dificuldade de engate e mudança de marchas."
+                    "titulo": "Possibilitar uma dificuldade de engate e mudança de marchas"
                 }
             ]
         },
@@ -437,7 +434,7 @@
                     "titulo": "Admissão, compressão, anéis e exaustão"
                 },
                 {
-                    "titulo": "Admissão, compressão, explosão e exaustão.",
+                    "titulo": "Admissão, compressão, explosão e exaustão",
                     "correta": true
                 }
             ]
@@ -471,7 +468,7 @@
                     "titulo": "Quente, logo após ter sido desligado"
                 },
                 {
-                    "titulo": "Com o motor quente, pois a uma regularidade"
+                    "titulo": "Com o motor quente, pois há uma regularidade"
                 },
                 {
                     "titulo": "Com o motor frio íngreme"
@@ -546,12 +543,12 @@
                     "correta": true
                 },
                 {
-                    "titulo": "Controlado de combustível"
+                    "titulo": "Controlador de combustível"
                 }
             ]
         },
         {
-            "titulo": "Em certo veículo, há dificuldade de engate em todas as marchas, mas apenas com o câmbio frio, Uma das prováveis causas dessa dificuldade poder ser:",
+            "titulo": "Em certo veículo, há dificuldade de engate em todas as marchas, mas apenas com o câmbio frio. Uma das prováveis causas dessa dificuldade poder ser:",
             "respostas": [
                 {
                     "titulo": "Alavanca de câmbio torta"
@@ -564,7 +561,7 @@
                     "correta": true
                 },
                 {
-                    "titulo": "Caixa de cambio sem óleo"
+                    "titulo": "Caixa de câmbio sem óleo"
                 }
             ]
         }
