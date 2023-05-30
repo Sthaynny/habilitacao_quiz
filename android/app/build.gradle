@@ -32,6 +32,10 @@ if (keystorePropertiesFile.exists()) {
 }
 
 android {
+    
+    namespace "br.com.sthaynny.habilitacao_quiz"
+    compileSdkVersion flutter.compileSdkVersion
+    ndkVersion flutter.ndkVersion
 
     compileSdkVersion flutter.compileSdkVersion
 
@@ -50,7 +54,7 @@ android {
 
     defaultConfig {
         applicationId "br.com.sthaynny.habilitacao_quiz"
-        minSdkVersion flutter.minSdkVersion
+        minSdkVersion 23
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
