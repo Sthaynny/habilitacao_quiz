@@ -1,3 +1,5 @@
 Atividades realizadas na versão:
   - Atalização do tempo da splash;
   - Atualização de comportamentos inadequados no histórico e home;
+  - Atualizado questionario;
+  - Aplicanfo correções nos Questionaios

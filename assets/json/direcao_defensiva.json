@@ -2,6 +2,87 @@
     "titulo": "Direção Defensiva",
     "perguntas": [
         {
+            "titulo": "Qual é a idade mínima para transportar crianças na garupa de motocicletas e ciclomotores:",
+            "respostas": [
+                {
+                    "titulo": "7 anos.",
+                    "correta": true
+                },
+                {
+                    "titulo": "5 anos."
+                },
+                {
+                    "titulo": "13 anos."
+                },
+                {
+                    "titulo": "3 anos."
+                },
+                {
+                    "titulo": "9 anos."
+                }
+            ]
+        },
+        {
+            "titulo": "A principal finalidade da Inspeção de Segurança Veicular tem por objetivo",
+            "respostas": [
+                {
+                    "titulo": "Contribuir para a segurança do trânsito",
+                    "correta": true
+                },
+                {
+                    "titulo": "Contribuir para a fluidez  do  trânsito  nos  horários de pico."
+                },
+                {
+                    "titulo": "Retirar de circulação os veículos de carga."
+                },
+                {
+                    "titulo": "Verificar os documentos do condutor."
+                },
+                {
+                    "titulo": "Apreender veículos"
+                }
+            ]
+        },
+        {
+            "titulo": "Cuidados a serem tomados nos cruzamentos, exceto:",
+            "respostas": [
+                {
+                    "titulo": "Acelerar o veículo.",
+                    "correta": true
+                },
+                {
+                    "titulo": "Obedecer à sinalização."
+                },
+                {
+                    "titulo": "Redobrar a atenção."
+                },
+                {
+                    "titulo": "Reduzir a velocidade"
+                }
+            ]
+        },
+        {
+            "titulo": " O procedimento correto ao parar o veículo no acostamento, em situação de emergência, é:",
+            "respostas": [
+                {
+                    "titulo": "Não é necessário sinalizar."
+                },
+                {
+                    "titulo": "Ligar o pisca-alerta e sinalizar com o triângulo de segurança."
+                },
+                {
+                    "titulo": "Apenas, ligar o pisca-alerta."
+                },
+                {
+                    "titulo": "Acionar o farol.",
+                    "correta": true
+                },
+                {
+                    "titulo": "Sobir, levemente, o veículo no acostamento"
+                }
+            ]
+        },
+        {
             "titulo": "O condutor no trânsito deve?",
             "respostas": [
                 {
