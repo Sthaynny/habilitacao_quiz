@@ -16,14 +16,14 @@ class QuizButtonWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all(
+        backgroundColor: WidgetStateProperty.all(
           AppColors.azul.withAlpha(200),
         ),
-        elevation: MaterialStateProperty.all(2),
-        fixedSize: MaterialStateProperty.all(
+        elevation: WidgetStateProperty.all(2),
+        fixedSize: WidgetStateProperty.all(
           const Size(150, 300),
         ),
-        shape: MaterialStateProperty.all(
+        shape: WidgetStateProperty.all(
           ContinuousRectangleBorder(
             borderRadius: BorderRadius.circular(18),
           ),

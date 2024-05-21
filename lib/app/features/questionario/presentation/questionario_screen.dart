@@ -37,11 +37,9 @@ class _QuestionarioScreenState extends State<QuestionarioScreen>
   @override
   Widget build(BuildContext context) {
     return Obx(
-      () => WillPopScope(
-        onWillPop: () async {
-          controller.fecharQuestionario();
-          return false;
-        },
+      () => PopScope(
+        canPop: false,
+        onPopInvoked: (_) => controller.fecharQuestionario(),
         child: Scaffold(
           appBar: AppBarQuestionarioWidget(
             onClosed: () {
