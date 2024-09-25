@@ -5,10 +5,10 @@ import 'package:habilitacao_quiz/core/styles/spacing_stack.dart';
 
 class IndicadorQuestoesWidget extends StatelessWidget {
   const IndicadorQuestoesWidget({
-    Key? key,
+    super.key,
     required this.currentPage,
     required this.length,
-  }) : super(key: key);
+  });
   final int currentPage;
   final int length;
 

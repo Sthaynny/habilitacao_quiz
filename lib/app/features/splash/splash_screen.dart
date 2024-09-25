@@ -6,7 +6,7 @@ import 'package:habilitacao_quiz/app/features/routes/routes.dart';
 import 'package:habilitacao_quiz/core/styles/app_styles.dart';
 
 class SplashScreen extends StatefulWidget {
-  const SplashScreen({Key? key}) : super(key: key);
+  const SplashScreen({super.key});
 
   @override
   State<SplashScreen> createState() => _SplashScreenState();

@@ -13,10 +13,10 @@ import 'package:habilitacao_quiz/core/utils/strings.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({
-    Key? key,
+    super.key,
     required this.controller,
     required this.quizzesController,
-  }) : super(key: key);
+  });
   final HomeController controller;
   final QuizzesController quizzesController;
 

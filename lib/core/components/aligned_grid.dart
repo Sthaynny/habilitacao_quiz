@@ -6,11 +6,11 @@ class AlignedGrid extends StatefulWidget {
   final double runSpacing;
 
   const AlignedGrid({
-    Key? key,
+    super.key,
     required this.children,
     this.spacing = 4,
     this.runSpacing = 4,
-  }) : super(key: key);
+  });
 
   @override
   State<AlignedGrid> createState() => _AlignedGridState();

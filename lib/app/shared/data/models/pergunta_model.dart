@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:typed_data';
 
 import 'package:habilitacao_quiz/app/shared/data/models/resposta_model.dart';
 import 'package:habilitacao_quiz/app/shared/domain/entities/pergunta_entity.dart';
@@ -7,14 +6,10 @@ import 'package:habilitacao_quiz/app/shared/domain/entities/resposta_entity.dart
 
 class PerguntaModel extends PerguntaEntity {
   PerguntaModel({
-    required String titulo,
-    required List<RespostaEntity> respostas,
-    Uint8List? imagemB64,
-  }) : super(
-          titulo: titulo,
-          respostas: respostas,
-          imagemB64: imagemB64,
-        );
+    required super.titulo,
+    required super.respostas,
+    super.imagemB64,
+  });
 
   Map<String, dynamic> toMap() {
     final map = <String, dynamic>{

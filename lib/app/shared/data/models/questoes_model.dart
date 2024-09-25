@@ -6,12 +6,9 @@ import 'package:habilitacao_quiz/app/shared/domain/entities/quiz_entity.dart';
 
 class QuizModel extends QuizEntity {
   QuizModel({
-    required String titulo,
-    required List<PerguntaEntity> perguntas,
-  }) : super(
-          titulo: titulo,
-          perguntas: perguntas,
-        );
+    required super.titulo,
+    required super.perguntas,
+  });
 
   QuizEntity fromEntity() {
     return QuizEntity(

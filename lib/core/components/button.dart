@@ -26,11 +26,11 @@ Color? _colorButtonOutline(bool isAble) =>
 class AppButton extends StatelessWidget {
   const AppButton({
     required this.child,
-    Key? key,
+    super.key,
     this.onPressed,
     this.buttonStyle,
     this.margin,
-  }) : super(key: key);
+  });
   final VoidCallback? onPressed;
   final Widget child;
   final BoxDecoration? buttonStyle;

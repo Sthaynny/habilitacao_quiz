@@ -5,7 +5,7 @@ import 'package:habilitacao_quiz/core/styles/spacing_stack.dart';
 import 'package:habilitacao_quiz/core/utils/strings.dart';
 
 class CarQuizWidget extends StatelessWidget {
-  const CarQuizWidget({Key? key}) : super(key: key);
+  const CarQuizWidget({super.key});
 
   @override
   Widget build(BuildContext context) {

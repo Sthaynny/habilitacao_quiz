@@ -11,10 +11,10 @@ import 'package:habilitacao_quiz/core/utils/strings.dart';
 
 class QuestionarioScreen extends StatefulWidget {
   const QuestionarioScreen({
-    Key? key,
+    super.key,
     required this.quizEntity,
     required this.controller,
-  }) : super(key: key);
+  });
 
   final QuestionarioController controller;
   final QuizEntity quizEntity;
@@ -39,7 +39,7 @@ class _QuestionarioScreenState extends State<QuestionarioScreen>
     return Obx(
       () => PopScope(
         canPop: false,
-        onPopInvoked: (_) => controller.fecharQuestionario(),
+        onPopInvokedWithResult: (_, __) => controller.fecharQuestionario(),
         child: Scaffold(
           appBar: AppBarQuestionarioWidget(
             onClosed: () {

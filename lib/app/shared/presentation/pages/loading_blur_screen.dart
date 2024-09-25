@@ -8,8 +8,8 @@ class LoadingBlurScreen extends StatelessWidget {
   const LoadingBlurScreen({
     required this.child,
     this.enabled = false,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   final Widget child;
   final bool enabled;

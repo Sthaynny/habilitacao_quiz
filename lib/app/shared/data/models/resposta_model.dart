@@ -4,9 +4,9 @@ import 'package:habilitacao_quiz/app/shared/domain/entities/resposta_entity.dart
 
 class RespostaModel extends RespostaEntity {
   RespostaModel({
-    required String titulo,
-    bool correta = false,
-  }) : super(titulo: titulo, correta: correta);
+    required super.titulo,
+    super.correta,
+  });
 
   Map<String, dynamic> toMap() {
     return {

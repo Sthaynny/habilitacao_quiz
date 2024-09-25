@@ -4,11 +4,11 @@ import 'package:habilitacao_quiz/core/styles/spacing_stack.dart';
 
 class QuizCardWidget extends StatelessWidget {
   const QuizCardWidget({
-    Key? key,
+    super.key,
     required this.title,
     required this.onTap,
     required this.image,
-  }) : super(key: key);
+  });
   final String title;
   final String image;
   final VoidCallback onTap;

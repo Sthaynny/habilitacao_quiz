@@ -9,9 +9,9 @@ import 'package:habilitacao_quiz/core/utils/strings.dart';
 
 class HistoricoWidget extends StatefulWidget {
   const HistoricoWidget({
-    Key? key,
+    super.key,
     required this.historico,
-  }) : super(key: key);
+  });
   final HistoricoEntity historico;
 
   @override

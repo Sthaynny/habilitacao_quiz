@@ -7,9 +7,9 @@ class RespostaWidget extends StatelessWidget {
   const RespostaWidget({
     required this.resposta,
     required this.onTap,
-    Key? key,
+    super.key,
     this.isSelected = false,
-  }) : super(key: key);
+  });
   final RespostaEntity resposta;
   final bool isSelected;
   final ValueChanged<RespostaEntity> onTap;

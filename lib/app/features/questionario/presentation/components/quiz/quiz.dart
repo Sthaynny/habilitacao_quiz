@@ -7,12 +7,12 @@ import 'package:habilitacao_quiz/core/styles/spacing_stack.dart';
 
 class QuizWidget extends StatelessWidget {
   const QuizWidget({
-    Key? key,
+    super.key,
     required this.pergunta,
     required this.onSelected,
     this.respostaSelected,
     this.scrollController,
-  }) : super(key: key);
+  });
   final PerguntaEntity pergunta;
   final ValueChanged<RespostaEntity> onSelected;
   final RespostaEntity? respostaSelected;
@@ -32,15 +32,13 @@ class QuizWidget extends StatelessWidget {
           SizedBox(
             height: AppSpacingStack.xxxSmall.value,
           ),
-          ...pergunta.respostas
-              .map(
-                (elemento) => RespostaWidget(
-                  onTap: onSelected,
-                  resposta: elemento,
-                  isSelected: respostaSelected == elemento,
-                ),
-              )
-              .toList(),
+          ...pergunta.respostas.map(
+            (elemento) => RespostaWidget(
+              onTap: onSelected,
+              resposta: elemento,
+              isSelected: respostaSelected == elemento,
+            ),
+          ),
         ],
       ),
     );

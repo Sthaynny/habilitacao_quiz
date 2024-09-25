@@ -5,12 +5,12 @@ import 'package:habilitacao_quiz/core/styles/app_styles.dart';
 
 class CircularProgressWidget extends StatefulWidget {
   const CircularProgressWidget({
-    Key? key,
+    super.key,
     this.primaryColor = AppColors.verde,
     this.secondaryColor = AppColors.azul,
     this.lapDuration = 1000,
     this.strokeWidth = 6.5,
-  }) : super(key: key);
+  });
 
   final Color secondaryColor;
   final Color primaryColor;

@@ -7,9 +7,8 @@ class AppBarQuestionarioWidget extends PreferredSize {
     required this.tamanhoQuiz,
     required this.paginaAtual,
     this.onClosed,
-    Key? key,
+    super.key,
   }) : super(
-          key: key,
           preferredSize: const Size.fromHeight(90),
           child: SafeArea(
             child: Column(

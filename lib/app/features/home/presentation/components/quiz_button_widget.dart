@@ -3,11 +3,11 @@ import 'package:habilitacao_quiz/core/styles/app_styles.dart';
 
 class QuizButtonWidget extends StatelessWidget {
   const QuizButtonWidget({
-    Key? key,
+    super.key,
     required this.titulo,
     this.onPressend,
     required this.iconAsset,
-  }) : super(key: key);
+  });
   final String titulo;
   final VoidCallback? onPressend;
   final String iconAsset;

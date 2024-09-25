@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:habilitacao_quiz/core/styles/app_colors.dart';
 
 class LinearProgressIndicatorWidget extends StatelessWidget {
-  const LinearProgressIndicatorWidget({Key? key, required this.value})
-      : super(key: key);
+  const LinearProgressIndicatorWidget({super.key, required this.value});
   final double value;
 
   @override

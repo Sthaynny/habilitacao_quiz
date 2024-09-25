@@ -9,9 +9,9 @@ import 'package:share_plus/share_plus.dart';
 
 class ResultadoScreen extends StatelessWidget {
   const ResultadoScreen({
-    Key? key,
+    super.key,
     required this.args,
-  }) : super(key: key);
+  });
   final ResultadoEntity args;
 
   String get getPercentual => args.percentual.toPrecision(2).toString();

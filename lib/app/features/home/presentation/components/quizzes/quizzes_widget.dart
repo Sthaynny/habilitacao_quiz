@@ -8,9 +8,9 @@ import 'package:habilitacao_quiz/core/utils/strings.dart';
 
 class QuizzesWidget extends StatelessWidget {
   const QuizzesWidget({
-    Key? key,
+    super.key,
     required this.controller,
-  }) : super(key: key);
+  });
 
   final QuizzesController controller;
 
