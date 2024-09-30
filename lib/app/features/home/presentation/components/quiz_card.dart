@@ -17,8 +17,10 @@ class QuizCardWidget extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Container(
-        padding: EdgeInsets.all(AppSpacingStack.xxxSmall.value),
-        margin: EdgeInsets.all(AppSpacingStack.nano.value),
+        padding: EdgeInsets.symmetric(
+            vertical: AppSpacingStack.nano.value,
+            horizontal: AppSpacingStack.xxxSmall.value),
+        margin: EdgeInsets.all(AppSpacingStack.quarck.value),
         decoration: BoxDecoration(
           border: const Border.fromBorderSide(
             BorderSide(
@@ -37,11 +39,11 @@ class QuizCardWidget extends StatelessWidget {
               padding: EdgeInsets.only(bottom: AppSpacingStack.xxxSmall.value),
               child: Image.asset(
                 image,
-                width: 54,
+                width: 48,
               ),
             ),
             const Spacer(
-              flex: 2,
+              flex: 1,
             ),
             Container(
               margin: EdgeInsets.only(bottom: AppSpacingStack.nano.value),
