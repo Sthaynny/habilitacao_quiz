@@ -28,7 +28,7 @@ class LoadingBlurScreen extends StatelessWidget {
               ignoring: !enabled,
               child: Container(
                   decoration: BoxDecoration(
-                    color: AppColors.preto.withOpacity(.5),
+                    color: AppColors.preto.withValues(alpha: .5),
                   ),
                   child: const Center(
                     child: CircularProgressWidget(),

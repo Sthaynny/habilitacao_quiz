@@ -54,7 +54,7 @@ class _CircularProgressState extends State<CircularProgressWidget>
       ).animate(controller),
       child: CustomPaint(
         painter: CirclePaint(
-            secondaryColor: widget.secondaryColor.withOpacity(0.1),
+            secondaryColor: widget.secondaryColor.withValues(alpha: 0.1),
             primaryColor: widget.primaryColor,
             strokeWidth: widget.strokeWidth),
         size: Size(kSize, kSize),

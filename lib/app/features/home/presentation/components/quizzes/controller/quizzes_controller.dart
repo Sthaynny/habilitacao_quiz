@@ -82,11 +82,6 @@ class QuizzesController extends GetxController {
         final result = await _simuladoQuizUsercase();
         _emitirEstado(result);
         break;
-      default:
-        _quizEntity = null;
-
-        _setStatus(RxStatus.error());
-        break;
     }
   }
 
