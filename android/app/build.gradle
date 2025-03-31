@@ -32,7 +32,7 @@ android {
     }
 
     defaultConfig {
-        ndkVersion = "21.3.6528147"
+        ndkVersion = flutter.ndkVersion
         applicationId = "br.com.sthaynny.habilitacao_quiz"
         minSdkVersion = 26
         targetSdkVersion = flutter.targetSdkVersion
