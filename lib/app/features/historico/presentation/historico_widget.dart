@@ -11,8 +11,10 @@ class HistoricoWidget extends StatefulWidget {
   const HistoricoWidget({
     super.key,
     required this.historico,
+    required this.bottomAd,
   });
   final HistoricoEntity historico;
+  final Widget bottomAd;
 
   @override
   State<HistoricoWidget> createState() => _HistoricoWidgetState();
@@ -20,6 +22,7 @@ class HistoricoWidget extends StatefulWidget {
 
 class _HistoricoWidgetState extends State<HistoricoWidget> {
   HistoricoEntity get historico => widget.historico;
+  Widget get bottomAd => widget.bottomAd;
 
   @override
   Widget build(BuildContext context) {
@@ -29,11 +32,12 @@ class _HistoricoWidgetState extends State<HistoricoWidget> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            bottomAd,
             Text(
               Strings.historico,
               style: AppFontStyle.headline24Bold,
             ),
-            ...body
+            ...body,
           ],
         ),
       ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:habilitacao_quiz/app/features/historico/presentation/historico_widget.dart';
 import 'package:habilitacao_quiz/app/features/home/presentation/components/app_bar.dart';
 import 'package:habilitacao_quiz/app/features/home/presentation/components/bottom_nav_bar.dart';
@@ -9,6 +10,7 @@ import 'package:habilitacao_quiz/app/features/home/presentation/controller/home_
 import 'package:habilitacao_quiz/app/shared/presentation/pages/loading_blur_screen.dart';
 import 'package:habilitacao_quiz/core/mixins/pop_up_mixin.dart';
 import 'package:habilitacao_quiz/core/styles/app_styles.dart';
+import 'package:habilitacao_quiz/core/utils/ad_helper.dart';
 import 'package:habilitacao_quiz/core/utils/strings.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -28,12 +30,36 @@ class _HomeScreen extends State<HomeScreen> with PopUpMixin {
   HomeController get controller => widget.controller;
   late final QuizzesController quizzesController;
   final PageController pageController = PageController();
+  final ValueNotifier<BannerAd?> bannerAdNotifier = ValueNotifier(null);
 
   @override
   void initState() {
     quizzesController = widget.quizzesController;
     quizzesController.onStatus = (value) => controller.setStatus = value;
+    BannerAd(
+      adUnitId: AdHelper.bottomAd,
+      request: AdRequest(),
+      size: AdSize.banner,
+      listener: BannerAdListener(
+        onAdLoaded: (ad) {
+          bannerAdNotifier.value = ad as BannerAd;
+        },
+        onAdFailedToLoad: (ad, err) {
+          debugPrint('Failed to load a banner ad: ${err.message}');
+          ad.dispose();
+        },
+      ),
+    ).load();
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    bannerAdNotifier.value?.dispose();
+    bannerAdNotifier.dispose();
+    pageController.dispose();
+    quizzesController.dispose();
+    super.dispose();
   }
 
   @override
@@ -52,9 +78,11 @@ class _HomeScreen extends State<HomeScreen> with PopUpMixin {
             children: [
               QuizzesWidget(
                 controller: quizzesController,
+                bottomAd: bottomAd,
               ),
               HistoricoWidget(
                 historico: Get.find(),
+                bottomAd: bottomAd,
               )
             ],
           ),
@@ -97,4 +125,18 @@ class _HomeScreen extends State<HomeScreen> with PopUpMixin {
       );
     });
   }
+
+  Widget get bottomAd => ValueListenableBuilder(
+        valueListenable: bannerAdNotifier,
+        builder: (context, bannerAd, child) {
+          if (bannerAd != null) {
+            return SizedBox(
+              width: bannerAd.size.width.toDouble(),
+              height: bannerAd.size.height.toDouble(),
+              child: AdWidget(ad: bannerAd),
+            );
+          }
+          return Container();
+        },
+      );
 }
