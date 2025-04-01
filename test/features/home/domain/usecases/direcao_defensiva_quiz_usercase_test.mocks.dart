@@ -41,17 +41,17 @@ class MockQuizRepository extends _i1.Mock implements _i3.QuizRepository {
   _i4.Future<_i2.Either<_i5.ExceptionErro, _i6.QuizEntity>> getQuiz(
           String? nome) =>
       (super.noSuchMethod(Invocation.method(#getQuiz, [nome]),
-          returnValue:
-              _i4.Future<_i2.Either<_i5.ExceptionErro, _i6.QuizEntity>>.value(
+              returnValue: _i4
+                  .Future<_i2.Either<_i5.ExceptionErro, _i6.QuizEntity>>.value(
                   _FakeEither_0<_i5.ExceptionErro, _i6.QuizEntity>(
-                      this, Invocation.method(#getQuiz, [nome])))) as _i4
-          .Future<_i2.Either<_i5.ExceptionErro, _i6.QuizEntity>>);
+                      this, Invocation.method(#getQuiz, [nome]))))
+          as _i4.Future<_i2.Either<_i5.ExceptionErro, _i6.QuizEntity>>);
   @override
   _i4.Future<_i2.Either<_i5.ExceptionErro, _i6.QuizEntity>> getSimulado() =>
       (super.noSuchMethod(Invocation.method(#getSimulado, []),
-          returnValue:
-              _i4.Future<_i2.Either<_i5.ExceptionErro, _i6.QuizEntity>>.value(
+              returnValue: _i4
+                  .Future<_i2.Either<_i5.ExceptionErro, _i6.QuizEntity>>.value(
                   _FakeEither_0<_i5.ExceptionErro, _i6.QuizEntity>(
-                      this, Invocation.method(#getSimulado, [])))) as _i4
-          .Future<_i2.Either<_i5.ExceptionErro, _i6.QuizEntity>>);
+                      this, Invocation.method(#getSimulado, []))))
+          as _i4.Future<_i2.Either<_i5.ExceptionErro, _i6.QuizEntity>>);
 }
