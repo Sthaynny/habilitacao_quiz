@@ -1,6 +1,6 @@
 name: habilitacao_quiz
 description: Um projeto para ajudar as pessoas que querem tirar sua CNH.
-version: 1.8.0+28
+version: 1.8.1+29
 repository: https://github.com/Sthaynny/habilitacao_quiz
 
 environment:
