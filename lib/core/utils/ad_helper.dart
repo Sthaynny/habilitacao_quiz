@@ -10,4 +10,7 @@ abstract base class AdHelper {
       throw UnsupportedError('Unsupported platform');
     }
   }
+
+
+  static String get bannerTest =>  'ca-app-pub-3940256099942544/6300978111';
 }

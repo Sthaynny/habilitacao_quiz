@@ -82,7 +82,6 @@ class _HomeScreen extends State<HomeScreen> with PopUpMixin {
               ),
               HistoricoWidget(
                 historico: Get.find(),
-                bottomAd: bottomAd,
               )
             ],
           ),

@@ -18,5 +18,12 @@ void main() {
 }
 
 Future<InitializationStatus> _initGoogleMobileAds() {
+  // Configurar o ID do dispositivo de teste
+  MobileAds.instance.updateRequestConfiguration(
+    RequestConfiguration(
+      testDeviceIds: ['YOUR_DEVICE_ID'], // Coloque aqui o ID do seu emulador
+    ),
+  );
+
   return MobileAds.instance.initialize();
 }
