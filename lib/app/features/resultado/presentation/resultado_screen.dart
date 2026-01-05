@@ -8,10 +8,7 @@ import 'package:habilitacao_quiz/core/utils/strings.dart';
 import 'package:share_plus/share_plus.dart';
 
 class ResultadoScreen extends StatelessWidget {
-  const ResultadoScreen({
-    Key? key,
-    required this.args,
-  }) : super(key: key);
+  const ResultadoScreen({Key? key, required this.args}) : super(key: key);
   final ResultadoEntity args;
 
   String get getPercentual => args.percentual.toPrecision(2).toString();
@@ -33,7 +30,8 @@ class ResultadoScreen extends StatelessWidget {
               children: [
                 Container(
                   padding: EdgeInsets.symmetric(
-                      horizontal: AppSpacingStack.small.value),
+                    horizontal: AppSpacingStack.small.value,
+                  ),
                   child: Text(
                     args.result
                         ? Strings.parabens
@@ -42,9 +40,7 @@ class ResultadoScreen extends StatelessWidget {
                     textAlign: TextAlign.center,
                   ),
                 ),
-                SizedBox(
-                  height: AppSpacingStack.xxxSmall.value,
-                ),
+                SizedBox(height: AppSpacingStack.xxxSmall.value),
                 Text.rich(
                   TextSpan(
                     text: Strings.voceFinalizou,
@@ -56,8 +52,8 @@ class ResultadoScreen extends StatelessWidget {
                       ),
                       TextSpan(
                         text: Strings.resultadoQuestionario(
-                          respostasCorretas:
-                              args.totalRespostasCorretas.toString(),
+                          respostasCorretas: args.totalRespostasCorretas
+                              .toString(),
                           totalPerguntas: args.totalPerguntas.toString(),
                           percentual: getPercentual,
                         ),
@@ -78,10 +74,12 @@ class ResultadoScreen extends StatelessWidget {
                   child: AppButton.primary(
                     Strings.compartilhar,
                     onPressed: () {
-                      Share.share(
-                        Strings.campartilharMensagem(
-                          titulo: args.titulo,
-                          percentual: getPercentual,
+                      SharePlus.instance.share(
+                        ShareParams(
+                          text: Strings.campartilharMensagem(
+                            titulo: args.titulo,
+                            percentual: getPercentual,
+                          ),
                         ),
                       );
                     },
@@ -90,14 +88,15 @@ class ResultadoScreen extends StatelessWidget {
                 SizedBox(height: AppSpacingStack.xxSmall.value),
                 Padding(
                   padding: EdgeInsets.symmetric(
-                      horizontal: AppSpacingStack.large.value),
+                    horizontal: AppSpacingStack.large.value,
+                  ),
                   child: AppButton.link(
                     Strings.voltarInicio,
                     onPressed: Get.back,
                   ),
-                )
+                ),
               ],
-            )
+            ),
           ],
         ),
       ),

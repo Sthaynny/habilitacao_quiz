@@ -9,27 +9,24 @@ class AppBarQuestionarioWidget extends PreferredSize {
     this.onClosed,
     Key? key,
   }) : super(
-          key: key,
-          preferredSize: const Size.fromHeight(90),
-          child: SafeArea(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                IconButton(
-                  icon: const Icon(
-                    Icons.close,
-                    color: AppColors.vermelhoEscuro,
-                  ),
-                  onPressed: onClosed,
-                ),
-                IndicadorQuestoesWidget(
-                  currentPage: paginaAtual,
-                  length: tamanhoQuiz,
-                )
-              ],
-            ),
-          ),
-        );
+         key: key,
+         preferredSize: const Size.fromHeight(100),
+         child: SafeArea(
+           child: Column(
+             crossAxisAlignment: CrossAxisAlignment.end,
+             children: [
+               IconButton(
+                 icon: const Icon(Icons.close, color: AppColors.vermelhoEscuro),
+                 onPressed: onClosed,
+               ),
+               IndicadorQuestoesWidget(
+                 currentPage: paginaAtual,
+                 length: tamanhoQuiz,
+               ),
+             ],
+           ),
+         ),
+       );
 
   final int tamanhoQuiz;
   final int paginaAtual;
