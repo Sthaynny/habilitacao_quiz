@@ -37,10 +37,12 @@ class _QuestionarioScreenState extends State<QuestionarioScreen>
   @override
   Widget build(BuildContext context) {
     return Obx(
-      () => WillPopScope(
-        onWillPop: () async {
-          controller.fecharQuestionario();
-          return false;
+      () => PopScope(
+        canPop: false,
+        onPopInvokedWithResult: (didPop, result) {
+          if (!didPop) {
+            controller.fecharQuestionario();
+          }
         },
         child: Scaffold(
           appBar: AppBarQuestionarioWidget(
@@ -68,17 +70,18 @@ class _QuestionarioScreenState extends State<QuestionarioScreen>
                 children: [
                   if (controller.indexPergunta != 0) ...getButaoVoltar,
                   Flexible(
-                      child: AppButton.secundary(
-                    controller.ultimaPergunta
-                        ? Strings.finalizar
-                        : Strings.avancar,
-                    onPressed: controller.respostaSelecionada != null
-                        ? () {
-                            controller.proximoPergunta;
-                            scrollController.jumpTo(0.0);
-                          }
-                        : null,
-                  )),
+                    child: AppButton.secundary(
+                      controller.ultimaPergunta
+                          ? Strings.finalizar
+                          : Strings.avancar,
+                      onPressed: controller.respostaSelecionada != null
+                          ? () {
+                              controller.proximoPergunta;
+                              scrollController.jumpTo(0.0);
+                            }
+                          : null,
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -89,16 +92,14 @@ class _QuestionarioScreenState extends State<QuestionarioScreen>
   }
 
   List<Widget> get getButaoVoltar => [
-        Flexible(
-          child: AppButton.primaryOutline(
-            Strings.voltar,
-            onPressed: () {
-              controller.voltarPergunta;
-            },
-          ),
-        ),
-        SizedBox(
-          width: AppSpacingStack.nano.value,
-        ),
-      ];
+    Flexible(
+      child: AppButton.primaryOutline(
+        Strings.voltar,
+        onPressed: () {
+          controller.voltarPergunta;
+        },
+      ),
+    ),
+    SizedBox(width: AppSpacingStack.nano.value),
+  ];
 }

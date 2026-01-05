@@ -33,9 +33,7 @@ class _CircularProgressState extends State<CircularProgressWidget>
     super.initState();
     controller = AnimationController(
       vsync: this,
-      duration: Duration(
-        milliseconds: widget.lapDuration,
-      ),
+      duration: Duration(milliseconds: widget.lapDuration),
     )..repeat();
   }
 
@@ -48,15 +46,13 @@ class _CircularProgressState extends State<CircularProgressWidget>
   @override
   Widget build(BuildContext context) {
     return RotationTransition(
-      turns: Tween(
-        begin: 0.0,
-        end: 1.0,
-      ).animate(controller),
+      turns: Tween(begin: 0.0, end: 1.0).animate(controller),
       child: CustomPaint(
         painter: CirclePaint(
-            secondaryColor: widget.secondaryColor.withOpacity(0.1),
-            primaryColor: widget.primaryColor,
-            strokeWidth: widget.strokeWidth),
+          secondaryColor: widget.secondaryColor.withValues(alpha: 0.1),
+          primaryColor: widget.primaryColor,
+          strokeWidth: widget.strokeWidth,
+        ),
         size: Size(kSize, kSize),
       ),
     );
@@ -64,10 +60,11 @@ class _CircularProgressState extends State<CircularProgressWidget>
 }
 
 class CirclePaint extends CustomPainter {
-  CirclePaint(
-      {this.secondaryColor = Colors.grey,
-      this.primaryColor = Colors.blue,
-      this.strokeWidth = 15});
+  CirclePaint({
+    this.secondaryColor = Colors.grey,
+    this.primaryColor = Colors.blue,
+    this.strokeWidth = 15,
+  });
 
   final Color secondaryColor;
   final Color primaryColor;
@@ -83,20 +80,27 @@ class CirclePaint extends CustomPainter {
       ..style = PaintingStyle.stroke
       ..strokeWidth = strokeWidth;
 
-    paint.shader = SweepGradient(
-      colors: [secondaryColor, lighten(primaryColor, 0.2), primaryColor],
-      tileMode: TileMode.repeated,
-      startAngle: _degreeToRad(270),
-      endAngle: _degreeToRad(270 + 360.0),
-    ).createShader(
-        Rect.fromCircle(center: Offset(centerPoint, centerPoint), radius: 0));
+    paint.shader =
+        SweepGradient(
+          colors: [secondaryColor, lighten(primaryColor, 0.2), primaryColor],
+          tileMode: TileMode.repeated,
+          startAngle: _degreeToRad(270),
+          endAngle: _degreeToRad(270 + 360.0),
+        ).createShader(
+          Rect.fromCircle(center: Offset(centerPoint, centerPoint), radius: 0),
+        );
     final scapSize = strokeWidth * 0.70;
     final scapToDegree = scapSize / centerPoint;
     final startAngle = _degreeToRad(270) + scapToDegree;
     final sweepAngle = _degreeToRad(360) - (2 * scapToDegree);
 
-    canvas.drawArc(const Offset(0.0, 0.0) & Size(size.width, size.width),
-        startAngle, sweepAngle, false, paint..color = primaryColor);
+    canvas.drawArc(
+      const Offset(0.0, 0.0) & Size(size.width, size.width),
+      startAngle,
+      sweepAngle,
+      false,
+      paint..color = primaryColor,
+    );
   }
 
   double _degreeToRad(double degree) => degree * math.pi / 180;
@@ -110,8 +114,9 @@ class CirclePaint extends CustomPainter {
     assert(amount >= 0 && amount <= 1);
 
     final hsl = HSLColor.fromColor(color);
-    final hslLight =
-        hsl.withLightness((hsl.lightness + amount).clamp(0.0, 1.0));
+    final hslLight = hsl.withLightness(
+      (hsl.lightness + amount).clamp(0.0, 1.0),
+    );
 
     return hslLight.toColor();
   }

@@ -20,8 +20,8 @@ class BottomNavBar extends StatelessWidget {
     required this.items,
     required this.onItemSelected,
     this.curve = Curves.linear,
-  })  : assert(items.length >= 2 && items.length <= 5),
-        super(key: key);
+  }) : assert(items.length >= 2 && items.length <= 5),
+       super(key: key);
 
   /// The selected item is index. Changing this property will change and animate
   /// the item being selected. Defaults to zero.
@@ -70,10 +70,7 @@ class BottomNavBar extends StatelessWidget {
         color: bgColor,
         boxShadow: [
           if (showElevation)
-            const BoxShadow(
-              color: Colors.black12,
-              blurRadius: 2,
-            ),
+            const BoxShadow(color: Colors.black12, blurRadius: 2),
         ],
       ),
       child: SafeArea(
@@ -81,7 +78,9 @@ class BottomNavBar extends StatelessWidget {
           width: double.infinity,
           height: containerHeight,
           padding: EdgeInsets.symmetric(
-              vertical: 6, horizontal: AppSpacingStack.xSmall.value),
+            vertical: 6,
+            horizontal: AppSpacingStack.xSmall.value,
+          ),
           child: Row(
             mainAxisAlignment: mainAxisAlignment,
             children: items.map((item) {
@@ -137,8 +136,9 @@ class _ItemWidget extends StatelessWidget {
         duration: animationDuration,
         curve: curve,
         decoration: BoxDecoration(
-          color:
-              isSelected ? item.activeColor.withOpacity(0.2) : backgroundColor,
+          color: isSelected
+              ? item.activeColor.withValues(alpha: 0.2)
+              : backgroundColor,
           borderRadius: BorderRadius.circular(itemCornerRadius),
         ),
         child: SingleChildScrollView(
@@ -156,7 +156,7 @@ class _ItemWidget extends StatelessWidget {
                   data: IconThemeData(
                     size: iconSize,
                     color: isSelected
-                        ? item.activeColor.withOpacity(1)
+                        ? item.activeColor
                         : item.inactiveColor ?? item.activeColor,
                   ),
                   child: item.icon,
