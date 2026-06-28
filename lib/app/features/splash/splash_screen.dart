@@ -3,7 +3,10 @@ import 'package:get/get.dart';
 import 'package:habilitacao_quiz/app/features/historico/domain/entities/historico_entity.dart';
 import 'package:habilitacao_quiz/app/features/historico/domain/usecases/get_historico_usecase.dart';
 import 'package:habilitacao_quiz/app/features/routes/routes.dart';
+import 'package:habilitacao_quiz/core/components/circular_progress_widget.dart';
 import 'package:habilitacao_quiz/core/styles/app_styles.dart';
+import 'package:habilitacao_quiz/core/styles/spacing_stack.dart';
+import 'package:habilitacao_quiz/core/utils/strings.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -13,19 +16,25 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+  static const _splashDuration = Duration(seconds: 2);
+
   @override
   void initState() {
-    Get.find<GetHistoricoUsecase>().call().then((value) async {
-      await Future.delayed(const Duration(seconds: 2));
-      Get.put<HistoricoEntity>(
-        value,
-        permanent: true,
-      );
-      Get.offAndToNamed(
-        Routes.home,
-      );
-    });
     super.initState();
+    _loadAndNavigate();
+  }
+
+  Future<void> _loadAndNavigate() async {
+    HistoricoEntity historico;
+    try {
+      historico = await Get.find<GetHistoricoUsecase>().call();
+    } catch (_) {
+      historico = HistoricoEntity(resutados: []);
+    }
+    await Future.delayed(_splashDuration);
+    if (!mounted) return;
+    Get.put<HistoricoEntity>(historico, permanent: true);
+    Get.offAndToNamed(Routes.home);
   }
 
   @override
@@ -36,8 +45,24 @@ class _SplashScreenState extends State<SplashScreen> {
           gradient: AppGradients.linear,
         ),
         child: Center(
-          child: Image.asset(
-            AppImages.splash,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Semantics(
+                label: Strings.logoApp.replaceAll('\n', ' '),
+                image: true,
+                child: Image.asset(AppImages.splash),
+              ),
+              SizedBox(height: AppSpacingStack.xxSmall.value),
+              Semantics(
+                label: 'Carregando',
+                liveRegion: true,
+                child: const CircularProgressWidget(
+                  primaryColor: AppColors.white,
+                  secondaryColor: AppColors.white,
+                ),
+              ),
+            ],
           ),
         ),
       ),
