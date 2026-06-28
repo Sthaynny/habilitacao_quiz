@@ -36,23 +36,20 @@ class _QuestionarioScreenState extends State<QuestionarioScreen>
 
   @override
   Widget build(BuildContext context) {
-    return Obx(
-      () => PopScope(
-        canPop: false,
-        onPopInvokedWithResult: (didPop, result) {
-          if (!didPop) {
-            controller.fecharQuestionario();
-          }
-        },
-        child: Scaffold(
-          appBar: AppBarQuestionarioWidget(
-            onClosed: () {
-              controller.fecharQuestionario();
-            },
-            paginaAtual: controller.indexPerguntaUsuario,
-            tamanhoQuiz: controller.tamanhoQuiz,
-          ),
-          body: QuizWidget(
+    return PopScope(
+      canPop: false,
+      onPopInvokedWithResult: (didPop, result) {
+        if (!didPop) {
+          controller.fecharQuestionario();
+        }
+      },
+      child: Scaffold(
+        appBar: AppBarQuestionarioWidget(
+          controller: controller,
+          onClosed: controller.fecharQuestionario,
+        ),
+        body: Obx(
+          () => QuizWidget(
             scrollController: scrollController,
             onSelected: (value) {
               controller.setRespostaSelecionada = value;
@@ -60,13 +57,15 @@ class _QuestionarioScreenState extends State<QuestionarioScreen>
             pergunta: controller.perguntaAtual,
             respostaSelected: controller.respotaSelecionada,
           ),
-          bottomNavigationBar: SafeArea(
-            child: Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: AppSpacingStack.xSmall.value,
-                vertical: AppSpacingStack.xxxSmall.value,
-              ),
-              child: Row(
+        ),
+        bottomNavigationBar: SafeArea(
+          child: Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: AppSpacingStack.xSmall.value,
+              vertical: AppSpacingStack.xxxSmall.value,
+            ),
+            child: Obx(
+              () => Row(
                 children: [
                   if (controller.indexPergunta != 0) ...getButaoVoltar,
                   Flexible(

@@ -14,28 +14,32 @@ class IndicadorQuestoesWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: AppSpacingStack.xxxSmall.value),
-      child: Column(
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                'Questão $currentPage',
-                style: AppFontStyle.body16Regular.setColor(AppColors.grey),
-              ),
-              Text(
-                'de $length',
-                style: AppFontStyle.body16Regular.setColor(AppColors.grey),
-              ),
-            ],
-          ),
-          SizedBox(height: AppSpacingStack.xxxSmall.value),
-          LinearProgressIndicatorWidget(
-            value: currentPage / length,
-          ),
-        ],
+    return Semantics(
+      label: 'Questão $currentPage de $length',
+      child: Container(
+        padding:
+            EdgeInsets.symmetric(horizontal: AppSpacingStack.xxxSmall.value),
+        child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Questão $currentPage',
+                  style: AppFontStyle.body16Regular.setColor(AppColors.grey),
+                ),
+                Text(
+                  'de $length',
+                  style: AppFontStyle.body16Regular.setColor(AppColors.grey),
+                ),
+              ],
+            ),
+            SizedBox(height: AppSpacingStack.xxxSmall.value),
+            LinearProgressIndicatorWidget(
+              value: currentPage / length,
+            ),
+          ],
+        ),
       ),
     );
   }

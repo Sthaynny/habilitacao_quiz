@@ -14,33 +14,39 @@ class RespostaWidget extends StatelessWidget {
   final bool isSelected;
   final ValueChanged<RespostaEntity> onTap;
 
-  Color get _selectedColorCardRight => AppColors.lightGreen;
-
-  Color get _selectedBorderCardRight => AppColors.green;
-
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        onTap(resposta);
-      },
-      child: Container(
-        width: double.maxFinite,
-        margin: EdgeInsets.symmetric(vertical: AppSpacingStack.quarck.value),
-        padding: EdgeInsets.all(AppSpacingStack.xxxSmall.value),
-        decoration: BoxDecoration(
-          color: isSelected ? _selectedColorCardRight : AppColors.white,
-          borderRadius: BorderRadius.circular(10),
-          border: Border.fromBorderSide(
-            BorderSide(
-              color: isSelected ? _selectedBorderCardRight : AppColors.border,
+    return Semantics(
+      button: true,
+      selected: isSelected,
+      label: resposta.titulo,
+      child: GestureDetector(
+        onTap: () => onTap(resposta),
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 200),
+          curve: Curves.easeInOut,
+          width: double.maxFinite,
+          constraints: BoxConstraints(
+            minHeight: AppSpacingStack.medium.value,
+          ),
+          margin: EdgeInsets.symmetric(vertical: AppSpacingStack.quarck.value),
+          padding: EdgeInsets.all(AppSpacingStack.xxxSmall.value),
+          decoration: BoxDecoration(
+            color: isSelected ? AppColors.lightGreen : AppColors.white,
+            borderRadius: BorderRadius.circular(10),
+            border: Border.all(
+              color: isSelected ? AppColors.green : AppColors.border,
             ),
           ),
-        ),
-        child: Text(
-          resposta.titulo.primeiraLetraMaiuscula,
-          style: AppFontStyle.body16Medium
-              .setColor(isSelected ? AppColors.darkGreen : AppColors.black),
+          child: Align(
+            alignment: Alignment.centerLeft,
+            child: Text(
+              resposta.titulo.primeiraLetraMaiuscula,
+              style: AppFontStyle.body16Medium.setColor(
+                isSelected ? AppColors.darkGreen : AppColors.black,
+              ),
+            ),
+          ),
         ),
       ),
     );

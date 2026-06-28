@@ -26,21 +26,22 @@ class QuizWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(pergunta.titulo,
-              style: AppFontStyle.body16Medium.setColor(AppColors.black)),
-          if (pergunta.imagemB64 != null) Image.memory(pergunta.imagemB64!),
-          SizedBox(
-            height: AppSpacingStack.xxxSmall.value,
+          Text(
+            pergunta.titulo,
+            style: AppFontStyle.body16Medium.setColor(AppColors.black),
           ),
-          ...pergunta.respostas
-              .map(
-                (elemento) => RespostaWidget(
-                  onTap: onSelected,
-                  resposta: elemento,
-                  isSelected: respostaSelected == elemento,
-                ),
-              )
-              .toList(),
+          if (pergunta.imagemB64 != null) ...[
+            SizedBox(height: AppSpacingStack.xxxSmall.value),
+            Image.memory(pergunta.imagemB64!),
+          ],
+          SizedBox(height: AppSpacingStack.xxxSmall.value),
+          ...pergunta.respostas.map(
+            (elemento) => RespostaWidget(
+              onTap: onSelected,
+              resposta: elemento,
+              isSelected: respostaSelected == elemento,
+            ),
+          ),
         ],
       ),
     );
