@@ -473,14 +473,14 @@
                     "titulo": "E são consideradas também crimes de trânsito."
                 },
                 {
-                    "titulo": "É infração média e representam uma falta de respeito e cidadania."
+                    "titulo": "É infração média e representam uma falta de respeito e cidadania.",
+                    "correta": true
                 },
                 {
                     "titulo": "Graves, dependendo da classificação da via."
                 },
                 {
-                    "titulo": "Passíveis de recolhimento da Carteira Nacional de Habilitação.",
-                    "correta": true
+                    "titulo": "Passíveis de recolhimento da Carteira Nacional de Habilitação."
                 }
             ]
         },
@@ -554,11 +554,11 @@
                     "titulo": "Monóxido de Carbono."
                 },
                 {
-                    "titulo": "Gás Carbônico (dióxido de Carbono). "
+                    "titulo": "Gás Carbônico (dióxido de Carbono). ",
+                    "correta": true
                 },
                 {
-                    "titulo": "Oxigênio",
-                    "correta": true
+                    "titulo": "Oxigênio"
                 },
                 {
                     "titulo": "H2O"
@@ -628,6 +628,132 @@
                 },
                 {
                     "titulo": "Nenhuma das alternativas anteriores."
+                }
+            ]
+        },
+        {
+            "titulo": "O PROCONVE (Programa de Controle da Poluição do Ar por Veículos Automotores) tem como principal objetivo:",
+            "respostas": [
+                {
+                    "titulo": "aumentar a potência dos motores a diesel."
+                },
+                {
+                    "titulo": "estabelecer limites progressivos de emissão de poluentes por veículos automotores.",
+                    "correta": true
+                },
+                {
+                    "titulo": "proibir o uso de etanol como combustível."
+                },
+                {
+                    "titulo": "substituir o licenciamento anual dos veículos."
+                },
+                {
+                    "titulo": "reduzir o número de faixas nas vias urbanas."
+                }
+            ]
+        },
+        {
+            "titulo": "A poluição sonora no trânsito pode ser reduzida quando o condutor:",
+            "respostas": [
+                {
+                    "titulo": "remove o silenciador para melhorar o desempenho do motor."
+                },
+                {
+                    "titulo": "mantém o sistema de escapamento em bom estado e evita acelerar desnecessariamente.",
+                    "correta": true
+                },
+                {
+                    "titulo": "utiliza buzina para advertir pedestres em qualquer situação."
+                },
+                {
+                    "titulo": "instala equipamento de som com volume elevado nas vias urbanas."
+                },
+                {
+                    "titulo": "circula com o motor em regime máximo de rotação em vias residenciais."
+                }
+            ]
+        },
+        {
+            "titulo": "O descarte irregular de óleo lubrificante usado de veículos:",
+            "respostas": [
+                {
+                    "titulo": "não causa impacto ambiental significativo."
+                },
+                {
+                    "titulo": "pode contaminar o solo e os recursos hídricos.",
+                    "correta": true
+                },
+                {
+                    "titulo": "é permitido em terrenos baldios desde que enterrado."
+                },
+                {
+                    "titulo": "contribui apenas para a poluição sonora."
+                },
+                {
+                    "titulo": "é recomendado para evitar entupimento de esgotos."
+                }
+            ]
+        },
+        {
+            "titulo": "Veículos movidos a GNV (Gás Natural Veicular), em comparação aos movidos exclusivamente a gasolina ou diesel:",
+            "respostas": [
+                {
+                    "titulo": "emitem maior quantidade de monóxido de carbono."
+                },
+                {
+                    "titulo": "tendem a emitir menor quantidade de alguns poluentes atmosféricos.",
+                    "correta": true
+                },
+                {
+                    "titulo": "não necessitam de manutenção periódica."
+                },
+                {
+                    "titulo": "são proibidos em centros urbanos."
+                },
+                {
+                    "titulo": "não utilizam sistema de escapamento."
+                }
+            ]
+        },
+        {
+            "titulo": "A manutenção preventiva do veículo, incluindo revisões periódicas do motor, contribui para:",
+            "respostas": [
+                {
+                    "titulo": "aumentar a emissão de fumaça preta."
+                },
+                {
+                    "titulo": "reduzir a emissão de poluentes e o consumo excessivo de combustível.",
+                    "correta": true
+                },
+                {
+                    "titulo": "dispensar o uso do catalisador."
+                },
+                {
+                    "titulo": "eliminar a necessidade de inspeção veicular."
+                },
+                {
+                    "titulo": "aumentar o ruído do escapamento."
+                }
+            ]
+        },
+        {
+            "titulo": "Dirigir com escapamento defeituoso ou em descarga livre, além de prejudicar o meio ambiente:",
+            "respostas": [
+                {
+                    "titulo": "é infração leve prevista no CTB."
+                },
+                {
+                    "titulo": "é infração grave prevista no CTB, sujeita a multa e retenção do veículo para regularização.",
+                    "correta": true
+                },
+                {
+                    "titulo": "é permitido apenas em vias rurais."
+                },
+                {
+                    "titulo": "não configura infração se o veículo for particular."
+                },
+                {
+                    "titulo": "é recomendado para melhorar a ventilação do motor."
                 }
             ]
         }

@@ -5,7 +5,7 @@
             "titulo": "Qual é a idade mínima para transportar crianças na garupa de motocicletas e ciclomotores:",
             "respostas": [
                 {
-                    "titulo": "7 anos.",
+                    "titulo": "10 anos.",
                     "correta": true
                 },
                 {
@@ -68,14 +68,14 @@
                     "titulo": "Não é necessário sinalizar."
                 },
                 {
-                    "titulo": "Ligar o pisca-alerta e sinalizar com o triângulo de segurança."
+                    "titulo": "Ligar o pisca-alerta e sinalizar com o triângulo de segurança.",
+                    "correta": true
                 },
                 {
                     "titulo": "Apenas, ligar o pisca-alerta."
                 },
                 {
-                    "titulo": "Acionar o farol.",
-                    "correta": true
+                    "titulo": "Acionar o farol."
                 },
                 {
                     "titulo": "Sobir, levemente, o veículo no acostamento"
@@ -629,7 +629,7 @@
             ]
         },
         {
-            "titulo": "a Inspeção de Segurança Veicular, que será compulsória para o licenciamento, um dos equipamentos obrigatórios a ser inspecionado é?",
+            "titulo": "Na Inspeção de Segurança Veicular, que será compulsória para o licenciamento, um dos equipamentos obrigatórios a ser inspecionado é?",
             "respostas": [
                 {
                     "titulo": "o farol de milha."
@@ -667,6 +667,132 @@
                 {
                     "titulo": "desvia o olhar para a direita e se orienta pelas faixas do solo.",
                     "correta": true
+                }
+            ]
+        },
+        {
+            "titulo": "A distância de seguimento entre veículos deve ser mantida de forma a permitir:",
+            "respostas": [
+                {
+                    "titulo": "ultrapassagens constantes pelo mesmo lado."
+                },
+                {
+                    "titulo": "frenagem segura diante de imprevistos do veículo à frente.",
+                    "correta": true
+                },
+                {
+                    "titulo": "circulação colada ao veículo precedente para economizar combustível."
+                },
+                {
+                    "titulo": "uso contínuo da buzina."
+                },
+                {
+                    "titulo": "conversão em qualquer faixa sem sinalização."
+                }
+            ]
+        },
+        {
+            "titulo": "Em pista molhada, a aquaplanagem ocorre quando:",
+            "respostas": [
+                {
+                    "titulo": "o motor superaquece devido à chuva."
+                },
+                {
+                    "titulo": "os pneus perdem contato com o solo por acúmulo de água entre a banda de rodagem e a pista.",
+                    "correta": true
+                },
+                {
+                    "titulo": "o veículo para automaticamente por falha elétrica."
+                },
+                {
+                    "titulo": "o condutor aciona o freio de estacionamento."
+                },
+                {
+                    "titulo": "a suspensão trava as rodas dianteiras."
+                }
+            ]
+        },
+        {
+            "titulo": "Em condições de neblina ou chuva intensa, o condutor defensivo deve:",
+            "respostas": [
+                {
+                    "titulo": "utilizar farol alto para aumentar a visibilidade."
+                },
+                {
+                    "titulo": "reduzir a velocidade, aumentar a distância de seguimento e usar farol baixo.",
+                    "correta": true
+                },
+                {
+                    "titulo": "desligar os faróis para evitar reflexo."
+                },
+                {
+                    "titulo": "ultrapassar veículos lentos sem sinalizar."
+                },
+                {
+                    "titulo": "circular pelo acostamento em alta velocidade."
+                }
+            ]
+        },
+        {
+            "titulo": "Crianças com até dez anos de idade devem ser transportadas em automóveis:",
+            "respostas": [
+                {
+                    "titulo": "no colo de adultos no banco dianteiro."
+                },
+                {
+                    "titulo": "nos bancos traseiros, com dispositivo de retenção adequado à idade e peso.",
+                    "correta": true
+                },
+                {
+                    "titulo": "apenas com cinto de três pontos, sem dispositivo adicional."
+                },
+                {
+                    "titulo": "no banco dianteiro, desde que com cinto."
+                },
+                {
+                    "titulo": "em qualquer assento, se a viagem for curta."
+                }
+            ]
+        },
+        {
+            "titulo": "Ao transportar criança em motocicleta, além da idade mínima de dez anos, o CTB exige que ela:",
+            "respostas": [
+                {
+                    "titulo": "viaje em pé sobre o tanque de combustível."
+                },
+                {
+                    "titulo": "use capacete certificado e tenha condições de cuidar da própria segurança, alcançando os apoios de pé.",
+                    "correta": true
+                },
+                {
+                    "titulo": "não precise de capacete se a viagem for urbana."
+                },
+                {
+                    "titulo": "seja transportada apenas em cadeirinha homologada para motos."
+                },
+                {
+                    "titulo": "use apenas óculos de proteção no lugar do capacete."
+                }
+            ]
+        },
+        {
+            "titulo": "O condutor defensivo, ao avistar animais na pista, deve:",
+            "respostas": [
+                {
+                    "titulo": "buzinar continuamente e manter a velocidade."
+                },
+                {
+                    "titulo": "reduzir a velocidade, sinalizar e desviar com segurança, sem manobras bruscas.",
+                    "correta": true
+                },
+                {
+                    "titulo": "acelerar para afugentar o animal rapidamente."
+                },
+                {
+                    "titulo": "transitar pelo acostamento em contramão."
+                },
+                {
+                    "titulo": "desligar os faróis para não assustar o animal."
                 }
             ]
         }
