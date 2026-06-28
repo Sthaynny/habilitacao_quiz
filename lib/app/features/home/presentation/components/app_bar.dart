@@ -32,11 +32,14 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text.rich(
-                  TextSpan(
-                    text: 'Habilitação Quiz',
-                    style: AppFontStyle.headline24Bold.setColor(
-                      AppColors.white,
+                Semantics(
+                  header: true,
+                  child: Text.rich(
+                    TextSpan(
+                      text: 'Habilitação Quiz',
+                      style: AppFontStyle.headline24Bold.setColor(
+                        AppColors.white,
+                      ),
                     ),
                   ),
                 ),

@@ -14,9 +14,12 @@ class QuizCardWidget extends StatelessWidget {
   final VoidCallback onTap;
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onTap,
-      child: Container(
+    return Semantics(
+      button: true,
+      label: title,
+      child: InkWell(
+        onTap: onTap,
+        child: Container(
         padding: EdgeInsets.all(AppSpacingStack.xxxSmall.value),
         margin: EdgeInsets.all(AppSpacingStack.nano.value),
         decoration: BoxDecoration(
@@ -54,6 +57,7 @@ class QuizCardWidget extends StatelessWidget {
             ),
             const Spacer(),
           ],
+        ),
         ),
       ),
     );

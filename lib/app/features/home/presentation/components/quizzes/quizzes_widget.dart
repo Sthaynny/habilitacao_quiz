@@ -19,8 +19,8 @@ class QuizzesWidget extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: AppSpacingStack.xxxSmall.value),
       child: GridView.count(
-        crossAxisSpacing: 8,
-        mainAxisSpacing: 8,
+        crossAxisSpacing: AppSpacingStack.nano.value,
+        mainAxisSpacing: AppSpacingStack.nano.value,
         crossAxisCount: 2,
         children: [
           QuizCardWidget(
