@@ -1,6 +1,6 @@
 name: habilitacao_quiz
 description: Um projeto para ajudar as pessoas que querem tirar sua CNH.
-version: 1.9.1+34
+version: 1.9.2+35
 
 environment:
   sdk: ">=3.10.4 <4.0.0"
@@ -18,7 +18,7 @@ dependencies:
     sdk: flutter
   get: ^4.7.3
   google_fonts: ^8.1.0
-  google_mobile_ads: ^6.0.0
+  google_mobile_ads: 7.0.0
   share_plus: ^13.2.0
   shared_preferences: ^2.5.5
   path_provider: ^2.1.6

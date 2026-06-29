@@ -34,8 +34,6 @@ android {
     compileSdkVersion flutter.compileSdkVersion
     ndkVersion flutter.ndkVersion
 
-    compileSdkVersion = flutter.compileSdkVersion
-
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
@@ -50,50 +48,46 @@ android {
     }
 
     defaultConfig {
-        ndkVersion = flutter.ndkVersion
-        applicationId = "br.com.sthaynny.habilitacao_quiz"
-        minSdkVersion = 26
-        targetSdkVersion = flutter.targetSdkVersion
-        versionCode = flutter.versionCode
-        versionName = flutter.versionName
+        applicationId "br.com.sthaynny.habilitacao_quiz"
+        minSdkVersion 26
+        targetSdkVersion flutter.targetSdkVersion
+        versionCode flutterVersionCode.toInteger()
+        versionName flutterVersionName
     }
 
-   signingConfigs {
-       release {
-           if (keystorePropertiesFile.exists()) {
-               keyAlias keystoreProperties['keyAlias']
-               keyPassword keystoreProperties['keyPassword']
-               storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
-               storePassword keystoreProperties['storePassword']
-           }
-       }
-   }
-
-   buildTypes {
-       release {
-           minifyEnabled true
-           signingConfig keystorePropertiesFile.exists()
-               ? signingConfigs.release
-               : signingConfigs.debug
-       }
-   }
-
-   externalNativeBuild {
-        cmake {
-            version = "3.30.3"
+    signingConfigs {
+        release {
+            if (keystorePropertiesFile.exists()) {
+                keyAlias keystoreProperties['keyAlias']
+                keyPassword keystoreProperties['keyPassword']
+                storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
+                storePassword keystoreProperties['storePassword']
+            }
         }
     }
 
-    dependencies {
-      implementation 'com.google.android.gms:play-services-ads:24.1.0'
-      implementation 'com.android.billingclient:billing:6.1.0'
+    buildTypes {
+        release {
+            minifyEnabled true
+            signingConfig keystorePropertiesFile.exists()
+                ? signingConfigs.release
+                : signingConfigs.debug
+        }
     }
 
+    packaging {
+        jniLibs {
+            useLegacyPackaging false
+        }
+    }
 }
 
 flutter {
-    source = '../..'
+    source '../..'
 }
 
 dependencies {
+    implementation 'androidx.activity:activity-ktx:1.10.1'
+    implementation 'com.google.android.gms:play-services-ads:24.1.0'
+    implementation 'com.android.billingclient:billing:6.1.0'
 }

@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:habilitacao_quiz/app/my_app.dart';
 import 'package:habilitacao_quiz/global_injection_container.dart';
@@ -9,6 +10,7 @@ void main() {
   runZonedGuarded(
     () async {
       WidgetsFlutterBinding.ensureInitialized();
+      SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
       await _initGoogleMobileAds();
       GlobalInjectionContainer.setInjection();
       runApp(const MyApp());

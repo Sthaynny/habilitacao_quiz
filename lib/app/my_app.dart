@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:habilitacao_quiz/app/features/home/presentation/home_screen.dart';
 import 'package:habilitacao_quiz/app/features/questionario/presentation/questionario_screen.dart';
@@ -15,6 +16,13 @@ class MyApp extends StatelessWidget {
       title: 'Habilitação Quiz',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        appBarTheme: const AppBarTheme(
+          systemOverlayStyle: SystemUiOverlayStyle(
+            statusBarColor: Colors.transparent,
+            systemNavigationBarColor: Colors.transparent,
+            systemNavigationBarDividerColor: Colors.transparent,
+          ),
+        ),
       ),
       initialRoute: Routes.init,
       getPages: [
