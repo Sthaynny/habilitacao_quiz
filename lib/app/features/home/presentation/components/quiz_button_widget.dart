@@ -39,7 +39,7 @@ class QuizButtonWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Material(
-              color: Colors.transparent,
+              color: AppColors.white.withValues(alpha: 0),
               elevation: 30,
               child: Image.asset(
                 iconAsset,

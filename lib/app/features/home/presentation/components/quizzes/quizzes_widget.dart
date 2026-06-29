@@ -18,8 +18,12 @@ class QuizzesWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: AppSpacingStack.xxxSmall.value),
+      child: GridView.count(
+        crossAxisSpacing: AppSpacingStack.nano.value,
+        mainAxisSpacing: AppSpacingStack.nano.value,
+        crossAxisCount: 2,
         children: [
           Padding(
             padding: EdgeInsets.symmetric(vertical: AppSpacingStack.nano.value),

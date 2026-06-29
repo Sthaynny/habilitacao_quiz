@@ -203,7 +203,7 @@
             "titulo": "A bomba de água é um dos componentes do sistema que controla a temperatura do motor. A sua função básica é:",
             "respostas": [
                 {
-                    "titulo": "Aspirar água arrefecida pela bateria e fazê-la circular pelas galerias do bloco do motor, para depois voltar ao radiador",
+                    "titulo": "Impulsionar o líquido de arrefecimento pelo motor e radiador",
                     "correta": true
                 },
                 {
@@ -562,6 +562,132 @@
                 },
                 {
                     "titulo": "Caixa de câmbio sem óleo"
+                }
+            ]
+        },
+        {
+            "titulo": "O sistema ABS (Antilock Braking System) nos freios tem a função de:",
+            "respostas": [
+                {
+                    "titulo": "aumentar a força de frenagem nas rodas traseiras apenas."
+                },
+                {
+                    "titulo": "evitar o travamento das rodas durante frenagens intensas, preservando a dirigibilidade.",
+                    "correta": true
+                },
+                {
+                    "titulo": "substituir o fluido de freio."
+                },
+                {
+                    "titulo": "desligar automaticamente o motor em emergências."
+                },
+                {
+                    "titulo": "regular a pressão dos pneus durante a freada."
+                }
+            ]
+        },
+        {
+            "titulo": "O fluido de freio deve ser verificado periodicamente porque:",
+            "respostas": [
+                {
+                    "titulo": "nível baixo pode comprometer a eficiência do sistema de frenagem.",
+                    "correta": true
+                },
+                {
+                    "titulo": "substitui o óleo do motor em veículos novos."
+                },
+                {
+                    "titulo": "serve apenas para lubrificar as pastilhas."
+                },
+                {
+                    "titulo": "não influencia o funcionamento dos freios."
+                },
+                {
+                    "titulo": "deve ser trocado a cada abastecimento."
+                }
+            ]
+        },
+        {
+            "titulo": "Pneu com calibragem abaixo da recomendada pelo fabricante tende a apresentar desgaste:",
+            "respostas": [
+                {
+                    "titulo": "apenas no centro da banda de rodagem."
+                },
+                {
+                    "titulo": "nas bordas laterais da banda de rodagem.",
+                    "correta": true
+                },
+                {
+                    "titulo": "uniforme em toda a superfície."
+                },
+                {
+                    "titulo": "somente no talão interno."
+                },
+                {
+                    "titulo": "exclusivamente na parte superior do pneu."
+                }
+            ]
+        },
+        {
+            "titulo": "A correia dentada, quando rompida em motores que a utilizam, pode causar:",
+            "respostas": [
+                {
+                    "titulo": "apenas o aumento do consumo de combustível."
+                },
+                {
+                    "titulo": "danos graves ao motor, incluindo possível empenamento de válvulas.",
+                    "correta": true
+                },
+                {
+                    "titulo": "o acendimento automático do pisca-alerta."
+                },
+                {
+                    "titulo": "aumento da pressão dos pneus."
+                },
+                {
+                    "titulo": "falha apenas no sistema de som."
+                }
+            ]
+        },
+        {
+            "titulo": "As luzes de freio do veículo servem para:",
+            "respostas": [
+                {
+                    "titulo": "iluminar a via durante a noite."
+                },
+                {
+                    "titulo": "indicar aos condutores que vêm atrás que o veículo está reduzindo a velocidade ou parando.",
+                    "correta": true
+                },
+                {
+                    "titulo": "substituir o pisca-alerta em emergências."
+                },
+                {
+                    "titulo": "sinalizar conversões à esquerda."
+                },
+                {
+                    "titulo": "indicar que o motor está aquecido."
+                }
+            ]
+        },
+        {
+            "titulo": "O estepe (pneu reserva) deve ser mantido:",
+            "respostas": [
+                {
+                    "titulo": "descalibrado para ocupar menos espaço."
+                },
+                {
+                    "titulo": "calibrado e em condições adequadas de uso.",
+                    "correta": true
+                },
+                {
+                    "titulo": "sempre no lugar do pneu dianteiro direito."
+                },
+                {
+                    "titulo": "sem necessidade de verificação periódica."
+                },
+                {
+                    "titulo": "apenas com meia calibragem do pneu principal."
                 }
             ]
         }

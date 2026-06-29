@@ -260,11 +260,11 @@
                     "titulo": "No pé"
                 },
                 {
-                    "titulo": "No braço",
-                    "correta": true
+                    "titulo": "No braço"
                 },
                 {
-                    "titulo": "No punho"
+                    "titulo": "No punho",
+                    "correta": true
                 },
                 {
                     "titulo": "Em algum lugar da veia saliente"
@@ -341,11 +341,11 @@
                     "titulo": "Verificar a situação do veículo do acidente"
                 },
                 {
-                    "titulo": "Socorrer a vítima",
-                    "correta": true
+                    "titulo": "Socorrer a vítima"
                 },
                 {
-                    "titulo": "Chamar o corpo de bombeiro pelo telefone 193"
+                    "titulo": "Chamar o corpo de bombeiro pelo telefone 193",
+                    "correta": true
                 },
                 {
                     "titulo": "Acalmar os passageiros mais nervosos"
@@ -646,6 +646,132 @@
                 {
                     "titulo": "80 passos longos de um adulto",
                     "correta": true
+                }
+            ]
+        },
+        {
+            "titulo": "Em acidentes de trânsito, o número do SAMU (Serviço de Atendimento Móvel de Urgência) para acionar socorro médico é:",
+            "respostas": [
+                {
+                    "titulo": "190"
+                },
+                {
+                    "titulo": "191"
+                },
+                {
+                    "titulo": "192",
+                    "correta": true
+                },
+                {
+                    "titulo": "193"
+                },
+                {
+                    "titulo": "199"
+                }
+            ]
+        },
+        {
+            "titulo": "A sequência recomendada de atendimento no local de acidente, antes da chegada do socorro especializado, prioriza:",
+            "respostas": [
+                {
+                    "titulo": "mover imediatamente todas as vítimas para o hospital."
+                },
+                {
+                    "titulo": "garantir a segurança do local, sinalizar o acidente e acionar o socorro.",
+                    "correta": true
+                },
+                {
+                    "titulo": "retirar os veículos sem registrar o ocorrido."
+                },
+                {
+                    "titulo": "administrar medicamentos às vítimas."
+                },
+                {
+                    "titulo": "perfurar bolhas de queimaduras para aliviar a dor."
+                }
+            ]
+        },
+        {
+            "titulo": "Em vítima inconsciente que respira, sem suspeita de lesão na coluna, a posição lateral de segurança tem por objetivo:",
+            "respostas": [
+                {
+                    "titulo": "facilitar a saída de sangue pelo nariz."
+                },
+                {
+                    "titulo": "manter as vias aéreas pérvias e evitar que a língua obstrua a respiração.",
+                    "correta": true
+                },
+                {
+                    "titulo": "acelerar a circulação sanguínea nos membros inferiores."
+                },
+                {
+                    "titulo": "substituir a reanimação cardiopulmonar."
+                },
+                {
+                    "titulo": "imobilizar fraturas expostas."
+                }
+            ]
+        },
+        {
+            "titulo": "Na reanimação cardiopulmonar (RCP) em adultos, as compressões torácicas devem ser realizadas:",
+            "respostas": [
+                {
+                    "titulo": "com intervalos superiores a cinco minutos entre cada ciclo."
+                },
+                {
+                    "titulo": "no centro do tórax, com ritmo regular e profundidade adequada.",
+                    "correta": true
+                },
+                {
+                    "titulo": "apenas no abdômen."
+                },
+                {
+                    "titulo": "somente após a chegada do médico."
+                },
+                {
+                    "titulo": "exclusivamente com o paciente em pé."
+                }
+            ]
+        },
+        {
+            "titulo": "Em suspeita de fratura, o procedimento correto de primeiros socorros é:",
+            "respostas": [
+                {
+                    "titulo": "tentar reposicionar o osso imediatamente."
+                },
+                {
+                    "titulo": "imobilizar o membro na posição encontrada e aguardar socorro especializado.",
+                    "correta": true
+                },
+                {
+                    "titulo": "massagear a região para aliviar a dor."
+                },
+                {
+                    "titulo": "orientar a vítima a caminhar para relaxar o músculo."
+                },
+                {
+                    "titulo": "aplicar calor intenso diretamente sobre o local."
+                }
+            ]
+        },
+        {
+            "titulo": "O choque, em vítimas de acidente com sangramento intenso, pode apresentar sinais como:",
+            "respostas": [
+                {
+                    "titulo": "pele quente e úmida, com pulso cheio."
+                },
+                {
+                    "titulo": "palidez, sudorese fria e pulso fraco e rápido.",
+                    "correta": true
+                },
+                {
+                    "titulo": "aumento da pressão arterial de forma sustentada."
+                },
+                {
+                    "titulo": "hiperatividade e fala acelerada como únicos sintomas."
+                },
+                {
+                    "titulo": "ausência total de alterações nos sinais vitais."
                 }
             ]
         }

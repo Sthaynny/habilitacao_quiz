@@ -30,45 +30,32 @@ class _HomeScreen extends State<HomeScreen> with PopUpMixin {
   HomeController get controller => widget.controller;
   late final QuizzesController quizzesController;
   final PageController pageController = PageController();
-  final ValueNotifier<BannerAd?> bannerAdNotifier = ValueNotifier(null);
+  Worker? _statusWorker;
 
   @override
   void initState() {
     quizzesController = widget.quizzesController;
     quizzesController.onStatus = (value) => controller.setStatus = value;
-    BannerAd(
-      adUnitId: AdHelper.bottomAd,
-      request: AdRequest(),
-      size: AdSize.banner,
-      listener: BannerAdListener(
-        onAdLoaded: (ad) {
-          bannerAdNotifier.value = ad as BannerAd;
-        },
-        onAdFailedToLoad: (ad, err) {
-          debugPrint('Failed to load a banner ad: ${err.message}');
-          ad.dispose();
-        },
-      ),
-    ).load();
+    _statusWorker = ever<RxStatus>(
+      controller.statusObs,
+      (status) {
+        if (status.isError) popUpErro();
+      },
+    );
     super.initState();
   }
 
   @override
   void dispose() {
-    bannerAdNotifier.value?.dispose();
-    bannerAdNotifier.dispose();
+    _statusWorker?.dispose();
     pageController.dispose();
-    quizzesController.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    return Obx(() {
-      if (controller.isError) {
-        popUpErro();
-      }
-      return LoadingBlurScreen(
+    return Obx(
+      () => LoadingBlurScreen(
         enabled: controller.isLoading,
         child: Scaffold(
           appBar: const AppBarWidget(),
@@ -97,6 +84,7 @@ class _HomeScreen extends State<HomeScreen> with PopUpMixin {
                   ),
                   textAlign: TextAlign.center,
                   activeColor: AppColors.purple,
+                  inactiveColor: AppColors.grey,
                 ),
                 BottomNavyBarItem(
                   icon: const Icon(
@@ -108,21 +96,22 @@ class _HomeScreen extends State<HomeScreen> with PopUpMixin {
                   ),
                   textAlign: TextAlign.center,
                   activeColor: AppColors.purple,
+                  inactiveColor: AppColors.grey,
                 ),
               ],
               onItemSelected: (value) {
                 controller.setPage = value;
                 pageController.animateToPage(
                   value,
-                  duration: const Duration(milliseconds: 700),
-                  curve: Curves.easeIn,
+                  duration: const Duration(milliseconds: 300),
+                  curve: Curves.easeInOut,
                 );
               },
             ),
           ),
         ),
-      );
-    });
+      ),
+    );
   }
 
   Widget get bottomAd => ValueListenableBuilder(

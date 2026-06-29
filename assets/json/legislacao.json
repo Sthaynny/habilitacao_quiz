@@ -68,7 +68,7 @@
             "titulo": "Quando o policial de trânsito movimenta o braço direito para cima e para baixo, está determinando que o condutor do veículo?",
             "respostas": [
                 {
-                    "titulo": " diminua a marcha.",
+                    "titulo": "diminua a marcha.",
                     "correta": true
                 },
                 {
@@ -1069,6 +1069,132 @@
                 },
                 {
                     "titulo": "fazer conversão à esquerda em local onde não houver sinalização específica."
+                }
+            ]
+        },
+        {
+            "titulo": "De acordo com o CTB, a concentração de álcool por litro de sangue que configura infração de trânsito é superior a:",
+            "respostas": [
+                {
+                    "titulo": "zero, para qualquer quantidade detectada."
+                },
+                {
+                    "titulo": "0,2 mg para condutores em geral e 0,1 mg para condutores profissionais.",
+                    "correta": true
+                },
+                {
+                    "titulo": "0,6 mg para todos os condutores."
+                },
+                {
+                    "titulo": "1,0 mg apenas em rodovias."
+                },
+                {
+                    "titulo": "0,5 mg em vias urbanas e 0,3 mg em rodovias."
+                }
+            ]
+        },
+        {
+            "titulo": "O uso do cinto de segurança pelos ocupantes do veículo, conforme o CTB, é:",
+            "respostas": [
+                {
+                    "titulo": "obrigatório apenas para o condutor e o passageiro do banco dianteiro."
+                },
+                {
+                    "titulo": "recomendado, mas facultativo nos bancos traseiros."
+                },
+                {
+                    "titulo": "obrigatório para todos os ocupantes, em todas as vias do território nacional.",
+                    "correta": true
+                },
+                {
+                    "titulo": "obrigatório somente em rodovias e vias de trânsito rápido."
+                },
+                {
+                    "titulo": "facultativo em trajetos urbanos de curta distância."
+                }
+            ]
+        },
+        {
+            "titulo": "Em vias urbanas sem sinalização regulamentadora, quando não houver faixa de pedestres, a travessia deve ser feita:",
+            "respostas": [
+                {
+                    "titulo": "em qualquer ponto, desde que o pedestre corra rapidamente."
+                },
+                {
+                    "titulo": "preferencialmente no cruzamento, perpendicularmente à via e observando a circulação de veículos.",
+                    "correta": true
+                },
+                {
+                    "titulo": "somente em passarelas elevadas."
+                },
+                {
+                    "titulo": "sempre acompanhada de agente de trânsito."
+                },
+                {
+                    "titulo": "pelo acostamento da via."
+                }
+            ]
+        },
+        {
+            "titulo": "O Departamento Nacional de Trânsito (Denatran) passou a ser denominado, em 2021:",
+            "respostas": [
+                {
+                    "titulo": "Departamento Federal de Trânsito (DEFTRAN)."
+                },
+                {
+                    "titulo": "Secretaria Nacional de Trânsito (Senatran).",
+                    "correta": true
+                },
+                {
+                    "titulo": "Agência Nacional de Trânsito (ANTRAN)."
+                },
+                {
+                    "titulo": "Instituto Nacional de Trânsito (INTRAN)."
+                },
+                {
+                    "titulo": "Superintendência Nacional de Trânsito (SUTRAN)."
+                }
+            ]
+        },
+        {
+            "titulo": "Conforme o CTB, o condutor envolvido em acidente com vítima deve prestar socorro, sob pena de crime de omissão de socorro previsto no:",
+            "respostas": [
+                {
+                    "titulo": "art. 304 do CTB.",
+                    "correta": true
+                },
+                {
+                    "titulo": "art. 193 do CTB."
+                },
+                {
+                    "titulo": "art. 165 do CTB."
+                },
+                {
+                    "titulo": "art. 244 do CTB."
+                },
+                {
+                    "titulo": "art. 181 do CTB."
+                }
+            ]
+        },
+        {
+            "titulo": "A validade da Carteira Nacional de Habilitação (CNH), na categoria B, para condutores com idade inferior a 50 anos, é de:",
+            "respostas": [
+                {
+                    "titulo": "5 anos."
+                },
+                {
+                    "titulo": "10 anos.",
+                    "correta": true
+                },
+                {
+                    "titulo": "3 anos."
+                },
+                {
+                    "titulo": "15 anos."
+                },
+                {
+                    "titulo": "2 anos."
                 }
             ]
         }

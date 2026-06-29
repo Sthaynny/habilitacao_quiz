@@ -1,5 +1,6 @@
 Atividades realizadas na versão:
-  - Atalização do tempo da splash;
-  - Atualização de comportamentos inadequados no histórico e home;
-  - Atualizado questionario;
-  - Aplicanfo correções nos Questionaios
+  - Atualização do Flutter SDK e dependências do projeto;
+  - Refatoração de UI com design system e heurísticas de usabilidade (home, histórico, questionário, resultado e splash);
+  - Documentação do design system do app;
+  - Atualização de conteúdo dos questionários (JSON);
+  - Ajustes no Gradle/Kotlin e fallback de assinatura para build de release;

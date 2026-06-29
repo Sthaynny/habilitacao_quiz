@@ -1,3 +1,5 @@
+// Using Gradle plugins DSL in module build files; no buildscript classpath needed.
+
 allprojects {
     repositories {
         google()

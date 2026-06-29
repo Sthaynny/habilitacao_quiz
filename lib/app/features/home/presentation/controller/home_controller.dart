@@ -4,6 +4,8 @@ class HomeController extends GetxController {
   final _status = RxStatus.empty().obs;
   final _page = 0.obs;
 
+  Rx<RxStatus> get statusObs => _status;
+
   set setStatus(RxStatus value) => _status.value = value;
 
   set setPage(int value) => _page.value = value;

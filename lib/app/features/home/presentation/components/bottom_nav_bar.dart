@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:habilitacao_quiz/core/styles/app_colors.dart';
+import 'package:habilitacao_quiz/core/styles/app_font_styles.dart';
 import 'package:habilitacao_quiz/core/styles/spacing_stack.dart';
 
 /// A beautiful and animated bottom navigation that paints a rounded shape
@@ -20,7 +22,8 @@ class BottomNavBar extends StatelessWidget {
     required this.items,
     required this.onItemSelected,
     this.curve = Curves.linear,
-  }) : assert(items.length >= 2 && items.length <= 5);
+  }) : assert(items.length >= 2 && items.length <= 5),
+       super(key: key);
 
   /// The selected item is index. Changing this property will change and animate
   /// the item being selected. Defaults to zero.
@@ -69,8 +72,8 @@ class BottomNavBar extends StatelessWidget {
         color: bgColor,
         boxShadow: [
           if (showElevation)
-            const BoxShadow(
-              color: Colors.black12,
+            BoxShadow(
+              color: AppColors.black.withValues(alpha: 0.12),
               blurRadius: 2,
             ),
         ],
@@ -80,21 +83,28 @@ class BottomNavBar extends StatelessWidget {
           width: double.infinity,
           height: containerHeight,
           padding: EdgeInsets.symmetric(
-              vertical: 6, horizontal: AppSpacingStack.xSmall.value),
+            vertical: AppSpacingStack.quarck.value,
+            horizontal: AppSpacingStack.xSmall.value,
+          ),
           child: Row(
             mainAxisAlignment: mainAxisAlignment,
             children: items.map((item) {
               var index = items.indexOf(item);
-              return InkWell(
-                onTap: () => onItemSelected(index),
-                child: _ItemWidget(
-                  item: item,
-                  iconSize: iconSize,
-                  isSelected: index == selectedIndex,
-                  backgroundColor: bgColor,
-                  itemCornerRadius: itemCornerRadius,
-                  animationDuration: animationDuration,
-                  curve: curve,
+              return Semantics(
+                button: true,
+                selected: index == selectedIndex,
+                label: _itemLabel(item),
+                child: InkWell(
+                  onTap: () => onItemSelected(index),
+                  child: _ItemWidget(
+                    item: item,
+                    iconSize: iconSize,
+                    isSelected: index == selectedIndex,
+                    backgroundColor: bgColor,
+                    itemCornerRadius: itemCornerRadius,
+                    animationDuration: animationDuration,
+                    curve: curve,
+                  ),
                 ),
               );
             }).toList(),
@@ -102,6 +112,12 @@ class BottomNavBar extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  String _itemLabel(BottomNavyBarItem item) {
+    final title = item.title;
+    if (title is Text && title.data != null) return title.data!;
+    return '';
   }
 }
 
@@ -126,57 +142,54 @@ class _ItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Semantics(
-      container: true,
-      selected: isSelected,
-      child: AnimatedContainer(
-        width: isSelected ? 130 : 50,
-        height: double.maxFinite,
-        duration: animationDuration,
-        curve: curve,
-        decoration: BoxDecoration(
-          color: isSelected
-              ? item.activeColor.withValues(alpha: 0.2)
-              : backgroundColor,
-          borderRadius: BorderRadius.circular(itemCornerRadius),
-        ),
-        child: SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          physics: const NeverScrollableScrollPhysics(),
-          child: Container(
-            width: isSelected ? 130 : 50,
-            padding: const EdgeInsets.symmetric(horizontal: 8),
-            child: Row(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                IconTheme(
-                  data: IconThemeData(
-                    size: iconSize,
-                    color: isSelected
-                        ? item.activeColor.withValues(alpha: 1)
-                        : item.inactiveColor ?? item.activeColor,
-                  ),
-                  child: item.icon,
+    return AnimatedContainer(
+      width: isSelected ? 130 : 50,
+      height: double.maxFinite,
+      duration: animationDuration,
+      curve: curve,
+      decoration: BoxDecoration(
+        color: isSelected
+            ? item.activeColor.withValues(alpha: 0.2)
+            : backgroundColor,
+        borderRadius: BorderRadius.circular(itemCornerRadius),
+      ),
+      child: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        physics: const NeverScrollableScrollPhysics(),
+        child: Container(
+          width: isSelected ? 130 : 50,
+          padding: EdgeInsets.symmetric(
+            horizontal: AppSpacingStack.nano.value,
+          ),
+          child: Row(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              IconTheme(
+                data: IconThemeData(
+                  size: iconSize,
+                  color: isSelected ? item.activeColor : item.inactiveColor,
                 ),
-                if (isSelected)
-                  Expanded(
-                    child: Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 4),
-                      child: DefaultTextStyle.merge(
-                        style: TextStyle(
-                          color: item.activeColor,
-                          fontWeight: FontWeight.bold,
-                        ),
-                        maxLines: 1,
-                        textAlign: item.textAlign,
-                        child: item.title,
+                child: item.icon,
+              ),
+              if (isSelected)
+                Expanded(
+                  child: Container(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: AppSpacingStack.quarck.value,
+                    ),
+                    child: DefaultTextStyle.merge(
+                      style: AppFontStyle.body14Bold.setColor(
+                        item.activeColor,
                       ),
+                      maxLines: 1,
+                      textAlign: item.textAlign,
+                      child: item.title,
                     ),
                   ),
-              ],
-            ),
+                ),
+            ],
           ),
         ),
       ),
@@ -184,14 +197,14 @@ class _ItemWidget extends StatelessWidget {
   }
 }
 
-/// The [BottomNavyBar.items] definition.
+/// The [BottomNavBar.items] definition.
 class BottomNavyBarItem {
   BottomNavyBarItem({
     required this.icon,
     required this.title,
-    this.activeColor = Colors.blue,
+    this.activeColor = AppColors.purple,
     this.textAlign,
-    this.inactiveColor,
+    this.inactiveColor = AppColors.grey,
   });
 
   /// Defines this item's icon which is placed in the right side of the [title].
@@ -200,12 +213,11 @@ class BottomNavyBarItem {
   /// Defines this item's title which placed in the left side of the [icon].
   final Widget title;
 
-  /// The [icon] and [title] color defined when this item is selected. Defaults
-  /// to [Colors.blue].
+  /// The [icon] and [title] color defined when this item is selected.
   final Color activeColor;
 
   /// The [icon] and [title] color defined when this item is not selected.
-  final Color? inactiveColor;
+  final Color inactiveColor;
 
   /// The alignment for the [title].
   ///
