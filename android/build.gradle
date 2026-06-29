@@ -1,5 +1,11 @@
 // Using Gradle plugins DSL in module build files; no buildscript classpath needed.
 
+// Build fora do OneDrive evita "not a regular file" no Gradle incremental.
+def localAppData = System.getenv("LOCALAPPDATA")
+def androidBuildDir = localAppData != null
+        ? "${localAppData}/habilitacao_quiz/build"
+        : "../build"
+
 allprojects {
     repositories {
         google()
@@ -7,7 +13,7 @@ allprojects {
     }
 }
 
-rootProject.buildDir = "../build"
+rootProject.buildDir = androidBuildDir
 subprojects {
     project.buildDir = "${rootProject.buildDir}/${project.name}"
 }

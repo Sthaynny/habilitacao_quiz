@@ -3,6 +3,7 @@ import 'package:habilitacao_quiz/app/features/historico/domain/entities/historic
 import 'package:habilitacao_quiz/app/features/historico/domain/usecases/salvar_historico_usecase.dart';
 import 'package:habilitacao_quiz/app/features/resultado/domain/resultado_entity.dart';
 import 'package:habilitacao_quiz/app/features/routes/routes.dart';
+import 'package:habilitacao_quiz/app/shared/domain/entities/pergunta_entity.dart';
 import 'package:habilitacao_quiz/app/shared/domain/entities/quiz_entity.dart';
 import 'package:habilitacao_quiz/app/shared/domain/entities/resposta_entity.dart';
 import 'package:habilitacao_quiz/app/shared/utils/constants.dart';
@@ -71,7 +72,7 @@ extension MetodosAuxilixaresController on QuestionarioController {
   int get indexPerguntaUsuario => _indexPergunta.value + 1;
   bool get ultimaPergunta =>
       _indexPergunta.value == (quiz.perguntas.length - 1);
-  get perguntaAtual => quiz.perguntas[indexPergunta];
+  PerguntaEntity get perguntaAtual => quiz.perguntas[indexPergunta];
 
   RespostaEntity? get respotaSelecionada =>
       quiz.perguntas[indexPergunta].respostaSelecionada;

@@ -5,8 +5,11 @@ import 'package:habilitacao_quiz/core/components/circular_progress_widget.dart';
 import 'package:habilitacao_quiz/core/styles/app_styles.dart';
 
 class LoadingBlurScreen extends StatelessWidget {
-  const LoadingBlurScreen({required this.child, this.enabled = false, Key? key})
-    : super(key: key);
+  const LoadingBlurScreen({
+    required this.child,
+    this.enabled = false,
+    super.key,
+  });
 
   final Widget child;
   final bool enabled;

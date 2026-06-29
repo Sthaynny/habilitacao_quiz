@@ -9,7 +9,7 @@ import 'package:habilitacao_quiz/core/utils/strings.dart';
 import 'package:share_plus/share_plus.dart';
 
 class ResultadoScreen extends StatefulWidget {
-  const ResultadoScreen({Key? key, required this.args}) : super(key: key);
+  const ResultadoScreen({super.key, required this.args});
   final ResultadoEntity args;
 
   @override
@@ -73,8 +73,7 @@ class _ResultadoScreenState extends State<ResultadoScreen> with PopUpMixin {
                 Text.rich(
                   TextSpan(
                     text: Strings.voceFinalizou,
-                    style: AppFontStyle.body14Regular
-                        .setColor(AppColors.grey),
+                    style: AppFontStyle.body14Regular.setColor(AppColors.grey),
                     children: [
                       TextSpan(
                         text: '${widget.args.titulo}\n',
@@ -82,13 +81,14 @@ class _ResultadoScreenState extends State<ResultadoScreen> with PopUpMixin {
                       ),
                       TextSpan(
                         text: Strings.resultadoQuestionario(
-                          respostasCorretas:
-                              widget.args.totalRespostasCorretas.toString(),
+                          respostasCorretas: widget.args.totalRespostasCorretas
+                              .toString(),
                           totalPerguntas: widget.args.totalPerguntas.toString(),
                           percentual: getPercentual,
                         ),
-                        style: AppFontStyle.body14Regular
-                            .setColor(AppColors.grey),
+                        style: AppFontStyle.body14Regular.setColor(
+                          AppColors.grey,
+                        ),
                       ),
                     ],
                   ),
