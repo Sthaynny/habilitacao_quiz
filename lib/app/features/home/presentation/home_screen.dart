@@ -30,6 +30,7 @@ class _HomeScreen extends State<HomeScreen> with PopUpMixin {
   HomeController get controller => widget.controller;
   late final QuizzesController quizzesController;
   final PageController pageController = PageController();
+  final ValueNotifier<BannerAd?> bannerAdNotifier = ValueNotifier(null);
   Worker? _statusWorker;
 
   @override
@@ -42,12 +43,28 @@ class _HomeScreen extends State<HomeScreen> with PopUpMixin {
         if (status.isError) popUpErro();
       },
     );
+    BannerAd(
+      adUnitId: AdHelper.bottomAd,
+      request: const AdRequest(),
+      size: AdSize.banner,
+      listener: BannerAdListener(
+        onAdLoaded: (ad) {
+          bannerAdNotifier.value = ad as BannerAd;
+        },
+        onAdFailedToLoad: (ad, err) {
+          debugPrint('Failed to load a banner ad: ${err.message}');
+          ad.dispose();
+        },
+      ),
+    ).load();
     super.initState();
   }
 
   @override
   void dispose() {
     _statusWorker?.dispose();
+    bannerAdNotifier.value?.dispose();
+    bannerAdNotifier.dispose();
     pageController.dispose();
     super.dispose();
   }

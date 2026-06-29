@@ -1,6 +1,7 @@
 Atividades realizadas na versão:
-  - Atualização do Flutter SDK e dependências do projeto;
-  - Refatoração de UI com design system e heurísticas de usabilidade (home, histórico, questionário, resultado e splash);
-  - Documentação do design system do app;
-  - Atualização de conteúdo dos questionários (JSON);
-  - Ajustes no Gradle/Kotlin e fallback de assinatura para build de release;
+  - Correção da dependência google_mobile_ads removida no merge anterior;
+  - Restauração do banner de anúncios na home;
+  - Correção de bug no BottomNavBar (parâmetro key duplicado);
+  - Anúncios de produção no histórico (AdHelper.bottomAd);
+  - Atualização do CI para Flutter 3.38;
+  - Formatação de código (dart format);

@@ -27,8 +27,8 @@ class _HistoricoWidgetState extends State<HistoricoWidget> {
   @override
   void initState() {
     BannerAd(
-      adUnitId: AdHelper.bannerTest,
-      request: AdRequest(),
+      adUnitId: AdHelper.bottomAd,
+      request: const AdRequest(),
       size: AdSize.banner,
       listener: BannerAdListener(
         onAdLoaded: (ad) {
