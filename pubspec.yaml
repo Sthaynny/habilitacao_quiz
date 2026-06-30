@@ -1,6 +1,6 @@
 name: habilitacao_quiz
 description: Um projeto para ajudar as pessoas que querem tirar sua CNH.
-version: 1.9.3+37
+version: 1.9.3+38
 
 environment:
   sdk: ">=3.10.4 <4.0.0"
