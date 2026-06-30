@@ -1,0 +1,23 @@
+Driving License Quiz is an educational question-and-answer game to help users practice content related to Brazilian traffic laws. The app covers topics such as legislation, defensive driving, basic mechanics, first aid, and environment.
+
+LEGAL NOTICE — PLEASE READ CAREFULLY
+
+This app does NOT represent, is NOT affiliated with, sponsored by, or approved by any government entity, including SENATRAN (formerly DENATRAN) or any state DETRAN. The content is exclusively educational and does NOT replace official courses, DETRAN materials, or the theoretical CNH exam.
+
+OFFICIAL GOVERNMENT INFORMATION SOURCES
+
+The questions are based on educational content about traffic. For official and up-to-date information, please visit:
+
+• SENATRAN (National Traffic Secretariat):
+https://www.gov.br/transportes/pt-br/assuntos/transito/senatran
+
+• Brazilian Traffic Code (Law No. 9,503/1997):
+https://www.planalto.gov.br/ccivil_03/leis/l9503.htm
+
+• Ministry of Transport:
+https://www.gov.br/transportes
+
+App features:
+• Category quizzes and mock exams
+• Performance history
+• Study aid for the theoretical CNH exam

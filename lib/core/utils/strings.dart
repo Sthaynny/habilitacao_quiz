@@ -26,6 +26,12 @@ abstract class Strings {
   static const voltarInicio = 'Voltar ao início';
   static const historico = 'Histórico';
   static const quizzes = 'Quizzes';
+  static const avisoLegal = 'Aviso legal';
+  static const fontesOficiais = 'Fontes oficiais';
+  static const fontesOficiaisDescricao =
+      'As questões deste app são baseadas em conteúdo educacional sobre trânsito. Consulte sempre as fontes oficiais abaixo para informações atualizadas.';
+  static const avisoLegalTexto =
+      'Este aplicativo é independente e não representa, não é afiliado, patrocinado ou aprovado por qualquer entidade governamental, incluindo a SENATRAN (antiga DENATRAN) ou qualquer DETRAN estadual. O conteúdo é exclusivamente educacional e não substitui cursos oficiais, materiais do DETRAN ou a prova teórica da CNH.';
 
   static const comeceEstudosVizualizarProgresso =
       'Comece os estudos para visualizar seu progresso!';

@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:habilitacao_quiz/app/features/routes/routes.dart';
 import 'package:habilitacao_quiz/core/styles/app_colors.dart';
 import 'package:habilitacao_quiz/core/styles/app_font_styles.dart';
 import 'package:habilitacao_quiz/core/styles/app_gradients.dart';
@@ -33,16 +35,26 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Semantics(
-                  header: true,
-                  child: Text.rich(
-                    TextSpan(
-                      text: 'Habilitação Quiz',
-                      style: AppFontStyle.headline24Bold.setColor(
-                        AppColors.white,
+                Expanded(
+                  child: Semantics(
+                    header: true,
+                    child: Text.rich(
+                      TextSpan(
+                        text: 'Habilitação Quiz',
+                        style: AppFontStyle.headline24Bold.setColor(
+                          AppColors.white,
+                        ),
                       ),
                     ),
                   ),
+                ),
+                IconButton(
+                  icon: const Icon(
+                    Icons.info_outline,
+                    color: AppColors.white,
+                  ),
+                  tooltip: 'Aviso legal',
+                  onPressed: () => Get.toNamed(Routes.legalNotice),
                 ),
                 Container(
                   height: 90,
