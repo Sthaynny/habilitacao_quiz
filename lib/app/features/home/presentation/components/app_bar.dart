@@ -11,13 +11,15 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
+    final topInset = MediaQuery.paddingOf(context).top;
+
     return Stack(
       children: [
         Container(
-          height: 180,
+          height: 180 + topInset,
         ),
         Positioned(
-          top: -20,
+          top: topInset - 20,
           child: Container(
             height: 190,
             width: MediaQuery.of(context).size.width,
@@ -64,5 +66,10 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => const Size.fromHeight(180);
+  Size get preferredSize {
+    final topInset = MediaQueryData.fromView(
+      WidgetsBinding.instance.platformDispatcher.views.first,
+    ).padding.top;
+    return Size.fromHeight(180 + topInset);
+  }
 }

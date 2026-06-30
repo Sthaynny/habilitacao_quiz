@@ -1,6 +1,6 @@
 Atividades realizadas na versão:
-  - Interface renovada com design system (home, histórico, questionário, resultado, splash);
-  - Correção de anúncios na home e histórico;
-  - Conteúdo dos questionários atualizado;
-  - Atualização do Flutter SDK e dependências;
-  - Correções de estabilidade e navegação;
+  - Compatibilidade edge-to-edge com Android 15 (SDK 35) via EdgeToEdge.enable;
+  - Remoção de APIs descontinuadas de barra de status/navegação no Flutter;
+  - Ajuste do AppBar para respeitar insets do sistema;
+  - Correção de overflow nos cards da home;
+  - Migração para Built-in Kotlin (Flutter 3.44);

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:get/get.dart';
-import 'package:habilitacao_quiz/app/features/home/presentation/home_screen.dart';
+import 'package:get/get.dart';import 'package:habilitacao_quiz/app/features/home/presentation/home_screen.dart';
 import 'package:habilitacao_quiz/app/features/questionario/presentation/questionario_screen.dart';
 import 'package:habilitacao_quiz/app/features/resultado/presentation/resultado_screen.dart';
 import 'package:habilitacao_quiz/app/features/routes/routes.dart';
@@ -17,11 +15,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
         appBarTheme: const AppBarTheme(
-          systemOverlayStyle: SystemUiOverlayStyle(
-            statusBarColor: Colors.transparent,
-            systemNavigationBarColor: Colors.transparent,
-            systemNavigationBarDividerColor: Colors.transparent,
-          ),
+          elevation: 0,
+          scrolledUnderElevation: 0,
         ),
       ),
       initialRoute: Routes.init,

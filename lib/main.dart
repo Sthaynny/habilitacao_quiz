@@ -11,6 +11,12 @@ void main() {
     () async {
       WidgetsFlutterBinding.ensureInitialized();
       SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
+      SystemChrome.setSystemUIOverlayStyle(
+        const SystemUiOverlayStyle(
+          statusBarIconBrightness: Brightness.dark,
+          systemNavigationBarIconBrightness: Brightness.dark,
+        ),
+      );
       await _initGoogleMobileAds();
       GlobalInjectionContainer.setInjection();
       runApp(const MyApp());

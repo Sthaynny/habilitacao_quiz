@@ -1,12 +1,12 @@
 package br.com.sthaynny.habilitacao_quiz
 
 import android.os.Bundle
-import androidx.core.view.WindowCompat
+import androidx.activity.EdgeToEdge
 import io.flutter.embedding.android.FlutterActivity
 
 class MainActivity : FlutterActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
-        WindowCompat.setDecorFitsSystemWindows(window, false)
+        EdgeToEdge.enable(this)
         super.onCreate(savedInstanceState)
     }
 }
