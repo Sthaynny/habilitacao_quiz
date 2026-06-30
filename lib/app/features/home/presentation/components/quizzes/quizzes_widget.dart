@@ -18,74 +18,55 @@ class QuizzesWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return ListView(
       padding: EdgeInsets.symmetric(horizontal: AppSpacingStack.xxxSmall.value),
-      child: GridView.count(
-        crossAxisSpacing: AppSpacingStack.nano.value,
-        mainAxisSpacing: AppSpacingStack.nano.value,
-        crossAxisCount: 2,
-        children: [
-          Padding(
-            padding: EdgeInsets.symmetric(vertical: AppSpacingStack.nano.value),
-            child: bottomAd,
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(
-                horizontal: AppSpacingStack.xxxSmall.value),
-            child: SingleChildScrollView(
-              child: GridView.count(
-                physics: NeverScrollableScrollPhysics(),
-                crossAxisSpacing: 8,
-                mainAxisSpacing: 8,
-                crossAxisCount: 2,
-                shrinkWrap: true,
-                children: [
-                  QuizCardWidget(
-                    onTap: () => controller.irParaPagina(QuizEnum.legislacao),
-                    image: AppImages.legislacao,
-                    title: Strings.legislacao,
-                  ),
-                  QuizCardWidget(
-                    onTap: () {
-                      controller.irParaPagina(QuizEnum.direcaoDefensiva);
-                    },
-                    image: AppImages.direcaoDefensiva,
-                    title: Strings.direcaoDefesiva,
-                  ),
-                  QuizCardWidget(
-                    onTap: () {
-                      controller.irParaPagina(QuizEnum.mecanicaBasica);
-                    },
-                    image: AppImages.mecanica,
-                    title: Strings.mecanicaBasica,
-                  ),
-                  QuizCardWidget(
-                    onTap: () {
-                      controller.irParaPagina(QuizEnum.primeirosSocorros);
-                    },
-                    image: AppImages.primeirosSocorros,
-                    title: Strings.primeirosSocorros,
-                  ),
-                  QuizCardWidget(
-                    onTap: () {
-                      controller.irParaPagina(QuizEnum.meioAmbiente);
-                    },
-                    image: AppImages.meioAmbiente,
-                    title: Strings.meioAmbiente,
-                  ),
-                  QuizCardWidget(
-                    onTap: () {
-                      controller.irParaPagina(QuizEnum.simulado);
-                    },
-                    image: AppImages.simulado,
-                    title: Strings.simulado,
-                  ),
-                ],
-              ),
+      children: [
+        Padding(
+          padding: EdgeInsets.symmetric(vertical: AppSpacingStack.nano.value),
+          child: Center(child: bottomAd),
+        ),
+        GridView.count(
+          shrinkWrap: true,
+          physics: const NeverScrollableScrollPhysics(),
+          crossAxisCount: 2,
+          crossAxisSpacing: AppSpacingStack.nano.value,
+          mainAxisSpacing: AppSpacingStack.nano.value,
+          childAspectRatio: 0.9,
+          children: [
+            QuizCardWidget(
+              onTap: () => controller.irParaPagina(QuizEnum.legislacao),
+              image: AppImages.legislacao,
+              title: Strings.legislacao,
             ),
-          ),
-        ],
-      ),
+            QuizCardWidget(
+              onTap: () => controller.irParaPagina(QuizEnum.direcaoDefensiva),
+              image: AppImages.direcaoDefensiva,
+              title: Strings.direcaoDefesiva,
+            ),
+            QuizCardWidget(
+              onTap: () => controller.irParaPagina(QuizEnum.mecanicaBasica),
+              image: AppImages.mecanica,
+              title: Strings.mecanicaBasica,
+            ),
+            QuizCardWidget(
+              onTap: () =>
+                  controller.irParaPagina(QuizEnum.primeirosSocorros),
+              image: AppImages.primeirosSocorros,
+              title: Strings.primeirosSocorros,
+            ),
+            QuizCardWidget(
+              onTap: () => controller.irParaPagina(QuizEnum.meioAmbiente),
+              image: AppImages.meioAmbiente,
+              title: Strings.meioAmbiente,
+            ),
+            QuizCardWidget(
+              onTap: () => controller.irParaPagina(QuizEnum.simulado),
+              image: AppImages.simulado,
+              title: Strings.simulado,
+            ),
+          ],
+        ),
+      ],
     );
   }
 }

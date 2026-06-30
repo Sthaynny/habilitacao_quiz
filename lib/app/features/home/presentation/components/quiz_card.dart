@@ -9,55 +9,51 @@ class QuizCardWidget extends StatelessWidget {
     required this.onTap,
     required this.image,
   });
+
   final String title;
   final String image;
   final VoidCallback onTap;
+
   @override
   Widget build(BuildContext context) {
     return Semantics(
       button: true,
       label: title,
       child: InkWell(
+        borderRadius: BorderRadius.circular(10),
         onTap: onTap,
         child: Container(
-        padding: EdgeInsets.all(AppSpacingStack.xxxSmall.value),
-        margin: EdgeInsets.all(AppSpacingStack.nano.value),
-        decoration: BoxDecoration(
-          border: const Border.fromBorderSide(
-            BorderSide(
-              color: AppColors.border,
+          padding: EdgeInsets.all(AppSpacingStack.xxxSmall.value),
+          decoration: BoxDecoration(
+            border: const Border.fromBorderSide(
+              BorderSide(color: AppColors.border),
             ),
+            borderRadius: BorderRadius.circular(10),
+            color: AppColors.white,
           ),
-          borderRadius: BorderRadius.circular(10),
-          color: AppColors.white,
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            const Spacer(),
-            Padding(
-              padding: EdgeInsets.only(bottom: AppSpacingStack.xxxSmall.value),
-              child: Image.asset(
-                image,
-                width: 48,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Image.asset(
+                    image,
+                    width: 48,
+                    height: 48,
+                    fit: BoxFit.contain,
+                  ),
+                ),
               ),
-            ),
-            const Spacer(
-              flex: 1,
-            ),
-            Container(
-              margin: EdgeInsets.only(bottom: AppSpacingStack.nano.value),
-              child: Text(
+              SizedBox(height: AppSpacingStack.nano.value),
+              Text(
                 title,
                 style: AppFontStyle.body16Medium,
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
               ),
-            ),
-            const Spacer(),
-          ],
-        ),
+            ],
+          ),
         ),
       ),
     );
