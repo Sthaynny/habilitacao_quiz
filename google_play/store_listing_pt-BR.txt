@@ -1,0 +1,23 @@
+Habilitação Quiz é um jogo educativo de perguntas e respostas para ajudar você a praticar conteúdos relacionados ao trânsito brasileiro. O app aborda temas como legislação, direção defensiva, mecânica básica, primeiros socorros e meio ambiente.
+
+AVISO LEGAL — LEIA COM ATENÇÃO
+
+Este aplicativo NÃO representa, NÃO é afiliado, patrocinado ou aprovado por qualquer entidade governamental, incluindo a SENATRAN (antiga DENATRAN) ou qualquer DETRAN estadual. O conteúdo é exclusivamente educacional e NÃO substitui cursos oficiais, materiais do DETRAN ou a prova teórica da CNH.
+
+FONTES OFICIAIS DE INFORMAÇÕES GOVERNAMENTAIS
+
+As questões são baseadas em conteúdo educacional sobre trânsito. Para informações oficiais e atualizadas, consulte:
+
+• SENATRAN (Secretaria Nacional de Trânsito):
+https://www.gov.br/transportes/pt-br/assuntos/transito/senatran
+
+• Código de Trânsito Brasileiro (Lei nº 9.503/1997):
+https://www.planalto.gov.br/ccivil_03/leis/l9503.htm
+
+• Ministério dos Transportes:
+https://www.gov.br/transportes
+
+Recursos do app:
+• Quizzes por categoria e simulados
+• Histórico de desempenho
+• Estudo para a prova teórica da CNH

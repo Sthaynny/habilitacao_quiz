@@ -1,6 +1,5 @@
 Atividades realizadas na versão:
-  - Compatibilidade edge-to-edge com Android 15 (SDK 35) via EdgeToEdge.enable;
-  - Remoção de APIs descontinuadas de barra de status/navegação no Flutter;
-  - Ajuste do AppBar para respeitar insets do sistema;
-  - Correção de overflow nos cards da home;
-  - Migração para Built-in Kotlin (Flutter 3.44);
+  - Tela de aviso legal com exoneração de responsabilidade sobre afiliação governamental;
+  - Links clicáveis para fontes oficiais (.gov.br) de informações sobre trânsito;
+  - Atualização da descrição da Play Store com disclaimer e URLs oficiais;
+  - Correção de conformidade com a política de Declarações Enganosas do Google Play.

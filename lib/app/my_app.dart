@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';import 'package:habilitacao_quiz/app/features/home/presentation/home_screen.dart';
+import 'package:get/get.dart';
+import 'package:habilitacao_quiz/app/features/home/presentation/home_screen.dart';
+import 'package:habilitacao_quiz/app/features/legal/presentation/legal_notice_screen.dart';
 import 'package:habilitacao_quiz/app/features/questionario/presentation/questionario_screen.dart';
 import 'package:habilitacao_quiz/app/features/resultado/presentation/resultado_screen.dart';
 import 'package:habilitacao_quiz/app/features/routes/routes.dart';
@@ -48,6 +50,10 @@ class MyApp extends StatelessWidget {
           transition: Transition.fadeIn,
           transitionDuration: const Duration(seconds: 2),
           showCupertinoParallax: false,
+        ),
+        GetPage(
+          name: Routes.legalNotice,
+          page: () => const LegalNoticeScreen(),
         ),
       ],
     );
