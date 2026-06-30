@@ -15,18 +15,17 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
 
     return Stack(
       children: [
-        Container(
-          height: 180 + topInset,
-        ),
+        Container(height: 180 + topInset),
         Positioned(
-          top: topInset - 20,
+          top: -20,
           child: Container(
             height: 190,
             width: MediaQuery.of(context).size.width,
             alignment: Alignment.bottomCenter,
             padding: EdgeInsets.symmetric(
-                horizontal: AppSpacingStack.xxSmall.value,
-                vertical: AppSpacingStack.xxxSmall.value),
+              horizontal: AppSpacingStack.xxSmall.value,
+              vertical: AppSpacingStack.xxxSmall.value,
+            ),
             decoration: BoxDecoration(
               gradient: AppGradients.linear,
               borderRadius: BorderRadius.circular(30),
@@ -50,13 +49,11 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
                   width: 90,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage(
-                        AppImages.logo,
-                      ),
+                      image: AssetImage(AppImages.logo),
                       fit: BoxFit.cover,
                     ),
                   ),
-                )
+                ),
               ],
             ),
           ),
