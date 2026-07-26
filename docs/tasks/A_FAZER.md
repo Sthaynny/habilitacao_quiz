@@ -41,33 +41,6 @@ Doc: [historico-simulados.md](../features/historico-simulados.md)
 
 ---
 
-## [LEARN] — Área Aprender
-
-| ID | Objetivo | Critério de pronto | Pistas |
-| :--- | :--- | :--- | :--- |
-| HQ-A01 | `manifest.json` tema ↔ quiz | Mapa documentado | `QuizEnum` |
-| HQ-A02 | Redigir 5 resumos + 5 artigos + trilha básica | Revisão editorial leve | `assets/learning/` |
-| HQ-A03 | Repo/domínio learning | Lê assets offline | clean arch |
-| HQ-A04 | UI hub + Markdown | Hub + detalhe tema | pacote markdown |
-| HQ-A05 | 3ª aba Aprender | `PageView` + nav | `home_screen.dart` |
-| HQ-A06 | CTA Praticar tema | Fluxo questionário | `quizzes_controller` |
-| HQ-A07 | Progresso trilha SP | Persistência | — |
-| HQ-A08 | Disclaimer + fontes no hub | Reuso legal | `legal_notice_screen` |
-| HQ-A09 | ProGate trilha/fichas/mapa | Gates testados | — |
-| HQ-A10 | Trilha completa + fichas Pro | Conteúdo assets | — |
-| HQ-A11 | Mapa competências | Agrega histórico | T22 |
-| HQ-A12 | Revisão espaçada | IDs estáveis no JSON | — |
-| HQ-A13 | Testes learning | Parse + progresso | — |
-| HQ-A14 | Copy loja Aprender | Listings | `google_play/` |
-| HQ-A15 | `contentVersion` manifest | Changelog conteúdo | — |
-| T26 | Revisão erros último teste | Pro | questionário |
-| T27 | Modo prova ~40 min | Pro 30q | timer UI |
-| T28 | Lote explicações no JSON | Campo `explicacao` | assets/json |
-
-Doc: [area-aprendizado.md](../features/area-aprendizado.md)
-
----
-
 ## [IA] — Inteligência Pro
 
 | ID | Objetivo | Critério de pronto | Pistas |

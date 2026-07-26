@@ -48,6 +48,24 @@
 | T23 | Filtros / busca histórico Pro | 2026-07-26 |
 | T24 | Export PDF/CSV Pro (`ExportHistoricoUsecase` + share) | 2026-07-26 |
 | HQ-H12 | Analytics simulados/semana (`SimuladoWeeklyAnalytics`) | 2026-07-26 |
+| HQ-A01 | `manifest.json` tema ↔ `QuizEnum` | 2026-07-26 |
+| HQ-A02 | 5 resumos + 5 artigos + trilha básica | 2026-07-26 |
+| HQ-A03 | Repo/domínio learning (assets offline) | 2026-07-26 |
+| HQ-A04 | UI hub + Markdown | 2026-07-26 |
+| HQ-A05 | 3ª aba Aprender (`PageView`) | 2026-07-26 |
+| HQ-A06 | CTA Praticar tema | 2026-07-26 |
+| HQ-A07 | Progresso trilha (SharedPreferences) | 2026-07-26 |
+| HQ-A08 | Disclaimer + fontes no hub | 2026-07-26 |
+| HQ-A09 | ProGate trilha/fichas/mapa + testes | 2026-07-26 |
+| HQ-A10 | Trilha completa + fichas Pro (assets) | 2026-07-26 |
+| HQ-A11 | Mapa competências (histórico / preview Free) | 2026-07-26 |
+| HQ-A12 | Revisão espaçada (IDs no JSON) | 2026-07-26 |
+| HQ-A13 | Testes parse + progresso learning | 2026-07-26 |
+| HQ-A14 | Copy loja Aprender | 2026-07-26 |
+| HQ-A15 | `contentVersion` + changelog conteúdo | 2026-07-26 |
+| T26 | Revisão erros último teste (Pro) | 2026-07-26 |
+| T27 | Modo prova ~40 min (Pro 30q + timer) | 2026-07-26 |
+| T28 | Campo `explicacao` / `id` no JSON (lote) | 2026-07-26 |
 
 ---
 
@@ -69,3 +87,25 @@
 | **HQ-H11** | Feature `historico/` sem AdMob; CTA **+** no rodapé (`HabilitacaoQuizPlusCtaBanner`, HQ-P08). Teste `historico_no_admob_test.dart`. | `lib/app/features/historico/presentation/historico_widget.dart`, `test/features/historico/presentation/historico_no_admob_test.dart` | `flutter test test/features/historico/presentation/historico_no_admob_test.dart` | HQ-P07, HQ-P08 |
 | **T23** | Pro: busca por título + chips Aprovados/Reprovados; `HistoricoListFilter` combina tipo, desempenho e busca; Free mantém chips Todos/Simulados/Temas. | `lib/app/features/historico/presentation/historico_list_filter.dart`, `lib/app/features/historico/presentation/historico_widget.dart`, `lib/core/utils/strings.dart`, `test/features/historico/presentation/historico_list_filter_test.dart` | `flutter test test/features/historico/presentation/historico_list_filter_test.dart` | HQ-H05 |
 | **HQ-H12** | `SimuladoWeeklyAnalytics` + `countSimuladosUltimosDias`; evento ao persistir simulado em `SalvarHistoricoUsecase` (debug log). | `lib/core/analytics/simulado_weekly_analytics.dart`, `lib/core/analytics/simulados_periodo.dart`, `lib/app/features/historico/domain/usecases/salvar_historico_usecase.dart`, `lib/app/shared/shared_injection_continer.dart` | `flutter test test/core/analytics/simulado_weekly_analytics_test.dart test/core/analytics/simulados_periodo_test.dart test/features/historico/domain/usecases/salvar_historico_usecase_test.dart` | HQ-H02, HQ-H04 |
+## [LEARN] HQ-A01 … T28 — detalhe para agentes
+
+| ID | O que foi feito | Arquivos-chave | Como validar | Dependências |
+| :--- | :--- | :--- | :--- | :--- |
+| **HQ-A01** | `assets/learning/manifest.json` com `themeId` ↔ `quizEnum`; mapa em `area-aprendizado.md` e `LearningThemeId`. | `assets/learning/manifest.json`, `docs/features/area-aprendizado.md`, `lib/app/features/learning/domain/learning_theme_id.dart` | Abrir manifest; `flutter test test/features/learning/learning_models_test.dart` | — |
+| **HQ-A02** | 5× `resumo.md` + `artigo_01.md`; `trilha_basica.json`. | `assets/learning/temas/**`, `assets/learning/trilha_basica.json` | Assets no bundle (`pubspec.yaml`) | HQ-A01 |
+| **HQ-A03** | Clean arch: datasource/repo/use cases lendo assets + SP. | `lib/app/features/learning/data/**`, `domain/**`, `learning_injection_continer.dart`, `global_injection_container.dart` | `flutter analyze lib/app/features/learning` | HQ-A02 |
+| **HQ-A04** | Hub + detalhe tema com `flutter_markdown`. | `presentation/widgets/learning_hub_widget.dart`, `learning_theme_screen.dart`, `pubspec.yaml` | Aba Aprender → tema | HQ-A03 |
+| **HQ-A05** | 3ª aba: `Aprender` · `Quizzes` · `Histórico`. | `home_screen.dart` | Bottom nav 3 itens; `PageView` | HQ-A04 |
+| **HQ-A06** | **Praticar tema** → `QuizzesController.irParaPagina`. | `learning_theme_screen.dart` | CTA inicia questionário do tema | HQ-A05 |
+| **HQ-A07** | Progresso trilha em SP (`learning_trilha_progress_*`). | `learning_datasource.dart`, `SalvarPassoTrilhaUsecase` | `flutter test test/features/learning/learning_progress_test.dart` | HQ-A03 |
+| **HQ-A08** | Disclaimer + link `Routes.legalNotice` no hub. | `learning_hub_widget.dart` | Card aviso legal no hub | HQ-A04 |
+| **HQ-A09** | Getters ProGate learning + gates na UI. | `pro_gate.dart`, fichas/trilha/mapa screens | `flutter test test/shared/domain/services/pro_gate_test.dart` | T03 |
+| **HQ-A10** | `trilha_completa.json` + fichas Markdown (Pro). | `assets/learning/trilha_completa.json`, `assets/learning/fichas/**` | Trilha completa e fichas no app | HQ-A02 |
+| **HQ-A11** | Mapa % por matéria: estático Free, dinâmico Pro via `HistoricoEntity`. | `learning_mapa_screen.dart`, `learning_datasource.dart` | Tela mapa; Pro após simulados de tema | T22 (opcional) |
+| **HQ-A12** | Revisão espaçada: IDs estáveis + `RegistrarRevisaoEspacadaUsecase`. | `learning_revisao_screen.dart`, `revisao_quiz_builder.dart`, `questionario_controller.dart` | Pro: erradas viram fila de revisão | HQ-A09 |
+| **HQ-A13** | Testes parse manifest/trilha + progresso SP. | `test/features/learning/**` | `flutter test test/features/learning` | HQ-A03, HQ-A07 |
+| **HQ-A14** | Copy Play menciona hub Aprender. | `google_play/store_listing_en-US.txt` | Revisar listing | — |
+| **HQ-A15** | `contentVersion` no manifest + `CONTENT_CHANGELOG.md`. | `manifest.json`, `assets/learning/CONTENT_CHANGELOG.md` | Versão no rodapé do hub | HQ-A01 |
+| **T26** | Revisar erros do último teste (Pro): `RevisarErrosUltimoTesteUsecase`; detalhe Pro em todos os quizzes. | `revisar_erros_ultimo_teste_usecase.dart`, `map_quiz_to_resultado.dart`, `learning_revisao_screen.dart` | Aprender → revisão / último teste | HQ-A09 |
+| **T27** | Modo prova 40 min: `iniciarModoProva`, `tempoLimite` no `QuizEntity`, timer na AppBar. | `quizzes_controller.dart`, `quizzes_widget.dart`, `questionario_screen.dart`, `quiz_entity.dart` | Botão modo prova (Pro) | HQ-A09 |
+| **T28** | `id` + `explicacao` em `PerguntaModel` / JSON (lote `legislacao.json`). | `pergunta_entity.dart`, `pergunta_model.dart`, `assets/json/legislacao.json` | Parse sem quebrar banco legado | — |
