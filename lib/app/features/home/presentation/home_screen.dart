@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:habilitacao_quiz/app/features/learning/presentation/widgets/learning_hub_widget.dart';
 import 'package:habilitacao_quiz/app/features/historico/presentation/historico_widget.dart';
 import 'package:habilitacao_quiz/app/features/home/presentation/components/app_bar.dart';
 import 'package:habilitacao_quiz/app/features/home/presentation/components/bottom_nav_bar.dart';
@@ -62,6 +63,7 @@ class _HomeScreen extends State<HomeScreen> with PopUpMixin {
             physics: const NeverScrollableScrollPhysics(),
             controller: pageController,
             children: [
+              const LearningHubWidget(),
               QuizzesWidget(
                 controller: quizzesController,
                 topPromo: const HabilitacaoQuizPlusCtaBanner(),
@@ -75,6 +77,16 @@ class _HomeScreen extends State<HomeScreen> with PopUpMixin {
             () => BottomNavBar(
               selectedIndex: controller.getPage,
               items: [
+                BottomNavyBarItem(
+                  icon: const Icon(Icons.menu_book_outlined),
+                  title: Text(
+                    Strings.aprender,
+                    style: AppFontStyle.body14Regular,
+                  ),
+                  textAlign: TextAlign.center,
+                  activeColor: AppColors.purple,
+                  inactiveColor: AppColors.grey,
+                ),
                 BottomNavyBarItem(
                   icon: const Icon(Icons.home),
                   title: Text(
