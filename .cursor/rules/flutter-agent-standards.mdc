@@ -1,0 +1,40 @@
+---
+description: Padrões Flutter para agentes — analyze limpo, sem APIs depreciadas
+globs: lib/**/*.dart
+alwaysApply: false
+---
+
+# Flutter — padrões para agentes
+
+## Antes de entregar
+
+```bash
+flutter pub get
+flutter analyze
+```
+
+Corrigir **errors** e **warnings** nos arquivos alterados. Evitar `// ignore:` salvo caso documentado.
+
+## SDK e estilo
+
+- `environment.sdk` do [pubspec.yaml](../../pubspec.yaml) — Dart 3.10+
+- `flutter_lints` via [analysis_options.yaml](../../analysis_options.yaml)
+- Preferir APIs estáveis do Material 3; consultar mensagens `deprecated_member_use` e migrar
+
+## Evitar
+
+- `Color.withOpacity` → `withValues(alpha: ...)` quando o analyzer indicar
+- `ThemeData` legado ignorando `ColorScheme`
+- `print` em produção — usar logging do projeto se existir
+- Dependências novas sem necessidade clara no critério de pronto
+
+## Arquitetura (este repo)
+
+- Regras de negócio Free/Pro em `ProGate` / use cases, não só na UI
+- GetX: manter padrão existente de bindings, rotas e controllers
+- Testes unitários quando A_FAZER ou o critério de pronto exigir
+
+## UI
+
+- `Theme.of(context).colorScheme` para cores
+- CTAs e banners: semantics + área de toque adequada
