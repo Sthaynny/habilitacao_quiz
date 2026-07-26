@@ -64,6 +64,26 @@ abstract class Strings {
   static const historicoPlusRodape =
       'Histórico ilimitado e detalhes no Habilitação Quiz+.';
 
+  static const historicoFiltroTodos = 'Todos';
+  static const historicoFiltroSimulados = 'Simulados';
+  static const historicoFiltroTemas = 'Temas';
+  static const historicoBadgeSimulado = 'Simulado';
+  static const historicoBadgeTema = 'Tema';
+  static const historicoDetalheTitulo = 'Detalhe do simulado';
+  static const historicoResumoFreeTitulo = 'Seu resultado';
+  static const historicoResumoFreeCorpo =
+      'No Habilitação Quiz+ você revisa o gabarito questão a questão.';
+  static const historicoSemDetalhe =
+      'Detalhe disponível para simulados no Habilitação Quiz+.';
+
+  static String historicoDataLabel(DateTime? realizadoEm) {
+    if (realizadoEm == null) return '';
+    final local = realizadoEm.toLocal();
+    final dd = local.day.toString().padLeft(2, '0');
+    final mm = local.month.toString().padLeft(2, '0');
+    return '$dd/$mm/${local.year}';
+  }
+
   static const plusBenefits = <String>[
     'Simulado com 30 questões, quantas vezes quiser',
     'Quizzes com o banco completo por tema',
