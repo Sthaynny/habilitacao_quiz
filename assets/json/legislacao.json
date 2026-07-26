@@ -2,7 +2,9 @@
     "titulo": "Legislação",
     "perguntas": [
         {
+            "id": "leg_001",
             "titulo": "Três silvos breves emitidos pelo agente da autoridade de trânsito significa que o condutor deve?",
+            "explicacao": "Sinais sonoros do agente complementam a sinalização. Três silvos breves indicam acender as lanternas do veículo, conforme regras de educação para o trânsito.",
             "respostas": [
                 {
                     "titulo": "acender as lanternas do seu veículo.",
