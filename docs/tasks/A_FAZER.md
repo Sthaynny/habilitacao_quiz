@@ -37,16 +37,12 @@ Doc: [promocao-quiz-plus.md](../features/promocao-quiz-plus.md)
 
 | ID | Objetivo | Critério de pronto | Pistas |
 | :--- | :--- | :--- | :--- |
-| HQ-H08 | Persistir detalhe perguntas Pro | Só simulado Pro | — |
 | HQ-H09 | Copy “últimos 10” + CTA | Snackbar no 11º | — |
 | HQ-H10 | CTA resultado simulado 15q | HQ-P09 | — |
-| HQ-H11 | Remover resíduo AdMob histórico | HQ-P08 | — |
 | HQ-H12 | Métricas simulados/semana | Analytics | — |
-| T21 | Histórico ilimitado Pro | ≥15 saves Pro | T09 |
 | T22 | Dashboard % por matéria | Pro only | histórico agregado |
 | T23 | Filtros / busca histórico | Pro | — |
 | T24 | Export PDF/CSV | Pro | `path_provider`, share |
-| T25 | Backup/restauração arquivo | Pro | — |
 
 Doc: [historico-simulados.md](../features/historico-simulados.md)
 

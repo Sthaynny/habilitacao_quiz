@@ -12,7 +12,7 @@ Retenção Free: **10** entradas FIFO via `SalvarHistoricoUsecase` + `ProGate.ma
 ### Modelo de dados (v2) — implementado (HQ-H03+)
 
 - `id`, `tipo` (`tema` | `simulado`), `realizadoEm`
-- `detalhePerguntas` opcional (Pro + simulado ao salvar — HQ-H04)
+- `detalhePerguntas` opcional (Pro + simulado ao salvar — HQ-H04/HQ-H08)
 - Migração JSON `schemaVersion: 2`; legado infere tipo por `titulo == Strings.simulado`
 
 ### UI (HQ-H05–H07)
@@ -21,15 +21,16 @@ Retenção Free: **10** entradas FIFO via `SalvarHistoricoUsecase` + `ProGate.ma
 - Cards com data, badge, `onTap` (`historico_widget.dart`)
 - **Detalhe simulado (Pro):** `DetalheSimuladoScreen` — gabarito questão a questão
 - **Free:** bottom sheet resumo + CTA **+**
+- **Pro:** dashboard **Desempenho por matéria** (agrega temas + simulados com `materiaTitulo` no detalhe)
 
 ### Simulado
 
 `simulado.dart` monta **30** questões com proporção por matéria; no histórico entra como qualquer quiz (`titulo: Strings.simulado`).
 
-### UI
+### Promo Quiz+ / sem AdMob (HQ-P08, HQ-H11)
 
-- `HistoricoWidget`: lista de cards; **não clicáveis**.
-- Promo AdMob no estado (código morto no layout do histórico).
+- `HistoricoWidget`: cards clicáveis (HQ-H06); rodapé e estado vazio com `HabilitacaoQuizPlusCtaBanner`.
+- Feature `historico/` **sem** `google_mobile_ads`, `BannerAd`, `AdHelper` ou `bannerAdNotifier` (regressão: `historico_no_admob_test.dart`).
 
 ## Gaps
 
@@ -76,6 +77,9 @@ Ao expulsar o 11º no Free: snackbar + CTA **+**.
 
 ```
 [ Todos | Simulados | Temas ]
+┌ Desempenho por matéria (Pro) ────┐
+│ Legislação ████████░░ 80%        │
+│ ...                              │
 ┌ Simulado · 26/07 ─ 78% · 23/30 ─┐  → Detalhe (Pro)
 ┌ Legislação · 25/07 ─ 60% ────────┐
 Free: "Últimos 10 resultados" [ + ilimitado ]

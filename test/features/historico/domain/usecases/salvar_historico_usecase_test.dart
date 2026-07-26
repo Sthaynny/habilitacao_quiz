@@ -48,16 +48,22 @@ void main() {
       expect(outcome.persistido, isTrue);
     });
 
-    test('Pro mantém 15 resultados sem FIFO', () async {
+    test('Pro mantém 15 resultados sem FIFO (T21)', () async {
       final repo = _FakeHistoricoRepo();
       final usecase =
           SalvarHistoricoUsecase(repo, StubProGate(isPro: true));
       final historico = HistoricoEntity(resutados: []);
+      SalvarHistoricoOutcome? lastOutcome;
       for (var i = 0; i < 15; i++) {
-        await usecase.registrarResultado(historico, _resultado('p$i'));
+        lastOutcome =
+            await usecase.registrarResultado(historico, _resultado('p$i'));
       }
       expect(historico.resutados.length, 15);
       expect(historico.resutados.first.titulo, 'p0');
+      expect(historico.resutados.last.titulo, 'p14');
+      expect(lastOutcome?.removeuMaisAntigoPorLimiteFree, isFalse);
+      expect(lastOutcome?.persistido, isTrue);
+      expect(repo.lastSaved?.resutados.length, 15);
     });
   });
 }

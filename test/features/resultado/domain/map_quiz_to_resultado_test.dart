@@ -52,4 +52,42 @@ void main() {
     expect(r.detalhePerguntas, isNotNull);
     expect(r.detalhePerguntas!.single.acertou, isTrue);
   });
+
+  test('simulado Free não inclui detalhe', () {
+    final simulado = QuizEntity(
+      titulo: Strings.simulado,
+      perguntas: quizTema.perguntas,
+    );
+    final r = MapQuizToResultado.call(
+      quiz: simulado,
+      totalPerguntasCorretas: 1,
+      percentual: 100,
+      aprovado: true,
+      isPro: false,
+    );
+    expect(r.tipo, TipoResultado.simulado);
+    expect(r.detalhePerguntas, isNull);
+  });
+
+  test('simulado Pro inclui materiaTitulo no detalhe', () {
+    final simulado = QuizEntity(
+      titulo: Strings.simulado,
+      perguntas: [
+        PerguntaEntity(
+          titulo: 'P1',
+          respostas: [RespostaEntity(titulo: 'A', correta: true)],
+          respostaSelecionada: RespostaEntity(titulo: 'A', correta: true),
+          materiaTitulo: Strings.legislacao,
+        ),
+      ],
+    );
+    final r = MapQuizToResultado.call(
+      quiz: simulado,
+      totalPerguntasCorretas: 1,
+      percentual: 100,
+      aprovado: true,
+      isPro: true,
+    );
+    expect(r.detalhePerguntas!.single.materiaTitulo, Strings.legislacao);
+  });
 }

@@ -1,4 +1,5 @@
 import 'package:habilitacao_quiz/app/features/historico/domain/entities/historico_entity.dart';
+import 'package:habilitacao_quiz/app/features/historico/domain/resultado_para_historico.dart';
 import 'package:habilitacao_quiz/app/features/historico/domain/repositories/historico_repository.dart';
 import 'package:habilitacao_quiz/app/features/resultado/domain/resultado_entity.dart';
 import 'package:habilitacao_quiz/app/shared/domain/services/pro_gate.dart';
@@ -26,7 +27,11 @@ class SalvarHistoricoUsecase {
   ) async {
     final max = _proGate.maxResultadosHistorico;
     final countBefore = historico.resutados.length;
-    historico.add(resultado, maxResultados: max);
+    final paraSalvar = resultadoParaPersistenciaHistorico(
+      resultado,
+      isPro: _proGate.isPro,
+    );
+    historico.add(paraSalvar, maxResultados: max);
     final removeuMaisAntigo =
         max != null && countBefore >= max;
     final persistido = await _repository.salvarHistorico(historico);
