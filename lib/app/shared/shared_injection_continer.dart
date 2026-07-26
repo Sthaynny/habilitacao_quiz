@@ -6,6 +6,7 @@ import 'package:habilitacao_quiz/app/shared/domain/repositories/iquiz_repository
 import 'package:habilitacao_quiz/app/shared/domain/services/pro_gate.dart';
 import 'package:habilitacao_quiz/app/shared/domain/services/simulado_quota_service.dart';
 import 'package:habilitacao_quiz/core/analytics/promo_funnel_analytics.dart';
+import 'package:habilitacao_quiz/core/analytics/simulado_weekly_analytics.dart';
 import 'package:habilitacao_quiz/core/i_injection_conetiner.dart';
 
 class SharedInjectionContainer implements IInjectionContainer {
@@ -13,6 +14,10 @@ class SharedInjectionContainer implements IInjectionContainer {
   void call() {
     Get.lazyPut<PromoFunnelAnalytics>(
       () => const DebugPromoFunnelAnalytics(),
+      fenix: true,
+    );
+    Get.lazyPut<SimuladoWeeklyAnalytics>(
+      () => const DebugSimuladoWeeklyAnalytics(),
       fenix: true,
     );
     Get.lazyPut<ProGate>(() => const CompileTimeProGate(), fenix: true);

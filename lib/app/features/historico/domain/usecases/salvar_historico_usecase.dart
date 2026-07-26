@@ -3,6 +3,8 @@ import 'package:habilitacao_quiz/app/features/historico/domain/resultado_para_hi
 import 'package:habilitacao_quiz/app/features/historico/domain/repositories/historico_repository.dart';
 import 'package:habilitacao_quiz/app/features/resultado/domain/resultado_entity.dart';
 import 'package:habilitacao_quiz/app/shared/domain/services/pro_gate.dart';
+import 'package:habilitacao_quiz/core/analytics/simulado_weekly_analytics.dart';
+import 'package:habilitacao_quiz/core/analytics/simulados_periodo.dart';
 
 /// Resultado de registrar um item no histórico persistido.
 class SalvarHistoricoOutcome {
@@ -16,10 +18,15 @@ class SalvarHistoricoOutcome {
 }
 
 class SalvarHistoricoUsecase {
-  SalvarHistoricoUsecase(this._repository, this._proGate);
+  SalvarHistoricoUsecase(
+    this._repository,
+    this._proGate,
+    this._simuladoWeeklyAnalytics,
+  );
 
   final IHistoricoRepository _repository;
   final ProGate _proGate;
+  final SimuladoWeeklyAnalytics _simuladoWeeklyAnalytics;
 
   Future<SalvarHistoricoOutcome> registrarResultado(
     HistoricoEntity historico,
@@ -35,6 +42,13 @@ class SalvarHistoricoUsecase {
     final removeuMaisAntigo =
         max != null && countBefore >= max;
     final persistido = await _repository.salvarHistorico(historico);
+    if (paraSalvar.isSimulado) {
+      final count7d = countSimuladosUltimosDias(historico.resutados);
+      _simuladoWeeklyAnalytics.logSimuladoCompleted(
+        simuladosNaUltimos7Dias: count7d,
+        isPro: _proGate.isPro,
+      );
+    }
     return SalvarHistoricoOutcome(
       persistido: persistido,
       removeuMaisAntigoPorLimiteFree: removeuMaisAntigo,

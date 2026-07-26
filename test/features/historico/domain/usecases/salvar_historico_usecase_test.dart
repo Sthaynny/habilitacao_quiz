@@ -5,6 +5,7 @@ import 'package:habilitacao_quiz/app/features/historico/domain/usecases/salvar_h
 import 'package:habilitacao_quiz/app/features/resultado/domain/resultado_entity.dart';
 import 'package:habilitacao_quiz/app/features/resultado/domain/tipo_resultado.dart';
 import 'package:habilitacao_quiz/app/shared/domain/services/pro_gate.dart';
+import 'package:habilitacao_quiz/core/analytics/simulado_weekly_analytics.dart';
 
 class _FakeHistoricoRepo implements IHistoricoRepository {
   HistoricoEntity? lastSaved;
@@ -18,6 +19,13 @@ class _FakeHistoricoRepo implements IHistoricoRepository {
     lastSaved = historico;
     return true;
   }
+
+  @override
+  String encodeBackup(HistoricoEntity historico) => '';
+
+  @override
+  HistoricoEntity decodeBackup(String jsonContent) =>
+      HistoricoEntity(resutados: []);
 }
 
 ResultadoEntity _resultado(String titulo) => ResultadoEntity(
@@ -31,11 +39,31 @@ ResultadoEntity _resultado(String titulo) => ResultadoEntity(
       percentual: 80,
     );
 
+class _RecordingSimuladoAnalytics implements SimuladoWeeklyAnalytics {
+  int? lastCount7d;
+  bool? lastIsPro;
+
+  @override
+  void logSimuladoCompleted({
+    required int simuladosNaUltimos7Dias,
+    required bool isPro,
+  }) {
+    lastCount7d = simuladosNaUltimos7Dias;
+    lastIsPro = isPro;
+  }
+}
+
+const _noopSimuladoAnalytics = DebugSimuladoWeeklyAnalytics();
+
 void main() {
   group('SalvarHistoricoUsecase', () {
     test('Free aplica FIFO ao 11º e sinaliza remoção', () async {
       final repo = _FakeHistoricoRepo();
-      final usecase = SalvarHistoricoUsecase(repo, StubProGate());
+      final usecase = SalvarHistoricoUsecase(
+        repo,
+        StubProGate(),
+        _noopSimuladoAnalytics,
+      );
       final historico = HistoricoEntity(resutados: []);
       for (var i = 0; i < 10; i++) {
         await usecase.registrarResultado(historico, _resultado('q$i'));
@@ -50,8 +78,11 @@ void main() {
 
     test('Pro mantém 15 resultados sem FIFO (T21)', () async {
       final repo = _FakeHistoricoRepo();
-      final usecase =
-          SalvarHistoricoUsecase(repo, StubProGate(isPro: true));
+      final usecase = SalvarHistoricoUsecase(
+        repo,
+        StubProGate(isPro: true),
+        _noopSimuladoAnalytics,
+      );
       final historico = HistoricoEntity(resutados: []);
       SalvarHistoricoOutcome? lastOutcome;
       for (var i = 0; i < 15; i++) {
@@ -64,6 +95,46 @@ void main() {
       expect(lastOutcome?.removeuMaisAntigoPorLimiteFree, isFalse);
       expect(lastOutcome?.persistido, isTrue);
       expect(repo.lastSaved?.resutados.length, 15);
+    });
+
+    test('emite analytics ao salvar simulado com contagem 7d', () async {
+      final repo = _FakeHistoricoRepo();
+      final analytics = _RecordingSimuladoAnalytics();
+      final usecase = SalvarHistoricoUsecase(
+        repo,
+        StubProGate(isPro: true),
+        analytics,
+      );
+      final historico = HistoricoEntity(resutados: []);
+      final agora = DateTime.utc(2026, 7, 26);
+      await usecase.registrarResultado(
+        historico,
+        ResultadoEntity(
+          id: 'sim1',
+          tipo: TipoResultado.simulado,
+          realizadoEm: agora,
+          titulo: 'Simulado',
+          totalPerguntas: 15,
+          result: true,
+          totalRespostasCorretas: 12,
+          percentual: 80,
+        ),
+      );
+      expect(analytics.lastCount7d, 1);
+      expect(analytics.lastIsPro, isTrue);
+    });
+
+    test('não emite analytics para quiz de tema', () async {
+      final repo = _FakeHistoricoRepo();
+      final analytics = _RecordingSimuladoAnalytics();
+      final usecase = SalvarHistoricoUsecase(
+        repo,
+        StubProGate(),
+        analytics,
+      );
+      final historico = HistoricoEntity(resutados: []);
+      await usecase.registrarResultado(historico, _resultado('tema'));
+      expect(analytics.lastCount7d, isNull);
     });
   });
 }
