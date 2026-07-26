@@ -1,0 +1,67 @@
+{
+  "id": "trilha_completa",
+  "title": "Trilha completa",
+  "steps": [
+    {
+      "id": "tc_01",
+      "themeId": "legislacao",
+      "title": "Resumo — legislação",
+      "kind": "read_resumo"
+    },
+    {
+      "id": "tc_02",
+      "themeId": "legislacao",
+      "title": "Artigo — sinalização",
+      "kind": "read_artigo"
+    },
+    {
+      "id": "tc_03",
+      "themeId": "legislacao",
+      "title": "Quiz legislação",
+      "kind": "quiz"
+    },
+    {
+      "id": "tc_04",
+      "themeId": "direcao_defensiva",
+      "title": "Resumo — direção defensiva",
+      "kind": "read_resumo"
+    },
+    {
+      "id": "tc_05",
+      "themeId": "direcao_defensiva",
+      "title": "Quiz direção defensiva",
+      "kind": "quiz"
+    },
+    {
+      "id": "tc_06",
+      "themeId": "mecanica_basica",
+      "title": "Resumo — mecânica",
+      "kind": "read_resumo"
+    },
+    {
+      "id": "tc_07",
+      "themeId": "mecanica_basica",
+      "title": "Ficha pneus",
+      "kind": "ficha",
+      "fichaId": "mecanica_pneus"
+    },
+    {
+      "id": "tc_08",
+      "themeId": "primeiros_socorros",
+      "title": "Artigo — primeiros socorros",
+      "kind": "read_artigo"
+    },
+    {
+      "id": "tc_09",
+      "themeId": "meio_ambiente",
+      "title": "Quiz meio ambiente",
+      "kind": "quiz"
+    },
+    {
+      "id": "tc_10",
+      "title": "Ficha placas de advertência",
+      "kind": "ficha",
+      "fichaId": "placas_advertencia"
+    }
+  ]
+}
