@@ -28,6 +28,10 @@ Revisores (readonly, sem commit):
 - `product-critic` — valor Free/Pro e ética de CTAs
 - `a11y-analyst` — Semantics, contraste, toque
 
+Implementador de a11y (commit por doc feature):
+
+- `feature-a11y-implementer` — [acessibilidade-implementacao.md](../../docs/features/acessibilidade-implementacao.md)
+
 ## Fluxo por lote
 
 1. **Planejar** — IDs, critério de pronto, dependências entre tarefas.
@@ -37,7 +41,7 @@ Revisores (readonly, sem commit):
    - `flutter pub get`
    - `flutter analyze`
    - `flutter test` nos paths tocados
-5. **Integrar** — Se revisores apontam blocker, pedir correção ao agente de feature ou aplicar fix mínimo; revalidar.
+5. **Integrar** — Se revisores apontam blocker, pedir correção ao agente de feature ou `feature-a11y-implementer` (um commit por doc); revalidar.
 6. **Backlog** — Sugerir mover tarefas a [FINALIZADAS.md](../../docs/tasks/FINALIZADAS.md) quando o usuário pedir.
 
 ## Commits

@@ -13,7 +13,8 @@ Orquestração do roadmap ([PRODUCT_PLAN](docs/product/PRODUCT_PLAN.md), [A_FAZE
 | **LEARN** | [feature-aprendizado](.cursor/agents/feature-aprendizado.md) | composer-2.5 | **Sim** |
 | **IA (guardião)** | [feature-ia-pro](.cursor/agents/feature-ia-pro.md) | inherit | Não (readonly) |
 | Crítico de produto | [product-critic](.cursor/agents/product-critic.md) | composer-2.5 | Não (readonly) |
-| Acessibilidade | [a11y-analyst](.cursor/agents/a11y-analyst.md) | composer-2.5 | Não (readonly) |
+| Acessibilidade (revisão) | [a11y-analyst](.cursor/agents/a11y-analyst.md) | composer-2.5 | Não (readonly) |
+| Acessibilidade (implementação) | [feature-a11y-implementer](.cursor/agents/feature-a11y-implementer.md) | composer-2.5 | **Sim** — um commit por [doc feature](docs/features/acessibilidade-implementacao.md) |
 
 ## Épicos e documentação
 
@@ -37,7 +38,7 @@ Ordem sugerida: bloco “Ordem sugerida” em [A_FAZER.md](docs/tasks/A_FAZER.md
 
 1. Orquestrador escolhe o lote (IDs + épico).
 2. `Task` → subagente da feature (`subagent_type` conforme Cursor) ou invocar `/feature-promo` etc.
-3. Após o diff: `product-critic` + `a11y-analyst` em paralelo.
+3. Após o diff: `product-critic` + `a11y-analyst` em paralelo; blockers de a11y → `feature-a11y-implementer` (commit por doc em [acessibilidade-implementacao.md](docs/features/acessibilidade-implementacao.md)).
 4. Orquestrador roda `flutter analyze` e testes; integra blockers.
 5. **Agente de feature** commita o código ([git-commit-protocol](docs/engineering/git-commit-protocol.md)).
 
@@ -48,4 +49,4 @@ UI: [.cursor/rules/habilitacao-quiz-ui.mdc](.cursor/rules/habilitacao-quiz-ui.md
 
 ## Frases de ativação
 
-> “Orquestrar épico `[PROMO]`” / “Usar `feature-gate-store` para T02–T03” / “Rodar `product-critic` e `a11y-analyst` no último diff”
+> “Orquestrar épico `[PROMO]`” / “Usar `feature-gate-store` para T02–T03” / “Rodar `product-critic` e `a11y-analyst` no último diff” / “`feature-a11y-implementer` em [promocao-quiz-plus.md](docs/features/promocao-quiz-plus.md)”
