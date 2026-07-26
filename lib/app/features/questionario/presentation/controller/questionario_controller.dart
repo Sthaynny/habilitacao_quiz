@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:habilitacao_quiz/app/features/historico/domain/entities/historico_entity.dart';
 import 'package:habilitacao_quiz/app/features/historico/domain/usecases/salvar_historico_usecase.dart';
+import 'package:habilitacao_quiz/app/features/historico/presentation/historico_limite_free_feedback.dart';
 import 'package:habilitacao_quiz/app/features/resultado/domain/map_quiz_to_resultado.dart';
 import 'package:habilitacao_quiz/app/features/resultado/domain/resultado_entity.dart';
 import 'package:habilitacao_quiz/app/features/routes/routes.dart';
@@ -10,10 +10,7 @@ import 'package:habilitacao_quiz/app/shared/domain/entities/quiz_entity.dart';
 import 'package:habilitacao_quiz/app/shared/domain/entities/resposta_entity.dart';
 import 'package:habilitacao_quiz/app/shared/domain/services/pro_gate.dart';
 import 'package:habilitacao_quiz/app/shared/utils/constants.dart';
-import 'package:habilitacao_quiz/core/analytics/promo_funnel_analytics.dart';
 import 'package:habilitacao_quiz/core/mixins/pop_up_mixin.dart';
-import 'package:habilitacao_quiz/core/utils/semantics_announce.dart';
-import 'package:habilitacao_quiz/core/utils/strings.dart';
 
 class QuestionarioController extends GetxController with PopUpMixin {
   void init({required QuizEntity quizEntity}) {
@@ -48,25 +45,7 @@ class QuestionarioController extends GetxController with PopUpMixin {
       final historico = Get.find<HistoricoEntity>();
       Get.find<SalvarHistoricoUsecase>()
           .registrarResultado(historico, result)
-          .then((outcome) {
-        if (!outcome.removeuMaisAntigoPorLimiteFree) return;
-        announceForAccessibility(Strings.historicoLimiteFreeSnackbar);
-        Get.snackbar(
-          Strings.historico,
-          Strings.historicoLimiteFreeSnackbar,
-          snackPosition: SnackPosition.BOTTOM,
-          mainButton: TextButton(
-            onPressed: () {
-              Get.find<PromoFunnelAnalytics>().logClick(
-                PromoSurface.gateHistoricoLimite,
-                PromoClickTarget.openPlusScreen,
-              );
-              Get.toNamed(Routes.habilitacaoQuizPlus);
-            },
-            child: Text(Strings.plusItemLegal),
-          ),
-        );
-      });
+          .then(showHistoricoLimiteFreeSnackbarIfNeeded);
       irParaResultado(result);
     } else {
       _indexPergunta(indexPergunta + 1);
