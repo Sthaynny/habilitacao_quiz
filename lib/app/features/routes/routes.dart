@@ -4,5 +4,6 @@ abstract class Routes {
   static const resultado = '/resultado';
   static const legalNotice = '/aviso-legal';
   static const habilitacaoQuizPlus = '/habilitacao-quiz-plus';
+  static const detalheSimulado = '/detalhe-simulado';
   static const init = '/';
 }

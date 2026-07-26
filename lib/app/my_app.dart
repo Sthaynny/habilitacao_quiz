@@ -5,7 +5,9 @@ import 'package:habilitacao_quiz/app/features/legal/presentation/legal_notice_sc
 import 'package:habilitacao_quiz/app/features/questionario/presentation/questionario_screen.dart';
 import 'package:habilitacao_quiz/app/features/resultado/presentation/resultado_screen.dart';
 import 'package:habilitacao_quiz/app/features/routes/routes.dart';
+import 'package:habilitacao_quiz/app/features/historico/presentation/detalhe_simulado_screen.dart';
 import 'package:habilitacao_quiz/app/features/promo/presentation/habilitacao_quiz_plus_screen.dart';
+import 'package:habilitacao_quiz/app/features/resultado/domain/resultado_entity.dart';
 import 'package:habilitacao_quiz/app/features/splash/splash_screen.dart';
 import 'package:habilitacao_quiz/core/edition/app_edition.dart';
 
@@ -60,6 +62,12 @@ class MyApp extends StatelessWidget {
         GetPage(
           name: Routes.habilitacaoQuizPlus,
           page: () => const HabilitacaoQuizPlusScreen(),
+        ),
+        GetPage(
+          name: Routes.detalheSimulado,
+          page: () => DetalheSimuladoScreen(
+            resultado: Get.arguments as ResultadoEntity,
+          ),
         ),
       ],
     );
