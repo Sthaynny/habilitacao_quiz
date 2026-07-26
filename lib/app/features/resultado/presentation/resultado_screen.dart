@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:habilitacao_quiz/app/features/promo/presentation/widgets/habilitacao_quiz_plus_cta_banner.dart';
 import 'package:habilitacao_quiz/app/features/resultado/domain/resultado_entity.dart';
+import 'package:habilitacao_quiz/app/features/resultado/domain/should_show_resultado_simulado_plus_cta.dart';
 import 'package:habilitacao_quiz/app/features/routes/routes.dart';
 import 'package:habilitacao_quiz/app/shared/domain/services/pro_gate.dart';
 import 'package:habilitacao_quiz/core/analytics/promo_funnel_analytics.dart';
@@ -43,12 +44,10 @@ class _ResultadoScreenState extends State<ResultadoScreen> with PopUpMixin {
     }
   }
 
-  bool get _showSimuladoPlusCta {
-    final proGate = Get.find<ProGate>();
-    return proGate.exibirPromoPlus &&
-        widget.args.titulo == Strings.simulado &&
-        widget.args.totalPerguntas <= 15;
-  }
+  bool get _showSimuladoPlusCta => shouldShowResultadoSimuladoPlusCta(
+        resultado: widget.args,
+        proGate: Get.find<ProGate>(),
+      );
 
   @override
   Widget build(BuildContext context) {

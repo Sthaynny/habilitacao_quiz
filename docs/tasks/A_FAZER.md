@@ -35,11 +35,7 @@ Doc: [promocao-quiz-plus.md](../features/promocao-quiz-plus.md)
 
 ## [HIST] — Histórico e simulados
 
-| ID | Objetivo | Critério de pronto | Pistas |
-| :--- | :--- | :--- | :--- |
-| HQ-H09 | Copy “últimos 10” + CTA | Snackbar no 11º | — |
-| HQ-H10 | CTA resultado simulado 15q | HQ-P09 | — |
-| HQ-H12 | Métricas simulados/semana | Analytics | — |
+_Tarefas HQ-H01–HQ-H12, T21–T25 concluídas em 26/07/2026 — ver [FINALIZADAS.md](./FINALIZADAS.md)._
 
 Doc: [historico-simulados.md](../features/historico-simulados.md)
 

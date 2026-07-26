@@ -21,7 +21,9 @@ Retenção Free: **10** entradas FIFO via `SalvarHistoricoUsecase` + `ProGate.ma
 - **Pro (T23):** busca por título + filtros **Aprovados / Reprovados**
 - Cards com data, badge, `onTap` (`historico_widget.dart`)
 - **Detalhe simulado (Pro):** `DetalheSimuladoScreen` — gabarito questão a questão
-- **Free:** bottom sheet resumo + CTA **+**
+- **Free:** bottom sheet resumo + CTA **+**; rodapé **Últimos 10 resultados** + **Desbloquear histórico completo** (HQ-H09)
+- **Resultado simulado Free (15q):** copy `Strings.resultadoSimuladoFreeCta` + `HabilitacaoQuizPlusCtaBanner` (`shouldShowResultadoSimuladoPlusCta` / HQ-H10, alinhado HQ-P09)
+- **11º save Free:** snackbar + CTA **+** (`historico_limite_free_feedback.dart`)
 - **Pro:** dashboard **Desempenho por matéria** (agrega temas + simulados com `materiaTitulo` no detalhe)
 
 ### Simulado

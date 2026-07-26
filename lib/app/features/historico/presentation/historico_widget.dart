@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:habilitacao_quiz/app/features/historico/domain/entities/historico_entity.dart';
+import 'package:habilitacao_quiz/app/features/historico/domain/usecases/export_historico_backup_usecase.dart';
+import 'package:habilitacao_quiz/app/features/historico/domain/usecases/restaurar_historico_backup_usecase.dart';
+import 'package:habilitacao_quiz/app/features/historico/domain/services/ihistorico_backup_file_gateway.dart';
 import 'package:habilitacao_quiz/app/features/historico/presentation/components/linerar_progress.dart';
 import 'package:habilitacao_quiz/app/features/historico/presentation/detalhe_simulado_screen.dart';
-import 'package:habilitacao_quiz/app/features/historico/presentation/historico_free_limite_footer.dart';
 import 'package:habilitacao_quiz/app/features/promo/presentation/widgets/habilitacao_quiz_plus_cta_banner.dart';
 import 'package:habilitacao_quiz/app/features/resultado/domain/resultado_entity.dart';
+import 'package:habilitacao_quiz/app/features/historico/presentation/historico_materia_dashboard.dart';
 import 'package:habilitacao_quiz/app/features/historico/presentation/historico_list_filter.dart';
 import 'package:habilitacao_quiz/app/features/routes/routes.dart';
 import 'package:habilitacao_quiz/app/shared/domain/services/pro_gate.dart';
+import 'package:habilitacao_quiz/core/analytics/promo_funnel_analytics.dart';
+import 'package:habilitacao_quiz/core/mixins/pop_up_mixin.dart';
 import 'package:habilitacao_quiz/core/components/button.dart';
 import 'package:habilitacao_quiz/core/styles/app_styles.dart';
 import 'package:habilitacao_quiz/core/styles/spacing_stack.dart';
@@ -25,11 +30,12 @@ class HistoricoWidget extends StatefulWidget {
   State<HistoricoWidget> createState() => _HistoricoWidgetState();
 }
 
-class _HistoricoWidgetState extends State<HistoricoWidget> {
+class _HistoricoWidgetState extends State<HistoricoWidget> with PopUpMixin {
   HistoricoFiltroTipo _filtroTipo = HistoricoFiltroTipo.todos;
   HistoricoFiltroDesempenho _filtroDesempenho =
       HistoricoFiltroDesempenho.todos;
   final TextEditingController _buscaController = TextEditingController();
+  bool _backupBusy = false;
 
   HistoricoEntity get historico => widget.historico;
 
@@ -71,12 +77,17 @@ class _HistoricoWidgetState extends State<HistoricoWidget> {
                         ),
                       ),
                       SizedBox(height: AppSpacingStack.xxxSmall.value),
+                      HistoricoMateriaDashboard(
+                        resultados: historico.resutados,
+                      ),
                       _buildFiltroChips(),
                       if (_isPro) ...[
                         SizedBox(height: AppSpacingStack.nano.value),
                         _buildBuscaPro(),
                         SizedBox(height: AppSpacingStack.nano.value),
                         _buildDesempenhoChips(),
+                        SizedBox(height: AppSpacingStack.nano.value),
+                        _buildBackupActions(),
                       ],
                       SizedBox(height: AppSpacingStack.xxxSmall.value),
                     ],
@@ -106,12 +117,119 @@ class _HistoricoWidgetState extends State<HistoricoWidget> {
                       childCount: _resultadosFiltrados.length,
                     ),
                   ),
-                const SliverToBoxAdapter(
-                  child: HistoricoFreeLimiteFooter(),
+                SliverToBoxAdapter(
+                  child: Padding(
+                    padding: EdgeInsets.only(
+                      top: AppSpacingStack.xxxSmall.value,
+                      bottom: AppSpacingStack.small.value,
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        Text(
+                          Strings.historicoPlusRodape,
+                          style: AppFontStyle.caption12Regular
+                              .setColor(AppColors.grey),
+                          textAlign: TextAlign.center,
+                        ),
+                        SizedBox(height: AppSpacingStack.nano.value),
+                        const HabilitacaoQuizPlusCtaBanner(
+                          compact: false,
+                          analyticsSurface: PromoSurface.historicoFooter,
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
               ],
             ),
     );
+  }
+
+  Widget _buildBackupActions() {
+    return Row(
+      children: [
+        Expanded(
+          child: AppButton.link(
+            Strings.historicoBackupExport,
+            onPressed: _backupBusy ? null : _onExportBackup,
+          ),
+        ),
+        Expanded(
+          child: AppButton.link(
+            Strings.historicoBackupRestore,
+            onPressed: _backupBusy ? null : _onRestoreBackup,
+          ),
+        ),
+      ],
+    );
+  }
+
+  Future<void> _onExportBackup() async {
+    setState(() => _backupBusy = true);
+    try {
+      final result = Get.find<ExportHistoricoBackupUsecase>().call(historico);
+      await result.fold(
+        (e) async {
+          Get.snackbar(Strings.historico, e.menssagem);
+        },
+        (json) async {
+          await Get.find<IHistoricoBackupFileGateway>().shareBackupFile(
+            jsonContent: json,
+          );
+          Get.snackbar(
+            Strings.historico,
+            Strings.historicoBackupExportSucesso,
+            snackPosition: SnackPosition.BOTTOM,
+          );
+        },
+      );
+    } catch (_) {
+      popUpErro();
+    } finally {
+      if (mounted) setState(() => _backupBusy = false);
+    }
+  }
+
+  Future<void> _onRestoreBackup() async {
+    final confirm = await Get.defaultDialog<bool>(
+      title: Strings.historicoBackupRestoreConfirmTitulo,
+      titleStyle: AppFontStyle.headline20Bold,
+      middleText: Strings.historicoBackupRestoreConfirmCorpo,
+      middleTextStyle: AppFontStyle.body14Regular,
+      textConfirm: Strings.sim,
+      textCancel: Strings.nao,
+      onConfirm: () => Get.back(result: true),
+      onCancel: () => Get.back(result: false),
+    );
+    if (confirm != true) return;
+
+    setState(() => _backupBusy = true);
+    try {
+      final content =
+          await Get.find<IHistoricoBackupFileGateway>().pickBackupFileContent();
+      if (content == null) return;
+
+      final result = await Get.find<RestaurarHistoricoBackupUsecase>().call(
+        jsonContent: content,
+        historicoEmMemoria: historico,
+      );
+      result.fold(
+        (e) => Get.snackbar(Strings.historico, e.menssagem),
+        (_) {
+          setState(() {});
+          Get.snackbar(
+            Strings.historico,
+            Strings.historicoBackupRestoreSucesso,
+            snackPosition: SnackPosition.BOTTOM,
+          );
+        },
+      );
+    } catch (_) {
+      popUpErro();
+    } finally {
+      if (mounted) setState(() => _backupBusy = false);
+    }
   }
 
   Widget _buildFiltroChips() {
