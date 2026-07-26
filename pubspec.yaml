@@ -23,6 +23,7 @@ dependencies:
   path_provider: ^2.1.6
   file_picker: ^3.0.4
   url_launcher: ^6.3.2
+  flutter_markdown: ^0.7.7+1
 
 dev_dependencies:
   build_runner: ^2.15.0
@@ -42,6 +43,14 @@ flutter:
   assets:
     - assets/imagens/
     - assets/json/
+    - assets/learning/
+    - assets/learning/temas/
+    - assets/learning/temas/legislacao/
+    - assets/learning/temas/direcao_defensiva/
+    - assets/learning/temas/mecanica_basica/
+    - assets/learning/temas/primeiros_socorros/
+    - assets/learning/temas/meio_ambiente/
+    - assets/learning/fichas/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
   # For details regarding adding assets from package dependencies, see
