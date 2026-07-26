@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:habilitacao_quiz/app/features/home/presentation/components/quiz_card.dart';
 import 'package:habilitacao_quiz/app/features/home/presentation/components/quizzes/controller/quizzes_controller.dart';
 import 'package:habilitacao_quiz/app/shared/utils/quiz_enum.dart';
+import 'package:habilitacao_quiz/core/components/button.dart';
 import 'package:habilitacao_quiz/core/styles/app_styles.dart';
 import 'package:habilitacao_quiz/core/styles/spacing_stack.dart';
 import 'package:habilitacao_quiz/core/utils/strings.dart';
@@ -65,6 +66,11 @@ class QuizzesWidget extends StatelessWidget {
               title: Strings.simulado,
             ),
           ],
+        ),
+        SizedBox(height: AppSpacingStack.xxxSmall.value),
+        AppButton.secundary(
+          Strings.modoProva,
+          onPressed: controller.iniciarModoProva,
         ),
       ],
     );

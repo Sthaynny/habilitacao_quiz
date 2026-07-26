@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:habilitacao_quiz/app/features/questionario/presentation/components/app_bar_questionario.dart';
@@ -27,11 +29,38 @@ class _QuestionarioScreenState extends State<QuestionarioScreen>
   QuestionarioController get controller => widget.controller;
   QuizEntity get quiz => widget.quizEntity;
   final scrollController = ScrollController();
+  Timer? _timer;
+  Duration _remaining = Duration.zero;
 
   @override
   void didChangeDependencies() {
     controller.init(quizEntity: quiz);
+    _startTimerIfNeeded();
     super.didChangeDependencies();
+  }
+
+  void _startTimerIfNeeded() {
+    final limit = quiz.tempoLimite;
+    if (limit == null) return;
+    _remaining = limit;
+    _timer?.cancel();
+    _timer = Timer.periodic(const Duration(seconds: 1), (_) {
+      if (!mounted) return;
+      setState(() {
+        _remaining -= const Duration(seconds: 1);
+        if (_remaining <= Duration.zero) {
+          _timer?.cancel();
+          controller.finalizarPorTempoEsgotado();
+        }
+      });
+    });
+  }
+
+  @override
+  void dispose() {
+    _timer?.cancel();
+    scrollController.dispose();
+    super.dispose();
   }
 
   @override
@@ -47,6 +76,7 @@ class _QuestionarioScreenState extends State<QuestionarioScreen>
         appBar: AppBarQuestionarioWidget(
           controller: controller,
           onClosed: controller.fecharQuestionario,
+          timerLabel: quiz.tempoLimite != null ? _formatTimer(_remaining) : null,
         ),
         body: Obx(
           () => QuizWidget(
@@ -101,4 +131,10 @@ class _QuestionarioScreenState extends State<QuestionarioScreen>
     ),
     SizedBox(width: AppSpacingStack.nano.value),
   ];
+
+  String _formatTimer(Duration d) {
+    final m = d.inMinutes.remainder(60).toString().padLeft(2, '0');
+    final s = d.inSeconds.remainder(60).toString().padLeft(2, '0');
+    return '$m:$s';
+  }
 }

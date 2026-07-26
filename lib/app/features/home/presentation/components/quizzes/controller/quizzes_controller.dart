@@ -9,6 +9,7 @@ import 'package:habilitacao_quiz/app/features/home/domain/usecases/primeiros_soc
 import 'package:habilitacao_quiz/app/features/home/domain/usecases/simulado_quiz_usercase.dart';
 import 'package:habilitacao_quiz/app/features/routes/routes.dart';
 import 'package:habilitacao_quiz/app/shared/domain/entities/quiz_entity.dart';
+import 'package:habilitacao_quiz/app/shared/domain/services/pro_gate.dart';
 import 'package:habilitacao_quiz/app/shared/domain/services/simulado_quota_service.dart';
 import 'package:habilitacao_quiz/app/shared/utils/quiz_enum.dart';
 import 'package:habilitacao_quiz/core/analytics/promo_funnel_analytics.dart';
@@ -129,5 +130,28 @@ class QuizzesController extends GetxController {
         _setStatus(RxStatus.success());
       },
     );
+  }
+
+  Future<void> iniciarModoProva() async {
+    final proGate = Get.find<ProGate>();
+    if (!proGate.podeModoProva) {
+      Get.toNamed(Routes.habilitacaoQuizPlus);
+      return;
+    }
+    final pode = await _simuladoQuotaService.podeIniciarSimuladoHoje();
+    if (!pode) {
+      Get.snackbar(Strings.atencao, Strings.simuladoLimiteDiario);
+      return;
+    }
+    await _getQuiz(QuizEnum.simulado);
+    final base = _quizEntity;
+    if (base == null || base.isEmpty) return;
+    await _simuladoQuotaService.registrarInicioSimulado();
+    final modoProva = base.copyWith(
+      titulo: Strings.modoProva,
+      tempoLimite: const Duration(minutes: 40),
+      modoProva: true,
+    );
+    Get.toNamed(Routes.questionario, arguments: modoProva);
   }
 }

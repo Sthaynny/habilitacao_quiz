@@ -8,12 +8,16 @@ class QuizModel extends QuizEntity {
   QuizModel({
     required super.titulo,
     required super.perguntas,
+    super.tempoLimite,
+    super.modoProva,
   });
 
   QuizEntity fromEntity() {
     return QuizEntity(
       titulo: titulo,
       perguntas: perguntas,
+      tempoLimite: tempoLimite,
+      modoProva: modoProva,
     );
   }
 
@@ -23,14 +27,23 @@ class QuizModel extends QuizEntity {
       'perguntas': perguntas
           .map((pergunta) => (pergunta as PerguntaModel).toMap())
           .toList(),
+      if (tempoLimite != null) 'tempoLimiteSeconds': tempoLimite!.inSeconds,
+      if (modoProva) 'modoProva': true,
     };
   }
 
   factory QuizModel.fromMap(Map<String, dynamic> map) {
+    Duration? tempoLimite;
+    final seconds = map['tempoLimiteSeconds'];
+    if (seconds is int) {
+      tempoLimite = Duration(seconds: seconds);
+    }
     return QuizModel(
       titulo: map['titulo'] ?? '',
       perguntas: List<PerguntaEntity>.from(
           map['perguntas']?.map((pergunta) => PerguntaModel.fromMap(pergunta))),
+      tempoLimite: tempoLimite,
+      modoProva: map['modoProva'] as bool? ?? false,
     );
   }
 

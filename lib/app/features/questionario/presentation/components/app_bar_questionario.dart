@@ -11,10 +11,12 @@ class AppBarQuestionarioWidget extends StatelessWidget
     super.key,
     required this.controller,
     this.onClosed,
+    this.timerLabel,
   });
 
   final QuestionarioController controller;
   final VoidCallback? onClosed;
+  final String? timerLabel;
 
   @override
   Size get preferredSize => const Size.fromHeight(100);
@@ -34,6 +36,14 @@ class AppBarQuestionarioWidget extends StatelessWidget
               onPressed: onClosed,
             ),
           ),
+          if (timerLabel != null)
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Text(
+                '${Strings.modoProvaTimer}: $timerLabel',
+                style: AppFontStyle.body14Bold,
+              ),
+            ),
           Obx(
             () => IndicadorQuestoesWidget(
               currentPage: controller.indexPerguntaUsuario,
