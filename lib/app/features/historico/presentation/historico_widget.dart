@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:get/utils.dart';
+import 'package:get/get.dart';
 import 'package:habilitacao_quiz/app/features/historico/domain/entities/historico_entity.dart';
 import 'package:habilitacao_quiz/app/features/historico/presentation/components/linerar_progress.dart';
-import 'package:habilitacao_quiz/app/features/historico/presentation/historico_list_filter.dart';
+import 'package:habilitacao_quiz/app/features/historico/presentation/detalhe_simulado_screen.dart';
 import 'package:habilitacao_quiz/app/features/promo/presentation/widgets/habilitacao_quiz_plus_cta_banner.dart';
-import 'package:habilitacao_quiz/core/analytics/promo_funnel_analytics.dart';
 import 'package:habilitacao_quiz/app/features/resultado/domain/resultado_entity.dart';
+import 'package:habilitacao_quiz/app/features/historico/presentation/historico_list_filter.dart';
+import 'package:habilitacao_quiz/app/features/routes/routes.dart';
+import 'package:habilitacao_quiz/app/shared/domain/services/pro_gate.dart';
+import 'package:habilitacao_quiz/core/analytics/promo_funnel_analytics.dart';
+import 'package:habilitacao_quiz/core/components/button.dart';
 import 'package:habilitacao_quiz/core/styles/app_styles.dart';
 import 'package:habilitacao_quiz/core/styles/spacing_stack.dart';
 import 'package:habilitacao_quiz/core/utils/strings.dart';
@@ -72,6 +76,7 @@ class _HistoricoWidgetState extends State<HistoricoWidget> {
                 SliverList(
                   delegate: SliverChildBuilderDelegate(
                     (context, index) => _buildResultCard(
+                      context,
                       _resultadosFiltrados[index],
                     ),
                     childCount: _resultadosFiltrados.length,
@@ -186,68 +191,189 @@ class _HistoricoWidgetState extends State<HistoricoWidget> {
     );
   }
 
-  Widget _buildResultCard(ResultadoEntity element) {
+  void _onResultadoTap(BuildContext context, ResultadoEntity element) {
+    final proGate = Get.find<ProGate>();
+    if (proGate.isPro && element.isSimulado) {
+      Get.to(() => DetalheSimuladoScreen(resultado: element));
+      return;
+    }
+    if (proGate.isPro) {
+      _showResumoDialog(context, element);
+      return;
+    }
+    _showFreeResumoSheet(context, element);
+  }
+
+  void _showResumoDialog(BuildContext context, ResultadoEntity element) {
+    showDialog<void>(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: Text(element.titulo, style: AppFontStyle.headline20Bold),
+        content: Text(
+          Strings.percentualHistorico(
+            percentual: element.percentual.toStringAsFixed(1),
+          ),
+          style: AppFontStyle.body14Regular,
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.of(ctx).pop(),
+            child: Text(Strings.fechar),
+          ),
+        ],
+      ),
+    );
+  }
+
+  void _showFreeResumoSheet(BuildContext context, ResultadoEntity element) {
+    showModalBottomSheet<void>(
+      context: context,
+      showDragHandle: true,
+      builder: (ctx) => Padding(
+        padding: EdgeInsets.all(AppSpacingStack.xxxSmall.value),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Text(
+              Strings.historicoResumoFreeTitulo,
+              style: AppFontStyle.headline20Bold,
+            ),
+            SizedBox(height: AppSpacingStack.nano.value),
+            Text(
+              element.titulo,
+              style: AppFontStyle.body16Medium,
+            ),
+            SizedBox(height: AppSpacingStack.nano.value),
+            Text(
+              Strings.percentualHistorico(
+                percentual: element.percentual.toStringAsFixed(1),
+              ),
+              style: AppFontStyle.body14Regular.setColor(AppColors.grey),
+            ),
+            SizedBox(height: AppSpacingStack.xxxSmall.value),
+            Text(
+              Strings.historicoResumoFreeCorpo,
+              style: AppFontStyle.body14Regular,
+            ),
+            SizedBox(height: AppSpacingStack.xxxSmall.value),
+            AppButton.primary(
+              Strings.plusVerNaLoja,
+              onPressed: () {
+                Navigator.of(ctx).pop();
+                Get.toNamed(Routes.habilitacaoQuizPlus);
+              },
+            ),
+            SizedBox(height: AppSpacingStack.small.value),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildResultCard(BuildContext context, ResultadoEntity element) {
     final percentualLabel = Strings.percentualHistorico(
       percentual: element.percentual.toPrecision(2).toString(),
     );
+    final dataLabel = Strings.historicoDataLabel(element.realizadoEm);
+    final badge = element.isSimulado
+        ? Strings.historicoBadgeSimulado
+        : Strings.historicoBadgeTema;
 
     final cardLabel =
-        '${element.titulo}. $percentualLabel '
+        '${element.titulo}. $badge. $dataLabel. $percentualLabel '
         '${element.totalRespostasCorretas} de ${element.totalPerguntas}';
 
     return Semantics(
+      button: true,
       label: cardLabel,
-      child: ExcludeSemantics(
-        child: Container(
-          padding: EdgeInsets.all(AppSpacingStack.xxxSmall.value),
-          margin: EdgeInsets.symmetric(vertical: AppSpacingStack.nano.value),
-          decoration: BoxDecoration(
-            border: const Border.fromBorderSide(
-              BorderSide(color: AppColors.border),
+      child: Material(
+        color: AppColors.white,
+        child: InkWell(
+          onTap: () => _onResultadoTap(context, element),
+          borderRadius: BorderRadius.circular(10),
+          child: Container(
+            padding: EdgeInsets.all(AppSpacingStack.xxxSmall.value),
+            margin: EdgeInsets.symmetric(vertical: AppSpacingStack.nano.value),
+            decoration: BoxDecoration(
+              border: const Border.fromBorderSide(
+                BorderSide(color: AppColors.border),
+              ),
+              borderRadius: BorderRadius.circular(10),
             ),
-            borderRadius: BorderRadius.circular(10),
-            color: AppColors.white,
-          ),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Expanded(
-                child: Text.rich(
-                  TextSpan(
-                    text: '${element.titulo}\n',
-                    style: AppFontStyle.body16Medium,
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      TextSpan(
-                        text: percentualLabel,
+                      Row(
+                        children: [
+                          _badgeChip(badge),
+                          if (dataLabel.isNotEmpty) ...[
+                            SizedBox(width: AppSpacingStack.nano.value),
+                            Text(
+                              dataLabel,
+                              style: AppFontStyle.caption12Regular
+                                  .setColor(AppColors.lightGrey),
+                            ),
+                          ],
+                        ],
+                      ),
+                      SizedBox(height: AppSpacingStack.nano.value),
+                      Text(
+                        element.titulo,
+                        style: AppFontStyle.body16Medium,
+                      ),
+                      Text(
+                        percentualLabel,
                         style: AppFontStyle.caption12Regular
                             .setColor(AppColors.grey),
                       ),
                     ],
                   ),
                 ),
-              ),
-              SizedBox(width: AppSpacingStack.xxxSmall.value),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  SizedBox(
-                    width: AppSpacingStack.large.value +
-                        AppSpacingStack.nano.value,
-                    child: LinearProgressIndicatorWidget(
-                      value: element.percentual / 100,
+                SizedBox(width: AppSpacingStack.xxxSmall.value),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    SizedBox(
+                      width: AppSpacingStack.large.value +
+                          AppSpacingStack.nano.value,
+                      child: LinearProgressIndicatorWidget(
+                        value: element.percentual / 100,
+                      ),
                     ),
-                  ),
-                  SizedBox(height: AppSpacingStack.nano.value),
-                  Text(
-                    '${element.totalRespostasCorretas} de ${element.totalPerguntas}',
-                    style: AppFontStyle.caption12Regular
-                        .setColor(AppColors.lightGrey),
-                  ),
-                ],
-              ),
-            ],
+                    SizedBox(height: AppSpacingStack.nano.value),
+                    Text(
+                      '${element.totalRespostasCorretas} de ${element.totalPerguntas}',
+                      style: AppFontStyle.caption12Regular
+                          .setColor(AppColors.lightGrey),
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
+      ),
+    );
+  }
+
+  Widget _badgeChip(String text) {
+    return Container(
+      padding: EdgeInsets.symmetric(
+        horizontal: AppSpacingStack.nano.value,
+        vertical: AppSpacingStack.quarck.value,
+      ),
+      decoration: BoxDecoration(
+        color: AppColors.primary.withValues(alpha: 0.1),
+        borderRadius: BorderRadius.circular(6),
+      ),
+      child: Text(
+        text,
+        style: AppFontStyle.caption12Regular.setColor(AppColors.primary),
       ),
     );
   }
