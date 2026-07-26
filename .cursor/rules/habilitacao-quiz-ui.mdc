@@ -1,0 +1,49 @@
+---
+description: Design system Flutter — tokens, AppButton e padrões de tela
+globs: lib/**/*.dart
+alwaysApply: false
+---
+
+# UI — base de construção (Habilitação Quiz)
+
+DS **cenário B** (tokens em `lib/core/styles/`, tema global ainda mínimo). Referência completa: [habilitacao-quiz-ds.md](../../docs/engineering/habilitacao-quiz-ds.md).
+
+## Tokens (sem literais soltos)
+
+| Papel | Usar |
+|-------|------|
+| Cores | `AppColors` (nomes **EN**: `primary`, `black`, `grey`, `border` — não `roxo`/`cinza` em código novo) |
+| Tipografia | `AppFontStyle` + `.setColor(AppColors.grey)` para secundário |
+| Espaçamento | `AppSpacingStack` (ex.: card `xxxSmall` 16, gap opções `quarck` 4) |
+| Hero / splash | `AppGradients.linear` |
+| Raio de botão | `border12Radius` (12) |
+
+```dart
+// ❌ Evitar em features
+Text('…', style: TextStyle(color: Color(0xFF514766)));
+padding: EdgeInsets.all(12);
+
+// ✅ Preferir
+Text('…', style: AppFontStyle.body16Regular);
+padding: EdgeInsets.all(AppSpacingStack.xxxSmall);
+```
+
+CTA primário = **`AppColors.primary`** (roxo `#8257E5`). Não confundir com `corPrimaria` / `azul` (`#0682DD`) — uso de quiz card, não CTA global.
+
+## Componentes e hierarquia
+
+- **Um** `AppButton.primary` por seção; voltar/cancelar → `AppButton.link`; alternativa forte → `AppButton.secundary`.
+- Listas longas: `ListView.builder`; estado: `Obx` **escopado** ao trecho que muda.
+- Loading: `LoadingBlurScreen`; erros/diálogos: `PopUpMixin` / padrão existente — evitar spinner full-screen sem necessidade.
+
+## Acessibilidade
+
+- Texto principal: `AppColors.black` (`#514766`), não preto puro.
+- Alvo de toque ≥ 48px (`AppButton` já fixa altura 48).
+- CTAs e banners: semantics e área de toque adequada; contraste AA sobre branco.
+
+## Antes de codar UI nova
+
+1. Conferir `lib/core/components/` e widgets da feature vizinha.
+2. Grep por `Color(0x`, `Colors.` no arquivo — migrar para tokens existentes.
+3. Máximo ~3 presets `AppFontStyle` por tela (título + corpo + destaque).

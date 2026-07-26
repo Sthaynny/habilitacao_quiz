@@ -1,0 +1,30 @@
+---
+description: Contexto geral do Habilitação Quiz — produto, arquitetura e escopo
+alwaysApply: true
+---
+
+# Habilitação Quiz — regras gerais
+
+## Produto
+
+- App Flutter de simulados para **CNH**; plano **Free** vs **+ (Pro)**.
+- Roadmap e tarefas: [PRODUCT_PLAN](../../docs/product/PRODUCT_PLAN.md), [A_FAZER](../../docs/tasks/A_FAZER.md); specs por épico em `docs/features/`.
+- **Recursos de IA (`[IA]` / HQ-I\*)** — não implementar até haver receita do **+** ([AI_FEATURES](../../docs/product/AI_FEATURES.md)).
+
+## Stack e convenções
+
+- **Flutter + GetX** (`GetxController`, `Obx`, bindings/rotas existentes) — não introduzir Bloc/Cubit sem pedido explícito.
+- Regras **Free/Pro** em `ProGate` e camada de domínio/use cases, não só escondidas na UI.
+- **Menor diff correto**: reutilizar padrões do módulo; dependências novas só com necessidade clara no critério de pronto.
+- Textos de interface em **português (BR)**; nomes de código seguem o inglês já usado no repo.
+
+## Qualidade antes de entregar
+
+- `flutter pub get` e `flutter analyze` nos arquivos alterados; ver também [flutter-agent-standards.mdc](flutter-agent-standards.mdc).
+- Testes quando [A_FAZER](../../docs/tasks/A_FAZER.md) ou o critério de pronto exigir.
+
+## UI e orquestração
+
+- Telas e componentes: [habilitacao-quiz-ui.mdc](habilitacao-quiz-ui.mdc) e [habilitacao-quiz-ds.md](../../docs/engineering/habilitacao-quiz-ds.md).
+- Arquitetura: [flutter-architecture.md](../../docs/engineering/flutter-architecture.md).
+- Subagentes por feature: [AGENTS.md](../../AGENTS.md) e `.cursor/agents/`.
