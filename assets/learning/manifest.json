@@ -1,0 +1,19 @@
+{
+  "contentVersion": 1,
+  "contentChangelog": "Lançamento inicial: 5 temas, trilha básica e amostra Pro.",
+  "themes": [
+    {"id": "legislacao", "quizEnum": "legislacao", "resumoPath": "temas/legislacao/resumo.md", "artigoPath": "temas/legislacao/artigo_01.md"},
+    {"id": "direcao_defensiva", "quizEnum": "direcaoDefensiva", "resumoPath": "temas/direcao_defensiva/resumo.md", "artigoPath": "temas/direcao_defensiva/artigo_01.md"},
+    {"id": "mecanica_basica", "quizEnum": "mecanicaBasica", "resumoPath": "temas/mecanica_basica/resumo.md", "artigoPath": "temas/mecanica_basica/artigo_01.md"},
+    {"id": "primeiros_socorros", "quizEnum": "primeirosSocorros", "resumoPath": "temas/primeiros_socorros/resumo.md", "artigoPath": "temas/primeiros_socorros/artigo_01.md"},
+    {"id": "meio_ambiente", "quizEnum": "meioAmbiente", "resumoPath": "temas/meio_ambiente/resumo.md", "artigoPath": "temas/meio_ambiente/artigo_01.md"}
+  ],
+  "trilhaBasicaPath": "trilha_basica.json",
+  "trilhaCompletaPath": "trilha_completa.json",
+  "fichas": [
+    {"id": "placas_regulamentacao", "title": "Placas de regulamentação", "path": "fichas/placas_regulamentacao.md", "proOnly": false},
+    {"id": "socorros_essencial", "title": "Primeiros socorros — essencial", "path": "fichas/socorros_essencial.md", "proOnly": false},
+    {"id": "placas_advertencia", "title": "Placas de advertência", "path": "fichas/placas_advertencia.md", "proOnly": true},
+    {"id": "mecanica_pneus", "title": "Pneus e rodas", "path": "fichas/mecanica_pneus.md", "proOnly": true}
+  ]
+}

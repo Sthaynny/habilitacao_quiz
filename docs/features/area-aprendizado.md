@@ -60,6 +60,20 @@ Disclaimer em todo hub (mesmo espírito de `Strings.avisoLegalTexto`).
 | Parecer material DETRAN | Disclaimer; sem logos gov. |
 | Resumo ≠ questões JSON | Revisar conteúdo junto com patches em `assets/json/` |
 
+## Mapa `themeId` ↔ `QuizEnum` (HQ-A01)
+
+| `themeId` (pasta / manifest) | `QuizEnum` (código) | Título UI (`Strings`) |
+| :--- | :--- | :--- |
+| `legislacao` | `QuizEnum.legislacao` | Legislação |
+| `direcao_defensiva` | `QuizEnum.direcaoDefensiva` | Direção defensiva |
+| `mecanica_basica` | `QuizEnum.mecanicaBasica` | Mecânica básica |
+| `primeiros_socorros` | `QuizEnum.primeirosSocorros` | Primeiros socorros |
+| `meio_ambiente` | `QuizEnum.meioAmbiente` | Meio ambiente |
+
+`QuizEnum.simulado` não possui pasta em `assets/learning/` — simulado permanece só na aba Quizzes.
+
+Implementação: `LearningThemeId` + `QuizEnumLearningX` em `lib/app/features/learning/domain/learning_theme_id.dart`.
+
 ## Tarefas HQ-A01 … HQ-A15
 
 Ver [A_FAZER.md](../tasks/A_FAZER.md#aprender--hq-a).
