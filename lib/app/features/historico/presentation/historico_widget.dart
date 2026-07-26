@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:habilitacao_quiz/app/features/historico/domain/entities/historico_entity.dart';
+import 'package:habilitacao_quiz/app/features/historico/domain/entities/historico_export_format.dart';
+import 'package:habilitacao_quiz/app/features/historico/domain/usecases/export_historico_usecase.dart';
 import 'package:habilitacao_quiz/app/features/historico/domain/usecases/export_historico_backup_usecase.dart';
 import 'package:habilitacao_quiz/app/features/historico/domain/usecases/restaurar_historico_backup_usecase.dart';
 import 'package:habilitacao_quiz/app/features/historico/domain/services/ihistorico_backup_file_gateway.dart';
@@ -18,6 +20,7 @@ import 'package:habilitacao_quiz/core/components/button.dart';
 import 'package:habilitacao_quiz/core/styles/app_styles.dart';
 import 'package:habilitacao_quiz/core/styles/spacing_stack.dart';
 import 'package:habilitacao_quiz/core/utils/strings.dart';
+import 'package:share_plus/share_plus.dart';
 
 class HistoricoWidget extends StatefulWidget {
   const HistoricoWidget({
@@ -36,6 +39,7 @@ class _HistoricoWidgetState extends State<HistoricoWidget> with PopUpMixin {
       HistoricoFiltroDesempenho.todos;
   final TextEditingController _buscaController = TextEditingController();
   bool _backupBusy = false;
+  bool _isExporting = false;
 
   HistoricoEntity get historico => widget.historico;
 
@@ -86,6 +90,8 @@ class _HistoricoWidgetState extends State<HistoricoWidget> with PopUpMixin {
                         _buildBuscaPro(),
                         SizedBox(height: AppSpacingStack.nano.value),
                         _buildDesempenhoChips(),
+                        SizedBox(height: AppSpacingStack.nano.value),
+                        _buildExportProActions(),
                         SizedBox(height: AppSpacingStack.nano.value),
                         _buildBackupActions(),
                       ],
@@ -152,17 +158,76 @@ class _HistoricoWidgetState extends State<HistoricoWidget> with PopUpMixin {
         Expanded(
           child: AppButton.link(
             Strings.historicoBackupExport,
-            onPressed: _backupBusy ? null : _onExportBackup,
+            onPressed: _backupBusy || _isExporting ? null : _onExportBackup,
           ),
         ),
         Expanded(
           child: AppButton.link(
             Strings.historicoBackupRestore,
-            onPressed: _backupBusy ? null : _onRestoreBackup,
+            onPressed: _backupBusy || _isExporting ? null : _onRestoreBackup,
           ),
         ),
       ],
     );
+  }
+
+  Widget _buildExportProActions() {
+    return Row(
+      children: [
+        Expanded(
+          child: AppButton.link(
+            Strings.historicoExportCsv,
+            onPressed: _isExporting || _backupBusy
+                ? null
+                : () => _exportHistorico(HistoricoExportFormat.csv),
+          ),
+        ),
+        SizedBox(width: AppSpacingStack.nano.value),
+        Expanded(
+          child: AppButton.link(
+            Strings.historicoExportPdf,
+            onPressed: _isExporting || _backupBusy
+                ? null
+                : () => _exportHistorico(HistoricoExportFormat.pdf),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Future<void> _exportHistorico(HistoricoExportFormat format) async {
+    if (_isExporting) return;
+    setState(() => _isExporting = true);
+    try {
+      final result = await Get.find<ExportHistoricoUsecase>().call(
+        resultados: _resultadosFiltrados,
+        format: format,
+      );
+      final failure = result.failure;
+      if (failure == ExportHistoricoFailure.proRequired) {
+        Get.toNamed(Routes.habilitacaoQuizPlus);
+        return;
+      }
+      if (failure == ExportHistoricoFailure.empty) {
+        Get.snackbar(Strings.atencao, Strings.historicoExportVazio);
+        return;
+      }
+      if (failure == ExportHistoricoFailure.ioError) {
+        Get.snackbar(Strings.atencao, Strings.historicoExportErro);
+        return;
+      }
+      final file = result.file!;
+      await SharePlus.instance.share(
+        ShareParams(
+          files: [XFile(file.path, name: file.filename)],
+          subject: Strings.historicoExportAssunto,
+        ),
+      );
+    } catch (_) {
+      Get.snackbar(Strings.atencao, Strings.historicoExportErro);
+    } finally {
+      if (mounted) setState(() => _isExporting = false);
+    }
   }
 
   Future<void> _onExportBackup() async {
@@ -383,6 +448,15 @@ class _HistoricoWidgetState extends State<HistoricoWidget> with PopUpMixin {
           ),
         ),
         SizedBox(height: AppSpacingStack.small.value),
+        if (_isPro) ...[
+          Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: AppSpacingStack.xxxSmall.value,
+            ),
+            child: _buildBackupActions(),
+          ),
+          SizedBox(height: AppSpacingStack.small.value),
+        ],
         const Padding(
           padding: EdgeInsets.symmetric(horizontal: 16),
           child: HabilitacaoQuizPlusCtaBanner(compact: false),

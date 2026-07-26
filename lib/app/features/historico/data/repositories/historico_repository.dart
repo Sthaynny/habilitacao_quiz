@@ -1,4 +1,5 @@
 import 'package:habilitacao_quiz/app/features/historico/data/datasources/historico_datasource.dart';
+import 'package:habilitacao_quiz/app/features/historico/data/models/historico_backup_model.dart';
 import 'package:habilitacao_quiz/app/features/historico/domain/entities/historico_entity.dart';
 import 'package:habilitacao_quiz/app/features/historico/domain/repositories/historico_repository.dart';
 
@@ -14,5 +15,15 @@ class HistoricoRepository implements IHistoricoRepository {
   @override
   Future<bool?> salvarHistorico(HistoricoEntity historico) {
     return _datasource.saveHistorico(historico);
+  }
+
+  @override
+  String encodeBackup(HistoricoEntity historico) {
+    return HistoricoBackupModel.fromEntity(historico).toJson();
+  }
+
+  @override
+  HistoricoEntity decodeBackup(String jsonContent) {
+    return HistoricoBackupModel.fromJson(jsonContent).historico;
   }
 }

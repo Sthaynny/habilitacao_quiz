@@ -84,6 +84,14 @@ abstract class Strings {
   static const historicoSemDetalhe =
       'Detalhe disponível para simulados no Habilitação Quiz+.';
 
+  static const historicoExportCsv = 'Exportar CSV';
+  static const historicoExportPdf = 'Exportar PDF';
+  static const historicoExportVazio =
+      'Nada para exportar com este filtro.';
+  static const historicoExportErro =
+      'Não foi possível exportar. Tente novamente.';
+  static const historicoExportAssunto = 'Histórico Habilitação Quiz';
+
   static const historicoBackupExport = 'Exportar backup';
   static const historicoBackupRestore = 'Restaurar backup';
   static const historicoBackupProOnly =
@@ -138,4 +146,35 @@ abstract class Strings {
     required String percentual,
   }) =>
       '''Habilitação Quiz : Resultado do quiz: $titulo\n obitive $percentual de aproveitamento.''';
+
+  static const aprender = 'Aprender';
+  static const aprenderHubTitulo = 'Área de aprendizado';
+  static const aprenderTemasTitulo = 'Temas da prova';
+  static const aprenderTrilha = 'Trilha de estudos';
+  static const aprenderFichas = 'Fichas rápidas';
+  static const aprenderMapa = 'Mapa de competências';
+  static const aprenderResumo = 'Resumo';
+  static const aprenderArtigo = 'Artigo';
+  static const aprenderPraticarTema = 'Praticar este tema';
+  static const aprenderTrilhaCompletaPreview =
+      'A trilha completa está no Habilitação Quiz+.';
+  static const aprenderFichaPro = 'Disponível no Habilitação Quiz+';
+  static const aprenderMapaPreview =
+      'Prévia estática. No +, o mapa usa seu histórico de temas e simulados.';
+  static const aprenderMapaDinamico =
+      'Percentual por matéria com base no seu histórico.';
+
+  static const modoProva = 'Modo prova';
+  static const modoProvaTimer = 'Tempo restante';
+
+  static const revisaoEspacada = 'Revisão espaçada';
+  static const revisarErrosUltimoTeste = 'Revisar erros do último teste';
+  static const revisaoEspacadaDescricao =
+      'Questões que você errou ficam na fila para revisar quando quiser.';
+  static const revisaoEspacadaIniciar = 'Iniciar revisão';
+  static const revisaoEspacadaVazia =
+      'Não há questões para revisar no momento.';
+
+  static String revisaoEspacadaPendentes(int count) =>
+      '$count questão(ões) na fila de revisão.';
 }

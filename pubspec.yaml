@@ -21,6 +21,7 @@ dependencies:
   share_plus: ^13.2.0
   shared_preferences: ^2.5.5
   path_provider: ^2.1.6
+  file_picker: ^3.0.4
   url_launcher: ^6.3.2
 
 dev_dependencies:
