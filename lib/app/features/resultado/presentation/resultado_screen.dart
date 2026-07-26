@@ -51,6 +51,15 @@ class _ResultadoScreenState extends State<ResultadoScreen> with PopUpMixin {
 
   @override
   Widget build(BuildContext context) {
+    final summaryLabel = Strings.resultadoQuestionario(
+      respostasCorretas: widget.args.totalRespostasCorretas.toString(),
+      totalPerguntas: widget.args.totalPerguntas.toString(),
+      percentual: getPercentual,
+    );
+    final headline = widget.args.result
+        ? Strings.parabens
+        : Strings.menssagemBaixoRendimento;
+
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
@@ -62,25 +71,31 @@ class _ResultadoScreenState extends State<ResultadoScreen> with PopUpMixin {
             width: double.maxFinite,
             child: Column(
               children: [
-                Image.asset(
-                  widget.args.result ? AppImages.sucesso : AppImages.bad,
-                  height: 300,
+                ExcludeSemantics(
+                  child: Image.asset(
+                    widget.args.result ? AppImages.sucesso : AppImages.bad,
+                    height: 300,
+                  ),
                 ),
                 SizedBox(height: AppSpacingStack.xSmall.value),
                 Padding(
                   padding: EdgeInsets.symmetric(
                     horizontal: AppSpacingStack.small.value,
                   ),
-                  child: Text(
-                    widget.args.result
-                        ? Strings.parabens
-                        : Strings.menssagemBaixoRendimento,
-                    style: AppFontStyle.headline20Bold,
-                    textAlign: TextAlign.center,
+                  child: Semantics(
+                    header: true,
+                    child: Text(
+                      headline,
+                      style: AppFontStyle.headline20Bold,
+                      textAlign: TextAlign.center,
+                    ),
                   ),
                 ),
                 SizedBox(height: AppSpacingStack.xxxSmall.value),
-                Text.rich(
+                Semantics(
+                  label:
+                      '${widget.args.titulo}. $summaryLabel',
+                  child: Text.rich(
                   TextSpan(
                     text: Strings.voceFinalizou,
                     style: AppFontStyle.body14Regular.setColor(AppColors.grey),
@@ -103,6 +118,7 @@ class _ResultadoScreenState extends State<ResultadoScreen> with PopUpMixin {
                     ],
                   ),
                   textAlign: TextAlign.center,
+                ),
                 ),
                 if (_showSimuladoPlusCta) ...[
                   SizedBox(height: AppSpacingStack.xSmall.value),

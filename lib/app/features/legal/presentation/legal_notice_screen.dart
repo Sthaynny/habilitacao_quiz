@@ -31,10 +31,14 @@ class _LegalNoticeScreenState extends State<LegalNoticeScreen> with PopUpMixin {
           Strings.avisoLegal,
           style: AppFontStyle.headline20Bold,
         ),
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: Get.back,
-          tooltip: Strings.voltar,
+        leading: Semantics(
+          button: true,
+          label: Strings.voltar,
+          child: IconButton(
+            icon: const Icon(Icons.arrow_back),
+            onPressed: Get.back,
+            tooltip: Strings.voltar,
+          ),
         ),
       ),
       body: SafeArea(
@@ -45,9 +49,12 @@ class _LegalNoticeScreenState extends State<LegalNoticeScreen> with PopUpMixin {
             children: [
               _DisclaimerCard(),
               SizedBox(height: AppSpacingStack.xSmall.value),
-              Text(
-                Strings.fontesOficiais,
-                style: AppFontStyle.headline20Bold,
+              Semantics(
+                header: true,
+                child: Text(
+                  Strings.fontesOficiais,
+                  style: AppFontStyle.headline20Bold,
+                ),
               ),
               SizedBox(height: AppSpacingStack.nano.value),
               Text(
@@ -123,13 +130,19 @@ class _PlusLegalTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      color: AppColors.white,
-      borderRadius: BorderRadius.circular(12),
-      child: InkWell(
-        onTap: onTap,
+    return Semantics(
+      button: true,
+      label: '${Strings.plusItemLegal}. ${Strings.plusItemLegalDesc}',
+      hint: Strings.plusLegalTileHint,
+      child: Material(
+        color: AppColors.white,
         borderRadius: BorderRadius.circular(12),
-        child: Container(
+        child: InkWell(
+          onTap: onTap,
+          borderRadius: BorderRadius.circular(12),
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(minHeight: 48),
+            child: Container(
           width: double.infinity,
           padding: EdgeInsets.all(AppSpacingStack.xSmall.value),
           decoration: BoxDecoration(
@@ -151,6 +164,8 @@ class _PlusLegalTile extends StatelessWidget {
             ],
           ),
         ),
+          ),
+        ),
       ),
     );
   }
@@ -169,13 +184,19 @@ class _SourceTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(bottom: AppSpacingStack.nano.value),
-      child: Material(
-        color: AppColors.white,
-        borderRadius: BorderRadius.circular(12),
-        child: InkWell(
-          onTap: onTap,
+      child: Semantics(
+        button: true,
+        label: '${source.title}. ${source.description}',
+        hint: Strings.linkExternoHint,
+        child: Material(
+          color: AppColors.white,
           borderRadius: BorderRadius.circular(12),
-          child: Container(
+          child: InkWell(
+            onTap: onTap,
+            borderRadius: BorderRadius.circular(12),
+            child: ConstrainedBox(
+              constraints: const BoxConstraints(minHeight: 48),
+              child: Container(
             width: double.infinity,
             padding: EdgeInsets.all(AppSpacingStack.xSmall.value),
             decoration: BoxDecoration(
@@ -200,6 +221,8 @@ class _SourceTile extends StatelessWidget {
                   style: AppFontStyle.body14Regular.setColor(AppColors.blue),
                 ),
               ],
+            ),
+          ),
             ),
           ),
         ),

@@ -34,10 +34,14 @@ class HabilitacaoQuizPlusScreen extends StatelessWidget {
           AppStoreConstants.plusProductName,
           style: AppFontStyle.headline20Bold,
         ),
-        leading: IconButton(
-          icon: const Icon(Icons.close),
-          tooltip: Strings.fechar,
-          onPressed: Get.back,
+        leading: Semantics(
+          button: true,
+          label: Strings.fechar,
+          child: IconButton(
+            icon: const Icon(Icons.close),
+            tooltip: Strings.fechar,
+            onPressed: Get.back,
+          ),
         ),
       ),
       body: SafeArea(
@@ -53,9 +57,12 @@ class HabilitacaoQuizPlusScreen extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      Text(
-                        Strings.plusScreenTitle,
-                        style: AppFontStyle.headline24Bold,
+                      Semantics(
+                        header: true,
+                        child: Text(
+                          Strings.plusScreenTitle,
+                          style: AppFontStyle.headline24Bold,
+                        ),
                       ),
                       SizedBox(height: AppSpacingStack.xxxSmall.value),
                       Text(
@@ -69,22 +76,27 @@ class HabilitacaoQuizPlusScreen extends StatelessWidget {
                           padding: EdgeInsets.only(
                             bottom: AppSpacingStack.nano.value,
                           ),
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              const Icon(
-                                Icons.check_circle_outline,
-                                color: AppColors.green,
-                                size: 22,
-                              ),
-                              SizedBox(width: AppSpacingStack.nano.value),
-                              Expanded(
-                                child: Text(
-                                  benefit,
-                                  style: AppFontStyle.body14Regular,
+                          child: Semantics(
+                            label: benefit,
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const ExcludeSemantics(
+                                  child: Icon(
+                                    Icons.check_circle_outline,
+                                    color: AppColors.green,
+                                    size: 22,
+                                  ),
                                 ),
-                              ),
-                            ],
+                                SizedBox(width: AppSpacingStack.nano.value),
+                                Expanded(
+                                  child: Text(
+                                    benefit,
+                                    style: AppFontStyle.body14Regular,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
