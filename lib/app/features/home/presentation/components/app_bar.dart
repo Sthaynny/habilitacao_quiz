@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:habilitacao_quiz/app/features/routes/routes.dart';
@@ -49,10 +48,7 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
                   ),
                 ),
                 IconButton(
-                  icon: const Icon(
-                    Icons.info_outline,
-                    color: AppColors.white,
-                  ),
+                  icon: const Icon(Icons.info_outline, color: AppColors.white),
                   tooltip: 'Aviso legal',
                   onPressed: () => Get.toNamed(Routes.legalNotice),
                 ),
