@@ -18,9 +18,7 @@ class MapQuizToResultado {
     DateTime? realizadoEm,
   }) {
     final agora = realizadoEm ?? DateTime.now();
-    final tipo = quiz.titulo == Strings.simulado
-        ? TipoResultado.simulado
-        : TipoResultado.tema;
+    final tipo = _tipoResultado(quiz);
     return ResultadoEntity(
       id: '${agora.microsecondsSinceEpoch}_${quiz.titulo.hashCode}',
       tipo: tipo,
@@ -30,7 +28,7 @@ class MapQuizToResultado {
       result: aprovado,
       totalRespostasCorretas: totalPerguntasCorretas,
       percentual: percentual,
-      detalhePerguntas: _detalheSimuladoPro(
+      detalhePerguntas: _detalhePro(
         quiz: quiz,
         isPro: isPro,
         tipo: tipo,
@@ -38,24 +36,39 @@ class MapQuizToResultado {
     );
   }
 
-  static List<ResultadoPerguntaDetalheEntity>? _detalheSimuladoPro({
+  static TipoResultado _tipoResultado(QuizEntity quiz) {
+    if (quiz.titulo == Strings.simulado || quiz.modoProva) {
+      return TipoResultado.simulado;
+    }
+    return TipoResultado.tema;
+  }
+
+  static List<ResultadoPerguntaDetalheEntity>? _detalhePro({
     required QuizEntity quiz,
     required bool isPro,
     required TipoResultado tipo,
   }) {
-    if (!isPro || tipo != TipoResultado.simulado) return null;
-    return quiz.perguntas.map(_mapPergunta).toList();
+    if (!isPro) return null;
+    return quiz.perguntas
+        .map((p) => _mapPergunta(p, quiz: quiz, tipo: tipo))
+        .toList();
   }
 
-  static ResultadoPerguntaDetalheEntity _mapPergunta(PerguntaEntity p) {
+  static ResultadoPerguntaDetalheEntity _mapPergunta(
+    PerguntaEntity p, {
+    required QuizEntity quiz,
+    required TipoResultado tipo,
+  }) {
     final correta = p.respostas.firstWhere((r) => r.correta);
     final sel = p.respostaSelecionada;
+    final materia = p.materiaTitulo ??
+        (tipo == TipoResultado.tema ? quiz.titulo : null);
     return ResultadoPerguntaDetalheEntity(
       perguntaTitulo: p.titulo,
       respostaEscolhidaTitulo: sel?.titulo,
       respostaCorretaTitulo: correta.titulo,
       acertou: sel?.correta ?? false,
-      materiaTitulo: p.materiaTitulo,
+      materiaTitulo: materia,
     );
   }
 }
