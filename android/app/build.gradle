@@ -43,11 +43,24 @@ android {
     }
 
     defaultConfig {
-        applicationId "br.com.sthaynny.habilitacao_quiz"
         minSdkVersion 26
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
+    }
+
+    flavorDimensions "edition"
+    productFlavors {
+        free {
+            dimension "edition"
+            applicationId "br.com.sthaynny.habilitacao_quiz"
+            resValue "string", "app_name", "Habilitação Quiz"
+        }
+        pro {
+            dimension "edition"
+            applicationId "br.com.sthaynny.habilitacao_quiz.pro"
+            resValue "string", "app_name", "Habilitação Quiz+"
+        }
     }
 
     signingConfigs {

@@ -7,6 +7,7 @@ import 'package:habilitacao_quiz/app/features/resultado/presentation/resultado_s
 import 'package:habilitacao_quiz/app/features/routes/routes.dart';
 import 'package:habilitacao_quiz/app/features/promo/presentation/habilitacao_quiz_plus_screen.dart';
 import 'package:habilitacao_quiz/app/features/splash/splash_screen.dart';
+import 'package:habilitacao_quiz/core/edition/app_edition.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'Habilitação Quiz',
+      title: kAppDisplayName,
       theme: ThemeData(
         primarySwatch: Colors.blue,
         appBarTheme: const AppBarTheme(

@@ -1,0 +1,4 @@
+// Referência para scheme Habilitação Quiz+ (T20).
+// Incluir no projeto Xcode nas build configurations Pro.
+PRODUCT_BUNDLE_IDENTIFIER=br.com.sthaynny.habilitacao_quiz.pro
+INFOPLIST_KEY_CFBundleDisplayName=Habilitação Quiz+

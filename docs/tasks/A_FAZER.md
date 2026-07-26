@@ -21,22 +21,7 @@
 
 ## [GATE] + [STORE] — Fundação
 
-| ID | Objetivo | Critério de pronto | Pistas |
-| :--- | :--- | :--- | :--- |
-| T02 | `kIsPro` / `AppEditionNames` | Constante usada no app | `cura.li/.../app_edition.dart` |
-| T03 | `ProGate` + `StubProGate` + testes | Testes limites Free/Pro | [modelo-free-pro](../features/modelo-free-pro.md) |
-| T04 | Flavors Android `free` / `pro` | IDs `.pro` e display name **+** | `cura.li/android/app/build.gradle.kts` |
-| T05 | `docs/store/BUILD.md` | Comandos build Free/Pro documentados | Cura.li BUILD.md |
-| T06 | Injetar `ProGate` nos use cases de tema | Sessão 15q Free, full Pro | `*_quiz_usercase.dart` |
-| T07 | Contador simulados/dia (SP) | Bloqueia 2º simulado Free no mesmo dia | `ProGate.podeIniciarSimuladoHoje` |
-| T08 | `Simulado` 15 vs 30 questões | Proporção mantida no Pro 30q | `simulado.dart` |
-| T09 | Histórico: FIFO 10 só Free; Pro ilimitado | QA salvar 15 resultados no Pro | `historico_entity.dart` |
-| T15 | Smoke AAB Free + Pro | Checklist smoke assinado | criar `docs/store/SMOKE_PRO.md` |
-| T16 | Ficha Play **+** (texto, ícone +) | Assets em `google_play/` | listing Pro separado |
-| T17 | Preço pago Play **+** | Configurado no console | — |
-| T18 | `isProPublished = true` | CTA abre loja real | `app_store_constants.dart` |
-| T19 | Privacidade / Data safety sem ads rede | Formulário Play atualizado | nota versão Free |
-| T20 | iOS Bundle `.pro` + TestFlight | Quando conta Apple ativa | — |
+_Tarefas T02–T09 e T15–T20 concluídas em 26/07/2026 — ver [FINALIZADAS.md](./FINALIZADAS.md)._
 
 ---
 

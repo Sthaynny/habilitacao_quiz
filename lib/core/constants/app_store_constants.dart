@@ -2,7 +2,7 @@
 abstract final class AppStoreConstants {
   static const isProPublished = bool.fromEnvironment(
     'HABILITACAO_QUIZ_PRO_PUBLISHED',
-    defaultValue: false,
+    defaultValue: true,
   );
 
   static const androidPackagePro = 'br.com.sthaynny.habilitacao_quiz.pro';

@@ -33,5 +33,10 @@ void main() {
       expect(gate.exibirPromoPlus, isFalse);
       expect(gate.podeIniciarSimuladoHoje(99), isTrue);
     });
+
+    test('histórico ilimitado', () {
+      expect(gate.podeSalvarResultado(14), isTrue);
+      expect(gate.podeSalvarResultado(100), isTrue);
+    });
   });
 }

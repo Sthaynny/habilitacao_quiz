@@ -41,6 +41,20 @@ void main() {
         expect(result.isRight(), true);
         expect(result.fold(id, id), isA<QuizEntity>());
       });
+      test('Free limita sessão de tema a 15 perguntas', () async {
+        final gate = StubProGate();
+        final repo = QuizRepository(_MockSucessDatasource(), gate);
+        final result = await repo.getQuiz(Keys.direcaoDefensiva);
+        final quiz = result.getOrElse(() => QuizEntity.empty());
+        expect(quiz.perguntas.length, lessThanOrEqualTo(15));
+      });
+      test('Pro não limita sessão de tema', () async {
+        final gate = StubProGate(isPro: true);
+        final repo = QuizRepository(_MockSucessDatasource(), gate);
+        final result = await repo.getQuiz(Keys.direcaoDefensiva);
+        final quiz = result.getOrElse(() => QuizEntity.empty());
+        expect(quiz.perguntas.length, greaterThan(15));
+      });
       test('Deve dar erro', () async {
         final result = await repositoryError.getQuiz('alsjdha');
         expect(result.isLeft(), true);
@@ -52,6 +66,20 @@ void main() {
         final result = await repositorySuccess.getSimulado();
         expect(result.isRight(), true);
         expect(result.fold(id, id), isA<QuizEntity>());
+      });
+      test('Free monta simulado com 15 questões', () async {
+        final gate = StubProGate();
+        final repo = QuizRepository(_MockSucessDatasource(), gate);
+        final result = await repo.getSimulado();
+        final quiz = result.getOrElse(() => QuizEntity.empty());
+        expect(quiz.perguntas.length, 15);
+      });
+      test('Pro monta simulado com 30 questões', () async {
+        final gate = StubProGate(isPro: true);
+        final repo = QuizRepository(_MockSucessDatasource(), gate);
+        final result = await repo.getSimulado();
+        final quiz = result.getOrElse(() => QuizEntity.empty());
+        expect(quiz.perguntas.length, 30);
       });
       test('Deve dar erro', () async {
         final result = await repositoryError.getSimulado();
