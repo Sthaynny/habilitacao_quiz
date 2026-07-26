@@ -22,6 +22,18 @@ abstract interface class ProGate {
 
   /// Dashboard % por matéria na aba Histórico (Pro).
   bool get podeVerDashboardMateriaHistorico;
+
+  bool get podeModoProva;
+
+  bool get podeTrilhaCompletaLearning;
+
+  bool get podeFichasProLearning;
+
+  bool get podeMapaCompetenciasDinamico;
+
+  bool get podeRevisaoEspacada;
+
+  bool get podeRevisarErrosUltimoTeste;
 }
 
 final class CompileTimeProGate implements ProGate {
@@ -61,6 +73,24 @@ final class CompileTimeProGate implements ProGate {
 
   @override
   bool get podeVerDashboardMateriaHistorico => kIsPro;
+
+  @override
+  bool get podeModoProva => kIsPro;
+
+  @override
+  bool get podeTrilhaCompletaLearning => kIsPro;
+
+  @override
+  bool get podeFichasProLearning => kIsPro;
+
+  @override
+  bool get podeMapaCompetenciasDinamico => kIsPro;
+
+  @override
+  bool get podeRevisaoEspacada => kIsPro;
+
+  @override
+  bool get podeRevisarErrosUltimoTeste => kIsPro;
 }
 
 /// Gate configurável para testes.
@@ -114,4 +144,22 @@ final class StubProGate implements ProGate {
 
   @override
   bool get podeVerDashboardMateriaHistorico => isPro;
+
+  @override
+  bool get podeModoProva => isPro;
+
+  @override
+  bool get podeTrilhaCompletaLearning => isPro;
+
+  @override
+  bool get podeFichasProLearning => isPro;
+
+  @override
+  bool get podeMapaCompetenciasDinamico => isPro;
+
+  @override
+  bool get podeRevisaoEspacada => isPro;
+
+  @override
+  bool get podeRevisarErrosUltimoTeste => isPro;
 }
