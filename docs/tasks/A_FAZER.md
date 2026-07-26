@@ -37,13 +37,6 @@ Doc: [promocao-quiz-plus.md](../features/promocao-quiz-plus.md)
 
 | ID | Objetivo | Critério de pronto | Pistas |
 | :--- | :--- | :--- | :--- |
-| HQ-H01 | `ProGate.maxResultadosHistorico` | Testes unitários | T03 |
-| HQ-H02 | Cap em `SalvarHistoricoUsecase` | Pro sem FIFO | `historico_entity.dart` |
-| HQ-H03 | `ResultadoEntity` v2 + migração | `id`, `tipo`, `realizadoEm` | `historico_model.dart` |
-| HQ-H04 | Setar tipo/data ao finalizar quiz | `questionario_controller.dart` | — |
-| HQ-H05 | Chips Todos/Simulados/Temas | `historico_widget.dart` | — |
-| HQ-H06 | Cards clicáveis + data/badge | Navegação Free vs Pro | — |
-| HQ-H07 | `DetalheSimuladoScreen` (Pro) | Lista gabarito | — |
 | HQ-H08 | Persistir detalhe perguntas Pro | Só simulado Pro | — |
 | HQ-H09 | Copy “últimos 10” + CTA | Snackbar no 11º | — |
 | HQ-H10 | CTA resultado simulado 15q | HQ-P09 | — |

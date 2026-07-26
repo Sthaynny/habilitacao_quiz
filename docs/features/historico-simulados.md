@@ -5,24 +5,22 @@
 
 ## Comportamento atual (código)
 
-### Cap de 10 — já existe
+### Cap de 10 — Free via ProGate
 
-```10:15:lib/app/features/historico/domain/entities/historico_entity.dart
-  void add(ResultadoEntity resultadoEntity) {
-    if (resutados.length > 9) {
-      resutados.removeAt(0);
-    }
-    resutados.add(resultadoEntity);
-  }
-```
+Retenção Free: **10** entradas FIFO via `SalvarHistoricoUsecase` + `ProGate.maxResultadosHistorico`; Pro ilimitado (`null`). Ver `HistoricoEntity.add(maxResultados:)`.
 
-Todos os usuários (Free e futuro Pro) hoje têm **no máximo 10** entradas FIFO.
+### Modelo de dados (v2) — implementado (HQ-H03+)
 
-### O que cada resultado guarda
+- `id`, `tipo` (`tema` | `simulado`), `realizadoEm`
+- `detalhePerguntas` opcional (Pro + simulado ao salvar — HQ-H04)
+- Migração JSON `schemaVersion: 2`; legado infere tipo por `titulo == Strings.simulado`
 
-`ResultadoEntity`: `titulo`, `totalPerguntas`, `totalRespostasCorretas`, `percentual`, `result` (≥ 70%).
+### UI (HQ-H05–H07)
 
-**Não há:** data/hora, tipo (simulado vs tema), detalhe por pergunta, replay.
+- Chips: **Todos · Simulados · Temas** (`historico_list_filter.dart`)
+- Cards com data, badge, `onTap` (`historico_widget.dart`)
+- **Detalhe simulado (Pro):** `DetalheSimuladoScreen` — gabarito questão a questão
+- **Free:** bottom sheet resumo + CTA **+**
 
 ### Simulado
 
@@ -60,18 +58,19 @@ Ao expulsar o 11º no Free: snackbar + CTA **+**.
 | Free | 15 | 1 início |
 | Pro | 30 | Ilimitado |
 
-### Histórico — evolução UI (Onda 2)
+### Histórico — evolução UI (Onda 2) — parcial (HQ-H05–H07)
 
-- Chips: **Todos · Simulados · Temas**
-- Cards com data, badge, `onTap`
-- **Detalhe simulado (Pro):** gabarito questão a questão
-- **Free:** resumo + CTA revisão no **+**
+- Chips: **Todos · Simulados · Temas** — feito
+- Cards com data, badge, `onTap` — feito
+- **Detalhe simulado (Pro):** gabarito questão a questão — feito (`DetalheSimuladoScreen`)
+- **Free:** resumo + CTA revisão no **+** — feito (bottom sheet)
+- HQ-H08+: persistência/refino detalhe, copy 11º, métricas — ver [A_FAZER.md](../tasks/A_FAZER.md)
 
-### Modelo de dados (v2)
+### Modelo de dados (v2) — feito HQ-H03/H04
 
 - `id`, `tipo` (`tema` | `simulado`), `realizadoEm`
-- `detalhePerguntas` opcional (Pro + simulado)
-- Migração JSON `schemaVersion: 2`; inferir tipo por `titulo == simulado`
+- `detalhePerguntas` opcional (Pro + simulado ao finalizar)
+- Migração JSON `schemaVersion: 2`; inferir tipo por `titulo == Strings.simulado` em legado
 
 ## Wireframe (texto)
 
