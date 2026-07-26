@@ -40,7 +40,6 @@ Doc: [promocao-quiz-plus.md](../features/promocao-quiz-plus.md)
 | HQ-H09 | Copy “últimos 10” + CTA | Snackbar no 11º | — |
 | HQ-H10 | CTA resultado simulado 15q | HQ-P09 | — |
 | HQ-H12 | Métricas simulados/semana | Analytics | — |
-| T23 | Filtros / busca histórico | Pro | — |
 
 Doc: [historico-simulados.md](../features/historico-simulados.md)
 

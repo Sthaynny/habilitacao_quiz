@@ -18,6 +18,7 @@ Retenção Free: **10** entradas FIFO via `SalvarHistoricoUsecase` + `ProGate.ma
 ### UI (HQ-H05–H07)
 
 - Chips: **Todos · Simulados · Temas** (`historico_list_filter.dart`)
+- **Pro (T23):** busca por título + filtros **Aprovados / Reprovados**
 - Cards com data, badge, `onTap` (`historico_widget.dart`)
 - **Detalhe simulado (Pro):** `DetalheSimuladoScreen` — gabarito questão a questão
 - **Free:** bottom sheet resumo + CTA **+**

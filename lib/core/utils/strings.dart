@@ -61,12 +61,20 @@ abstract class Strings {
       'No Habilitação Quiz+, faça simulados oficiais de 30 questões, sem limite diário.';
   static const historicoLimiteFreeSnackbar =
       'Mantemos só os últimos 10 resultados no app gratuito. No +, histórico ilimitado.';
+  static const historicoFreeUltimosDez = 'Últimos 10 resultados';
+  static const historicoDesbloquearCompleto = 'Desbloquear histórico completo';
   static const historicoPlusRodape =
       'Histórico ilimitado e detalhes no Habilitação Quiz+.';
 
   static const historicoFiltroTodos = 'Todos';
   static const historicoFiltroSimulados = 'Simulados';
   static const historicoFiltroTemas = 'Temas';
+  static const historicoFiltroDesempenhoTodos = 'Todos resultados';
+  static const historicoFiltroAprovados = 'Aprovados';
+  static const historicoFiltroReprovados = 'Reprovados';
+  static const historicoBuscaHint = 'Buscar por título';
+  static const historicoBuscaSemResultados =
+      'Nenhum resultado corresponde aos filtros aplicados.';
   static const historicoBadgeSimulado = 'Simulado';
   static const historicoBadgeTema = 'Tema';
   static const historicoDetalheTitulo = 'Detalhe do simulado';
