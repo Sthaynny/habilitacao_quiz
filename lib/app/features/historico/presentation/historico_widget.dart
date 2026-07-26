@@ -27,9 +27,12 @@ class HistoricoWidget extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        Strings.historico,
-                        style: AppFontStyle.headline24Bold,
+                      Semantics(
+                        header: true,
+                        child: Text(
+                          Strings.historico,
+                          style: AppFontStyle.headline24Bold,
+                        ),
                       ),
                       SizedBox(height: AppSpacingStack.xxxSmall.value),
                     ],
@@ -73,9 +76,12 @@ class HistoricoWidget extends StatelessWidget {
     return Column(
       children: [
         SizedBox(height: AppSpacingStack.xxxLarge.value),
-        Text(
-          Strings.historico,
-          style: AppFontStyle.headline24Bold,
+        Semantics(
+          header: true,
+          child: Text(
+            Strings.historico,
+            style: AppFontStyle.headline24Bold,
+          ),
         ),
         SizedBox(height: AppSpacingStack.xxxLarge.value),
         Center(
@@ -99,7 +105,14 @@ class HistoricoWidget extends StatelessWidget {
       percentual: element.percentual.toPrecision(2).toString(),
     );
 
-    return Container(
+    final cardLabel =
+        '${element.titulo}. $percentualLabel '
+        '${element.totalRespostasCorretas} de ${element.totalPerguntas}';
+
+    return Semantics(
+      label: cardLabel,
+      child: ExcludeSemantics(
+        child: Container(
       padding: EdgeInsets.all(AppSpacingStack.xxxSmall.value),
       margin: EdgeInsets.symmetric(vertical: AppSpacingStack.nano.value),
       decoration: BoxDecoration(
@@ -131,14 +144,10 @@ class HistoricoWidget extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
-              Semantics(
-                label: percentualLabel,
-                value: '${element.percentual.toPrecision(2)}%',
-                child: SizedBox(
-                  width: AppSpacingStack.large.value + AppSpacingStack.nano.value,
-                  child: LinearProgressIndicatorWidget(
-                    value: element.percentual / 100,
-                  ),
+              SizedBox(
+                width: AppSpacingStack.large.value + AppSpacingStack.nano.value,
+                child: LinearProgressIndicatorWidget(
+                  value: element.percentual / 100,
                 ),
               ),
               SizedBox(height: AppSpacingStack.nano.value),
@@ -150,6 +159,8 @@ class HistoricoWidget extends StatelessWidget {
             ],
           ),
         ],
+      ),
+        ),
       ),
     );
   }
