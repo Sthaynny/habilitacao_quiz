@@ -4,6 +4,7 @@ import 'package:habilitacao_quiz/app/features/promo/presentation/widgets/habilit
 import 'package:habilitacao_quiz/app/features/resultado/domain/resultado_entity.dart';
 import 'package:habilitacao_quiz/app/features/routes/routes.dart';
 import 'package:habilitacao_quiz/app/shared/domain/services/pro_gate.dart';
+import 'package:habilitacao_quiz/core/analytics/promo_funnel_analytics.dart';
 import 'package:habilitacao_quiz/core/components/button.dart';
 import 'package:habilitacao_quiz/core/mixins/pop_up_mixin.dart';
 import 'package:habilitacao_quiz/core/styles/app_styles.dart';
@@ -140,6 +141,7 @@ class _ResultadoScreenState extends State<ResultadoScreen> with PopUpMixin {
                     ),
                     child: HabilitacaoQuizPlusCtaBanner(
                       compact: false,
+                      analyticsSurface: PromoSurface.resultadoSimulado,
                       onTap: () => Get.toNamed(Routes.habilitacaoQuizPlus),
                     ),
                   ),

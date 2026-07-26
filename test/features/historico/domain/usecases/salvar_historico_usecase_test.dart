@@ -3,6 +3,7 @@ import 'package:habilitacao_quiz/app/features/historico/domain/entities/historic
 import 'package:habilitacao_quiz/app/features/historico/domain/repositories/historico_repository.dart';
 import 'package:habilitacao_quiz/app/features/historico/domain/usecases/salvar_historico_usecase.dart';
 import 'package:habilitacao_quiz/app/features/resultado/domain/resultado_entity.dart';
+import 'package:habilitacao_quiz/app/features/resultado/domain/tipo_resultado.dart';
 import 'package:habilitacao_quiz/app/shared/domain/services/pro_gate.dart';
 
 class _FakeHistoricoRepo implements IHistoricoRepository {
@@ -20,6 +21,9 @@ class _FakeHistoricoRepo implements IHistoricoRepository {
 }
 
 ResultadoEntity _resultado(String titulo) => ResultadoEntity(
+      id: 'test_$titulo',
+      tipo: TipoResultado.tema,
+      realizadoEm: DateTime.utc(2026, 7, 26),
       titulo: titulo,
       totalPerguntas: 10,
       result: true,

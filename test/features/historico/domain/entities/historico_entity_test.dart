@@ -1,8 +1,12 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:habilitacao_quiz/app/features/historico/domain/entities/historico_entity.dart';
 import 'package:habilitacao_quiz/app/features/resultado/domain/resultado_entity.dart';
+import 'package:habilitacao_quiz/app/features/resultado/domain/tipo_resultado.dart';
 
 ResultadoEntity _resultado(int index) => ResultadoEntity(
+      id: 'id_$index',
+      tipo: TipoResultado.tema,
+      realizadoEm: DateTime.utc(2026, 1, index + 1),
       titulo: 'Quiz $index',
       totalPerguntas: 10,
       result: true,

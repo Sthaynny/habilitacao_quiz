@@ -7,8 +7,11 @@ import 'package:habilitacao_quiz/app/features/resultado/domain/resultado_entity.
 class HistoricoModel extends HistoricoEntity {
   HistoricoModel({required super.resutados});
 
+  static const int schemaVersion = 2;
+
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
+      'schemaVersion': schemaVersion,
       'resutados': resutados
           .map((element) => ResultadoModel.fromEntity(element).toMap())
           .toList(),

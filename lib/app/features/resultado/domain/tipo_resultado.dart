@@ -1,0 +1,4 @@
+enum TipoResultado {
+  tema,
+  simulado,
+}
