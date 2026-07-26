@@ -50,6 +50,7 @@ class HomeInjectionContainer implements IInjectionContainer {
         primeirosSocorrosQuizUsercase: Get.find(),
         mecanicaBasicaQuizUsercase: Get.find(),
         simuladoQuizUsercase: Get.find(),
+        simuladoQuotaService: Get.find(),
       ),
       fenix: true,
     );

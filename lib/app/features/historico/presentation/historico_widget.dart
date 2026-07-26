@@ -1,54 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:get/utils.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:habilitacao_quiz/app/features/historico/domain/entities/historico_entity.dart';
 import 'package:habilitacao_quiz/app/features/historico/presentation/components/linerar_progress.dart';
+import 'package:habilitacao_quiz/app/features/promo/presentation/widgets/habilitacao_quiz_plus_cta_banner.dart';
 import 'package:habilitacao_quiz/app/features/resultado/domain/resultado_entity.dart';
 import 'package:habilitacao_quiz/core/styles/app_styles.dart';
 import 'package:habilitacao_quiz/core/styles/spacing_stack.dart';
-import 'package:habilitacao_quiz/core/utils/ad_helper.dart';
 import 'package:habilitacao_quiz/core/utils/strings.dart';
 
-class HistoricoWidget extends StatefulWidget {
+class HistoricoWidget extends StatelessWidget {
   const HistoricoWidget({
     super.key,
     required this.historico,
   });
   final HistoricoEntity historico;
-
-  @override
-  State<HistoricoWidget> createState() => _HistoricoWidgetState();
-}
-
-class _HistoricoWidgetState extends State<HistoricoWidget> {
-  HistoricoEntity get historico => widget.historico;
-  final ValueNotifier<BannerAd?> bannerAdNotifier = ValueNotifier(null);
-
-  @override
-  void initState() {
-    BannerAd(
-      adUnitId: AdHelper.bottomAd,
-      request: const AdRequest(),
-      size: AdSize.banner,
-      listener: BannerAdListener(
-        onAdLoaded: (ad) {
-          bannerAdNotifier.value = ad as BannerAd;
-        },
-        onAdFailedToLoad: (ad, err) {
-          debugPrint('Failed to load a banner ad: ${err.message}');
-          ad.dispose();
-        },
-      ),
-    ).load();
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    bannerAdNotifier.value?.dispose();
-    bannerAdNotifier.dispose();
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -78,6 +43,27 @@ class _HistoricoWidgetState extends State<HistoricoWidget> {
                     childCount: historico.resutados.length,
                   ),
                 ),
+                SliverToBoxAdapter(
+                  child: Padding(
+                    padding: EdgeInsets.only(
+                      top: AppSpacingStack.xxxSmall.value,
+                      bottom: AppSpacingStack.small.value,
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        Text(
+                          Strings.historicoPlusRodape,
+                          style: AppFontStyle.caption12Regular
+                              .setColor(AppColors.grey),
+                          textAlign: TextAlign.center,
+                        ),
+                        SizedBox(height: AppSpacingStack.nano.value),
+                        const HabilitacaoQuizPlusCtaBanner(compact: false),
+                      ],
+                    ),
+                  ),
+                ),
               ],
             ),
     );
@@ -98,6 +84,11 @@ class _HistoricoWidgetState extends State<HistoricoWidget> {
             style: AppFontStyle.body14Regular.setColor(AppColors.grey),
             textAlign: TextAlign.center,
           ),
+        ),
+        SizedBox(height: AppSpacingStack.small.value),
+        const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 16),
+          child: HabilitacaoQuizPlusCtaBanner(compact: false),
         ),
       ],
     );
@@ -162,18 +153,4 @@ class _HistoricoWidgetState extends State<HistoricoWidget> {
       ),
     );
   }
-
-  Widget get bottomAd => ValueListenableBuilder(
-        valueListenable: bannerAdNotifier,
-        builder: (context, bannerAd, child) {
-          if (bannerAd != null) {
-            return SizedBox(
-              width: bannerAd.size.width.toDouble(),
-              height: bannerAd.size.height.toDouble(),
-              child: AdWidget(ad: bannerAd),
-            );
-          }
-          return Container();
-        },
-      );
 }

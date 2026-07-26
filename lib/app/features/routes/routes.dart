@@ -3,5 +3,6 @@ abstract class Routes {
   static const questionario = '/questionario';
   static const resultado = '/resultado';
   static const legalNotice = '/aviso-legal';
+  static const habilitacaoQuizPlus = '/habilitacao-quiz-plus';
   static const init = '/';
 }

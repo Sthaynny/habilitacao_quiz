@@ -27,7 +27,24 @@ class Simulado {
       jsonLegislacao.isNotEmpty &&
       jsonMeioAmbiente.isNotEmpty;
 
-  QuizEntity get getSimulado {
+  /// Monta simulado com [totalQuestoes] (15 Free ou 30 Pro), mantendo proporção por matéria.
+  QuizEntity buildSimulado({required int totalQuestoes}) {
+    final buckets = totalQuestoes == 30
+        ? const _SimuladoBuckets(
+            mecanica: 2,
+            direcaoDefensiva: 5,
+            primeirosSocorros: 3,
+            meioAmbiente: 2,
+            legislacao: 18,
+          )
+        : const _SimuladoBuckets(
+            mecanica: 1,
+            direcaoDefensiva: 2,
+            primeirosSocorros: 2,
+            meioAmbiente: 1,
+            legislacao: 9,
+          );
+
     final QuizEntity quizMecanica = QuizModel.fromJson(jsonMecanica);
     final QuizEntity quizDirecaoDefensiva =
         QuizModel.fromJson(jsonDirecaoDefensiva);
@@ -41,16 +58,38 @@ class Simulado {
     quizMeioAmbiente.perguntas.shuffle();
     quizPrimeirosSocorros.perguntas.shuffle();
     quizLegislacao.perguntas.shuffle();
+
     final List<PerguntaEntity> perguntas = [
-      ...quizMecanica.perguntas.getRange(0, 2),
-      ...quizDirecaoDefensiva.perguntas.getRange(0, 5),
-      ...quizPrimeirosSocorros.perguntas.getRange(0, 3),
-      ...quizMeioAmbiente.perguntas.getRange(0, 2),
-      ...quizLegislacao.perguntas.getRange(0, 18),
+      ..._take(quizMecanica.perguntas, buckets.mecanica),
+      ..._take(quizDirecaoDefensiva.perguntas, buckets.direcaoDefensiva),
+      ..._take(quizPrimeirosSocorros.perguntas, buckets.primeirosSocorros),
+      ..._take(quizMeioAmbiente.perguntas, buckets.meioAmbiente),
+      ..._take(quizLegislacao.perguntas, buckets.legislacao),
     ];
 
     perguntas.shuffle();
 
     return QuizEntity(titulo: Strings.simulado, perguntas: perguntas);
   }
+
+  List<PerguntaEntity> _take(List<PerguntaEntity> source, int count) {
+    if (source.length <= count) return List<PerguntaEntity>.from(source);
+    return source.sublist(0, count);
+  }
+}
+
+class _SimuladoBuckets {
+  const _SimuladoBuckets({
+    required this.mecanica,
+    required this.direcaoDefensiva,
+    required this.primeirosSocorros,
+    required this.meioAmbiente,
+    required this.legislacao,
+  });
+
+  final int mecanica;
+  final int direcaoDefensiva;
+  final int primeirosSocorros;
+  final int meioAmbiente;
+  final int legislacao;
 }

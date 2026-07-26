@@ -4,6 +4,7 @@ import 'package:habilitacao_quiz/app/shared/data/datasources/quiz_datasource.dar
 import 'package:habilitacao_quiz/app/shared/data/repositories/quiz_repository.dart';
 import 'package:habilitacao_quiz/app/shared/domain/entities/quiz_entity.dart';
 import 'package:habilitacao_quiz/app/shared/domain/repositories/iquiz_repository.dart';
+import 'package:habilitacao_quiz/app/shared/domain/services/pro_gate.dart';
 import 'package:habilitacao_quiz/core/exceptions/erro.dart';
 import 'package:habilitacao_quiz/core/utils/keys.dart';
 import 'package:mockito/mockito.dart';
@@ -30,8 +31,9 @@ void main() {
 
   group('Teste Quiz repository', () {
     setUpAll(() {
-      repositorySuccess = QuizRepository(_MockSucessDatasource());
-      repositoryError = QuizRepository(_MockErrorDatasource());
+      final gate = StubProGate();
+      repositorySuccess = QuizRepository(_MockSucessDatasource(), gate);
+      repositoryError = QuizRepository(_MockErrorDatasource(), gate);
     });
     group('getQuiz', () {
       test('Deve dar sucesso', () async {

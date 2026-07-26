@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:habilitacao_quiz/app/features/routes/routes.dart';
+import 'package:habilitacao_quiz/app/shared/domain/services/pro_gate.dart';
 import 'package:habilitacao_quiz/core/components/button.dart';
 import 'package:habilitacao_quiz/core/constants/government_sources.dart';
 import 'package:habilitacao_quiz/core/mixins/pop_up_mixin.dart';
@@ -60,6 +62,12 @@ class _LegalNoticeScreenState extends State<LegalNoticeScreen> with PopUpMixin {
                 ),
               ),
               SizedBox(height: AppSpacingStack.xSmall.value),
+              if (Get.find<ProGate>().exibirPromoPlus) ...[
+                _PlusLegalTile(
+                  onTap: () => Get.toNamed(Routes.habilitacaoQuizPlus),
+                ),
+                SizedBox(height: AppSpacingStack.xSmall.value),
+              ],
               AppButton.primary(
                 Strings.voltar,
                 expanded: true,
@@ -103,6 +111,46 @@ class _DisclaimerCard extends StatelessWidget {
             style: AppFontStyle.body14Regular,
           ),
         ],
+      ),
+    );
+  }
+}
+
+class _PlusLegalTile extends StatelessWidget {
+  const _PlusLegalTile({required this.onTap});
+
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      color: AppColors.white,
+      borderRadius: BorderRadius.circular(12),
+      child: InkWell(
+        onTap: onTap,
+        borderRadius: BorderRadius.circular(12),
+        child: Container(
+          width: double.infinity,
+          padding: EdgeInsets.all(AppSpacingStack.xSmall.value),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(12),
+            border: Border.all(color: AppColors.border),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                Strings.plusItemLegal,
+                style: AppFontStyle.body16Bold,
+              ),
+              SizedBox(height: AppSpacingStack.quarck.value),
+              Text(
+                Strings.plusItemLegalDesc,
+                style: AppFontStyle.body14Regular.setColor(AppColors.grey),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }

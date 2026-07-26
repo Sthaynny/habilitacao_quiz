@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:habilitacao_quiz/app/features/promo/presentation/widgets/habilitacao_quiz_plus_cta_banner.dart';
 import 'package:habilitacao_quiz/app/features/resultado/domain/resultado_entity.dart';
+import 'package:habilitacao_quiz/app/features/routes/routes.dart';
+import 'package:habilitacao_quiz/app/shared/domain/services/pro_gate.dart';
 import 'package:habilitacao_quiz/core/components/button.dart';
 import 'package:habilitacao_quiz/core/mixins/pop_up_mixin.dart';
 import 'package:habilitacao_quiz/core/styles/app_styles.dart';
@@ -37,6 +40,13 @@ class _ResultadoScreenState extends State<ResultadoScreen> with PopUpMixin {
     } finally {
       if (mounted) setState(() => _isSharing = false);
     }
+  }
+
+  bool get _showSimuladoPlusCta {
+    final proGate = Get.find<ProGate>();
+    return proGate.exibirPromoPlus &&
+        widget.args.titulo == Strings.simulado &&
+        widget.args.totalPerguntas <= 15;
   }
 
   @override
@@ -94,6 +104,30 @@ class _ResultadoScreenState extends State<ResultadoScreen> with PopUpMixin {
                   ),
                   textAlign: TextAlign.center,
                 ),
+                if (_showSimuladoPlusCta) ...[
+                  SizedBox(height: AppSpacingStack.xSmall.value),
+                  Padding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: AppSpacingStack.large.value,
+                    ),
+                    child: Text(
+                      Strings.resultadoSimuladoFreeCta,
+                      style: AppFontStyle.body14Regular
+                          .setColor(AppColors.grey),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                  SizedBox(height: AppSpacingStack.nano.value),
+                  Padding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: AppSpacingStack.xxxSmall.value,
+                    ),
+                    child: HabilitacaoQuizPlusCtaBanner(
+                      compact: false,
+                      onTap: () => Get.toNamed(Routes.habilitacaoQuizPlus),
+                    ),
+                  ),
+                ],
                 SizedBox(height: AppSpacingStack.large.value),
                 Padding(
                   padding: EdgeInsets.symmetric(

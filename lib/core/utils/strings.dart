@@ -36,6 +36,38 @@ abstract class Strings {
   static const comeceEstudosVizualizarProgresso =
       'Comece os estudos para visualizar seu progresso!';
 
+  static const plusBannerSubtitle =
+      'Simulado de 30 questões, histórico ilimitado e mais.';
+  static const plusBannerSemantics =
+      'Conhecer o Habilitação Quiz mais, versão completa';
+  static const plusBannerHint = 'Abre detalhes do aplicativo pago';
+  static const plusEmBreve =
+      'O Habilitação Quiz+ ainda não está disponível na loja.';
+  static const plusLojaIndisponivel =
+      'Não foi possível abrir a loja. Tente novamente mais tarde.';
+  static const plusScreenTitle = 'Estude sem limites';
+  static const plusScreenIntro =
+      'O Habilitação Quiz+ é um app separado na loja, com recursos para quem quer ir além do básico:';
+  static const plusVerNaLoja = 'Ver na Play Store';
+  static const plusItemLegal = 'Habilitação Quiz+';
+  static const plusItemLegalDesc =
+      'Versão completa do app na loja (compra única).';
+  static const simuladoLimiteDiario =
+      'Você já fez o simulado de hoje. No Habilitação Quiz+ são ilimitados.';
+  static const resultadoSimuladoFreeCta =
+      'No Habilitação Quiz+, faça simulados oficiais de 30 questões, sem limite diário.';
+  static const historicoLimiteFreeSnackbar =
+      'Mantemos só os últimos 10 resultados no app gratuito. No +, histórico ilimitado.';
+  static const historicoPlusRodape =
+      'Histórico ilimitado e detalhes no Habilitação Quiz+.';
+
+  static const plusBenefits = <String>[
+    'Simulado com 30 questões, quantas vezes quiser',
+    'Quizzes com o banco completo por tema',
+    'Histórico ilimitado para acompanhar sua evolução',
+    'Sem anúncios',
+  ];
+
   static String resultadoQuestionario({
     required String respostasCorretas,
     required String totalPerguntas,

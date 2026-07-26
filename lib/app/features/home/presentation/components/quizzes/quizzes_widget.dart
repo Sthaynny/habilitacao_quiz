@@ -10,11 +10,11 @@ class QuizzesWidget extends StatelessWidget {
   const QuizzesWidget({
     super.key,
     required this.controller,
-    required this.bottomAd,
+    required this.topPromo,
   });
 
   final QuizzesController controller;
-  final Widget bottomAd;
+  final Widget topPromo;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class QuizzesWidget extends StatelessWidget {
       children: [
         Padding(
           padding: EdgeInsets.symmetric(vertical: AppSpacingStack.nano.value),
-          child: Center(child: bottomAd),
+          child: topPromo,
         ),
         GridView.count(
           shrinkWrap: true,

@@ -7,8 +7,9 @@ class HistoricoEntity {
 
   HistoricoEntity({required this.resutados});
 
-  void add(ResultadoEntity resultadoEntity) {
-    if (resutados.length > 9) {
+  /// [maxResultados] `null` = sem FIFO (Pro).
+  void add(ResultadoEntity resultadoEntity, {int? maxResultados}) {
+    if (maxResultados != null && resutados.length >= maxResultados) {
       resutados.removeAt(0);
     }
     resutados.add(resultadoEntity);

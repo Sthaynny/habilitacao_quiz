@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:habilitacao_quiz/app/features/historico/domain/entities/historico_entity.dart';
 import 'package:habilitacao_quiz/app/features/historico/domain/usecases/salvar_historico_usecase.dart';
@@ -6,8 +7,10 @@ import 'package:habilitacao_quiz/app/features/routes/routes.dart';
 import 'package:habilitacao_quiz/app/shared/domain/entities/pergunta_entity.dart';
 import 'package:habilitacao_quiz/app/shared/domain/entities/quiz_entity.dart';
 import 'package:habilitacao_quiz/app/shared/domain/entities/resposta_entity.dart';
+import 'package:habilitacao_quiz/app/shared/domain/services/pro_gate.dart';
 import 'package:habilitacao_quiz/app/shared/utils/constants.dart';
 import 'package:habilitacao_quiz/core/mixins/pop_up_mixin.dart';
+import 'package:habilitacao_quiz/core/utils/strings.dart';
 
 class QuestionarioController extends GetxController with PopUpMixin {
   void init({required QuizEntity quizEntity}) {
@@ -26,19 +29,37 @@ class QuestionarioController extends GetxController with PopUpMixin {
           totalPerguntasCorretas++;
         }
       }
-      final double percentual = (totalPerguntasCorretas / tamanhoQuiz) * cem;
+      final totalPerguntas = quiz.perguntas.length;
+      final double percentual =
+          totalPerguntas == 0 ? 0 : (totalPerguntasCorretas / totalPerguntas) * cem;
 
       final result = ResultadoEntity(
         titulo: quiz.titulo,
-        totalPerguntas: tamanhoQuiz,
+        totalPerguntas: totalPerguntas,
         result: percentual >= mediaQuiz,
         totalRespostasCorretas: totalPerguntasCorretas,
         percentual: percentual,
       );
 
-      Get.find<HistoricoEntity>().add(result);
+      final proGate = Get.find<ProGate>();
+      final historico = Get.find<HistoricoEntity>();
+      final max = proGate.maxResultadosHistorico;
+      final countBefore = historico.resutados.length;
+      historico.add(result, maxResultados: max);
 
-      Get.find<SalvarHistoricoUsecase>().call(Get.find<HistoricoEntity>());
+      if (max != null && countBefore >= max) {
+        Get.snackbar(
+          Strings.historico,
+          Strings.historicoLimiteFreeSnackbar,
+          snackPosition: SnackPosition.BOTTOM,
+          mainButton: TextButton(
+            onPressed: () => Get.toNamed(Routes.habilitacaoQuizPlus),
+            child: Text(Strings.plusItemLegal),
+          ),
+        );
+      }
+
+      Get.find<SalvarHistoricoUsecase>().call(historico);
 
       irParaResultado(result);
     } else {

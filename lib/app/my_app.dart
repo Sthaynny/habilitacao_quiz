@@ -5,6 +5,7 @@ import 'package:habilitacao_quiz/app/features/legal/presentation/legal_notice_sc
 import 'package:habilitacao_quiz/app/features/questionario/presentation/questionario_screen.dart';
 import 'package:habilitacao_quiz/app/features/resultado/presentation/resultado_screen.dart';
 import 'package:habilitacao_quiz/app/features/routes/routes.dart';
+import 'package:habilitacao_quiz/app/features/promo/presentation/habilitacao_quiz_plus_screen.dart';
 import 'package:habilitacao_quiz/app/features/splash/splash_screen.dart';
 
 class MyApp extends StatelessWidget {
@@ -54,6 +55,10 @@ class MyApp extends StatelessWidget {
         GetPage(
           name: Routes.legalNotice,
           page: () => const LegalNoticeScreen(),
+        ),
+        GetPage(
+          name: Routes.habilitacaoQuizPlus,
+          page: () => const HabilitacaoQuizPlusScreen(),
         ),
       ],
     );

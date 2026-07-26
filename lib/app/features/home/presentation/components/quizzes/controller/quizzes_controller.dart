@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:habilitacao_quiz/app/features/home/domain/usecases/direcao_defensiva_quiz_usercase.dart';
 import 'package:habilitacao_quiz/app/features/home/domain/usecases/legislacao_quiz_usercase.dart';
@@ -9,8 +9,10 @@ import 'package:habilitacao_quiz/app/features/home/domain/usecases/primeiros_soc
 import 'package:habilitacao_quiz/app/features/home/domain/usecases/simulado_quiz_usercase.dart';
 import 'package:habilitacao_quiz/app/features/routes/routes.dart';
 import 'package:habilitacao_quiz/app/shared/domain/entities/quiz_entity.dart';
+import 'package:habilitacao_quiz/app/shared/domain/services/simulado_quota_service.dart';
 import 'package:habilitacao_quiz/app/shared/utils/quiz_enum.dart';
 import 'package:habilitacao_quiz/core/exceptions/erro.dart';
+import 'package:habilitacao_quiz/core/utils/strings.dart';
 
 class QuizzesController extends GetxController {
   QuizzesController({
@@ -20,6 +22,7 @@ class QuizzesController extends GetxController {
     required PrimeirosSocorrosQuizUsercase primeirosSocorrosQuizUsercase,
     required MecanicaBasicaQuizUsercase mecanicaBasicaQuizUsercase,
     required SimuladoQuizUsercase simuladoQuizUsercase,
+    required SimuladoQuotaService simuladoQuotaService,
   }) {
     _direcaoDefesivaQuizUsercase = direcaoDefesivaQuizUsercase;
     _legislacaoQuizUsercase = legislacaoQuizUsercase;
@@ -27,6 +30,7 @@ class QuizzesController extends GetxController {
     _meioAmbienteQuizUsercase = meioAmbienteQuizUsercase;
     _mecanicaBasicaQuizUsercase = mecanicaBasicaQuizUsercase;
     _simuladoQuizUsercase = simuladoQuizUsercase;
+    _simuladoQuotaService = simuladoQuotaService;
   }
   late final DirecaoDefesivaQuizUsercase _direcaoDefesivaQuizUsercase;
   late final LegislacaoQuizUsercase _legislacaoQuizUsercase;
@@ -34,14 +38,34 @@ class QuizzesController extends GetxController {
   late final PrimeirosSocorrosQuizUsercase _primeirosSocorrosQuizUsercase;
   late final MecanicaBasicaQuizUsercase _mecanicaBasicaQuizUsercase;
   late final SimuladoQuizUsercase _simuladoQuizUsercase;
+  late final SimuladoQuotaService _simuladoQuotaService;
   ValueChanged<RxStatus>? onStatus;
 
   QuizEntity? _quizEntity = QuizEntity.empty();
 
   Future<void> irParaPagina(QuizEnum quiz) async {
+    if (quiz == QuizEnum.simulado) {
+      final pode = await _simuladoQuotaService.podeIniciarSimuladoHoje();
+      if (!pode) {
+        Get.snackbar(
+          Strings.atencao,
+          Strings.simuladoLimiteDiario,
+          snackPosition: SnackPosition.BOTTOM,
+          mainButton: TextButton(
+            onPressed: () => Get.toNamed(Routes.habilitacaoQuizPlus),
+            child: Text(Strings.plusVerNaLoja),
+          ),
+        );
+        return;
+      }
+    }
+
     await _getQuiz(quiz);
     final quizEntity = _quizEntity;
     if (quizEntity != null && !quizEntity.isEmpty) {
+      if (quiz == QuizEnum.simulado) {
+        await _simuladoQuotaService.registrarInicioSimulado();
+      }
       Get.toNamed(
         Routes.questionario,
         arguments: _quizEntity,
