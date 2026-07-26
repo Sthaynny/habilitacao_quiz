@@ -7,8 +7,8 @@ import 'package:habilitacao_quiz/app/features/routes/routes.dart';
 import 'package:habilitacao_quiz/app/shared/domain/entities/pergunta_entity.dart';
 import 'package:habilitacao_quiz/app/shared/domain/entities/quiz_entity.dart';
 import 'package:habilitacao_quiz/app/shared/domain/entities/resposta_entity.dart';
-import 'package:habilitacao_quiz/app/shared/domain/services/pro_gate.dart';
 import 'package:habilitacao_quiz/app/shared/utils/constants.dart';
+import 'package:habilitacao_quiz/core/analytics/promo_funnel_analytics.dart';
 import 'package:habilitacao_quiz/core/mixins/pop_up_mixin.dart';
 import 'package:habilitacao_quiz/core/utils/semantics_announce.dart';
 import 'package:habilitacao_quiz/core/utils/strings.dart';
@@ -42,27 +42,28 @@ class QuestionarioController extends GetxController with PopUpMixin {
         percentual: percentual,
       );
 
-      final proGate = Get.find<ProGate>();
       final historico = Get.find<HistoricoEntity>();
-      final max = proGate.maxResultadosHistorico;
-      final countBefore = historico.resutados.length;
-      historico.add(result, maxResultados: max);
-
-      if (max != null && countBefore >= max) {
+      Get.find<SalvarHistoricoUsecase>()
+          .registrarResultado(historico, result)
+          .then((outcome) {
+        if (!outcome.removeuMaisAntigoPorLimiteFree) return;
         announceForAccessibility(Strings.historicoLimiteFreeSnackbar);
         Get.snackbar(
           Strings.historico,
           Strings.historicoLimiteFreeSnackbar,
           snackPosition: SnackPosition.BOTTOM,
           mainButton: TextButton(
-            onPressed: () => Get.toNamed(Routes.habilitacaoQuizPlus),
+            onPressed: () {
+              Get.find<PromoFunnelAnalytics>().logClick(
+                PromoSurface.gateHistoricoLimite,
+                PromoClickTarget.openPlusScreen,
+              );
+              Get.toNamed(Routes.habilitacaoQuizPlus);
+            },
             child: Text(Strings.plusItemLegal),
           ),
         );
-      }
-
-      Get.find<SalvarHistoricoUsecase>().call(historico);
-
+      });
       irParaResultado(result);
     } else {
       _indexPergunta(indexPergunta + 1);

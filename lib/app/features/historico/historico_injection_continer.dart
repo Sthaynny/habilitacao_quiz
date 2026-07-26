@@ -4,6 +4,7 @@ import 'package:habilitacao_quiz/app/features/historico/data/repositories/histor
 import 'package:habilitacao_quiz/app/features/historico/domain/repositories/historico_repository.dart';
 import 'package:habilitacao_quiz/app/features/historico/domain/usecases/get_historico_usecase.dart';
 import 'package:habilitacao_quiz/app/features/historico/domain/usecases/salvar_historico_usecase.dart';
+import 'package:habilitacao_quiz/app/shared/domain/services/pro_gate.dart';
 import 'package:habilitacao_quiz/core/i_injection_conetiner.dart';
 
 class HistoricoInjectionContainer implements IInjectionContainer {
@@ -24,7 +25,7 @@ class HistoricoInjectionContainer implements IInjectionContainer {
       fenix: true,
     );
     Get.lazyPut(
-      () => SalvarHistoricoUsecase(Get.find()),
+      () => SalvarHistoricoUsecase(Get.find(), Get.find<ProGate>()),
       fenix: true,
     );
   }
