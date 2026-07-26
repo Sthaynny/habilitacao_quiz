@@ -9,3 +9,7 @@ Especificações para apresentação e implementação. Cada arquivo é autocont
 | [historico-simulados.md](./historico-simulados.md) | Histórico, simulados, retenção | 1–2 |
 | [area-aprendizado.md](./area-aprendizado.md) | Hub Aprender, trilhas, fichas | 3 |
 | [ia-pro.md](./ia-pro.md) | Explicações e coach (Pro) | 4 |
+
+## Acessibilidade
+
+Implementação por épico (commits separados): [acessibilidade-implementacao.md](./acessibilidade-implementacao.md). Agente: `feature-a11y-implementer` em [.cursor/agents/](../../.cursor/agents/feature-a11y-implementer.md).
