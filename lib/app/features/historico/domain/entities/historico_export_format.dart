@@ -1,0 +1,4 @@
+enum HistoricoExportFormat {
+  csv,
+  pdf,
+}
