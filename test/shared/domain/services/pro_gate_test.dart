@@ -20,6 +20,7 @@ void main() {
     test('histórico', () {
       expect(gate.podeSalvarResultado(9), isTrue);
       expect(gate.podeSalvarResultado(10), isFalse);
+      expect(gate.podeVerDashboardMateriaHistorico, isFalse);
     });
   });
 
@@ -34,9 +35,11 @@ void main() {
       expect(gate.podeIniciarSimuladoHoje(99), isTrue);
     });
 
-    test('histórico ilimitado', () {
+    test('histórico ilimitado (T21 ≥15 saves)', () {
       expect(gate.podeSalvarResultado(14), isTrue);
+      expect(gate.podeSalvarResultado(15), isTrue);
       expect(gate.podeSalvarResultado(100), isTrue);
+      expect(gate.podeVerDashboardMateriaHistorico, isTrue);
     });
   });
 }
