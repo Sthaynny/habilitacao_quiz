@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:habilitacao_quiz/app/shared/domain/services/pro_gate.dart';
+import 'package:habilitacao_quiz/core/analytics/promo_funnel_analytics.dart';
 import 'package:habilitacao_quiz/core/components/button.dart';
 import 'package:habilitacao_quiz/core/constants/app_store_constants.dart';
 import 'package:habilitacao_quiz/core/edition/app_edition.dart';
@@ -9,8 +10,25 @@ import 'package:habilitacao_quiz/core/styles/app_styles.dart';
 import 'package:habilitacao_quiz/core/styles/spacing_stack.dart';
 import 'package:habilitacao_quiz/core/utils/strings.dart';
 
-class HabilitacaoQuizPlusScreen extends StatelessWidget {
+class HabilitacaoQuizPlusScreen extends StatefulWidget {
   const HabilitacaoQuizPlusScreen({super.key});
+
+  @override
+  State<HabilitacaoQuizPlusScreen> createState() =>
+      _HabilitacaoQuizPlusScreenState();
+}
+
+class _HabilitacaoQuizPlusScreenState extends State<HabilitacaoQuizPlusScreen> {
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted || kIsPro) return;
+      final proGate = Get.find<ProGate>();
+      if (!proGate.exibirPromoPlus) return;
+      Get.find<PromoFunnelAnalytics>().logImpression(PromoSurface.plusScreen);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -106,7 +124,10 @@ class HabilitacaoQuizPlusScreen extends StatelessWidget {
                             ? Strings.plusVerNaLoja
                             : Strings.plusEmBreve,
                         expanded: true,
-                        onPressed: () => openHabilitacaoQuizPlusStore(useUtm: true),
+                        onPressed: () => openHabilitacaoQuizPlusStore(
+                          useUtm: true,
+                          surface: PromoSurface.plusScreen,
+                        ),
                       ),
                       SizedBox(height: AppSpacingStack.xxSmall.value),
                       AppButton.link(

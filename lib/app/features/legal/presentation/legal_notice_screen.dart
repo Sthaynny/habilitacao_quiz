@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:habilitacao_quiz/app/features/routes/routes.dart';
 import 'package:habilitacao_quiz/app/shared/domain/services/pro_gate.dart';
+import 'package:habilitacao_quiz/core/analytics/promo_funnel_analytics.dart';
 import 'package:habilitacao_quiz/core/components/button.dart';
 import 'package:habilitacao_quiz/core/constants/government_sources.dart';
 import 'package:habilitacao_quiz/core/mixins/pop_up_mixin.dart';
@@ -71,7 +72,13 @@ class _LegalNoticeScreenState extends State<LegalNoticeScreen> with PopUpMixin {
               SizedBox(height: AppSpacingStack.xSmall.value),
               if (Get.find<ProGate>().exibirPromoPlus) ...[
                 _PlusLegalTile(
-                  onTap: () => Get.toNamed(Routes.habilitacaoQuizPlus),
+                  onTap: () {
+                    Get.find<PromoFunnelAnalytics>().logClick(
+                      PromoSurface.legalTile,
+                      PromoClickTarget.openPlusScreen,
+                    );
+                    Get.toNamed(Routes.habilitacaoQuizPlus);
+                  },
                 ),
                 SizedBox(height: AppSpacingStack.xSmall.value),
               ],

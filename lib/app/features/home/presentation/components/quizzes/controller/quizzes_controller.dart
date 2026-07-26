@@ -11,6 +11,7 @@ import 'package:habilitacao_quiz/app/features/routes/routes.dart';
 import 'package:habilitacao_quiz/app/shared/domain/entities/quiz_entity.dart';
 import 'package:habilitacao_quiz/app/shared/domain/services/simulado_quota_service.dart';
 import 'package:habilitacao_quiz/app/shared/utils/quiz_enum.dart';
+import 'package:habilitacao_quiz/core/analytics/promo_funnel_analytics.dart';
 import 'package:habilitacao_quiz/core/exceptions/erro.dart';
 import 'package:habilitacao_quiz/core/utils/semantics_announce.dart';
 import 'package:habilitacao_quiz/core/utils/strings.dart';
@@ -54,7 +55,13 @@ class QuizzesController extends GetxController {
           Strings.simuladoLimiteDiario,
           snackPosition: SnackPosition.BOTTOM,
           mainButton: TextButton(
-            onPressed: () => Get.toNamed(Routes.habilitacaoQuizPlus),
+            onPressed: () {
+              Get.find<PromoFunnelAnalytics>().logClick(
+                PromoSurface.gateSimuladoDiario,
+                PromoClickTarget.openPlusScreen,
+              );
+              Get.toNamed(Routes.habilitacaoQuizPlus);
+            },
             child: Text(Strings.plusVerNaLoja),
           ),
         );
