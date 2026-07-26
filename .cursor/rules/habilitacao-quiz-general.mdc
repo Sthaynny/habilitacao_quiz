@@ -1,5 +1,5 @@
 ---
-description: Contexto geral do Habilitação Quiz — produto, arquitetura e escopo
+description: Contexto geral do Habilitação Quiz — produto, arquitetura, design patterns e escopo
 alwaysApply: true
 ---
 
@@ -11,20 +11,178 @@ alwaysApply: true
 - Roadmap e tarefas: [PRODUCT_PLAN](../../docs/product/PRODUCT_PLAN.md), [A_FAZER](../../docs/tasks/A_FAZER.md); specs por épico em `docs/features/`.
 - **Recursos de IA (`[IA]` / HQ-I\*)** — não implementar até haver receita do **+** ([AI_FEATURES](../../docs/product/AI_FEATURES.md)).
 
-## Stack e convenções
+## Stack
 
-- **Flutter + GetX** (`GetxController`, `Obx`, bindings/rotas existentes) — não introduzir Bloc/Cubit sem pedido explícito.
-- Regras **Free/Pro** em `ProGate` e camada de domínio/use cases, não só escondidas na UI.
-- **Menor diff correto**: reutilizar padrões do módulo; dependências novas só com necessidade clara no critério de pronto.
-- Textos de interface em **português (BR)**; nomes de código seguem o inglês já usado no repo.
+- **Flutter + GetX** (`GetxController`, `Obx`, rotas `Get.toNamed`) — não introduzir Bloc/Cubit sem pedido explícito.
+- Textos de interface em **português (BR)**; nomes de código em **inglês** (como no repo).
+- **Menor diff correto**: copiar o módulo vizinho; dependência nova só se o critério de pronto exige.
+
+Detalhe ampliado: [flutter-architecture.md](../../docs/engineering/flutter-architecture.md).
+
+---
+
+## Clean Architecture — mapa de pastas
+
+```
+lib/
+├── core/                    # transversal: styles, components, exceptions, store
+├── app/shared/              # quiz, ProGate, repositórios compartilhados
+└── app/features/<feature>/
+    ├── domain/              # entidades, interfaces, use cases — SEM Flutter UI
+    ├── data/                # models, datasources, repos concretos
+    └── presentation/        # screens, widgets, controllers
+```
+
+### Regra de dependência (sempre)
+
+| Camada | Pode importar | Não importar |
+| :--- | :--- | :--- |
+| `domain/` | `core/exceptions`, outras entidades de domínio | `data/`, `presentation/`, widgets |
+| `data/` | `domain/`, `core/` | `presentation/` |
+| `presentation/` | `domain/`, `core/`, GetX, Material | `data/datasources` direto |
+
+**Fluxo de dados:** UI → Controller → **Use case** → Repositório (interface) → Datasource.
+
+---
+
+## Design patterns — uso consistente
+
+### 1. Use case (um por ação de negócio)
+
+- Nome: `*Usecase` ou `*Usercase` (legado no repo — **não renomear** módulos antigos sem tarefa).
+- Método `call(...)`; dependências no construtor.
+- Quiz compartilhado usa `Either<ExceptionErro, T>`; histórico usa `Future` simples — **manter o padrão do módulo** que você edita.
+
+```dart
+// ✅ Delegar ao repositório; sem BuildContext
+class SimuladoQuizUsercase {
+  SimuladoQuizUsercase(this.repository);
+  final IQuizRepository repository;
+
+  Future<Either<ExceptionErro, QuizEntity>> call() =>
+      repository.getSimulado();
+}
+
+// ❌ Lógica de negócio + UI no use case
+class BadUsecase {
+  Future<void> call() async {
+    Get.snackbar('Erro', '...'); // presentation no domain
+  }
+}
+```
+
+### 2. Repositório + datasource
+
+- Interface em `domain/repositories/` (`IHistoricoRepository`, `IQuizRepository`).
+- Implementação em `data/repositories/` — só orquestra datasource e traduz model → entity.
+- Datasource: SharedPreferences, assets JSON, etc. — **sem** regra de produto complexa escondida só no widget.
+
+```dart
+// ✅ Limite Free/Pro no repositório (domínio/dados), com ProGate injetado
+class QuizRepository implements IQuizRepository {
+  QuizRepository(this._datasource, this._proGate);
+  // ...
+  return right(
+    simulado.buildSimulado(totalQuestoes: _proGate.maxQuestoesSimulado),
+  );
+}
+
+// ❌ Esconder limite só na UI
+if (!kIsPro) return const SizedBox(); // usuário ainda pode burlar por outro fluxo
+```
+
+### 3. Entity vs Model
+
+- **Entity** (`domain/entities/`): objeto de negócio usado por use cases e UI.
+- **Model** (`data/models/`): `fromJson` / `toJson`; conversão na borda do repositório.
+- Não passar `Map<String, dynamic>` da UI até o datasource.
+
+### 4. ProGate (Free vs Pro)
+
+- Contrato: `lib/app/shared/domain/services/pro_gate.dart`.
+- Registro: `SharedInjectionContainer` → `Get.lazyPut<ProGate>(() => const CompileTimeProGate())`.
+- Testes: `StubProGate` com limites configuráveis.
+- **Onde aplicar limites:** preferir repositório / use case / serviço (`SimuladoQuotaService`) antes do controller.
+- UI pode **refletir** o gate (CTA Quiz+, snackbar) mas não ser a **única** barreira.
+
+```dart
+// ✅ Gate testável no domínio
+bool podeSalvar = proGate.podeSalvarResultado(quantidadeAtual);
+
+// ⚠️ Aceitável para feedback após regra já aplicada (ex.: snackbar no 11º resultado)
+// ❌ Não usar só isso para truncar histórico sem ProGate na entidade/repo
+```
+
+Matriz de produto: [PRODUCT_PLAN](../../docs/product/PRODUCT_PLAN.md) §5.
+
+### 5. Controller GetX
+
+- `extends GetxController`; mixins do projeto (`PopUpMixin`) quando já usados na feature.
+- Estado: `Rx` / `.obs` para o que a UI observa; métodos curtos que chamam use cases.
+- `Obx` **escopado** ao subtree que muda — evitar `Obx` na raiz da `Scaffold`.
+- `Get.find<ProGate>()`, `Get.find<SalvarHistoricoUsecase>()` — dependências já registradas no container.
+
+```dart
+// ✅ Controller orquestra fluxo e navegação
+Future<void> iniciarSimulado() async {
+  final result = await _simuladoUsecase();
+  result.fold((e) => showError(e.menssagem), (quiz) => _abrirQuestionario(quiz));
+}
+
+// ❌ Controller com dezenas de linhas de cálculo de quiz, shuffle, limites Pro
+```
+
+### 6. Injeção de dependências
+
+- Interface: `IInjectionContainer` + `call()` em `*_injection_continer.dart`.
+- Registrar em `GlobalInjectionContainer.injectionsContainer`.
+- Padrão: `Get.lazyPut(..., fenix: true)` — datasource → repo → use case.
+- Novo feature: criar container e adicionar uma linha no global.
+
+```dart
+// ✅ Ordem: datasource, interface, use cases
+Get.lazyPut(() => HistoricoDatasource(), fenix: true);
+Get.lazyPut<IHistoricoRepository>(() => HistoricoRepository(Get.find()), fenix: true);
+Get.lazyPut(() => SalvarHistoricoUsecase(Get.find()), fenix: true);
+```
+
+### 7. Rotas e navegação
+
+- Paths em `lib/app/features/routes/routes.dart` (`Routes.habilitacaoQuizPlus`, etc.).
+- Navegar com `Get.toNamed(Routes.xxx)` — não strings soltas `/foo`.
+- Nova tela: rota + entrada em `my_app.dart` / bindings existentes do projeto.
+
+### 8. Erros
+
+- Falhas de negócio/io esperadas: `ExceptionErro` ou `Either.left` — não `throw` para fluxo normal de UI.
+- Mensagens ao usuário via `Strings` / `PopUpMixin` / `SnackBar` — não hardcode disperso.
+
+---
+
+## Checklist ao criar ou estender uma feature
+
+1. Entidade + interface de repositório em `domain/`.
+2. Datasource + model + repositório em `data/`.
+3. Use case(s) com `ProGate` se o critério Free/Pro se aplica.
+4. `*_injection_continer.dart` + registro no global.
+5. Presentation: screen/widget + controller fino.
+6. Testes unitários se [A_FAZER](../../docs/tasks/A_FAZER.md) ou critério de pronto pedir (`StubProGate`, repo fake).
+
+---
 
 ## Qualidade antes de entregar
 
-- `flutter pub get` e `flutter analyze` nos arquivos alterados; ver também [flutter-agent-standards.mdc](flutter-agent-standards.mdc).
-- Testes quando [A_FAZER](../../docs/tasks/A_FAZER.md) ou o critério de pronto exigir.
+```bash
+flutter pub get
+flutter analyze
+flutter test <paths alterados>   # quando aplicável
+```
+
+Ver [flutter-agent-standards.mdc](flutter-agent-standards.mdc). Evitar `google_mobile_ads`, APIs depreciadas e `// ignore:` em massa.
+
+---
 
 ## UI e orquestração
 
-- Telas e componentes: [habilitacao-quiz-ui.mdc](habilitacao-quiz-ui.mdc) e [habilitacao-quiz-ds.md](../../docs/engineering/habilitacao-quiz-ds.md).
-- Arquitetura: [flutter-architecture.md](../../docs/engineering/flutter-architecture.md).
-- Subagentes por feature: [AGENTS.md](../../AGENTS.md) e `.cursor/agents/`.
+- Tokens e componentes: [habilitacao-quiz-ui.mdc](habilitacao-quiz-ui.mdc) + [habilitacao-quiz-ds.md](../../docs/engineering/habilitacao-quiz-ds.md).
+- Subagentes por épico: [AGENTS.md](../../AGENTS.md) e `.cursor/agents/`.
