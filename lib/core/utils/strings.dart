@@ -10,6 +10,9 @@ abstract class Strings {
   static const avancar = 'Avançar';
   static const finalizar = 'Finalizar';
   static const fechar = 'fechar';
+  static const fecharQuestionario = 'Fechar questionário';
+  static const linkExternoHint = 'Abre no navegador';
+  static const plusLegalTileHint = 'Abre detalhes do Habilitação Quiz+';
   static const emBreve = 'Em breve!';
   static const atencao = "ATENÇÃO";
   static const nao = 'Não';

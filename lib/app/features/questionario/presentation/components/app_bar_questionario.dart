@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:habilitacao_quiz/app/features/questionario/presentation/components/indicador_questoes_widget.dart';
 import 'package:habilitacao_quiz/app/features/questionario/presentation/controller/questionario_controller.dart';
 import 'package:habilitacao_quiz/core/styles/app_styles.dart';
+import 'package:habilitacao_quiz/core/utils/strings.dart';
 
 class AppBarQuestionarioWidget extends StatelessWidget
     implements PreferredSizeWidget {
@@ -24,10 +25,14 @@ class AppBarQuestionarioWidget extends StatelessWidget
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
-          IconButton(
-            tooltip: 'Fechar questionário',
-            icon: const Icon(Icons.close, color: AppColors.darkRed),
-            onPressed: onClosed,
+          Semantics(
+            button: true,
+            label: Strings.fecharQuestionario,
+            child: IconButton(
+              tooltip: Strings.fecharQuestionario,
+              icon: const Icon(Icons.close, color: AppColors.darkRed),
+              onPressed: onClosed,
+            ),
           ),
           Obx(
             () => IndicadorQuestoesWidget(

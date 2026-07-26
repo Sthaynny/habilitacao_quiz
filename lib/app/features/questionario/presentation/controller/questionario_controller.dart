@@ -10,6 +10,7 @@ import 'package:habilitacao_quiz/app/shared/domain/entities/resposta_entity.dart
 import 'package:habilitacao_quiz/app/shared/domain/services/pro_gate.dart';
 import 'package:habilitacao_quiz/app/shared/utils/constants.dart';
 import 'package:habilitacao_quiz/core/mixins/pop_up_mixin.dart';
+import 'package:habilitacao_quiz/core/utils/semantics_announce.dart';
 import 'package:habilitacao_quiz/core/utils/strings.dart';
 
 class QuestionarioController extends GetxController with PopUpMixin {
@@ -48,6 +49,7 @@ class QuestionarioController extends GetxController with PopUpMixin {
       historico.add(result, maxResultados: max);
 
       if (max != null && countBefore >= max) {
+        announceForAccessibility(Strings.historicoLimiteFreeSnackbar);
         Get.snackbar(
           Strings.historico,
           Strings.historicoLimiteFreeSnackbar,

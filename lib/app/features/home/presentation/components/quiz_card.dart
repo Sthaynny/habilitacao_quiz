@@ -22,7 +22,9 @@ class QuizCardWidget extends StatelessWidget {
       child: InkWell(
         borderRadius: BorderRadius.circular(10),
         onTap: onTap,
-        child: Container(
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(minHeight: 48),
+          child: Container(
           padding: EdgeInsets.all(AppSpacingStack.xxxSmall.value),
           decoration: BoxDecoration(
             border: const Border.fromBorderSide(
@@ -42,6 +44,7 @@ class QuizCardWidget extends StatelessWidget {
                     width: 48,
                     height: 48,
                     fit: BoxFit.contain,
+                    excludeFromSemantics: true,
                   ),
                 ),
               ),
@@ -54,6 +57,7 @@ class QuizCardWidget extends StatelessWidget {
               ),
             ],
           ),
+        ),
         ),
       ),
     );

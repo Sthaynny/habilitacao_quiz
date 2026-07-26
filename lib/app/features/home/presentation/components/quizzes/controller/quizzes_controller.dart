@@ -12,6 +12,7 @@ import 'package:habilitacao_quiz/app/shared/domain/entities/quiz_entity.dart';
 import 'package:habilitacao_quiz/app/shared/domain/services/simulado_quota_service.dart';
 import 'package:habilitacao_quiz/app/shared/utils/quiz_enum.dart';
 import 'package:habilitacao_quiz/core/exceptions/erro.dart';
+import 'package:habilitacao_quiz/core/utils/semantics_announce.dart';
 import 'package:habilitacao_quiz/core/utils/strings.dart';
 
 class QuizzesController extends GetxController {
@@ -47,6 +48,7 @@ class QuizzesController extends GetxController {
     if (quiz == QuizEnum.simulado) {
       final pode = await _simuladoQuotaService.podeIniciarSimuladoHoje();
       if (!pode) {
+        announceForAccessibility(Strings.simuladoLimiteDiario);
         Get.snackbar(
           Strings.atencao,
           Strings.simuladoLimiteDiario,
