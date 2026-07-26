@@ -1,0 +1,11 @@
+{
+  "id": "trilha_basica",
+  "title": "Trilha básica",
+  "steps": [
+    {"id": "tb_01", "themeId": "legislacao", "title": "Conheça o CTB", "kind": "read_resumo"},
+    {"id": "tb_02", "themeId": "legislacao", "title": "Pratique legislação", "kind": "quiz"},
+    {"id": "tb_03", "themeId": "direcao_defensiva", "title": "Direção defensiva", "kind": "read_resumo"},
+    {"id": "tb_04", "themeId": "direcao_defensiva", "title": "Pratique direção defensiva", "kind": "quiz"},
+    {"id": "tb_05", "themeId": "primeiros_socorros", "title": "Primeiros socorros", "kind": "read_artigo"}
+  ]
+}
