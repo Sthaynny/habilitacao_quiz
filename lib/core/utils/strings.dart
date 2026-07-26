@@ -84,6 +84,28 @@ abstract class Strings {
   static const historicoSemDetalhe =
       'Detalhe disponível para simulados no Habilitação Quiz+.';
 
+  static const historicoBackupExport = 'Exportar backup';
+  static const historicoBackupRestore = 'Restaurar backup';
+  static const historicoBackupProOnly =
+      'Backup e restauração do histórico são exclusivos do Habilitação Quiz+.';
+  static const historicoBackupArquivoInvalido =
+      'Não reconhecemos esse arquivo. Use um backup exportado pelo app.';
+  static const historicoBackupExportSucesso =
+      'Backup pronto para salvar ou compartilhar.';
+  static const historicoBackupRestoreSucesso =
+      'Histórico restaurado com sucesso.';
+  static const historicoBackupRestoreConfirmTitulo = 'Restaurar histórico?';
+  static const historicoBackupRestoreConfirmCorpo =
+      'Os resultados atuais serão substituídos pelo conteúdo do arquivo.';
+
+  static const historicoDashboardMateriaTitulo = 'Desempenho por matéria';
+  static const historicoDashboardMateriaSubtitulo =
+      'Agregado do seu histórico de temas e simulados.';
+  static const historicoDashboardMateriaSemDados = '—';
+  static const historicoDashboardMateriaFreeTitulo = 'Veja onde estudar mais';
+  static const historicoDashboardMateriaFreeCorpo =
+      'No Habilitação Quiz+, acompanhe o % de acerto em cada matéria.';
+
   static String historicoDataLabel(DateTime? realizadoEm) {
     if (realizadoEm == null) return '';
     final local = realizadoEm.toLocal();

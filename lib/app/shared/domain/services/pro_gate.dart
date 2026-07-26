@@ -19,6 +19,9 @@ abstract interface class ProGate {
   bool podeIniciarSimuladoHoje(int simuladosHoje);
 
   bool podeSalvarResultado(int quantidadeAtual);
+
+  /// Dashboard % por matéria na aba Histórico (Pro).
+  bool get podeVerDashboardMateriaHistorico;
 }
 
 final class CompileTimeProGate implements ProGate {
@@ -55,6 +58,9 @@ final class CompileTimeProGate implements ProGate {
     if (max == null) return true;
     return quantidadeAtual < max;
   }
+
+  @override
+  bool get podeVerDashboardMateriaHistorico => kIsPro;
 }
 
 /// Gate configurável para testes.
@@ -105,4 +111,7 @@ final class StubProGate implements ProGate {
     if (max == null) return true;
     return quantidadeAtual < max;
   }
+
+  @override
+  bool get podeVerDashboardMateriaHistorico => isPro;
 }

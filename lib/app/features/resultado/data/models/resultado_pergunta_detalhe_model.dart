@@ -6,6 +6,7 @@ class ResultadoPerguntaDetalheModel extends ResultadoPerguntaDetalheEntity {
     required super.respostaCorretaTitulo,
     super.respostaEscolhidaTitulo,
     required super.acertou,
+    super.materiaTitulo,
   });
 
   Map<String, dynamic> toMap() => <String, dynamic>{
@@ -13,6 +14,7 @@ class ResultadoPerguntaDetalheModel extends ResultadoPerguntaDetalheEntity {
         'respostaEscolhidaTitulo': respostaEscolhidaTitulo,
         'respostaCorretaTitulo': respostaCorretaTitulo,
         'acertou': acertou,
+        if (materiaTitulo != null) 'materiaTitulo': materiaTitulo,
       };
 
   factory ResultadoPerguntaDetalheModel.fromEntity(
@@ -23,6 +25,7 @@ class ResultadoPerguntaDetalheModel extends ResultadoPerguntaDetalheEntity {
         respostaCorretaTitulo: entity.respostaCorretaTitulo,
         respostaEscolhidaTitulo: entity.respostaEscolhidaTitulo,
         acertou: entity.acertou,
+        materiaTitulo: entity.materiaTitulo,
       );
 
   factory ResultadoPerguntaDetalheModel.fromMap(Map<String, dynamic> map) {
@@ -31,6 +34,7 @@ class ResultadoPerguntaDetalheModel extends ResultadoPerguntaDetalheEntity {
       respostaCorretaTitulo: map['respostaCorretaTitulo'] as String,
       respostaEscolhidaTitulo: map['respostaEscolhidaTitulo'] as String?,
       acertou: map['acertou'] as bool,
+      materiaTitulo: map['materiaTitulo'] as String?,
     );
   }
 }

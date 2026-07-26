@@ -60,11 +60,27 @@ class Simulado {
     quizLegislacao.perguntas.shuffle();
 
     final List<PerguntaEntity> perguntas = [
-      ..._take(quizMecanica.perguntas, buckets.mecanica),
-      ..._take(quizDirecaoDefensiva.perguntas, buckets.direcaoDefensiva),
-      ..._take(quizPrimeirosSocorros.perguntas, buckets.primeirosSocorros),
-      ..._take(quizMeioAmbiente.perguntas, buckets.meioAmbiente),
-      ..._take(quizLegislacao.perguntas, buckets.legislacao),
+      ..._takeTagged(quizMecanica.perguntas, buckets.mecanica, quizMecanica.titulo),
+      ..._takeTagged(
+        quizDirecaoDefensiva.perguntas,
+        buckets.direcaoDefensiva,
+        quizDirecaoDefensiva.titulo,
+      ),
+      ..._takeTagged(
+        quizPrimeirosSocorros.perguntas,
+        buckets.primeirosSocorros,
+        quizPrimeirosSocorros.titulo,
+      ),
+      ..._takeTagged(
+        quizMeioAmbiente.perguntas,
+        buckets.meioAmbiente,
+        quizMeioAmbiente.titulo,
+      ),
+      ..._takeTagged(
+        quizLegislacao.perguntas,
+        buckets.legislacao,
+        quizLegislacao.titulo,
+      ),
     ];
 
     perguntas.shuffle();
@@ -75,6 +91,16 @@ class Simulado {
   List<PerguntaEntity> _take(List<PerguntaEntity> source, int count) {
     if (source.length <= count) return List<PerguntaEntity>.from(source);
     return source.sublist(0, count);
+  }
+
+  List<PerguntaEntity> _takeTagged(
+    List<PerguntaEntity> source,
+    int count,
+    String materiaTitulo,
+  ) {
+    return _take(source, count)
+        .map((p) => p.copyWith(materiaTitulo: materiaTitulo))
+        .toList();
   }
 }
 

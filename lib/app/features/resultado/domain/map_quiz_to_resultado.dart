@@ -55,6 +55,7 @@ class MapQuizToResultado {
       respostaEscolhidaTitulo: sel?.titulo,
       respostaCorretaTitulo: correta.titulo,
       acertou: sel?.correta ?? false,
+      materiaTitulo: p.materiaTitulo,
     );
   }
 }

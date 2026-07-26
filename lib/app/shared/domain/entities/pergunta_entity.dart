@@ -8,24 +8,28 @@ class PerguntaEntity {
     required this.respostas,
     this.respostaSelecionada,
     this.imagemB64,
+    this.materiaTitulo,
   });
 
   final String titulo;
   final List<RespostaEntity> respostas;
   RespostaEntity? respostaSelecionada;
   Uint8List? imagemB64;
+  final String? materiaTitulo;
 
   PerguntaEntity copyWith({
     String? titulo,
     Uint8List? imagemB64,
     List<RespostaEntity>? respostas,
     RespostaEntity? respostaSelecionada,
+    String? materiaTitulo,
   }) {
     return PerguntaEntity(
       titulo: titulo ?? this.titulo,
       imagemB64: imagemB64 ?? this.imagemB64,
       respostas: respostas ?? this.respostas,
       respostaSelecionada: respostaSelecionada ?? this.respostaSelecionada,
+      materiaTitulo: materiaTitulo ?? this.materiaTitulo,
     );
   }
 }
