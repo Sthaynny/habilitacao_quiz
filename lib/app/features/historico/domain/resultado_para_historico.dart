@@ -1,12 +1,11 @@
 import 'package:habilitacao_quiz/app/features/resultado/domain/resultado_entity.dart';
 
-/// Aplica regra HQ-H08: `detalhePerguntas` só persiste em simulado Pro.
+/// Free nunca persiste gabarito; Pro mantém [detalhePerguntas] (H08 + T26).
 ResultadoEntity resultadoParaPersistenciaHistorico(
   ResultadoEntity resultado, {
   required bool isPro,
 }) {
-  final mayPersistDetalhe = isPro && resultado.isSimulado;
-  if (mayPersistDetalhe || resultado.detalhePerguntas == null) {
+  if (isPro || resultado.detalhePerguntas == null) {
     return resultado;
   }
   return ResultadoEntity(

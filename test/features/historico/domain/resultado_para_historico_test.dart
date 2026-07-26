@@ -46,11 +46,11 @@ void main() {
     expect(r.id, 'id1');
   });
 
-  test('Pro tema remove detalhe', () {
+  test('Pro tema mantém detalhe (T26)', () {
     final r = resultadoParaPersistenciaHistorico(
       base(tipo: TipoResultado.tema),
       isPro: true,
     );
-    expect(r.detalhePerguntas, isNull);
+    expect(r.detalhePerguntas, detalhe);
   });
 }

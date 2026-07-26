@@ -29,7 +29,10 @@ class QuizRepository implements IQuizRepository {
             0,
             limit.clamp(0, quiz.perguntas.length),
           );
-    return right(quiz.copyWith(perguntas: perguntas));
+    final tagged = perguntas
+        .map((p) => p.copyWith(materiaTitulo: p.materiaTitulo ?? quiz.titulo))
+        .toList();
+    return right(quiz.copyWith(perguntas: tagged));
   }
 
   @override
