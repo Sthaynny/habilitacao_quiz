@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:habilitacao_quiz/app/features/historico/domain/entities/historico_entity.dart';
 import 'package:habilitacao_quiz/app/features/historico/domain/usecases/salvar_historico_usecase.dart';
+import 'package:habilitacao_quiz/app/features/resultado/domain/map_quiz_to_resultado.dart';
 import 'package:habilitacao_quiz/app/features/resultado/domain/resultado_entity.dart';
 import 'package:habilitacao_quiz/app/features/routes/routes.dart';
 import 'package:habilitacao_quiz/app/shared/domain/entities/pergunta_entity.dart';
 import 'package:habilitacao_quiz/app/shared/domain/entities/quiz_entity.dart';
 import 'package:habilitacao_quiz/app/shared/domain/entities/resposta_entity.dart';
+import 'package:habilitacao_quiz/app/shared/domain/services/pro_gate.dart';
 import 'package:habilitacao_quiz/app/shared/utils/constants.dart';
 import 'package:habilitacao_quiz/core/analytics/promo_funnel_analytics.dart';
 import 'package:habilitacao_quiz/core/mixins/pop_up_mixin.dart';
@@ -34,12 +36,13 @@ class QuestionarioController extends GetxController with PopUpMixin {
       final double percentual =
           totalPerguntas == 0 ? 0 : (totalPerguntasCorretas / totalPerguntas) * cem;
 
-      final result = ResultadoEntity(
-        titulo: quiz.titulo,
-        totalPerguntas: totalPerguntas,
-        result: percentual >= mediaQuiz,
-        totalRespostasCorretas: totalPerguntasCorretas,
+      final proGate = Get.find<ProGate>();
+      final result = MapQuizToResultado.call(
+        quiz: quiz,
+        totalPerguntasCorretas: totalPerguntasCorretas,
         percentual: percentual,
+        aprovado: percentual >= mediaQuiz,
+        isPro: proGate.isPro,
       );
 
       final historico = Get.find<HistoricoEntity>();
