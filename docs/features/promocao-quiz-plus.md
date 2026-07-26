@@ -45,9 +45,9 @@ Os **mesmos espaços** hoje usados por AdMob passam a promover o app pago **Habi
 
 ## Critérios de pronto
 
-- [ ] Sem referências a `google_mobile_ads`
-- [ ] Free: CTA visível; Pro: nenhum CTA
-- [ ] `flutter analyze` + `flutter test` verdes
+- [x] Sem referências a `google_mobile_ads`
+- [x] Free: CTA visível; Pro: nenhum CTA
+- [x] `flutter analyze` + `flutter test` verdes
 
 ## Tarefas HQ-P01 … HQ-P13
 

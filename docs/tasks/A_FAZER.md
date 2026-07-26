@@ -27,22 +27,7 @@ _Tarefas T02–T09 e T15–T20 concluídas em 26/07/2026 — ver [FINALIZADAS.md
 
 ## [PROMO] — Promo Quiz+
 
-| ID | Objetivo | Critério de pronto | Pistas |
-| :--- | :--- | :--- | :--- |
-| HQ-P01 | `app_edition.dart` | Igual T02 | — |
-| HQ-P02 | `AppStoreConstants` | URLs + labels centralizados | Cura.li |
-| HQ-P03 | `HabilitacaoQuizPlusCtaBanner` | Widget test; 48dp; semantics | `cura_li_plus_cta.dart` |
-| HQ-P04 | `app_store_launcher.dart` | Não abre se `!isProPublished` | `url_launcher` |
-| HQ-P05 | `HabilitacaoQuizPlusScreen` + rota | `/habilitacao-quiz-plus` | `routes.dart`, `my_app.dart` |
-| HQ-P06 | Substituir AdMob na Home | Sem `BannerAd` | `home_screen.dart`, `quizzes_widget.dart` |
-| HQ-P07 | Remover `google_mobile_ads` | `pubspec`, `main.dart`, manifest | — |
-| HQ-P08 | CTA histórico (lista) | Fim do scroll; sem AdMob morto | `historico_widget.dart` |
-| HQ-P09 | CTA `resultado_screen` simulado Free | Copy 30q no **+** | `resultado_screen.dart` |
-| HQ-P10 | CTA nos limites ProGate | Simulado/histórico | controllers + gate |
-| HQ-P11 | Item **+** no aviso legal | Navega para tela **+** | `legal_notice_screen.dart` |
-| HQ-P12 | UTMs Play documentados | Em `docs/store/` | — |
-| HQ-P13 | Ativar publicação Pro | Smoke loja | HQ-P02 flag |
-| T31 | Analytics funil promo | Eventos impressão/clique | Firebase opcional |
+_Tarefas HQ-P01–HQ-P13 e T31 concluídas em 26/07/2026 — ver [FINALIZADAS.md](./FINALIZADAS.md)._
 
 Doc: [promocao-quiz-plus.md](../features/promocao-quiz-plus.md)
 
