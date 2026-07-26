@@ -18,6 +18,7 @@ https://www.planalto.gov.br/ccivil_03/leis/l9503.htm
 https://www.gov.br/transportes
 
 App features:
+• Learn hub with themed study paths (Aprender)
 • Category quizzes and mock exams
 • Performance history
 • Study aid for the theoretical CNH exam
