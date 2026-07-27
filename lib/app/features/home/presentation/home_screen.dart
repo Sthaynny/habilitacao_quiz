@@ -8,6 +8,7 @@ import 'package:habilitacao_quiz/app/features/home/presentation/components/quizz
 import 'package:habilitacao_quiz/app/features/home/presentation/components/quizzes/quizzes_widget.dart';
 import 'package:habilitacao_quiz/app/features/home/presentation/controller/home_controller.dart';
 import 'package:habilitacao_quiz/app/features/promo/presentation/widgets/habilitacao_quiz_plus_cta_banner.dart';
+import 'package:habilitacao_quiz/app/shared/domain/services/pro_gate.dart';
 import 'package:habilitacao_quiz/app/shared/presentation/pages/loading_blur_screen.dart';
 import 'package:habilitacao_quiz/core/mixins/pop_up_mixin.dart';
 import 'package:habilitacao_quiz/core/styles/app_styles.dart';
@@ -54,6 +55,11 @@ class _HomeScreen extends State<HomeScreen> with PopUpMixin {
 
   @override
   Widget build(BuildContext context) {
+    final proGate = Get.find<ProGate>();
+    final plusCta = proGate.exibirPromoPlus
+        ? const HabilitacaoQuizPlusCtaBanner()
+        : const SizedBox.shrink();
+
     return Obx(
       () => LoadingBlurScreen(
         enabled: controller.isLoading,
@@ -65,7 +71,7 @@ class _HomeScreen extends State<HomeScreen> with PopUpMixin {
             children: [
               QuizzesWidget(
                 controller: quizzesController,
-                topPromo: const HabilitacaoQuizPlusCtaBanner(),
+                topPromo: plusCta,
               ),
               const LearningHubWidget(),
               HistoricoWidget(

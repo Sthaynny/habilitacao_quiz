@@ -41,8 +41,10 @@ class LearningHubWidget extends StatelessWidget {
               Strings.avisoLegalTexto,
               style: AppFontStyle.body14Regular.setColor(AppColors.grey),
             ),
-            SizedBox(height: AppSpacingStack.xxxSmall.value),
-            const HabilitacaoQuizPlusCtaBanner(),
+            if (controller.proGate.exibirPromoPlus) ...[
+              SizedBox(height: AppSpacingStack.xxxSmall.value),
+              const HabilitacaoQuizPlusCtaBanner(),
+            ],
             SizedBox(height: AppSpacingStack.xxxSmall.value),
             Text(
               Strings.aprenderTemasTitulo,

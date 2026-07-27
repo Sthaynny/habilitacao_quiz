@@ -106,3 +106,25 @@ dependencies {
     implementation 'androidx.core:core-ktx:1.15.0'
     implementation 'com.android.billingclient:billing:6.1.0'
 }
+
+// Alinha kIsPro ao flavor `pro` mesmo sem --dart-define na CLI.
+def mergeProDartDefines(String existing) {
+    def proB64 = "SEFCSUxJVEFDQU9fUVVJWl9QUk89dHJ1ZQ=="
+    if (existing == null || existing.isEmpty()) {
+        return proB64
+    }
+    if (existing.contains(proB64)) {
+        return existing
+    }
+    return "${existing},${proB64}"
+}
+
+afterEvaluate {
+    tasks.configureEach { task ->
+        if (task.name.startsWith("compileFlutterBuild") && task.name.contains("Pro")) {
+            if (task.hasProperty("dartDefines")) {
+                task.dartDefines = mergeProDartDefines(task.dartDefines?.toString())
+            }
+        }
+    }
+}
