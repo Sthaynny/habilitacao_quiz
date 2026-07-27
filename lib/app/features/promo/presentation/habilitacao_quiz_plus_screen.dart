@@ -10,35 +10,13 @@ import 'package:habilitacao_quiz/core/styles/app_styles.dart';
 import 'package:habilitacao_quiz/core/styles/spacing_stack.dart';
 import 'package:habilitacao_quiz/core/utils/strings.dart';
 
-class HabilitacaoQuizPlusScreen extends StatefulWidget {
+class HabilitacaoQuizPlusScreen extends StatelessWidget {
   const HabilitacaoQuizPlusScreen({super.key});
-
-  @override
-  State<HabilitacaoQuizPlusScreen> createState() =>
-      _HabilitacaoQuizPlusScreenState();
-}
-
-class _HabilitacaoQuizPlusScreenState extends State<HabilitacaoQuizPlusScreen> {
-  @override
-  void initState() {
-    super.initState();
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      if (!mounted || kIsPro) return;
-      final proGate = Get.find<ProGate>();
-      if (!proGate.exibirPromoPlus) return;
-      Get.find<PromoFunnelAnalytics>().logImpression(PromoSurface.plusScreen);
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
     if (kIsPro) {
-      WidgetsBinding.instance.addPostFrameCallback((_) {
-        if (Get.key.currentState?.canPop() ?? false) {
-          Get.back();
-        }
-      });
-      return const Scaffold(body: SizedBox.shrink());
+      return const _PlusProAutoPop();
     }
 
     final proGate = Get.find<ProGate>();
@@ -46,6 +24,66 @@ class _HabilitacaoQuizPlusScreenState extends State<HabilitacaoQuizPlusScreen> {
       return const Scaffold(body: SizedBox.shrink());
     }
 
+    return const _PlusScreenImpression(
+      child: _HabilitacaoQuizPlusContent(),
+    );
+  }
+}
+
+/// Fecha a tela uma vez após o primeiro frame (edição Pro).
+class _PlusProAutoPop extends StatefulWidget {
+  const _PlusProAutoPop();
+
+  @override
+  State<_PlusProAutoPop> createState() => _PlusProAutoPopState();
+}
+
+class _PlusProAutoPopState extends State<_PlusProAutoPop> {
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted) return;
+      if (Get.key.currentState?.canPop() ?? false) {
+        Get.back();
+      }
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return const Scaffold(body: SizedBox.shrink());
+  }
+}
+
+class _PlusScreenImpression extends StatefulWidget {
+  const _PlusScreenImpression({required this.child});
+
+  final Widget child;
+
+  @override
+  State<_PlusScreenImpression> createState() => _PlusScreenImpressionState();
+}
+
+class _PlusScreenImpressionState extends State<_PlusScreenImpression> {
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted) return;
+      Get.find<PromoFunnelAnalytics>().logImpression(PromoSurface.plusScreen);
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) => widget.child;
+}
+
+class _HabilitacaoQuizPlusContent extends StatelessWidget {
+  const _HabilitacaoQuizPlusContent();
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -70,7 +108,8 @@ class _HabilitacaoQuizPlusScreenState extends State<HabilitacaoQuizPlusScreen> {
               child: Center(
                 child: ConstrainedBox(
                   constraints: BoxConstraints(
-                    maxWidth: constraints.maxWidth > 600 ? 560 : double.infinity,
+                    maxWidth:
+                        constraints.maxWidth > 600 ? 560 : double.infinity,
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -90,33 +129,7 @@ class _HabilitacaoQuizPlusScreenState extends State<HabilitacaoQuizPlusScreen> {
                       ),
                       SizedBox(height: AppSpacingStack.small.value),
                       ...Strings.plusBenefits.map(
-                        (benefit) => Padding(
-                          padding: EdgeInsets.only(
-                            bottom: AppSpacingStack.nano.value,
-                          ),
-                          child: Semantics(
-                            label: benefit,
-                            child: Row(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                const ExcludeSemantics(
-                                  child: Icon(
-                                    Icons.check_circle_outline,
-                                    color: AppColors.green,
-                                    size: 22,
-                                  ),
-                                ),
-                                SizedBox(width: AppSpacingStack.nano.value),
-                                Expanded(
-                                  child: Text(
-                                    benefit,
-                                    style: AppFontStyle.body14Regular,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
+                        (benefit) => _PlusBenefitRow(benefit: benefit),
                       ),
                       SizedBox(height: AppSpacingStack.large.value),
                       AppButton.primary(
@@ -141,6 +154,43 @@ class _HabilitacaoQuizPlusScreenState extends State<HabilitacaoQuizPlusScreen> {
               ),
             );
           },
+        ),
+      ),
+    );
+  }
+}
+
+class _PlusBenefitRow extends StatelessWidget {
+  const _PlusBenefitRow({required this.benefit});
+
+  final String benefit;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.only(
+        bottom: AppSpacingStack.nano.value,
+      ),
+      child: Semantics(
+        label: benefit,
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const ExcludeSemantics(
+              child: Icon(
+                Icons.check_circle_outline,
+                color: AppColors.green,
+                size: 22,
+              ),
+            ),
+            SizedBox(width: AppSpacingStack.nano.value),
+            Expanded(
+              child: Text(
+                benefit,
+                style: AppFontStyle.body14Regular,
+              ),
+            ),
+          ],
         ),
       ),
     );
