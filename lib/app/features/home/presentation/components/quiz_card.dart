@@ -43,6 +43,8 @@ class QuizCardWidget extends StatelessWidget {
                     image,
                     width: 48,
                     height: 48,
+                    cacheWidth: _imageCachePx(context, 48),
+                    cacheHeight: _imageCachePx(context, 48),
                     fit: BoxFit.contain,
                     excludeFromSemantics: true,
                   ),
@@ -61,5 +63,9 @@ class QuizCardWidget extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  static int _imageCachePx(BuildContext context, double logicalSize) {
+    return (logicalSize * MediaQuery.devicePixelRatioOf(context)).round();
   }
 }

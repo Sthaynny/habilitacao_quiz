@@ -44,6 +44,8 @@ class QuizButtonWidget extends StatelessWidget {
               child: Image.asset(
                 iconAsset,
                 width: 45,
+                cacheWidth: _imageCachePx(context, 45),
+                excludeFromSemantics: true,
               ),
             ),
             Text(
@@ -55,5 +57,9 @@ class QuizButtonWidget extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  static int _imageCachePx(BuildContext context, double logicalSize) {
+    return (logicalSize * MediaQuery.devicePixelRatioOf(context)).round();
   }
 }

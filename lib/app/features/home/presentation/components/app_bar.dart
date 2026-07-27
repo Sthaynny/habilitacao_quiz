@@ -17,6 +17,10 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   static double _toolbarHeight(double topInset) =>
       topInset + _gradientHeight - _gradientTopLift;
 
+  static int _logoCachePx(BuildContext context) {
+    return (90 * MediaQuery.devicePixelRatioOf(context)).round();
+  }
+
   @override
   Widget build(BuildContext context) {
     final topInset = MediaQuery.paddingOf(context).top;
@@ -64,15 +68,14 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
                   tooltip: 'Aviso legal',
                   onPressed: () => Get.toNamed(Routes.legalNotice),
                 ),
-                Container(
-                  height: 90,
+                Image.asset(
+                  AppImages.logo,
                   width: 90,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage(AppImages.logo),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
+                  height: 90,
+                  fit: BoxFit.cover,
+                  cacheWidth: _logoCachePx(context),
+                  cacheHeight: _logoCachePx(context),
+                  excludeFromSemantics: true,
                 ),
                 ],
               ),

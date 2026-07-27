@@ -87,8 +87,8 @@ class BottomNavBar extends StatelessWidget {
           ),
           child: Row(
             mainAxisAlignment: mainAxisAlignment,
-            children: items.map((item) {
-              var index = items.indexOf(item);
+            children: List.generate(items.length, (index) {
+              final item = items[index];
               return Semantics(
                 button: true,
                 selected: index == selectedIndex,
@@ -106,7 +106,7 @@ class BottomNavBar extends StatelessWidget {
                   ),
                 ),
               );
-            }).toList(),
+            }),
           ),
         ),
       ),

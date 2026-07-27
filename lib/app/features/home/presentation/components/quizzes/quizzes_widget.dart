@@ -17,60 +17,93 @@ class QuizzesWidget extends StatelessWidget {
   final QuizzesController controller;
   final Widget topPromo;
 
+  static const int _crossAxisCount = 2;
+  static const double _childAspectRatio = 0.9;
+
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      padding: EdgeInsets.symmetric(horizontal: AppSpacingStack.xxxSmall.value),
-      children: [
-        Padding(
-          padding: EdgeInsets.symmetric(vertical: AppSpacingStack.nano.value),
-          child: topPromo,
+    final horizontalPadding = AppSpacingStack.xxxSmall.value;
+    final gridSpacing = AppSpacingStack.nano.value;
+
+    final entries = <({QuizEnum quiz, String image, String title})>[
+      (
+        quiz: QuizEnum.legislacao,
+        image: AppImages.legislacao,
+        title: Strings.legislacao,
+      ),
+      (
+        quiz: QuizEnum.direcaoDefensiva,
+        image: AppImages.direcaoDefensiva,
+        title: Strings.direcaoDefesiva,
+      ),
+      (
+        quiz: QuizEnum.mecanicaBasica,
+        image: AppImages.mecanica,
+        title: Strings.mecanicaBasica,
+      ),
+      (
+        quiz: QuizEnum.primeirosSocorros,
+        image: AppImages.primeirosSocorros,
+        title: Strings.primeirosSocorros,
+      ),
+      (
+        quiz: QuizEnum.meioAmbiente,
+        image: AppImages.meioAmbiente,
+        title: Strings.meioAmbiente,
+      ),
+      (
+        quiz: QuizEnum.simulado,
+        image: AppImages.simulado,
+        title: Strings.simulado,
+      ),
+    ];
+
+    return CustomScrollView(
+      slivers: [
+        SliverPadding(
+          padding: EdgeInsets.symmetric(horizontal: horizontalPadding),
+          sliver: SliverToBoxAdapter(
+            child: Padding(
+              padding: EdgeInsets.symmetric(vertical: gridSpacing),
+              child: topPromo,
+            ),
+          ),
         ),
-        GridView.count(
-          shrinkWrap: true,
-          physics: const NeverScrollableScrollPhysics(),
-          crossAxisCount: 2,
-          crossAxisSpacing: AppSpacingStack.nano.value,
-          mainAxisSpacing: AppSpacingStack.nano.value,
-          childAspectRatio: 0.9,
-          children: [
-            QuizCardWidget(
-              onTap: () => controller.irParaPagina(QuizEnum.legislacao),
-              image: AppImages.legislacao,
-              title: Strings.legislacao,
+        SliverPadding(
+          padding: EdgeInsets.symmetric(horizontal: horizontalPadding),
+          sliver: SliverGrid(
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: _crossAxisCount,
+              crossAxisSpacing: gridSpacing,
+              mainAxisSpacing: gridSpacing,
+              childAspectRatio: _childAspectRatio,
             ),
-            QuizCardWidget(
-              onTap: () => controller.irParaPagina(QuizEnum.direcaoDefensiva),
-              image: AppImages.direcaoDefensiva,
-              title: Strings.direcaoDefesiva,
+            delegate: SliverChildBuilderDelegate(
+              (context, index) {
+                final entry = entries[index];
+                return QuizCardWidget(
+                  onTap: () => controller.irParaPagina(entry.quiz),
+                  image: entry.image,
+                  title: entry.title,
+                );
+              },
+              childCount: entries.length,
             ),
-            QuizCardWidget(
-              onTap: () => controller.irParaPagina(QuizEnum.mecanicaBasica),
-              image: AppImages.mecanica,
-              title: Strings.mecanicaBasica,
-            ),
-            QuizCardWidget(
-              onTap: () =>
-                  controller.irParaPagina(QuizEnum.primeirosSocorros),
-              image: AppImages.primeirosSocorros,
-              title: Strings.primeirosSocorros,
-            ),
-            QuizCardWidget(
-              onTap: () => controller.irParaPagina(QuizEnum.meioAmbiente),
-              image: AppImages.meioAmbiente,
-              title: Strings.meioAmbiente,
-            ),
-            QuizCardWidget(
-              onTap: () => controller.irParaPagina(QuizEnum.simulado),
-              image: AppImages.simulado,
-              title: Strings.simulado,
-            ),
-          ],
+          ),
         ),
-        SizedBox(height: AppSpacingStack.xxxSmall.value),
-        AppButton.secundary(
-          Strings.modoProva,
-          onPressed: controller.iniciarModoProva,
+        SliverPadding(
+          padding: EdgeInsets.symmetric(horizontal: horizontalPadding),
+          sliver: SliverToBoxAdapter(
+            child: Column(
+              children: [
+                SizedBox(height: AppSpacingStack.xxxSmall.value),
+                AppButton.secundary(
+                  Strings.modoProva,
+                  onPressed: controller.iniciarModoProva,
+                ),
+              ],
+            ),
+          ),
         ),
       ],
     );

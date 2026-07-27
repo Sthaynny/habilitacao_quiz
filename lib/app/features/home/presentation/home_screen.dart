@@ -32,10 +32,43 @@ class _HomeScreen extends State<HomeScreen> with PopUpMixin {
   late final QuizzesController quizzesController;
   final PageController pageController = PageController();
   Worker? _statusWorker;
+  late final List<BottomNavyBarItem> _bottomNavItems;
 
   @override
   void initState() {
     quizzesController = widget.quizzesController;
+    _bottomNavItems = [
+      BottomNavyBarItem(
+        icon: const Icon(Icons.home),
+        title: Text(
+          Strings.quizzes,
+          style: AppFontStyle.body14Regular,
+        ),
+        textAlign: TextAlign.center,
+        activeColor: AppColors.purple,
+        inactiveColor: AppColors.grey,
+      ),
+      BottomNavyBarItem(
+        icon: const Icon(Icons.menu_book_outlined),
+        title: Text(
+          Strings.aprender,
+          style: AppFontStyle.body14Regular,
+        ),
+        textAlign: TextAlign.center,
+        activeColor: AppColors.purple,
+        inactiveColor: AppColors.grey,
+      ),
+      BottomNavyBarItem(
+        icon: const Icon(Icons.wysiwyg_outlined),
+        title: Text(
+          Strings.historico,
+          style: AppFontStyle.body14Regular,
+        ),
+        textAlign: TextAlign.center,
+        activeColor: AppColors.purple,
+        inactiveColor: AppColors.grey,
+      ),
+    ];
     quizzesController.onStatus = (value) => controller.setStatus = value;
     _statusWorker = ever<RxStatus>(
       controller.statusObs,
@@ -60,12 +93,12 @@ class _HomeScreen extends State<HomeScreen> with PopUpMixin {
         ? const HabilitacaoQuizPlusCtaBanner()
         : const SizedBox.shrink();
 
-    return Obx(
-      () => LoadingBlurScreen(
-        enabled: controller.isLoading,
-        child: Scaffold(
-          appBar: const AppBarWidget(),
-          body: PageView(
+    return Scaffold(
+      appBar: const AppBarWidget(),
+      body: Obx(
+        () => LoadingBlurScreen(
+          enabled: controller.isLoading,
+          child: PageView(
             physics: const NeverScrollableScrollPhysics(),
             controller: pageController,
             children: [
@@ -79,53 +112,20 @@ class _HomeScreen extends State<HomeScreen> with PopUpMixin {
               ),
             ],
           ),
-          bottomNavigationBar: Obx(
-            () => BottomNavBar(
-              selectedIndex: controller.getPage,
-              items: [
-                BottomNavyBarItem(
-                  icon: const Icon(Icons.home),
-                  title: Text(
-                    Strings.quizzes,
-                    style: AppFontStyle.body14Regular,
-                  ),
-                  textAlign: TextAlign.center,
-                  activeColor: AppColors.purple,
-                  inactiveColor: AppColors.grey,
-                ),
-                BottomNavyBarItem(
-                  icon: const Icon(Icons.menu_book_outlined),
-                  title: Text(
-                    Strings.aprender,
-                    style: AppFontStyle.body14Regular,
-                  ),
-                  textAlign: TextAlign.center,
-                  activeColor: AppColors.purple,
-                  inactiveColor: AppColors.grey,
-                ),
-                BottomNavyBarItem(
-                  icon: const Icon(
-                    Icons.wysiwyg_outlined,
-                  ),
-                  title: Text(
-                    Strings.historico,
-                    style: AppFontStyle.body14Regular,
-                  ),
-                  textAlign: TextAlign.center,
-                  activeColor: AppColors.purple,
-                  inactiveColor: AppColors.grey,
-                ),
-              ],
-              onItemSelected: (value) {
-                controller.setPage = value;
-                pageController.animateToPage(
-                  value,
-                  duration: const Duration(milliseconds: 300),
-                  curve: Curves.easeInOut,
-                );
-              },
-            ),
-          ),
+        ),
+      ),
+      bottomNavigationBar: Obx(
+        () => BottomNavBar(
+          selectedIndex: controller.getPage,
+          items: _bottomNavItems,
+          onItemSelected: (value) {
+            controller.setPage = value;
+            pageController.animateToPage(
+              value,
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeInOut,
+            );
+          },
         ),
       ),
     );
