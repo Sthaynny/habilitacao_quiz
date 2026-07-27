@@ -25,25 +25,34 @@ class AppBarQuestionarioWidget extends StatelessWidget
   Widget build(BuildContext context) {
     return SafeArea(
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.end,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Semantics(
-            button: true,
-            label: Strings.fecharQuestionario,
-            child: IconButton(
-              tooltip: Strings.fecharQuestionario,
-              icon: const Icon(Icons.close, color: AppColors.darkRed),
-              onPressed: onClosed,
-            ),
-          ),
-          if (timerLabel != null)
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Text(
-                '${Strings.modoProvaTimer}: $timerLabel',
-                style: AppFontStyle.body14Bold,
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              if (timerLabel != null)
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 16),
+                    child: Text(
+                      '${Strings.modoProvaTimer}: $timerLabel',
+                      style: AppFontStyle.body14Bold,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ),
+                ),
+              Semantics(
+                button: true,
+                label: Strings.fecharQuestionario,
+                child: IconButton(
+                  tooltip: Strings.fecharQuestionario,
+                  icon: const Icon(Icons.close, color: AppColors.darkRed),
+                  onPressed: onClosed,
+                ),
               ),
-            ),
+            ],
+          ),
           Obx(
             () => IndicadorQuestoesWidget(
               currentPage: controller.indexPerguntaUsuario,

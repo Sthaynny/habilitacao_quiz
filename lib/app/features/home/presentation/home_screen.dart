@@ -63,14 +63,14 @@ class _HomeScreen extends State<HomeScreen> with PopUpMixin {
             physics: const NeverScrollableScrollPhysics(),
             controller: pageController,
             children: [
-              const LearningHubWidget(),
               QuizzesWidget(
                 controller: quizzesController,
                 topPromo: const HabilitacaoQuizPlusCtaBanner(),
               ),
+              const LearningHubWidget(),
               HistoricoWidget(
                 historico: Get.find(),
-              )
+              ),
             ],
           ),
           bottomNavigationBar: Obx(
@@ -78,9 +78,9 @@ class _HomeScreen extends State<HomeScreen> with PopUpMixin {
               selectedIndex: controller.getPage,
               items: [
                 BottomNavyBarItem(
-                  icon: const Icon(Icons.menu_book_outlined),
+                  icon: const Icon(Icons.home),
                   title: Text(
-                    Strings.aprender,
+                    Strings.quizzes,
                     style: AppFontStyle.body14Regular,
                   ),
                   textAlign: TextAlign.center,
@@ -88,9 +88,9 @@ class _HomeScreen extends State<HomeScreen> with PopUpMixin {
                   inactiveColor: AppColors.grey,
                 ),
                 BottomNavyBarItem(
-                  icon: const Icon(Icons.home),
+                  icon: const Icon(Icons.menu_book_outlined),
                   title: Text(
-                    Strings.quizzes,
+                    Strings.aprender,
                     style: AppFontStyle.body14Regular,
                   ),
                   textAlign: TextAlign.center,

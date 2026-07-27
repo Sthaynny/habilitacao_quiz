@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:habilitacao_quiz/app/features/routes/routes.dart';
+import 'package:habilitacao_quiz/core/edition/app_edition.dart';
 import 'package:habilitacao_quiz/core/styles/app_colors.dart';
 import 'package:habilitacao_quiz/core/styles/app_font_styles.dart';
 import 'package:habilitacao_quiz/core/styles/app_gradients.dart';
@@ -10,36 +11,47 @@ import 'package:habilitacao_quiz/core/styles/spacing_stack.dart';
 class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   const AppBarWidget({super.key});
 
+  static const double _gradientHeight = 190;
+  static const double _gradientTopLift = 20;
+
+  static double _toolbarHeight(double topInset) =>
+      topInset + _gradientHeight - _gradientTopLift;
+
   @override
   Widget build(BuildContext context) {
     final topInset = MediaQuery.paddingOf(context).top;
+    final toolbarHeight = _toolbarHeight(topInset);
 
-    return Stack(
-      children: [
-        Container(height: 180 + topInset),
-        Positioned(
-          top: -20,
-          child: Container(
-            height: 190,
-            width: MediaQuery.of(context).size.width,
-            alignment: Alignment.bottomCenter,
-            padding: EdgeInsets.symmetric(
-              horizontal: AppSpacingStack.xxSmall.value,
-              vertical: AppSpacingStack.xxxSmall.value,
-            ),
-            decoration: BoxDecoration(
-              gradient: AppGradients.linear,
-              borderRadius: BorderRadius.circular(30),
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
+    return SizedBox(
+      height: toolbarHeight,
+      child: Stack(
+        clipBehavior: Clip.none,
+        children: [
+          Positioned(
+            top: topInset - _gradientTopLift,
+            left: 0,
+            right: 0,
+            child: Container(
+              height: _gradientHeight,
+              width: MediaQuery.of(context).size.width,
+              alignment: Alignment.bottomCenter,
+              padding: EdgeInsets.symmetric(
+                horizontal: AppSpacingStack.xxSmall.value,
+                vertical: AppSpacingStack.xxxSmall.value,
+              ),
+              decoration: BoxDecoration(
+                gradient: AppGradients.linear,
+                borderRadius: BorderRadius.circular(30),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
                 Expanded(
                   child: Semantics(
                     header: true,
                     child: Text.rich(
                       TextSpan(
-                        text: 'Habilitação Quiz',
+                        text: kAppDisplayName,
                         style: AppFontStyle.headline24Bold.setColor(
                           AppColors.white,
                         ),
@@ -62,11 +74,12 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
                     ),
                   ),
                 ),
-              ],
+                ],
+              ),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 
@@ -75,6 +88,6 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
     final topInset = MediaQueryData.fromView(
       WidgetsBinding.instance.platformDispatcher.views.first,
     ).padding.top;
-    return Size.fromHeight(180 + topInset);
+    return Size.fromHeight(_toolbarHeight(topInset));
   }
 }
