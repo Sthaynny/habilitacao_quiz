@@ -1,6 +1,6 @@
 {
-  "contentVersion": 1,
-  "contentChangelog": "Lançamento inicial: 5 temas, trilha básica e amostra Pro.",
+  "contentVersion": 2,
+  "contentChangelog": "Conteúdo enriquecido para prova CNH; referências oficiais em todos os markdowns.",
   "themes": [
     {"id": "legislacao", "quizEnum": "legislacao", "resumoPath": "temas/legislacao/resumo.md", "artigoPath": "temas/legislacao/artigo_01.md"},
     {"id": "direcao_defensiva", "quizEnum": "direcaoDefensiva", "resumoPath": "temas/direcao_defensiva/resumo.md", "artigoPath": "temas/direcao_defensiva/artigo_01.md"},

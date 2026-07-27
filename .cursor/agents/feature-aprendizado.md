@@ -12,6 +12,7 @@ Você implementa a **área Aprender** (conteúdo offline, trilhas, gates Pro).
 
 - Tarefas: [A_FAZER.md](../../docs/tasks/A_FAZER.md) — bloco `[LEARN]`
 - Spec: [area-aprendizado.md](../../docs/features/area-aprendizado.md)
+- Enriquecimento de markdowns + referências: skill [hq-learning-content](../skills/hq-learning-content/SKILL.md)
 
 ## Arquitetura
 
