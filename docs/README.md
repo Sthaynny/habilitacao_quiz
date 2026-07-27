@@ -2,30 +2,38 @@
 
 Índice central do app e do produto **Free + Habilitação Quiz+**.
 
+**Novo no repositório?** Comece por [getting-started.md](./getting-started.md).
+
+## Pastas
+
 | Pasta | Conteúdo |
 | :--- | :--- |
-| [product/](./product/) | Visão de produto, matriz Free/Pro, modelo comercial |
-| [features/](./features/) | Especificações por área (promo Pro, histórico, aprendizado, IA) |
+| [product/](./product/) | Visão de produto, matriz Free/Pro, IA (planejada) |
+| [features/](./features/) | Especificações por épico (promo Pro, histórico, aprendizado, gate) |
 | [planning/](./planning/) | Roadmap, ondas, prioridades, roteiro de apresentação |
-| [tasks/](./tasks/) | Backlog acionável (HQ-*) para implementação |
+| [tasks/](./tasks/) | Backlog acionável (HQ-*, T*) e tarefas concluídas |
+| [engineering/](./engineering/) | Arquitetura Flutter, design system, protocolo de commit |
+| [store/](./store/) | Builds Free/Pro, Play Console, smoke e UTMs |
 
 ## Leitura rápida
 
 1. [PRODUCT_PLAN.md](./product/PRODUCT_PLAN.md) — decisões e matriz de recursos  
 2. [ROADMAP.md](./planning/ROADMAP.md) — fases e ondas  
 3. [A_FAZER.md](./tasks/A_FAZER.md) — o que atacar agora  
+4. [BUILD.md](./store/BUILD.md) — flavors e artefatos de release  
 
-## Subagentes / épicos mapeados
+## Agentes e épicos
 
-Cada pasta em `features/` corresponde a um épico de produto:
+Orquestração e subagentes: [AGENTS.md](../AGENTS.md). Cada spec em `features/` mapeia um épico:
 
-| Feature doc | Épico | Subagente (rascunho) |
+| Feature doc | Épico | Subagente |
 | :--- | :--- | :--- |
-| [promocao-quiz-plus.md](./features/promocao-quiz-plus.md) | [PROMO] | Promoção do Pro no Free |
-| [historico-simulados.md](./features/historico-simulados.md) | [HIST] | Histórico e simulados |
-| [area-aprendizado.md](./features/area-aprendizado.md) | [LEARN] | Área de Aprendizado |
-| [ia-pro.md](./features/ia-pro.md) | [IA] | IA no Pro |
-| [modelo-free-pro.md](./features/modelo-free-pro.md) | [GATE][STORE] | Free + Pro consolidado |
+| [modelo-free-pro.md](./features/modelo-free-pro.md) | [GATE][STORE] | `feature-gate-store` |
+| [promocao-quiz-plus.md](./features/promocao-quiz-plus.md) | [PROMO] | `feature-promo` |
+| [historico-simulados.md](./features/historico-simulados.md) | [HIST] | `feature-historico` |
+| [area-aprendizado.md](./features/area-aprendizado.md) | [LEARN] | `feature-aprendizado` |
+| [ia-pro.md](./features/ia-pro.md) | [IA] | `feature-ia-pro` (guardião; sem implementação até receita do **+**) |
+| [acessibilidade-implementacao.md](./features/acessibilidade-implementacao.md) | A11y | `feature-a11y-implementer` |
 
 ## Princípio atualizado (jul/2026)
 

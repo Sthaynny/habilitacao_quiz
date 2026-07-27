@@ -3,8 +3,8 @@
 **Data:** 26 de julho de 2026  
 **Versão:** 1.1  
 **Status:** App em produção (v1.9.x) com AdMob → transição para **promo do Habilitação Quiz+** (sem rede de ads) + app pago **+**  
-**Docs:** [Índice](../README.md) · [Features](../features/) · [Planejamento](../planning/) · [Tarefas](../tasks/A_FAZER.md)
-**Referência de modelo:** [Cura.li — PRODUCT_PLAN](../../../cura.li/docs/product/PRODUCT_PLAN.md)
+**Docs:** [Índice](../README.md) · [Features](../features/README.md) · [Planejamento](../planning/README.md) · [Tarefas](../tasks/A_FAZER.md) · [Store](../store/README.md)  
+**Referência de modelo:** projeto irmão **Cura.li** (paths no monorepo local, se disponível: `cura.li/docs/product/PRODUCT_PLAN.md`)
 
 ---
 
@@ -355,8 +355,17 @@ O caminho mais alinhado ao Cura.li e ao público de CNH:
 
 ## Referências
 
-- [Cura.li — PRODUCT_PLAN](../../../cura.li/docs/product/PRODUCT_PLAN.md)
-- [Cura.li — ProGate](../../../cura.li/lib/domain/services/pro_gate.dart)
-- [Cura.li — App edition](../../../cura.li/lib/core/constants/app_edition.dart)
-- [Cura.li — App store constants](../../../cura.li/lib/core/constants/app_store_constants.dart)
-- Código atual: `lib/app/shared/utils/simulado.dart`, `lib/core/utils/ad_helper.dart`, `assets/json/*.json`
+### Cura.li (monorepo local)
+
+| Artefato | Path |
+| :--- | :--- |
+| PRODUCT_PLAN | `cura.li/docs/product/PRODUCT_PLAN.md` |
+| ProGate | `cura.li/lib/domain/services/pro_gate.dart` |
+| App edition | `cura.li/lib/core/constants/app_edition.dart` |
+| App store constants | `cura.li/lib/core/constants/app_store_constants.dart` |
+
+### Este repositório
+
+- `lib/app/shared/utils/simulado.dart`
+- `lib/core/utils/ad_helper.dart`
+- `assets/json/*.json`

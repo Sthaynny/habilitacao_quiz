@@ -8,4 +8,4 @@ Documentação para implementação consistente (humanos e agentes em `.cursor/a
 | [habilitacao-quiz-ds.md](./habilitacao-quiz-ds.md) | Tokens, cores, componentes, gaps do DS |
 | [git-commit-protocol.md](./git-commit-protocol.md) | Commits por agentes implementadores |
 
-Specs de produto: [features/](../features/README.md) · Tarefas: [tasks/A_FAZER.md](../tasks/A_FAZER.md)
+Specs de produto: [features/](../features/README.md) · Tarefas: [tasks/A_FAZER.md](../tasks/A_FAZER.md) · Builds: [store/](../store/README.md) · Índice: [../README.md](../README.md)

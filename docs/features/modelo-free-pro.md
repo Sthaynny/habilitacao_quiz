@@ -2,7 +2,7 @@
 
 **Épicos:** [GATE] [STORE]  
 **Onda:** 1 (fundação) + publicação loja  
-**Referência:** [Cura.li PRODUCT_PLAN](../../../cura.li/docs/product/PRODUCT_PLAN.md)
+**Referência:** estrutura de plano alinhada ao projeto irmão **Cura.li** (ver também [product/PRODUCT_PLAN.md](../product/PRODUCT_PLAN.md)).
 
 ## Decisão
 

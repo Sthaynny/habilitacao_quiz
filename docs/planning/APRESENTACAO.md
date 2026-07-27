@@ -1,6 +1,6 @@
 # Apresentação — stakeholders (5 slides)
 
-Use com [PRODUCT_PLAN.md](../product/PRODUCT_PLAN.md) e [features/](../features/) como anexo.
+Use com [PRODUCT_PLAN.md](../product/PRODUCT_PLAN.md) e [features/README.md](../features/README.md) como anexo.
 
 ---
 

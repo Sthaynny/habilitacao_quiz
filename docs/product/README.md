@@ -1,13 +1,15 @@
 # Produto — Habilitação Quiz
 
-Documentação de estratégia **Free** + **Habilitação Quiz+** (app pago), inspirada no [Cura.li](../../../cura.li/docs/product/PRODUCT_PLAN.md).
+Documentação de estratégia **Free** + **Habilitação Quiz+** (app pago). Estrutura de plano inspirada no projeto irmão **Cura.li** (mesmo padrão de `PRODUCT_PLAN`).
 
-| Pasta | Conteúdo |
+| Doc | Conteúdo |
 | :--- | :--- |
 | [PRODUCT_PLAN.md](./PRODUCT_PLAN.md) | Plano completo (v1.1) |
-| [../features/](../features/) | Especificações por área |
-| [../planning/](../planning/) | Roadmap, prioridades, slides |
-| [../tasks/](../tasks/) | Backlog HQ-* / T* |
+| [AI_FEATURES.md](./AI_FEATURES.md) | IA no **+** (Onda 4; fora de implementação até receita) |
+| [../features/](../features/README.md) | Especificações por área |
+| [../planning/](../planning/README.md) | Roadmap, prioridades, slides |
+| [../tasks/](../tasks/README.md) | Backlog HQ-* / T* |
+| [../store/](../store/README.md) | Builds e publicação nas lojas |
 
 ## Resumo executivo
 

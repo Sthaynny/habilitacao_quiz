@@ -73,6 +73,8 @@ $ flutter pub get
 $ flutter run
 ```
 
+Documentação do produto (Free / **Habilitação Quiz+**), épico e builds: [docs/README.md](./docs/README.md) · guia rápido: [docs/getting-started.md](./docs/getting-started.md).
+
 # :bug: Issues
 
 Cria um issue <a href="https://github.com/Sthaynny/habilitacao_quiz/issues">nova issue</a>, será uma honra poder ajudá-lo a resolver e melhorar ainda mais nosso aplicativo.

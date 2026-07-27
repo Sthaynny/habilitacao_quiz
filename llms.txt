@@ -1,0 +1,29 @@
+# Habilitação Quiz — índice para agentes
+
+App Flutter (GetX, Clean Architecture): simulados CNH, edições **Free** e **Habilitação Quiz+**.
+
+## Entrada
+
+- Documentação: docs/README.md
+- Onboarding: docs/getting-started.md
+- Orquestração de agentes: AGENTS.md
+
+## Produto e backlog
+
+- docs/product/PRODUCT_PLAN.md
+- docs/tasks/A_FAZER.md
+- docs/planning/ROADMAP.md
+
+## Implementação
+
+- docs/engineering/flutter-architecture.md
+- docs/engineering/habilitacao-quiz-ds.md
+- docs/features/ (specs por épico)
+- docs/store/BUILD.md (flavors Free/Pro)
+
+## Regras Cursor
+
+- .cursor/rules/habilitacao-quiz-general.mdc
+- .cursor/agents/
+
+IA (HQ-I*): não implementar até receita do + — docs/product/AI_FEATURES.md
