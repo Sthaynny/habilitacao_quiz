@@ -27,8 +27,8 @@ void main() {
   group('StubProGate Pro', () {
     final gate = StubProGate(isPro: true);
 
-    test('sem limites de quantidade', () {
-      expect(gate.maxQuestoesPorSessaoTema, isNull);
+    test('simulado 30q; temas fixos em 15 para estudo', () {
+      expect(gate.maxQuestoesPorSessaoTema, 15);
       expect(gate.maxQuestoesSimulado, 30);
       expect(gate.maxResultadosHistorico, isNull);
       expect(gate.exibirPromoPlus, isFalse);

@@ -5,8 +5,8 @@ abstract interface class ProGate {
 
   bool get exibirPromoPlus;
 
-  /// `null` = sem limite (banco completo).
-  int? get maxQuestoesPorSessaoTema;
+  /// Perguntas por sessão de quiz temático (estudo); igual Free e Pro.
+  int get maxQuestoesPorSessaoTema;
 
   int get maxQuestoesSimulado;
 
@@ -46,7 +46,7 @@ final class CompileTimeProGate implements ProGate {
   bool get exibirPromoPlus => !kIsPro;
 
   @override
-  int? get maxQuestoesPorSessaoTema => kIsPro ? null : 15;
+  int get maxQuestoesPorSessaoTema => 15;
 
   @override
   int get maxQuestoesSimulado => kIsPro ? 30 : 15;
@@ -117,7 +117,7 @@ final class StubProGate implements ProGate {
   bool get exibirPromoPlus => !isPro;
 
   @override
-  int? get maxQuestoesPorSessaoTema => isPro ? null : maxQuestoesPorSessaoTemaFree;
+  int get maxQuestoesPorSessaoTema => maxQuestoesPorSessaoTemaFree;
 
   @override
   int get maxQuestoesSimulado => isPro ? maxQuestoesSimuladoPro : maxQuestoesSimuladoFree;

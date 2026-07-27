@@ -48,12 +48,12 @@ void main() {
         final quiz = result.getOrElse(() => QuizEntity.empty());
         expect(quiz.perguntas.length, lessThanOrEqualTo(15));
       });
-      test('Pro não limita sessão de tema', () async {
+      test('Pro mantém sessão de tema em 15 perguntas (estudo)', () async {
         final gate = StubProGate(isPro: true);
         final repo = QuizRepository(_MockSucessDatasource(), gate);
         final result = await repo.getQuiz(Keys.direcaoDefensiva);
         final quiz = result.getOrElse(() => QuizEntity.empty());
-        expect(quiz.perguntas.length, greaterThan(15));
+        expect(quiz.perguntas.length, 15);
       });
       test('Deve dar erro', () async {
         final result = await repositoryError.getQuiz('alsjdha');
