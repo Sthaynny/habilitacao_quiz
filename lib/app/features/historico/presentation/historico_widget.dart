@@ -93,7 +93,7 @@ class _HistoricoWidgetState extends State<HistoricoWidget> with PopUpMixin {
                         SizedBox(height: AppSpacingStack.nano.value),
                         _buildExportProActions(),
                         SizedBox(height: AppSpacingStack.nano.value),
-                        _buildBackupActions(),
+                        _buildBackupSection(),
                       ],
                       SizedBox(height: AppSpacingStack.xxxSmall.value),
                     ],
@@ -152,22 +152,46 @@ class _HistoricoWidgetState extends State<HistoricoWidget> with PopUpMixin {
     );
   }
 
-  Widget _buildBackupActions() {
-    return Row(
-      children: [
-        Expanded(
-          child: AppButton.link(
+  Widget _buildBackupSection() {
+    final disabled = _backupBusy || _isExporting;
+    return Semantics(
+      container: true,
+      label: Strings.historicoBackupSecaoTitulo,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Text(
+            Strings.historicoBackupSecaoTitulo,
+            style: AppFontStyle.body16Medium,
+          ),
+          SizedBox(height: AppSpacingStack.quarck.value),
+          Text(
+            Strings.historicoBackupSecaoSubtitulo,
+            style: AppFontStyle.caption12Regular.setColor(AppColors.grey),
+          ),
+          SizedBox(height: AppSpacingStack.nano.value),
+          if (_backupBusy) ...[
+            const LinearProgressIndicator(
+              minHeight: 2,
+              color: AppColors.primary,
+              backgroundColor: AppColors.border,
+            ),
+            SizedBox(height: AppSpacingStack.nano.value),
+          ],
+          AppButton.primary(
             Strings.historicoBackupExport,
-            onPressed: _backupBusy || _isExporting ? null : _onExportBackup,
+            expanded: true,
+            onPressed: disabled ? null : _onExportBackup,
           ),
-        ),
-        Expanded(
-          child: AppButton.link(
+          SizedBox(height: AppSpacingStack.nano.value),
+          AppButton.primaryOutline(
             Strings.historicoBackupRestore,
-            onPressed: _backupBusy || _isExporting ? null : _onRestoreBackup,
+            expanded: true,
+            color: AppColors.primary,
+            onPressed: disabled ? null : _onRestoreBackup,
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 
@@ -250,7 +274,7 @@ class _HistoricoWidgetState extends State<HistoricoWidget> with PopUpMixin {
         },
       );
     } catch (_) {
-      popUpErro();
+      Get.snackbar(Strings.atencao, Strings.historicoBackupExportErro);
     } finally {
       if (mounted) setState(() => _backupBusy = false);
     }
@@ -291,7 +315,7 @@ class _HistoricoWidgetState extends State<HistoricoWidget> with PopUpMixin {
         },
       );
     } catch (_) {
-      popUpErro();
+      Get.snackbar(Strings.atencao, Strings.historicoBackupRestoreErro);
     } finally {
       if (mounted) setState(() => _backupBusy = false);
     }
@@ -453,7 +477,7 @@ class _HistoricoWidgetState extends State<HistoricoWidget> with PopUpMixin {
             padding: EdgeInsets.symmetric(
               horizontal: AppSpacingStack.xxxSmall.value,
             ),
-            child: _buildBackupActions(),
+            child: _buildBackupSection(),
           ),
           SizedBox(height: AppSpacingStack.small.value),
         ],

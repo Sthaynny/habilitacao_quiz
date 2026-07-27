@@ -1,12 +1,16 @@
 import 'package:get/get.dart';
 import 'package:habilitacao_quiz/app/features/historico/data/datasources/historico_datasource.dart';
 import 'package:habilitacao_quiz/app/features/historico/data/datasources/historico_export_datasource.dart';
+import 'package:habilitacao_quiz/app/features/historico/data/gateways/historico_backup_file_gateway.dart';
 import 'package:habilitacao_quiz/app/features/historico/data/repositories/historico_export_repository.dart';
 import 'package:habilitacao_quiz/app/features/historico/data/repositories/historico_repository.dart';
 import 'package:habilitacao_quiz/app/features/historico/domain/repositories/historico_repository.dart';
 import 'package:habilitacao_quiz/app/features/historico/domain/repositories/i_historico_export_repository.dart';
 import 'package:habilitacao_quiz/app/features/historico/domain/services/historico_export_content_builder.dart';
+import 'package:habilitacao_quiz/app/features/historico/domain/services/ihistorico_backup_file_gateway.dart';
+import 'package:habilitacao_quiz/app/features/historico/domain/usecases/export_historico_backup_usecase.dart';
 import 'package:habilitacao_quiz/app/features/historico/domain/usecases/export_historico_usecase.dart';
+import 'package:habilitacao_quiz/app/features/historico/domain/usecases/restaurar_historico_backup_usecase.dart';
 import 'package:habilitacao_quiz/app/features/historico/domain/usecases/get_historico_usecase.dart';
 import 'package:habilitacao_quiz/app/features/historico/domain/usecases/salvar_historico_usecase.dart';
 import 'package:habilitacao_quiz/app/shared/domain/services/pro_gate.dart';
@@ -55,6 +59,24 @@ class HistoricoInjectionContainer implements IInjectionContainer {
         Get.find<ProGate>(),
         Get.find<IHistoricoExportRepository>(),
         Get.find<HistoricoExportContentBuilder>(),
+      ),
+      fenix: true,
+    );
+    Get.lazyPut<IHistoricoBackupFileGateway>(
+      () => HistoricoBackupFileGateway(),
+      fenix: true,
+    );
+    Get.lazyPut(
+      () => ExportHistoricoBackupUsecase(
+        Get.find<IHistoricoRepository>(),
+        Get.find<ProGate>(),
+      ),
+      fenix: true,
+    );
+    Get.lazyPut(
+      () => RestaurarHistoricoBackupUsecase(
+        Get.find<IHistoricoRepository>(),
+        Get.find<ProGate>(),
       ),
       fenix: true,
     );

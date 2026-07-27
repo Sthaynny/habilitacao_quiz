@@ -92,8 +92,15 @@ abstract class Strings {
       'Não foi possível exportar. Tente novamente.';
   static const historicoExportAssunto = 'Histórico Habilitação Quiz';
 
+  static const historicoBackupSecaoTitulo = 'Backup do histórico';
+  static const historicoBackupSecaoSubtitulo =
+      'Salve ou recupere seus resultados em outro aparelho.';
   static const historicoBackupExport = 'Exportar backup';
   static const historicoBackupRestore = 'Restaurar backup';
+  static const historicoBackupExportErro =
+      'Não foi possível exportar o backup. Tente novamente.';
+  static const historicoBackupRestoreErro =
+      'Não foi possível restaurar o backup. Tente novamente.';
   static const historicoBackupProOnly =
       'Backup e restauração do histórico são exclusivos do Habilitação Quiz+.';
   static const historicoBackupArquivoInvalido =
