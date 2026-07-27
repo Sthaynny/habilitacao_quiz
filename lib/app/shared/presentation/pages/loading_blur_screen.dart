@@ -16,20 +16,20 @@ class LoadingBlurScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if (!enabled) {
+      return child;
+    }
+
     return Stack(
+      fit: StackFit.expand,
       children: <Widget>[
         child,
-        AnimatedOpacity(
-          opacity: enabled ? 1 : .0,
-          duration: const Duration(milliseconds: 280),
-          child: BackdropFilter(
-            filter: ImageFilter.blur(sigmaX: 4, sigmaY: 4),
-            child: IgnorePointer(
-              ignoring: !enabled,
-              child: Container(
-                decoration: BoxDecoration(
-                  color: AppColors.preto.withValues(alpha: .5),
-                ),
+        Positioned.fill(
+          child: RepaintBoundary(
+            child: BackdropFilter(
+              filter: ImageFilter.blur(sigmaX: 4, sigmaY: 4),
+              child: ColoredBox(
+                color: AppColors.preto.withValues(alpha: .5),
                 child: const Center(child: CircularProgressWidget()),
               ),
             ),

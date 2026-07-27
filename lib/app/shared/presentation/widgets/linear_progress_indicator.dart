@@ -7,10 +7,12 @@ class LinearProgressIndicatorWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LinearProgressIndicator(
-      value: value,
-      backgroundColor: AppColors.cinzaSuperClaro,
-      valueColor: const AlwaysStoppedAnimation<Color>(AppColors.verde),
+    return RepaintBoundary(
+      child: LinearProgressIndicator(
+        value: value,
+        backgroundColor: AppColors.cinzaSuperClaro,
+        valueColor: const AlwaysStoppedAnimation<Color>(AppColors.verde),
+      ),
     );
   }
 }

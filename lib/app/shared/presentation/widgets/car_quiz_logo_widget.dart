@@ -6,9 +6,16 @@ class CarQuizLogoWidget extends StatelessWidget {
   final double? size;
   @override
   Widget build(BuildContext context) {
+    final height = size ?? 70;
+    final cacheHeight =
+        (height * MediaQuery.devicePixelRatioOf(context)).round();
+
     return Image.asset(
       AppImages.logo,
-      height: size ?? 70,
+      height: height,
+      cacheHeight: cacheHeight,
+      filterQuality: FilterQuality.medium,
+      gaplessPlayback: true,
     );
   }
 }
