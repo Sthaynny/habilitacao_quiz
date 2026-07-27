@@ -14,7 +14,7 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
 
   static const double _gradientHeight = 190;
   static const double _gradientTopLift = 20;
-  static const double _contentHeight = 180;
+  static const double _contentHeight = 120;
 
   static double _toolbarHeight(double topInset) => _contentHeight + topInset;
 
@@ -56,33 +56,36 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                Expanded(
-                  child: Semantics(
-                    header: true,
-                    child: Text.rich(
-                      TextSpan(
-                        text: kAppDisplayName,
-                        style: AppFontStyle.headline24Bold.setColor(
-                          AppColors.white,
+                  Expanded(
+                    child: Semantics(
+                      header: true,
+                      child: Text.rich(
+                        TextSpan(
+                          text: kAppDisplayName,
+                          style: AppFontStyle.headline24Bold.setColor(
+                            AppColors.white,
+                          ),
                         ),
                       ),
                     ),
                   ),
-                ),
-                IconButton(
-                  icon: const Icon(Icons.info_outline, color: AppColors.white),
-                  tooltip: 'Aviso legal',
-                  onPressed: () => Get.toNamed(Routes.legalNotice),
-                ),
-                Image.asset(
-                  AppImages.logo,
-                  width: 90,
-                  height: 90,
-                  fit: BoxFit.cover,
-                  cacheWidth: _logoCachePx(context),
-                  cacheHeight: _logoCachePx(context),
-                  excludeFromSemantics: true,
-                ),
+                  IconButton(
+                    icon: const Icon(
+                      Icons.info_outline,
+                      color: AppColors.white,
+                    ),
+                    tooltip: 'Aviso legal',
+                    onPressed: () => Get.toNamed(Routes.legalNotice),
+                  ),
+                  Image.asset(
+                    AppImages.logo,
+                    width: 90,
+                    height: 90,
+                    fit: BoxFit.cover,
+                    cacheWidth: _logoCachePx(context),
+                    cacheHeight: _logoCachePx(context),
+                    excludeFromSemantics: true,
+                  ),
                 ],
               ),
             ),
