@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:habilitacao_quiz/app/features/questionario/presentation/components/app_bar_questionario.dart';
@@ -29,36 +27,15 @@ class _QuestionarioScreenState extends State<QuestionarioScreen>
   QuestionarioController get controller => widget.controller;
   QuizEntity get quiz => widget.quizEntity;
   final scrollController = ScrollController();
-  Timer? _timer;
-  Duration _remaining = Duration.zero;
 
   @override
   void didChangeDependencies() {
     controller.init(quizEntity: quiz);
-    _startTimerIfNeeded();
     super.didChangeDependencies();
-  }
-
-  void _startTimerIfNeeded() {
-    final limit = quiz.tempoLimite;
-    if (limit == null) return;
-    _remaining = limit;
-    _timer?.cancel();
-    _timer = Timer.periodic(const Duration(seconds: 1), (_) {
-      if (!mounted) return;
-      setState(() {
-        _remaining -= const Duration(seconds: 1);
-        if (_remaining <= Duration.zero) {
-          _timer?.cancel();
-          controller.finalizarPorTempoEsgotado();
-        }
-      });
-    });
   }
 
   @override
   void dispose() {
-    _timer?.cancel();
     scrollController.dispose();
     super.dispose();
   }
@@ -76,17 +53,19 @@ class _QuestionarioScreenState extends State<QuestionarioScreen>
         appBar: AppBarQuestionarioWidget(
           controller: controller,
           onClosed: controller.fecharQuestionario,
-          timerLabel: quiz.tempoLimite != null ? _formatTimer(_remaining) : null,
+          tempoLimite: quiz.tempoLimite,
+          onTempoEsgotado: controller.finalizarPorTempoEsgotado,
         ),
         body: Obx(
-          () => QuizWidget(
-            scrollController: scrollController,
-            onSelected: (value) {
-              controller.setRespostaSelecionada = value;
-            },
-            pergunta: controller.perguntaAtual,
-            respostaSelected: controller.respotaSelecionada,
-          ),
+          () {
+            final index = controller.indexPergunta;
+            return QuizWidget(
+              key: ValueKey(index),
+              scrollController: scrollController,
+              controller: controller,
+              pergunta: controller.perguntaAtual,
+            );
+          },
         ),
         bottomNavigationBar: SafeArea(
           child: Padding(
@@ -94,12 +73,28 @@ class _QuestionarioScreenState extends State<QuestionarioScreen>
               horizontal: AppSpacingStack.xSmall.value,
               vertical: AppSpacingStack.xxxSmall.value,
             ),
-            child: Obx(
-              () => Row(
-                children: [
-                  if (controller.indexPergunta != 0) ...getButaoVoltar,
-                  Flexible(
-                    child: AppButton.secundary(
+            child: Row(
+              children: [
+                Obx(
+                  () => controller.indexPergunta != 0
+                      ? Flexible(
+                          child: AppButton.primaryOutline(
+                            Strings.voltar,
+                            onPressed: () {
+                              controller.voltarPergunta;
+                            },
+                          ),
+                        )
+                      : const SizedBox.shrink(),
+                ),
+                Obx(
+                  () => controller.indexPergunta != 0
+                      ? SizedBox(width: AppSpacingStack.nano.value)
+                      : const SizedBox.shrink(),
+                ),
+                Flexible(
+                  child: Obx(
+                    () => AppButton.secundary(
                       controller.ultimaPergunta
                           ? Strings.finalizar
                           : Strings.avancar,
@@ -111,30 +106,12 @@ class _QuestionarioScreenState extends State<QuestionarioScreen>
                           : null,
                     ),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
         ),
       ),
     );
-  }
-
-  List<Widget> get getButaoVoltar => [
-    Flexible(
-      child: AppButton.primaryOutline(
-        Strings.voltar,
-        onPressed: () {
-          controller.voltarPergunta;
-        },
-      ),
-    ),
-    SizedBox(width: AppSpacingStack.nano.value),
-  ];
-
-  String _formatTimer(Duration d) {
-    final m = d.inMinutes.remainder(60).toString().padLeft(2, '0');
-    final s = d.inSeconds.remainder(60).toString().padLeft(2, '0');
-    return '$m:$s';
   }
 }

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:habilitacao_quiz/app/features/questionario/presentation/components/resposta/resposta_widget.dart';
+import 'package:habilitacao_quiz/app/features/questionario/presentation/controller/questionario_controller.dart';
 import 'package:habilitacao_quiz/app/shared/domain/entities/pergunta_entity.dart';
-import 'package:habilitacao_quiz/app/shared/domain/entities/resposta_entity.dart';
 import 'package:habilitacao_quiz/core/styles/app_styles.dart';
 import 'package:habilitacao_quiz/core/styles/spacing_stack.dart';
 
@@ -9,13 +10,12 @@ class QuizWidget extends StatelessWidget {
   const QuizWidget({
     super.key,
     required this.pergunta,
-    required this.onSelected,
-    this.respostaSelected,
+    required this.controller,
     this.scrollController,
   });
+
   final PerguntaEntity pergunta;
-  final ValueChanged<RespostaEntity> onSelected;
-  final RespostaEntity? respostaSelected;
+  final QuestionarioController controller;
   final ScrollController? scrollController;
 
   @override
@@ -35,12 +35,22 @@ class QuizWidget extends StatelessWidget {
             Image.memory(pergunta.imagemB64!),
           ],
           SizedBox(height: AppSpacingStack.xxxSmall.value),
-          ...pergunta.respostas.map(
-            (elemento) => RespostaWidget(
-              onTap: onSelected,
-              resposta: elemento,
-              isSelected: respostaSelected == elemento,
-            ),
+          Obx(
+            () {
+              final respostaSelected = controller.respostaSelecionada;
+              return Column(
+                children: [
+                  for (final elemento in pergunta.respostas)
+                    RespostaWidget(
+                      key: ValueKey(elemento.titulo),
+                      onTap: (resposta) =>
+                          controller.setRespostaSelecionada = resposta,
+                      resposta: elemento,
+                      isSelected: respostaSelected == elemento,
+                    ),
+                ],
+              );
+            },
           ),
         ],
       ),

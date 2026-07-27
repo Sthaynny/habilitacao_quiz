@@ -37,16 +37,17 @@ import 'package:habilitacao_quiz/core/utils/strings.dart';
 class QuestionarioController extends GetxController with PopUpMixin {
 
   void init({required QuizEntity quizEntity}) {
-
     _quiz(quizEntity);
-
+    _syncRespostaSelecionadaFromPerguntaAtual();
   }
 
-
-
   final Rx<QuizEntity> _quiz = QuizEntity.empty().obs;
-
   final Rx<int> _indexPergunta = zero.obs;
+  final Rxn<RespostaEntity> _respostaSelecionadaAtual = Rxn<RespostaEntity>();
+
+  void _syncRespostaSelecionadaFromPerguntaAtual() {
+    _respostaSelecionadaAtual(quiz.perguntas[indexPergunta].respostaSelecionada);
+  }
 
 
 
@@ -57,11 +58,9 @@ class QuestionarioController extends GetxController with PopUpMixin {
       _finalizarQuestionario();
 
     } else {
-
       _indexPergunta(indexPergunta + 1);
-
+      _syncRespostaSelecionadaFromPerguntaAtual();
     }
-
   }
 
 
@@ -199,9 +198,8 @@ class QuestionarioController extends GetxController with PopUpMixin {
 
 
   void get voltarPergunta {
-
     _indexPergunta(indexPergunta - 1);
-
+    _syncRespostaSelecionadaFromPerguntaAtual();
   }
 
 
@@ -254,34 +252,14 @@ extension MetodosAuxilixaresController on QuestionarioController {
 
 
 
-  RespostaEntity? get respotaSelecionada =>
+  RespostaEntity? get respotaSelecionada => _respostaSelecionadaAtual.value;
 
-      quiz.perguntas[indexPergunta].respostaSelecionada;
-
-  RespostaEntity? get respostaSelecionada =>
-
-      quiz.perguntas[indexPergunta].respostaSelecionada;
-
-
+  RespostaEntity? get respostaSelecionada => _respostaSelecionadaAtual.value;
 
   set setRespostaSelecionada(RespostaEntity resposta) {
-
-    final listaPerguntas = quiz.perguntas;
-
-    listaPerguntas[indexPergunta].respostaSelecionada = resposta;
-
-    _quiz.update(
-
-      (value) {
-
-        value?.perguntas = listaPerguntas;
-
-      },
-
-    );
-
+    quiz.perguntas[indexPergunta].respostaSelecionada = resposta;
+    _respostaSelecionadaAtual(resposta);
   }
-
 }
 
 
