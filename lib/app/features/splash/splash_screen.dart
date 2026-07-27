@@ -22,18 +22,16 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    _loadAndNavigate();
+    WidgetsBinding.instance.addPostFrameCallback((_) => _loadAndNavigate());
   }
 
   Future<void> _loadAndNavigate() async {
-    final historicoFuture = _loadHistorico();
-    await Future.wait([
-      historicoFuture,
+    final results = await Future.wait([
+      _loadHistorico(),
       Future<void>.delayed(_splashDuration),
     ]);
     if (!mounted) return;
-    final historico = await historicoFuture;
-    Get.put<HistoricoEntity>(historico, permanent: true);
+    Get.put<HistoricoEntity>(results[0] as HistoricoEntity, permanent: true);
     Get.offAndToNamed(Routes.home);
   }
 

@@ -19,86 +19,90 @@ import 'package:habilitacao_quiz/core/edition/app_edition.dart';
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
+  static final ThemeData _theme = ThemeData(
+    primarySwatch: Colors.blue,
+    appBarTheme: const AppBarTheme(
+      elevation: 0,
+      scrolledUnderElevation: 0,
+    ),
+  );
+
+  static final List<GetPage<dynamic>> _pages = [
+    GetPage(
+      name: Routes.init,
+      page: () => const SplashScreen(),
+    ),
+    GetPage(
+      name: Routes.resultado,
+      page: () => ResultadoScreen(
+        args: Get.arguments,
+      ),
+      transition: Transition.fade,
+    ),
+    GetPage(
+      name: Routes.questionario,
+      page: () => QuestionarioScreen(
+        controller: Get.find(),
+        quizEntity: Get.arguments,
+      ),
+    ),
+    GetPage(
+      name: Routes.home,
+      page: () => HomeScreen(
+        controller: Get.find(),
+        quizzesController: Get.find(),
+      ),
+      transition: Transition.fadeIn,
+      transitionDuration: const Duration(seconds: 2),
+      showCupertinoParallax: false,
+    ),
+    GetPage(
+      name: Routes.legalNotice,
+      page: () => const LegalNoticeScreen(),
+    ),
+    GetPage(
+      name: Routes.habilitacaoQuizPlus,
+      page: () => const HabilitacaoQuizPlusScreen(),
+    ),
+    GetPage(
+      name: Routes.detalheSimulado,
+      page: () => DetalheSimuladoScreen(
+        resultado: Get.arguments as ResultadoEntity,
+      ),
+    ),
+    GetPage(
+      name: Routes.aprenderTema,
+      page: () => LearningThemeScreen(themeId: Get.arguments as String),
+    ),
+    GetPage(
+      name: Routes.aprenderTrilha,
+      page: () => const LearningTrilhaScreen(),
+    ),
+    GetPage(
+      name: Routes.aprenderFichas,
+      page: () => const LearningFichasScreen(),
+    ),
+    GetPage(
+      name: Routes.aprenderFicha,
+      page: () => LearningFichaScreen(fichaId: Get.arguments as String),
+    ),
+    GetPage(
+      name: Routes.aprenderMapa,
+      page: () => const LearningMapaScreen(),
+    ),
+    GetPage(
+      name: Routes.aprenderRevisao,
+      page: () => const LearningRevisaoScreen(),
+    ),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
       title: kAppDisplayName,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        appBarTheme: const AppBarTheme(
-          elevation: 0,
-          scrolledUnderElevation: 0,
-        ),
-      ),
+      theme: _theme,
       initialRoute: Routes.init,
-      getPages: [
-        GetPage(
-          name: Routes.init,
-          page: () => const SplashScreen(),
-        ),
-        GetPage(
-          name: Routes.resultado,
-          page: () => ResultadoScreen(
-            args: Get.arguments,
-          ),
-          transition: Transition.fade,
-        ),
-        GetPage(
-          name: Routes.questionario,
-          page: () => QuestionarioScreen(
-            controller: Get.find(),
-            quizEntity: Get.arguments,
-          ),
-        ),
-        GetPage(
-          name: Routes.home,
-          page: () => HomeScreen(
-            controller: Get.find(),
-            quizzesController: Get.find(),
-          ),
-          transition: Transition.fadeIn,
-          transitionDuration: const Duration(seconds: 2),
-          showCupertinoParallax: false,
-        ),
-        GetPage(
-          name: Routes.legalNotice,
-          page: () => const LegalNoticeScreen(),
-        ),
-        GetPage(
-          name: Routes.habilitacaoQuizPlus,
-          page: () => const HabilitacaoQuizPlusScreen(),
-        ),
-        GetPage(
-          name: Routes.detalheSimulado,
-          page: () => DetalheSimuladoScreen(
-            resultado: Get.arguments as ResultadoEntity,
-          ),
-        ),
-        GetPage(
-          name: Routes.aprenderTema,
-          page: () => LearningThemeScreen(themeId: Get.arguments as String),
-        ),
-        GetPage(
-          name: Routes.aprenderTrilha,
-          page: () => const LearningTrilhaScreen(),
-        ),
-        GetPage(
-          name: Routes.aprenderFichas,
-          page: () => const LearningFichasScreen(),
-        ),
-        GetPage(
-          name: Routes.aprenderFicha,
-          page: () => LearningFichaScreen(fichaId: Get.arguments as String),
-        ),
-        GetPage(
-          name: Routes.aprenderMapa,
-          page: () => const LearningMapaScreen(),
-        ),
-        GetPage(
-          name: Routes.aprenderRevisao,
-          page: () => const LearningRevisaoScreen(),
-        ),
-      ],
+      getPages: _pages,
     );
   }
 }

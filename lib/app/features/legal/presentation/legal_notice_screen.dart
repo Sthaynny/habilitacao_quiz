@@ -19,6 +19,14 @@ class LegalNoticeScreen extends StatefulWidget {
 }
 
 class _LegalNoticeScreenState extends State<LegalNoticeScreen> with PopUpMixin {
+  late final bool _exibirPromoPlus;
+
+  @override
+  void initState() {
+    super.initState();
+    _exibirPromoPlus = Get.find<ProGate>().exibirPromoPlus;
+  }
+
   Future<void> _openSource(GovernmentSource source) async {
     final opened = await openExternalUrl(source.url);
     if (!opened && mounted) popUpErro();
@@ -48,7 +56,7 @@ class _LegalNoticeScreenState extends State<LegalNoticeScreen> with PopUpMixin {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              _DisclaimerCard(),
+              const _DisclaimerCard(),
               SizedBox(height: AppSpacingStack.xSmall.value),
               Semantics(
                 header: true,
@@ -70,7 +78,7 @@ class _LegalNoticeScreenState extends State<LegalNoticeScreen> with PopUpMixin {
                 ),
               ),
               SizedBox(height: AppSpacingStack.xSmall.value),
-              if (Get.find<ProGate>().exibirPromoPlus) ...[
+              if (_exibirPromoPlus) ...[
                 _PlusLegalTile(
                   onTap: () {
                     Get.find<PromoFunnelAnalytics>().logClick(
@@ -96,6 +104,8 @@ class _LegalNoticeScreenState extends State<LegalNoticeScreen> with PopUpMixin {
 }
 
 class _DisclaimerCard extends StatelessWidget {
+  const _DisclaimerCard();
+
   @override
   Widget build(BuildContext context) {
     return Container(
