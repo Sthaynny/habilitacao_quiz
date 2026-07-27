@@ -17,6 +17,7 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   static const _splashDuration = Duration(seconds: 2);
+  static const _historicoTimeout = Duration(seconds: 5);
 
   @override
   void initState() {
@@ -25,16 +26,25 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   Future<void> _loadAndNavigate() async {
-    HistoricoEntity historico;
-    try {
-      historico = await Get.find<GetHistoricoUsecase>().call();
-    } catch (_) {
-      historico = HistoricoEntity(resutados: []);
-    }
-    await Future.delayed(_splashDuration);
+    final historicoFuture = _loadHistorico();
+    await Future.wait([
+      historicoFuture,
+      Future<void>.delayed(_splashDuration),
+    ]);
     if (!mounted) return;
+    final historico = await historicoFuture;
     Get.put<HistoricoEntity>(historico, permanent: true);
     Get.offAndToNamed(Routes.home);
+  }
+
+  Future<HistoricoEntity> _loadHistorico() async {
+    try {
+      return await Get.find<GetHistoricoUsecase>()
+          .call()
+          .timeout(_historicoTimeout);
+    } catch (_) {
+      return HistoricoEntity(resutados: []);
+    }
   }
 
   @override
