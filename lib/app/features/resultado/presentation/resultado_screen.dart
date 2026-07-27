@@ -13,52 +13,25 @@ import 'package:habilitacao_quiz/core/styles/spacing_stack.dart';
 import 'package:habilitacao_quiz/core/utils/strings.dart';
 import 'package:share_plus/share_plus.dart';
 
-class ResultadoScreen extends StatefulWidget {
+class ResultadoScreen extends StatelessWidget {
   const ResultadoScreen({super.key, required this.args});
+
   final ResultadoEntity args;
 
   @override
-  State<ResultadoScreen> createState() => _ResultadoScreenState();
-}
-
-class _ResultadoScreenState extends State<ResultadoScreen> with PopUpMixin {
-  bool _isSharing = false;
-
-  String get getPercentual => widget.args.percentual.toPrecision(2).toString();
-
-  Future<void> _onShare() async {
-    setState(() => _isSharing = true);
-    try {
-      await SharePlus.instance.share(
-        ShareParams(
-          text: Strings.campartilharMensagem(
-            titulo: widget.args.titulo,
-            percentual: getPercentual,
-          ),
-        ),
-      );
-    } catch (_) {
-      popUpErro();
-    } finally {
-      if (mounted) setState(() => _isSharing = false);
-    }
-  }
-
-  bool get _showSimuladoPlusCta => shouldShowResultadoSimuladoPlusCta(
-        resultado: widget.args,
-        proGate: Get.find<ProGate>(),
-      );
-
-  @override
   Widget build(BuildContext context) {
+    final percentual = args.percentual.toPrecision(2).toString();
     final summaryLabel = Strings.resultadoQuestionario(
-      respostasCorretas: widget.args.totalRespostasCorretas.toString(),
-      totalPerguntas: widget.args.totalPerguntas.toString(),
-      percentual: getPercentual,
+      respostasCorretas: args.totalRespostasCorretas.toString(),
+      totalPerguntas: args.totalPerguntas.toString(),
+      percentual: percentual,
     );
-    final headline = widget.args.result
-        ? Strings.parabens
-        : Strings.menssagemBaixoRendimento;
+    final headline =
+        args.result ? Strings.parabens : Strings.menssagemBaixoRendimento;
+    final showSimuladoPlusCta = shouldShowResultadoSimuladoPlusCta(
+      resultado: args,
+      proGate: Get.find<ProGate>(),
+    );
 
     return Scaffold(
       body: SafeArea(
@@ -73,7 +46,7 @@ class _ResultadoScreenState extends State<ResultadoScreen> with PopUpMixin {
               children: [
                 ExcludeSemantics(
                   child: Image.asset(
-                    widget.args.result ? AppImages.sucesso : AppImages.bad,
+                    args.result ? AppImages.sucesso : AppImages.bad,
                     height: 300,
                   ),
                 ),
@@ -93,34 +66,28 @@ class _ResultadoScreenState extends State<ResultadoScreen> with PopUpMixin {
                 ),
                 SizedBox(height: AppSpacingStack.xxxSmall.value),
                 Semantics(
-                  label:
-                      '${widget.args.titulo}. $summaryLabel',
+                  label: '${args.titulo}. $summaryLabel',
                   child: Text.rich(
-                  TextSpan(
-                    text: Strings.voceFinalizou,
-                    style: AppFontStyle.body14Regular.setColor(AppColors.grey),
-                    children: [
-                      TextSpan(
-                        text: '${widget.args.titulo}\n',
-                        style: AppFontStyle.body14Bold,
-                      ),
-                      TextSpan(
-                        text: Strings.resultadoQuestionario(
-                          respostasCorretas: widget.args.totalRespostasCorretas
-                              .toString(),
-                          totalPerguntas: widget.args.totalPerguntas.toString(),
-                          percentual: getPercentual,
+                    TextSpan(
+                      text: Strings.voceFinalizou,
+                      style: AppFontStyle.body14Regular.setColor(AppColors.grey),
+                      children: [
+                        TextSpan(
+                          text: '${args.titulo}\n',
+                          style: AppFontStyle.body14Bold,
                         ),
-                        style: AppFontStyle.body14Regular.setColor(
-                          AppColors.grey,
+                        TextSpan(
+                          text: summaryLabel,
+                          style: AppFontStyle.body14Regular.setColor(
+                            AppColors.grey,
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
+                    textAlign: TextAlign.center,
                   ),
-                  textAlign: TextAlign.center,
                 ),
-                ),
-                if (_showSimuladoPlusCta) ...[
+                if (showSimuladoPlusCta) ...[
                   SizedBox(height: AppSpacingStack.xSmall.value),
                   Padding(
                     padding: EdgeInsets.symmetric(
@@ -146,32 +113,81 @@ class _ResultadoScreenState extends State<ResultadoScreen> with PopUpMixin {
                   ),
                 ],
                 SizedBox(height: AppSpacingStack.large.value),
-                Padding(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: AppSpacingStack.large.value,
-                  ),
-                  child: AppButton.primary(
-                    Strings.compartilhar,
-                    expanded: true,
-                    onPressed: _isSharing ? null : _onShare,
-                  ),
-                ),
-                SizedBox(height: AppSpacingStack.xxSmall.value),
-                Padding(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: AppSpacingStack.large.value,
-                  ),
-                  child: AppButton.link(
-                    Strings.voltarInicio,
-                    expanded: true,
-                    onPressed: _isSharing ? null : Get.back,
-                  ),
+                _ResultadoShareActions(
+                  titulo: args.titulo,
+                  percentual: percentual,
                 ),
               ],
             ),
           ),
         ),
       ),
+    );
+  }
+}
+
+class _ResultadoShareActions extends StatefulWidget {
+  const _ResultadoShareActions({
+    required this.titulo,
+    required this.percentual,
+  });
+
+  final String titulo;
+  final String percentual;
+
+  @override
+  State<_ResultadoShareActions> createState() => _ResultadoShareActionsState();
+}
+
+class _ResultadoShareActionsState extends State<_ResultadoShareActions>
+    with PopUpMixin {
+  bool _isSharing = false;
+
+  Future<void> _onShare() async {
+    setState(() => _isSharing = true);
+    try {
+      await SharePlus.instance.share(
+        ShareParams(
+          text: Strings.campartilharMensagem(
+            titulo: widget.titulo,
+            percentual: widget.percentual,
+          ),
+        ),
+      );
+    } catch (_) {
+      popUpErro();
+    } finally {
+      if (mounted) setState(() => _isSharing = false);
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Padding(
+          padding: EdgeInsets.symmetric(
+            horizontal: AppSpacingStack.large.value,
+          ),
+          child: AppButton.primary(
+            Strings.compartilhar,
+            expanded: true,
+            onPressed: _isSharing ? null : _onShare,
+          ),
+        ),
+        SizedBox(height: AppSpacingStack.xxSmall.value),
+        Padding(
+          padding: EdgeInsets.symmetric(
+            horizontal: AppSpacingStack.large.value,
+          ),
+          child: AppButton.link(
+            Strings.voltarInicio,
+            expanded: true,
+            onPressed: _isSharing ? null : Get.back,
+          ),
+        ),
+      ],
     );
   }
 }
