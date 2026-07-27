@@ -53,13 +53,6 @@ class _LearningHubLoadedContent extends StatelessWidget {
   final bool exibirPromoPlus;
   final bool podeRevisaoEspacada;
 
-  static final _themeGridDelegate = SliverGridDelegateWithFixedCrossAxisCount(
-    crossAxisCount: 2,
-    crossAxisSpacing: AppSpacingStack.nano.value,
-    mainAxisSpacing: AppSpacingStack.nano.value,
-    childAspectRatio: 0.82,
-  );
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -82,25 +75,7 @@ class _LearningHubLoadedContent extends StatelessWidget {
             style: AppFontStyle.body16Bold,
           ),
           SizedBox(height: AppSpacingStack.nano.value),
-          GridView.builder(
-            shrinkWrap: true,
-            physics: const NeverScrollableScrollPhysics(),
-            gridDelegate: _themeGridDelegate,
-            itemCount: manifest.themes.length,
-            itemBuilder: (context, index) {
-              final theme = manifest.themes[index];
-              final label = theme.learningTheme?.displayTitle ?? theme.id;
-              return LearningThemeCard(
-                title: label,
-                subtitle: LearningThemeVisuals.teaser(theme.id),
-                imageAsset: LearningThemeVisuals.imageAsset(theme.id),
-                onTap: () => Get.toNamed(
-                  Routes.aprenderTema,
-                  arguments: theme.id,
-                ),
-              );
-            },
-          ),
+          _LearningThemeTopicsGrid(themes: manifest.themes),
           SizedBox(height: AppSpacingStack.xxSmall.value),
           Text(
             Strings.aprenderFerramentasEstudo,
@@ -147,6 +122,42 @@ class _LearningHubLoadedContent extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+}
+
+class _LearningThemeTopicsGrid extends StatelessWidget {
+  const _LearningThemeTopicsGrid({required this.themes});
+
+  final List<LearningThemeContentEntity> themes;
+
+  @override
+  Widget build(BuildContext context) {
+    final spacing = AppSpacingStack.nano.value;
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final itemWidth = (constraints.maxWidth - spacing) / 2;
+        return Wrap(
+          spacing: spacing,
+          runSpacing: spacing,
+          crossAxisAlignment: WrapCrossAlignment.start,
+          children: [
+            for (final theme in themes)
+              SizedBox(
+                width: itemWidth,
+                child: LearningThemeCard(
+                  title: theme.learningTheme?.displayTitle ?? theme.id,
+                  subtitle: LearningThemeVisuals.teaser(theme.id),
+                  imageAsset: LearningThemeVisuals.imageAsset(theme.id),
+                  onTap: () => Get.toNamed(
+                    Routes.aprenderTema,
+                    arguments: theme.id,
+                  ),
+                ),
+              ),
+          ],
+        );
+      },
     );
   }
 }

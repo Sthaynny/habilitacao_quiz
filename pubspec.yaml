@@ -33,6 +33,7 @@ flutter:
   uses-material-design: true
 
   assets:
+    - google_fonts/
     - assets/imagens/
     - assets/json/
     - assets/learning/

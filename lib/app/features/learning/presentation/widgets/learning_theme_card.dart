@@ -35,6 +35,7 @@ class LearningThemeCard extends StatelessWidget {
             child: Padding(
               padding: EdgeInsets.all(AppSpacingStack.xxxSmall.value),
               child: Column(
+                mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Image.asset(

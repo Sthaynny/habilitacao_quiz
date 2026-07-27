@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:habilitacao_quiz/app/features/routes/routes.dart';
 import 'package:habilitacao_quiz/core/edition/app_edition.dart';
@@ -13,9 +14,9 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
 
   static const double _gradientHeight = 190;
   static const double _gradientTopLift = 20;
+  static const double _contentHeight = 180;
 
-  static double _toolbarHeight(double topInset) =>
-      topInset + _gradientHeight - _gradientTopLift;
+  static double _toolbarHeight(double topInset) => _contentHeight + topInset;
 
   static int _logoCachePx(BuildContext context) {
     return (90 * MediaQuery.devicePixelRatioOf(context)).round();
@@ -26,13 +27,18 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
     final topInset = MediaQuery.paddingOf(context).top;
     final toolbarHeight = _toolbarHeight(topInset);
 
-    return SizedBox(
-      height: toolbarHeight,
+    return AnnotatedRegion<SystemUiOverlayStyle>(
+      value: const SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent,
+        statusBarIconBrightness: Brightness.light,
+        statusBarBrightness: Brightness.dark,
+      ),
       child: Stack(
         clipBehavior: Clip.none,
         children: [
+          SizedBox(height: toolbarHeight),
           Positioned(
-            top: topInset - _gradientTopLift,
+            top: -_gradientTopLift,
             left: 0,
             right: 0,
             child: Container(
