@@ -17,6 +17,18 @@ class HistoricoListFilter {
   final String busca;
 
   static String normalizarBusca(String raw) => raw.trim().toLowerCase();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        other is HistoricoListFilter &&
+            tipo == other.tipo &&
+            desempenho == other.desempenho &&
+            busca == other.busca;
+  }
+
+  @override
+  int get hashCode => Object.hash(tipo, desempenho, busca);
 }
 
 List<ResultadoEntity> filtrarEOrdenarHistorico(

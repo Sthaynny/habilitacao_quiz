@@ -37,15 +37,24 @@ class DetalheSimuladoScreen extends StatelessWidget {
               itemCount: detalhes.length,
               separatorBuilder: (_, _) =>
                   SizedBox(height: AppSpacingStack.nano.value),
-              itemBuilder: (context, index) =>
-                  _PerguntaDetalheCard(index: index + 1, item: detalhes[index]),
+              itemBuilder: (context, index) => RepaintBoundary(
+                child: _PerguntaDetalheCard(
+                  key: ValueKey('detalhe-$index-${detalhes[index].perguntaTitulo}'),
+                  index: index + 1,
+                  item: detalhes[index],
+                ),
+              ),
             ),
     );
   }
 }
 
 class _PerguntaDetalheCard extends StatelessWidget {
-  const _PerguntaDetalheCard({required this.index, required this.item});
+  const _PerguntaDetalheCard({
+    super.key,
+    required this.index,
+    required this.item,
+  });
 
   final int index;
   final ResultadoPerguntaDetalheEntity item;

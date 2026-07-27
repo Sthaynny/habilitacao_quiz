@@ -28,7 +28,7 @@ class HistoricoMateriaDashboard extends StatelessWidget {
       final stats = agregarPercentualPorMateria(resultados);
       return _ProDashboard(stats: stats);
     }
-    return _FreeTeaser();
+    return const _FreeTeaser();
   }
 }
 
@@ -63,7 +63,14 @@ class _ProDashboard extends StatelessWidget {
               style: AppFontStyle.caption12Regular.setColor(AppColors.grey),
             ),
             SizedBox(height: AppSpacingStack.xxxSmall.value),
-            ...stats.map(_MateriaRow.new),
+            ListView.separated(
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              itemCount: stats.length,
+              separatorBuilder: (_, _) =>
+                  SizedBox(height: AppSpacingStack.nano.value),
+              itemBuilder: (context, index) => _MateriaRow(stats[index]),
+            ),
           ],
         ),
       ),
@@ -116,6 +123,8 @@ class _MateriaRow extends StatelessWidget {
 }
 
 class _FreeTeaser extends StatelessWidget {
+  const _FreeTeaser();
+
   @override
   Widget build(BuildContext context) {
     return Semantics(

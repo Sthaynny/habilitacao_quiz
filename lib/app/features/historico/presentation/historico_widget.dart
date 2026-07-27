@@ -6,15 +6,16 @@ import 'package:habilitacao_quiz/app/features/historico/domain/usecases/export_h
 import 'package:habilitacao_quiz/app/features/historico/domain/usecases/export_historico_backup_usecase.dart';
 import 'package:habilitacao_quiz/app/features/historico/domain/usecases/restaurar_historico_backup_usecase.dart';
 import 'package:habilitacao_quiz/app/features/historico/domain/services/ihistorico_backup_file_gateway.dart';
-import 'package:habilitacao_quiz/app/features/historico/presentation/components/linerar_progress.dart';
 import 'package:habilitacao_quiz/app/features/historico/presentation/detalhe_simulado_screen.dart';
+import 'package:habilitacao_quiz/app/features/historico/presentation/widgets/historico_filtro_chip.dart';
+import 'package:habilitacao_quiz/app/features/historico/presentation/widgets/historico_list_plus_footer.dart';
+import 'package:habilitacao_quiz/app/features/historico/presentation/widgets/historico_resultado_list_card.dart';
 import 'package:habilitacao_quiz/app/features/promo/presentation/widgets/habilitacao_quiz_plus_cta_banner.dart';
 import 'package:habilitacao_quiz/app/features/resultado/domain/resultado_entity.dart';
 import 'package:habilitacao_quiz/app/features/historico/presentation/historico_materia_dashboard.dart';
 import 'package:habilitacao_quiz/app/features/historico/presentation/historico_list_filter.dart';
 import 'package:habilitacao_quiz/app/features/routes/routes.dart';
 import 'package:habilitacao_quiz/app/shared/domain/services/pro_gate.dart';
-import 'package:habilitacao_quiz/core/analytics/promo_funnel_analytics.dart';
 import 'package:habilitacao_quiz/core/mixins/pop_up_mixin.dart';
 import 'package:habilitacao_quiz/core/components/button.dart';
 import 'package:habilitacao_quiz/core/styles/app_styles.dart';
@@ -40,6 +41,7 @@ class _HistoricoWidgetState extends State<HistoricoWidget> with PopUpMixin {
   final TextEditingController _buscaController = TextEditingController();
   bool _backupBusy = false;
   bool _isExporting = false;
+  late List<ResultadoEntity> _resultadosFiltrados;
 
   HistoricoEntity get historico => widget.historico;
 
@@ -52,8 +54,31 @@ class _HistoricoWidgetState extends State<HistoricoWidget> with PopUpMixin {
         busca: _isPro ? _buscaController.text : '',
       );
 
-  List<ResultadoEntity> get _resultadosFiltrados =>
-      filtrarEOrdenarHistorico(historico.resutados, _filtroAtivo);
+  @override
+  void initState() {
+    super.initState();
+    _atualizarResultadosFiltrados();
+  }
+
+  @override
+  void didUpdateWidget(covariant HistoricoWidget oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.historico != widget.historico) {
+      _atualizarResultadosFiltrados();
+    }
+  }
+
+  void _atualizarResultadosFiltrados() {
+    _resultadosFiltrados =
+        filtrarEOrdenarHistorico(historico.resutados, _filtroAtivo);
+  }
+
+  void _onFiltroAlterado(VoidCallback alterar) {
+    setState(() {
+      alterar();
+      _atualizarResultadosFiltrados();
+    });
+  }
 
   @override
   void dispose() {
@@ -116,36 +141,23 @@ class _HistoricoWidgetState extends State<HistoricoWidget> with PopUpMixin {
                 else
                   SliverList(
                     delegate: SliverChildBuilderDelegate(
-                      (context, index) => _buildResultCard(
-                        context,
-                        _resultadosFiltrados[index],
-                      ),
+                      (context, index) {
+                        final item = _resultadosFiltrados[index];
+                        return RepaintBoundary(
+                          key: ValueKey(item.id),
+                          child: HistoricoResultadoListCard(
+                            resultado: item,
+                            onTap: () => _onResultadoTap(context, item),
+                          ),
+                        );
+                      },
                       childCount: _resultadosFiltrados.length,
+                      addAutomaticKeepAlives: false,
+                      addRepaintBoundaries: false,
                     ),
                   ),
-                SliverToBoxAdapter(
-                  child: Padding(
-                    padding: EdgeInsets.only(
-                      top: AppSpacingStack.xxxSmall.value,
-                      bottom: AppSpacingStack.small.value,
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        Text(
-                          Strings.historicoPlusRodape,
-                          style: AppFontStyle.caption12Regular
-                              .setColor(AppColors.grey),
-                          textAlign: TextAlign.center,
-                        ),
-                        SizedBox(height: AppSpacingStack.nano.value),
-                        const HabilitacaoQuizPlusCtaBanner(
-                          compact: false,
-                          analyticsSurface: PromoSurface.historicoFooter,
-                        ),
-                      ],
-                    ),
-                  ),
+                const SliverToBoxAdapter(
+                  child: HistoricoListPlusFooter(),
                 ),
               ],
             ),
@@ -306,7 +318,7 @@ class _HistoricoWidgetState extends State<HistoricoWidget> with PopUpMixin {
       result.fold(
         (e) => Get.snackbar(Strings.historico, e.menssagem),
         (_) {
-          setState(() {});
+          setState(_atualizarResultadosFiltrados);
           Get.snackbar(
             Strings.historico,
             Strings.historicoBackupRestoreSucesso,
@@ -326,52 +338,28 @@ class _HistoricoWidgetState extends State<HistoricoWidget> with PopUpMixin {
       spacing: AppSpacingStack.nano.value,
       runSpacing: AppSpacingStack.nano.value,
       children: [
-        _chip(
+        HistoricoFiltroChip(
           label: Strings.historicoFiltroTodos,
           selected: _filtroTipo == HistoricoFiltroTipo.todos,
-          onSelected: () =>
-              setState(() => _filtroTipo = HistoricoFiltroTipo.todos),
+          onSelected: () => _onFiltroAlterado(
+            () => _filtroTipo = HistoricoFiltroTipo.todos,
+          ),
         ),
-        _chip(
+        HistoricoFiltroChip(
           label: Strings.historicoFiltroSimulados,
           selected: _filtroTipo == HistoricoFiltroTipo.simulados,
-          onSelected: () =>
-              setState(() => _filtroTipo = HistoricoFiltroTipo.simulados),
+          onSelected: () => _onFiltroAlterado(
+            () => _filtroTipo = HistoricoFiltroTipo.simulados,
+          ),
         ),
-        _chip(
+        HistoricoFiltroChip(
           label: Strings.historicoFiltroTemas,
           selected: _filtroTipo == HistoricoFiltroTipo.temas,
-          onSelected: () =>
-              setState(() => _filtroTipo = HistoricoFiltroTipo.temas),
+          onSelected: () => _onFiltroAlterado(
+            () => _filtroTipo = HistoricoFiltroTipo.temas,
+          ),
         ),
       ],
-    );
-  }
-
-  Widget _chip({
-    required String label,
-    required bool selected,
-    required VoidCallback onSelected,
-  }) {
-    return Semantics(
-      button: true,
-      selected: selected,
-      label: label,
-      child: FilterChip(
-        label: Text(label),
-        selected: selected,
-        onSelected: (_) => onSelected(),
-        showCheckmark: false,
-        selectedColor: AppColors.primary.withValues(alpha: 0.15),
-        labelStyle: AppFontStyle.caption12Regular.copyWith(
-          color: selected ? AppColors.primary : AppColors.grey,
-        ),
-        padding: EdgeInsets.symmetric(
-          horizontal: AppSpacingStack.nano.value,
-          vertical: AppSpacingStack.quarck.value,
-        ),
-        materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-      ),
     );
   }
 
@@ -381,7 +369,7 @@ class _HistoricoWidgetState extends State<HistoricoWidget> with PopUpMixin {
       label: Strings.historicoBuscaHint,
       child: TextField(
         controller: _buscaController,
-        onChanged: (_) => setState(() {}),
+        onChanged: (_) => _onFiltroAlterado(() {}),
         style: AppFontStyle.body14Regular,
         decoration: InputDecoration(
           hintText: Strings.historicoBuscaHint,
@@ -396,7 +384,7 @@ class _HistoricoWidgetState extends State<HistoricoWidget> with PopUpMixin {
                     icon: const Icon(Icons.clear, color: AppColors.grey),
                     onPressed: () {
                       _buscaController.clear();
-                      setState(() {});
+                      _onFiltroAlterado(() {});
                     },
                   ),
                 ),
@@ -427,24 +415,24 @@ class _HistoricoWidgetState extends State<HistoricoWidget> with PopUpMixin {
       spacing: AppSpacingStack.nano.value,
       runSpacing: AppSpacingStack.nano.value,
       children: [
-        _chip(
+        HistoricoFiltroChip(
           label: Strings.historicoFiltroDesempenhoTodos,
           selected: _filtroDesempenho == HistoricoFiltroDesempenho.todos,
-          onSelected: () => setState(
+          onSelected: () => _onFiltroAlterado(
             () => _filtroDesempenho = HistoricoFiltroDesempenho.todos,
           ),
         ),
-        _chip(
+        HistoricoFiltroChip(
           label: Strings.historicoFiltroAprovados,
           selected: _filtroDesempenho == HistoricoFiltroDesempenho.aprovados,
-          onSelected: () => setState(
+          onSelected: () => _onFiltroAlterado(
             () => _filtroDesempenho = HistoricoFiltroDesempenho.aprovados,
           ),
         ),
-        _chip(
+        HistoricoFiltroChip(
           label: Strings.historicoFiltroReprovados,
           selected: _filtroDesempenho == HistoricoFiltroDesempenho.reprovados,
-          onSelected: () => setState(
+          onSelected: () => _onFiltroAlterado(
             () => _filtroDesempenho = HistoricoFiltroDesempenho.reprovados,
           ),
         ),
@@ -569,110 +557,4 @@ class _HistoricoWidgetState extends State<HistoricoWidget> with PopUpMixin {
     );
   }
 
-  Widget _buildResultCard(BuildContext context, ResultadoEntity element) {
-    final percentualLabel = Strings.percentualHistorico(
-      percentual: element.percentual.toPrecision(2).toString(),
-    );
-    final dataLabel = Strings.historicoDataLabel(element.realizadoEm);
-    final badge = element.isSimulado
-        ? Strings.historicoBadgeSimulado
-        : Strings.historicoBadgeTema;
-
-    final cardLabel =
-        '${element.titulo}. $badge. $dataLabel. $percentualLabel '
-        '${element.totalRespostasCorretas} de ${element.totalPerguntas}';
-
-    return Semantics(
-      button: true,
-      label: cardLabel,
-      child: Material(
-        color: AppColors.white,
-        child: InkWell(
-          onTap: () => _onResultadoTap(context, element),
-          borderRadius: BorderRadius.circular(10),
-          child: Container(
-            padding: EdgeInsets.all(AppSpacingStack.xxxSmall.value),
-            margin: EdgeInsets.symmetric(vertical: AppSpacingStack.nano.value),
-            decoration: BoxDecoration(
-              border: const Border.fromBorderSide(
-                BorderSide(color: AppColors.border),
-              ),
-              borderRadius: BorderRadius.circular(10),
-            ),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        children: [
-                          _badgeChip(badge),
-                          if (dataLabel.isNotEmpty) ...[
-                            SizedBox(width: AppSpacingStack.nano.value),
-                            Text(
-                              dataLabel,
-                              style: AppFontStyle.caption12Regular
-                                  .setColor(AppColors.lightGrey),
-                            ),
-                          ],
-                        ],
-                      ),
-                      SizedBox(height: AppSpacingStack.nano.value),
-                      Text(
-                        element.titulo,
-                        style: AppFontStyle.body16Medium,
-                      ),
-                      Text(
-                        percentualLabel,
-                        style: AppFontStyle.caption12Regular
-                            .setColor(AppColors.grey),
-                      ),
-                    ],
-                  ),
-                ),
-                SizedBox(width: AppSpacingStack.xxxSmall.value),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    SizedBox(
-                      width: AppSpacingStack.large.value +
-                          AppSpacingStack.nano.value,
-                      child: LinearProgressIndicatorWidget(
-                        value: element.percentual / 100,
-                      ),
-                    ),
-                    SizedBox(height: AppSpacingStack.nano.value),
-                    Text(
-                      '${element.totalRespostasCorretas} de ${element.totalPerguntas}',
-                      style: AppFontStyle.caption12Regular
-                          .setColor(AppColors.lightGrey),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget _badgeChip(String text) {
-    return Container(
-      padding: EdgeInsets.symmetric(
-        horizontal: AppSpacingStack.nano.value,
-        vertical: AppSpacingStack.quarck.value,
-      ),
-      decoration: BoxDecoration(
-        color: AppColors.primary.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(6),
-      ),
-      child: Text(
-        text,
-        style: AppFontStyle.caption12Regular.setColor(AppColors.primary),
-      ),
-    );
-  }
 }

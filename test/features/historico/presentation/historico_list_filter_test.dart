@@ -125,4 +125,18 @@ void main() {
     );
     expect(out.map((e) => e.id).toList(), ['1']);
   });
+
+  test('HistoricoListFilter equality', () {
+    const a = HistoricoListFilter(
+      tipo: HistoricoFiltroTipo.simulados,
+      busca: 'x',
+    );
+    const b = HistoricoListFilter(
+      tipo: HistoricoFiltroTipo.simulados,
+      busca: 'x',
+    );
+    const c = HistoricoListFilter(busca: 'y');
+    expect(a, b);
+    expect(a == c, isFalse);
+  });
 }
