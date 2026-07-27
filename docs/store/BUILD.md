@@ -82,5 +82,5 @@ Após trocar plugins nativos (`file_picker`, `share_plus`, etc.), rode `flutter 
 ## Dependências nativas (Android)
 
 - **AGP 8+** (ver `android/settings.gradle`) exige `namespace` nos plugins; `file_picker` &lt; 8 quebra o Gradle.
-- **file_picker** ^11 e **share_plus** ^12 resolvem o grafo `win32` no host Windows (dev); não usar `dependency_overrides` em `win32` — quebra a compilação do `file_picker` no desktop.
-- Subir **share_plus** para ^13 quando **file_picker** publicar compatível com `win32` ^6.
+- **file_picker** ^11 (última **estável**; 12.x é só beta) e **share_plus** ^12 resolvem o grafo `win32` no host Windows (dev). Não usar `dependency_overrides` em `win32`.
+- Subir **share_plus** para ^13 quando **file_picker** publicar release estável com `win32` ^6.
