@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 
-class AlignedGrid extends StatefulWidget {
-  final List<Widget> children;
-  final double spacing;
-  final double runSpacing;
-
+class AlignedGrid extends StatelessWidget {
   const AlignedGrid({
     super.key,
     required this.children,
@@ -12,29 +8,18 @@ class AlignedGrid extends StatefulWidget {
     this.runSpacing = 4,
   });
 
-  @override
-  State<AlignedGrid> createState() => _AlignedGridState();
-}
-
-class _AlignedGridState extends State<AlignedGrid> {
-  late final int listSize;
-
-  @override
-  void didChangeDependencies() {
-    listSize = widget.children.length;
-    super.didChangeDependencies();
-  }
+  final List<Widget> children;
+  final double spacing;
+  final double runSpacing;
 
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Wrap(
-        runSpacing: widget.runSpacing,
-        spacing: widget.spacing,
+        runSpacing: runSpacing,
+        spacing: spacing,
         alignment: WrapAlignment.center,
-        children: List.generate(listSize, (index) {
-          return widget.children[index];
-        }),
+        children: children,
       ),
     );
   }

@@ -23,18 +23,33 @@ class CircularProgressWidget extends StatefulWidget {
 
 class _CircularProgressState extends State<CircularProgressWidget>
     with SingleTickerProviderStateMixin {
-  late AnimationController controller;
-  late Animation animation;
+  static const double _kSize = 36.0;
+  static const Size _kPaintSize = Size(_kSize, _kSize);
 
-  final kSize = 36.0;
+  late final AnimationController controller;
+  late final Animation<double> rotation;
+  late Color secondaryColorFaded;
 
   @override
   void initState() {
     super.initState();
+    secondaryColorFaded = widget.secondaryColor.withValues(alpha: 0.1);
     controller = AnimationController(
       vsync: this,
       duration: Duration(milliseconds: widget.lapDuration),
     )..repeat();
+    rotation = Tween<double>(begin: 0.0, end: 1.0).animate(controller);
+  }
+
+  @override
+  void didUpdateWidget(CircularProgressWidget oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.lapDuration != widget.lapDuration) {
+      controller.duration = Duration(milliseconds: widget.lapDuration);
+    }
+    if (oldWidget.secondaryColor != widget.secondaryColor) {
+      secondaryColorFaded = widget.secondaryColor.withValues(alpha: 0.1);
+    }
   }
 
   @override
@@ -46,14 +61,14 @@ class _CircularProgressState extends State<CircularProgressWidget>
   @override
   Widget build(BuildContext context) {
     return RotationTransition(
-      turns: Tween(begin: 0.0, end: 1.0).animate(controller),
+      turns: rotation,
       child: CustomPaint(
         painter: CirclePaint(
-          secondaryColor: widget.secondaryColor.withValues(alpha: 0.1),
+          secondaryColor: secondaryColorFaded,
           primaryColor: widget.primaryColor,
           strokeWidth: widget.strokeWidth,
         ),
-        size: Size(kSize, kSize),
+        size: _kPaintSize,
       ),
     );
   }
@@ -107,7 +122,9 @@ class CirclePaint extends CustomPainter {
 
   @override
   bool shouldRepaint(CirclePaint oldDelegate) {
-    return true;
+    return oldDelegate.primaryColor != primaryColor ||
+        oldDelegate.secondaryColor != secondaryColor ||
+        oldDelegate.strokeWidth != strokeWidth;
   }
 
   Color lighten(Color color, [double amount = .1]) {

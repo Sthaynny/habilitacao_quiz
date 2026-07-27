@@ -4,9 +4,12 @@ import 'package:habilitacao_quiz/core/styles/app_styles.dart';
 import 'package:habilitacao_quiz/core/styles/consts.dart';
 import 'package:habilitacao_quiz/core/styles/spacing_stack.dart';
 
-EdgeInsetsGeometry get _padding => EdgeInsets.symmetric(
-    vertical: AppSpacingStack.nano.value,
-    horizontal: AppSpacingStack.nano.value);
+final EdgeInsetsGeometry _padding = EdgeInsets.symmetric(
+  vertical: AppSpacingStack.nano.value,
+  horizontal: AppSpacingStack.nano.value,
+);
+
+final BorderRadius _buttonBorderRadius = BorderRadius.circular(border12Radius);
 
 Color? _colorBorderPrimery(bool isAble) =>
     isAble ? AppColors.primary : AppColors.lightGrey;
@@ -65,7 +68,7 @@ class AppButton extends StatelessWidget {
       margin: margin,
       buttonStyle: BoxDecoration(
         color: cor ?? _colorBorderPrimery(onPressed != null),
-        borderRadius: BorderRadius.circular(border12Radius),
+        borderRadius: _buttonBorderRadius,
       ),
       child: Container(
         width: expanded ? double.maxFinite : null,
@@ -96,7 +99,7 @@ class AppButton extends StatelessWidget {
       margin: margin,
       buttonStyle: BoxDecoration(
         color: _colorButtonOutline(onPressed != null),
-        borderRadius: BorderRadius.circular(border12Radius),
+        borderRadius: _buttonBorderRadius,
         border: Border.all(
           width: 1,
           color: color ?? AppColors.lightGrey,
@@ -128,7 +131,7 @@ class AppButton extends StatelessWidget {
       margin: margin,
       buttonStyle: BoxDecoration(
         color: Colors.transparent,
-        borderRadius: BorderRadius.circular(border12Radius),
+        borderRadius: _buttonBorderRadius,
       ),
       child: Container(
         width: expanded ? double.maxFinite : null,
@@ -157,7 +160,7 @@ class AppButton extends StatelessWidget {
       margin: margin,
       buttonStyle: BoxDecoration(
         color: cor ?? _colorBorderSecundary(onPressed != null),
-        borderRadius: BorderRadius.circular(border12Radius),
+        borderRadius: _buttonBorderRadius,
       ),
       child: Container(
         width: expanded ? double.maxFinite : null,
