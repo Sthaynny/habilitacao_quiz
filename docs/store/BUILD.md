@@ -64,3 +64,23 @@ flutter test test/features/historico/domain/entities/historico_entity_test.dart
 ```
 
 Checklist manual: [SMOKE_PRO.md](./SMOKE_PRO.md).
+
+## VS Code / Cursor (debug)
+
+Perfis em [.vscode/launch.json](../../.vscode/launch.json):
+
+| Configuração | Uso |
+| :--- | :--- |
+| **Free (Android)** | `--flavor free` |
+| **Free (Android) · loja + publicada** | Free + `HABILITACAO_QUIZ_PRO_PUBLISHED=true` (CTA abre a Play do **+**) |
+| **Pro (Android)** | `--flavor pro` + `HABILITACAO_QUIZ_PRO=true` |
+| **Pro (iOS / sem flavor)** | Só `HABILITACAO_QUIZ_PRO=true` (iOS ainda sem flavor no Gradle) |
+| **Dart: Run all Tests** | `test/` inteiro |
+
+Após trocar plugins nativos (`file_picker`, `share_plus`, etc.), rode `flutter clean && flutter pub get` antes do próximo run.
+
+## Dependências nativas (Android)
+
+- **AGP 8+** (ver `android/settings.gradle`) exige `namespace` nos plugins; `file_picker` &lt; 8 quebra o Gradle.
+- **file_picker** ^11 e **share_plus** ^12 resolvem o grafo `win32` no host Windows (dev); não usar `dependency_overrides` em `win32` — quebra a compilação do `file_picker` no desktop.
+- Subir **share_plus** para ^13 quando **file_picker** publicar compatível com `win32` ^6.

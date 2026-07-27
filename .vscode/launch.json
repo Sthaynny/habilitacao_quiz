@@ -1,19 +1,44 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "name": "habilitacao_quiz",
-            "request": "launch",
-            "type": "dart"
-        },
-        {
-            "name": "Dart: Run all Tests",
-            "type": "dart",
-            "request": "launch",
-            "program": "./test/"
-        }
-    ]
+  // Perfis alinhados a docs/store/BUILD.md (flavors Android + dart-defines Pro/publicado).
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Free (Android)",
+      "request": "launch",
+      "type": "dart",
+      "args": ["--flavor", "free"]
+    },
+    {
+      "name": "Free (Android) · loja + publicada",
+      "request": "launch",
+      "type": "dart",
+      "args": [
+        "--flavor",
+        "free",
+        "--dart-define=HABILITACAO_QUIZ_PRO_PUBLISHED=true"
+      ]
+    },
+    {
+      "name": "Pro (Android)",
+      "request": "launch",
+      "type": "dart",
+      "args": [
+        "--flavor",
+        "pro",
+        "--dart-define=HABILITACAO_QUIZ_PRO=true"
+      ]
+    },
+    {
+      "name": "Pro (iOS / sem flavor)",
+      "request": "launch",
+      "type": "dart",
+      "args": ["--dart-define=HABILITACAO_QUIZ_PRO=true"]
+    },
+    {
+      "name": "Dart: Run all Tests",
+      "type": "dart",
+      "request": "launch",
+      "program": "./test/"
+    }
+  ]
 }
