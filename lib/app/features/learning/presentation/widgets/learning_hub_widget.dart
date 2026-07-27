@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:habilitacao_quiz/app/features/learning/domain/learning_theme_id.dart';
 import 'package:habilitacao_quiz/app/features/learning/presentation/controller/learning_controller.dart';
+import 'package:habilitacao_quiz/app/features/learning/presentation/widgets/learning_hub_hero.dart';
+import 'package:habilitacao_quiz/app/features/learning/presentation/widgets/learning_study_tool_tile.dart';
+import 'package:habilitacao_quiz/app/features/learning/presentation/widgets/learning_theme_card.dart';
+import 'package:habilitacao_quiz/app/features/learning/presentation/widgets/learning_theme_visuals.dart';
 import 'package:habilitacao_quiz/app/features/promo/presentation/widgets/habilitacao_quiz_plus_cta_banner.dart';
 import 'package:habilitacao_quiz/app/features/routes/routes.dart';
 import 'package:habilitacao_quiz/core/components/button.dart';
@@ -32,11 +36,8 @@ class LearningHubWidget extends StatelessWidget {
         child: ListView(
           padding: EdgeInsets.all(AppSpacingStack.xxxSmall.value),
           children: [
-            Text(
-              Strings.aprenderHubTitulo,
-              style: AppFontStyle.headline20Bold,
-            ),
-            SizedBox(height: AppSpacingStack.quarck.value),
+            const LearningHubHero(),
+            SizedBox(height: AppSpacingStack.nano.value),
             Text(
               Strings.avisoLegalTexto,
               style: AppFontStyle.body14Regular.setColor(AppColors.grey),
@@ -45,46 +46,77 @@ class LearningHubWidget extends StatelessWidget {
               SizedBox(height: AppSpacingStack.xxxSmall.value),
               const HabilitacaoQuizPlusCtaBanner(),
             ],
-            SizedBox(height: AppSpacingStack.xxxSmall.value),
+            SizedBox(height: AppSpacingStack.xxSmall.value),
             Text(
               Strings.aprenderTemasTitulo,
               style: AppFontStyle.body16Bold,
             ),
-            ...manifest.themes.map((theme) {
-              final label =
-                  theme.learningTheme?.displayTitle ?? theme.id;
-              return ListTile(
-                title: Text(label, style: AppFontStyle.body16Regular),
-                trailing: const Icon(Icons.chevron_right),
-                onTap: () => Get.toNamed(
-                  Routes.aprenderTema,
-                  arguments: theme.id,
-                ),
-              );
-            }),
-            SizedBox(height: AppSpacingStack.xxxSmall.value),
-            AppButton.primary(
-              Strings.aprenderTrilha,
-              onPressed: () => Get.toNamed(Routes.aprenderTrilha),
+            SizedBox(height: AppSpacingStack.nano.value),
+            GridView.builder(
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                crossAxisSpacing: AppSpacingStack.nano.value,
+                mainAxisSpacing: AppSpacingStack.nano.value,
+                childAspectRatio: 0.82,
+              ),
+              itemCount: manifest.themes.length,
+              itemBuilder: (context, index) {
+                final theme = manifest.themes[index];
+                final label =
+                    theme.learningTheme?.displayTitle ?? theme.id;
+                return LearningThemeCard(
+                  title: label,
+                  subtitle: LearningThemeVisuals.teaser(theme.id),
+                  imageAsset: LearningThemeVisuals.imageAsset(theme.id),
+                  onTap: () => Get.toNamed(
+                    Routes.aprenderTema,
+                    arguments: theme.id,
+                  ),
+                );
+              },
             ),
-            SizedBox(height: AppSpacingStack.quarck.value),
-            AppButton.secundary(
-              Strings.aprenderFichas,
-              onPressed: () => Get.toNamed(Routes.aprenderFichas),
+            SizedBox(height: AppSpacingStack.xxSmall.value),
+            Text(
+              Strings.aprenderFerramentasEstudo,
+              style: AppFontStyle.body16Bold,
             ),
-            SizedBox(height: AppSpacingStack.quarck.value),
-            AppButton.secundary(
-              Strings.aprenderMapa,
-              onPressed: () => Get.toNamed(Routes.aprenderMapa),
+            SizedBox(height: AppSpacingStack.nano.value),
+            LearningStudyToolTile(
+              title: Strings.aprenderTrilha,
+              subtitle: Strings.aprenderTrilhaSubtitulo,
+              icon: Icons.route_outlined,
+              accentColor: AppColors.primary,
+              onTap: () => Get.toNamed(Routes.aprenderTrilha),
+            ),
+            SizedBox(height: AppSpacingStack.nano.value),
+            LearningStudyToolTile(
+              title: Strings.aprenderFichas,
+              subtitle: Strings.aprenderFichasSubtitulo,
+              icon: Icons.style_outlined,
+              accentColor: AppColors.blue,
+              onTap: () => Get.toNamed(Routes.aprenderFichas),
+            ),
+            SizedBox(height: AppSpacingStack.nano.value),
+            LearningStudyToolTile(
+              title: Strings.aprenderMapa,
+              subtitle: Strings.aprenderMapaSubtitulo,
+              icon: Icons.insights_outlined,
+              accentColor: AppColors.darkGreen,
+              onTap: () => Get.toNamed(Routes.aprenderMapa),
             ),
             if (controller.proGate.podeRevisaoEspacada) ...[
-              SizedBox(height: AppSpacingStack.quarck.value),
-              AppButton.secundary(
-                Strings.revisaoEspacada,
-                onPressed: () => Get.toNamed(Routes.aprenderRevisao),
+              SizedBox(height: AppSpacingStack.nano.value),
+              LearningStudyToolTile(
+                title: Strings.revisaoEspacada,
+                subtitle: Strings.revisaoEspacadaDescricao,
+                icon: Icons.replay_outlined,
+                accentColor: AppColors.purple,
+                onTap: () => Get.toNamed(Routes.aprenderRevisao),
               ),
             ],
-            SizedBox(height: AppSpacingStack.quarck.value),
+            SizedBox(height: AppSpacingStack.xxxSmall.value),
             AppButton.link(
               Strings.fontesOficiais,
               onPressed: () => Get.toNamed(Routes.legalNotice),

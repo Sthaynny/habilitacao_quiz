@@ -3,6 +3,9 @@ import 'package:flutter_markdown_plus/flutter_markdown_plus.dart';
 import 'package:get/get.dart';
 import 'package:habilitacao_quiz/app/features/learning/domain/entities/learning_entities.dart';
 import 'package:habilitacao_quiz/app/features/learning/domain/usecases/learning_usecases.dart';
+import 'package:habilitacao_quiz/app/features/learning/presentation/widgets/learning_markdown_styles.dart';
+import 'package:habilitacao_quiz/app/features/learning/presentation/widgets/learning_section_card.dart';
+import 'package:habilitacao_quiz/app/features/learning/presentation/widgets/learning_study_tool_tile.dart';
 import 'package:habilitacao_quiz/app/features/routes/routes.dart';
 import 'package:habilitacao_quiz/app/shared/domain/services/pro_gate.dart';
 import 'package:habilitacao_quiz/core/styles/app_styles.dart';
@@ -47,25 +50,23 @@ class _LearningFichasScreenState extends State<LearningFichasScreen> {
       ),
       body: _loading
           ? const Center(child: CircularProgressIndicator())
-          : ListView.builder(
+          : ListView.separated(
               padding: EdgeInsets.all(AppSpacingStack.xxxSmall.value),
               itemCount: _fichas.length,
+              separatorBuilder: (_, _) =>
+                  SizedBox(height: AppSpacingStack.nano.value),
               itemBuilder: (context, index) {
                 final ficha = _fichas[index];
                 final locked =
                     ficha.proOnly && !proGate.podeFichasProLearning;
-                return ListTile(
-                  title: Text(ficha.title, style: AppFontStyle.body16Regular),
+                return LearningStudyToolTile(
+                  title: ficha.title,
                   subtitle: locked
-                      ? Text(
-                          Strings.aprenderFichaPro,
-                          style: AppFontStyle.body14Regular
-                              .setColor(AppColors.grey),
-                        )
-                      : null,
-                  trailing: locked
-                      ? const Icon(Icons.lock_outline)
-                      : const Icon(Icons.chevron_right),
+                      ? Strings.aprenderFichaPro
+                      : Strings.aprenderLerConteudo,
+                  icon: Icons.article_outlined,
+                  accentColor: AppColors.blue,
+                  trailingLocked: locked,
                   onTap: () {
                     if (locked) {
                       Get.toNamed(Routes.habilitacaoQuizPlus);
@@ -128,7 +129,13 @@ class _LearningFichaScreenState extends State<LearningFichaScreen> {
           ? const Center(child: CircularProgressIndicator())
           : SingleChildScrollView(
               padding: EdgeInsets.all(AppSpacingStack.xxxSmall.value),
-              child: MarkdownBody(data: _markdown ?? ''),
+              child: LearningSectionCard(
+                overline: Strings.aprenderFichas,
+                child: MarkdownBody(
+                  data: _markdown ?? '',
+                  styleSheet: LearningMarkdownStyles.sheet(),
+                ),
+              ),
             ),
     );
   }

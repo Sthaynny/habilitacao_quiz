@@ -156,7 +156,21 @@ abstract class Strings {
 
   static const aprender = 'Aprender';
   static const aprenderHubTitulo = 'Área de aprendizado';
+  static const aprenderHubSubtitulo =
+      'Leia o essencial de cada matéria e depois teste no quiz.';
   static const aprenderTemasTitulo = 'Temas da prova';
+  static const aprenderFerramentasEstudo = 'Ferramentas de estudo';
+  static const aprenderLerConteudo = 'Resumo e artigo';
+  static const aprenderConteudoIndisponivel =
+      'Não foi possível carregar este tema. Volte e tente de novo.';
+  static const aprenderTeaserLegislacao = 'CTB, normas e placas';
+  static const aprenderTeaserDirecaoDefensiva = 'Antecipe riscos na via';
+  static const aprenderTeaserMecanicaBasica = 'Pneus, freios e revisão';
+  static const aprenderTeaserPrimeirosSocorros = 'SAMU e segurança no local';
+  static const aprenderTeaserMeioAmbiente = 'Poluição e condução consciente';
+  static const aprenderTrilhaSubtitulo = 'Passo a passo do básico ao quiz';
+  static const aprenderFichasSubtitulo = 'Placas e lembretes visuais';
+  static const aprenderMapaSubtitulo = 'Veja onde você está forte ou fraco';
   static const aprenderTrilha = 'Trilha de estudos';
   static const aprenderFichas = 'Fichas rápidas';
   static const aprenderMapa = 'Mapa de competências';

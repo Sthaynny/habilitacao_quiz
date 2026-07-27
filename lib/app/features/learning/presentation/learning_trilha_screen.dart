@@ -8,6 +8,7 @@ import 'package:habilitacao_quiz/app/features/learning/presentation/controller/l
 import 'package:habilitacao_quiz/app/features/routes/routes.dart';
 import 'package:habilitacao_quiz/app/shared/domain/services/pro_gate.dart';
 import 'package:habilitacao_quiz/core/styles/app_styles.dart';
+import 'package:habilitacao_quiz/core/styles/consts.dart';
 import 'package:habilitacao_quiz/core/styles/spacing_stack.dart';
 import 'package:habilitacao_quiz/core/utils/strings.dart';
 
@@ -115,16 +116,35 @@ class _LearningTrilhaScreenState extends State<LearningTrilhaScreen> {
                     onStepTap: (s) =>
                         _onStepTap(s, _completa!, _progressoCompleta),
                   )
-                else ...[
-                  Text(
-                    Strings.aprenderTrilhaCompletaPreview,
-                    style: AppFontStyle.body14Regular.setColor(AppColors.grey),
+                else
+                  DecoratedBox(
+                    decoration: BoxDecoration(
+                      color: AppColors.lightPurple.withValues(alpha: 0.08),
+                      borderRadius: BorderRadius.circular(border12Radius),
+                      border: const Border.fromBorderSide(
+                        BorderSide(color: AppColors.border),
+                      ),
+                    ),
+                    child: Padding(
+                      padding: EdgeInsets.all(AppSpacingStack.xxxSmall.value),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          Text(
+                            Strings.aprenderTrilhaCompletaPreview,
+                            style: AppFontStyle.body14Regular
+                                .setColor(AppColors.grey),
+                          ),
+                          SizedBox(height: AppSpacingStack.nano.value),
+                          TextButton(
+                            onPressed: () =>
+                                Get.toNamed(Routes.habilitacaoQuizPlus),
+                            child: Text(Strings.plusVerNaLoja),
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
-                  TextButton(
-                    onPressed: () => Get.toNamed(Routes.habilitacaoQuizPlus),
-                    child: Text(Strings.plusVerNaLoja),
-                  ),
-                ],
               ],
             ),
     );
@@ -144,24 +164,83 @@ class _TrilhaSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(trilha.title, style: AppFontStyle.body16Bold),
-        ...trilha.steps.map(
-          (step) {
-            final done = progresso.contains(step.id);
-            return ListTile(
-              leading: Icon(
-                done ? Icons.check_circle : Icons.radio_button_unchecked,
-                color: done ? AppColors.primary : AppColors.grey,
+    final total = trilha.steps.length;
+    final doneCount =
+        trilha.steps.where((s) => progresso.contains(s.id)).length;
+
+    return DecoratedBox(
+      decoration: BoxDecoration(
+        color: AppColors.white,
+        borderRadius: BorderRadius.circular(border12Radius),
+        border: const Border.fromBorderSide(BorderSide(color: AppColors.border)),
+      ),
+      child: Padding(
+        padding: EdgeInsets.all(AppSpacingStack.xxxSmall.value),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Text(trilha.title, style: AppFontStyle.body16Bold),
+            SizedBox(height: AppSpacingStack.quarck.value),
+            Text(
+              '$doneCount de $total passos',
+              style: AppFontStyle.caption12Regular.setColor(AppColors.grey),
+            ),
+            SizedBox(height: AppSpacingStack.nano.value),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(4),
+              child: LinearProgressIndicator(
+                value: total == 0 ? 0 : doneCount / total,
+                minHeight: 6,
+                backgroundColor: AppColors.border,
+                color: AppColors.primary,
               ),
-              title: Text(step.title, style: AppFontStyle.body16Regular),
-              onTap: () => onStepTap(step),
-            );
-          },
+            ),
+            SizedBox(height: AppSpacingStack.nano.value),
+            ...trilha.steps.map(
+              (step) {
+                final done = progresso.contains(step.id);
+                return Semantics(
+                  button: true,
+                  label: step.title,
+                  child: Material(
+                    color: Colors.transparent,
+                    child: InkWell(
+                      onTap: () => onStepTap(step),
+                      borderRadius: BorderRadius.circular(8),
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(
+                          vertical: AppSpacingStack.nano.value,
+                        ),
+                        child: Row(
+                          children: [
+                            Icon(
+                              done
+                                  ? Icons.check_circle
+                                  : Icons.radio_button_unchecked,
+                              color: done ? AppColors.primary : AppColors.grey,
+                            ),
+                            SizedBox(width: AppSpacingStack.nano.value),
+                            Expanded(
+                              child: Text(
+                                step.title,
+                                style: AppFontStyle.body16Regular,
+                              ),
+                            ),
+                            const Icon(
+                              Icons.chevron_right,
+                              color: AppColors.grey,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                );
+              },
+            ),
+          ],
         ),
-      ],
+      ),
     );
   }
 }
