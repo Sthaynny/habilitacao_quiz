@@ -95,6 +95,8 @@ class _LearningFichaScreenState extends State<LearningFichaScreen> {
   String _title = '';
   bool _loading = true;
 
+  final MarkdownStyleSheet _markdownStyle = LearningMarkdownStyles.sheet();
+
   @override
   void initState() {
     super.initState();
@@ -133,7 +135,7 @@ class _LearningFichaScreenState extends State<LearningFichaScreen> {
                 overline: Strings.aprenderFichas,
                 child: MarkdownBody(
                   data: _markdown ?? '',
-                  styleSheet: LearningMarkdownStyles.sheet(),
+                  styleSheet: _markdownStyle,
                 ),
               ),
             ),

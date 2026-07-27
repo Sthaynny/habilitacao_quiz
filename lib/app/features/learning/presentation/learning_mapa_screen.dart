@@ -17,6 +17,8 @@ class LearningMapaScreen extends StatelessWidget {
     final historico = Get.find<HistoricoEntity>();
     final mapa = controller.mapaUsecase(historico);
 
+    final introItemCount = mapa.dinamico ? 2 : 3;
+
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -24,23 +26,31 @@ class LearningMapaScreen extends StatelessWidget {
           style: AppFontStyle.headline20Bold,
         ),
       ),
-      body: ListView(
+      body: ListView.builder(
         padding: EdgeInsets.all(AppSpacingStack.xxxSmall.value),
-        children: [
-          Text(
-            mapa.dinamico
-                ? Strings.aprenderMapaDinamico
-                : Strings.aprenderMapaPreview,
-            style: AppFontStyle.body14Regular.setColor(AppColors.grey),
-          ),
-          if (!mapa.dinamico)
-            TextButton(
+        itemCount: introItemCount + mapa.materias.length,
+        itemBuilder: (context, index) {
+          if (index == 0) {
+            return Text(
+              mapa.dinamico
+                  ? Strings.aprenderMapaDinamico
+                  : Strings.aprenderMapaPreview,
+              style: AppFontStyle.body14Regular.setColor(AppColors.grey),
+            );
+          }
+          if (!mapa.dinamico && index == 1) {
+            return TextButton(
               onPressed: () => Get.toNamed(Routes.habilitacaoQuizPlus),
               child: Text(Strings.plusVerNaLoja),
-            ),
-          SizedBox(height: AppSpacingStack.xxxSmall.value),
-          ...mapa.materias.map((m) => _MateriaBar(materia: m)),
-        ],
+            );
+          }
+          final spacerIndex = mapa.dinamico ? 1 : 2;
+          if (index == spacerIndex) {
+            return SizedBox(height: AppSpacingStack.xxxSmall.value);
+          }
+          final materia = mapa.materias[index - introItemCount];
+          return _MateriaBar(materia: materia);
+        },
       ),
     );
   }

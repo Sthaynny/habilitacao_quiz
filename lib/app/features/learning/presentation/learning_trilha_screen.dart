@@ -196,8 +196,14 @@ class _TrilhaSection extends StatelessWidget {
               ),
             ),
             SizedBox(height: AppSpacingStack.nano.value),
-            ...trilha.steps.map(
-              (step) {
+            ListView.separated(
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              itemCount: trilha.steps.length,
+              separatorBuilder: (_, _) =>
+                  SizedBox(height: AppSpacingStack.quarck.value),
+              itemBuilder: (context, index) {
+                final step = trilha.steps[index];
                 final done = progresso.contains(step.id);
                 return Semantics(
                   button: true,
