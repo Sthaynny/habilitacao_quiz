@@ -93,9 +93,13 @@ class _HabilitacaoQuizPlusContent extends StatelessWidget {
         leading: Semantics(
           button: true,
           label: Strings.fechar,
+          hint: Strings.voltar,
           child: IconButton(
             icon: const Icon(Icons.close),
             tooltip: Strings.fechar,
+            style: IconButton.styleFrom(
+              minimumSize: const Size(48, 48),
+            ),
             onPressed: Get.back,
           ),
         ),

@@ -129,6 +129,7 @@ class _FreeTeaser extends StatelessWidget {
   Widget build(BuildContext context) {
     return Semantics(
       container: true,
+      explicitChildNodes: true,
       label: Strings.historicoDashboardMateriaFreeTitulo,
       child: Container(
         width: double.infinity,
@@ -151,9 +152,15 @@ class _FreeTeaser extends StatelessWidget {
               style: AppFontStyle.caption12Regular.setColor(AppColors.grey),
             ),
             SizedBox(height: AppSpacingStack.xxxSmall.value),
-            AppButton.primary(
-              Strings.plusVerNaLoja,
-              onPressed: () => Get.toNamed(Routes.habilitacaoQuizPlus),
+            Semantics(
+              button: true,
+              label: Strings.plusVerNaLoja,
+              hint: Strings.plusBannerHint,
+              excludeSemantics: true,
+              child: AppButton.primary(
+                Strings.plusVerNaLoja,
+                onPressed: () => Get.toNamed(Routes.habilitacaoQuizPlus),
+              ),
             ),
             SizedBox(height: AppSpacingStack.nano.value),
             const HabilitacaoQuizPlusCtaBanner(

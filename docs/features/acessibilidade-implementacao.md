@@ -31,6 +31,15 @@ Protocolo completo: [git-commit-protocol.md](../engineering/git-commit-protocol.
 
 Sincronizar com [A_FAZER.md](../tasks/A_FAZER.md) quando a feature ainda não existir no código: implementar a11y no mesmo lote do agente `feature-*` ou voltar com `feature-a11y-implementer` após o merge funcional.
 
+## Status por doc (implementação)
+
+| Doc | ID | Data | Commit sugerido |
+| :--- | :--- | :--- | :--- |
+| [promocao-quiz-plus.md](./promocao-quiz-plus.md) | A11Y-PROMO | 2026-07-30 | `a11y(promo): semantics e 48dp nos CTAs Quiz+` |
+| [modelo-free-pro.md](./modelo-free-pro.md) | A11Y-GATE | — | pendente |
+| [historico-simulados.md](./historico-simulados.md) | A11Y-HIST | — | pendente |
+| [area-aprendizado.md](./area-aprendizado.md) | A11Y-LEARN | — | pendente |
+
 ## Critérios de pronto (por doc)
 
 - [ ] Ícones e banners com `Semantics` ou equivalente em componente compartilhado  

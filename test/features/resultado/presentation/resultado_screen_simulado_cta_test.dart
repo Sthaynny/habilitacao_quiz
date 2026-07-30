@@ -1,5 +1,4 @@
-import 'package:flutter_test/flutter_test.dart';
-import 'package:get/get.dart';
+import 'package:flutter_test/flutter_test.dart';import 'package:get/get.dart';
 import 'package:habilitacao_quiz/app/features/promo/presentation/widgets/habilitacao_quiz_plus_cta_banner.dart';
 import 'package:habilitacao_quiz/app/features/resultado/domain/resultado_entity.dart';
 import 'package:habilitacao_quiz/app/features/resultado/domain/tipo_resultado.dart';
@@ -36,6 +35,9 @@ void main() {
 
     expect(find.text(Strings.resultadoSimuladoFreeCta), findsOneWidget);
     expect(find.byType(HabilitacaoQuizPlusCtaBanner), findsOneWidget);
+
+    final header = tester.getSemantics(find.text(Strings.resultadoSimuladoFreeCta));
+    expect(header.flagsCollection.isHeader, isTrue);
   });
 
   testWidgets('Free tema não mostra CTA de simulado', (tester) async {

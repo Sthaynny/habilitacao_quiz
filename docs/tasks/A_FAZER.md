@@ -1,75 +1,107 @@
 # Tarefas a fazer — Habilitação Quiz
 
-**Última atualização:** 26 de julho de 2026  
+**Última atualização:** 30 de julho de 2026  
 **Prioridades:** [PRIORIDADES.md](../planning/PRIORIDADES.md) · **Roadmap:** [ROADMAP.md](../planning/ROADMAP.md)
 
 ### Como usar
 
 1. Ler **Objetivo** e **Critério de pronto**.
 2. Seguir **Pistas** (código / doc).
-3. Ao concluir: mover para [FINALIZADAS.md](./FINALIZADAS.md).
+3. Disparar o **subagente** da tabela em [AGENTS.md](../../AGENTS.md).
+4. Ao concluir: mover para [FINALIZADAS.md](./FINALIZADAS.md).
+
+---
+
+## Status geral (jul/2026)
+
+| Onda | Épico | Código | Agente |
+| :---: | :--- | :---: | :--- |
+| 1 | GATE + PROMO | ✅ | `feature-gate-store`, `feature-promo` |
+| 2 | HIST | ✅ | `feature-historico` |
+| 3 | LEARN + T26–T28 | ✅ (T28 conteúdo parcial) | `feature-aprendizado`, `feature-conteudo-questoes` |
+| — | Publicação loja | ⏳ operacional | `feature-store-publish` |
+| — | Acessibilidade | ⏳ por épico | `feature-a11y-implementer` |
+| 4 | IA | 🔒 bloqueado | `feature-ia-pro` (readonly) |
+
+`flutter analyze` limpo · **105** testes passando (jul/2026).
 
 ---
 
 ## Produto / documentação
 
-| ID | Objetivo | Critério de pronto | Pistas |
+| ID | Objetivo | Critério de pronto | Agente |
 | :--- | :--- | :--- | :--- |
-| T01 | Aprovar matriz Free/Pro e preço **+** | Decisão registrada | [PRODUCT_PLAN](../product/PRODUCT_PLAN.md) |
+| T01 | Aprovar matriz Free/Pro e preço **+** | Decisão registrada em PRODUCT_PLAN | `hq-orchestrator` |
 
 ---
 
-## [GATE] + [STORE] — Fundação
+## [STORE-PUB] — Publicação Free e Quiz+
 
-_Tarefas T02–T09 e T15–T20 concluídas em 26/07/2026 — ver [FINALIZADAS.md](./FINALIZADAS.md)._
+_Código T02–T20 concluído — ver [FINALIZADAS.md](./FINALIZADAS.md). Falta validação e loja._
 
----
-
-## [PROMO] — Promo Quiz+
-
-_Tarefas HQ-P01–HQ-P13 e T31 concluídas em 26/07/2026 — ver [FINALIZADAS.md](./FINALIZADAS.md)._
-
-Doc: [promocao-quiz-plus.md](../features/promocao-quiz-plus.md)
-
----
-
-## [HIST] — Histórico e simulados
-
-_Tarefas HQ-H01–HQ-H12, T21–T25 concluídas em 26/07/2026 — ver [FINALIZADAS.md](./FINALIZADAS.md)._
-
-Doc: [historico-simulados.md](../features/historico-simulados.md)
-
----
-
-## [IA] — Inteligência Pro
-
-| ID | Objetivo | Critério de pronto | Pistas |
+| ID | Objetivo | Critério de pronto | Agente |
 | :--- | :--- | :--- | :--- |
-| HQ-I01 | Schema JSON `id`, `explicacao`, `referencia_ctb` | Retrocompatível | — |
-| HQ-I02 | Curar ~40 explicações | Legislação + dir. defensiva | — |
-| HQ-I03 | `AiQuotaService` + ProGate | Só Pro | — |
-| HQ-I04 | UI “Explicar resposta” | Estados loading/offline | revisão P05 |
-| HQ-I05 | Disclaimer 1ª uso IA | Tela curta | — |
-| HQ-I06 | Proxy + App Check + rate limit | Sem chave no app | Cloud Function |
-| HQ-I07 | `ExplainAnswerRepository` + cache | Testes | — |
-| HQ-I08 | Validação fontes allowlist | Proxy | — |
-| HQ-I09 | Analytics IA | Eventos básicos | — |
-| HQ-I10 | Privacidade IA | Data safety | — |
-| HQ-I11 | `SessaoDetalhada` erros por questão | Pro | SP |
-| HQ-I12 | `StudyCoachService` determinístico | % 7 dias | T22 |
-| HQ-I13 | Card “O que estudar hoje” | Home Pro | — |
-| HQ-I14 | LLM opcional coach | Cota 3/dia | — |
-| HQ-I15 | Spike oral STT | Branch experimental | — |
-| HQ-I16 | Revisão jurídica 20 respostas IA | Checklist | — |
+| T15 | Smoke AAB/APK Free + Pro | Checklist [SMOKE_PRO.md](../store/SMOKE_PRO.md) preenchido | `feature-store-publish` |
+| T16–T17 | Publicar ficha **+** na Play | App `.pro` em review; preço definido | `feature-store-publish` |
+| T18 | `isProPublished` = estado real | URL da loja abre; flag alinhada | `feature-store-publish` |
+| T19 | Data safety sem ads | Play Console atualizado (Free e **+**) | `feature-store-publish` |
+| T20 | TestFlight iOS **+** | [IOS_TESTFLIGHT.md](../store/IOS_TESTFLIGHT.md) ok | `feature-store-publish` |
 
-Doc: [ia-pro.md](../features/ia-pro.md)
+Doc: [docs/store/README.md](../store/README.md)
 
 ---
 
-## Ordem sugerida (primeiras 2 semanas)
+## [CONTEUDO] — Explicações no JSON (P09 / T28)
+
+_Schema em `PerguntaModel` pronto; apenas `legislacao.json` tem `explicacao` hoje._
+
+| ID | Objetivo | Critério de pronto | Agente |
+| :--- | :--- | :--- | :--- |
+| ~~T28a~~ | ~~`id` estável em todos os JSON~~ | ✅ 203 ids — ver [FINALIZADAS.md](./FINALIZADAS.md) | — |
+| T28b | `explicacao` — lote 1 (legislação completa) | 100% perguntas legislacao.json | `feature-conteudo-questoes` |
+| T28c | `explicacao` — demais temas | Por arquivo, revisão CTB | `feature-conteudo-questoes` |
+| T28d | `referencia_ctb` onde aplicável | Legislação + dir. defensiva | `feature-conteudo-questoes` |
+
+---
+
+## [A11Y] — Acessibilidade por épico
+
+| ID | Objetivo | Critério de pronto | Agente |
+| :--- | :--- | :--- | :--- |
+| A11Y-GATE | Semantics limites + questionário | Checklist doc GATE sem blocker | `feature-a11y-implementer` |
+| ~~A11Y-PROMO~~ | ~~CTAs Quiz+ + tela **+**~~ | ✅ 2026-07-30 — ver [FINALIZADAS.md](./FINALIZADAS.md) | — |
+| A11Y-HIST | Lista, chips, detalhe simulado | Checklist doc HIST sem blocker | `feature-a11y-implementer` |
+| A11Y-LEARN | Hub Aprender + Markdown | Checklist doc LEARN sem blocker | `feature-a11y-implementer` |
+
+Doc: [acessibilidade-implementacao.md](../features/acessibilidade-implementacao.md)
+
+---
+
+## [FREE-RET] — Retenção Free (pós-lançamento)
+
+| ID | Objetivo | Critério de pronto | Agente |
+| :--- | :--- | :--- | :--- |
+| F01 | Onboarding matéria fraca | 1ª sessão; SP; sem bloquear quiz | `feature-free-evolution` |
+| F02 | Lembrete local opt-in | Notificação agendável | `feature-free-evolution` |
+| F03 | Empty state histórico | Copy + CTA suave | `feature-free-evolution` |
+| F04 | Patch JSON versionado | `contentVersion` ou script | `feature-free-evolution` |
+
+---
+
+## [IA] — Inteligência Pro 🔒
+
+**Bloqueado** até receita do **+** — ver [AI_FEATURES.md](../product/AI_FEATURES.md). Agente `feature-ia-pro` (somente leitura).
+
+| ID | Objetivo |
+| :--- | :--- |
+| HQ-I01 … HQ-I16 | Ver [ia-pro.md](../features/ia-pro.md) |
+
+---
+
+## Ordem sugerida (agora)
 
 ```
-T02 → T03 → HQ-P02 → HQ-P03 → HQ-P05 → HQ-P06 → T06 → T08 → T07 → T09 → HQ-P07 → T04 → T15
+T01 (decisão) → T15 smoke → T16–T18 publicar + → A11Y-GATE → T28b explicações legislacao
 ```
 
-Depois: HQ-P08–P11 → T16–T20 → HQ-H03…
+Depois: A11Y-HIST/LEARN → T28c/d → F01–F04 → IA (quando houver receita).

@@ -7,10 +7,13 @@ Orquestração do roadmap ([PRODUCT_PLAN](docs/product/PRODUCT_PLAN.md), [A_FAZE
 | Agente | Arquivo | Modelo | Git commit |
 | :--- | :--- | :--- | :--- |
 | **Orquestrador** (chat principal) | [hq-orchestrator](.cursor/agents/hq-orchestrator.md) | inherit | Só docs/coordenação |
-| **GATE + STORE** | [feature-gate-store](.cursor/agents/feature-gate-store.md) | composer-2.5 | **Sim** |
+| **GATE + STORE** (código) | [feature-gate-store](.cursor/agents/feature-gate-store.md) | composer-2.5 | **Sim** |
+| **Publicação loja** | [feature-store-publish](.cursor/agents/feature-store-publish.md) | composer-2.5 | Docs/constantes |
 | **PROMO** | [feature-promo](.cursor/agents/feature-promo.md) | composer-2.5 | **Sim** |
 | **HIST** | [feature-historico](.cursor/agents/feature-historico.md) | composer-2.5 | **Sim** |
 | **LEARN** | [feature-aprendizado](.cursor/agents/feature-aprendizado.md) | composer-2.5 | **Sim** |
+| **Conteúdo questões** | [feature-conteudo-questoes](.cursor/agents/feature-conteudo-questoes.md) | composer-2.5 | **Sim** — lote por JSON |
+| **Retenção Free** | [feature-free-evolution](.cursor/agents/feature-free-evolution.md) | composer-2.5 | **Sim** |
 | **IA (guardião)** | [feature-ia-pro](.cursor/agents/feature-ia-pro.md) | inherit | Não (readonly) |
 | Crítico de produto | [product-critic](.cursor/agents/product-critic.md) | composer-2.5 | Não (readonly) |
 | Acessibilidade (revisão) | [a11y-analyst](.cursor/agents/a11y-analyst.md) | composer-2.5 | Não (readonly) |
@@ -18,13 +21,17 @@ Orquestração do roadmap ([PRODUCT_PLAN](docs/product/PRODUCT_PLAN.md), [A_FAZE
 
 ## Épicos e documentação
 
-| Épico | IDs | Doc feature |
-| :--- | :--- | :--- |
-| `[GATE]` + `[STORE]` | T02–T09, T15–T20 | [modelo-free-pro](docs/features/modelo-free-pro.md) |
-| `[PROMO]` | HQ-P01–HQ-P13, T31 | [promocao-quiz-plus](docs/features/promocao-quiz-plus.md) |
-| `[HIST]` | HQ-H01–HQ-H12, T21–T25 | [historico-simulados](docs/features/historico-simulados.md) |
-| `[LEARN]` | HQ-A01–HQ-A15, T26–T28 | [area-aprendizado](docs/features/area-aprendizado.md) |
-| ~~`[IA]`~~ | HQ-I* | **Não executar** — [feature-ia-pro](.cursor/agents/feature-ia-pro.md) |
+| Épico | IDs | Doc feature | Agente |
+| :--- | :--- | :--- | :--- |
+| `[GATE]` + `[STORE]` código | T02–T09 | [modelo-free-pro](docs/features/modelo-free-pro.md) | `feature-gate-store` |
+| `[STORE-PUB]` loja | T15–T20 | [store/README](docs/store/README.md) | `feature-store-publish` |
+| `[PROMO]` | HQ-P01–HQ-P13, T31 | [promocao-quiz-plus](docs/features/promocao-quiz-plus.md) | `feature-promo` |
+| `[HIST]` | HQ-H01–HQ-H12, T21–T25 | [historico-simulados](docs/features/historico-simulados.md) | `feature-historico` |
+| `[LEARN]` | HQ-A01–HQ-A15, T26–T27 | [area-aprendizado](docs/features/area-aprendizado.md) | `feature-aprendizado` |
+| `[CONTEUDO]` | T28a–d | [ia-pro](docs/features/ia-pro.md) §schema | `feature-conteudo-questoes` |
+| `[A11Y]` | A11Y-* | [acessibilidade-implementacao](docs/features/acessibilidade-implementacao.md) | `feature-a11y-implementer` |
+| `[FREE-RET]` | F01–F04 | [PRODUCT_PLAN](docs/product/PRODUCT_PLAN.md) §8.3 | `feature-free-evolution` |
+| ~~`[IA]`~~ | HQ-I* | **Não executar** — [feature-ia-pro](.cursor/agents/feature-ia-pro.md) | readonly |
 
 Ordem sugerida: bloco “Ordem sugerida” em [A_FAZER.md](docs/tasks/A_FAZER.md).
 
@@ -49,4 +56,4 @@ UI: [.cursor/rules/habilitacao-quiz-ui.mdc](.cursor/rules/habilitacao-quiz-ui.md
 
 ## Frases de ativação
 
-> “Orquestrar épico `[PROMO]`” / “Usar `feature-gate-store` para T02–T03” / “Rodar `product-critic` e `a11y-analyst` no último diff” / “`feature-a11y-implementer` em [promocao-quiz-plus.md](docs/features/promocao-quiz-plus.md)”
+> “Orquestrar épico `[STORE-PUB]`” / “`feature-store-publish` para T15” / “`feature-conteudo-questoes` para T28a” / “Rodar `product-critic` e `a11y-analyst` no último diff” / “`feature-a11y-implementer` em [promocao-quiz-plus.md](docs/features/promocao-quiz-plus.md)”

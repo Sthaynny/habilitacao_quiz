@@ -24,5 +24,10 @@ void main() {
     expect(find.text(Strings.historicoFreeUltimosDez), findsOneWidget);
     expect(find.text(Strings.historicoPlusRodape), findsOneWidget);
     expect(find.text(Strings.historicoDesbloquearCompleto), findsOneWidget);
+
+    final semantics = tester.getSemantics(
+      find.text(Strings.historicoDesbloquearCompleto),
+    );
+    expect(semantics.hint, Strings.plusBannerHint);
   });
 }

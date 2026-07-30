@@ -46,15 +46,21 @@ class HistoricoFreeLimiteFooter extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
           SizedBox(height: AppSpacingStack.xxxSmall.value),
-          AppButton.primary(
-            Strings.historicoDesbloquearCompleto,
-            onPressed: () {
-              Get.find<PromoFunnelAnalytics>().logClick(
-                PromoSurface.historicoFooter,
-                PromoClickTarget.openPlusScreen,
-              );
-              Get.toNamed(Routes.habilitacaoQuizPlus);
-            },
+          Semantics(
+            button: true,
+            label: Strings.historicoDesbloquearCompleto,
+            hint: Strings.plusBannerHint,
+            excludeSemantics: true,
+            child: AppButton.primary(
+              Strings.historicoDesbloquearCompleto,
+              onPressed: () {
+                Get.find<PromoFunnelAnalytics>().logClick(
+                  PromoSurface.historicoFooter,
+                  PromoClickTarget.openPlusScreen,
+                );
+                Get.toNamed(Routes.habilitacaoQuizPlus);
+              },
+            ),
           ),
         ],
       ),

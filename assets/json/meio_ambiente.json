@@ -2,6 +2,7 @@
     "titulo": "Meio ambiente",
     "perguntas": [
         {
+            "id": "meio_ambiente_1",
             "titulo": "Os gases emitidos pelos veículos são perigosos para a saúde do homem porque podem:",
             "respostas": [
                 {
@@ -23,6 +24,7 @@
             ]
         },
         {
+            "id": "meio_ambiente_2",
             "titulo": "Os principais problemas causados entre o trânsito e o Meio Ambiente:",
             "respostas": [
                 {
@@ -44,6 +46,7 @@
             ]
         },
         {
+            "id": "meio_ambiente_3",
             "titulo": "Em relação à emissão de fumaça preta produzida por veículos movidos a óleo diesel é incorreto afirmar que:",
             "respostas": [
                 {
@@ -65,6 +68,7 @@
             ]
         },
         {
+            "id": "meio_ambiente_4",
             "titulo": "Os ruídos emitidos pelo funcionamento do motor de um veículo são controlados pelo:",
             "respostas": [
                 {
@@ -86,6 +90,7 @@
             ]
         },
         {
+            "id": "meio_ambiente_5",
             "titulo": "O órgão responsável pela regulamentação dos padrões de qualidade do ar é:",
             "respostas": [
                 {
@@ -107,6 +112,7 @@
             ]
         },
         {
+            "id": "meio_ambiente_6",
             "titulo": "O excesso da intensidade de ruído pode ocasionar múltiplos problemas ao indivíduo. Dentre os problemas, podemos citar:",
             "respostas": [
                 {
@@ -128,6 +134,7 @@
             ]
         },
         {
+            "id": "meio_ambiente_7",
             "titulo": "É um gás letal, se em grande concentração, expelido pelos veículos:",
             "respostas": [
                 {
@@ -149,6 +156,7 @@
             ]
         },
         {
+            "id": "meio_ambiente_8",
             "titulo": "Qual a regra básica da harmonia dentro de qualquer grupo social: ",
             "respostas": [
                 {
@@ -170,6 +178,7 @@
             ]
         },
         {
+            "id": "meio_ambiente_9",
             "titulo": "Qual a função do Estado para a sociedade e para os diversos grupos sociais:",
             "respostas": [
                 {
@@ -191,6 +200,7 @@
             ]
         },
         {
+            "id": "meio_ambiente_10",
             "titulo": "As diferenças individuais de cultura raça, crença e classe social devem influenciar no convívio no trânsito:",
             "respostas": [
                 {
@@ -212,6 +222,7 @@
             ]
         },
         {
+            "id": "meio_ambiente_11",
             "titulo": "Qual é a base do relacionamento interpessoal:",
             "respostas": [
                 {
@@ -233,6 +244,7 @@
             ]
         },
         {
+            "id": "meio_ambiente_12",
             "titulo": "São ações do condutor cidadão:",
             "respostas": [
                 {
@@ -254,6 +266,7 @@
             ]
         },
         {
+            "id": "meio_ambiente_13",
             "titulo": "Nas grandes cidades, as principais fontes de poluição do ar são:",
             "respostas": [
                 {
@@ -275,6 +288,7 @@
             ]
         },
         {
+            "id": "meio_ambiente_14",
             "titulo": "A má conservação e a regulagem inadequada dos veículos:",
             "respostas": [
                 {
@@ -296,6 +310,7 @@
             ]
         },
         {
+            "id": "meio_ambiente_15",
             "titulo": "O uso de dispositivo de controle de emissão de gases (catalisador) conectado ao sistema de descarga dos veículos tem como objetivo:",
             "respostas": [
                 {
@@ -317,6 +332,7 @@
             ]
         },
         {
+            "id": "meio_ambiente_16",
             "titulo": "Os veículos que apresentam maior potencial de poluição do ar são aqueles:",
             "respostas": [
                 {
@@ -338,6 +354,7 @@
             ]
         },
         {
+            "id": "meio_ambiente_17",
             "titulo": "Nos centros urbanos são observadas maiores concentrações de poluentes do ar nos meses mais frios do ano. Este fato ocorre:",
             "respostas": [
                 {
@@ -359,6 +376,7 @@
             ]
         },
         {
+            "id": "meio_ambiente_18",
             "titulo": "A remoção do silencioso de um veículo: ",
             "respostas": [
                 {
@@ -380,6 +398,7 @@
             ]
         },
         {
+            "id": "meio_ambiente_19",
             "titulo": "O Programa de Controle da Poluição do Ar por Veículos Automotores (PROCONVE) é responsável pela especificação dos combustíveis comerciais em uso no Brasil. Sabendo-se que a gasolina é um combustível de alto potencial poluidor, assim como o diesel, este programa determinou a adição de álcool à gasolina para:",
             "respostas": [
                 {
@@ -401,6 +420,7 @@
             ]
         },
         {
+            "id": "meio_ambiente_20",
             "titulo": "Para reduzir a emissão de poluentes do ar, causada pelos veículos, é INCORRETO afirmar que se deve:",
             "respostas": [
                 {
@@ -422,6 +442,7 @@
             ]
         },
         {
+            "id": "meio_ambiente_21",
             "titulo": "No interior de túneis muito longos, é aconselhável instalar exaustores porque nesse ambiente acumulam-se:",
             "respostas": [
                 {
@@ -443,6 +464,7 @@
             ]
         },
         {
+            "id": "meio_ambiente_22",
             "titulo": "Dos fenômenos abaixo, o principal causador da corrosão em um veículo é:",
             "respostas": [
                 {
@@ -464,6 +486,7 @@
             ]
         },
         {
+            "id": "meio_ambiente_23",
             "titulo": "Dirigir um veículo ameaçando os pedestres que estejam atravessando a via ou usá-lo para arremessar água ou detritos sobre os pedestres são infrações:",
             "respostas": [
                 {
@@ -485,6 +508,7 @@
             ]
         },
         {
+            "id": "meio_ambiente_24",
             "titulo": "O estacionamento sobre o passeio é:",
             "respostas": [
                 {
@@ -506,6 +530,7 @@
             ]
         },
         {
+            "id": "meio_ambiente_25",
             "titulo": "Um condutor de veículo costuma jogar “coisas” na via pública sem se importar com eventuais danos causados ao meio ambiente. Qual dos itens abaixo demora mais tempo para se decompor: ",
             "respostas": [
                 {
@@ -527,6 +552,7 @@
             ]
         },
         {
+            "id": "meio_ambiente_26",
             "titulo": "Um veículo é composto por metais, vidro, plástico, borracha, espumas, tecidos, entre outros. Destes, qual demora mais tempo para se decompor: ",
             "respostas": [
                 {
@@ -548,6 +574,7 @@
             ]
         },
         {
+            "id": "meio_ambiente_27",
             "titulo": "O aquecimento global tem como principal desencadeador um gás que os carros liberam em abundância no meio ambiente, e que dele precisamos para viver na Terra:",
             "respostas": [
                 {
@@ -569,6 +596,7 @@
             ]
         },
         {
+            "id": "meio_ambiente_28",
             "titulo": "Quais são os três tipos de poluição existentes no trânsito:",
             "respostas": [
                 {
@@ -590,6 +618,7 @@
             ]
         },
         {
+            "id": "meio_ambiente_29",
             "titulo": "O que é CHORUME:",
             "respostas": [
                 {
@@ -611,6 +640,7 @@
             ]
         },
         {
+            "id": "meio_ambiente_30",
             "titulo": "Quando uma pessoa “corta” a frente da outra sem usar as luzes indicadoras de direção, esta pessoa é:",
             "respostas": [
                 {
@@ -632,6 +662,7 @@
             ]
         },
         {
+            "id": "meio_ambiente_31",
             "titulo": "O PROCONVE (Programa de Controle da Poluição do Ar por Veículos Automotores) tem como principal objetivo:",
             "respostas": [
                 {
@@ -653,6 +684,7 @@
             ]
         },
         {
+            "id": "meio_ambiente_32",
             "titulo": "A poluição sonora no trânsito pode ser reduzida quando o condutor:",
             "respostas": [
                 {
@@ -674,6 +706,7 @@
             ]
         },
         {
+            "id": "meio_ambiente_33",
             "titulo": "O descarte irregular de óleo lubrificante usado de veículos:",
             "respostas": [
                 {
@@ -695,6 +728,7 @@
             ]
         },
         {
+            "id": "meio_ambiente_34",
             "titulo": "Veículos movidos a GNV (Gás Natural Veicular), em comparação aos movidos exclusivamente a gasolina ou diesel:",
             "respostas": [
                 {
@@ -716,6 +750,7 @@
             ]
         },
         {
+            "id": "meio_ambiente_35",
             "titulo": "A manutenção preventiva do veículo, incluindo revisões periódicas do motor, contribui para:",
             "respostas": [
                 {
@@ -737,6 +772,7 @@
             ]
         },
         {
+            "id": "meio_ambiente_36",
             "titulo": "Dirigir com escapamento defeituoso ou em descarga livre, além de prejudicar o meio ambiente:",
             "respostas": [
                 {

@@ -521,9 +521,12 @@ class _HistoricoWidgetState extends State<HistoricoWidget> with PopUpMixin {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Text(
-              Strings.historicoResumoFreeTitulo,
-              style: AppFontStyle.headline20Bold,
+            Semantics(
+              header: true,
+              child: Text(
+                Strings.historicoResumoFreeTitulo,
+                style: AppFontStyle.headline20Bold,
+              ),
             ),
             SizedBox(height: AppSpacingStack.nano.value),
             Text(
@@ -543,12 +546,18 @@ class _HistoricoWidgetState extends State<HistoricoWidget> with PopUpMixin {
               style: AppFontStyle.body14Regular,
             ),
             SizedBox(height: AppSpacingStack.xxxSmall.value),
-            AppButton.primary(
-              Strings.plusVerNaLoja,
-              onPressed: () {
-                Navigator.of(ctx).pop();
-                Get.toNamed(Routes.habilitacaoQuizPlus);
-              },
+            Semantics(
+              button: true,
+              label: Strings.plusVerNaLoja,
+              hint: Strings.plusBannerHint,
+              excludeSemantics: true,
+              child: AppButton.primary(
+                Strings.plusVerNaLoja,
+                onPressed: () {
+                  Navigator.of(ctx).pop();
+                  Get.toNamed(Routes.habilitacaoQuizPlus);
+                },
+              ),
             ),
             SizedBox(height: AppSpacingStack.small.value),
           ],

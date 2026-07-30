@@ -19,11 +19,14 @@ class HistoricoListPlusFooter extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Text(
-            Strings.historicoPlusRodape,
-            style:
-                AppFontStyle.caption12Regular.setColor(AppColors.grey),
-            textAlign: TextAlign.center,
+          Semantics(
+            header: true,
+            child: Text(
+              Strings.historicoPlusRodape,
+              style:
+                  AppFontStyle.caption12Regular.setColor(AppColors.grey),
+              textAlign: TextAlign.center,
+            ),
           ),
           SizedBox(height: AppSpacingStack.nano.value),
           const HabilitacaoQuizPlusCtaBanner(

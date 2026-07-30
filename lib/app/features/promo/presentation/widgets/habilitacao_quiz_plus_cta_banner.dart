@@ -132,9 +132,11 @@ class _PromoBannerTapTarget extends StatelessWidget {
         ),
         child: Row(
           children: [
-            const Icon(
-              Icons.workspace_premium_outlined,
-              color: AppColors.purple,
+            const ExcludeSemantics(
+              child: Icon(
+                Icons.workspace_premium_outlined,
+                color: AppColors.purple,
+              ),
             ),
             SizedBox(width: AppSpacingStack.nano.value),
             Expanded(
@@ -158,7 +160,9 @@ class _PromoBannerTapTarget extends StatelessWidget {
                 ],
               ),
             ),
-            const Icon(Icons.chevron_right, color: AppColors.purple),
+            const ExcludeSemantics(
+              child: Icon(Icons.chevron_right, color: AppColors.purple),
+            ),
           ],
         ),
       ),

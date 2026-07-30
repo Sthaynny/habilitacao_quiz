@@ -2,6 +2,7 @@
     "titulo": "Mecânica Básica",
     "perguntas": [
         {
+            "id": "mecanica_basica_1",
             "titulo": "A embreagem tem como função principal: ",
             "respostas": [
                 {
@@ -20,6 +21,7 @@
             ]
         },
         {
+            "id": "mecanica_basica_2",
             "titulo": "A  suspensão e amortecedores mantem a estabilidade do veículo. Quando há desgaste desses itens do veículo: ",
             "respostas": [
                 {
@@ -38,6 +40,7 @@
             ]
         },
         {
+            "id": "mecanica_basica_3",
             "titulo": "O condutor, após passar sobre uma via alagada, deve fazer quais testes no veículos sendo conduzido?",
             "respostas": [
                 {
@@ -56,6 +59,7 @@
             ]
         },
         {
+            "id": "mecanica_basica_4",
             "titulo": "A estabilidade do veículo também está relacionada aos pneus. O condutor deve conferir de forma periódica e regularmente:\nI- a calibragem dos pneus;\nII- o desgaste dos pneus;\n III- a existência de possíveis deformações na carcaça.\nÉ correto o que consta em: ",
             "respostas": [
                 {
@@ -74,6 +78,7 @@
             ]
         },
         {
+            "id": "mecanica_basica_5",
             "titulo": "Ao fazer a verificação do sistema de luzes do veículo, o proprietário notou que, quando aciona a luz indicadora de direção (pisca-pisca) para a esquerda, a luz indicadora de função no painel funcionava compassadamente. Quando aciona para a direita, a luz dispara em velocidade maior. A causa provável deste problema é que:",
             "respostas": [
                 {
@@ -92,6 +97,7 @@
             ]
         },
         {
+            "id": "mecanica_basica_6",
             "titulo": "O condutor defensivo deve conhecer o fato de que, em geral, nos veículos sem o sistema ABS de freios, a força de frenagem:",
             "respostas": [
                 {
@@ -110,6 +116,7 @@
             ]
         },
         {
+            "id": "mecanica_basica_7",
             "titulo": "Considere a ilustração abaixo: \nQuando o nível de água deste tipo de bateria de um veículo automotor estiver abaixo do normal, o motorista deverá:",
             "respostas": [
                 {
@@ -128,6 +135,7 @@
             ]
         },
         {
+            "id": "mecanica_basica_8",
             "titulo": "Para remover a bateria de um veículo deve-se:",
             "respostas": [
                 {
@@ -146,6 +154,7 @@
             ]
         },
         {
+            "id": "mecanica_basica_9",
             "titulo": "Num estouro ou esvaziamento súbito de um pneu, o condutor deve:",
             "respostas": [
                 {
@@ -164,6 +173,7 @@
             ]
         },
         {
+            "id": "mecanica_basica_10",
             "titulo": "A função da bateria é:",
             "respostas": [
                 {
@@ -182,6 +192,7 @@
             ]
         },
         {
+            "id": "mecanica_basica_11",
             "titulo": "A calibragem correta contribui para o prolongamento da vida útil dos pneus. Um pneu com pressão excessiva terá desgaste:",
             "respostas": [
                 {
@@ -200,6 +211,7 @@
             ]
         },
         {
+            "id": "mecanica_basica_12",
             "titulo": "A bomba de água é um dos componentes do sistema que controla a temperatura do motor. A sua função básica é:",
             "respostas": [
                 {
@@ -218,6 +230,7 @@
             ]
         },
         {
+            "id": "mecanica_basica_13",
             "titulo": "Todo condutor deve possuir conhecimentos básicos de mecânica de modo a manter o veículo sempre em bom estado e trafegar com segurança, conforme os preceitos da Direção Defensiva. Sendo assim, analise as afirmativas abaixo: \nI. Folgas no sistema de direção provocam o desbalanceamento das rodas. \nII. A finalidade dos amortecedores é garantir a eficiência no sistema de direção. \nIII. As principais razões de perda de eficiência do sistema de freios são vazamento e nível de fluido baixo, bem como discos, pastilhas e lonas gastos. \nÉ correto o que consta APENAS em:",
             "respostas": [
                 {
@@ -236,6 +249,7 @@
             ]
         },
         {
+            "id": "mecanica_basica_14",
             "titulo": "No veículo, periodicamente, deve-se:",
             "respostas": [
                 {
@@ -257,6 +271,7 @@
             ]
         },
         {
+            "id": "mecanica_basica_15",
             "titulo": "A finalidade da embreagem é:",
             "respostas": [
                 {
@@ -278,6 +293,7 @@
             ]
         },
         {
+            "id": "mecanica_basica_16",
             "titulo": "É função dos amortecedores:",
             "respostas": [
                 {
@@ -299,6 +315,7 @@
             ]
         },
         {
+            "id": "mecanica_basica_17",
             "titulo": "Durante uma viagem, ao descobrir que a lâmpada do pisca-pisca está queimada, três motoristas reagem de formas diferentes: \nMotorista 1: resolve trocar na volta e segue em frente \nMotorista 2: deixa para trocar na próxima revisão geral\nMotorista 3: procura um auto elétrico para consertar.\nO motorista que agiu corretamente foi:",
             "respostas": [
                 {
@@ -320,6 +337,7 @@
             ]
         },
         {
+            "id": "mecanica_basica_18",
             "titulo": "A circulação da água no motor e no radiador é forçada: ",
             "respostas": [
                 {
@@ -341,6 +359,7 @@
             ]
         },
         {
+            "id": "mecanica_basica_19",
             "titulo": "O sistema que absorve os impactos das rodas com o solo é o de:",
             "respostas": [
                 {
@@ -362,6 +381,7 @@
             ]
         },
         {
+            "id": "mecanica_basica_20",
             "titulo": "Conforme a posição dos fios das lonas, o pneu pode ser: ",
             "respostas": [
                 {
@@ -383,6 +403,7 @@
             ]
         },
         {
+            "id": "mecanica_basica_21",
             "titulo": "Ao estacionar o carro numa via urbana pavimentada e plana, o condutor deverá atender, necessariamente:",
             "respostas": [
                 {
@@ -404,6 +425,7 @@
             ]
         },
         {
+            "id": "mecanica_basica_22",
             "titulo": "A finalidade da embreagem é:",
             "respostas": [
                 {
@@ -422,6 +444,7 @@
             ]
         },
         {
+            "id": "mecanica_basica_23",
             "titulo": "São ciclos do motor: ",
             "respostas": [
                 {
@@ -440,6 +463,7 @@
             ]
         },
         {
+            "id": "mecanica_basica_24",
             "titulo": "O objetivo do sistema de direção hidráulica é:",
             "respostas": [
                 {
@@ -458,6 +482,7 @@
             ]
         },
         {
+            "id": "mecanica_basica_25",
             "titulo": "O nível de óleo lubrificante do motor deve ser verificado com o motor",
             "respostas": [
                 {
@@ -476,6 +501,7 @@
             ]
         },
         {
+            "id": "mecanica_basica_26",
             "titulo": "A energia elétrica que o carro utiliza é fornecida ao carro pela: ",
             "respostas": [
                 {
@@ -494,6 +520,7 @@
             ]
         },
         {
+            "id": "mecanica_basica_27",
             "titulo": "A energia mecânica produzida pelos motores dos veículos chega nas rodas através do sistema de:",
             "respostas": [
                 {
@@ -512,6 +539,7 @@
             ]
         },
         {
+            "id": "mecanica_basica_28",
             "titulo": "A transformação da corrente em alta tensão e da produção de centelha, é função respectivamente da:",
             "respostas": [
                 {
@@ -530,6 +558,7 @@
             ]
         },
         {
+            "id": "mecanica_basica_29",
             "titulo": "O carburador, nos veículos mais modernos, é substituído por:",
             "respostas": [
                 {
@@ -548,6 +577,7 @@
             ]
         },
         {
+            "id": "mecanica_basica_30",
             "titulo": "Em certo veículo, há dificuldade de engate em todas as marchas, mas apenas com o câmbio frio. Uma das prováveis causas dessa dificuldade poder ser:",
             "respostas": [
                 {
@@ -566,6 +596,7 @@
             ]
         },
         {
+            "id": "mecanica_basica_31",
             "titulo": "O sistema ABS (Antilock Braking System) nos freios tem a função de:",
             "respostas": [
                 {
@@ -587,6 +618,7 @@
             ]
         },
         {
+            "id": "mecanica_basica_32",
             "titulo": "O fluido de freio deve ser verificado periodicamente porque:",
             "respostas": [
                 {
@@ -608,6 +640,7 @@
             ]
         },
         {
+            "id": "mecanica_basica_33",
             "titulo": "Pneu com calibragem abaixo da recomendada pelo fabricante tende a apresentar desgaste:",
             "respostas": [
                 {
@@ -629,6 +662,7 @@
             ]
         },
         {
+            "id": "mecanica_basica_34",
             "titulo": "A correia dentada, quando rompida em motores que a utilizam, pode causar:",
             "respostas": [
                 {
@@ -650,6 +684,7 @@
             ]
         },
         {
+            "id": "mecanica_basica_35",
             "titulo": "As luzes de freio do veículo servem para:",
             "respostas": [
                 {
@@ -671,6 +706,7 @@
             ]
         },
         {
+            "id": "mecanica_basica_36",
             "titulo": "O estepe (pneu reserva) deve ser mantido:",
             "respostas": [
                 {

@@ -2,6 +2,7 @@
     "titulo": "Direção Defensiva",
     "perguntas": [
         {
+            "id": "direcao_defensiva_1",
             "titulo": "Qual é a idade mínima para transportar crianças na garupa de motocicletas e ciclomotores:",
             "respostas": [
                 {
@@ -23,6 +24,7 @@
             ]
         },
         {
+            "id": "direcao_defensiva_2",
             "titulo": "A principal finalidade da Inspeção de Segurança Veicular tem por objetivo",
             "respostas": [
                 {
@@ -44,6 +46,7 @@
             ]
         },
         {
+            "id": "direcao_defensiva_3",
             "titulo": "Cuidados a serem tomados nos cruzamentos, exceto:",
             "respostas": [
                 {
@@ -62,6 +65,7 @@
             ]
         },
         {
+            "id": "direcao_defensiva_4",
             "titulo": " O procedimento correto ao parar o veículo no acostamento, em situação de emergência, é:",
             "respostas": [
                 {
@@ -83,6 +87,7 @@
             ]
         },
         {
+            "id": "direcao_defensiva_5",
             "titulo": "O condutor no trânsito deve?",
             "respostas": [
                 {
@@ -104,6 +109,7 @@
             ]
         },
         {
+            "id": "direcao_defensiva_6",
             "titulo": "O condutor de veículo que se preocupa em avisar o outro que está rodando com o pneu murcho ou com a porta semi fechada está?",
             "respostas": [
                 {
@@ -125,6 +131,7 @@
             ]
         },
         {
+            "id": "direcao_defensiva_7",
             "titulo": "O condutor, no trânsito, deve ter percepção e respeito às expectativas das pessoas, adotando uma postura adequada, sendo?",
             "respostas": [
                 {
@@ -146,6 +153,7 @@
             ]
         },
         {
+            "id": "direcao_defensiva_8",
             "titulo": "O condutor de veículo, transitando por vias onde haja escolas ou grande movimentação de pedestres?",
             "respostas": [
                 {
@@ -167,6 +175,7 @@
             ]
         },
         {
+            "id": "direcao_defensiva_9",
             "titulo": "Quem tem prioridade no trânsito, o pedestre ou o condutor?",
             "respostas": [
                 {
@@ -188,6 +197,7 @@
             ]
         },
         {
+            "id": "direcao_defensiva_10",
             "titulo": "O condutor de um automóvel que encontrar um motociclista deve?",
             "respostas": [
                 {
@@ -209,6 +219,7 @@
             ]
         },
         {
+            "id": "direcao_defensiva_11",
             "titulo": "Parar em um cruzamento porque vem vindo apenas uma moto, significa que você, condutor de veículo, como cidadão, dá valor?",
             "respostas": [
                 {
@@ -230,6 +241,7 @@
             ]
         },
         {
+            "id": "direcao_defensiva_12",
             "titulo": "A utilização correta do guia da cidade proporciona deslocamentos seguros, economia de tempo e de combustível. Logo, você deve?",
             "respostas": [
                 {
@@ -251,6 +263,7 @@
             ]
         },
         {
+            "id": "direcao_defensiva_13",
             "titulo": "Mapas rodoviários facilitam a circulação em regiões desconhecidas. Você deve?",
             "respostas": [
                 {
@@ -272,6 +285,7 @@
             ]
         },
         {
+            "id": "direcao_defensiva_14",
             "titulo": "O condutor que assume um comportamento seguro é aquele que?",
             "respostas": [
                 {
@@ -293,6 +307,7 @@
             ]
         },
         {
+            "id": "direcao_defensiva_15",
             "titulo": "Você está em uma via preferencial de duas pistas com grande movimento e quer entrar em uma rua transversal à esquerda. Há um movimento muito grande nos dois sentidos e uma fila de carros começa a se formar atrás do seu veículo. Você deve?",
             "respostas": [
                 {
@@ -314,6 +329,7 @@
             ]
         },
         {
+            "id": "direcao_defensiva_16",
             "titulo": "O trânsito sobre passeio e calçadas é permitido para?",
             "respostas": [
                 {
@@ -335,6 +351,7 @@
             ]
         },
         {
+            "id": "direcao_defensiva_17",
             "titulo": "Você está em uma via de bastante movimento e surge uma rotatória à frente com um veículo lento fazendo seu contorno. Você deve?",
             "respostas": [
                 {
@@ -356,6 +373,7 @@
             ]
         },
         {
+            "id": "direcao_defensiva_18",
             "titulo": "Você passou por engano da saída da rodovia, e só haverá outra saída à 5 km adiante. Você deve, então?",
             "respostas": [
                 {
@@ -377,6 +395,7 @@
             ]
         },
         {
+            "id": "direcao_defensiva_19",
             "titulo": "Quando é permitido o tráfego pelo acostamento em uma estrada?",
             "respostas": [
                 {
@@ -398,6 +417,7 @@
             ]
         },
         {
+            "id": "direcao_defensiva_20",
             "titulo": "É noite, o seu veículo começa a apresentar problemas, na direção. Você?",
             "respostas": [
                 {
@@ -419,6 +439,7 @@
             ]
         },
         {
+            "id": "direcao_defensiva_21",
             "titulo": "O veículo que você dirige tem sinal verde para atravessar o cruzamento, o condutor de outro veículo desobedeceu à sinalização e colidiu com o seu veículo. Neste acidente sem vítimas, você?",
             "respostas": [
                 {
@@ -440,6 +461,7 @@
             ]
         },
         {
+            "id": "direcao_defensiva_22",
             "titulo": "Na Inspeção de Segurança Veicular a ser exigida no próximo ano, para o licenciamento, serão verificados, entre outros aspectos?",
             "respostas": [
                 {
@@ -461,6 +483,7 @@
             ]
         },
         {
+            "id": "direcao_defensiva_23",
             "titulo": "Qual dos equipamentos indicados é obrigatório?",
             "respostas": [
                 {
@@ -482,6 +505,7 @@
             ]
         },
         {
+            "id": "direcao_defensiva_24",
             "titulo": "O principal objetivo da Inspeção de Segurança Veicular é?",
             "respostas": [
                 {
@@ -503,6 +527,7 @@
             ]
         },
         {
+            "id": "direcao_defensiva_25",
             "titulo": "Para garantir as condições de segurança dos veículos em circulação, será obrigatório, por ocasião do licenciamento anual?",
             "respostas": [
                 {
@@ -524,6 +549,7 @@
             ]
         },
         {
+            "id": "direcao_defensiva_26",
             "titulo": "A principal finalidade da Inspeção de Segurança Veicular é garantir que os veículos?",
             "respostas": [
                 {
@@ -545,6 +571,7 @@
             ]
         },
         {
+            "id": "direcao_defensiva_27",
             "titulo": "A obrigatoriedade da Inspeção de Segurança Veicular tem por objetivo?",
             "respostas": [
                 {
@@ -566,6 +593,7 @@
             ]
         },
         {
+            "id": "direcao_defensiva_28",
             "titulo": "Na Inspeção de Segurança Veicular, que será compulsória para o licenciamento, um dos equipamentos obrigatórios a ser inspecionado é?",
             "respostas": [
                 {
@@ -587,6 +615,7 @@
             ]
         },
         {
+            "id": "direcao_defensiva_29",
             "titulo": "Na Inspeção de Segurança Veicular, que será compulsória para o licenciamento, um dos equipamentos obrigatórios a ser inspecionado é?",
             "respostas": [
                 {
@@ -608,6 +637,7 @@
             ]
         },
         {
+            "id": "direcao_defensiva_30",
             "titulo": "Na Inspeção de Segurança Veicular, que será compulsória para o licenciamento, um dos equipamentos obrigatórios a ser inspecionado é?",
             "respostas": [
                 {
@@ -629,6 +659,7 @@
             ]
         },
         {
+            "id": "direcao_defensiva_31",
             "titulo": "Na Inspeção de Segurança Veicular, que será compulsória para o licenciamento, um dos equipamentos obrigatórios a ser inspecionado é?",
             "respostas": [
                 {
@@ -650,6 +681,7 @@
             ]
         },
         {
+            "id": "direcao_defensiva_32",
             "titulo": "Um veículo vem em sentido contrário ao seu no período noturno com os faróis altos ligados, provocando ofuscamento. Nessa situação você?",
             "respostas": [
                 {
@@ -671,6 +703,7 @@
             ]
         },
         {
+            "id": "direcao_defensiva_33",
             "titulo": "A distância de seguimento entre veículos deve ser mantida de forma a permitir:",
             "respostas": [
                 {
@@ -692,6 +725,7 @@
             ]
         },
         {
+            "id": "direcao_defensiva_34",
             "titulo": "Em pista molhada, a aquaplanagem ocorre quando:",
             "respostas": [
                 {
@@ -713,6 +747,7 @@
             ]
         },
         {
+            "id": "direcao_defensiva_35",
             "titulo": "Em condições de neblina ou chuva intensa, o condutor defensivo deve:",
             "respostas": [
                 {
@@ -734,6 +769,7 @@
             ]
         },
         {
+            "id": "direcao_defensiva_36",
             "titulo": "Crianças com até dez anos de idade devem ser transportadas em automóveis:",
             "respostas": [
                 {
@@ -755,6 +791,7 @@
             ]
         },
         {
+            "id": "direcao_defensiva_37",
             "titulo": "Ao transportar criança em motocicleta, além da idade mínima de dez anos, o CTB exige que ela:",
             "respostas": [
                 {
@@ -776,6 +813,7 @@
             ]
         },
         {
+            "id": "direcao_defensiva_38",
             "titulo": "O condutor defensivo, ao avistar animais na pista, deve:",
             "respostas": [
                 {

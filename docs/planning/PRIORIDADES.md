@@ -2,40 +2,41 @@
 
 **Regra:** código e produto primeiro · publicação **+** quando Onda 1 estiver estável.
 
-## Agora (P0) — Onda 1
+**Atualizado:** 30 jul 2026 — Ondas 1–3 **implementadas** no código; foco em loja, conteúdo e a11y.
 
-| Ordem | ID | Tarefa | Épico |
+## Agora (P0) — Publicar e validar
+
+| Ordem | ID | Tarefa | Agente |
 | :---: | :--- | :--- | :--- |
-| 1 | T02 | `app_edition.dart` / `HABILITACAO_QUIZ_PRO` | GATE |
-| 2 | T03 | `ProGate` + testes | GATE |
-| 3 | T06–T08 | Limites em use cases + simulado 15/30 + contador/dia | GATE |
-| 4 | T09 | Histórico: cap 10 Free, ilimitado Pro | GATE HIST |
-| 5 | T10–T14 | Promo **+** (remover AdMob, CTAs, tela loja) | PROMO |
-| 6 | T04–T05 | Flavors Android + BUILD.md | STORE GATE |
-| 7 | T15 | Smoke AAB Free + Pro | STORE |
+| 1 | T01 | Aprovar matriz Free/Pro e preço **+** | `hq-orchestrator` |
+| 2 | T15 | Smoke AAB Free + Pro | `feature-store-publish` |
+| 3 | T16–T18 | Ficha Play **+** + `isProPublished` | `feature-store-publish` |
+| 4 | A11Y-GATE | TalkBack nos limites Free | `feature-a11y-implementer` |
 
-## Em seguida (P1) — Loja + histórico base
+## Em seguida (P1) — Conteúdo e polish
 
-| ID | Tarefa | Épico |
+| ID | Tarefa | Agente |
 | :--- | :--- | :--- |
-| T16–T20 | Fichas Play/App Store **+**, preço, privacidade | STORE |
-| HQ-H03–H06 | `ResultadoEntity` v2 + filtros histórico | HIST |
-| T31 | Analytics impressão promo → clique | PROMO |
+| T28b–d | Explicações + referências CTB | `feature-conteudo-questoes` |
+| A11Y-HIST + A11Y-LEARN | Lista histórico + hub Aprender | `feature-a11y-implementer` |
+| T19–T20 | Data safety + TestFlight iOS | `feature-store-publish` |
 
-## Depois (P2) — Valor Pro
+## Depois (P2) — Retenção Free
 
-| Bloco | Tarefas | Épico |
+| Bloco | Tarefas | Agente |
 | :--- | :--- | :--- |
-| Histórico rico | HQ-H07–H12, T21–T25 | HIST |
-| Aprender MVP | HQ-A01–A08 | LEARN |
-| Modo prova + revisão | T26–T28, HQ-A11+ | LEARN |
+| Free evolution | F01–F04 | `feature-free-evolution` |
 
 ## Futuro (P3) — IA
 
-| Bloco | Tarefas | Épico |
+| Bloco | Tarefas | Agente |
 | :--- | :--- | :--- |
-| Conteúdo + proxy | HQ-I01–I10 | IA |
-| Coach | HQ-I11–I14 | IA |
+| Conteúdo + proxy | HQ-I01–I10 | `feature-ia-pro` (readonly até receita) |
+| Coach | HQ-I11–I14 | `feature-ia-pro` |
+
+## Concluído (referência)
+
+Ondas 1–3: T02–T09, HQ-P*, HQ-H*, HQ-A*, T21–T27 — ver [FINALIZADAS.md](../tasks/FINALIZADAS.md).
 
 ## O que não fazer ainda
 
@@ -47,6 +48,6 @@
 ## Como a IA deve usar este arquivo
 
 1. Pegar a **primeira** tarefa P0 não feita em [A_FAZER.md](../tasks/A_FAZER.md).
-2. Ler o **feature doc** do épico.
+2. Disparar o **subagente** indicado na coluna Agente.
 3. Respeitar **critério de pronto** antes de marcar feito.
 4. Mover para `FINALIZADAS.md` e atualizar roadmap se necessário.

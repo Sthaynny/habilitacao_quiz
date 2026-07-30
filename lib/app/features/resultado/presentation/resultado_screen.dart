@@ -93,11 +93,14 @@ class ResultadoScreen extends StatelessWidget {
                     padding: EdgeInsets.symmetric(
                       horizontal: AppSpacingStack.large.value,
                     ),
-                    child: Text(
-                      Strings.resultadoSimuladoFreeCta,
-                      style: AppFontStyle.body14Regular
-                          .setColor(AppColors.grey),
-                      textAlign: TextAlign.center,
+                    child: Semantics(
+                      header: true,
+                      child: Text(
+                        Strings.resultadoSimuladoFreeCta,
+                        style: AppFontStyle.body14Regular
+                            .setColor(AppColors.grey),
+                        textAlign: TextAlign.center,
+                      ),
                     ),
                   ),
                   SizedBox(height: AppSpacingStack.nano.value),

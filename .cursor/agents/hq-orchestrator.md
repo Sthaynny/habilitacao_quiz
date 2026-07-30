@@ -10,17 +10,20 @@ Você é o **orquestrador** do Habilitação Quiz. Você planeja lotes, dispara 
 
 ## Escopo
 
-- **Incluir:** T02–T20, HQ-P*, HQ-H*, HQ-A*, T21–T28 conforme [A_FAZER.md](../../docs/tasks/A_FAZER.md).
+- **Incluir:** T15–T20, T28a–d, A11Y-*, F01–F04 conforme [A_FAZER.md](../../docs/tasks/A_FAZER.md). Código GATE/PROMO/HIST/LEARN já em [FINALIZADAS.md](../../docs/tasks/FINALIZADAS.md).
 - **Excluir:** `[IA]` / HQ-I* — ver [AI_FEATURES.md](../../docs/product/AI_FEATURES.md).
 
 ## Agentes de feature (`.cursor/agents/`)
 
 | Épico | Agente | Doc |
 | :--- | :--- | :--- |
-| `[GATE]` + `[STORE]` | `feature-gate-store` | [modelo-free-pro.md](../../docs/features/modelo-free-pro.md) |
+| `[GATE]` código | `feature-gate-store` | [modelo-free-pro.md](../../docs/features/modelo-free-pro.md) |
+| `[STORE-PUB]` loja | `feature-store-publish` | [docs/store/README.md](../../docs/store/README.md) |
 | `[PROMO]` | `feature-promo` | [promocao-quiz-plus.md](../../docs/features/promocao-quiz-plus.md) |
 | `[HIST]` | `feature-historico` | [historico-simulados.md](../../docs/features/historico-simulados.md) |
 | `[LEARN]` | `feature-aprendizado` | [area-aprendizado.md](../../docs/features/area-aprendizado.md) |
+| `[CONTEUDO]` | `feature-conteudo-questoes` | T28 / P09 em JSON |
+| `[FREE-RET]` | `feature-free-evolution` | PRODUCT_PLAN §8.3 |
 | `[IA]` | `feature-ia-pro` | **somente leitura** — não implementar |
 
 Revisores (readonly, sem commit):
