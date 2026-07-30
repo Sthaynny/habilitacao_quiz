@@ -200,6 +200,12 @@ abstract class Strings {
   static const proStudyModoProvaSubtitulo = '40 min · como na prova';
   static const aprenderHubSubtituloPro =
       'Trilhas, fichas e revisão no seu ritmo — tudo offline.';
+  static const gabaritoFiltroTodas = 'Todas';
+  static const gabaritoFiltroErros = 'Errei';
+  static const gabaritoFiltroAcertos = 'Acertei';
+  static const gabaritoFiltroVazio = 'Nenhuma questão neste filtro.';
+  static String gabaritoResumo({required int acertos, required int total}) =>
+      '$acertos de $total questões corretas';
 
   static const revisaoEspacada = 'Revisão espaçada';
   static const revisarErrosUltimoTeste = 'Revisar erros do último teste';
