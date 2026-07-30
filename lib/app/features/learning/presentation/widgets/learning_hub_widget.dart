@@ -37,6 +37,7 @@ class LearningHubWidget extends StatelessWidget {
         manifest: manifest,
         exibirPromoPlus: controller.proGate.exibirPromoPlus,
         podeRevisaoEspacada: controller.proGate.podeRevisaoEspacada,
+        isPro: controller.proGate.isPro,
       );
     });
   }
@@ -47,11 +48,13 @@ class _LearningHubLoadedContent extends StatelessWidget {
     required this.manifest,
     required this.exibirPromoPlus,
     required this.podeRevisaoEspacada,
+    required this.isPro,
   });
 
   final LearningManifestEntity manifest;
   final bool exibirPromoPlus;
   final bool podeRevisaoEspacada;
+  final bool isPro;
 
   @override
   Widget build(BuildContext context) {
@@ -59,70 +62,95 @@ class _LearningHubLoadedContent extends StatelessWidget {
       child: ListView(
         padding: EdgeInsets.all(AppSpacingStack.xxxSmall.value),
         children: [
-          const LearningHubHero(),
+          LearningHubHero(isPro: isPro),
           SizedBox(height: AppSpacingStack.nano.value),
-          Text(
-            Strings.avisoLegalTexto,
-            style: AppFontStyle.body14Regular.setColor(AppColors.grey),
-          ),
+          if (!isPro)
+            Text(
+              Strings.avisoLegalTexto,
+              style: AppFontStyle.body14Regular.setColor(AppColors.grey),
+            ),
           if (exibirPromoPlus) ...[
             SizedBox(height: AppSpacingStack.xxxSmall.value),
             const HabilitacaoQuizPlusCtaBanner(),
           ],
           SizedBox(height: AppSpacingStack.xxSmall.value),
+          if (isPro) ...[
+            Text(
+              Strings.aprenderFerramentasEstudo,
+              style: AppFontStyle.body16Bold,
+            ),
+            SizedBox(height: AppSpacingStack.nano.value),
+            ..._studyTools(podeRevisaoEspacada),
+            SizedBox(height: AppSpacingStack.xxSmall.value),
+          ],
           Text(
             Strings.aprenderTemasTitulo,
             style: AppFontStyle.body16Bold,
           ),
           SizedBox(height: AppSpacingStack.nano.value),
           _LearningThemeTopicsGrid(themes: manifest.themes),
-          SizedBox(height: AppSpacingStack.xxSmall.value),
-          Text(
-            Strings.aprenderFerramentasEstudo,
-            style: AppFontStyle.body16Bold,
-          ),
-          SizedBox(height: AppSpacingStack.nano.value),
-          LearningStudyToolTile(
-            title: Strings.aprenderTrilha,
-            subtitle: Strings.aprenderTrilhaSubtitulo,
-            icon: Icons.route_outlined,
-            accentColor: AppColors.primary,
-            onTap: () => Get.toNamed(Routes.aprenderTrilha),
-          ),
-          SizedBox(height: AppSpacingStack.nano.value),
-          LearningStudyToolTile(
-            title: Strings.aprenderFichas,
-            subtitle: Strings.aprenderFichasSubtitulo,
-            icon: Icons.style_outlined,
-            accentColor: AppColors.blue,
-            onTap: () => Get.toNamed(Routes.aprenderFichas),
-          ),
-          SizedBox(height: AppSpacingStack.nano.value),
-          LearningStudyToolTile(
-            title: Strings.aprenderMapa,
-            subtitle: Strings.aprenderMapaSubtitulo,
-            icon: Icons.insights_outlined,
-            accentColor: AppColors.darkGreen,
-            onTap: () => Get.toNamed(Routes.aprenderMapa),
-          ),
-          if (podeRevisaoEspacada) ...[
-            SizedBox(height: AppSpacingStack.nano.value),
-            LearningStudyToolTile(
-              title: Strings.revisaoEspacada,
-              subtitle: Strings.revisaoEspacadaDescricao,
-              icon: Icons.replay_outlined,
-              accentColor: AppColors.purple,
-              onTap: () => Get.toNamed(Routes.aprenderRevisao),
+          if (!isPro) ...[
+            SizedBox(height: AppSpacingStack.xxSmall.value),
+            Text(
+              Strings.aprenderFerramentasEstudo,
+              style: AppFontStyle.body16Bold,
             ),
+            SizedBox(height: AppSpacingStack.nano.value),
+            ..._studyTools(podeRevisaoEspacada),
           ],
           SizedBox(height: AppSpacingStack.xxxSmall.value),
           AppButton.link(
             Strings.fontesOficiais,
             onPressed: () => Get.toNamed(Routes.legalNotice),
           ),
+          if (isPro) ...[
+            SizedBox(height: AppSpacingStack.nano.value),
+            Text(
+              Strings.avisoLegalTexto,
+              style: AppFontStyle.caption12Regular.setColor(AppColors.grey),
+            ),
+          ],
         ],
       ),
     );
+  }
+
+  List<Widget> _studyTools(bool revisao) {
+    return [
+      LearningStudyToolTile(
+        title: Strings.aprenderTrilha,
+        subtitle: Strings.aprenderTrilhaSubtitulo,
+        icon: Icons.route_outlined,
+        accentColor: AppColors.primary,
+        onTap: () => Get.toNamed(Routes.aprenderTrilha),
+      ),
+      SizedBox(height: AppSpacingStack.nano.value),
+      LearningStudyToolTile(
+        title: Strings.aprenderFichas,
+        subtitle: Strings.aprenderFichasSubtitulo,
+        icon: Icons.style_outlined,
+        accentColor: AppColors.blue,
+        onTap: () => Get.toNamed(Routes.aprenderFichas),
+      ),
+      SizedBox(height: AppSpacingStack.nano.value),
+      LearningStudyToolTile(
+        title: Strings.aprenderMapa,
+        subtitle: Strings.aprenderMapaSubtitulo,
+        icon: Icons.insights_outlined,
+        accentColor: AppColors.darkGreen,
+        onTap: () => Get.toNamed(Routes.aprenderMapa),
+      ),
+      if (revisao) ...[
+        SizedBox(height: AppSpacingStack.nano.value),
+        LearningStudyToolTile(
+          title: Strings.revisaoEspacada,
+          subtitle: Strings.revisaoEspacadaDescricao,
+          icon: Icons.replay_outlined,
+          accentColor: AppColors.purple,
+          onTap: () => Get.toNamed(Routes.aprenderRevisao),
+        ),
+      ],
+    ];
   }
 }
 

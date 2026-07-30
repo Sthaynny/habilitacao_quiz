@@ -5,7 +5,9 @@ import 'package:habilitacao_quiz/core/styles/spacing_stack.dart';
 import 'package:habilitacao_quiz/core/utils/strings.dart';
 
 class LearningHubHero extends StatelessWidget {
-  const LearningHubHero({super.key});
+  const LearningHubHero({super.key, this.isPro = false});
+
+  final bool isPro;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +27,9 @@ class LearningHubHero extends StatelessWidget {
             ),
             SizedBox(height: AppSpacingStack.quarck.value),
             Text(
-              Strings.aprenderHubSubtitulo,
+              isPro
+                  ? Strings.aprenderHubSubtituloPro
+                  : Strings.aprenderHubSubtitulo,
               style: AppFontStyle.body14Regular.setColor(
                 AppColors.white.withValues(alpha: 0.92),
               ),

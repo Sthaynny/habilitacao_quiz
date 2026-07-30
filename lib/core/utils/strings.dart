@@ -198,6 +198,8 @@ abstract class Strings {
   static const proStudyTemaSubtitulo = 'Todas as questões do tema';
   static const proStudySimuladoSubtitulo = '30 questões · proporção oficial';
   static const proStudyModoProvaSubtitulo = '40 min · como na prova';
+  static const aprenderHubSubtituloPro =
+      'Trilhas, fichas e revisão no seu ritmo — tudo offline.';
 
   static const revisaoEspacada = 'Revisão espaçada';
   static const revisarErrosUltimoTeste = 'Revisar erros do último teste';
