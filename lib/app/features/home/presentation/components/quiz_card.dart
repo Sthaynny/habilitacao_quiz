@@ -8,17 +8,23 @@ class QuizCardWidget extends StatelessWidget {
     required this.title,
     required this.onTap,
     required this.image,
+    this.subtitle,
+    this.badge,
   });
 
   final String title;
+  final String? subtitle;
+  final String? badge;
   final String image;
   final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
+    final semanticsLabel = subtitle == null ? title : '$title. $subtitle';
+
     return Semantics(
       button: true,
-      label: title,
+      label: semanticsLabel,
       child: InkWell(
         borderRadius: BorderRadius.circular(10),
         onTap: onTap,
@@ -36,10 +42,10 @@ class QuizCardWidget extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Expanded(
-                child: Align(
-                  alignment: Alignment.centerLeft,
-                  child: Image.asset(
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Image.asset(
                     image,
                     width: 48,
                     height: 48,
@@ -48,7 +54,28 @@ class QuizCardWidget extends StatelessWidget {
                     fit: BoxFit.contain,
                     excludeFromSemantics: true,
                   ),
-                ),
+                  if (badge != null) ...[
+                    const Spacer(),
+                    DecoratedBox(
+                      decoration: BoxDecoration(
+                        color: AppColors.primary.withValues(alpha: 0.12),
+                        borderRadius: BorderRadius.circular(6),
+                      ),
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: AppSpacingStack.quarck.value,
+                          vertical: 2,
+                        ),
+                        child: Text(
+                          badge!,
+                          style: AppFontStyle.caption12Regular.setColor(
+                            AppColors.primary,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ],
               ),
               SizedBox(height: AppSpacingStack.nano.value),
               Text(
@@ -57,6 +84,15 @@ class QuizCardWidget extends StatelessWidget {
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
               ),
+              if (subtitle != null) ...[
+                SizedBox(height: AppSpacingStack.quarck.value),
+                Text(
+                  subtitle!,
+                  style: AppFontStyle.caption12Regular.setColor(AppColors.grey),
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ],
             ],
           ),
         ),

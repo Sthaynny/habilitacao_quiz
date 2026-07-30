@@ -189,6 +189,16 @@ abstract class Strings {
   static const modoProva = 'Modo prova';
   static const modoProvaTimer = 'Tempo restante';
 
+  static const proStudyHubTitulo = 'Modo preparação';
+  static const proStudyHubSubtitulo =
+      'Simulados ilimitados, modo prova e revisão focada na reta final.';
+  static const proStudyAcessoRapido = 'Acesso rápido';
+  static const proStudyTemasTitulo = 'Quizzes por tema';
+  static const proStudyBancoCompleto = 'Banco completo';
+  static const proStudyTemaSubtitulo = 'Todas as questões do tema';
+  static const proStudySimuladoSubtitulo = '30 questões · proporção oficial';
+  static const proStudyModoProvaSubtitulo = '40 min · como na prova';
+
   static const revisaoEspacada = 'Revisão espaçada';
   static const revisarErrosUltimoTeste = 'Revisar erros do último teste';
   static const revisaoEspacadaDescricao =
