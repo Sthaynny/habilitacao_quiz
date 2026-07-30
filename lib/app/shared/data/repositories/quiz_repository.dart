@@ -23,10 +23,12 @@ class QuizRepository implements IQuizRepository {
     final quiz = QuizModel.fromJson(result);
     quiz.perguntas.shuffle();
     final limit = _proGate.maxQuestoesPorSessaoTema;
-    final perguntas = quiz.perguntas.sublist(
-      0,
-      limit.clamp(0, quiz.perguntas.length),
-    );
+    final perguntas = limit == null
+        ? quiz.perguntas
+        : quiz.perguntas.sublist(
+            0,
+            limit.clamp(0, quiz.perguntas.length),
+          );
     final tagged = perguntas
         .map((p) => p.copyWith(materiaTitulo: p.materiaTitulo ?? quiz.titulo))
         .toList();

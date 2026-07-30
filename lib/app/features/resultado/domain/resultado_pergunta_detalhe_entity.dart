@@ -7,6 +7,7 @@ class ResultadoPerguntaDetalheEntity {
     this.respostaEscolhidaTitulo,
     required this.acertou,
     this.materiaTitulo,
+    this.explicacao,
   });
 
   final String perguntaTitulo;
@@ -14,4 +15,5 @@ class ResultadoPerguntaDetalheEntity {
   final String respostaCorretaTitulo;
   final bool acertou;
   final String? materiaTitulo;
+  final String? explicacao;
 }

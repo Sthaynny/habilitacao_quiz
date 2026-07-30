@@ -5,8 +5,8 @@ abstract interface class ProGate {
 
   bool get exibirPromoPlus;
 
-  /// Perguntas por sessão de quiz temático (estudo); igual Free e Pro.
-  int get maxQuestoesPorSessaoTema;
+  /// Perguntas por sessão de quiz temático. `null` = banco completo (Pro).
+  int? get maxQuestoesPorSessaoTema;
 
   int get maxQuestoesSimulado;
 
@@ -34,6 +34,9 @@ abstract interface class ProGate {
   bool get podeRevisaoEspacada;
 
   bool get podeRevisarErrosUltimoTeste;
+
+  /// Explicação estática do JSON no gabarito (sem IA).
+  bool get podeVerExplicacaoGabarito;
 }
 
 final class CompileTimeProGate implements ProGate {
@@ -46,7 +49,7 @@ final class CompileTimeProGate implements ProGate {
   bool get exibirPromoPlus => !kIsPro;
 
   @override
-  int get maxQuestoesPorSessaoTema => 15;
+  int? get maxQuestoesPorSessaoTema => kIsPro ? null : 15;
 
   @override
   int get maxQuestoesSimulado => kIsPro ? 30 : 15;
@@ -91,6 +94,9 @@ final class CompileTimeProGate implements ProGate {
 
   @override
   bool get podeRevisarErrosUltimoTeste => kIsPro;
+
+  @override
+  bool get podeVerExplicacaoGabarito => kIsPro;
 }
 
 /// Gate configurável para testes.
@@ -117,7 +123,8 @@ final class StubProGate implements ProGate {
   bool get exibirPromoPlus => !isPro;
 
   @override
-  int get maxQuestoesPorSessaoTema => maxQuestoesPorSessaoTemaFree;
+  int? get maxQuestoesPorSessaoTema =>
+      isPro ? null : maxQuestoesPorSessaoTemaFree;
 
   @override
   int get maxQuestoesSimulado => isPro ? maxQuestoesSimuladoPro : maxQuestoesSimuladoFree;
@@ -162,4 +169,7 @@ final class StubProGate implements ProGate {
 
   @override
   bool get podeRevisarErrosUltimoTeste => isPro;
+
+  @override
+  bool get podeVerExplicacaoGabarito => isPro;
 }

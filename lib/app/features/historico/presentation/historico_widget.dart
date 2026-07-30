@@ -479,7 +479,8 @@ class _HistoricoWidgetState extends State<HistoricoWidget> with PopUpMixin {
 
   void _onResultadoTap(BuildContext context, ResultadoEntity element) {
     final proGate = Get.find<ProGate>();
-    if (proGate.isPro && element.isSimulado) {
+    final detalhe = element.detalhePerguntas;
+    if (proGate.isPro && detalhe != null && detalhe.isNotEmpty) {
       Get.to(() => DetalheSimuladoScreen(resultado: element));
       return;
     }

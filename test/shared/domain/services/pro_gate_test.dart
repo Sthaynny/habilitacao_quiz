@@ -21,14 +21,15 @@ void main() {
       expect(gate.podeSalvarResultado(9), isTrue);
       expect(gate.podeSalvarResultado(10), isFalse);
       expect(gate.podeVerDashboardMateriaHistorico, isFalse);
+      expect(gate.podeVerExplicacaoGabarito, isFalse);
     });
   });
 
   group('StubProGate Pro', () {
     final gate = StubProGate(isPro: true);
 
-    test('simulado 30q; temas fixos em 15 para estudo', () {
-      expect(gate.maxQuestoesPorSessaoTema, 15);
+    test('banco completo por tema; simulado 30q', () {
+      expect(gate.maxQuestoesPorSessaoTema, isNull);
       expect(gate.maxQuestoesSimulado, 30);
       expect(gate.maxResultadosHistorico, isNull);
       expect(gate.exibirPromoPlus, isFalse);
@@ -40,6 +41,7 @@ void main() {
       expect(gate.podeSalvarResultado(15), isTrue);
       expect(gate.podeSalvarResultado(100), isTrue);
       expect(gate.podeVerDashboardMateriaHistorico, isTrue);
+      expect(gate.podeVerExplicacaoGabarito, isTrue);
     });
   });
 }

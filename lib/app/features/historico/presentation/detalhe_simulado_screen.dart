@@ -62,13 +62,18 @@ class _PerguntaDetalheCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final status = item.acertou ? 'Acertou' : 'Errou';
-    final label =
-        'Questão $index. ${item.perguntaTitulo}. $status. '
-        'Sua resposta: ${item.respostaEscolhidaTitulo ?? Strings.nao}. '
-        'Gabarito: ${item.respostaCorretaTitulo}';
+    final explicacao = item.explicacao?.trim();
+    final label = StringBuffer(
+      'Questão $index. ${item.perguntaTitulo}. $status. '
+      'Sua resposta: ${item.respostaEscolhidaTitulo ?? Strings.nao}. '
+      'Gabarito: ${item.respostaCorretaTitulo}',
+    );
+    if (explicacao != null && explicacao.isNotEmpty) {
+      label.write('. ${Strings.explicacaoGabarito}: $explicacao');
+    }
 
     return Semantics(
-      label: label,
+      label: label.toString(),
       child: Container(
         padding: EdgeInsets.all(AppSpacingStack.xxxSmall.value),
         decoration: BoxDecoration(
@@ -109,6 +114,17 @@ class _PerguntaDetalheCard extends StatelessWidget {
               'Gabarito: ${item.respostaCorretaTitulo}',
               style: AppFontStyle.caption12Regular.setColor(AppColors.grey),
             ),
+            if (explicacao != null && explicacao.isNotEmpty) ...[
+              SizedBox(height: AppSpacingStack.nano.value),
+              Text(
+                Strings.explicacaoGabarito,
+                style: AppFontStyle.body14Bold,
+              ),
+              Text(
+                explicacao,
+                style: AppFontStyle.caption12Regular.setColor(AppColors.grey),
+              ),
+            ],
           ],
         ),
       ),

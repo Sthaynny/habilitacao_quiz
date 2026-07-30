@@ -69,6 +69,7 @@ class MapQuizToResultado {
       respostaCorretaTitulo: correta.titulo,
       acertou: sel?.correta ?? false,
       materiaTitulo: materia,
+      explicacao: p.explicacao,
     );
   }
 }

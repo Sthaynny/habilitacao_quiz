@@ -77,7 +77,8 @@ abstract class Strings {
       'Nenhum resultado corresponde aos filtros aplicados.';
   static const historicoBadgeSimulado = 'Simulado';
   static const historicoBadgeTema = 'Tema';
-  static const historicoDetalheTitulo = 'Detalhe do simulado';
+  static const historicoDetalheTitulo = 'Gabarito detalhado';
+  static const explicacaoGabarito = 'Explicação';
   static const historicoResumoFreeTitulo = 'Seu resultado';
   static const historicoResumoFreeCorpo =
       'No Habilitação Quiz+ você revisa o gabarito questão a questão.';

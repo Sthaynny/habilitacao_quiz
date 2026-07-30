@@ -90,4 +90,26 @@ void main() {
     );
     expect(r.detalhePerguntas!.single.materiaTitulo, Strings.legislacao);
   });
+
+  test('Pro inclui explicacao estatica no detalhe quando existir no JSON', () {
+    final quiz = QuizEntity(
+      titulo: Strings.simulado,
+      perguntas: [
+        PerguntaEntity(
+          titulo: 'P1',
+          explicacao: 'Porque A e correta.',
+          respostas: [RespostaEntity(titulo: 'A', correta: true)],
+          respostaSelecionada: RespostaEntity(titulo: 'A', correta: true),
+        ),
+      ],
+    );
+    final r = MapQuizToResultado.call(
+      quiz: quiz,
+      totalPerguntasCorretas: 1,
+      percentual: 100,
+      aprovado: true,
+      isPro: true,
+    );
+    expect(r.detalhePerguntas!.single.explicacao, 'Porque A e correta.');
+  });
 }
