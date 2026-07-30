@@ -39,6 +39,13 @@ class _ProDashboard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final comDados = stats.where((s) => s.temDados).toList();
+    final maisFraca = comDados.isEmpty
+        ? null
+        : comDados.reduce(
+            (a, b) => a.percentual <= b.percentual ? a : b,
+          );
+
     return Semantics(
       container: true,
       label: Strings.historicoDashboardMateriaTitulo,
@@ -69,7 +76,13 @@ class _ProDashboard extends StatelessWidget {
               itemCount: stats.length,
               separatorBuilder: (_, _) =>
                   SizedBox(height: AppSpacingStack.nano.value),
-              itemBuilder: (context, index) => _MateriaRow(stats[index]),
+              itemBuilder: (context, index) {
+                final item = stats[index];
+                return _MateriaRow(
+                  item,
+                  destacar: maisFraca != null && item.titulo == maisFraca.titulo,
+                );
+              },
             ),
           ],
         ),
@@ -79,9 +92,10 @@ class _ProDashboard extends StatelessWidget {
 }
 
 class _MateriaRow extends StatelessWidget {
-  const _MateriaRow(this.item);
+  const _MateriaRow(this.item, {this.destacar = false});
 
   final MateriaPercentualEntity item;
+  final bool destacar;
 
   @override
   Widget build(BuildContext context) {
@@ -93,29 +107,55 @@ class _MateriaRow extends StatelessWidget {
       padding: EdgeInsets.only(bottom: AppSpacingStack.nano.value),
       child: Semantics(
         label: '${item.titulo}. $pctLabel',
-        child: Row(
-          children: [
-            Expanded(
-              flex: 2,
-              child: Text(
-                item.titulo,
-                style: AppFontStyle.caption12Regular,
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
+        child: Container(
+          padding: destacar
+              ? EdgeInsets.all(AppSpacingStack.quarck.value)
+              : EdgeInsets.zero,
+          decoration: destacar
+              ? BoxDecoration(
+                  color: AppColors.primary.withValues(alpha: 0.06),
+                  borderRadius: BorderRadius.circular(8),
+                  border: Border.all(
+                    color: AppColors.primary.withValues(alpha: 0.25),
+                  ),
+                )
+              : null,
+          child: Row(
+            children: [
+              Expanded(
+                flex: 2,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      item.titulo,
+                      style: AppFontStyle.caption12Regular,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                    if (destacar)
+                      Text(
+                        Strings.proStudyFocoMateria,
+                        style: AppFontStyle.caption12Regular.setColor(
+                          AppColors.primary,
+                        ),
+                      ),
+                  ],
+                ),
               ),
-            ),
-            Expanded(
-              flex: 3,
-              child: LinearProgressIndicatorWidget(
-                value: item.temDados ? item.percentual / 100 : 0,
+              Expanded(
+                flex: 3,
+                child: LinearProgressIndicatorWidget(
+                  value: item.temDados ? item.percentual / 100 : 0,
+                ),
               ),
-            ),
-            SizedBox(width: AppSpacingStack.nano.value),
-            Text(
-              pctLabel,
-              style: AppFontStyle.caption12Regular.setColor(AppColors.grey),
-            ),
-          ],
+              SizedBox(width: AppSpacingStack.nano.value),
+              Text(
+                pctLabel,
+                style: AppFontStyle.caption12Regular.setColor(AppColors.grey),
+              ),
+            ],
+          ),
         ),
       ),
     );
