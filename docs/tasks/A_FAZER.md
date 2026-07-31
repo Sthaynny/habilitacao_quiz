@@ -23,7 +23,7 @@
 | — | Acessibilidade | ⏳ por épico | `feature-a11y-implementer` |
 | 4 | IA | 🔒 bloqueado | `feature-ia-pro` (readonly) |
 
-`flutter analyze` limpo · **105** testes passando (jul/2026).
+`flutter analyze` limpo · **110** testes passando (jul/2026).
 
 ---
 
@@ -68,7 +68,7 @@ _Schema em `PerguntaModel` pronto; `legislacao.json` com `explicacao` em 56/56; 
 
 | ID | Objetivo | Critério de pronto | Agente |
 | :--- | :--- | :--- | :--- |
-| A11Y-GATE | Semantics limites + questionário | Checklist doc GATE sem blocker | `feature-a11y-implementer` |
+| A11Y-GATE | Semantics limites + questionário | Checklist doc GATE sem blocker (snackbar limite + questionário feito; revisar checklist) | `feature-a11y-implementer` |
 | ~~A11Y-PROMO~~ | ~~CTAs Quiz+ + tela **+**~~ | ✅ 2026-07-30 — ver [FINALIZADAS.md](./FINALIZADAS.md) | — |
 | A11Y-HIST | Lista, chips, detalhe simulado | Checklist doc HIST sem blocker | `feature-a11y-implementer` |
 | A11Y-LEARN | Hub Aprender + Markdown | Checklist doc LEARN sem blocker | `feature-a11y-implementer` |
@@ -81,9 +81,9 @@ Doc: [acessibilidade-implementacao.md](../features/acessibilidade-implementacao.
 
 | ID | Objetivo | Critério de pronto | Agente |
 | :--- | :--- | :--- | :--- |
-| F01 | Onboarding matéria fraca | 1ª sessão; SP; sem bloquear quiz | `feature-free-evolution` |
+| ~~F01~~ | ~~Onboarding matéria fraca~~ | ✅ 1ª sessão; SP; sheet opcional — ver [FINALIZADAS.md](./FINALIZADAS.md) | — |
 | F02 | Lembrete local opt-in | Notificação agendável | `feature-free-evolution` |
-| F03 | Empty state histórico | Copy + CTA suave | `feature-free-evolution` |
+| ~~F03~~ | ~~Empty state histórico~~ | ✅ Copy + CTA suave — ver [FINALIZADAS.md](./FINALIZADAS.md) | — |
 | F04 | Patch JSON versionado | `contentVersion` ou script | `feature-free-evolution` |
 
 ---
@@ -101,7 +101,7 @@ Doc: [acessibilidade-implementacao.md](../features/acessibilidade-implementacao.
 ## Ordem sugerida (agora)
 
 ```
-T01 (decisão) → T15 smoke → T16–T18 publicar + → A11Y-GATE → T28c explicações demais temas
+T01 (decisão) → T15 smoke manual → T16–T18 publicar + → A11Y-HIST/LEARN → T28c
 ```
 
-Depois: A11Y-HIST/LEARN → T28c/d → F01–F04 → IA (quando houver receita).
+Depois: T28d → F02/F04 → fechar A11Y-GATE (checklist) → IA (quando houver receita).
