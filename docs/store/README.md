@@ -10,5 +10,7 @@ Runbooks para **dois binários** (Free e **Habilitação Quiz+**), publicação 
 | [SMOKE_PRO.md](./SMOKE_PRO.md) | Checklist pós-build (Free vs Pro no dispositivo) |
 | [pro-publication-smoke.md](./pro-publication-smoke.md) | Flag `HABILITACAO_QUIZ_PRO_PUBLISHED` e funil “Ver na Play Store” |
 | [play-store-utm.md](./play-store-utm.md) | UTMs dos CTAs Free → ficha do **+** |
+| [../CHANGELOG.md](../CHANGELOG.md) | Histórico de versões do app |
+| `google_play/release_notes_*.txt` | Texto “O que há de novo” para a Play Store |
 
 Tarefas relacionadas: bloco `[STORE]` em [A_FAZER.md](../tasks/A_FAZER.md) e entradas em [FINALIZADAS.md](../tasks/FINALIZADAS.md).

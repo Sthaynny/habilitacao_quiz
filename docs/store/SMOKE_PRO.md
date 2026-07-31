@@ -31,7 +31,7 @@ flutter build apk --flavor pro --dart-define=HABILITACAO_QUIZ_PRO=true
 
 **Responsável:** _______________  
 **Data:** _______________  
-**Versão (versionName):** _______________
+**Versão (versionName):** 2.0.0
 
 ## Pré-requisitos
 

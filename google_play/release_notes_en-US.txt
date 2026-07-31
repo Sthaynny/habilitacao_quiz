@@ -1,0 +1,7 @@
+New: Learn tab with study paths, flashcards, and skills map (Pro).
+
+• Detailed answer key and per-subject dashboard in history
+• Explanations on Traffic Law questions and quiz results
+• 40-min exam mode, error review, and history export (Pro)
+• Onboarding, optional study reminder, and accessibility improvements
+• Better performance and startup stability

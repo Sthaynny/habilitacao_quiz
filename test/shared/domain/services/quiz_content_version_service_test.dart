@@ -18,11 +18,11 @@ void main() {
 
     test('primeira sessão grava versão sem notificar', () async {
       expect(await service.detectarAtualizacaoConteudo(), isFalse);
-      expect(await datasource.lerVersaoVista(), 1);
+      expect(await datasource.lerVersaoVista(), 2);
     });
 
     test('versão igual não notifica', () async {
-      await datasource.salvarVersaoVista(1);
+      await datasource.salvarVersaoVista(2);
       expect(await service.detectarAtualizacaoConteudo(), isFalse);
     });
   });

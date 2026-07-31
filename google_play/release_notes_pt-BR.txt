@@ -1,0 +1,7 @@
+Novidade: aba Aprender com trilhas, fichas e mapa de competências (Pro).
+
+• Gabarito detalhado e dashboard por matéria no histórico
+• Explicações nas questões de Legislação e no resultado
+• Modo prova 40 min, revisão de erros e exportação do histórico (Pro)
+• Onboarding, lembrete de estudo opcional e melhorias de acessibilidade
+• Mais desempenho e estabilidade na abertura do app
