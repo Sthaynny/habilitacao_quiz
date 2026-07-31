@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:habilitacao_quiz/core/styles/app_styles.dart';
-import 'package:habilitacao_quiz/core/styles/spacing_stack.dart';
+import 'package:habilitacao_quiz/core/components/section_header_a11y.dart';
 
 class HistoricoFiltroChip extends StatelessWidget {
   const HistoricoFiltroChip({
@@ -16,25 +15,10 @@ class HistoricoFiltroChip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Semantics(
-      button: true,
-      selected: selected,
+    return FilterChipA11y(
       label: label,
-      child: FilterChip(
-        label: Text(label),
-        selected: selected,
-        onSelected: (_) => onSelected(),
-        showCheckmark: false,
-        selectedColor: AppColors.primary.withValues(alpha: 0.15),
-        labelStyle: AppFontStyle.caption12Regular.copyWith(
-          color: selected ? AppColors.primary : AppColors.grey,
-        ),
-        padding: EdgeInsets.symmetric(
-          horizontal: AppSpacingStack.nano.value,
-          vertical: AppSpacingStack.quarck.value,
-        ),
-        materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-      ),
+      selected: selected,
+      onSelected: onSelected,
     );
   }
 }

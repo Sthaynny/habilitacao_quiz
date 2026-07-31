@@ -27,6 +27,7 @@
         {
             "id": "legislacao_2",
             "titulo": "Os sinais sonoros executados por buzinas deverão ser de um toque breve e somente serão usados para?",
+            "explicacao": "O CTB restringe o uso da buzina a um toque breve, apenas como advertência a pedestres ou outros veículos. Não se pode usá-la para apressar pessoas ou chamar alguém.",
             "respostas": [
                 {
                     "titulo": "apressar os pedestres ou chamar pessoas."
@@ -49,6 +50,7 @@
         {
             "id": "legislacao_3",
             "titulo": "O sinal sonoro usado pelo policial de trânsito para informar ao condutor que o trânsito está impedido em todas as direções caracterizam-se por?",
+            "explicacao": "Quando o trânsito está impedido em todas as direções, o agente emite um silvo longo seguido de um breve. Esse padrão alerta os condutores sobre a interdição total da via.",
             "respostas": [
                 {
                     "titulo": "dois silvos breves e um longo."
@@ -71,6 +73,7 @@
         {
             "id": "legislacao_4",
             "titulo": "Quando o policial de trânsito movimenta o braço direito para cima e para baixo, está determinando que o condutor do veículo?",
+            "explicacao": "O gesto do agente com o braço direito movimentado para cima e para baixo ordena reduzir a marcha do veículo. É um sinal gestual previsto na educação para o trânsito.",
             "respostas": [
                 {
                     "titulo": "diminua a marcha.",
@@ -93,6 +96,7 @@
         {
             "id": "legislacao_5",
             "titulo": "O condutor de veículo com o braço estendido para fora horizontalmente, a mão fazendo movimentos para cima e para baixo, indica para os outros condutores?",
+            "explicacao": "Com o braço estendido e a mão fazendo movimentos verticais, o condutor avisa que vai diminuir a marcha ou parar. É o gesto padronizado para essa intenção.",
             "respostas": [
                 {
                     "titulo": "que o trânsito permite ultrapassagem."
@@ -115,6 +119,7 @@
         {
             "id": "legislacao_6",
             "titulo": "De acordo com os sinais sonoros abaixo, marque a resposta que corresponde ao sinal “diminua a marcha”?",
+            "explicacao": "O sinal sonoro para diminuir a marcha é um silvo longo emitido pelo agente de trânsito. Os demais padrões de silvos correspondem a outras ordens.",
             "respostas": [
                 {
                     "titulo": "três silvos breves."
@@ -137,6 +142,7 @@
         {
             "id": "legislacao_7",
             "titulo": "O sinal sonoro que corresponde ao sinal “PARE” caracteriza-se por?",
+            "explicacao": "A ordem de parada do agente é indicada por dois silvos breves. Condutores devem reconhecer esse padrão como equivalente ao sinal de PARE.",
             "respostas": [
                 {
                     "titulo": "dois silvos breves.",
@@ -159,6 +165,7 @@
         {
             "id": "legislacao_8",
             "titulo": "Quando um agente da autoridade de trânsito emitir três silvos longos, os condutores entendem que devem?",
+            "explicacao": "Três silvos longos do agente significam que os condutores devem ficar a postos, aguardando nova ordem. Não é sinal de parada imediata nem de seguir em frente.",
             "respostas": [
                 {
                     "titulo": "seguir em frente."
@@ -181,6 +188,7 @@
         {
             "id": "legislacao_9",
             "titulo": "De acordo com os sinais sonoros citados abaixo, assinale na folha de respostas a alternativa que corresponde ao sinal “ATENÇÃO! SIGA”?",
+            "explicacao": "O sinal sonoro \"Atenção! Siga\" corresponde a um silvo breve. Indica que o condutor pode prosseguir com atenção às condições do trânsito.",
             "respostas": [
                 {
                     "titulo": "um silvo breve.",
@@ -203,6 +211,7 @@
         {
             "id": "legislacao_10",
             "titulo": "Diante da placa (I-11), você entende que?",
+            "explicacao": "A placa I-11 é de serviço auxiliar e indica área de estacionamento nas proximidades. Informa ao condutor onde pode parar o veículo com segurança.",
             "respostas": [
                 {
                     "titulo": "existe um local com estabelecimento onde você pode dormir."
@@ -226,6 +235,7 @@
         {
             "id": "legislacao_11",
             "titulo": "Diante da placa (I-13), você entende que é uma área com?",
+            "explicacao": "A placa I-13 sinaliza oficina mecânica junto ou próxima à via. Pertence ao grupo de placas de serviços auxiliares ao usuário da rodovia.",
             "respostas": [
                 {
                     "titulo": "posto de socorro médico, junto ou próximo à via."
@@ -249,6 +259,7 @@
         {
             "id": "legislacao_12",
             "titulo": "Diante da placa (I-14), você entende que encontrará?",
+            "explicacao": "A placa I-14 indica posto de abastecimento de combustível à distância mostrada. Ajuda o condutor a planejar a parada para reabastecimento.",
             "respostas": [
                 {
                     "titulo": "um local permitido para estacionamento de trailer."
@@ -272,6 +283,7 @@
         {
             "id": "legislacao_13",
             "titulo": "Diante da placa (I-15), você entende que existe?",
+            "explicacao": "A placa I-15 informa a existência de posto de socorro médico junto ou próximo à via. É uma placa de orientação de serviços de emergência.",
             "respostas": [
                 {
                     "titulo": "uma área sinalizada para estacionar seu veículo."
@@ -295,6 +307,7 @@
         {
             "id": "legislacao_14",
             "titulo": "Diante da placa (I-16), você entende que existe uma?",
+            "explicacao": "A placa I-16 indica área com sanitários disponíveis para os usuários da via. Faz parte das placas de serviços auxiliares.",
             "respostas": [
                 {
                     "titulo": "área com oficina mecânica."
@@ -318,6 +331,7 @@
         {
             "id": "legislacao_15",
             "titulo": "Diante da placa (I-17), você entende que existe?",
+            "explicacao": "A placa I-17 sinaliza restaurante à distância indicada na placa. Orienta o condutor sobre serviços de alimentação nas proximidades.",
             "respostas": [
                 {
                     "titulo": "um restaurante à distância indicada na placa.",
@@ -341,6 +355,7 @@
         {
             "id": "legislacao_16",
             "titulo": "Diante da placa (I-19), você entende que é uma área?",
+            "explicacao": "A placa I-19 indica área permitida para camping. Informa locais regulamentados para pernoite ou acampamento junto à via.",
             "respostas": [
                 {
                     "titulo": "com aeroporto nas proximidades."
@@ -364,6 +379,7 @@
         {
             "id": "legislacao_17",
             "titulo": "Diante da placa (I-20), você entende que?",
+            "explicacao": "A placa I-20 sinaliza aeroporto nas proximidades. É placa de orientação que auxilia na localização de serviços de transporte aéreo.",
             "respostas": [
                 {
                     "titulo": "existe um posto de socorro médico, junto ou próximo à via."
@@ -387,6 +403,7 @@
         {
             "id": "legislacao_18",
             "titulo": "Diante da placa (I-22), você entende que existe?",
+            "explicacao": "A placa I-22 indica local permitido para estacionamento de trailer ou reboque. Orienta condutores que transportam unidades acopladas.",
             "respostas": [
                 {
                     "titulo": "um aeroporto nas proximidades."
@@ -410,6 +427,7 @@
         {
             "id": "legislacao_19",
             "titulo": "Diante da placa (R-2), você entende que deve?",
+            "explicacao": "A placa R-2 é de regulamentação e indica cruzamento com via preferencial. O condutor deve reduzir a velocidade e dar preferência aos veículos da via principal.",
             "respostas": [
                 {
                     "titulo": "circular no sentido indicado, neste caso, indo para o lado direito."
@@ -433,6 +451,7 @@
         {
             "id": "legislacao_20",
             "titulo": "Diante da placa (R-4a), você entende que é proibido?",
+            "explicacao": "A placa R-4a proíbe conversão à esquerda no local sinalizado. As demais manobras só são permitidas se não houver outra placa restritiva.",
             "respostas": [
                 {
                     "titulo": "realizar conversão à direita."
@@ -456,6 +475,7 @@
         {
             "id": "legislacao_21",
             "titulo": "Diante da placa (R-4b), você entende que é proibido?",
+            "explicacao": "A placa R-4b proíbe conversão à direita no trecho regulamentado. O condutor deve respeitar essa restrição de manobra.",
             "respostas": [
                 {
                     "titulo": "dar meia volta ou retornar."
@@ -479,6 +499,7 @@
         {
             "id": "legislacao_22",
             "titulo": "Diante da placa (R-5), você entende que é proibido?",
+            "explicacao": "A placa R-5 proíbe dar meia-volta ou retornar no local. É uma restrição de regulamentação para evitar manobras perigosas.",
             "respostas": [
                 {
                     "titulo": "realizar conversão à esquerda."
@@ -502,6 +523,7 @@
         {
             "id": "legislacao_23",
             "titulo": "Diante da placa (R-6b), você entende que?",
+            "explicacao": "A placa R-6b indica que o estacionamento é permitido no trecho regulamentado. Diferencia-se da R-6a, que proíbe estacionar.",
             "respostas": [
                 {
                     "titulo": "pedestres devem circular pelo lado direito da via."
@@ -525,6 +547,7 @@
         {
             "id": "legislacao_24",
             "titulo": "Diante da placa (R-7), você entende que é?",
+            "explicacao": "A placa R-7 proíbe a manobra de ultrapassagem no trecho sinalizado. O condutor não pode passar outro veículo nessa extensão da via.",
             "respostas": [
                 {
                     "titulo": "proibida a entrada ou a passagem de veículos de carga na área ou via sinalizada."
@@ -548,6 +571,7 @@
         {
             "id": "legislacao_25",
             "titulo": "Diante da placa (R-9), você entende que é?",
+            "explicacao": "A placa R-9 proíbe a entrada ou passagem de veículos de carga na área ou via sinalizada. Restringe o tráfego de caminhões e similares.",
             "respostas": [
                 {
                     "titulo": "proibido realizar operação de ultrapassagem no trecho regulamentado."
@@ -571,6 +595,7 @@
         {
             "id": "legislacao_26",
             "titulo": "Diante da placa (R-11), você entende que é?",
+            "explicacao": "A placa R-11 proíbe a circulação de veículos de tração animal na via ou área indicada. Veículos puxados por animais não podem transitar ali.",
             "respostas": [
                 {
                     "titulo": "proibida a entrada ou a passagem de qualquer tipo de veículo automotor na área ou via sinalizada."
@@ -594,6 +619,7 @@
         {
             "id": "legislacao_27",
             "titulo": "Diante da placa (R-19), você?",
+            "explicacao": "A placa R-19 fixa velocidade máxima permitida no trecho. O condutor deve manter velocidade igual ou inferior ao valor indicado na placa.",
             "respostas": [
                 {
                     "titulo": "reduz a velocidade e, se necessário, pára seu veículo, dando preferência aos veículos que circulam na via preferencial."
@@ -617,6 +643,7 @@
         {
             "id": "legislacao_28",
             "titulo": "Diante da placa (R-1), você entende que deve?",
+            "explicacao": "A placa R-1 é a de parada obrigatória. O condutor deve parar o veículo e verificar o trânsito antes de entrar ou cruzar a via.",
             "respostas": [
                 {
                     "titulo": "somente circular com seu veículo no sentido indicado."
@@ -640,6 +667,7 @@
         {
             "id": "legislacao_29",
             "titulo": "Diante da placa (R-3), você entende que é proibido?",
+            "explicacao": "A placa R-3 proíbe seguir em frente ou entrar na rua ou área restringida. O condutor deve escolher outra direção de manobra.",
             "respostas": [
                 {
                     "titulo": "mudar de faixa de trânsito."
@@ -663,6 +691,7 @@
         {
             "id": "legislacao_30",
             "titulo": "Diante da placa (R-6a), você entende que é proibido?",
+            "explicacao": "A placa R-6a proíbe estacionar no trecho abrangido pela restrição. Parar para embarque ou desembarque rápido pode ser tratado como parada, não estacionamento.",
             "respostas": [
                 {
                     "titulo": "seguir em frente ou entrar na rua ou área restringida."
@@ -686,6 +715,7 @@
         {
             "id": "legislacao_31",
             "titulo": "Para o licenciamento de um veículo, em outro Estado, deve-se?",
+            "explicacao": "Ao licenciar veículo em outro Estado, o proprietário deve dar ciência ao DETRAN do Estado de origem. Não é necessária autorização do CONTRAN.",
             "respostas": [
                 {
                     "titulo": "obrigatoriamente alterar os caracteres das suas placas."
@@ -708,6 +738,7 @@
         {
             "id": "legislacao_32",
             "titulo": "A prestação dos exames para obtenção da Carteira Nacional de Habilitação só poderá ser requerida pelo candidato que seja alfabetizado e tenha completado?",
+            "explicacao": "Para requerer os exames da CNH, o candidato deve ser alfabetizado e ter completado 18 anos. A idade mínima é requisito legal para habilitação.",
             "respostas": [
                 {
                     "titulo": "dezessete anos."
@@ -730,6 +761,7 @@
         {
             "id": "legislacao_33",
             "titulo": "As subdivisões da pista de rolamento, com ou sem separações de marcas e cuja largura permite a circulação de um veículo com segurança, são chamadas?",
+            "explicacao": "As subdivisões da pista que permitem circulação segura de um veículo são chamadas faixas de trânsito. Podem existir com ou sem marcação no pavimento.",
             "respostas": [
                 {
                     "titulo": "vias públicas."
@@ -752,6 +784,7 @@
         {
             "id": "legislacao_34",
             "titulo": "Ao Departamento de Trânsito (DETRAN), órgão executivo, cabe, entre outras, a atribuição de?",
+            "explicacao": "Expedir a Carteira Nacional de Habilitação é atribuição do DETRAN, órgão executivo estadual de trânsito. Cabe a ele conduzir o processo de habilitação.",
             "respostas": [
                 {
                     "titulo": "sugerir modificações sobre a Legislação de Trânsito."
@@ -774,6 +807,7 @@
         {
             "id": "legislacao_35",
             "titulo": "Ao Departamento de Trânsito (DETRAN), órgão executivo, cabe, entre outras, a atribuição de?",
+            "explicacao": "Vistoriar, registrar e emplacar veículos são competências do DETRAN. Essas atividades fazem parte da execução das normas de trânsito no Estado.",
             "respostas": [
                 {
                     "titulo": "vistoriar, registrar e emplacar veículos.",
@@ -796,6 +830,7 @@
         {
             "id": "legislacao_36",
             "titulo": "Expedir a Carteira Nacional de Habilitação é atribuição?",
+            "explicacao": "A expedição da CNH é atribuição do Departamento Estadual de Trânsito (DETRAN). O CONTRAN normatiza, mas não emite carteiras de habilitação.",
             "respostas": [
                 {
                     "titulo": "do Departamento Nacional de Trânsito."
@@ -818,6 +853,7 @@
         {
             "id": "legislacao_37",
             "titulo": "É dever de todo condutor de veículo?",
+            "explicacao": "Todo condutor deve portar e exibir os documentos exigidos quando solicitado pela autoridade de trânsito. É dever previsto no CTB.",
             "respostas": [
                 {
                     "titulo": "nas vias urbanas, deslocar com antecedência o veículo para a faixa mais à direita da via quando for entrar para a esquerda."
@@ -840,6 +876,7 @@
         {
             "id": "legislacao_38",
             "titulo": "O órgão máximo normativo do Sistema Nacional de Trânsito é?",
+            "explicacao": "O Conselho Nacional de Trânsito (CONTRAN) é o órgão máximo normativo do Sistema Nacional de Trânsito. Estabelece normas e regulamentos gerais.",
             "respostas": [
                 {
                     "titulo": "o Departamento Nacional de Trânsito - Denatran."
@@ -862,6 +899,7 @@
         {
             "id": "legislacao_39",
             "titulo": "Os Departamentos de Estradas e Rodagens são órgãos?",
+            "explicacao": "Os Departamentos de Estradas e Rodagem (DER) são órgãos executivos do SNT. Executam obras e administram rodovias estaduais.",
             "respostas": [
                 {
                     "titulo": "normativos do Sistema Nacional de Trânsito."
@@ -884,6 +922,7 @@
         {
             "id": "legislacao_40",
             "titulo": "A cópia fotostática ou a fotocópia da Carteira Nacional de Habilitação?",
+            "explicacao": "Cópias fotostáticas ou fotocópias da CNH não substituem o documento original nem comprovam o direito de dirigir. Apenas o documento original é válido.",
             "respostas": [
                 {
                     "titulo": "são válidas e substituem o documento original quando autenticadas em cartório."
@@ -906,6 +945,7 @@
         {
             "id": "legislacao_41",
             "titulo": "A realização de qualquer ato público que interfira no trânsito depende de?",
+            "explicacao": "Qualquer ato público que interfira no trânsito depende de prévia autorização da autoridade de trânsito competente. Garante segurança e organização do fluxo.",
             "respostas": [
                 {
                     "titulo": "licença especial do Prefeito."
@@ -928,6 +968,7 @@
         {
             "id": "legislacao_42",
             "titulo": "É proibido o uso da buzina no perímetro urbano no horário compreendido entre?",
+            "explicacao": "No perímetro urbano, é proibido usar a buzina entre 22 horas e 6 horas. A restrição visa reduzir poluição sonora em horários de repouso.",
             "respostas": [
                 {
                     "titulo": "22 (vinte e duas) horas e 06 (seis) horas",
@@ -950,6 +991,7 @@
         {
             "id": "legislacao_43",
             "titulo": "Retirar o veículo do local do acidente, no qual haja vítima, sem autorização da autoridade de trânsito?",
+            "explicacao": "Retirar o veículo do local de acidente com vítima só é permitido para prestar socorro. Preservar o local é importante para a investigação.",
             "respostas": [
                 {
                     "titulo": "só é permitido para prestar socorro à vítima do acidente.",
@@ -972,6 +1014,7 @@
         {
             "id": "legislacao_44",
             "titulo": "O condutor se torna inabilitado para conduzir qualquer espécie de veículo automotor quando?",
+            "explicacao": "A cassação da CNH torna o condutor inabilitado para conduzir qualquer veículo automotor. É a penalidade mais grave aplicável à habilitação.",
             "respostas": [
                 {
                     "titulo": "seu veículo for apreendido."
@@ -994,6 +1037,7 @@
         {
             "id": "legislacao_45",
             "titulo": "Quais os veículos, quanto à espécie, estão inseridos no trânsito?",
+            "explicacao": "Quanto à espécie, os veículos incluem de passageiros, de carga, misto, de competição, de tração, especial e de coleção. Essa classificação consta no CTB.",
             "respostas": [
                 {
                     "titulo": "oficial, de passageiros, de aluguel e de corrida."
@@ -1016,6 +1060,7 @@
         {
             "id": "legislacao_46",
             "titulo": "O condutor de veículo automotor envolvido em acidente de trânsito, sendo considerado culpado, além da punição que lhe for aplicável ou aplicada, deverá ser submetido a exames de aptidão física e mental, noções de primeiros socorros e ainda a?",
+            "explicacao": "O condutor culpado em acidente deve ser submetido a exame escrito de legislação e exame de direção veicular, além dos demais exames de aptidão.",
             "respostas": [
                 {
                     "titulo": "exame de direção veicular."
@@ -1038,6 +1083,7 @@
         {
             "id": "legislacao_47",
             "titulo": "A imobilização do veículo durante o tempo apenas necessário para o embarque/desembarque de pessoas caracteriza-se como?",
+            "explicacao": "A imobilização do veículo apenas pelo tempo necessário para embarque ou desembarque caracteriza parada, não estacionamento. O veículo permanece com o condutor.",
             "respostas": [
                 {
                     "titulo": "ponto de parada."
@@ -1060,6 +1106,7 @@
         {
             "id": "legislacao_48",
             "titulo": "De acordo com a Legislação de Trânsito, os veículos são classificados quanto a sua tração?",
+            "explicacao": "Quanto à tração, os veículos classificam-se em animal, propulsão humana, automotor, elétrico e reboque ou semi-reboque, conforme o CTB.",
             "respostas": [
                 {
                     "titulo": "animal, propulsão humana, automóvel e motocicleta."
@@ -1082,6 +1129,7 @@
         {
             "id": "legislacao_49",
             "titulo": "De acordo com a Legislação de Trânsito, os veículos, quanto a sua categoria, são classificados em?",
+            "explicacao": "Quanto à categoria, os veículos dividem-se em oficial, de representação diplomática, particular, de aluguel e de aprendizagem.",
             "respostas": [
                 {
                     "titulo": "oficial, representação diplomática, aluguel e de polícia."
@@ -1104,6 +1152,7 @@
         {
             "id": "legislacao_50",
             "titulo": "É proibido a todo condutor de veículo?",
+            "explicacao": "É proibido dirigir sem acionar o limpador de pára-brisa durante a chuva. O equipamento deve estar em funcionamento para manter visibilidade adequada.",
             "respostas": [
                 {
                     "titulo": "prestar socorro às vítimas de acidentes."
@@ -1126,6 +1175,7 @@
         {
             "id": "legislacao_51",
             "titulo": "De acordo com o CTB, a concentração de álcool por litro de sangue que configura infração de trânsito é superior a:",
+            "explicacao": "Configura infração concentração de álcool superior a 0,2 mg/L de sangue para condutores em geral e 0,1 mg/L para profissionais. São os limites legais previstos no CTB.",
             "respostas": [
                 {
                     "titulo": "zero, para qualquer quantidade detectada."
@@ -1148,6 +1198,7 @@
         {
             "id": "legislacao_52",
             "titulo": "O uso do cinto de segurança pelos ocupantes do veículo, conforme o CTB, é:",
+            "explicacao": "O cinto de segurança é obrigatório para todos os ocupantes do veículo, em todas as vias do território nacional. Inclui passageiros nos bancos traseiros.",
             "respostas": [
                 {
                     "titulo": "obrigatório apenas para o condutor e o passageiro do banco dianteiro."
@@ -1170,6 +1221,7 @@
         {
             "id": "legislacao_53",
             "titulo": "Em vias urbanas sem sinalização regulamentadora, quando não houver faixa de pedestres, a travessia deve ser feita:",
+            "explicacao": "Sem faixa de pedestres, a travessia deve ser feita preferencialmente no cruzamento, de forma perpendicular à via e observando a circulação de veículos.",
             "respostas": [
                 {
                     "titulo": "em qualquer ponto, desde que o pedestre corra rapidamente."
@@ -1192,6 +1244,7 @@
         {
             "id": "legislacao_54",
             "titulo": "O Departamento Nacional de Trânsito (Denatran) passou a ser denominado, em 2021:",
+            "explicacao": "Em 2021, o Denatran passou a se chamar Secretaria Nacional de Trânsito (Senatran), vinculada ao Ministério da Infraestrutura.",
             "respostas": [
                 {
                     "titulo": "Departamento Federal de Trânsito (DEFTRAN)."
@@ -1214,6 +1267,7 @@
         {
             "id": "legislacao_55",
             "titulo": "Conforme o CTB, o condutor envolvido em acidente com vítima deve prestar socorro, sob pena de crime de omissão de socorro previsto no:",
+            "explicacao": "O condutor que não presta socorro em acidente com vítima responde pelo crime de omissão de socorro previsto no art. 304 do CTB.",
             "respostas": [
                 {
                     "titulo": "art. 304 do CTB.",
@@ -1236,6 +1290,7 @@
         {
             "id": "legislacao_56",
             "titulo": "A validade da Carteira Nacional de Habilitação (CNH), na categoria B, para condutores com idade inferior a 50 anos, é de:",
+            "explicacao": "Para condutores com menos de 50 anos na categoria B, a validade da CNH é de 10 anos. Após esse prazo, é necessária renovação.",
             "respostas": [
                 {
                     "titulo": "5 anos."

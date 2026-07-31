@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:habilitacao_quiz/app/features/home/presentation/components/quizzes/controller/quizzes_controller.dart';
 import 'package:habilitacao_quiz/app/features/routes/routes.dart';
 import 'package:habilitacao_quiz/app/shared/utils/quiz_enum.dart';
+import 'package:habilitacao_quiz/core/components/section_header_a11y.dart';
 import 'package:habilitacao_quiz/core/styles/app_styles.dart';
 import 'package:habilitacao_quiz/core/styles/consts.dart';
 import 'package:habilitacao_quiz/core/styles/spacing_stack.dart';
@@ -20,10 +21,7 @@ class ProStudyQuickActions extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          Strings.proStudyAcessoRapido,
-          style: AppFontStyle.body16Bold,
-        ),
+        SectionHeaderA11y(title: Strings.proStudyAcessoRapido),
         SizedBox(height: spacing),
         LayoutBuilder(
           builder: (context, constraints) {
@@ -111,20 +109,22 @@ class _ProStudyActionCard extends StatelessWidget {
         child: InkWell(
           onTap: onTap,
           child: ConstrainedBox(
-            constraints: const BoxConstraints(minHeight: 88),
+            constraints: const BoxConstraints(minHeight: 48),
             child: Padding(
               padding: EdgeInsets.all(AppSpacingStack.nano.value),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  DecoratedBox(
-                    decoration: BoxDecoration(
-                      color: accent.withValues(alpha: 0.12),
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    child: Padding(
-                      padding: EdgeInsets.all(AppSpacingStack.quarck.value),
-                      child: Icon(icon, color: accent, size: 22),
+                  ExcludeSemantics(
+                    child: DecoratedBox(
+                      decoration: BoxDecoration(
+                        color: accent.withValues(alpha: 0.12),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: Padding(
+                        padding: EdgeInsets.all(AppSpacingStack.quarck.value),
+                        child: Icon(icon, color: accent, size: 22),
+                      ),
                     ),
                   ),
                   SizedBox(height: AppSpacingStack.quarck.value),

@@ -5,6 +5,7 @@ import 'package:habilitacao_quiz/app/features/questionario/presentation/controll
 import 'package:habilitacao_quiz/app/shared/domain/entities/pergunta_entity.dart';
 import 'package:habilitacao_quiz/core/styles/app_styles.dart';
 import 'package:habilitacao_quiz/core/styles/spacing_stack.dart';
+import 'package:habilitacao_quiz/core/utils/strings.dart';
 
 class QuizWidget extends StatelessWidget {
   const QuizWidget({
@@ -26,13 +27,20 @@ class QuizWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            pergunta.titulo,
-            style: AppFontStyle.body16Medium.setColor(AppColors.black),
+          Semantics(
+            header: true,
+            child: Text(
+              pergunta.titulo,
+              style: AppFontStyle.body16Medium.setColor(AppColors.black),
+            ),
           ),
           if (pergunta.imagemB64 != null) ...[
             SizedBox(height: AppSpacingStack.xxxSmall.value),
-            Image.memory(pergunta.imagemB64!),
+            Semantics(
+              label: Strings.questaoImagemIlustracao,
+              image: true,
+              child: Image.memory(pergunta.imagemB64!),
+            ),
           ],
           SizedBox(height: AppSpacingStack.xxxSmall.value),
           Obx(

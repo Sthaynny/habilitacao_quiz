@@ -10,6 +10,7 @@ import 'package:habilitacao_quiz/app/features/learning/presentation/widgets/lear
 import 'package:habilitacao_quiz/app/features/promo/presentation/widgets/habilitacao_quiz_plus_cta_banner.dart';
 import 'package:habilitacao_quiz/app/features/routes/routes.dart';
 import 'package:habilitacao_quiz/core/components/button.dart';
+import 'package:habilitacao_quiz/core/components/section_header_a11y.dart';
 import 'package:habilitacao_quiz/core/styles/app_styles.dart';
 import 'package:habilitacao_quiz/core/styles/spacing_stack.dart';
 import 'package:habilitacao_quiz/core/utils/strings.dart';
@@ -75,25 +76,20 @@ class _LearningHubLoadedContent extends StatelessWidget {
           ],
           SizedBox(height: AppSpacingStack.xxSmall.value),
           if (isPro) ...[
-            Text(
-              Strings.aprenderFerramentasEstudo,
-              style: AppFontStyle.body16Bold,
+            const SectionHeaderA11y(
+              title: Strings.aprenderFerramentasEstudo,
             ),
             SizedBox(height: AppSpacingStack.nano.value),
             ..._studyTools(podeRevisaoEspacada),
             SizedBox(height: AppSpacingStack.xxSmall.value),
           ],
-          Text(
-            Strings.aprenderTemasTitulo,
-            style: AppFontStyle.body16Bold,
-          ),
+          const SectionHeaderA11y(title: Strings.aprenderTemasTitulo),
           SizedBox(height: AppSpacingStack.nano.value),
           _LearningThemeTopicsGrid(themes: manifest.themes),
           if (!isPro) ...[
             SizedBox(height: AppSpacingStack.xxSmall.value),
-            Text(
-              Strings.aprenderFerramentasEstudo,
-              style: AppFontStyle.body16Bold,
+            const SectionHeaderA11y(
+              title: Strings.aprenderFerramentasEstudo,
             ),
             SizedBox(height: AppSpacingStack.nano.value),
             ..._studyTools(podeRevisaoEspacada),

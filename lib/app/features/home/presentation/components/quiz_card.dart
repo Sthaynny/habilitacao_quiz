@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:habilitacao_quiz/core/styles/app_styles.dart';
 import 'package:habilitacao_quiz/core/styles/spacing_stack.dart';
+import 'package:habilitacao_quiz/core/utils/strings.dart';
 
 class QuizCardWidget extends StatelessWidget {
   const QuizCardWidget({
@@ -10,21 +11,25 @@ class QuizCardWidget extends StatelessWidget {
     required this.image,
     this.subtitle,
     this.badge,
+    this.highlighted = false,
   });
 
   final String title;
   final String? subtitle;
   final String? badge;
+  final bool highlighted;
   final String image;
   final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
     final semanticsLabel = subtitle == null ? title : '$title. $subtitle';
+    final focusLabel =
+        highlighted ? '$semanticsLabel. ${Strings.proStudyFocoMateria}' : semanticsLabel;
 
     return Semantics(
       button: true,
-      label: semanticsLabel,
+      label: focusLabel,
       child: InkWell(
         borderRadius: BorderRadius.circular(10),
         onTap: onTap,
@@ -33,11 +38,16 @@ class QuizCardWidget extends StatelessWidget {
           child: Container(
           padding: EdgeInsets.all(AppSpacingStack.xxxSmall.value),
           decoration: BoxDecoration(
-            border: const Border.fromBorderSide(
-              BorderSide(color: AppColors.border),
+            border: Border.fromBorderSide(
+              BorderSide(
+                color: highlighted ? AppColors.primary : AppColors.border,
+                width: highlighted ? 2 : 1,
+              ),
             ),
             borderRadius: BorderRadius.circular(10),
-            color: AppColors.white,
+            color: highlighted
+                ? AppColors.primary.withValues(alpha: 0.04)
+                : AppColors.white,
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -54,7 +64,7 @@ class QuizCardWidget extends StatelessWidget {
                     fit: BoxFit.contain,
                     excludeFromSemantics: true,
                   ),
-                  if (badge != null) ...[
+                  if (badge != null || highlighted) ...[
                     const Spacer(),
                     DecoratedBox(
                       decoration: BoxDecoration(
@@ -67,7 +77,7 @@ class QuizCardWidget extends StatelessWidget {
                           vertical: 2,
                         ),
                         child: Text(
-                          badge!,
+                          badge ?? Strings.proStudyFocoMateria,
                           style: AppFontStyle.caption12Regular.setColor(
                             AppColors.primary,
                           ),

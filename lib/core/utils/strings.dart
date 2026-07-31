@@ -39,6 +39,17 @@ abstract class Strings {
   static const comeceEstudosVizualizarProgresso =
       'Comece os estudos para visualizar seu progresso!';
 
+  static const onboardingMateriaTitulo = 'Por onde quer começar?';
+  static const onboardingMateriaSubtitulo =
+      'Escolha a matéria que você quer reforçar. Você pode mudar quando quiser.';
+  static const onboardingMateriaPular = 'Pular por agora';
+
+  static const historicoEmptyTitulo = 'Nenhum resultado ainda';
+  static const historicoEmptyCorpo =
+      'Faça um quiz ou simulado para acompanhar sua evolução aqui.';
+  static const historicoEmptyCtaQuiz = 'Fazer um quiz';
+  static const historicoEmptyCtaPlus = 'Conhecer o Habilitação Quiz+';
+
   static const plusBannerSubtitle =
       'Simulado de 30 questões, histórico ilimitado e mais.';
   static const plusBannerSemantics =
@@ -205,6 +216,8 @@ abstract class Strings {
   static const gabaritoFiltroErros = 'Errei';
   static const gabaritoFiltroAcertos = 'Acertei';
   static const gabaritoFiltroVazio = 'Nenhuma questão neste filtro.';
+  static const gabaritoFiltrosTitulo = 'Filtrar gabarito';
+  static const questaoImagemIlustracao = 'Ilustração da questão';
   static String gabaritoResumo({required int acertos, required int total}) =>
       '$acertos de $total questões corretas';
 

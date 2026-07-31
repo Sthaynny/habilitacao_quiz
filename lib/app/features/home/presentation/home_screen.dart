@@ -8,6 +8,7 @@ import 'package:habilitacao_quiz/app/features/home/presentation/components/quizz
 import 'package:habilitacao_quiz/app/features/home/presentation/components/quizzes/quizzes_widget.dart';
 import 'package:habilitacao_quiz/app/features/home/presentation/controller/home_controller.dart';
 import 'package:habilitacao_quiz/app/features/promo/presentation/widgets/habilitacao_quiz_plus_cta_banner.dart';
+import 'package:habilitacao_quiz/app/features/onboarding/presentation/onboarding_materia_sheet.dart';
 import 'package:habilitacao_quiz/app/shared/domain/services/pro_gate.dart';
 import 'package:habilitacao_quiz/app/shared/presentation/pages/loading_blur_screen.dart';
 import 'package:habilitacao_quiz/core/mixins/pop_up_mixin.dart';
@@ -70,6 +71,9 @@ class _HomeScreen extends State<HomeScreen> with PopUpMixin {
       ),
     ];
     quizzesController.onStatus = (value) => controller.setStatus = value;
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      OnboardingMateriaSheet.showIfNeeded(context);
+    });
     _statusWorker = ever<RxStatus>(
       controller.statusObs,
       (status) {
@@ -109,6 +113,14 @@ class _HomeScreen extends State<HomeScreen> with PopUpMixin {
               const LearningHubWidget(),
               HistoricoWidget(
                 historico: Get.find(),
+                onIniciarQuiz: () {
+                  controller.setPage = 0;
+                  pageController.animateToPage(
+                    0,
+                    duration: const Duration(milliseconds: 300),
+                    curve: Curves.easeInOut,
+                  );
+                },
               ),
             ],
           ),

@@ -41,7 +41,7 @@ _Código T02–T20 concluído — ver [FINALIZADAS.md](./FINALIZADAS.md). Falta 
 
 | ID | Objetivo | Critério de pronto | Agente |
 | :--- | :--- | :--- | :--- |
-| T15 | Smoke AAB/APK Free + Pro | Checklist [SMOKE_PRO.md](../store/SMOKE_PRO.md) preenchido | `feature-store-publish` |
+| T15 | Smoke AAB/APK Free + Pro | Checklist [SMOKE_PRO.md](../store/SMOKE_PRO.md) preenchido. **Compilação** APK Free/Pro validada em 2026-07-30 (§ Última validação automática); falta smoke **manual** no dispositivo + AAB | `feature-store-publish` |
 | T16–T17 | Publicar ficha **+** na Play | App `.pro` em review; preço definido | `feature-store-publish` |
 | T18 | `isProPublished` = estado real | URL da loja abre; flag alinhada | `feature-store-publish` |
 | T19 | Data safety sem ads | Play Console atualizado (Free e **+**) | `feature-store-publish` |
@@ -53,12 +53,12 @@ Doc: [docs/store/README.md](../store/README.md)
 
 ## [CONTEUDO] — Explicações no JSON (P09 / T28)
 
-_Schema em `PerguntaModel` pronto; apenas `legislacao.json` tem `explicacao` hoje._
+_Schema em `PerguntaModel` pronto; `legislacao.json` com `explicacao` em 56/56; demais temas pendentes (T28c)._
 
 | ID | Objetivo | Critério de pronto | Agente |
 | :--- | :--- | :--- | :--- |
 | ~~T28a~~ | ~~`id` estável em todos os JSON~~ | ✅ 203 ids — ver [FINALIZADAS.md](./FINALIZADAS.md) | — |
-| T28b | `explicacao` — lote 1 (legislação completa) | 100% perguntas legislacao.json | `feature-conteudo-questoes` |
+| ~~T28b~~ | ~~`explicacao` — lote 1 (legislação completa)~~ | ✅ 56/56 `legislacao.json` — ver [FINALIZADAS.md](./FINALIZADAS.md) | — |
 | T28c | `explicacao` — demais temas | Por arquivo, revisão CTB | `feature-conteudo-questoes` |
 | T28d | `referencia_ctb` onde aplicável | Legislação + dir. defensiva | `feature-conteudo-questoes` |
 
@@ -101,7 +101,7 @@ Doc: [acessibilidade-implementacao.md](../features/acessibilidade-implementacao.
 ## Ordem sugerida (agora)
 
 ```
-T01 (decisão) → T15 smoke → T16–T18 publicar + → A11Y-GATE → T28b explicações legislacao
+T01 (decisão) → T15 smoke → T16–T18 publicar + → A11Y-GATE → T28c explicações demais temas
 ```
 
 Depois: A11Y-HIST/LEARN → T28c/d → F01–F04 → IA (quando houver receita).

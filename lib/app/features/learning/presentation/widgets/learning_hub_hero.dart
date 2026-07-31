@@ -11,30 +11,39 @@ class LearningHubHero extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DecoratedBox(
-      decoration: BoxDecoration(
-        gradient: AppGradients.linear,
-        borderRadius: BorderRadius.circular(border12Radius),
-      ),
-      child: Padding(
-        padding: EdgeInsets.all(AppSpacingStack.xxxSmall.value),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              Strings.aprenderHubTitulo,
-              style: AppFontStyle.headline20Bold.setColor(AppColors.white),
+    final subtitulo = isPro
+        ? Strings.aprenderHubSubtituloPro
+        : Strings.aprenderHubSubtitulo;
+
+    return Semantics(
+      container: true,
+      header: true,
+      label: '${Strings.aprenderHubTitulo}. $subtitulo',
+      child: ExcludeSemantics(
+        child: DecoratedBox(
+          decoration: BoxDecoration(
+            gradient: AppGradients.linear,
+            borderRadius: BorderRadius.circular(border12Radius),
+          ),
+          child: Padding(
+            padding: EdgeInsets.all(AppSpacingStack.xxxSmall.value),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  Strings.aprenderHubTitulo,
+                  style: AppFontStyle.headline20Bold.setColor(AppColors.white),
+                ),
+                SizedBox(height: AppSpacingStack.quarck.value),
+                Text(
+                  subtitulo,
+                  style: AppFontStyle.body14Regular.setColor(
+                    AppColors.white.withValues(alpha: 0.92),
+                  ),
+                ),
+              ],
             ),
-            SizedBox(height: AppSpacingStack.quarck.value),
-            Text(
-              isPro
-                  ? Strings.aprenderHubSubtituloPro
-                  : Strings.aprenderHubSubtitulo,
-              style: AppFontStyle.body14Regular.setColor(
-                AppColors.white.withValues(alpha: 0.92),
-              ),
-            ),
-          ],
+          ),
         ),
       ),
     );

@@ -7,10 +7,10 @@ import 'package:habilitacao_quiz/app/features/historico/domain/usecases/export_h
 import 'package:habilitacao_quiz/app/features/historico/domain/usecases/restaurar_historico_backup_usecase.dart';
 import 'package:habilitacao_quiz/app/features/historico/domain/services/ihistorico_backup_file_gateway.dart';
 import 'package:habilitacao_quiz/app/features/historico/presentation/detalhe_simulado_screen.dart';
+import 'package:habilitacao_quiz/app/features/historico/presentation/widgets/historico_empty_state.dart';
 import 'package:habilitacao_quiz/app/features/historico/presentation/widgets/historico_filtro_chip.dart';
 import 'package:habilitacao_quiz/app/features/historico/presentation/widgets/historico_list_plus_footer.dart';
 import 'package:habilitacao_quiz/app/features/historico/presentation/widgets/historico_resultado_list_card.dart';
-import 'package:habilitacao_quiz/app/features/promo/presentation/widgets/habilitacao_quiz_plus_cta_banner.dart';
 import 'package:habilitacao_quiz/app/features/resultado/domain/resultado_entity.dart';
 import 'package:habilitacao_quiz/app/features/historico/presentation/historico_materia_dashboard.dart';
 import 'package:habilitacao_quiz/app/features/historico/presentation/historico_list_filter.dart';
@@ -27,8 +27,10 @@ class HistoricoWidget extends StatefulWidget {
   const HistoricoWidget({
     super.key,
     required this.historico,
+    this.onIniciarQuiz,
   });
   final HistoricoEntity historico;
+  final VoidCallback? onIniciarQuiz;
 
   @override
   State<HistoricoWidget> createState() => _HistoricoWidgetState();
@@ -441,39 +443,10 @@ class _HistoricoWidgetState extends State<HistoricoWidget> with PopUpMixin {
   }
 
   Widget _buildEmptyState() {
-    return Column(
-      children: [
-        SizedBox(height: AppSpacingStack.xxxLarge.value),
-        Semantics(
-          header: true,
-          child: Text(
-            Strings.historico,
-            style: AppFontStyle.headline24Bold,
-          ),
-        ),
-        SizedBox(height: AppSpacingStack.xxxLarge.value),
-        Center(
-          child: Text(
-            Strings.comeceEstudosVizualizarProgresso,
-            style: AppFontStyle.body14Regular.setColor(AppColors.grey),
-            textAlign: TextAlign.center,
-          ),
-        ),
-        SizedBox(height: AppSpacingStack.small.value),
-        if (_isPro) ...[
-          Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: AppSpacingStack.xxxSmall.value,
-            ),
-            child: _buildBackupSection(),
-          ),
-          SizedBox(height: AppSpacingStack.small.value),
-        ],
-        const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 16),
-          child: HabilitacaoQuizPlusCtaBanner(compact: false),
-        ),
-      ],
+    return HistoricoEmptyState(
+      onIniciarQuiz: widget.onIniciarQuiz ?? () {},
+      showBackup: _isPro,
+      backupSection: _isPro ? _buildBackupSection() : null,
     );
   }
 

@@ -8,6 +8,7 @@ import 'package:habilitacao_quiz/core/styles/app_font_styles.dart';
 import 'package:habilitacao_quiz/core/styles/app_gradients.dart';
 import 'package:habilitacao_quiz/core/styles/app_images.dart';
 import 'package:habilitacao_quiz/core/styles/spacing_stack.dart';
+import 'package:habilitacao_quiz/core/utils/strings.dart';
 
 class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   const AppBarWidget({super.key});
@@ -69,13 +70,17 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
                       ),
                     ),
                   ),
-                  IconButton(
-                    icon: const Icon(
-                      Icons.info_outline,
-                      color: AppColors.white,
+                  Semantics(
+                    button: true,
+                    label: Strings.avisoLegal,
+                    child: IconButton(
+                      icon: const Icon(
+                        Icons.info_outline,
+                        color: AppColors.white,
+                      ),
+                      tooltip: Strings.avisoLegal,
+                      onPressed: () => Get.toNamed(Routes.legalNotice),
                     ),
-                    tooltip: 'Aviso legal',
-                    onPressed: () => Get.toNamed(Routes.legalNotice),
                   ),
                   Image.asset(
                     AppImages.logo,

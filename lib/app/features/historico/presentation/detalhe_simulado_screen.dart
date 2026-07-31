@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:habilitacao_quiz/app/features/resultado/domain/resultado_entity.dart';
 import 'package:habilitacao_quiz/app/features/resultado/domain/resultado_pergunta_detalhe_entity.dart';
+import 'package:habilitacao_quiz/core/components/section_header_a11y.dart';
 import 'package:habilitacao_quiz/core/styles/app_styles.dart';
 import 'package:habilitacao_quiz/core/styles/spacing_stack.dart';
 import 'package:habilitacao_quiz/core/utils/strings.dart';
@@ -77,32 +78,37 @@ class _DetalheSimuladoScreenState extends State<DetalheSimuladoScreen> {
                     horizontal: AppSpacingStack.xxxSmall.value,
                     vertical: AppSpacingStack.nano.value,
                   ),
-                  child: SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      children: [
-                        _FiltroChip(
-                          label: Strings.gabaritoFiltroTodas,
-                          selected: _filtro == _GabaritoFiltro.todas,
-                          onTap: () =>
-                              setState(() => _filtro = _GabaritoFiltro.todas),
-                        ),
-                        SizedBox(width: AppSpacingStack.nano.value),
-                        _FiltroChip(
-                          label: Strings.gabaritoFiltroErros,
-                          selected: _filtro == _GabaritoFiltro.erros,
-                          onTap: () =>
-                              setState(() => _filtro = _GabaritoFiltro.erros),
-                        ),
-                        SizedBox(width: AppSpacingStack.nano.value),
-                        _FiltroChip(
-                          label: Strings.gabaritoFiltroAcertos,
-                          selected: _filtro == _GabaritoFiltro.acertos,
-                          onTap: () => setState(
-                            () => _filtro = _GabaritoFiltro.acertos,
+                  child: Semantics(
+                    label: Strings.gabaritoFiltrosTitulo,
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children: [
+                          FilterChipA11y(
+                            label: Strings.gabaritoFiltroTodas,
+                            selected: _filtro == _GabaritoFiltro.todas,
+                            onSelected: () => setState(
+                              () => _filtro = _GabaritoFiltro.todas,
+                            ),
                           ),
-                        ),
-                      ],
+                          SizedBox(width: AppSpacingStack.nano.value),
+                          FilterChipA11y(
+                            label: Strings.gabaritoFiltroErros,
+                            selected: _filtro == _GabaritoFiltro.erros,
+                            onSelected: () => setState(
+                              () => _filtro = _GabaritoFiltro.erros,
+                            ),
+                          ),
+                          SizedBox(width: AppSpacingStack.nano.value),
+                          FilterChipA11y(
+                            label: Strings.gabaritoFiltroAcertos,
+                            selected: _filtro == _GabaritoFiltro.acertos,
+                            onSelected: () => setState(
+                              () => _filtro = _GabaritoFiltro.acertos,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
@@ -160,59 +166,56 @@ class _GabaritoResumoCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(AppSpacingStack.xxxSmall.value),
-      decoration: BoxDecoration(
-        color: AppColors.cinzaSuperClaro,
-        borderRadius: BorderRadius.circular(10),
-        border: const Border.fromBorderSide(BorderSide(color: AppColors.border)),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(titulo, style: AppFontStyle.body16Bold),
-          SizedBox(height: AppSpacingStack.nano.value),
-          Text(
-            Strings.gabaritoResumo(acertos: acertos, total: total),
-            style: AppFontStyle.body14Regular,
-          ),
-          Text(
-            Strings.percentualHistorico(
-              percentual: percentual.toStringAsFixed(1),
-            ),
-            style: AppFontStyle.caption12Regular.setColor(AppColors.grey),
-          ),
-        ],
-      ),
+    final resumo = Strings.gabaritoResumo(acertos: acertos, total: total);
+    final pct = Strings.percentualHistorico(
+      percentual: percentual.toStringAsFixed(1),
     );
-  }
-}
 
-class _FiltroChip extends StatelessWidget {
-  const _FiltroChip({
-    required this.label,
-    required this.selected,
-    required this.onTap,
-  });
-
-  final String label;
-  final bool selected;
-  final VoidCallback onTap;
-
-  @override
-  Widget build(BuildContext context) {
     return Semantics(
-      button: true,
-      selected: selected,
-      label: label,
-      child: FilterChip(
-        label: Text(label),
-        selected: selected,
-        onSelected: (_) => onTap(),
-        showCheckmark: false,
-        selectedColor: AppColors.primary.withValues(alpha: 0.15),
-        labelStyle: AppFontStyle.body14Regular.setColor(
-          selected ? AppColors.primary : AppColors.black,
+      container: true,
+      label: '$titulo. $resumo. $pct',
+      child: Container(
+        padding: EdgeInsets.all(AppSpacingStack.xxxSmall.value),
+        decoration: BoxDecoration(
+          color: AppColors.cinzaSuperClaro,
+          borderRadius: BorderRadius.circular(10),
+          border:
+              const Border.fromBorderSide(BorderSide(color: AppColors.border)),
+        ),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            ExcludeSemantics(
+              child: DecoratedBox(
+                decoration: BoxDecoration(
+                  color: AppColors.primary.withValues(alpha: 0.12),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Padding(
+                  padding: EdgeInsets.all(AppSpacingStack.nano.value),
+                  child: Icon(
+                    percentual >= 70 ? Icons.emoji_events_outlined : Icons.school_outlined,
+                    color: AppColors.primary,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(width: AppSpacingStack.nano.value),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(titulo, style: AppFontStyle.body16Bold),
+                  SizedBox(height: AppSpacingStack.quarck.value),
+                  Text(resumo, style: AppFontStyle.body14Regular),
+                  Text(
+                    pct,
+                    style: AppFontStyle.caption12Regular.setColor(AppColors.grey),
+                  ),
+                ],
+              ),
+            ),
+          ],
         ),
       ),
     );
@@ -259,10 +262,13 @@ class _PerguntaDetalheCard extends StatelessWidget {
           children: [
             Row(
               children: [
-                Icon(
-                  item.acertou ? Icons.check_circle : Icons.cancel,
-                  color: item.acertou ? AppColors.secondary : AppColors.primary,
-                  size: 20,
+                ExcludeSemantics(
+                  child: Icon(
+                    item.acertou ? Icons.check_circle : Icons.cancel,
+                    color:
+                        item.acertou ? AppColors.secondary : AppColors.primary,
+                    size: 20,
+                  ),
                 ),
                 SizedBox(width: AppSpacingStack.nano.value),
                 Expanded(

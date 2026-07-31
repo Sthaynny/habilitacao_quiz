@@ -67,6 +67,7 @@
 | T27 | Modo prova ~40 min (Pro 30q + timer) | 2026-07-26 |
 | T28 | Campo `explicacao` / `id` no JSON (lote) | 2026-07-26 |
 | T28a | `id` estável em 203 perguntas (5 JSON) | 2026-07-30 |
+| T28b | `explicacao` em 56/56 perguntas (`legislacao.json`) | 2026-07-30 |
 | A11Y-PROMO | Semantics, 48dp e headers nos CTAs Quiz+ | 2026-07-30 |
 
 ---
@@ -112,3 +113,4 @@
 | **T27** | Modo prova 40 min: `iniciarModoProva`, `tempoLimite` no `QuizEntity`, timer na AppBar. | `quizzes_controller.dart`, `quizzes_widget.dart`, `questionario_screen.dart`, `quiz_entity.dart` | Botão modo prova (Pro) | HQ-A09 |
 | **T28** | `id` + `explicacao` em `PerguntaModel` / JSON (lote `legislacao.json`). | `pergunta_entity.dart`, `pergunta_model.dart`, `assets/json/legislacao.json` | Parse sem quebrar banco legado | — |
 | **T28a** | `id` estável `{tema}_{n}` em 203 perguntas nos 5 JSON. | `assets/json/*.json` | `flutter test test/shared/data/models/pergunta_model_test.dart test/shared/data/models/questoes_model_test.dart test/features/learning/learning_models_test.dart` | T28 |
+| **T28b** | `explicacao` em 56/56 perguntas de `legislacao.json` (lote legislação). | `assets/json/legislacao.json` | `flutter test test/shared/data/models/legislacao_content_test.dart test/shared/data/models/pergunta_model_test.dart` | T28a |

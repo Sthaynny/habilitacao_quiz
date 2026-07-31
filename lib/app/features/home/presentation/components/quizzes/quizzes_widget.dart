@@ -4,9 +4,11 @@ import 'package:habilitacao_quiz/app/features/home/presentation/components/pro_s
 import 'package:habilitacao_quiz/app/features/home/presentation/components/pro_study/pro_study_quick_actions.dart';
 import 'package:habilitacao_quiz/app/features/home/presentation/components/quiz_card.dart';
 import 'package:habilitacao_quiz/app/features/home/presentation/components/quizzes/controller/quizzes_controller.dart';
+import 'package:habilitacao_quiz/app/features/home/presentation/controller/home_controller.dart';
 import 'package:habilitacao_quiz/app/shared/domain/services/pro_gate.dart';
 import 'package:habilitacao_quiz/app/shared/utils/quiz_enum.dart';
 import 'package:habilitacao_quiz/core/components/button.dart';
+import 'package:habilitacao_quiz/core/components/section_header_a11y.dart';
 import 'package:habilitacao_quiz/core/styles/app_styles.dart';
 import 'package:habilitacao_quiz/core/styles/spacing_stack.dart';
 import 'package:habilitacao_quiz/core/utils/strings.dart';
@@ -22,7 +24,7 @@ class QuizzesWidget extends StatelessWidget {
   final Widget topPromo;
 
   static const int _crossAxisCount = 2;
-  static const double _childAspectRatio = 0.92;
+  static const double _childAspectRatio = 0.78;
 
   static final _themeEntries = <({QuizEnum quiz, String image, String title})>[
     (
@@ -94,9 +96,8 @@ class _ProQuizzesLayout extends StatelessWidget {
           sliver: SliverToBoxAdapter(
             child: Padding(
               padding: EdgeInsets.only(bottom: gridSpacing),
-              child: Text(
-                Strings.proStudyTemasTitulo,
-                style: AppFontStyle.body16Bold,
+              child: const SectionHeaderA11y(
+                title: Strings.proStudyTemasTitulo,
               ),
             ),
           ),
@@ -113,13 +114,18 @@ class _ProQuizzesLayout extends StatelessWidget {
             delegate: SliverChildBuilderDelegate(
               (context, index) {
                 final entry = QuizzesWidget._themeEntries[index];
-                return QuizCardWidget(
-                  onTap: () => controller.irParaPagina(entry.quiz),
-                  image: entry.image,
-                  title: entry.title,
-                  badge: Strings.proStudyBancoCompleto,
-                  subtitle: Strings.proStudyTemaSubtitulo,
-                );
+                return Obx(() {
+                  final foco = Get.find<HomeController>().materiaFocoObs.value;
+                  final highlighted = foco == entry.quiz;
+                  return QuizCardWidget(
+                    onTap: () => controller.irParaPagina(entry.quiz),
+                    image: entry.image,
+                    title: entry.title,
+                    badge: highlighted ? null : Strings.proStudyBancoCompleto,
+                    highlighted: highlighted,
+                    subtitle: Strings.proStudyTemaSubtitulo,
+                  );
+                });
               },
               childCount: QuizzesWidget._themeEntries.length,
             ),
@@ -179,11 +185,15 @@ class _FreeQuizzesLayout extends StatelessWidget {
             delegate: SliverChildBuilderDelegate(
               (context, index) {
                 final entry = entries[index];
-                return QuizCardWidget(
-                  onTap: () => controller.irParaPagina(entry.quiz),
-                  image: entry.image,
-                  title: entry.title,
-                );
+                return Obx(() {
+                  final foco = Get.find<HomeController>().materiaFocoObs.value;
+                  return QuizCardWidget(
+                    onTap: () => controller.irParaPagina(entry.quiz),
+                    image: entry.image,
+                    title: entry.title,
+                    highlighted: foco == entry.quiz,
+                  );
+                });
               },
               childCount: entries.length,
             ),

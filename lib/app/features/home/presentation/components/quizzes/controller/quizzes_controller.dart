@@ -12,9 +12,8 @@ import 'package:habilitacao_quiz/app/shared/domain/entities/quiz_entity.dart';
 import 'package:habilitacao_quiz/app/shared/domain/services/pro_gate.dart';
 import 'package:habilitacao_quiz/app/shared/domain/services/simulado_quota_service.dart';
 import 'package:habilitacao_quiz/app/shared/utils/quiz_enum.dart';
-import 'package:habilitacao_quiz/core/analytics/promo_funnel_analytics.dart';
 import 'package:habilitacao_quiz/core/exceptions/erro.dart';
-import 'package:habilitacao_quiz/core/utils/semantics_announce.dart';
+import 'package:habilitacao_quiz/core/utils/gate_limit_feedback.dart';
 import 'package:habilitacao_quiz/core/utils/strings.dart';
 
 class QuizzesController extends GetxController {
@@ -50,22 +49,7 @@ class QuizzesController extends GetxController {
     if (quiz == QuizEnum.simulado) {
       final pode = await _simuladoQuotaService.podeIniciarSimuladoHoje();
       if (!pode) {
-        announceForAccessibility(Strings.simuladoLimiteDiario);
-        Get.snackbar(
-          Strings.atencao,
-          Strings.simuladoLimiteDiario,
-          snackPosition: SnackPosition.BOTTOM,
-          mainButton: TextButton(
-            onPressed: () {
-              Get.find<PromoFunnelAnalytics>().logClick(
-                PromoSurface.gateSimuladoDiario,
-                PromoClickTarget.openPlusScreen,
-              );
-              Get.toNamed(Routes.habilitacaoQuizPlus);
-            },
-            child: Text(Strings.plusVerNaLoja),
-          ),
-        );
+        showSimuladoLimiteDiarioSnackbar();
         return;
       }
     }
@@ -140,7 +124,7 @@ class QuizzesController extends GetxController {
     }
     final pode = await _simuladoQuotaService.podeIniciarSimuladoHoje();
     if (!pode) {
-      Get.snackbar(Strings.atencao, Strings.simuladoLimiteDiario);
+      showSimuladoLimiteDiarioSnackbar();
       return;
     }
     await _getQuiz(QuizEnum.simulado);
