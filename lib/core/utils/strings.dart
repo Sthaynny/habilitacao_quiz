@@ -50,6 +50,24 @@ abstract class Strings {
   static const historicoEmptyCtaQuiz = 'Fazer um quiz';
   static const historicoEmptyCtaPlus = 'Conhecer o Habilitação Quiz+';
 
+  static const quizContentAtualizadoTitulo = 'Conteúdo atualizado';
+  static const quizContentAtualizado =
+      'O banco de questões foi atualizado. Bons estudos!';
+
+  static const studyReminderChannelName = 'Lembretes de estudo';
+  static const studyReminderChannelDesc =
+      'Notificações locais para lembrar de praticar para a CNH.';
+  static const studyReminderTitulo = 'Hora de estudar!';
+  static const studyReminderCorpo =
+      'Reserve alguns minutos para um quiz e se aproximar da prova.';
+  static const studyReminderTituloSheet = 'Lembrete diário de estudo';
+  static const studyReminderSubtituloSheet =
+      'Receba um aviso no horário que você escolher. Você pode desativar quando quiser.';
+  static const studyReminderHorario = 'Horário do lembrete';
+  static const studyReminderEscolherHorario = 'Escolher horário';
+  static const studyReminderAtivar = 'Ativar lembrete';
+  static const studyReminderAgoraNao = 'Agora não';
+
   static const plusBannerSubtitle =
       'Simulado de 30 questões, histórico ilimitado e mais.';
   static const plusBannerSemantics =

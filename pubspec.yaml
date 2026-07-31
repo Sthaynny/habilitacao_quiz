@@ -20,6 +20,8 @@ dependencies:
   file_picker: ^11.0.2
   url_launcher: ^6.3.2
   flutter_markdown_plus: ^1.0.12
+  flutter_local_notifications: ^19.4.0
+  timezone: ^0.10.1
 
 dev_dependencies:
   # 2.15.2 exige analyzer incompatível com o meta fixado pelo Flutter SDK 3.44.

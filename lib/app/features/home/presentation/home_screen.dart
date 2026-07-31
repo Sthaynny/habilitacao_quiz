@@ -9,10 +9,14 @@ import 'package:habilitacao_quiz/app/features/home/presentation/components/quizz
 import 'package:habilitacao_quiz/app/features/home/presentation/controller/home_controller.dart';
 import 'package:habilitacao_quiz/app/features/promo/presentation/widgets/habilitacao_quiz_plus_cta_banner.dart';
 import 'package:habilitacao_quiz/app/features/onboarding/presentation/onboarding_materia_sheet.dart';
+import 'package:habilitacao_quiz/app/features/study_reminder/domain/study_reminder_service.dart';
+import 'package:habilitacao_quiz/app/features/study_reminder/presentation/study_reminder_prompt_sheet.dart';
+import 'package:habilitacao_quiz/app/shared/domain/services/quiz_content_version_service.dart';
 import 'package:habilitacao_quiz/app/shared/domain/services/pro_gate.dart';
 import 'package:habilitacao_quiz/app/shared/presentation/pages/loading_blur_screen.dart';
 import 'package:habilitacao_quiz/core/mixins/pop_up_mixin.dart';
 import 'package:habilitacao_quiz/core/styles/app_styles.dart';
+import 'package:habilitacao_quiz/core/utils/quiz_content_updated_feedback.dart';
 import 'package:habilitacao_quiz/core/utils/strings.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -71,8 +75,8 @@ class _HomeScreen extends State<HomeScreen> with PopUpMixin {
       ),
     ];
     quizzesController.onStatus = (value) => controller.setStatus = value;
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      OnboardingMateriaSheet.showIfNeeded(context);
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      await _bootstrapHome(context);
     });
     _statusWorker = ever<RxStatus>(
       controller.statusObs,
@@ -81,6 +85,19 @@ class _HomeScreen extends State<HomeScreen> with PopUpMixin {
       },
     );
     super.initState();
+  }
+
+  Future<void> _bootstrapHome(BuildContext context) async {
+    await Get.find<StudyReminderService>().reagendarSeAtivo();
+
+    final atualizado =
+        await Get.find<QuizContentVersionService>().detectarAtualizacaoConteudo();
+    if (atualizado) showQuizContentUpdatedSnackbar();
+
+    if (!context.mounted) return;
+    await OnboardingMateriaSheet.showIfNeeded(context);
+    if (!context.mounted) return;
+    await StudyReminderPromptSheet.showIfNeeded(context);
   }
 
   @override
