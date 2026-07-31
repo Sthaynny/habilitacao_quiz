@@ -95,14 +95,22 @@ class BottomNavBar extends StatelessWidget {
                 label: _itemLabel(item),
                 child: InkWell(
                   onTap: () => onItemSelected(index),
-                  child: _ItemWidget(
-                    item: item,
-                    iconSize: iconSize,
-                    isSelected: index == selectedIndex,
-                    backgroundColor: bgColor,
-                    itemCornerRadius: itemCornerRadius,
-                    animationDuration: animationDuration,
-                    curve: curve,
+                  child: ConstrainedBox(
+                    constraints: const BoxConstraints(
+                      minWidth: 48,
+                      minHeight: 48,
+                    ),
+                    child: ExcludeSemantics(
+                      child: _ItemWidget(
+                        item: item,
+                        iconSize: iconSize,
+                        isSelected: index == selectedIndex,
+                        backgroundColor: bgColor,
+                        itemCornerRadius: itemCornerRadius,
+                        animationDuration: animationDuration,
+                        curve: curve,
+                      ),
+                    ),
                   ),
                 ),
               );

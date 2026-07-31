@@ -93,11 +93,17 @@ class _AppBarQuestionarioWidgetState extends State<AppBarQuestionarioWidget> {
                 Expanded(
                   child: Padding(
                     padding: const EdgeInsets.only(left: 16),
-                    child: Text(
-                      '${Strings.modoProvaTimer}: $timerLabel',
-                      style: AppFontStyle.body14Bold,
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
+                    child: Semantics(
+                      liveRegion: true,
+                      label: Strings.modoProvaTimerLabel(timerLabel),
+                      child: ExcludeSemantics(
+                        child: Text(
+                          Strings.modoProvaTimerLabel(timerLabel),
+                          style: AppFontStyle.body14Bold,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ),
                     ),
                   ),
                 ),
@@ -106,6 +112,7 @@ class _AppBarQuestionarioWidgetState extends State<AppBarQuestionarioWidget> {
                 label: Strings.fecharQuestionario,
                 child: IconButton(
                   tooltip: Strings.fecharQuestionario,
+                  constraints: const BoxConstraints(minWidth: 48, minHeight: 48),
                   icon: const Icon(Icons.close, color: AppColors.darkRed),
                   onPressed: widget.onClosed,
                 ),

@@ -67,6 +67,14 @@ abstract class Strings {
   static const studyReminderEscolherHorario = 'Escolher horário';
   static const studyReminderAtivar = 'Ativar lembrete';
   static const studyReminderAgoraNao = 'Agora não';
+  static const studyReminderHorarioHint = 'Abre seletor de horário';
+
+  static const carregando = 'Carregando';
+  static const onboardingMateriaHint =
+      'Define matéria de foco na tela inicial';
+
+  static String progressoQuestoes(int percentual) =>
+      'Progresso: $percentual por cento';
 
   static const plusBannerSubtitle =
       'Simulado de 30 questões, histórico ilimitado e mais.';
@@ -218,6 +226,8 @@ abstract class Strings {
   static const modoProva = 'Modo prova';
   static const modoProvaTimer = 'Tempo restante';
 
+  static String modoProvaTimerLabel(String tempo) => '$modoProvaTimer: $tempo';
+
   static const proStudyHubTitulo = 'Modo preparação';
   static const proStudyHubSubtitulo =
       'Simulados ilimitados, modo prova e revisão focada na reta final.';
@@ -236,6 +246,13 @@ abstract class Strings {
   static const gabaritoFiltroVazio = 'Nenhuma questão neste filtro.';
   static const gabaritoFiltrosTitulo = 'Filtrar gabarito';
   static const questaoImagemIlustracao = 'Ilustração da questão';
+  static const respostaSelecionadaA11y = 'Selecionada';
+  static const respostaToqueSelecionarA11y = 'Toque para selecionar';
+  static const homeQuizzesGridTitulo = 'Temas e simulado';
+  static String questaoIndicadorA11y(int atual, int total) =>
+      'Questão $atual de $total';
+  static String questaoProgressoA11y(int percentual) =>
+      '$percentual% concluído';
   static String gabaritoResumo({required int acertos, required int total}) =>
       '$acertos de $total questões corretas';
 

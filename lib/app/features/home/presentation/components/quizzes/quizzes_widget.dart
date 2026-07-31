@@ -175,6 +175,17 @@ class _FreeQuizzesLayout extends StatelessWidget {
         ),
         SliverPadding(
           padding: EdgeInsets.symmetric(horizontal: horizontalPadding),
+          sliver: SliverToBoxAdapter(
+            child: Padding(
+              padding: EdgeInsets.only(bottom: gridSpacing),
+              child: const SectionHeaderA11y(
+                title: Strings.homeQuizzesGridTitulo,
+              ),
+            ),
+          ),
+        ),
+        SliverPadding(
+          padding: EdgeInsets.symmetric(horizontal: horizontalPadding),
           sliver: SliverGrid(
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: QuizzesWidget._crossAxisCount,

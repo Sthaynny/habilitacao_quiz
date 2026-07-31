@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
-
 import 'package:habilitacao_quiz/app/features/historico/domain/entities/historico_entity.dart';
 
 import 'package:habilitacao_quiz/app/features/historico/domain/usecases/salvar_historico_usecase.dart';
@@ -13,7 +10,6 @@ import 'package:habilitacao_quiz/app/features/resultado/domain/map_quiz_to_resul
 import 'package:habilitacao_quiz/app/features/resultado/domain/resultado_entity.dart';
 
 import 'package:habilitacao_quiz/app/features/routes/routes.dart';
-
 import 'package:habilitacao_quiz/app/shared/domain/entities/pergunta_entity.dart';
 
 import 'package:habilitacao_quiz/app/shared/domain/entities/quiz_entity.dart';
@@ -24,12 +20,9 @@ import 'package:habilitacao_quiz/app/shared/domain/services/pro_gate.dart';
 
 import 'package:habilitacao_quiz/app/shared/utils/constants.dart';
 
-import 'package:habilitacao_quiz/core/analytics/promo_funnel_analytics.dart';
-
 import 'package:habilitacao_quiz/core/mixins/pop_up_mixin.dart';
-
+import 'package:habilitacao_quiz/core/utils/gate_limit_feedback.dart';
 import 'package:habilitacao_quiz/core/utils/semantics_announce.dart';
-
 import 'package:habilitacao_quiz/core/utils/strings.dart';
 
 
@@ -60,6 +53,7 @@ class QuestionarioController extends GetxController with PopUpMixin {
     } else {
       _indexPergunta(indexPergunta + 1);
       _syncRespostaSelecionadaFromPerguntaAtual();
+      _announceQuestaoAtual();
     }
   }
 
@@ -127,43 +121,7 @@ class QuestionarioController extends GetxController with PopUpMixin {
 
         .registrarResultado(historico, result)
 
-        .then((outcome) {
-
-      if (!outcome.removeuMaisAntigoPorLimiteFree) return;
-
-      announceForAccessibility(Strings.historicoLimiteFreeSnackbar);
-
-      Get.snackbar(
-
-        Strings.historico,
-
-        Strings.historicoLimiteFreeSnackbar,
-
-        snackPosition: SnackPosition.BOTTOM,
-
-        mainButton: TextButton(
-
-          onPressed: () {
-
-            Get.find<PromoFunnelAnalytics>().logClick(
-
-              PromoSurface.gateHistoricoLimite,
-
-              PromoClickTarget.openPlusScreen,
-
-            );
-
-            Get.toNamed(Routes.habilitacaoQuizPlus);
-
-          },
-
-          child: Text(Strings.plusItemLegal),
-
-        ),
-
-      );
-
-    });
+        .then(showHistoricoLimiteFreeSnackbarIfNeeded);
 
     irParaResultado(result);
 
@@ -200,6 +158,13 @@ class QuestionarioController extends GetxController with PopUpMixin {
   void get voltarPergunta {
     _indexPergunta(indexPergunta - 1);
     _syncRespostaSelecionadaFromPerguntaAtual();
+    _announceQuestaoAtual();
+  }
+
+  void _announceQuestaoAtual() {
+    announceForAccessibility(
+      Strings.questaoIndicadorA11y(indexPerguntaUsuario, tamanhoQuiz),
+    );
   }
 
 

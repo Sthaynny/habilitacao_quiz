@@ -7,7 +7,7 @@ Rastreio de **código acessível** alinhado a cada spec em `docs/features/`. An�
 | Regra | Detalhe |
 | :--- | :--- |
 | Granularidade | **Um commit Git por doc** desta pasta (épico), salvo correção de blocker pós-revisão no mesmo épico |
-| Prefixo | `a11y(gate):`, `a11y(promo):`, `a11y(hist):`, `a11y(learn):` |
+| Prefixo | `a11y(gate):`, `a11y(promo):`, `a11y(hist):`, `a11y(learn):`, `a11y(quiz-home):`, `a11y(core):` |
 | Escopo do `git add` | Só `lib/**` (e testes) daquele épico — ver tabela abaixo |
 | IA | `ia-pro.md` — sem commits de implementação até receita do **+** |
 
@@ -21,6 +21,8 @@ Protocolo completo: [git-commit-protocol.md](../engineering/git-commit-protocol.
 | [promocao-quiz-plus.md](./promocao-quiz-plus.md) | PROMO | `features/promo/`, CTAs em `home/`, `historico/`, `resultado/` | `feature-promo` |
 | [historico-simulados.md](./historico-simulados.md) | HIST | `features/historico/presentation/` | `feature-historico` |
 | [area-aprendizado.md](./area-aprendizado.md) | LEARN | `features/aprender/` (quando existir), bottom nav | `feature-aprendizado` |
+| Fluxo quiz + home | QUIZ-HOME | `questionario/presentation/`, `home/presentation/` (cards, app bar, bottom nav, pro_study) | complemento pós-GATE |
+| *(transversal)* | CORE | `core/components/`, `app/shared/presentation/`, onboarding, study_reminder, splash, legal | `feature-a11y-implementer` |
 | [ia-pro.md](./ia-pro.md) | IA | — | `feature-ia-pro` (somente leitura) |
 
 ## Ordem sugerida
@@ -36,9 +38,11 @@ Sincronizar com [A_FAZER.md](../tasks/A_FAZER.md) quando a feature ainda não ex
 | Doc | ID | Data | Commit sugerido |
 | :--- | :--- | :--- | :--- |
 | [promocao-quiz-plus.md](./promocao-quiz-plus.md) | A11Y-PROMO | 2026-07-30 | `a11y(promo): semantics e 48dp nos CTAs Quiz+` |
-| [modelo-free-pro.md](./modelo-free-pro.md) | A11Y-GATE | 2026-07-30 | `a11y(gate): semantics nos snackbars de limite` (parcial) |
-| [historico-simulados.md](./historico-simulados.md) | A11Y-HIST | — | pendente |
-| [area-aprendizado.md](./area-aprendizado.md) | A11Y-LEARN | — | pendente |
+| [modelo-free-pro.md](./modelo-free-pro.md) | A11Y-GATE | 2026-07-30 | `a11y(gate): semantics e 48dp em limites, questionário e resultado` |
+| Fluxo quiz + home | A11Y-QUIZ-HOME | 2026-07-30 | `a11y(quiz-home): indicador, respostas e bottom nav` |
+| [historico-simulados.md](./historico-simulados.md) | A11Y-HIST | 2026-07-30 | `a11y(hist): semantics, 48dp e TextScaler no histórico` |
+| [area-aprendizado.md](./area-aprendizado.md) | A11Y-LEARN | 2026-07-30 | `a11y(learn): semantics hub, markdown headings e 48dp` |
+| *(transversal)* | A11Y-CORE | 2026-07-30 | `a11y(core): semantics em componentes e fluxos transversais` |
 
 ## Critérios de pronto (por doc)
 

@@ -29,9 +29,12 @@ class QuizWidget extends StatelessWidget {
         children: [
           Semantics(
             header: true,
-            child: Text(
-              pergunta.titulo,
-              style: AppFontStyle.body16Medium.setColor(AppColors.black),
+            label: pergunta.titulo,
+            child: ExcludeSemantics(
+              child: Text(
+                pergunta.titulo,
+                style: AppFontStyle.body16Medium.setColor(AppColors.black),
+              ),
             ),
           ),
           if (pergunta.imagemB64 != null) ...[
