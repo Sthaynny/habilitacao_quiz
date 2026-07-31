@@ -132,11 +132,14 @@ class _HistoricoWidgetState extends State<HistoricoWidget> with PopUpMixin {
                       padding: EdgeInsets.symmetric(
                         vertical: AppSpacingStack.small.value,
                       ),
-                      child: Text(
-                        Strings.historicoBuscaSemResultados,
-                        style: AppFontStyle.body14Regular
-                            .setColor(AppColors.grey),
-                        textAlign: TextAlign.center,
+                      child: Semantics(
+                        label: Strings.historicoBuscaSemResultados,
+                        child: Text(
+                          Strings.historicoBuscaSemResultados,
+                          style: AppFontStyle.body14Regular
+                              .setColor(AppColors.grey),
+                          textAlign: TextAlign.center,
+                        ),
                       ),
                     ),
                   )
@@ -382,12 +385,16 @@ class _HistoricoWidgetState extends State<HistoricoWidget> with PopUpMixin {
               : Semantics(
                   button: true,
                   label: Strings.fechar,
-                  child: IconButton(
-                    icon: const Icon(Icons.clear, color: AppColors.grey),
-                    onPressed: () {
-                      _buscaController.clear();
-                      _onFiltroAlterado(() {});
-                    },
+                  child: SizedBox(
+                    width: 48,
+                    height: 48,
+                    child: IconButton(
+                      icon: const Icon(Icons.clear, color: AppColors.grey),
+                      onPressed: () {
+                        _buscaController.clear();
+                        _onFiltroAlterado(() {});
+                      },
+                    ),
                   ),
                 ),
           isDense: true,
@@ -476,9 +483,14 @@ class _HistoricoWidgetState extends State<HistoricoWidget> with PopUpMixin {
           style: AppFontStyle.body14Regular,
         ),
         actions: [
-          TextButton(
-            onPressed: () => Navigator.of(ctx).pop(),
-            child: Text(Strings.fechar),
+          Semantics(
+            button: true,
+            label: Strings.fechar,
+            excludeSemantics: true,
+            child: TextButton(
+              onPressed: () => Navigator.of(ctx).pop(),
+              child: Text(Strings.fechar),
+            ),
           ),
         ],
       ),

@@ -39,16 +39,18 @@ class HistoricoResultadoListCard extends StatelessWidget {
         child: InkWell(
           onTap: onTap,
           borderRadius: BorderRadius.circular(10),
-          child: Container(
-            padding: EdgeInsets.all(AppSpacingStack.xxxSmall.value),
-            margin: EdgeInsets.symmetric(vertical: AppSpacingStack.nano.value),
-            decoration: BoxDecoration(
-              border: const Border.fromBorderSide(
-                BorderSide(color: AppColors.border),
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(minHeight: 48),
+            child: Container(
+              padding: EdgeInsets.all(AppSpacingStack.xxxSmall.value),
+              margin: EdgeInsets.symmetric(vertical: AppSpacingStack.nano.value),
+              decoration: BoxDecoration(
+                border: const Border.fromBorderSide(
+                  BorderSide(color: AppColors.border),
+                ),
+                borderRadius: BorderRadius.circular(10),
               ),
-              borderRadius: BorderRadius.circular(10),
-            ),
-            child: Row(
+              child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Expanded(
@@ -72,6 +74,8 @@ class HistoricoResultadoListCard extends StatelessWidget {
                       Text(
                         element.titulo,
                         style: AppFontStyle.body16Medium,
+                        maxLines: 3,
+                        overflow: TextOverflow.ellipsis,
                       ),
                       Text(
                         percentualLabel,
@@ -105,6 +109,7 @@ class HistoricoResultadoListCard extends StatelessWidget {
           ),
         ),
       ),
+    ),
     );
   }
 }
@@ -116,18 +121,20 @@ class _HistoricoBadgeChip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.symmetric(
-        horizontal: AppSpacingStack.nano.value,
-        vertical: AppSpacingStack.quarck.value,
-      ),
-      decoration: BoxDecoration(
-        color: AppColors.primary.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(6),
-      ),
-      child: Text(
-        text,
-        style: AppFontStyle.caption12Regular.setColor(AppColors.primary),
+    return ExcludeSemantics(
+      child: Container(
+        padding: EdgeInsets.symmetric(
+          horizontal: AppSpacingStack.nano.value,
+          vertical: AppSpacingStack.quarck.value,
+        ),
+        decoration: BoxDecoration(
+          color: AppColors.primary.withValues(alpha: 0.1),
+          borderRadius: BorderRadius.circular(6),
+        ),
+        child: Text(
+          text,
+          style: AppFontStyle.caption12Regular.setColor(AppColors.primary),
+        ),
       ),
     );
   }

@@ -49,10 +49,13 @@ class _DetalheSimuladoScreenState extends State<DetalheSimuladoScreen> {
           ? Center(
               child: Padding(
                 padding: EdgeInsets.all(AppSpacingStack.small.value),
-                child: Text(
-                  Strings.historicoSemDetalhe,
-                  style: AppFontStyle.body16Regular.setColor(AppColors.grey),
-                  textAlign: TextAlign.center,
+                child: Semantics(
+                  label: Strings.historicoSemDetalhe,
+                  child: Text(
+                    Strings.historicoSemDetalhe,
+                    style: AppFontStyle.body16Regular.setColor(AppColors.grey),
+                    textAlign: TextAlign.center,
+                  ),
                 ),
               ),
             )
@@ -115,10 +118,13 @@ class _DetalheSimuladoScreenState extends State<DetalheSimuladoScreen> {
                 Expanded(
                   child: filtrados.isEmpty
                       ? Center(
-                          child: Text(
-                            Strings.gabaritoFiltroVazio,
-                            style: AppFontStyle.body14Regular.setColor(
-                              AppColors.grey,
+                          child: Semantics(
+                            label: Strings.gabaritoFiltroVazio,
+                            child: Text(
+                              Strings.gabaritoFiltroVazio,
+                              style: AppFontStyle.body14Regular.setColor(
+                                AppColors.grey,
+                              ),
                             ),
                           ),
                         )
@@ -174,7 +180,8 @@ class _GabaritoResumoCard extends StatelessWidget {
     return Semantics(
       container: true,
       label: '$titulo. $resumo. $pct',
-      child: Container(
+      child: ExcludeSemantics(
+        child: Container(
         padding: EdgeInsets.all(AppSpacingStack.xxxSmall.value),
         decoration: BoxDecoration(
           color: AppColors.cinzaSuperClaro,
@@ -217,6 +224,7 @@ class _GabaritoResumoCard extends StatelessWidget {
             ),
           ],
         ),
+        ),
       ),
     );
   }
@@ -247,7 +255,8 @@ class _PerguntaDetalheCard extends StatelessWidget {
 
     return Semantics(
       label: label.toString(),
-      child: Container(
+      child: ExcludeSemantics(
+        child: Container(
         padding: EdgeInsets.all(AppSpacingStack.xxxSmall.value),
         decoration: BoxDecoration(
           border: Border.all(
@@ -324,6 +333,7 @@ class _PerguntaDetalheCard extends StatelessWidget {
               ),
             ],
           ],
+        ),
         ),
       ),
     );

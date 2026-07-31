@@ -9,6 +9,7 @@ import 'package:habilitacao_quiz/app/features/routes/routes.dart';
 import 'package:habilitacao_quiz/app/shared/domain/services/pro_gate.dart';
 import 'package:habilitacao_quiz/core/analytics/promo_funnel_analytics.dart';
 import 'package:habilitacao_quiz/core/components/button.dart';
+import 'package:habilitacao_quiz/core/components/section_header_a11y.dart';
 import 'package:habilitacao_quiz/core/styles/app_styles.dart';
 import 'package:habilitacao_quiz/core/styles/spacing_stack.dart';
 import 'package:habilitacao_quiz/core/utils/strings.dart';
@@ -48,7 +49,7 @@ class _ProDashboard extends StatelessWidget {
 
     return Semantics(
       container: true,
-      label: Strings.historicoDashboardMateriaTitulo,
+      explicitChildNodes: true,
       child: Container(
         width: double.infinity,
         padding: EdgeInsets.all(AppSpacingStack.xxxSmall.value),
@@ -60,14 +61,10 @@ class _ProDashboard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              Strings.historicoDashboardMateriaTitulo,
+            SectionHeaderA11y(
+              title: Strings.historicoDashboardMateriaTitulo,
+              subtitle: Strings.historicoDashboardMateriaSubtitulo,
               style: AppFontStyle.body16Medium,
-            ),
-            SizedBox(height: AppSpacingStack.nano.value),
-            Text(
-              Strings.historicoDashboardMateriaSubtitulo,
-              style: AppFontStyle.caption12Regular.setColor(AppColors.grey),
             ),
             SizedBox(height: AppSpacingStack.xxxSmall.value),
             ListView.separated(
@@ -106,55 +103,59 @@ class _MateriaRow extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.only(bottom: AppSpacingStack.nano.value),
       child: Semantics(
-        label: '${item.titulo}. $pctLabel',
-        child: Container(
-          padding: destacar
-              ? EdgeInsets.all(AppSpacingStack.quarck.value)
-              : EdgeInsets.zero,
-          decoration: destacar
-              ? BoxDecoration(
-                  color: AppColors.primary.withValues(alpha: 0.06),
-                  borderRadius: BorderRadius.circular(8),
-                  border: Border.all(
-                    color: AppColors.primary.withValues(alpha: 0.25),
-                  ),
-                )
-              : null,
-          child: Row(
-            children: [
-              Expanded(
-                flex: 2,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      item.titulo,
-                      style: AppFontStyle.caption12Regular,
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
+        label: destacar
+            ? '${item.titulo}. $pctLabel. ${Strings.proStudyFocoMateria}'
+            : '${item.titulo}. $pctLabel',
+        child: ExcludeSemantics(
+          child: Container(
+            padding: destacar
+                ? EdgeInsets.all(AppSpacingStack.quarck.value)
+                : EdgeInsets.zero,
+            decoration: destacar
+                ? BoxDecoration(
+                    color: AppColors.primary.withValues(alpha: 0.06),
+                    borderRadius: BorderRadius.circular(8),
+                    border: Border.all(
+                      color: AppColors.primary.withValues(alpha: 0.25),
                     ),
-                    if (destacar)
+                  )
+                : null,
+            child: Row(
+              children: [
+                Expanded(
+                  flex: 2,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
                       Text(
-                        Strings.proStudyFocoMateria,
-                        style: AppFontStyle.caption12Regular.setColor(
-                          AppColors.primary,
-                        ),
+                        item.titulo,
+                        style: AppFontStyle.caption12Regular,
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
                       ),
-                  ],
+                      if (destacar)
+                        Text(
+                          Strings.proStudyFocoMateria,
+                          style: AppFontStyle.caption12Regular.setColor(
+                            AppColors.primary,
+                          ),
+                        ),
+                    ],
+                  ),
                 ),
-              ),
-              Expanded(
-                flex: 3,
-                child: LinearProgressIndicatorWidget(
-                  value: item.temDados ? item.percentual / 100 : 0,
+                Expanded(
+                  flex: 3,
+                  child: LinearProgressIndicatorWidget(
+                    value: item.temDados ? item.percentual / 100 : 0,
+                  ),
                 ),
-              ),
-              SizedBox(width: AppSpacingStack.nano.value),
-              Text(
-                pctLabel,
-                style: AppFontStyle.caption12Regular.setColor(AppColors.grey),
-              ),
-            ],
+                SizedBox(width: AppSpacingStack.nano.value),
+                Text(
+                  pctLabel,
+                  style: AppFontStyle.caption12Regular.setColor(AppColors.grey),
+                ),
+              ],
+            ),
           ),
         ),
       ),

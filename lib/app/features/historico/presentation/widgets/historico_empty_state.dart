@@ -43,25 +43,28 @@ class HistoricoEmptyState extends StatelessWidget {
           ),
         ),
         SizedBox(height: AppSpacingStack.xxxSmall.value),
-        Padding(
-          padding: EdgeInsets.symmetric(
-            horizontal: AppSpacingStack.xxxSmall.value,
-          ),
-          child: Text(
-            Strings.historicoEmptyTitulo,
-            style: AppFontStyle.body16Bold,
-            textAlign: TextAlign.center,
-          ),
-        ),
-        SizedBox(height: AppSpacingStack.nano.value),
-        Padding(
-          padding: EdgeInsets.symmetric(
-            horizontal: AppSpacingStack.xxxSmall.value,
-          ),
-          child: Text(
-            Strings.historicoEmptyCorpo,
-            style: AppFontStyle.body14Regular.setColor(AppColors.grey),
-            textAlign: TextAlign.center,
+        Semantics(
+          label:
+              '${Strings.historicoEmptyTitulo}. ${Strings.historicoEmptyCorpo}',
+          child: Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: AppSpacingStack.xxxSmall.value,
+            ),
+            child: Column(
+              children: [
+                Text(
+                  Strings.historicoEmptyTitulo,
+                  style: AppFontStyle.body16Bold,
+                  textAlign: TextAlign.center,
+                ),
+                SizedBox(height: AppSpacingStack.nano.value),
+                Text(
+                  Strings.historicoEmptyCorpo,
+                  style: AppFontStyle.body14Regular.setColor(AppColors.grey),
+                  textAlign: TextAlign.center,
+                ),
+              ],
+            ),
           ),
         ),
         SizedBox(height: AppSpacingStack.xxxSmall.value),
@@ -69,9 +72,14 @@ class HistoricoEmptyState extends StatelessWidget {
           padding: EdgeInsets.symmetric(
             horizontal: AppSpacingStack.xxxSmall.value,
           ),
-          child: AppButton.primary(
-            Strings.historicoEmptyCtaQuiz,
-            onPressed: onIniciarQuiz,
+          child: Semantics(
+            button: true,
+            label: Strings.historicoEmptyCtaQuiz,
+            excludeSemantics: true,
+            child: AppButton.primary(
+              Strings.historicoEmptyCtaQuiz,
+              onPressed: onIniciarQuiz,
+            ),
           ),
         ),
         if (showBackup && backupSection != null) ...[
@@ -85,9 +93,15 @@ class HistoricoEmptyState extends StatelessWidget {
         ],
         if (exibirPromo) ...[
           SizedBox(height: AppSpacingStack.xxxSmall.value),
-          AppButton.link(
-            Strings.historicoEmptyCtaPlus,
-            onPressed: () => Get.toNamed(Routes.habilitacaoQuizPlus),
+          Semantics(
+            button: true,
+            label: Strings.historicoEmptyCtaPlus,
+            hint: Strings.plusBannerHint,
+            excludeSemantics: true,
+            child: AppButton.link(
+              Strings.historicoEmptyCtaPlus,
+              onPressed: () => Get.toNamed(Routes.habilitacaoQuizPlus),
+            ),
           ),
         ],
       ],
