@@ -63,7 +63,7 @@ class _SplashScreenState extends State<SplashScreen> {
               ),
               SizedBox(height: AppSpacingStack.xxSmall.value),
               Semantics(
-                label: 'Carregando',
+                label: Strings.carregando,
                 liveRegion: true,
                 child: const CircularProgressWidget(
                   primaryColor: AppColors.white,

@@ -60,15 +60,17 @@ class _CircularProgressState extends State<CircularProgressWidget>
 
   @override
   Widget build(BuildContext context) {
-    return RotationTransition(
-      turns: rotation,
-      child: CustomPaint(
-        painter: CirclePaint(
-          secondaryColor: secondaryColorFaded,
-          primaryColor: widget.primaryColor,
-          strokeWidth: widget.strokeWidth,
+    return ExcludeSemantics(
+      child: RotationTransition(
+        turns: rotation,
+        child: CustomPaint(
+          painter: CirclePaint(
+            secondaryColor: secondaryColorFaded,
+            primaryColor: widget.primaryColor,
+            strokeWidth: widget.strokeWidth,
+          ),
+          size: _kPaintSize,
         ),
-        size: _kPaintSize,
       ),
     );
   }

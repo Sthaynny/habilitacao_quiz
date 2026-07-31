@@ -77,29 +77,68 @@ class _StudyReminderPromptSheetState extends State<StudyReminderPromptSheet> {
           children: [
             Semantics(
               header: true,
-              child: Text(
-                Strings.studyReminderTituloSheet,
-                style: AppFontStyle.headline20Bold,
+              label:
+                  '${Strings.studyReminderTituloSheet}. ${Strings.studyReminderSubtituloSheet}',
+              child: ExcludeSemantics(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Text(
+                      Strings.studyReminderTituloSheet,
+                      style: AppFontStyle.headline20Bold,
+                    ),
+                    SizedBox(height: AppSpacingStack.nano.value),
+                    Text(
+                      Strings.studyReminderSubtituloSheet,
+                      style:
+                          AppFontStyle.body14Regular.setColor(AppColors.grey),
+                    ),
+                  ],
+                ),
               ),
-            ),
-            SizedBox(height: AppSpacingStack.nano.value),
-            Text(
-              Strings.studyReminderSubtituloSheet,
-              style: AppFontStyle.body14Regular.setColor(AppColors.grey),
             ),
             SizedBox(height: AppSpacingStack.xxxSmall.value),
             Semantics(
               button: true,
               label: '${Strings.studyReminderHorario}. $horarioLabel',
-              child: ListTile(
-                contentPadding: EdgeInsets.zero,
-                leading: const Icon(Icons.schedule_outlined),
-                title: Text(
-                  Strings.studyReminderHorario,
-                  style: AppFontStyle.body16Medium,
+              hint: Strings.studyReminderHorarioHint,
+              child: Material(
+                color: Colors.transparent,
+                child: InkWell(
+                  onTap: _busy ? null : _escolherHorario,
+                  child: ConstrainedBox(
+                    constraints: const BoxConstraints(minHeight: 48),
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(
+                        vertical: AppSpacingStack.quarck.value,
+                      ),
+                      child: Row(
+                        children: [
+                          const ExcludeSemantics(
+                            child: Icon(Icons.schedule_outlined),
+                          ),
+                          SizedBox(width: AppSpacingStack.nano.value),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  Strings.studyReminderHorario,
+                                  style: AppFontStyle.body16Medium,
+                                ),
+                                Text(
+                                  horarioLabel,
+                                  style: AppFontStyle.body14Regular
+                                      .setColor(AppColors.grey),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
                 ),
-                subtitle: Text(horarioLabel),
-                onTap: _busy ? null : _escolherHorario,
               ),
             ),
             SizedBox(height: AppSpacingStack.nano.value),

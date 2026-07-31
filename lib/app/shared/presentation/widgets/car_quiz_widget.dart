@@ -11,23 +11,29 @@ class CarQuizWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: _padding,
-      child: ConstrainedBox(
-        constraints: const BoxConstraints(
-          maxWidth: 350,
-          maxHeight: 100,
-        ),
-        child: const Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            CarQuizLogoWidget(),
-            Padding(
-              padding: _padding,
-              child: _CarQuizTitle(),
+    return Semantics(
+      label: Strings.logoApp.replaceAll('\n', ' '),
+      header: true,
+      child: ExcludeSemantics(
+        child: Padding(
+          padding: _padding,
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(
+              maxWidth: 350,
+              maxHeight: 100,
             ),
-          ],
+            child: const Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                CarQuizLogoWidget(),
+                Padding(
+                  padding: _padding,
+                  child: _CarQuizTitle(),
+                ),
+              ],
+            ),
+          ),
         ),
       ),
     );

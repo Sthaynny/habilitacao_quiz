@@ -80,30 +80,65 @@ class OnboardingMateriaSheet extends StatelessWidget {
           children: [
             Semantics(
               header: true,
-              child: Text(
-                Strings.onboardingMateriaTitulo,
-                style: AppFontStyle.headline20Bold,
+              label:
+                  '${Strings.onboardingMateriaTitulo}. ${Strings.onboardingMateriaSubtitulo}',
+              child: ExcludeSemantics(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Text(
+                      Strings.onboardingMateriaTitulo,
+                      style: AppFontStyle.headline20Bold,
+                    ),
+                    SizedBox(height: AppSpacingStack.nano.value),
+                    Text(
+                      Strings.onboardingMateriaSubtitulo,
+                      style:
+                          AppFontStyle.body14Regular.setColor(AppColors.grey),
+                    ),
+                  ],
+                ),
               ),
-            ),
-            SizedBox(height: AppSpacingStack.nano.value),
-            Text(
-              Strings.onboardingMateriaSubtitulo,
-              style: AppFontStyle.body14Regular.setColor(AppColors.grey),
             ),
             SizedBox(height: AppSpacingStack.xxxSmall.value),
             for (final opcao in _opcoes) ...[
               Semantics(
                 button: true,
                 label: opcao.titulo,
-                child: ListTile(
-                  contentPadding: EdgeInsets.zero,
-                  title: Text(opcao.titulo, style: AppFontStyle.body16Medium),
-                  trailing: const Icon(Icons.chevron_right, color: AppColors.grey),
-                  onTap: () async {
-                    await datasource.salvarMateriaFoco(opcao.themeId);
-                    home.definirMateriaFoco(opcao.quiz);
-                    if (context.mounted) Navigator.of(context).pop();
-                  },
+                hint: Strings.onboardingMateriaHint,
+                child: Material(
+                  color: Colors.transparent,
+                  child: InkWell(
+                    onTap: () async {
+                      await datasource.salvarMateriaFoco(opcao.themeId);
+                      home.definirMateriaFoco(opcao.quiz);
+                      if (context.mounted) Navigator.of(context).pop();
+                    },
+                    child: ConstrainedBox(
+                      constraints: const BoxConstraints(minHeight: 48),
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(
+                          vertical: AppSpacingStack.quarck.value,
+                        ),
+                        child: Row(
+                          children: [
+                            Expanded(
+                              child: Text(
+                                opcao.titulo,
+                                style: AppFontStyle.body16Medium,
+                              ),
+                            ),
+                            const ExcludeSemantics(
+                              child: Icon(
+                                Icons.chevron_right,
+                                color: AppColors.grey,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
                 ),
               ),
               const Divider(height: 1, color: AppColors.border),

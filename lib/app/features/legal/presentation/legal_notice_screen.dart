@@ -108,33 +108,40 @@ class _DisclaimerCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      padding: EdgeInsets.all(AppSpacingStack.xSmall.value),
-      decoration: BoxDecoration(
-        color: AppColors.lightPurple.withValues(alpha: 0.15),
-        borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: AppColors.border),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
+    return Semantics(
+      label: '${Strings.avisoLegal}. ${Strings.avisoLegalTexto}',
+      child: ExcludeSemantics(
+        child: Container(
+          width: double.infinity,
+          padding: EdgeInsets.all(AppSpacingStack.xSmall.value),
+          decoration: BoxDecoration(
+            color: AppColors.lightPurple.withValues(alpha: 0.15),
+            borderRadius: BorderRadius.circular(12),
+            border: Border.all(color: AppColors.border),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Icon(Icons.info_outline, color: AppColors.purple),
-              SizedBox(width: AppSpacingStack.nano.value),
+              Row(
+                children: [
+                  const ExcludeSemantics(
+                    child: Icon(Icons.info_outline, color: AppColors.purple),
+                  ),
+                  SizedBox(width: AppSpacingStack.nano.value),
+                  Text(
+                    Strings.avisoLegal,
+                    style: AppFontStyle.body16Bold.setColor(AppColors.purple),
+                  ),
+                ],
+              ),
+              SizedBox(height: AppSpacingStack.nano.value),
               Text(
-                Strings.avisoLegal,
-                style: AppFontStyle.body16Bold.setColor(AppColors.purple),
+                Strings.avisoLegalTexto,
+                style: AppFontStyle.body14Regular,
               ),
             ],
           ),
-          SizedBox(height: AppSpacingStack.nano.value),
-          Text(
-            Strings.avisoLegalTexto,
-            style: AppFontStyle.body14Regular,
-          ),
-        ],
+        ),
       ),
     );
   }

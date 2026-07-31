@@ -33,15 +33,17 @@ class AppButton extends StatelessWidget {
     this.onPressed,
     this.buttonStyle,
     this.margin,
+    this.semanticLabel,
   });
   final VoidCallback? onPressed;
   final Widget child;
   final BoxDecoration? buttonStyle;
   final EdgeInsetsGeometry? margin;
+  final String? semanticLabel;
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    final button = Padding(
       padding: margin ?? EdgeInsets.zero,
       child: CupertinoButton(
         padding: EdgeInsets.zero,
@@ -52,6 +54,18 @@ class AppButton extends StatelessWidget {
           child: child,
         ),
       ),
+    );
+
+    final label = semanticLabel;
+    if (label == null) {
+      return button;
+    }
+
+    return Semantics(
+      button: true,
+      label: label,
+      enabled: onPressed != null,
+      child: button,
     );
   }
 
@@ -66,6 +80,7 @@ class AppButton extends StatelessWidget {
     return AppButton(
       onPressed: onPressed,
       margin: margin,
+      semanticLabel: title,
       buttonStyle: BoxDecoration(
         color: cor ?? _colorBorderPrimery(onPressed != null),
         borderRadius: _buttonBorderRadius,
@@ -97,6 +112,7 @@ class AppButton extends StatelessWidget {
     return AppButton(
       onPressed: onPressed,
       margin: margin,
+      semanticLabel: title,
       buttonStyle: BoxDecoration(
         color: _colorButtonOutline(onPressed != null),
         borderRadius: _buttonBorderRadius,
@@ -129,6 +145,7 @@ class AppButton extends StatelessWidget {
     return AppButton(
       onPressed: onPressed,
       margin: margin,
+      semanticLabel: title,
       buttonStyle: BoxDecoration(
         color: Colors.transparent,
         borderRadius: _buttonBorderRadius,
@@ -158,6 +175,7 @@ class AppButton extends StatelessWidget {
     return AppButton(
       onPressed: onPressed,
       margin: margin,
+      semanticLabel: title,
       buttonStyle: BoxDecoration(
         color: cor ?? _colorBorderSecundary(onPressed != null),
         borderRadius: _buttonBorderRadius,
