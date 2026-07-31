@@ -1,5 +1,8 @@
+import 'dart:ui' show Tristate;
+
 import 'package:flutter/material.dart';
-import 'package:flutter_test/flutter_test.dart';import 'package:habilitacao_quiz/app/features/questionario/presentation/components/resposta/resposta_widget.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:habilitacao_quiz/app/features/questionario/presentation/components/resposta/resposta_widget.dart';
 import 'package:habilitacao_quiz/app/shared/domain/entities/resposta_entity.dart';
 import 'package:habilitacao_quiz/core/utils/strings.dart';
 
@@ -22,7 +25,7 @@ void main() {
 
     final semantics = tester.getSemantics(find.byType(RespostaWidget));
     expect(semantics.flagsCollection.isButton, isTrue);
-    expect(semantics.flagsCollection.isSelected, isTrue);
+    expect(semantics.flagsCollection.isSelected, Tristate.isTrue);
     expect(semantics.label, contains('opção a'));
     expect(semantics.hint, Strings.respostaSelecionadaA11y);
   });

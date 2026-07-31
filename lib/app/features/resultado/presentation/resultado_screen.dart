@@ -57,6 +57,7 @@ class ResultadoScreen extends StatelessWidget {
                   ),
                   child: Semantics(
                     header: true,
+                    liveRegion: true,
                     child: Text(
                       headline,
                       style: AppFontStyle.headline20Bold,
@@ -67,24 +68,27 @@ class ResultadoScreen extends StatelessWidget {
                 SizedBox(height: AppSpacingStack.xxxSmall.value),
                 Semantics(
                   label: '${args.titulo}. $summaryLabel',
-                  child: Text.rich(
-                    TextSpan(
-                      text: Strings.voceFinalizou,
-                      style: AppFontStyle.body14Regular.setColor(AppColors.grey),
-                      children: [
-                        TextSpan(
-                          text: '${args.titulo}\n',
-                          style: AppFontStyle.body14Bold,
-                        ),
-                        TextSpan(
-                          text: summaryLabel,
-                          style: AppFontStyle.body14Regular.setColor(
-                            AppColors.grey,
+                  child: ExcludeSemantics(
+                    child: Text.rich(
+                      TextSpan(
+                        text: Strings.voceFinalizou,
+                        style:
+                            AppFontStyle.body14Regular.setColor(AppColors.grey),
+                        children: [
+                          TextSpan(
+                            text: '${args.titulo}\n',
+                            style: AppFontStyle.body14Bold,
                           ),
-                        ),
-                      ],
+                          TextSpan(
+                            text: summaryLabel,
+                            style: AppFontStyle.body14Regular.setColor(
+                              AppColors.grey,
+                            ),
+                          ),
+                        ],
+                      ),
+                      textAlign: TextAlign.center,
                     ),
-                    textAlign: TextAlign.center,
                   ),
                 ),
                 if (showSimuladoPlusCta) ...[

@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:habilitacao_quiz/core/components/circular_progress_widget.dart';
 import 'package:habilitacao_quiz/core/styles/app_styles.dart';
+import 'package:habilitacao_quiz/core/utils/strings.dart';
 
 class LoadingBlurScreen extends StatelessWidget {
   const LoadingBlurScreen({
@@ -25,12 +26,18 @@ class LoadingBlurScreen extends StatelessWidget {
       children: <Widget>[
         child,
         Positioned.fill(
-          child: RepaintBoundary(
-            child: BackdropFilter(
-              filter: ImageFilter.blur(sigmaX: 4, sigmaY: 4),
-              child: ColoredBox(
-                color: AppColors.preto.withValues(alpha: .5),
-                child: const Center(child: CircularProgressWidget()),
+          child: Semantics(
+            label: Strings.carregando,
+            liveRegion: true,
+            child: ExcludeSemantics(
+              child: RepaintBoundary(
+                child: BackdropFilter(
+                  filter: ImageFilter.blur(sigmaX: 4, sigmaY: 4),
+                  child: ColoredBox(
+                    color: AppColors.preto.withValues(alpha: .5),
+                    child: const Center(child: CircularProgressWidget()),
+                  ),
+                ),
               ),
             ),
           ),
