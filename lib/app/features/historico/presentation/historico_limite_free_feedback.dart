@@ -22,7 +22,12 @@ void showHistoricoLimiteFreeSnackbarIfNeeded(SalvarHistoricoOutcome outcome) {
         );
         Get.toNamed(Routes.habilitacaoQuizPlus);
       },
-      child: Text(Strings.historicoDesbloquearCompleto),
+      child: Semantics(
+        button: true,
+        label: Strings.historicoDesbloquearCompleto,
+        hint: Strings.plusBannerHint,
+        child: Text(Strings.historicoDesbloquearCompleto),
+      ),
     ),
   );
 }
