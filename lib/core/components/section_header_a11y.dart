@@ -24,6 +24,7 @@ class FilterChipA11y extends StatelessWidget {
       selected: selected,
       label: label,
       hint: semanticHint,
+      excludeSemantics: true,
       child: SizedBox(
         height: 48,
         child: FilterChip(

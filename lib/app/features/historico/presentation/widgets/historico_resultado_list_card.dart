@@ -50,7 +50,8 @@ class HistoricoResultadoListCard extends StatelessWidget {
                 ),
                 borderRadius: BorderRadius.circular(10),
               ),
-              child: Row(
+              child: ExcludeSemantics(
+                child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Expanded(
@@ -74,8 +75,7 @@ class HistoricoResultadoListCard extends StatelessWidget {
                       Text(
                         element.titulo,
                         style: AppFontStyle.body16Medium,
-                        maxLines: 3,
-                        overflow: TextOverflow.ellipsis,
+                        softWrap: true,
                       ),
                       Text(
                         percentualLabel,
@@ -106,10 +106,11 @@ class HistoricoResultadoListCard extends StatelessWidget {
                 ),
               ],
             ),
+              ),
+            ),
           ),
         ),
       ),
-    ),
     );
   }
 }

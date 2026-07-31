@@ -18,6 +18,7 @@ class QuizButtonWidget extends StatelessWidget {
     return Semantics(
       button: true,
       label: titulo,
+      excludeSemantics: true,
       child: ElevatedButton(
         style: ButtonStyle(
           backgroundColor: WidgetStateProperty.all(

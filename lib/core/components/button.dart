@@ -65,6 +65,7 @@ class AppButton extends StatelessWidget {
       button: true,
       label: label,
       enabled: onPressed != null,
+      excludeSemantics: true,
       child: button,
     );
   }

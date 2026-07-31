@@ -130,8 +130,7 @@ class _MateriaRow extends StatelessWidget {
                       Text(
                         item.titulo,
                         style: AppFontStyle.caption12Regular,
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
+                        softWrap: true,
                       ),
                       if (destacar)
                         Text(

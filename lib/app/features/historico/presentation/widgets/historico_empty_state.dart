@@ -46,7 +46,8 @@ class HistoricoEmptyState extends StatelessWidget {
         Semantics(
           label:
               '${Strings.historicoEmptyTitulo}. ${Strings.historicoEmptyCorpo}',
-          child: Padding(
+          child: ExcludeSemantics(
+            child: Padding(
             padding: EdgeInsets.symmetric(
               horizontal: AppSpacingStack.xxxSmall.value,
             ),
@@ -65,6 +66,7 @@ class HistoricoEmptyState extends StatelessWidget {
                 ),
               ],
             ),
+          ),
           ),
         ),
         SizedBox(height: AppSpacingStack.xxxSmall.value),

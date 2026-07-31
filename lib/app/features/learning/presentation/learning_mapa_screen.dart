@@ -72,24 +72,22 @@ class _MateriaBar extends StatelessWidget {
       padding: EdgeInsets.only(bottom: AppSpacingStack.xxxSmall.value),
       child: Semantics(
         label: '${materia.titulo}. $pctLabel',
-        child: Column(
+        child: ExcludeSemantics(
+          child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(materia.titulo, style: AppFontStyle.body16Regular),
-            Semantics(
-              label: 'Progresso em ${materia.titulo}: $pctLabel',
-              excludeSemantics: true,
-              child: LinearProgressIndicator(
-                value: pct,
-                minHeight: 8,
-                borderRadius: BorderRadius.circular(4),
-              ),
+            LinearProgressIndicator(
+              value: pct,
+              minHeight: 8,
+              borderRadius: BorderRadius.circular(4),
             ),
             Text(
               pctLabel,
               style: AppFontStyle.body14Regular.setColor(AppColors.grey),
             ),
           ],
+        ),
         ),
       ),
     );

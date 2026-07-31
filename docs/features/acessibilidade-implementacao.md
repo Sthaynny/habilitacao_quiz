@@ -51,7 +51,7 @@ Sincronizar com [A_FAZER.md](../tasks/A_FAZER.md) quando a feature ainda não ex
 - [ ] Texto secundário via tokens (`AppColors.grey`), contraste AA sobre fundo branco  
 - [ ] Sem overflow grosseiro com fonte 200%  
 - [ ] `flutter analyze` limpo nos arquivos tocados  
-- [ ] Revisão `a11y-analyst` sem **blocker**
+- [x] Revisão `a11y-analyst` sem **blocker** (2026-07-30 — majors de `ExcludeSemantics` corrigidos no follow-up)
 
 ## Como disparar
 

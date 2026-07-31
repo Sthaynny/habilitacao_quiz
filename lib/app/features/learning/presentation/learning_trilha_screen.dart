@@ -137,10 +137,12 @@ class _LearningTrilhaScreenState extends State<LearningTrilhaScreen> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.stretch,
                           children: [
-                            Text(
-                              Strings.aprenderTrilhaCompletaPreview,
-                              style: AppFontStyle.body14Regular
-                                  .setColor(AppColors.grey),
+                            ExcludeSemantics(
+                              child: Text(
+                                Strings.aprenderTrilhaCompletaPreview,
+                                style: AppFontStyle.body14Regular
+                                    .setColor(AppColors.grey),
+                              ),
                             ),
                             SizedBox(height: AppSpacingStack.nano.value),
                             LearningPromoLink(
@@ -189,27 +191,27 @@ class _TrilhaSection extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Semantics(
-                header: true,
-                child: Text(trilha.title, style: AppFontStyle.body16Bold),
-              ),
-              SizedBox(height: AppSpacingStack.quarck.value),
-              Text(
-                '$doneCount de $total passos',
-                style: AppFontStyle.caption12Regular.setColor(AppColors.grey),
-              ),
-              SizedBox(height: AppSpacingStack.nano.value),
-              Semantics(
-                label: 'Progresso da trilha: $doneCount de $total passos',
-                excludeSemantics: true,
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(4),
-                  child: LinearProgressIndicator(
-                    value: total == 0 ? 0 : doneCount / total,
-                    minHeight: 6,
-                    backgroundColor: AppColors.border,
-                    color: AppColors.primary,
-                  ),
+              ExcludeSemantics(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Text(trilha.title, style: AppFontStyle.body16Bold),
+                    SizedBox(height: AppSpacingStack.quarck.value),
+                    Text(
+                      '$doneCount de $total passos',
+                      style: AppFontStyle.caption12Regular.setColor(AppColors.grey),
+                    ),
+                    SizedBox(height: AppSpacingStack.nano.value),
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(4),
+                      child: LinearProgressIndicator(
+                        value: total == 0 ? 0 : doneCount / total,
+                        minHeight: 6,
+                        backgroundColor: AppColors.border,
+                        color: AppColors.primary,
+                      ),
+                    ),
+                  ],
                 ),
               ),
             SizedBox(height: AppSpacingStack.nano.value),
@@ -227,6 +229,7 @@ class _TrilhaSection extends StatelessWidget {
                 return Semantics(
                   button: true,
                   label: stepLabel,
+                  excludeSemantics: true,
                   child: Material(
                     color: Colors.transparent,
                     child: InkWell(
