@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/semantics.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:habilitacao_quiz/app/shared/presentation/pages/loading_blur_screen.dart';
 import 'package:habilitacao_quiz/core/utils/strings.dart';
@@ -21,6 +20,6 @@ void main() {
     final semantics = tester.getSemantics(
       find.bySemanticsLabel(Strings.carregando),
     );
-    expect(semantics.hasFlag(SemanticsFlag.isLiveRegion), isTrue);
+    expect(semantics.flagsCollection.isLiveRegion, isTrue);
   });
 }

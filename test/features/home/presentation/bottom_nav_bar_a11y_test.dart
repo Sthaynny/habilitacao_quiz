@@ -1,7 +1,6 @@
 import 'dart:ui' show Tristate;
 
 import 'package:flutter/material.dart';
-import 'package:flutter/semantics.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:habilitacao_quiz/app/features/home/presentation/components/bottom_nav_bar.dart';
 import 'package:habilitacao_quiz/core/styles/app_styles.dart';
