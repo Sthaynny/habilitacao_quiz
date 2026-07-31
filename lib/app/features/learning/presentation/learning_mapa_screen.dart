@@ -3,7 +3,9 @@ import 'package:get/get.dart';
 import 'package:habilitacao_quiz/app/features/historico/domain/entities/historico_entity.dart';
 import 'package:habilitacao_quiz/app/features/historico/domain/entities/materia_percentual_entity.dart';
 import 'package:habilitacao_quiz/app/features/learning/presentation/controller/learning_controller.dart';
+import 'package:habilitacao_quiz/app/features/learning/presentation/widgets/learning_promo_link.dart';
 import 'package:habilitacao_quiz/app/features/routes/routes.dart';
+import 'package:habilitacao_quiz/core/components/section_header_a11y.dart';
 import 'package:habilitacao_quiz/core/styles/app_styles.dart';
 import 'package:habilitacao_quiz/core/styles/spacing_stack.dart';
 import 'package:habilitacao_quiz/core/utils/strings.dart';
@@ -31,17 +33,16 @@ class LearningMapaScreen extends StatelessWidget {
         itemCount: introItemCount + mapa.materias.length,
         itemBuilder: (context, index) {
           if (index == 0) {
-            return Text(
-              mapa.dinamico
+            return SectionHeaderA11y(
+              title: mapa.dinamico
                   ? Strings.aprenderMapaDinamico
                   : Strings.aprenderMapaPreview,
               style: AppFontStyle.body14Regular.setColor(AppColors.grey),
             );
           }
           if (!mapa.dinamico && index == 1) {
-            return TextButton(
+            return LearningPromoLink(
               onPressed: () => Get.toNamed(Routes.habilitacaoQuizPlus),
-              child: Text(Strings.plusVerNaLoja),
             );
           }
           final spacerIndex = mapa.dinamico ? 1 : 2;
@@ -64,23 +65,32 @@ class _MateriaBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final pct = materia.percentual.clamp(0, 100) / 100;
+    final pctLabel = '${materia.percentual.toStringAsFixed(0)}% '
+        '(${materia.totalCorretas}/${materia.totalQuestoes})';
+
     return Padding(
       padding: EdgeInsets.only(bottom: AppSpacingStack.xxxSmall.value),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(materia.titulo, style: AppFontStyle.body16Regular),
-          LinearProgressIndicator(
-            value: pct,
-            minHeight: 8,
-            borderRadius: BorderRadius.circular(4),
-          ),
-          Text(
-            '${materia.percentual.toStringAsFixed(0)}% '
-            '(${materia.totalCorretas}/${materia.totalQuestoes})',
-            style: AppFontStyle.body14Regular.setColor(AppColors.grey),
-          ),
-        ],
+      child: Semantics(
+        label: '${materia.titulo}. $pctLabel',
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(materia.titulo, style: AppFontStyle.body16Regular),
+            Semantics(
+              label: 'Progresso em ${materia.titulo}: $pctLabel',
+              excludeSemantics: true,
+              child: LinearProgressIndicator(
+                value: pct,
+                minHeight: 8,
+                borderRadius: BorderRadius.circular(4),
+              ),
+            ),
+            Text(
+              pctLabel,
+              style: AppFontStyle.body14Regular.setColor(AppColors.grey),
+            ),
+          ],
+        ),
       ),
     );
   }

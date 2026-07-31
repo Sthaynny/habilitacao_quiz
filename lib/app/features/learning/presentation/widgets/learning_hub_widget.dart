@@ -23,14 +23,20 @@ class LearningHubWidget extends StatelessWidget {
     final controller = Get.find<LearningController>();
     return Obx(() {
       if (controller.isLoading.value) {
-        return const Center(child: CircularProgressIndicator());
+        return Semantics(
+          label: 'Carregando área de aprendizado',
+          child: const Center(child: CircularProgressIndicator()),
+        );
       }
       final manifest = controller.manifest.value;
       if (manifest == null) {
-        return Center(
-          child: Text(
-            Strings.erroPadrao,
-            style: AppFontStyle.body16Regular,
+        return Semantics(
+          label: Strings.erroPadrao,
+          child: Center(
+            child: Text(
+              Strings.erroPadrao,
+              style: AppFontStyle.body16Regular,
+            ),
           ),
         );
       }
@@ -66,9 +72,12 @@ class _LearningHubLoadedContent extends StatelessWidget {
           LearningHubHero(isPro: isPro),
           SizedBox(height: AppSpacingStack.nano.value),
           if (!isPro)
-            Text(
-              Strings.avisoLegalTexto,
-              style: AppFontStyle.body14Regular.setColor(AppColors.grey),
+            Semantics(
+              label: Strings.avisoLegalTexto,
+              child: Text(
+                Strings.avisoLegalTexto,
+                style: AppFontStyle.body14Regular.setColor(AppColors.grey),
+              ),
             ),
           if (exibirPromoPlus) ...[
             SizedBox(height: AppSpacingStack.xxxSmall.value),
@@ -101,9 +110,12 @@ class _LearningHubLoadedContent extends StatelessWidget {
           ),
           if (isPro) ...[
             SizedBox(height: AppSpacingStack.nano.value),
-            Text(
-              Strings.avisoLegalTexto,
-              style: AppFontStyle.caption12Regular.setColor(AppColors.grey),
+            Semantics(
+              label: Strings.avisoLegalTexto,
+              child: Text(
+                Strings.avisoLegalTexto,
+                style: AppFontStyle.caption12Regular.setColor(AppColors.grey),
+              ),
             ),
           ],
         ],

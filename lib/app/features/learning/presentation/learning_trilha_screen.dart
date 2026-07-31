@@ -5,6 +5,7 @@ import 'package:habilitacao_quiz/app/features/learning/domain/entities/learning_
 import 'package:habilitacao_quiz/app/features/learning/domain/learning_theme_id.dart';
 import 'package:habilitacao_quiz/app/features/learning/domain/usecases/learning_usecases.dart';
 import 'package:habilitacao_quiz/app/features/learning/presentation/controller/learning_controller.dart';
+import 'package:habilitacao_quiz/app/features/learning/presentation/widgets/learning_promo_link.dart';
 import 'package:habilitacao_quiz/app/features/routes/routes.dart';
 import 'package:habilitacao_quiz/app/shared/domain/services/pro_gate.dart';
 import 'package:habilitacao_quiz/core/styles/app_styles.dart';
@@ -98,7 +99,10 @@ class _LearningTrilhaScreenState extends State<LearningTrilhaScreen> {
         ),
       ),
       body: _loading
-          ? const Center(child: CircularProgressIndicator())
+          ? Semantics(
+              label: 'Carregando trilha de estudos',
+              child: const Center(child: CircularProgressIndicator()),
+            )
           : ListView(
               padding: EdgeInsets.all(AppSpacingStack.xxxSmall.value),
               children: [
@@ -117,31 +121,34 @@ class _LearningTrilhaScreenState extends State<LearningTrilhaScreen> {
                         _onStepTap(s, _completa!, _progressoCompleta),
                   )
                 else
-                  DecoratedBox(
-                    decoration: BoxDecoration(
-                      color: AppColors.lightPurple.withValues(alpha: 0.08),
-                      borderRadius: BorderRadius.circular(border12Radius),
-                      border: const Border.fromBorderSide(
-                        BorderSide(color: AppColors.border),
+                  Semantics(
+                    container: true,
+                    label: Strings.aprenderTrilhaCompletaPreview,
+                    child: DecoratedBox(
+                      decoration: BoxDecoration(
+                        color: AppColors.lightPurple.withValues(alpha: 0.08),
+                        borderRadius: BorderRadius.circular(border12Radius),
+                        border: const Border.fromBorderSide(
+                          BorderSide(color: AppColors.border),
+                        ),
                       ),
-                    ),
-                    child: Padding(
-                      padding: EdgeInsets.all(AppSpacingStack.xxxSmall.value),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        children: [
-                          Text(
-                            Strings.aprenderTrilhaCompletaPreview,
-                            style: AppFontStyle.body14Regular
-                                .setColor(AppColors.grey),
-                          ),
-                          SizedBox(height: AppSpacingStack.nano.value),
-                          TextButton(
-                            onPressed: () =>
-                                Get.toNamed(Routes.habilitacaoQuizPlus),
-                            child: Text(Strings.plusVerNaLoja),
-                          ),
-                        ],
+                      child: Padding(
+                        padding: EdgeInsets.all(AppSpacingStack.xxxSmall.value),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          children: [
+                            Text(
+                              Strings.aprenderTrilhaCompletaPreview,
+                              style: AppFontStyle.body14Regular
+                                  .setColor(AppColors.grey),
+                            ),
+                            SizedBox(height: AppSpacingStack.nano.value),
+                            LearningPromoLink(
+                              onPressed: () =>
+                                  Get.toNamed(Routes.habilitacaoQuizPlus),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -168,33 +175,43 @@ class _TrilhaSection extends StatelessWidget {
     final doneCount =
         trilha.steps.where((s) => progresso.contains(s.id)).length;
 
-    return DecoratedBox(
-      decoration: BoxDecoration(
-        color: AppColors.white,
-        borderRadius: BorderRadius.circular(border12Radius),
-        border: const Border.fromBorderSide(BorderSide(color: AppColors.border)),
-      ),
-      child: Padding(
-        padding: EdgeInsets.all(AppSpacingStack.xxxSmall.value),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Text(trilha.title, style: AppFontStyle.body16Bold),
-            SizedBox(height: AppSpacingStack.quarck.value),
-            Text(
-              '$doneCount de $total passos',
-              style: AppFontStyle.caption12Regular.setColor(AppColors.grey),
-            ),
-            SizedBox(height: AppSpacingStack.nano.value),
-            ClipRRect(
-              borderRadius: BorderRadius.circular(4),
-              child: LinearProgressIndicator(
-                value: total == 0 ? 0 : doneCount / total,
-                minHeight: 6,
-                backgroundColor: AppColors.border,
-                color: AppColors.primary,
+    return Semantics(
+      container: true,
+      label: '${trilha.title}. $doneCount de $total passos',
+      child: DecoratedBox(
+        decoration: BoxDecoration(
+          color: AppColors.white,
+          borderRadius: BorderRadius.circular(border12Radius),
+          border: const Border.fromBorderSide(BorderSide(color: AppColors.border)),
+        ),
+        child: Padding(
+          padding: EdgeInsets.all(AppSpacingStack.xxxSmall.value),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Semantics(
+                header: true,
+                child: Text(trilha.title, style: AppFontStyle.body16Bold),
               ),
-            ),
+              SizedBox(height: AppSpacingStack.quarck.value),
+              Text(
+                '$doneCount de $total passos',
+                style: AppFontStyle.caption12Regular.setColor(AppColors.grey),
+              ),
+              SizedBox(height: AppSpacingStack.nano.value),
+              Semantics(
+                label: 'Progresso da trilha: $doneCount de $total passos',
+                excludeSemantics: true,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(4),
+                  child: LinearProgressIndicator(
+                    value: total == 0 ? 0 : doneCount / total,
+                    minHeight: 6,
+                    backgroundColor: AppColors.border,
+                    color: AppColors.primary,
+                  ),
+                ),
+              ),
             SizedBox(height: AppSpacingStack.nano.value),
             ListView.separated(
               shrinkWrap: true,
@@ -205,38 +222,49 @@ class _TrilhaSection extends StatelessWidget {
               itemBuilder: (context, index) {
                 final step = trilha.steps[index];
                 final done = progresso.contains(step.id);
+                final stepLabel =
+                    done ? 'Concluído: ${step.title}' : step.title;
                 return Semantics(
                   button: true,
-                  label: step.title,
+                  label: stepLabel,
                   child: Material(
                     color: Colors.transparent,
                     child: InkWell(
                       onTap: () => onStepTap(step),
                       borderRadius: BorderRadius.circular(8),
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(
-                          vertical: AppSpacingStack.nano.value,
-                        ),
-                        child: Row(
-                          children: [
-                            Icon(
-                              done
-                                  ? Icons.check_circle
-                                  : Icons.radio_button_unchecked,
-                              color: done ? AppColors.primary : AppColors.grey,
-                            ),
-                            SizedBox(width: AppSpacingStack.nano.value),
-                            Expanded(
-                              child: Text(
-                                step.title,
-                                style: AppFontStyle.body16Regular,
+                      child: ConstrainedBox(
+                        constraints: const BoxConstraints(minHeight: 48),
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(
+                            vertical: AppSpacingStack.nano.value,
+                          ),
+                          child: Row(
+                            children: [
+                              ExcludeSemantics(
+                                child: Icon(
+                                  done
+                                      ? Icons.check_circle
+                                      : Icons.radio_button_unchecked,
+                                  color:
+                                      done ? AppColors.primary : AppColors.grey,
+                                ),
                               ),
-                            ),
-                            const Icon(
-                              Icons.chevron_right,
-                              color: AppColors.grey,
-                            ),
-                          ],
+                              SizedBox(width: AppSpacingStack.nano.value),
+                              Expanded(
+                                child: Text(
+                                  step.title,
+                                  style: AppFontStyle.body16Regular,
+                                  softWrap: true,
+                                ),
+                              ),
+                              const ExcludeSemantics(
+                                child: Icon(
+                                  Icons.chevron_right,
+                                  color: AppColors.grey,
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),
@@ -247,6 +275,7 @@ class _TrilhaSection extends StatelessWidget {
           ],
         ),
       ),
+    ),
     );
   }
 }

@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_markdown_plus/flutter_markdown_plus.dart';
 import 'package:get/get.dart';
 import 'package:habilitacao_quiz/app/features/home/presentation/components/quizzes/controller/quizzes_controller.dart';
 import 'package:habilitacao_quiz/app/features/learning/domain/learning_theme_id.dart';
 import 'package:habilitacao_quiz/app/features/learning/domain/usecases/learning_usecases.dart';
-import 'package:habilitacao_quiz/app/features/learning/presentation/widgets/learning_markdown_styles.dart';
+import 'package:habilitacao_quiz/app/features/learning/presentation/widgets/learning_markdown_body.dart';
 import 'package:habilitacao_quiz/app/features/learning/presentation/widgets/learning_section_card.dart';
 import 'package:habilitacao_quiz/core/components/button.dart';
 import 'package:habilitacao_quiz/core/styles/app_styles.dart';
@@ -25,8 +24,6 @@ class _LearningThemeScreenState extends State<LearningThemeScreen> {
   String? _artigo;
   bool _loading = true;
   bool _missingContent = false;
-
-  final MarkdownStyleSheet _markdownStyle = LearningMarkdownStyles.sheet();
 
   @override
   void initState() {
@@ -77,15 +74,21 @@ class _LearningThemeScreenState extends State<LearningThemeScreen> {
         title: Text(title, style: AppFontStyle.headline20Bold),
       ),
       body: _loading
-          ? const Center(child: CircularProgressIndicator())
+          ? Semantics(
+              label: 'Carregando conteúdo do tema',
+              child: const Center(child: CircularProgressIndicator()),
+            )
           : _missingContent
-              ? Center(
-                  child: Padding(
-                    padding: EdgeInsets.all(AppSpacingStack.xxxSmall.value),
-                    child: Text(
-                      Strings.aprenderConteudoIndisponivel,
-                      style: AppFontStyle.body16Regular,
-                      textAlign: TextAlign.center,
+              ? Semantics(
+                  label: Strings.aprenderConteudoIndisponivel,
+                  child: Center(
+                    child: Padding(
+                      padding: EdgeInsets.all(AppSpacingStack.xxxSmall.value),
+                      child: Text(
+                        Strings.aprenderConteudoIndisponivel,
+                        style: AppFontStyle.body16Regular,
+                        textAlign: TextAlign.center,
+                      ),
                     ),
                   ),
                 )
@@ -104,18 +107,12 @@ class _LearningThemeScreenState extends State<LearningThemeScreen> {
                           children: [
                             LearningSectionCard(
                               overline: Strings.aprenderResumo,
-                              child: MarkdownBody(
-                                data: _resumo ?? '',
-                                styleSheet: _markdownStyle,
-                              ),
+                              child: LearningMarkdownBody(data: _resumo ?? ''),
                             ),
                             SizedBox(height: AppSpacingStack.xxxSmall.value),
                             LearningSectionCard(
                               overline: Strings.aprenderArtigo,
-                              child: MarkdownBody(
-                                data: _artigo ?? '',
-                                styleSheet: _markdownStyle,
-                              ),
+                              child: LearningMarkdownBody(data: _artigo ?? ''),
                             ),
                           ],
                         ),

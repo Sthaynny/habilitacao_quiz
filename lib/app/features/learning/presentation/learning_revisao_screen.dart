@@ -3,9 +3,11 @@ import 'package:get/get.dart';
 import 'package:habilitacao_quiz/app/features/learning/domain/services/revisao_quiz_builder.dart';
 import 'package:habilitacao_quiz/app/features/learning/domain/usecases/learning_usecases.dart';
 import 'package:habilitacao_quiz/app/features/learning/domain/usecases/revisar_erros_ultimo_teste_usecase.dart';
+import 'package:habilitacao_quiz/app/features/learning/presentation/widgets/learning_promo_link.dart';
 import 'package:habilitacao_quiz/app/features/routes/routes.dart';
 import 'package:habilitacao_quiz/app/shared/domain/services/pro_gate.dart';
 import 'package:habilitacao_quiz/core/components/button.dart';
+import 'package:habilitacao_quiz/core/components/section_header_a11y.dart';
 import 'package:habilitacao_quiz/core/styles/app_styles.dart';
 import 'package:habilitacao_quiz/core/styles/spacing_stack.dart';
 import 'package:habilitacao_quiz/core/utils/strings.dart';
@@ -67,9 +69,8 @@ class _LearningRevisaoScreenState extends State<LearningRevisaoScreen> {
           ),
         ),
         body: Center(
-          child: TextButton(
+          child: LearningPromoLink(
             onPressed: () => Get.toNamed(Routes.habilitacaoQuizPlus),
-            child: Text(Strings.plusVerNaLoja),
           ),
         ),
       );
@@ -83,20 +84,27 @@ class _LearningRevisaoScreenState extends State<LearningRevisaoScreen> {
         ),
       ),
       body: _loading
-          ? const Center(child: CircularProgressIndicator())
+          ? Semantics(
+              label: 'Carregando revisão espaçada',
+              child: const Center(child: CircularProgressIndicator()),
+            )
           : Padding(
               padding: EdgeInsets.all(AppSpacingStack.xxxSmall.value),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  Text(
-                    Strings.revisaoEspacadaDescricao,
-                    style: AppFontStyle.body16Regular,
+                  const SectionHeaderA11y(
+                    title: Strings.revisaoEspacada,
+                    subtitle: Strings.revisaoEspacadaDescricao,
                   ),
                   SizedBox(height: AppSpacingStack.xxxSmall.value),
-                  Text(
-                    Strings.revisaoEspacadaPendentes(_ids.length),
-                    style: AppFontStyle.body14Regular.setColor(AppColors.grey),
+                  Semantics(
+                    label: Strings.revisaoEspacadaPendentes(_ids.length),
+                    child: Text(
+                      Strings.revisaoEspacadaPendentes(_ids.length),
+                      style:
+                          AppFontStyle.body14Regular.setColor(AppColors.grey),
+                    ),
                   ),
                   SizedBox(height: AppSpacingStack.xxxSmall.value),
                   AppButton.primary(

@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_markdown_plus/flutter_markdown_plus.dart';
 import 'package:get/get.dart';
 import 'package:habilitacao_quiz/app/features/learning/domain/entities/learning_entities.dart';
 import 'package:habilitacao_quiz/app/features/learning/domain/usecases/learning_usecases.dart';
-import 'package:habilitacao_quiz/app/features/learning/presentation/widgets/learning_markdown_styles.dart';
+import 'package:habilitacao_quiz/app/features/learning/presentation/widgets/learning_markdown_body.dart';
 import 'package:habilitacao_quiz/app/features/learning/presentation/widgets/learning_section_card.dart';
 import 'package:habilitacao_quiz/app/features/learning/presentation/widgets/learning_study_tool_tile.dart';
 import 'package:habilitacao_quiz/app/features/routes/routes.dart';
@@ -49,7 +48,10 @@ class _LearningFichasScreenState extends State<LearningFichasScreen> {
         ),
       ),
       body: _loading
-          ? const Center(child: CircularProgressIndicator())
+          ? Semantics(
+              label: 'Carregando fichas',
+              child: const Center(child: CircularProgressIndicator()),
+            )
           : ListView.separated(
               padding: EdgeInsets.all(AppSpacingStack.xxxSmall.value),
               itemCount: _fichas.length,
@@ -95,8 +97,6 @@ class _LearningFichaScreenState extends State<LearningFichaScreen> {
   String _title = '';
   bool _loading = true;
 
-  final MarkdownStyleSheet _markdownStyle = LearningMarkdownStyles.sheet();
-
   @override
   void initState() {
     super.initState();
@@ -128,15 +128,15 @@ class _LearningFichaScreenState extends State<LearningFichaScreen> {
         title: Text(_title, style: AppFontStyle.headline20Bold),
       ),
       body: _loading
-          ? const Center(child: CircularProgressIndicator())
+          ? Semantics(
+              label: 'Carregando ficha',
+              child: const Center(child: CircularProgressIndicator()),
+            )
           : SingleChildScrollView(
               padding: EdgeInsets.all(AppSpacingStack.xxxSmall.value),
               child: LearningSectionCard(
                 overline: Strings.aprenderFichas,
-                child: MarkdownBody(
-                  data: _markdown ?? '',
-                  styleSheet: _markdownStyle,
-                ),
+                child: LearningMarkdownBody(data: _markdown ?? ''),
               ),
             ),
     );

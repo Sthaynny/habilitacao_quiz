@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:habilitacao_quiz/core/styles/app_styles.dart';
 import 'package:habilitacao_quiz/core/styles/consts.dart';
 import 'package:habilitacao_quiz/core/styles/spacing_stack.dart';
+import 'package:habilitacao_quiz/core/utils/strings.dart';
 
 class LearningStudyToolTile extends StatelessWidget {
   const LearningStudyToolTile({
@@ -26,7 +27,9 @@ class LearningStudyToolTile extends StatelessWidget {
     return Semantics(
       button: true,
       label: '$title. $subtitle',
-      child: Material(
+      hint: trailingLocked ? Strings.plusBannerHint : null,
+      child: ExcludeSemantics(
+        child: Material(
         color: AppColors.white,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(border12Radius),
@@ -44,14 +47,16 @@ class LearningStudyToolTile extends StatelessWidget {
               ),
               child: Row(
                 children: [
-                  DecoratedBox(
-                    decoration: BoxDecoration(
-                      color: accentColor.withValues(alpha: 0.12),
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Padding(
-                      padding: EdgeInsets.all(AppSpacingStack.nano.value),
-                      child: Icon(icon, color: accentColor, size: 24),
+                  ExcludeSemantics(
+                    child: DecoratedBox(
+                      decoration: BoxDecoration(
+                        color: accentColor.withValues(alpha: 0.12),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Padding(
+                        padding: EdgeInsets.all(AppSpacingStack.nano.value),
+                        child: Icon(icon, color: accentColor, size: 24),
+                      ),
                     ),
                   ),
                   SizedBox(width: AppSpacingStack.nano.value),
@@ -59,21 +64,28 @@ class LearningStudyToolTile extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(title, style: AppFontStyle.body16Medium),
+                        Text(
+                          title,
+                          style: AppFontStyle.body16Medium,
+                          softWrap: true,
+                        ),
                         SizedBox(height: AppSpacingStack.quarck.value),
                         Text(
                           subtitle,
                           style: AppFontStyle.caption12Regular
                               .setColor(AppColors.grey),
+                          softWrap: true,
                         ),
                       ],
                     ),
                   ),
-                  Icon(
-                    trailingLocked
-                        ? Icons.lock_outline
-                        : Icons.chevron_right,
-                    color: AppColors.grey,
+                  ExcludeSemantics(
+                    child: Icon(
+                      trailingLocked
+                          ? Icons.lock_outline
+                          : Icons.chevron_right,
+                      color: AppColors.grey,
+                    ),
                   ),
                 ],
               ),
@@ -81,6 +93,7 @@ class LearningStudyToolTile extends StatelessWidget {
           ),
         ),
       ),
+    ),
     );
   }
 }
