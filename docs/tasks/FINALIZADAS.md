@@ -69,7 +69,9 @@
 | T28a | `id` estável em 203 perguntas (5 JSON) | 2026-07-30 |
 | T28b | `explicacao` em 56/56 perguntas (`legislacao.json`) | 2026-07-30 |
 | F01 | Onboarding matéria fraca (sheet 1ª sessão + destaque na Home) | 2026-07-30 |
+| F02 | Lembrete local diário opt-in (`flutter_local_notifications`) | 2026-07-30 |
 | F03 | Empty state histórico com CTA para Quizzes | 2026-07-30 |
+| F04 | `content_manifest.json` + detecção de atualização de questões | 2026-07-30 |
 | A11Y-PROMO | Semantics, 48dp e headers nos CTAs Quiz+ | 2026-07-30 |
 
 ---

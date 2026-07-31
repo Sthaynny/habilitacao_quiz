@@ -18,12 +18,13 @@
 | :---: | :--- | :---: | :--- |
 | 1 | GATE + PROMO | ✅ | `feature-gate-store`, `feature-promo` |
 | 2 | HIST | ✅ | `feature-historico` |
-| 3 | LEARN + T26–T28 | ✅ (T28 conteúdo parcial) | `feature-aprendizado`, `feature-conteudo-questoes` |
+| 3 | LEARN + T26–T28 | ✅ (T28c conteúdo pendente) | `feature-aprendizado`, `feature-conteudo-questoes` |
+| — | Free retenção | ⏳ F02/F04 | `feature-free-evolution` |
 | — | Publicação loja | ⏳ operacional | `feature-store-publish` |
 | — | Acessibilidade | ⏳ por épico | `feature-a11y-implementer` |
 | 4 | IA | 🔒 bloqueado | `feature-ia-pro` (readonly) |
 
-`flutter analyze` limpo · **110** testes passando (jul/2026).
+`flutter analyze` limpo · **115** testes passando (jul/2026).
 
 ---
 
@@ -68,7 +69,7 @@ _Schema em `PerguntaModel` pronto; `legislacao.json` com `explicacao` em 56/56; 
 
 | ID | Objetivo | Critério de pronto | Agente |
 | :--- | :--- | :--- | :--- |
-| A11Y-GATE | Semantics limites + questionário | Checklist doc GATE sem blocker (snackbar limite + questionário feito; revisar checklist) | `feature-a11y-implementer` |
+| A11Y-GATE | Semantics limites + questionário | Checklist doc GATE — snackbars limite feitos; revisar questionário | `feature-a11y-implementer` |
 | ~~A11Y-PROMO~~ | ~~CTAs Quiz+ + tela **+**~~ | ✅ 2026-07-30 — ver [FINALIZADAS.md](./FINALIZADAS.md) | — |
 | A11Y-HIST | Lista, chips, detalhe simulado | Checklist doc HIST sem blocker | `feature-a11y-implementer` |
 | A11Y-LEARN | Hub Aprender + Markdown | Checklist doc LEARN sem blocker | `feature-a11y-implementer` |
@@ -82,9 +83,9 @@ Doc: [acessibilidade-implementacao.md](../features/acessibilidade-implementacao.
 | ID | Objetivo | Critério de pronto | Agente |
 | :--- | :--- | :--- | :--- |
 | ~~F01~~ | ~~Onboarding matéria fraca~~ | ✅ 1ª sessão; SP; sheet opcional — ver [FINALIZADAS.md](./FINALIZADAS.md) | — |
-| F02 | Lembrete local opt-in | Notificação agendável | `feature-free-evolution` |
+| ~~F02~~ | ~~Lembrete local opt-in~~ | ✅ Notificação diária agendável — ver [FINALIZADAS.md](./FINALIZADAS.md) | — |
 | ~~F03~~ | ~~Empty state histórico~~ | ✅ Copy + CTA suave — ver [FINALIZADAS.md](./FINALIZADAS.md) | — |
-| F04 | Patch JSON versionado | `contentVersion` ou script | `feature-free-evolution` |
+| ~~F04~~ | ~~Patch JSON versionado~~ | ✅ `content_manifest.json` + snackbar — ver [FINALIZADAS.md](./FINALIZADAS.md) | — |
 
 ---
 
@@ -101,7 +102,7 @@ Doc: [acessibilidade-implementacao.md](../features/acessibilidade-implementacao.
 ## Ordem sugerida (agora)
 
 ```
-T01 (decisão) → T15 smoke manual → T16–T18 publicar + → A11Y-HIST/LEARN → T28c
+T28c explicações demais temas → A11Y-HIST/LEARN → T15 smoke manual → T16–T18 loja
 ```
 
-Depois: T28d → F02/F04 → fechar A11Y-GATE (checklist) → IA (quando houver receita).
+Depois: T28d → fechar A11Y-GATE (checklist) → T01 preço → IA (quando houver receita).

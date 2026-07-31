@@ -36,7 +36,7 @@ Sincronizar com [A_FAZER.md](../tasks/A_FAZER.md) quando a feature ainda não ex
 | Doc | ID | Data | Commit sugerido |
 | :--- | :--- | :--- | :--- |
 | [promocao-quiz-plus.md](./promocao-quiz-plus.md) | A11Y-PROMO | 2026-07-30 | `a11y(promo): semantics e 48dp nos CTAs Quiz+` |
-| [modelo-free-pro.md](./modelo-free-pro.md) | A11Y-GATE | — | pendente |
+| [modelo-free-pro.md](./modelo-free-pro.md) | A11Y-GATE | 2026-07-30 | `a11y(gate): semantics nos snackbars de limite` (parcial) |
 | [historico-simulados.md](./historico-simulados.md) | A11Y-HIST | — | pendente |
 | [area-aprendizado.md](./area-aprendizado.md) | A11Y-LEARN | — | pendente |
 
